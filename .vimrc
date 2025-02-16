@@ -13,9 +13,6 @@ set splitbelow
 set splitright
 set cmdheight=2                   " Set the command window height to 2 lines, to avoid many cases
                                   " of having to  press <Enter> to continue
-set foldcolumn=3
-set foldmethod=marker
-set foldlevelstart=20
 set ruler                         " Display crsr pos on last line of scr or in status line of a window
 set number                        " Display line numbers on the left
 set wildmenu                      " Better command-line completion
@@ -82,7 +79,20 @@ set notimeout ttimeout ttimeoutlen=200  " Quickly time out on keycodes, but neve
                 " *************************************************************************************
 command! -nargs=+ GREP call GrepBuffers(<q-args>)
 command! SESSION      :call CaptureSession() 
+command! MyLinter :caddexpr system("cat zzzz") | copen
+command! ZZZZ :caddexpr system("cat zzzz") | copen
+map <C-j> :cn<CR>
+map <C-k> :cp<CR>
+map <C-@> @a
 
+"  :copen " Open the quickfix window
+"  :ccl   " Close it
+"  :cw    " Open it if there are "errors", close it otherwise (some people prefer this)
+"  :cn    " Go to the next error in the window
+"  :cp    " Go to the previous error in the window
+"  :cnf   " Go to the first error in the next file
+"  :.cc   " Go to error under cursor (if cursor is in quickfix window)
+"
 " *****************************************************************************************************
                 " Pre Vundle Setup
                 " *************************************************************************************
@@ -151,8 +161,8 @@ filetype plugin indent on         " required, to ignore plugin indent changes, i
                 " Functions
                 " *************************************************************************************
 function g:LogMessage(...)
-    return
     let l:ret = 0
+
     let l:messages=[]
     call add(l:messages, a:1)
     call writefile(l:messages, "/tmp/vimscript.log", "a")
@@ -171,6 +181,16 @@ inoremap         <F6> <esc>:call ProgramRun()<cr>
 nnoremap         <F6>      :call ProgramRun()<cr>
 nnoremap <Leader>p         :PluginUpdate<cr>
 
+" *****************************************************************************************************
+                " Folding
+                " *************************************************************************************
+
+" set foldcolumn=3
+" set foldmethod=marker
+" set foldlevelstart=20
+" set foldlevelstart=20
+set foldlevel=1
+set foldmethod=marker
 
 " *****************************************************************************************************
                 " Auto Commands
@@ -183,6 +203,7 @@ nnoremap <Leader>p         :PluginUpdate<cr>
 " *****************************************************************************************************
                 " Session Setup
                 " *************************************************************************************
+if ( 1 == 0 ) 
     if ( argc() == 0 ) 
          augroup VIMAUTOGROUPA
              autocmd!
@@ -207,6 +228,7 @@ nnoremap <Leader>p         :PluginUpdate<cr>
              endif
          endif
     endif
+endif
 
 "   ***************************************************************************************************
                 " Jump to Last Position When Reopening a File
@@ -215,3 +237,120 @@ nnoremap <Leader>p         :PluginUpdate<cr>
       au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
       \| exe "normal! g'\"" | endif
    endif
+function! s:SLine(msg)
+    let save_statusline = &statusline  " Save the current statusline
+    let &statusline = a:msg
+    "let &statusline = save_statusline
+endfunction
+"
+" wget -O ~/.vim/vim.txt https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt
+" nnoremap         <F7> :call g:FlashCard($HOME . "/.vim/1.fc")<cr>
+" nnoremap <leader><F7> :call g:UnFlashCard()<cr>
+"   ***************************************************************************************************
+                " Multi Toggle
+                " *************************************************************************************
+function! MultiToggle()
+    if g:multi_toggle_state == 1
+        nnoremap <F7> :call ToUpperUnderCursor()<CR>
+        call s:SLine("Upper Mode")
+        let g:multi_toggle_state = 2
+        return
+    endif
+    if g:multi_toggle_state == 2
+        nnoremap <F7> :call ToLowerUnderCursor()<CR>
+        call s:SLine("Lower Mode")
+        let g:multi_toggle_state = 3
+        return
+    endif
+    if g:multi_toggle_state == 3
+        nnoremap <F7> gv
+        call s:SLine("Re-Select Visual Mode (gv)")
+        let g:multi_toggle_state = 4
+        return
+    endif
+    if g:multi_toggle_state == 4
+        nnoremap <F7> :%s/\<<C-r><C-w>\>//gI<Left><Left><Left>
+        call s:SLine("Search Word Under Cursor Mode")
+        let g:multi_toggle_state = 5
+        return
+    endif
+    if g:multi_toggle_state == 5
+        nnoremap <F7> : e ~/.vim/vimbrief.txt<CR>
+        call s:SLine("Open Vim Cheatsheet Mode " . $HOME . "/.vim/vimbrief.txt")
+        let g:multi_toggle_state = 6
+        return
+    endif
+    if g:multi_toggle_state == 6
+        nnoremap         <F7> :call g:FlashCard($HOME . "/.vim/1.fc")<cr>
+        nnoremap <leader><F7> :call g:UnFlashCard()<cr>
+        call s:SLine("Flash Card Mode")
+        let g:multi_toggle_state = 7
+        return
+    endif
+
+
+    if g:multi_toggle_state == 7
+        nnoremap <F7> :call MultiToggleVoid()<CR>
+        call s:SLine("Void Mode")
+        let g:multi_toggle_state = 1
+        return
+    endif
+endfunction
+
+function! MultiToggleVoid()
+        let g:multi_toggle_state = g:multi_toggle_state = 2
+endfunction
+
+let g:multi_toggle_state = 1
+let &statusline = "Void Mode"
+nnoremap <F7> :call MultiToggleVoid()<CR>
+nnoremap <F8> :call MultiToggle()<CR>
+
+function! ToLowerUnderCursor()
+  " Get the current cursor position.
+  let [row, col] = getpos('.')[1:2]
+
+  " Get the character under the cursor.
+  let char = getline(row)[col-1]
+
+  " Check if a character exists at the cursor position (not end of line).
+  if char != ""
+
+    " Convert the character to lowercase.
+    let lower_char = tolower(char)
+
+    " Replace the character under the cursor with the lowercase version.
+    call setline(row, strpart(getline(row), 0, col-1) . lower_char . strpart(getline(row), col))
+
+    " Restore the cursor position (important!).
+    call cursor(row, col)
+  endif
+endfunction
+function! ToUpperUnderCursor()
+  " Get the current cursor position.
+  let [row, col] = getpos('.')[1:2]
+
+  " Get the character under the cursor.
+  let char = getline(row)[col-1]
+
+  " Check if a character exists at the cursor position (not end of line).
+  if char != ""
+
+    " Convert the character to uppercase.
+    let upper_char = toupper(char)
+
+    " Replace the character under the cursor with the uppercase version.
+    call setline(row, strpart(getline(row), 0, col-1) . upper_char . strpart(getline(row), col))
+
+    " Restore the cursor position (important!).
+    call cursor(row, col)
+  endif
+endfunction
+
+" Map a key to call the function.  For example, map <Leader>u to it.
+" You can choose any key combination you prefer.  <Leader> is often \.
+" See :help leader for more about setting the leader key.
+" Example:
+"
+" hello
+"
