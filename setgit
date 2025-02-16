@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp1=/tmp/$$_$$
+trap 'exit 0' INT HUP QUIT TERM ALRM USR1
+trap 'rm -f "$Tmp" "$Tmp1"' EXIT
+rm -f "$Tmp"  >/dev/null 2>&1
+rm -f "$Tmp1"  >/dev/null 2>&1
+#    Specifying the location of the ".git" directory using this option (or GIT_DIR environment variable)
+#    turns off the repository discovery that tries to find a directory with ".git" subdirectory (which is how
+#    the repository and the top-level of the working tree are discovered), and tells Git that you are at the
+#    top level of the working tree. If you are not at the top-level directory of the working tree, you should
+#    tell Git where the top-level of the working tree is, with the --work-tree=<path> option (or
+#    GIT_WORK_TREE environment variable)
+touch $Tmp
+
+if [[ -z "$1" ]]; then
+  # echo "Argument is blank"
+  echo "unset GIT_DIR"        > $Tmp
+  echo "unset GIT_WORK_TREE" >> $Tmp
+  echo "unset GW"            >> $Tmp
+  echo "unset GD"            >> $Tmp
+else
+  # echo "Argument is not blank: $1"
+  echo "export GIT_DIR=\"/etc/scm/$1/.git\""  >> $Tmp
+  echo "export GD=\"/etc/scm/$1/.git\""       >> $Tmp
+  echo "export GIT_WORK_TREE=\"/etc/scm/$1\"" >> $Tmp
+  echo "export GW=\"/etc/scm/$1\""            >> $Tmp
+  echo "git status"                           >> $Tmp
+fi
+
+cat $Tmp
+
