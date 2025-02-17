@@ -1,0 +1,354 @@
+#
+# bash functions
+############################################################################################
+# ./BashDirName.sh
+############################################################################################
+No need for basename, and especially no need for a subshell running pwd (which adds an extra, and expensive, fork operation); the shell can do this internally using parameter expansion:
+
+result=${PWD##*/}          # to assign to a variable
+result=${result:-/}        # to correct for the case where PWD=/
+
+printf '%s\n' "${PWD##*/}" # to print to stdout
+                           # ...more robust than echo for unusual names
+                           #    (consider a directory named -e or -n)
+
+printf '%q\n' "${PWD##*/}" # to print to stdout, quoted for use as shell input
+                           # ...useful to make hidden characters readable.
+Note that if you're applying this technique in other circumstances (not PWD, but some other variable holding a directory name), you might need to trim any trailing slashes. The below uses bash's extglob support to work even with multiple trailing slashes:
+
+dirname=/path/to/somewhere//
+shopt -s extglob           # enable +(...) glob syntax
+result=${dirname%%+(/)}    # trim however many trailing slashes exist
+result=${result##*/}       # remove everything before the last / that still remains
+result=${result:-/}        # correct for dirname=/ case
+printf '%s\n' "$result"
+
+
+############################################################################################
+# ./CheckIfFileExists.sh
+############################################################################################
+#Check if file exists
+
+if [[ -f <file> ]]
+then
+    echo "<file> exists on your filesystem."
+fi
+
+
+# Check if file does not exist
+
+if [[ ! -f <file> ]]
+then
+    echo "<file> does not exist on your filesystem."
+fi
+
+
+# Check if directory exist
+
+if [[ -d "$DIRECTORY" ]]
+then
+    echo "$DIRECTORY exists on your filesystem."
+fi
+
+
+
+############################################################################################
+# ./console.sh
+############################################################################################
+consolebar () {
+    echo "********************************************************************************************"
+}
+consolemsg () {
+#   consolebar
+    echo "** $1"
+#   consolebar
+    A=$A
+}
+optconsolemsg () {
+#    echo "** $1"
+    A=$A
+}
+
+
+############################################################################################
+# ./finddirectories.sh
+############################################################################################
+find . -type d
+
+
+############################################################################################
+# ./findfiles1g.sh
+############################################################################################
+find . -type f -size +1G 2>/dev/null | sed 's#^.#/tmp#'
+
+
+############################################################################################
+# ./findfiles2g.sh
+############################################################################################
+find . -type f -size +2G 2>/dev/null | sed 's#^.#/tmp#'
+
+
+############################################################################################
+# ./findfiles.sh
+############################################################################################
+find . -type f
+
+
+############################################################################################
+# ./find_secrets.sh
+############################################################################################
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp1=/tmp/$$_$$
+trap 'exit 0' INT HUP QUIT TERM ALRM USR1
+trap 'rm -f "$Tmp"' EXIT
+rm -f "$Tmp"  >/dev/null 2>&1
+
+# Define patterns for sensitive data (expand as needed)
+# patterns=(
+#     "password[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?"  # Basic password pattern
+#     "secret[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?"   # Secret pattern
+#     "key[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?"      # Key pattern
+#     "AWS_ACCESS_KEY_ID[[:space:]]*[:=][[:space:]]*[\"']?[A-Z0-9]*[\"']?" # AWS Access Key ID
+#     "AWS_SECRET_ACCESS_KEY[[:space:]]*[:=][[:space:]]*[\"']?[a-zA-Z0-9/+=]*[\"']?" # AWS Secret Access Key
+#     "api_key[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # API Key pattern
+#     "database_url[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # Database URL
+#     "connection_string[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # Connection String
+#     "private_key[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # Private Key
+#     "client_secret[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # Client Secret
+#     "oauth_token[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # OAuth Token
+#     "bearer_token[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # Bearer Token
+# )
+. ./secure_patterns
+
+# Define file types to search (customize as needed)
+file_types=("*.sh" "*.py" "*.js" "*.php" "*.html" "*.xml" "*.json" "*.txt" "*.conf" "*.yaml" "*.yml" "*.sh" "*.bash" "*.c" "*.cpp" "*.java" "*.go")
+
+
+# Function to search a single file
+search_file() {
+    local file="$1"
+    local line_num
+    local line
+
+    for pattern in "${patterns[@]}"; do
+        while IFS= read -r line; do
+            line_num=$((line_num + 1))
+            if [[ "$line" =~ $pattern ]]; then
+                echo "File: $file, Line: $line_num: $line, Pattern: $pattern" >> $Tmp
+            fi
+        done < "$file"
+        line_num=0 # Reset line number for next pattern
+    done
+}
+
+# Find files and search them
+# find . \( -name "${file_types[@]}" \) -print0 | while IFS= read -r -d $'\0' file; do
+find . \( -name "*.sh" \) -print0 | while IFS= read -r -d $'\0' file; do
+    if [ -f "$file" ]; then # Check if it's a regular file (not a directory)
+      search_file "$file"
+    fi
+done
+
+
+
+if [ -f $Tmp ]; then
+    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    echo "!!!!    Secrets Found    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    cat $Tmp | sort | uniq
+    exit 1
+fi
+
+echo "Finished searching."
+exit 0
+
+
+############################################################################################
+# ./ForEachDirectory.sh
+############################################################################################
+for d in */ ; do
+    echo "$d"
+done
+
+
+############################################################################################
+# ./ForEachFile.sh
+############################################################################################
+for f in ./*.java; do MakeHTMLCodePage "$f"; done
+
+
+############################################################################################
+# ./fullpathd.sh
+############################################################################################
+find . -type d 2>/dev/null | sed 's#^.#/tmp#'
+
+
+############################################################################################
+# ./fullpath.sh
+############################################################################################
+find . -type f 2>/dev/null | sed 's#^.#/tmp#'
+
+
+############################################################################################
+# ./gitgraphlog.sh
+############################################################################################
+git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(100,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
+
+
+############################################################################################
+# ./IsFileEmpty.sh
+############################################################################################
+if [ -s /tmp/myfile.txt ]
+then
+     echo "File not empty"
+else
+     echo "File empty"
+fi
+
+
+############################################################################################
+# ./IsHostUp.sh
+############################################################################################
+
+hostname_or_ip_address=$1
+if ping -q -c 1 -W 1 wind2 >/dev/null 2>&1; then
+    echo "$hostname_or_ip_address is alive"
+else
+    echo "$hostname_or_ip_address is pining for the fjords"
+fi
+
+
+############################################################################################
+# ./isnfs.sh
+############################################################################################
+isnfs () {                                                                                                                       
+    LOCAL=`stat -f -c %T "$1"`                                                                                                   
+    if [ "$LOCAL" == "nfs" ]; then                                                                                               
+         RETVAL="YES"                                                                                                             
+    else                                                                                                                         
+         RETVAL="NO"                                                                                                              
+    fi                                                                                                                           
+}
+
+
+############################################################################################
+# ./MonitorOpenNetstatConnections.sh
+############################################################################################
+watch -n 1 'netstat -tpanl | grep ESTABLISHED'
+
+
+############################################################################################
+# ./slapfilename.sh
+############################################################################################
+#!/usr/bin/bash
+Tmp=/tmp/$$
+
+if [ $# -eq 0 ]
+  then
+        rm -f ./taggerdo
+
+        for filename in *.$1; do
+            FILE="$filename"
+            NAME="$filename"
+            NAME=`echo "$NAME"     | sed "s/ \[.*\]//g"`
+            NAME=`echo "$NAME"     | sed "s/^[&]//g"`
+            NAME=`echo "$NAME"     | sed "s/[']//g"`
+            NAME=`echo "$NAME" | sed "s/_/ /g"`
+            NAME=`echo "$NAME" | sed "s/  / /g"`
+            NAME=`echo "$NAME" | sed "s/  / /g"`
+            NAME=`echo "$NAME" | sed "s/  / /g"`
+            NAME=`echo "$NAME" | sed "s/^ //"`
+            NAME=`echo "$NAME" | sed "s/^ //"`
+            NAME=`echo "$NAME" | sed "s/^ //"`
+            NAME=`echo "$NAME" | sed "s/ [.]mp3/.mp3/"`
+            NAME=`echo "$NAME" | sed "s/ [.]mp3/.mp3/"`
+            NAME=`echo "$NAME" | sed "s/ [.]mp3/.mp3/"`
+           CMD="mv \"./$filename\" \"$NAME\""
+           echo $CMD
+           echo $CMD > ./taggerdo
+           chmod 777  ./taggerdo
+           ./taggerdo
+           rm -f ./taggerdo
+        done
+
+fi
+
+
+############################################################################################
+# ./topTenCommands.sh
+############################################################################################
+history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10
+
+
+############################################################################################
+# ./update.sh
+############################################################################################
+rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
+
+rm -f README.md
+PART=header
+echo "# $PART"      >> README.md
+echo ""             >> README.md
+echo "\`\`\`"       >> README.md
+cat $PART           >> README.md
+echo "\`\`\`"       >> README.md
+
+PART=update
+echo "# $PART"      >> README.md
+echo ""             >> README.md
+echo "\`\`\`"       >> README.md
+cat $PART           >> README.md
+echo "\`\`\`"       >> README.md
+
+PART=getheader
+echo "# $PART"      >> README.md
+echo ""             >> README.md
+echo "\`\`\`"       >> README.md
+cat $PART           >> README.md
+echo "\`\`\`"       >> README.md
+
+cat README.md
+git add README.md
+
+
+echo "#"                      > bash.functions
+echo "# bash functions"      >> bash.functions
+for fn in ./*.sh; do
+    echo "############################################################################################" >> bash.functions
+    echo "# $fn"                 >> bash.functions
+    echo "############################################################################################" >> bash.functions
+    cat "$fn"                    >> bash.functions
+    echo ""                      >> bash.functions
+    echo ""                      >> bash.functions
+done
+git add bash.functions
+
+
+git status
+git add -u;git commit  -m "Update"
+git push -u origin master
+
+cp ./getheader       /etc/center
+cp ./bash.functions  /etc/center
+
+
+
+
+
+############################################################################################
+# ./UpperToLowerCase.sh
+############################################################################################
+str="Hello World"
+lowerStr=$(echo "$str" | tr '[:upper:]' '[:lower:]')
+ 
+echo "Input String: $str"
+echo "Result String:  $lowerStr"
+
+
+############################################################################################
+# ./WatchCpuProcesses.sh
+############################################################################################
+watch -n 1 'ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head'
+
+
