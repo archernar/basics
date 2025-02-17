@@ -287,9 +287,15 @@ function! MultiToggle()
         let g:multi_toggle_state = 7
         return
     endif
-
-
     if g:multi_toggle_state == 7
+        nnoremap         <F7> :call EditDotFiles()<cr>
+        call s:SLine("Edit dots and Configs")
+        let g:multi_toggle_state = 8
+        return
+    endif
+
+
+    if g:multi_toggle_state == 8
         nnoremap <F7> :call MultiToggleVoid()<CR>
         call s:SLine("Void Mode")
         let g:multi_toggle_state = 1
@@ -297,6 +303,13 @@ function! MultiToggle()
     endif
 endfunction
 
+function! EditDotFiles()
+        execute  "edit ~/.bashrc"
+        execute  "edit ~/.vimrc"
+        execute  "edit ~/.profile"
+        execute  "edit ~/.vim/vimbrief.txt"
+        execute  "edit ~/.vim/vim.txt"
+endfunction
 function! MultiToggleVoid()
         let g:multi_toggle_state = g:multi_toggle_state = 2
 endfunction
