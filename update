@@ -10,11 +10,10 @@ D=`date`
 FILE="./.vimrc"
 grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
 IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-
 echo "\" *********************************************************DATEOMATIC: $D"      > $Tmp1
 echo "\" *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
-cat  $Tmp >> $Tmp1
-cat $Tmp1  > .vimrc
+cat $Tmp  >> $Tmp1
+cat $Tmp1  > "$FILE"
 
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
 git status
