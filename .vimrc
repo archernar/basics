@@ -458,6 +458,11 @@ func! MenuCB(id, result)
         execute "new | r ! " . l:command
         call g:BufferDelete(0)
     endif
+    if ( a:result == 5 )
+        let l:command = "/usr/bin/git add " . expand('%') . ";git commit -m \"Update\"; git push origin master"
+        execute "new | r ! " . l:command
+        call g:BufferDelete(0)
+    endif
 endfunc
 
 function! g:Test()
@@ -465,7 +470,7 @@ function! g:Test()
 endfunction
 
 function! g:GitPopUp()
-call popup_menu(['Status', 'add', 'commit', 'push' ], 
+call popup_menu(['Status', 'add', 'commit', 'push', 'all' ], 
      \ #{ title: "Git", callback: 'MenuCB', line: 25, col: 40, 
      \ highlight: 'Question', border: [], close: 'click',  padding: [1,1,0,1]} )
 endfunction
