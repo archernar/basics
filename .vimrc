@@ -463,6 +463,11 @@ func! MenuCB(id, result)
         execute "new | r ! " . l:command
         call g:BufferDelete(0)
     endif
+    if ( a:result == 6 )
+        let l:command = "./make"
+        execute "new | r ! " . l:command
+        call g:BufferDelete(0)
+    endif
 endfunc
 
 function! g:Test()
@@ -470,7 +475,7 @@ function! g:Test()
 endfunction
 
 function! g:GitPopUp()
-call popup_menu(['Status', 'add', 'commit', 'push', 'all' ], 
+call popup_menu(['Status', 'add', 'commit', 'push', 'all', 'make' ], 
      \ #{ title: "Git", callback: 'MenuCB', line: 25, col: 40, 
      \ highlight: 'Question', border: [], close: 'click',  padding: [1,1,0,1]} )
 endfunction
