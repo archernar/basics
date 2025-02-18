@@ -474,8 +474,12 @@ function! g:Test()
     let l:NOTHING = 0
 endfunction
 
+
+" https://vi.stackexchange.com/questions/24462/what-are-the-new-popup-windows-in-vim-8-2
 function! g:GitPopUp()
 call popup_menu(['Status', 'add', 'commit', 'push', 'all', 'make' ], 
      \ #{ title: "Git", callback: 'MenuCB', line: 25, col: 40, 
      \ highlight: 'Question', border: [], close: 'click',  padding: [1,1,0,1]} )
 endfunction
+
+
