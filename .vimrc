@@ -1,5 +1,4 @@
-" *********************************************************DATEOMATIC: Mon Feb 17 09:41:36 AM EST 2025
-" *********************************************************HASHOMATIC: f3dae019f3b34e2d30916b063b1d636e
+" *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
                 " *************************************************************************************
 set nocompatible
@@ -368,3 +367,27 @@ endfunction
 "
 " hello
 "
+"
+" Option 1: Add the current file
+nnoremap <leader>gaf :!git add %<CR>
+
+" Option 2: Add the current file and stage changes
+nnoremap <leader>gac :!git add % && git commit -m "Staged changes" <CR>
+
+" Option 3: Add all changes in the current directory
+nnoremap <leader>gaa :!git add .<CR>
+
+" Option 4: Add all changes in the current directory and stage changes
+nnoremap <leader>gss :!git add . && git commit -m "Staged all changes" <CR>
+
+" Option 5: Add the current file and show git status
+nnoremap <leader>gas :!git add %<CR>:!git status<CR>
+
+" Option 6: Add all changes in the current directory and show git status
+nnoremap <leader>gaas :!git add .<CR>:!git status<CR>
+
+" Option 7: Add the current file and run a custom git command
+"nnoremap <leader>gac :!git add % && git commit -m <C-r>=@%<CR><CR>
+
+" Option 8: Add all changes in the current directory and run a custom git command
+nnoremap <leader>gacc :!git add . && git commit -m <C-r>=getcwd()<CR><CR>
