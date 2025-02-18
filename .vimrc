@@ -1,5 +1,5 @@
-" *********************************************************DATEOMATIC: Tue Feb 18 10:34:20 AM EST 2025
-" *********************************************************HASHOMATIC: e5633215aa8cc7b0d70853437281c370
+" *********************************************************DATEOMATIC: Tue Feb 18 10:10:57 AM EST 2025
+" *********************************************************HASHOMATIC: 7328fd41c4cedc56694ca2fbeb4c6185
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
                 " *************************************************************************************
@@ -296,7 +296,8 @@ function! MultiToggle()
         return
     endif
     if g:multi_toggle_state == 8
-        nnoremap         <F7> :call OpenReadOnlyFile("/tmp/zed")<CR>
+        " nnoremap         <F7> :call OpenReadOnlyFile("/tmp/zed")<CR>
+        nnoremap         <F7> :call Test()<CR>
         call s:SLine("Test")
         let g:multi_toggle_state = 9
         return
@@ -326,6 +327,9 @@ let g:multi_toggle_state = 1
 let &statusline = "Void Mode"
 nnoremap <F7> :call MultiToggleVoid()<CR>
 nnoremap <F8> :call MultiToggle()<CR>
+nnoremap <F9> :call GitPopUp()<CR>
+
+
 
 function! ToLowerUnderCursor()
   " Get the current cursor position.
@@ -405,6 +409,16 @@ function! g:OpenReadOnlyFileExit()
     silent exe "bd!"
     echom ""
 endfunction
+function! g:BufferDelete(...)
+        if (a:1 == 0)
+            nnoremap <silent> <buffer> q     :call g:BufferDelete(1)<cr>
+            nnoremap <silent> <buffer> <F1>  :call g:BufferDelete(1)<cr>
+            nnoremap <silent> <buffer> <esc> :call g:BufferDelete(1)<cr>
+        else
+            silent exe "bd!"
+        endif
+    echom ""
+endfunction
 function! g:OpenReadOnlyFile(...)
         let l:filename = a:1
         exe "set nopaste"
@@ -419,4 +433,39 @@ function! g:OpenReadOnlyFile(...)
             silent exe "normal gg0"
         endif
         exe "set paste"
+endfunction
+
+"https://www.baeldung.com/linux/vim-find-full-path-current-file#:~:text=The%20%25%20Register,%2C%20depending%20on%20the%20context).
+"let l:command = "/usr/bin/git add " . expand('%') . ";git commit -m \"Update\"; git push origin master"
+func! MenuCB(id, result)
+    if ( a:result == 1 )
+        let l:command = "git status"
+        execute "new | r ! " . l:command
+        call g:BufferDelete(0)
+    endif
+    if ( a:result == 2 )
+        let l:command = "/usr/bin/git add " . expand('%')
+        execute "new | r ! " . l:command
+        call g:BufferDelete(0)
+    endif
+    if ( a:result == 3 )
+        let l:command = "git commit -m \"Update\""
+        execute "new | r ! " . l:command
+        call g:BufferDelete(0)
+    endif
+    if ( a:result == 4 )
+        let l:command = "git push origin master"
+        execute "new | r ! " . l:command
+        call g:BufferDelete(0)
+    endif
+endfunc
+
+function! g:Test()
+    let l:NOTHING = 0
+endfunction
+
+function! g:GitPopUp()
+call popup_menu(['Status', 'add', 'commit', 'push' ], 
+     \ #{ title: "Git", callback: 'MenuCB', line: 25, col: 40, 
+     \ highlight: 'Question', border: [], close: 'click',  padding: [1,1,0,1]} )
 endfunction
