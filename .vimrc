@@ -1,3 +1,5 @@
+" *********************************************************DATEOMATIC: Tue Feb 18 10:10:57 AM EST 2025
+" *********************************************************HASHOMATIC: 7328fd41c4cedc56694ca2fbeb4c6185
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
                 " *************************************************************************************
@@ -293,9 +295,15 @@ function! MultiToggle()
         let g:multi_toggle_state = 8
         return
     endif
-
-
     if g:multi_toggle_state == 8
+        nnoremap         <F7> :call DisplayFileReadonlyPopup("/tmp/zed")<CR>
+        call s:SLine("Test")
+        let g:multi_toggle_state = 9
+        return
+    endif
+
+
+    if g:multi_toggle_state == 9
         nnoremap <F7> :call MultiToggleVoid()<CR>
         call s:SLine("Void Mode")
         let g:multi_toggle_state = 1
@@ -391,3 +399,67 @@ nnoremap <leader>gaas :!git add .<CR>:!git status<CR>
 
 " Option 8: Add all changes in the current directory and run a custom git command
 nnoremap <leader>gacc :!git add . && git commit -m <C-r>=getcwd()<CR><CR>
+
+
+
+function! DisplayFileReadonlyPopup(filepath)
+  " Check if the file exists and is readable
+  if !filereadable(a:filepath)
+    echo "File not found or not readable: " . a:filepath
+    return
+  endif
+
+  " Create a new buffer for the popup
+  silent new
+  let bufnum = bufnr("%")
+
+  " Set options for the buffer (readonly, no swap, no undo, no list in buffers)
+  "setlocal readonly noswapfile nobuflisted noundofile nowindow
+  setlocal readonly noswapfile
+
+  " Read the file contents into the buffer
+  silent execute "read " . a:filepath
+
+  " Open the popup window.  Adjust width and height as needed.
+  call popup_create(bufnum, { 'title': fnamemodify(a:filepath, ':t'),'line': 1,'col': 1,'width': 80,'height': 20,'scrollbar': 1,'border': 1, 'wrap': 1})
+
+  " Store the popup ID in the buffer so we can close it later
+  let b:popup_id = popup_getid()
+
+endfunction
+
+"    call popup_create(bufnum, {
+"      \ 'title': fnamemodify(a:filepath, ':t'),
+"      \ 'line': 1,
+"      \ 'col': 1,
+"      \ 'width': 80,
+"      \ 'height': 20,
+"      \ 'scrollbar': 1,
+"      \ 'border': 1,
+"      \ 'wrap': 1,
+"      \ 'close': 'any',
+"      \ })
+" Example mapping to display the current file in a popup
+nnoremap <leader>pf :call DisplayFileReadonlyPopup("%:p")<CR>
+
+" Example mapping to display a specific file in a popup
+nnoremap <leader>po :call DisplayFileReadonlyPopup("path/to/my/file.txt")<CR>  " Replace with your path
+
+" Example command to display a file
+command! -nargs=1 DisplayFileReadonlyPopup :call DisplayFileReadonlyPopup(<q-args>)
+
+" Function to close the popup
+function! CloseReadonlyPopup()
+  if exists("b:popup_id") && popup_exists(b:popup_id)
+    call popup_close(b:popup_id)
+    " Clean up the buffer - optional, but good practice
+    " execute "bwipeout " . bufnr("%")
+    unlet b:popup_id
+  endif
+endfunction
+
+" Example mapping to close the popup
+nnoremap <leader>pc :call CloseReadonlyPopup()<CR>
+
+" Autocommand to close the popup when the buffer is closed.
+autocmd BufUnload * call CloseReadonlyPopup()
