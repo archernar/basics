@@ -1,0 +1,61 @@
+
+    if g:multi_toggle_state == 0
+        nnoremap <F7> :call ToUpperUnderCursor()<CR>
+        call s:SLine("Upper Mode")
+        let g:multi_toggle_state = 2
+        return
+    endif
+    if g:multi_toggle_state == 2
+        nnoremap <F7> :call ToLowerUnderCursor()<CR>
+        call s:SLine("Lower Mode")
+        let g:multi_toggle_state = 3
+        return
+    endif
+    if g:multi_toggle_state == 3
+        nnoremap <F7> gv
+        call s:SLine("Re-Select Visual Mode (gv)")
+        let g:multi_toggle_state = 4
+        return
+    endif
+    if g:multi_toggle_state == 4
+        nnoremap <F7> :%s/\<<C-r><C-w>\>//gI<Left><Left><Left>
+        call s:SLine("Search Word Under Cursor Mode")
+        let g:multi_toggle_state = 5
+        return
+    endif
+    if g:multi_toggle_state == 5
+        nnoremap <F7> : e ~/.vim/vimbrief.txt<CR>
+        call s:SLine("Open Vim Cheatsheet Mode " . $HOME . "/.vim/vimbrief.txt")
+        let g:multi_toggle_state = 6
+        return
+    endif
+    if g:multi_toggle_state == 6
+        nnoremap         <F7> :call g:FlashCard($HOME . "/.vim/1.fc")<cr>
+        nnoremap <leader><F7> :call g:UnFlashCard()<cr>
+        call s:SLine("Flash Card Mode")
+        let g:multi_toggle_state = 7
+        return
+    endif
+    if g:multi_toggle_state == 7
+        nnoremap         <F7> :call EditDotFiles()<cr>
+        call s:SLine("Edit dots and Configs")
+        let g:multi_toggle_state = 8
+        return
+    endif
+    if g:multi_toggle_state == 8
+        " nnoremap         <F7> :call OpenReadOnlyFile("/tmp/zed")<CR>
+        let xxx=sMt[g:multi_toggle_state-1][1]
+        call s:SLine(xxx)
+        nnoremap         <F7> :ls<cr>
+        execute "silent nnoremap  <F7> :call g:Test()"
+        let g:multi_toggle_state = 9
+        return
+    endif
+
+
+    if g:multi_toggle_state == 9
+        nnoremap <F7> :call MultiToggleVoid()<CR>
+        call s:SLine("Void Mode")
+        let g:multi_toggle_state = 1
+        return
+    endif
