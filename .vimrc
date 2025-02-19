@@ -1,5 +1,5 @@
-" *********************************************************DATEOMATIC: Wed Feb 19 08:24:43 AM EST 2025
-" *********************************************************HASHOMATIC: 642fc90a19d85fdd8fbd13c6578b4537
+" *********************************************************DATEOMATIC: Wed Feb 19 06:48:51 PM EST 2025
+" *********************************************************HASHOMATIC: ea59d4dd7fdfb54a4d916370885d281a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
                 " *************************************************************************************
@@ -252,64 +252,28 @@ endfunction
                 " Multi Toggle
                 " *************************************************************************************
 function! MultiToggle()
-    if g:multi_toggle_state == 1
-        nnoremap <F7> :call ToUpperUnderCursor()<CR>
-        call s:SLine("Upper Mode")
-        let g:multi_toggle_state = 2
-        return
-    endif
-    if g:multi_toggle_state == 2
-        nnoremap <F7> :call ToLowerUnderCursor()<CR>
-        call s:SLine("Lower Mode")
-        let g:multi_toggle_state = 3
-        return
-    endif
-    if g:multi_toggle_state == 3
-        nnoremap <F7> gv
-        call s:SLine("Re-Select Visual Mode (gv)")
-        let g:multi_toggle_state = 4
-        return
-    endif
-    if g:multi_toggle_state == 4
-        nnoremap <F7> :%s/\<<C-r><C-w>\>//gI<Left><Left><Left>
-        call s:SLine("Search Word Under Cursor Mode")
-        let g:multi_toggle_state = 5
-        return
-    endif
-    if g:multi_toggle_state == 5
-        nnoremap <F7> : e ~/.vim/vimbrief.txt<CR>
-        call s:SLine("Open Vim Cheatsheet Mode " . $HOME . "/.vim/vimbrief.txt")
-        let g:multi_toggle_state = 6
-        return
-    endif
-    if g:multi_toggle_state == 6
-        nnoremap         <F7> :call g:FlashCard($HOME . "/.vim/1.fc")<cr>
-        nnoremap <leader><F7> :call g:UnFlashCard()<cr>
-        call s:SLine("Flash Card Mode")
-        let g:multi_toggle_state = 7
-        return
-    endif
+    let sMt=[]
+    call add(sMt, [0, "Upper Mode",                  ":call ToUpperUnderCursor()<cr>"])
+    call add(sMt, [1, "Lower Mode",                  ":call ToLowerUnderCursor()<cr>"])
+    call add(sMt, [2, "ls",                          ":ls<cr>"])
+    call add(sMt, [3 ,"Edit dots and configs",       ":call EditDotFiles()<cr>"])
+    call add(sMt, [4, "Open Vim Sheatsheet",         ":e ~/.vim/vimbrief.txt<cr>"])
+    call add(sMt, [5, "Reselect Visual Selection",   "gv"])
+    call add(sMt, [6, "Search for Word Under Cursor",":%s/\<<C-r><C-w>\>//gI<Left><Left><Left>"])
+    call add(sMt, [6, "6One", "Two"])
+    call add(sMt, [7, "7One", "Two"])
+    call add(sMt, [8, "8TestMeMe", "silent nnoremap  <F7> :call g:Test()" ])
+    call add(sMt, [9, "9One", "Two"])
+    let g:multi_toggle_state = g:multi_toggle_state  + 1
     if g:multi_toggle_state == 7
-        nnoremap         <F7> :call EditDotFiles()<cr>
-        call s:SLine("Edit dots and Configs")
-        let g:multi_toggle_state = 8
-        return
+        let g:multi_toggle_state = 0
     endif
-    if g:multi_toggle_state == 8
-        " nnoremap         <F7> :call OpenReadOnlyFile("/tmp/zed")<CR>
-        nnoremap         <F7> :call Test()<CR>
-        call s:SLine("Test")
-        let g:multi_toggle_state = 9
-        return
-    endif
+    execute "silent nnoremap <F7> " . sMt[g:multi_toggle_state][2]
+    let &statusline = sMt[g:multi_toggle_state][1]
+endfunction
 
-
-    if g:multi_toggle_state == 9
-        nnoremap <F7> :call MultiToggleVoid()<CR>
-        call s:SLine("Void Mode")
-        let g:multi_toggle_state = 1
-        return
-    endif
+function! g:Test()
+    echom "TEST TEST TEST TEST"
 endfunction
 
 function! EditDotFiles()
@@ -320,10 +284,10 @@ function! EditDotFiles()
         execute  "edit ~/.vim/vim.txt"
 endfunction
 function! MultiToggleVoid()
-        let g:multi_toggle_state = g:multi_toggle_state = 2
+        let g:multi_toggle_state = 0
 endfunction
 
-let g:multi_toggle_state = 1
+let g:multi_toggle_state = -1
 let &statusline = "Void Mode"
 nnoremap <F7> :call MultiToggleVoid()<CR>
 nnoremap <F8> :call MultiToggle()<CR>
@@ -468,16 +432,18 @@ func! MenuCB(id, result)
         execute "new | r ! " . l:command
         call g:BufferDelete(0)
     endif
+    if ( a:result == 7 )
+        let l:command = "./deploy"
+        execute "new | r ! " . l:command
+        call g:BufferDelete(0)
+    endif
 endfunc
 
-function! g:Test()
-    let l:NOTHING = 0
-endfunction
 
 
 " https://vi.stackexchange.com/questions/24462/what-are-the-new-popup-windows-in-vim-8-2
 function! g:GitPopUp()
-call popup_menu(['Status', 'add', 'commit', 'push', 'all', 'make' ], 
+call popup_menu(['Status', 'add', 'commit', 'push', 'all', 'make', 'deploy' ], 
      \ #{ title: "Git", callback: 'MenuCB', line: 25, col: 40, 
      \ highlight: 'Question', border: [], close: 'click',  padding: [1,1,0,1]} )
 endfunction
