@@ -17,7 +17,7 @@ shopt -s checkwinsize
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 git_toplevel() {
-    git rev-parse --show-toplevel 2> /dev/null
+    git rev-parse --show-toplevel 2> /dev/null | sed -e "s,^$HOME,~,"
 }
 git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
