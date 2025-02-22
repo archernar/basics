@@ -1,5 +1,5 @@
-" *********************************************************DATEOMATIC: Sat Feb 22 07:56:22 EST 2025
-" *********************************************************HASHOMATIC: ccd7c55d15b15657710b7f79f1e5e7bc
+" *********************************************************DATEOMATIC: Sat Feb 22 08:06:38 EST 2025
+" *********************************************************HASHOMATIC: 70f1fc80a3201bba0f12c81e0977147e
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
                 " *************************************************************************************
@@ -292,6 +292,7 @@ let &statusline = "Void Mode"
 nnoremap <F7> :call MultiToggleVoid()<CR>
 nnoremap <F8> :call MultiToggle()<CR>
 nnoremap <F9> :call GitPopUp()<CR>
+nnoremap <F10> :call UtilityPopUp("./xx")<CR>
 
 
 
@@ -403,9 +404,11 @@ endfunction
 "let l:command = "/usr/bin/git add " . expand('%') . ";git commit -m \"Update\"; git push origin master"
 func! MenuCB(id, result)
     if ( a:result == 1 )
-        let l:command = "git status"
-        execute "new | r ! " . l:command
-        call g:BufferDelete(0)
+        let l:command = "git status > /tmp/out"
+        call system(l:command)
+        call UtilityPopUp("/tmp/out")
+        "execute "new | r ! " . l:command
+        "call g:BufferDelete(0)
     endif
     if ( a:result == 2 )
         let l:command = "/usr/bin/git add " . expand('%')
@@ -437,20 +440,35 @@ func! MenuCB(id, result)
         execute "new | r ! " . l:command
         call g:BufferDelete(0)
     endif
+    if ( a:result == 8 )
+        call g:UtilityPopupCommand("df -h")
+    endif
+    if ( a:result == 9 )
+        call g:UtilityBufferCommand("cat /usr/share/vim/vim82/doc/*.txt")
+    endif
+    if ( a:result == 10 )
+        call g:UtilityBufferCommand("cat /usr/share/vim/vim82/doc/pop*.txt")
+    endif
+
 endfunc
 
+func! DoNothingCB(id, result)
+    let l:NOTHING=0
+endfunc
 
 
 " https://vi.stackexchange.com/questions/24462/what-are-the-new-popup-windows-in-vim-8-2
 function! g:GitPopUp()
-call popup_menu(['Status', 'add', 'commit', 'push', 'all', 'make', 'deploy' ], 
+call popup_menu(['Status', 'add', 'commit', 'push', 'all', 'make', 'deploy','df','vim', 'pop' ], 
      \ #{ title: "Git", callback: 'MenuCB', line: 25, col: 40, 
      \ highlight: 'Question', border: [], close: 'click',  padding: [1,1,0,1]} )
 endfunction
 
 
+
+
 " *****************************************************************************************************
-                " Utility Command (Popup, Buffer)
+                " Utility Popup
                 " *************************************************************************************
 function! g:UtilityPopupCommand(...)
     call system( a:1 . " > /tmp/out" )
@@ -512,3 +530,4 @@ function! ScrollPopup(nlines)
 
     call popup_setoptions(winids[0], {'firstline': firstline})
 endfunction
+
