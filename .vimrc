@@ -1,5 +1,5 @@
-" *********************************************************DATEOMATIC: Sat Feb 22 08:06:38 EST 2025
-" *********************************************************HASHOMATIC: 70f1fc80a3201bba0f12c81e0977147e
+" *********************************************************DATEOMATIC: Sat Feb 22 08:13:34 EST 2025
+" *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
                 " *************************************************************************************
@@ -292,7 +292,7 @@ let &statusline = "Void Mode"
 nnoremap <F7> :call MultiToggleVoid()<CR>
 nnoremap <F8> :call MultiToggle()<CR>
 nnoremap <F9> :call GitPopUp()<CR>
-nnoremap <F10> :call UtilityPopUp("./xx")<CR>
+nnoremap <F10> :call UtilityPopUp("/home/mestes/vim.txt")<CR>
 
 
 
