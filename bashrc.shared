@@ -1,3 +1,5 @@
+# *********************************************************DATEOMATIC: Mon Feb 24 21:09:09 EST 2025
+# *********************************************************HASHOMATIC: 2acfa67ab81b5e3354abf249b4d32069
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -20,7 +22,8 @@ git_toplevel() {
     git rev-parse --show-toplevel 2> /dev/null | sed -e "s,^$HOME,~,"
 }
 git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+     #git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+     git branch 2> /dev/null | sed 's/^..//'
 }
 git_origin() {
      # git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -36,7 +39,7 @@ function collapse_hostname {
 }
 #export PS1='$(collapse_hostname)$(collapse_pwd)$(git_origin)$(git_branch)\n>> '
 #export PS1='$(git_origin)$(git_branch)\n$(collapse_hostname)$(collapse_pwd)>> '
-export PS1='$(collapse_hostname) $(collapse_pwd) $(git_toplevel):$(git_branch)>> '
+export PS1='$(collapse_hostname) $(collapse_pwd) ($(git_toplevel):$(git_branch))>> '
 
 alias ls='ls -t'
 alias scm='cd /etc/scm'
