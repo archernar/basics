@@ -55,7 +55,7 @@ echo "# *********************************************************HASHOMATIC: $IH
 cat $Tmp  >> $Tmp1
 cat $Tmp1  > "$FILE"
 
-ls | gawk '
+git ls-files | gawk '
 BEGIN {
     BASE="https://raw.githubusercontent.com/archernar/basics/refs/heads/master/"
 }
