@@ -62,7 +62,7 @@ if [ "$UPDATE" == "LOCAL" ]; then
     git status
 fi
 if [ "$UPDATE" == "REMOTE" ]; then                                                                                               
-    git add -a;
+    git add .
     git commit  -m "Update"
     git push -u origin master
     git status
