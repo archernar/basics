@@ -57,13 +57,15 @@ cat $Tmp1  > "$FILE"
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
 
 if [ "$UPDATE" == "LOCAL" ]; then                                                                                               
+    git add .
+    git commit  -m "Update"
     git status
-    git add -u;git commit  -m "Update"
 fi
 if [ "$UPDATE" == "REMOTE" ]; then                                                                                               
-    git status
-    git add -u;git commit  -m "Update"
+    git add -a;
+    git commit  -m "Update"
     git push -u origin master
+    git status
 fi
 
 
