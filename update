@@ -55,6 +55,14 @@ echo "# *********************************************************HASHOMATIC: $IH
 cat $Tmp  >> $Tmp1
 cat $Tmp1  > "$FILE"
 
+ls | gawk '
+BEGIN {
+    BASE="https://raw.githubusercontent.com/archernar/basics/refs/heads/master/"
+}
+{
+    print BASE $0
+}' > get.raw
+git add get.raw
 
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
 
