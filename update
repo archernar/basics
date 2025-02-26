@@ -9,7 +9,7 @@ trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
 UPDATE="NO"
-while getopts "rul" arg
+while getopts "ruls" arg
 do
     case $arg in
         r) UPDATE="REMOTE"
@@ -17,6 +17,8 @@ do
         u) UPDATE="REMOTE"
            ;;
         l) UPDATE="LOCAL"
+           ;;
+        s) UPDATE="STATUS"
            ;;
     esac
 done
@@ -65,6 +67,9 @@ if [ "$UPDATE" == "REMOTE" ]; then
     git add .
     git commit  -m "Update"
     git push -u origin master
+    git status
+fi
+if [ "$UPDATE" == "STATUS" ]; then                                                                                               
     git status
 fi
 

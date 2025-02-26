@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Tue Feb 25 23:38:02 EST 2025
-# *********************************************************HASHOMATIC: 7d56d35b2daf97e7a5116b4964abe1e4
+# *********************************************************DATEOMATIC: Tue Feb 25 23:44:51 EST 2025
+# *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -72,7 +72,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source ~/bashrc_shared
+source ~/bashrc.shared
 
 
 export JAVA_HOME=/home/mestes/jdk-23.0.2
