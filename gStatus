@@ -23,6 +23,11 @@ shift $(($OPTIND - 1))
 rm -f zed zedd qed qedd  fed fedd
 echo ""           > $Tmp
 echo ""          >> $Tmp
+
+git rev-parse --show-toplevel 2> /dev/null | sed -e "s,^$HOME,~,"  >> $Tmp
+git branch 2> /dev/null | sed 's/^..//'                            >> $Tmp
+echo ""          >> $Tmp
+echo ""          >> $Tmp
 git remote -v    >> $Tmp
 echo ""          >> $Tmp
 echo ""          >> $Tmp
@@ -30,3 +35,6 @@ git status       >> $Tmp
 echo ""          >> $Tmp
 echo ""          >> $Tmp
 cat $Tmp
+git rev-parse --show-toplevel 2> /dev/null | sed -e "s,^$HOME,~,"  > $Tmp
+git branch 2> /dev/null | sed 's/^..//'  >> $Tmp
+git config --get remote.origin.url 2> /dev/null  >> $Tmp
