@@ -11,11 +11,15 @@ trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
 UPDATE="NO"
-while getopts "ur:" arg
+while getopts "cur:" arg
 do
     case $arg in
+        c) clear
+           ;;
         u) UPDATE="YES"
-        r) UA="$OPTARG"
+           exit 0
+           ;;
+        r) OA="$OPTARG"
            exit 0
            ;;
     esac
