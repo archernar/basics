@@ -431,7 +431,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Fri Feb 28 09:02:27 AM EST 2025
+# *********************************************************DATEOMATIC: Fri Feb 28 09:04:00 AM EST 2025
 # *********************************************************HASHOMATIC: 2acfa67ab81b5e3354abf249b4d32069
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -624,7 +624,7 @@ Tmp0=/tmp/$$_$$
 Tmp1=/tmp/$$_$$_$$
 Tmp2=/tmp/$$_$$_$$_$$
 Tmp3=/tmp/$$_$$_$$_$$_$$
-trap 'ex:it 0' INT HUP QUIT TERM ALRM USR1
+trap 'exit 0' INT HUP QUIT TERM ALRM USR1
 trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
@@ -679,7 +679,7 @@ Tmp0=/tmp/$$_$$
 Tmp1=/tmp/$$_$$_$$
 Tmp2=/tmp/$$_$$_$$_$$
 Tmp3=/tmp/$$_$$_$$_$$_$$
-trap 'ex:it 0' INT HUP QUIT TERM ALRM USR1
+trap 'exit 0' INT HUP QUIT TERM ALRM USR1
 trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
