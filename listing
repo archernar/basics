@@ -26,6 +26,7 @@ do
 done
 shift $(($OPTIND - 1))
 
+echo "```"
 for file in `ls | grep -v README.md`; do
         # Operations on each file, for example:
         echo ""
@@ -36,4 +37,5 @@ for file in `ls | grep -v README.md`; do
         figlet "$file"
         cat "$file"
 done
+echo "```"
 
