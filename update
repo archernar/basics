@@ -64,6 +64,8 @@ BEGIN {
 }' > get.raw
 git add get.raw
 
+listing > README.md
+
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
 
 if [ "$UPDATE" == "LOCAL" ]; then                                                                                               
