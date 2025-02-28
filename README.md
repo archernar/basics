@@ -1,3 +1,4 @@
+```
 
 #######################################################################################################
 #######################################################################################################
@@ -436,7 +437,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
+# *********************************************************DATEOMATIC: Fri Feb 28 08:58:47 AM EST 2025
 # *********************************************************HASHOMATIC: 2acfa67ab81b5e3354abf249b4d32069
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -604,8 +605,12 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes
@@ -735,6 +740,7 @@ do
 done
 shift $(($OPTIND - 1))
 
+echo "\`\`\`"
 for file in `ls | grep -v README.md`; do
         # Operations on each file, for example:
         echo ""
@@ -745,6 +751,7 @@ for file in `ls | grep -v README.md`; do
         figlet "$file"
         cat "$file"
 done
+echo "\`\`\`"
 
 
 #######################################################################################################
@@ -2036,3 +2043,4 @@ Diff
     :diffthis - make current window part of diff
     :dif[fupdate] - update differences
     :diffo[ff] - switch off diff mode for current window
+```
