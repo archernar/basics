@@ -4,32 +4,7 @@
 | [bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop) | [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) | [fred](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/fred) | [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) |
 | [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) | [listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing) | [make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make) |
 | [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) | [testtest](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) |
-| [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |  |  |  |  |  |
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/fred
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt
+| [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) | [zeddd](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/zeddd) |  |  |  |  |
 ```
 
 #######################################################################################################
@@ -463,7 +438,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sat Mar  1 10:14:46 EST 2025
+# *********************************************************DATEOMATIC: Sat Mar  1 10:16:04 EST 2025
 # *********************************************************HASHOMATIC: 2acfa67ab81b5e3354abf249b4d32069
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -827,6 +802,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/zeddd
 
 #######################################################################################################
 Processing file: listing
@@ -1867,10 +1843,8 @@ cat get.raw | gawk '
     n=split($0,A,"/")
     print "[" A[n] "](" $0 ")"
 }' > $Tmp
-cp $Tmp zeddd
-create_markdown_table "$Tmp" > README.md
 
-cat get.raw  >> README.md
+create_markdown_table "$Tmp" > README.md
 ./listing   >> README.md
 
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
