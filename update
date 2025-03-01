@@ -50,7 +50,7 @@ create_markdown_table() {
     if [[ $line_count -eq 0 ]]; then
       if [[ $first_row -eq 1 ]]; then
           #echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
-          #echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
+          echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
           echo "|----------|----------|----------|----------|----------|----------|"
           first_row=0
       fi
