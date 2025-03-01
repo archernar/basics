@@ -1,4 +1,3 @@
-| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |
 |----------|----------|----------|----------|----------|----------|
 | [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) | [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) | [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp) | [bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared) |
 | [bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop) | [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) | [fred](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/fred) | [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) |
@@ -441,7 +440,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sat Mar  1 10:17:48 EST 2025
+# *********************************************************DATEOMATIC: Sat Mar  1 10:19:34 EST 2025
 # *********************************************************HASHOMATIC: 2acfa67ab81b5e3354abf249b4d32069
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -1776,7 +1775,8 @@ create_markdown_table() {
   while IFS= read -r line; do
     if [[ $line_count -eq 0 ]]; then
       if [[ $first_row -eq 1 ]]; then
-          echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
+          #echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
+          #echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
           echo "|----------|----------|----------|----------|----------|----------|"
           first_row=0
       fi
