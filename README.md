@@ -6,7 +6,12 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhe
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/fred
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing
@@ -433,7 +438,7 @@ scriptinfo() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#-" | sed -e "s/^#-
 
 #######################################################################################################
 Processing file: bashrc.shared
-# *********************************************************DATEOMATIC: Sat Mar  1 09:57:19 EST 2025
+# *********************************************************DATEOMATIC: Sat Mar  1 09:59:00 EST 2025
 # *********************************************************HASHOMATIC: 2acfa67ab81b5e3354abf249b4d32069
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -714,7 +719,12 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhe
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/fred
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing
@@ -1664,7 +1674,7 @@ BEGIN {
 git add get.raw
 
 cat get.raw  > README.md
-listing     >> README.md
+./listing   >> README.md
 
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
 
