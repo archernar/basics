@@ -18,7 +18,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sat Mar  1 10:24:38 EST 2025
+# *********************************************************DATEOMATIC: Sat Mar  1 10:25:44 EST 2025
 # *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -100,15 +100,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 
 #######################################################################################################
-Processing file: .git
-        _ _   
-   __ _(_) |_ 
-  / _` | | __|
- | (_| | | |_ 
-(_)__, |_|\__|
-  |___/       
-
-#######################################################################################################
 Processing file: .vimrc
        _                    
 __   _(_)_ __ ___  _ __ ___ 
@@ -116,7 +107,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sat Mar  1 10:24:38 EST 2025
+" *********************************************************DATEOMATIC: Sat Mar  1 10:25:44 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1081,7 +1072,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sat Mar  1 10:24:38 EST 2025
+# *********************************************************DATEOMATIC: Sat Mar  1 10:25:44 EST 2025
 # *********************************************************HASHOMATIC: 2acfa67ab81b5e3354abf249b4d32069
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -1484,7 +1475,7 @@ done
 shift $(($OPTIND - 1))
 
 echo "\`\`\`"
-for file in `ls -A | grep -v README.md | sort | uniq`; do
+for file in `ls -A | grep -v README.md | grep -v .git | sort | uniq`; do
         # Operations on each file, for example:
         echo ""
         echo "#######################################################################################################"
@@ -2304,47 +2295,6 @@ nnoremap <leader>pc :call CloseReadonlyPopup()<CR>
 
 " Autocommand to close the popup when the buffer is closed.
 autocmd BufUnload * call CloseReadonlyPopup()
-
-#######################################################################################################
-Processing file: setgit
-          _        _ _   
- ___  ___| |_ __ _(_) |_ 
-/ __|/ _ \ __/ _` | | __|
-\__ \  __/ || (_| | | |_ 
-|___/\___|\__\__, |_|\__|
-             |___/       
-#!/usr/bin/bash
-Tmp=/tmp/$$
-Tmp1=/tmp/$$_$$
-trap 'exit 0' INT HUP QUIT TERM ALRM USR1
-trap 'rm -f "$Tmp" "$Tmp1"' EXIT
-rm -f "$Tmp"  >/dev/null 2>&1
-rm -f "$Tmp1"  >/dev/null 2>&1
-#    Specifying the location of the ".git" directory using this option (or GIT_DIR environment variable)
-#    turns off the repository discovery that tries to find a directory with ".git" subdirectory (which is how
-#    the repository and the top-level of the working tree are discovered), and tells Git that you are at the
-#    top level of the working tree. If you are not at the top-level directory of the working tree, you should
-#    tell Git where the top-level of the working tree is, with the --work-tree=<path> option (or
-#    GIT_WORK_TREE environment variable)
-touch $Tmp
-
-if [[ -z "$1" ]]; then
-  # echo "Argument is blank"
-  echo "unset GIT_DIR"        > $Tmp
-  echo "unset GIT_WORK_TREE" >> $Tmp
-  echo "unset GW"            >> $Tmp
-  echo "unset GD"            >> $Tmp
-else
-  # echo "Argument is not blank: $1"
-  echo "export GIT_DIR=\"/etc/scm/$1/.git\""  >> $Tmp
-  echo "export GD=\"/etc/scm/$1/.git\""       >> $Tmp
-  echo "export GIT_WORK_TREE=\"/etc/scm/$1\"" >> $Tmp
-  echo "export GW=\"/etc/scm/$1\""            >> $Tmp
-  echo "git status"                           >> $Tmp
-fi
-
-cat $Tmp
-
 
 #######################################################################################################
 Processing file: testtest
