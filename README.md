@@ -463,7 +463,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sat Mar  1 10:14:26 EST 2025
+# *********************************************************DATEOMATIC: Sat Mar  1 10:14:46 EST 2025
 # *********************************************************HASHOMATIC: 2acfa67ab81b5e3354abf249b4d32069
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -1867,7 +1867,7 @@ cat get.raw | gawk '
     n=split($0,A,"/")
     print "[" A[n] "](" $0 ")"
 }' > $Tmp
-cp $Tmp zed
+cp $Tmp zeddd
 create_markdown_table "$Tmp" > README.md
 
 cat get.raw  >> README.md
@@ -2212,13 +2212,13 @@ Diff
     :diffo[ff] - switch off diff mode for current window
 
 #######################################################################################################
-Processing file: zed
-             _ 
- _______  __| |
-|_  / _ \/ _` |
- / /  __/ (_| |
-/___\___|\__,_|
-               
+Processing file: zeddd
+             _     _     _ 
+ _______  __| | __| | __| |
+|_  / _ \/ _` |/ _` |/ _` |
+ / /  __/ (_| | (_| | (_| |
+/___\___|\__,_|\__,_|\__,_|
+                           
 [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc)
 [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc)
 [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md)

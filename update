@@ -119,7 +119,7 @@ cat get.raw | gawk '
     n=split($0,A,"/")
     print "[" A[n] "](" $0 ")"
 }' > $Tmp
-cp $Tmp zed
+cp $Tmp zeddd
 create_markdown_table "$Tmp" > README.md
 
 cat get.raw  >> README.md
