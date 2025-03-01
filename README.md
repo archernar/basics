@@ -463,7 +463,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sat Mar  1 10:13:51 EST 2025
+# *********************************************************DATEOMATIC: Sat Mar  1 10:14:26 EST 2025
 # *********************************************************HASHOMATIC: 2acfa67ab81b5e3354abf249b4d32069
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -1867,7 +1867,7 @@ cat get.raw | gawk '
     n=split($0,A,"/")
     print "[" A[n] "](" $0 ")"
 }' > $Tmp
-
+cp $Tmp zed
 create_markdown_table "$Tmp" > README.md
 
 cat get.raw  >> README.md
@@ -2210,4 +2210,38 @@ Diff
     :diffthis - make current window part of diff
     :dif[fupdate] - update differences
     :diffo[ff] - switch off diff mode for current window
+
+#######################################################################################################
+Processing file: zed
+             _ 
+ _______  __| |
+|_  / _ \/ _` |
+ / /  __/ (_| |
+/___\___|\__,_|
+               
+[.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc)
+[.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc)
+[README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md)
+[bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions)
+[bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp)
+[bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared)
+[bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop)
+[deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy)
+[fred](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/fred)
+[gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff)
+[gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync)
+[gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal)
+[gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus)
+[gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate)
+[gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin)
+[get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw)
+[listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing)
+[make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make)
+[newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript)
+[notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes)
+[other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other)
+[setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit)
+[testtest](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest)
+[update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update)
+[vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt)
 ```
