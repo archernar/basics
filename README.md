@@ -1,13 +1,27 @@
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt
 ```
 
 #######################################################################################################
 Processing file: bash.functions
- _               _        __                  _   _                 
-| |__   __ _ ___| |__    / _|_   _ _ __   ___| |_(_) ___  _ __  ___ 
-| '_ \ / _` / __| '_ \  | |_| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
-| |_) | (_| \__ \ | | |_|  _| |_| | | | | (__| |_| | (_) | | | \__ \
-|_.__/ \__,_|___/_| |_(_)_|  \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
-                                                                    
 #
 # bash functions
 ############################################################################################
@@ -365,12 +379,6 @@ watch -n 1 'ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head'
 
 #######################################################################################################
 Processing file: bash.justhelp
- _               _        _           _   _          _       
-| |__   __ _ ___| |__    (_)_   _ ___| |_| |__   ___| |_ __  
-| '_ \ / _` / __| '_ \   | | | | / __| __| '_ \ / _ \ | '_ \ 
-| |_) | (_| \__ \ | | |_ | | |_| \__ \ |_| | | |  __/ | |_) |
-|_.__/ \__,_|___/_| |_(_)/ |\__,_|___/\__|_| |_|\___|_| .__/ 
-                       |__/                           |_|    
 #================================================================
 # HEADER
 #=====================:===========================================
@@ -425,13 +433,7 @@ scriptinfo() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#-" | sed -e "s/^#-
 
 #######################################################################################################
 Processing file: bashrc.shared
- _               _                    _                        _ 
-| |__   __ _ ___| |__  _ __ ___   ___| |__   __ _ _ __ ___  __| |
-| '_ \ / _` / __| '_ \| '__/ __| / __| '_ \ / _` | '__/ _ \/ _` |
-| |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
-|_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
-                                                                 
-# *********************************************************DATEOMATIC: Fri Feb 28 09:04:00 AM EST 2025
+# *********************************************************DATEOMATIC: Sat Mar  1 09:57:19 EST 2025
 # *********************************************************HASHOMATIC: 2acfa67ab81b5e3354abf249b4d32069
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -502,12 +504,6 @@ export VIMTEMPLATES="~/TPLS/"
 
 #######################################################################################################
 Processing file: bashtop
- _               _     _              
-| |__   __ _ ___| |__ | |_ ___  _ __  
-| '_ \ / _` / __| '_ \| __/ _ \| '_ \ 
-| |_) | (_| \__ \ | | | || (_) | |_) |
-|_.__/ \__,_|___/_| |_|\__\___/| .__/ 
-                               |_|    
 #!/usr/bin/bash
 # *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
 # *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
@@ -569,53 +565,80 @@ file_type=$(file -b --mime-type "$full_filename")
 
 #######################################################################################################
 Processing file: deploy
-     _            _             
-  __| | ___ _ __ | | ___  _   _ 
- / _` |/ _ \ '_ \| |/ _ \| | | |
-| (_| |  __/ |_) | | (_) | |_| |
- \__,_|\___| .__/|_|\___/ \__, |
-           |_|            |___/ 
 
 cp ./.bashrc              ~
 cp ./bashrc.shared        ~
 
 #######################################################################################################
-Processing file: get.raw
-            _                        
-  __ _  ___| |_   _ __ __ ___      __
- / _` |/ _ \ __| | '__/ _` \ \ /\ / /
-| (_| |  __/ |_ _| | | (_| |\ V  V / 
- \__, |\___|\__(_)_|  \__,_| \_/\_/  
- |___/                               
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt
+Processing file: fred
+#!/usr/bin/bash
+# *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
+# *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap 'ex:it 0' INT HUP QUIT TERM ALRM USR1
+trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
+rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
+
+git status > $Tmp
+cat $Tmp | gawk '
+/Your branch is up to date with .origin.master./ {
+    print ":oOK"
+}
+{
+    next
+}
+'
+
+#######################################################################################################
+Processing file: gDiff
+#!/usr/bin/bash
+# *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
+# *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap 'ex:it 0' INT HUP QUIT TERM ALRM USR1
+trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
+rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
+
+UPDATE="NO"
+while getopts "ur:" arg
+do
+    case $arg in
+        u) UPDATE="YES"
+           exit 0
+           ;;
+        r) UA="$OPTARG"
+           exit 0
+           ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+clear
+git fetch origin        > $Tmp
+git diff origin/master >> $Tmp
+cat $Tmp
+
+#######################################################################################################
+Processing file: gHardSync
+git fetch origin
+git reset --hard origin/master
+git clean -fd
+
+#######################################################################################################
+Processing file: gLocal
+git add "$1"
+git commit -m "Update"
 
 #######################################################################################################
 Processing file: gStatus
-       ____  _        _             
-  __ _/ ___|| |_ __ _| |_ _   _ ___ 
- / _` \___ \| __/ _` | __| | | / __|
-| (_| |___) | || (_| | |_| |_| \__ \
- \__, |____/ \__\__,_|\__|\__,_|___/
- |___/                              
 #!/usr/bin/bash
 # *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
 # *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
@@ -658,19 +681,14 @@ git branch 2> /dev/null | sed 's/^..//'  >> $Tmp
 git config --get remote.origin.url 2> /dev/null  >> $Tmp
 
 #######################################################################################################
+Processing file: gUpdate
+git add "$1"
+git commit -m "Update"
+git push origin master
+git status
+
+#######################################################################################################
 Processing file: gUpdateFromOrigin
-       _   _           _       _       _____                     ___       _ 
-  __ _| | | |_ __   __| | __ _| |_ ___|  ___| __ ___  _ __ ___  / _ \ _ __(_)
- / _` | | | | '_ \ / _` |/ _` | __/ _ \ |_ | '__/ _ \| '_ ` _ \| | | | '__| |
-| (_| | |_| | |_) | (_| | (_| | ||  __/  _|| | | (_) | | | | | | |_| | |  | |
- \__, |\___/| .__/ \__,_|\__,_|\__\___|_|  |_|  \___/|_| |_| |_|\___/|_|  |_|
- |___/      |_|                                                              
-       _       
-  __ _(_)_ __  
- / _` | | '_ \ 
-| (_| | | | | |
- \__, |_|_| |_|
- |___/         
 #!/usr/bin/bash
 # *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
 # *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
@@ -687,13 +705,30 @@ rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 git pull
 
 #######################################################################################################
+Processing file: get.raw
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt
+
+#######################################################################################################
 Processing file: listing
- _ _     _   _             
-| (_)___| |_(_)_ __   __ _ 
-| | / __| __| | '_ \ / _` |
-| | \__ \ |_| | | | | (_| |
-|_|_|___/\__|_|_| |_|\__, |
-                     |___/ 
 #!/usr/bin/bash
 # *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
 # *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
@@ -736,12 +771,6 @@ echo "\`\`\`"
 
 #######################################################################################################
 Processing file: make
-                 _        
- _ __ ___   __ _| | _____ 
-| '_ ` _ \ / _` | |/ / _ \
-| | | | | | (_| |   <  __/
-|_| |_| |_|\__,_|_|\_\___|
-                          
 echo "Copy .vimrc to ~"
 cp .vimrc ~
 echo "Copy .bashrc to ~"
@@ -752,12 +781,6 @@ ls -l
 
 #######################################################################################################
 Processing file: newbashscript
-                     _               _                   _       _   
- _ __   _____      _| |__   __ _ ___| |__  ___  ___ _ __(_)_ __ | |_ 
-| '_ \ / _ \ \ /\ / / '_ \ / _` / __| '_ \/ __|/ __| '__| | '_ \| __|
-| | | |  __/\ V  V /| |_) | (_| \__ \ | | \__ \ (__| |  | | |_) | |_ 
-|_| |_|\___| \_/\_/ |_.__/ \__,_|___/_| |_|___/\___|_|  |_| .__/ \__|
-                                                          |_|        
 #!/usr/bin/bash
 Tmp=/tmp/$$
 Tmp0=/tmp/$$_$$
@@ -1004,12 +1027,6 @@ shift $(($OPTIND - 1))
 
 #######################################################################################################
 Processing file: notes
-             _            
- _ __   ___ | |_ ___  ___ 
-| '_ \ / _ \| __/ _ \/ __|
-| | | | (_) | ||  __/\__ \
-|_| |_|\___/ \__\___||___/
-                          
 
     if g:multi_toggle_state == 0
         nnoremap <F7> :call ToUpperUnderCursor()<CR>
@@ -1074,12 +1091,6 @@ Processing file: notes
 
 #######################################################################################################
 Processing file: other
-       _   _               
-  ___ | |_| |__   ___ _ __ 
- / _ \| __| '_ \ / _ \ '__|
-| (_) | |_| | | |  __/ |   
- \___/ \__|_| |_|\___|_|   
-                           
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
                 " *************************************************************************************
@@ -1546,12 +1557,6 @@ autocmd BufUnload * call CloseReadonlyPopup()
 
 #######################################################################################################
 Processing file: setgit
-          _        _ _   
- ___  ___| |_ __ _(_) |_ 
-/ __|/ _ \ __/ _` | | __|
-\__ \  __/ || (_| | | |_ 
-|___/\___|\__\__, |_|\__|
-             |___/       
 #!/usr/bin/bash
 Tmp=/tmp/$$
 Tmp1=/tmp/$$_$$
@@ -1587,23 +1592,11 @@ cat $Tmp
 
 #######################################################################################################
 Processing file: testtest
- _            _   _            _   
-| |_ ___  ___| |_| |_ ___  ___| |_ 
-| __/ _ \/ __| __| __/ _ \/ __| __|
-| ||  __/\__ \ |_| ||  __/\__ \ |_ 
- \__\___||___/\__|\__\___||___/\__|
-                                   
 test
 test
 
 #######################################################################################################
 Processing file: update
-                 _       _       
- _   _ _ __   __| | __ _| |_ ___ 
-| | | | '_ \ / _` |/ _` | __/ _ \
-| |_| | |_) | (_| | (_| | ||  __/
- \__,_| .__/ \__,_|\__,_|\__\___|
-      |_|                        
 #!/usr/bin/bash
 Tmp=/tmp/$$
 Tmp0=/tmp/$$_$$
@@ -1670,7 +1663,8 @@ BEGIN {
 }' > get.raw
 git add get.raw
 
-listing > README.md
+cat get.raw  > README.md
+listing     >> README.md
 
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
 
@@ -1699,12 +1693,6 @@ fi
 
 #######################################################################################################
 Processing file: vim.txt
-       _            _        _   
-__   _(_)_ __ ___  | |___  _| |_ 
-\ \ / / | '_ ` _ \ | __\ \/ / __|
- \ V /| | | | | | || |_ >  <| |_ 
-  \_/ |_|_| |_| |_(_)__/_/\_\\__|
-                                 
 Global
 
     :h[elp] keyword - open help for keyword

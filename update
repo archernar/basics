@@ -64,7 +64,8 @@ BEGIN {
 }' > get.raw
 git add get.raw
 
-listing > README.md
+cat get.raw  > README.md
+listing     >> README.md
 
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
 
