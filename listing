@@ -27,7 +27,7 @@ done
 shift $(($OPTIND - 1))
 
 echo "\`\`\`"
-for file in `ls | grep -v README.md | sort | uniq`; do
+for file in `ls -a | grep -v README.md | sort | uniq`; do
         # Operations on each file, for example:
         echo ""
         echo "#######################################################################################################"
