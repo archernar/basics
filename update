@@ -112,6 +112,8 @@ BEGIN {
 }' > get.raw
 git add get.raw
 
+rm -f "$Tmp"  >/dev/null 2>&1;
+
 cat get.raw | gawk '
 {
     n=split($0,A,"/")
