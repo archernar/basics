@@ -29,6 +29,54 @@ if [ "$UPDATE" == "YES" ]; then
 else                                                                                                                         
     RETVAL="NO"                                                                                                              
 fi                                                                                                                           
+#!/bin/bash
+
+# Function to create a markdown table from a text file with 6 columns
+create_markdown_table() {
+  local input_file="$1"
+
+  # Check if the input file exists
+  if [[ ! -f "$input_file" ]]; then
+    echo "Error: Input file '$input_file' not found."
+    return 1
+  fi
+
+  # Read lines from the file and create table rows
+  local line_count=0
+  local row=""
+  local first_row=1
+
+  while IFS= read -r line; do
+    if [[ $line_count -eq 0 ]]; then
+      if [[ $first_row -eq 1 ]]; then
+          echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
+          echo "|----------|----------|----------|----------|----------|----------|"
+          first_row=0
+      fi
+    fi
+
+    row+="| $line "
+
+    line_count=$((line_count + 1))
+
+    if [[ $line_count -eq 6 ]]; then
+      echo "$row|"
+      row=""
+      line_count=0
+    fi
+  done < "$input_file"
+
+  # Handle remaining lines if the total line count is not a multiple of 6
+  if [[ $line_count -gt 0 ]]; then
+    for ((i = line_count; i < 6; i++)); do
+        row+="|  "
+    done
+    echo "$row|"
+  fi
+}
+
+# Example usage (if you want to test it with a file named "input.txt"):
+# create_markdown_table "input.txt"
 
 D=`date`
 FILE="./.vimrc"
@@ -64,7 +112,9 @@ BEGIN {
 }' > get.raw
 git add get.raw
 
-cat get.raw  > README.md
+create_markdown_table "get.raw" > README.md
+
+cat get.raw  >> README.md
 ./listing   >> README.md
 
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
