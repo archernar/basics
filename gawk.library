@@ -1,0 +1,329 @@
+# --- String Manipulation ---
+
+# Trims leading and trailing whitespace from a string.
+function trim(str,  trimmed) {
+  sub(/^[ \t\r\n]+/, "", str);
+  sub(/[ \t\r\n]+$/, "", str);
+  return str;
+}
+
+# Splits a string into an array based on a delimiter, handles empty fields
+function split_preserve_empty(str, arr, delim,  i, field) {
+  delete arr;
+  i = 1;
+  while (match(str, "([^" delim "]*)" delim "?", field)) {
+    arr[i++] = field[1];
+    str = substr(str, RLENGTH + 1);
+  }
+  if (length(str) > 0) {
+    arr[i] = str;
+  }
+  return i;
+}
+
+# Checks if a string starts with a given prefix.
+function starts_with(str, prefix) {
+  return substr(str, 1, length(prefix)) == prefix;
+}
+
+# Checks if a string ends with a given suffix.
+function ends_with(str, suffix) {
+  return substr(str, length(str) - length(suffix) + 1) == suffix;
+}
+
+# Replaces all occurrences of a substring with another string.
+function replace_all(str, from, to,  result) {
+  result = str;
+  while (sub(from, to, result)) {}
+  return result;
+}
+
+#Checks if a string contains a given substring
+function contains(str, sub) {
+    return index(str, sub) != 0;
+}
+
+# --- Array Manipulation ---
+
+# Checks if an array contains a given value.
+function array_contains(arr, val,  i) {
+  for (i in arr) {
+    if (arr[i] == val) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
+# Joins array elements into a string with a delimiter.
+function array_join(arr, delim,  i, result) {
+  result = "";
+  for (i in arr) {
+    result = result (result == "" ? "" : delim) arr[i];
+  }
+  return result;
+}
+
+#Filters an array based on a given condition (function).
+function array_filter(arr, filter_func,  i, new_arr, index) {
+    delete new_arr;
+    index = 1;
+    for (i in arr){
+        if(filter_func(arr[i])){
+            new_arr[index++] = arr[i];
+        }
+    }
+    return index -1; #Return the size of the new array.
+}
+
+#Maps an array to a new array using a function.
+function array_map(arr, map_func,  i, new_arr, index){
+    delete new_arr;
+    index = 1;
+    for(i in arr){
+        new_arr[index++] = map_func(arr[i]);
+    }
+    return index -1;
+}
+
+# --- Data Processing ---
+
+# Calculates the sum of values in an array.
+function array_sum(arr,  i, sum) {
+  sum = 0;
+  for (i in arr) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+# Calculates the average of values in an array.
+function array_average(arr,  sum, count) {
+  sum = array_sum(arr);
+  count = length(arr);
+  if (count == 0) {
+    return 0;
+  }
+  return sum / count;
+}
+
+#Parses CSV data into a 2D array.
+function parse_csv(data, arr, delimiter,  lines, i, fields, j) {
+    lines = split(data, lines, "\n");
+    for (i = 1; i <= lines; i++) {
+        split_preserve_empty(lines[i], fields, delimiter);
+        for (j = 1; j <= length(fields); j++) {
+            arr[i, j] = fields[j];
+        }
+    }
+    return lines;
+}
+
+# --- List Operations (Arrays as Lists) ---
+
+# Append an element to the end of a list (array).
+function list_append(arr, val,  len) {
+  len = length(arr) + 1;
+  arr[len] = val;
+  return len;
+}
+
+# Prepend an element to the beginning of a list (array).
+function list_prepend(arr, val,  i, temp_arr, len) {
+    len = length(arr);
+    for(i = len; i >= 1; i--){
+        temp_arr[i+1] = arr[i];
+    }
+    arr[1] = val;
+    for(i = 2; i <= len+1; i++){
+        arr[i] = temp_arr[i];
+    }
+    return len +1;
+}
+
+# Insert an element at a specific index in a list (array).
+function list_insert(arr, index, val,  i, temp_arr, len) {
+  len = length(arr);
+  if (index < 1 || index > len + 1) {
+    return len; # Invalid index, return original length.
+  }
+
+  for (i = len; i >= index; i--) {
+    temp_arr[i + 1] = arr[i];
+  }
+  arr[index] = val;
+  for (i = index + 1; i <= len + 1; i++) {
+    arr[i] = temp_arr[i];
+  }
+  return len + 1;
+}
+
+# Remove an element at a specific index in a list (array).
+function list_remove_at(arr, index,  i, len) {
+  len = length(arr);
+  if (index < 1 || index > len) {
+    return len; # Invalid index, return original length.
+  }
+
+  for (i = index; i < len; i++) {
+    arr[i] = arr[i + 1];
+  }
+  delete arr[len];
+  return len - 1;
+}
+
+# Remove the first occurrence of a value from a list (array).
+function list_remove_value(arr, val,  i, len) {
+  len = length(arr);
+  for (i = 1; i <= len; i++) {
+    if (arr[i] == val) {
+      list_remove_at(arr, i);
+      return len - 1;
+    }
+  }
+  return len; # Value not found, return original length.
+}
+
+# Get the element at a specific index in a list (array).
+function list_get(arr, index,  len) {
+  len = length(arr);
+  if (index < 1 || index > len) {
+    return ""; # Invalid index, return empty string.
+  }
+  return arr[index];
+}
+
+# Get the index of the first occurrence of a value in a list (array).
+function list_index_of(arr, val,  i, len) {
+  len = length(arr);
+  for (i = 1; i <= len; i++) {
+    if (arr[i] == val) {
+      return i;
+    }
+  }
+  return -1; # Value not found, return -1.
+}
+
+# Get the last index of a value in a list (array).
+function list_last_index_of(arr, val, i, len, last_index){
+    len = length(arr);
+    last_index = -1;
+    for(i = 1; i <= len; i++){
+        if(arr[i] == val){
+            last_index = i;
+        }
+    }
+    return last_index;
+}
+
+# Reverse a list (array).
+function list_reverse(arr,  i, len, temp_arr) {
+  len = length(arr);
+  for (i = 1; i <= len; i++) {
+    temp_arr[i] = arr[i];
+  }
+  for (i = 1; i <= len; i++) {
+    arr[i] = temp_arr[len - i + 1];
+  }
+  return len;
+}
+
+# Slice a list (array) from start_index to end_index (inclusive).
+function list_slice(arr, start_index, end_index,  i, len, new_arr, new_index) {
+  len = length(arr);
+  if (start_index < 1) {
+    start_index = 1;
+  }
+  if (end_index > len) {
+    end_index = len;
+  }
+  if (start_index > end_index) {
+    return 0; # Empty slice, return 0.
+  }
+
+  delete new_arr;
+  new_index = 1;
+  for (i = start_index; i <= end_index; i++) {
+    new_arr[new_index++] = arr[i];
+  }
+  return new_index - 1;
+}
+
+# Concatenate two lists (arrays).
+function list_concat(arr1, arr2,  i, len1, len2, new_arr, new_index) {
+  len1 = length(arr1);
+  len2 = length(arr2);
+  delete new_arr;
+  new_index = 1;
+  for (i = 1; i <= len1; i++) {
+    new_arr[new_index++] = arr1[i];
+  }
+  for (i = 1; i <= len2; i++) {
+    new_arr[new_index++] = arr2[i];
+  }
+  return new_index - 1;
+}
+
+# --- Example Usage (Illustrative) ---
+BEGIN {
+  # String manipulation examples
+  str = "   hello world   ";
+  print "[" trim(str) "]";
+
+  text = "apple,banana,,orange";
+  count = split_preserve_empty(text, fruits, ",");
+  for (i = 1; i <= count; i++) {
+    print "Fruit " i ": [" fruits[i] "]";
+  }
+
+  print starts_with("awk is fun", "awk");
+  print ends_with("awk is fun", "fun");
+  print replace_all("awk is fun", "fun", "powerful");
+  print contains("awk is fun", "is");
+
+  # Array manipulation examples
+  numbers[1] = 10; numbers[2] = 20; numbers[3] = 30;
+  print array_contains(numbers, 20);
+  print array_join(numbers, ", ");
+  print array_sum(numbers);
+  print array_average(numbers);
+
+  # CSV parsing example
+  csv_data = "name,age,city\nJohn,30,New York\nJane,25,London";
+  rows = parse_csv(csv_data, csv_array, ",");
+  for (i = 1; i <= rows; i++) {
+    print csv_array[i, 1] ", " csv_array[i, 2] ", " csv_array[i, 3];
+  }
+
+  # Array filter and map examples
+  function is_even(num){return num % 2 == 0;}
+  even_count = array_filter(numbers, "is_even", even_numbers);
+  print "Even numbers: " array_join(even_numbers, ", ");
+
+  function double(num){return num * 2;}
+  doubled_count = array_map(numbers, "double", doubled_numbers);
+  print "Doubled numbers: " array_join(doubled_numbers, ", ");
+
+  # List operation examples
+  list[1] = 10; list[2] = 20; list[3] = 30;
+
+  list_append(list, 40);
+  list_prepend(list, 5);
+  list_insert(list, 3, 25);
+  list_remove_at(list, 4);
+  list_remove_value(list, 20);
+
+  print "List: " array_join(list, ", ");
+  print "Get index 2: " list_get(list, 2);
+  print "Index of 30: " list_index_of(list, 30);
+  print "Last Index of 10: " list_last_index_of(list,10);
+  list_reverse(list);
+  print "Reversed list: " array_join(list, ", ");
+
+  list2[1] = 100; list2[2] = 200;
+  list_concat(list, list2, combined_list);
+  print "Combined List: " array_join(combined_list, ", ");
+
+  list_slice(combined_list, 2, 4, sliced_list);
+  print "Sliced List: " array_join(sliced_list, ", ");
+}
