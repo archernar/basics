@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat Mar  1 19:40:57 EST 2025
-# *********************************************************HASHOMATIC: 83262e6249839a4f6211993694e9b212
+# *********************************************************DATEOMATIC: Sat Mar  1 19:48:28 EST 2025
+# *********************************************************HASHOMATIC: 2a80d4af46ee248e1284c4071e0f35af
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -31,7 +31,7 @@ git_origin() {
 }
 git_originsync() {
      git config color.ui false
-     git branch -vv 2> /dev/null | gawk '{print $4}' | sed 's/origin/o/' | sed 's/master/m/'
+     git branch -vv 2> /dev/null |  gawk 'match($0, /\[([^\]]+)\]/, a) { print a[1] }' | sed 's/origin/o/' | sed 's/master/m/' | sed 's/ ahead /+/'
 }
 function collapse_pwd {
     curr_pwd=$(pwd | sed -e "s,^$HOME,~,")

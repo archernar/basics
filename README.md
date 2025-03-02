@@ -18,7 +18,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sat Mar  1 19:40:57 EST 2025
+# *********************************************************DATEOMATIC: Sat Mar  1 19:48:28 EST 2025
 # *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -107,7 +107,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sat Mar  1 19:40:57 EST 2025
+" *********************************************************DATEOMATIC: Sat Mar  1 19:48:28 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1072,8 +1072,8 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sat Mar  1 19:40:57 EST 2025
-# *********************************************************HASHOMATIC: 83262e6249839a4f6211993694e9b212
+# *********************************************************DATEOMATIC: Sat Mar  1 19:48:28 EST 2025
+# *********************************************************HASHOMATIC: 2a80d4af46ee248e1284c4071e0f35af
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -1105,7 +1105,7 @@ git_origin() {
 }
 git_originsync() {
      git config color.ui false
-     git branch -vv 2> /dev/null | gawk '{print $4}' | sed 's/origin/o/' | sed 's/master/m/'
+     git branch -vv 2> /dev/null |  gawk 'match($0, /\[([^\]]+)\]/, a) { print a[1] }' | sed 's/origin/o/' | sed 's/master/m/' | sed 's/ ahead /+/'
 }
 function collapse_pwd {
     curr_pwd=$(pwd | sed -e "s,^$HOME,~,")
