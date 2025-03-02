@@ -25,8 +25,8 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar  2 09:18:51 EST 2025
-# *********************************************************HASHOMATIC: 2ef3e016cf870c4abb698c65591ace38
+# *********************************************************DATEOMATIC: Sun Mar  2 09:20:18 EST 2025
+# *********************************************************HASHOMATIC: 00da6432c87aaa4cb45b423e3f000abb
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -108,7 +108,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 mkdir -p                     ~/BACKUPS
 backup_file   .bashrc        ~/BACKUPS
 backup_file   bashrc.shared  ~/BACKUPS
-backup_file   bashrc.lib     ~/BACKUPS
+backup_file   bash.library   ~/BACKUPS
 backup_file   .vimrc         ~/BACKUPS
 
 #######################################################################################################
@@ -119,7 +119,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar  2 09:18:51 EST 2025
+" *********************************************************DATEOMATIC: Sun Mar  2 09:20:18 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1084,7 +1084,7 @@ Processing file: bash.lib
 | |_) | (_| \__ \ | | |_| | | |_) |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/ 
                                    
-# *********************************************************DATEOMATIC: Sun Mar  2 09:18:51 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 09:20:18 EST 2025
 # *********************************************************HASHOMATIC: 15ac643b1547cc6afe0e96637925d3b3
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
@@ -1444,7 +1444,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar  2 09:18:51 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 09:20:18 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
