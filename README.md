@@ -1,23 +1,25 @@
-| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |
-|----------|----------|----------|----------|----------|----------|
-| [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) | [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) | [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp) | [bash.lib](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.lib) |
-| [bash.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library) | [bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared) | [bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop) | [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) | [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) |
-| [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) | [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) |
-| [listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing) | [make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make) | [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) |
-| [testtest](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) | [zeddd](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/zeddd) |  |  |
+|    A     |    B     |    C     |    D     |    E     |
+|----------|----------|----------|----------|----------|
+| [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) | [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) | [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp) |
+| [bash.lib](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.lib) | [bash.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library) | [bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared) | [bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop) | [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) |
+| [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) |
+| [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) | [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) | [listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing) | [make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make) |
+| [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) | [testtest](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest) |
+| [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) | [zeddd](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/zeddd) |  |  |
 
 
 ## bash.library includes
 
-| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |
-|----------|----------|----------|----------|----------|----------|
-| git_toplevel() | git_branch() | git_origin() | git_originsync() | collapse_pwd() | collapse_hostname() |
-| backup_file() | trim() | starts_with() | ends_with() | contains() | replace() |
-| substring() | mkdir_p() | exists() | is_file() | is_dir() | abspath() |
-| basename() | dirname() | extension() | cp_r() | mv_f() | rm_rf() |
-| command_exists() | pidof_name() | kill_name() | kill_pid() | run_and_exit_code() | run_and_output() |
-| run_and_error() | array_contains() | array_join() | is_reachable() | eprint() | read_prompt() |
-| timestamp_ms() |  |  |  |  |  |
+|    A     |    B     |    C     |    D     |    E     |
+|----------|----------|----------|----------|----------|
+| git_toplevel() | git_branch() | git_origin() | git_originsync() | collapse_pwd() |
+| collapse_hostname() | backup_file() | trim() | starts_with() | ends_with() |
+| contains() | replace() | substring() | mkdir_p() | exists() |
+| is_file() | is_dir() | abspath() | basename() | dirname() |
+| extension() | cp_r() | mv_f() | rm_rf() | command_exists() |
+| pidof_name() | kill_name() | kill_pid() | run_and_exit_code() | run_and_output() |
+| run_and_error() | array_contains() | array_join() | is_reachable() | eprint() |
+| read_prompt() | timestamp_ms() |  |  |  |
 
 
 ```
@@ -30,7 +32,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar  2 09:23:01 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 09:27:13 EST 2025
 # *********************************************************HASHOMATIC: 00da6432c87aaa4cb45b423e3f000abb
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -124,7 +126,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar  2 09:23:01 EST 2025
+" *********************************************************DATEOMATIC: Sun Mar  2 09:27:13 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1100,7 +1102,7 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sun Mar  2 09:23:01 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 09:27:13 EST 2025
 # *********************************************************HASHOMATIC: 77e792af1f9803f78a4bf512f1f7b045
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
@@ -1389,7 +1391,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar  2 09:23:01 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 09:27:13 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2695,7 +2697,6 @@ if [ "$UPDATE" == "YES" ]; then
 else                                                                                                                         
     RETVAL="NO"                                                                                                              
 fi                                                                                                                           
-#!/bin/bash
 
 # Function to create a markdown table from a text file with 6 columns
 create_markdown_table() {
@@ -2716,8 +2717,8 @@ create_markdown_table() {
     if [[ $line_count -eq 0 ]]; then
       if [[ $first_row -eq 1 ]]; then
           #echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
-          echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
-          echo "|----------|----------|----------|----------|----------|----------|"
+          echo "|    A     |    B     |    C     |    D     |    E     |"
+          echo "|----------|----------|----------|----------|----------|"
           first_row=0
       fi
     fi
@@ -2726,16 +2727,16 @@ create_markdown_table() {
 
     line_count=$((line_count + 1))
 
-    if [[ $line_count -eq 6 ]]; then
+    if [[ $line_count -eq 5 ]]; then
       echo "$row|"
       row=""
       line_count=0
     fi
   done < "$input_file"
 
-  # Handle remaining lines if the total line count is not a multiple of 6
+  # Handle remaining lines if the total line count is not a multiple of 5
   if [[ $line_count -gt 0 ]]; then
-    for ((i = line_count; i < 6; i++)); do
+    for ((i = line_count; i < 5; i++)); do
         row+="|  "
     done
     echo "$row|"

@@ -29,7 +29,6 @@ if [ "$UPDATE" == "YES" ]; then
 else                                                                                                                         
     RETVAL="NO"                                                                                                              
 fi                                                                                                                           
-#!/bin/bash
 
 # Function to create a markdown table from a text file with 6 columns
 create_markdown_table() {
@@ -50,8 +49,8 @@ create_markdown_table() {
     if [[ $line_count -eq 0 ]]; then
       if [[ $first_row -eq 1 ]]; then
           #echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
-          echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
-          echo "|----------|----------|----------|----------|----------|----------|"
+          echo "|    A     |    B     |    C     |    D     |    E     |"
+          echo "|----------|----------|----------|----------|----------|"
           first_row=0
       fi
     fi
@@ -60,16 +59,16 @@ create_markdown_table() {
 
     line_count=$((line_count + 1))
 
-    if [[ $line_count -eq 6 ]]; then
+    if [[ $line_count -eq 5 ]]; then
       echo "$row|"
       row=""
       line_count=0
     fi
   done < "$input_file"
 
-  # Handle remaining lines if the total line count is not a multiple of 6
+  # Handle remaining lines if the total line count is not a multiple of 5
   if [[ $line_count -gt 0 ]]; then
-    for ((i = line_count; i < 6; i++)); do
+    for ((i = line_count; i < 5; i++)); do
         row+="|  "
     done
     echo "$row|"
