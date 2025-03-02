@@ -18,7 +18,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar  2 08:05:52 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 08:08:16 EST 2025
 # *********************************************************HASHOMATIC: f13fde2c119ab2920ae2ce1765afd44a
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -110,7 +110,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar  2 08:05:52 EST 2025
+" *********************************************************DATEOMATIC: Sun Mar  2 08:08:16 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1075,7 +1075,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar  2 08:05:52 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 08:08:16 EST 2025
 # *********************************************************HASHOMATIC: aedd080d839a692fbd026771b9136df2
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -1491,8 +1491,8 @@ Processing file: getme
 | (_| |  __/ |_| | | | | |  __/
  \__, |\___|\__|_| |_| |_|\___|
  |___/                         
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
 
 #######################################################################################################
 Processing file: listing
@@ -2494,7 +2494,7 @@ cat get.raw | sort | uniq | gawk '
     print "[" A[n] "](" $0 ")"
 }' > $Tmp
 
-grep bashrc get.raw > getme
+grep bashrc get.raw | gawk '{print "wget " $0}' > getme
 
 create_markdown_table "$Tmp" > README.md
 echo ""     >> README.md
