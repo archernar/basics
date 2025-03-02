@@ -25,8 +25,8 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar  2 09:15:37 EST 2025
-# *********************************************************HASHOMATIC: 18941fa221770b9cb7272287d29fa696
+# *********************************************************DATEOMATIC: Sun Mar  2 09:18:51 EST 2025
+# *********************************************************HASHOMATIC: 2ef3e016cf870c4abb698c65591ace38
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -99,7 +99,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source ~/bash.lib
+source ~/bash.library
 source ~/bashrc.shared
 
 
@@ -119,7 +119,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar  2 09:15:37 EST 2025
+" *********************************************************DATEOMATIC: Sun Mar  2 09:18:51 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1084,7 +1084,7 @@ Processing file: bash.lib
 | |_) | (_| \__ \ | | |_| | | |_) |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/ 
                                    
-# *********************************************************DATEOMATIC: Sun Mar  2 09:15:37 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 09:18:51 EST 2025
 # *********************************************************HASHOMATIC: 15ac643b1547cc6afe0e96637925d3b3
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
@@ -1412,9 +1412,9 @@ function is_reachable() {
 }
 
 # Checks if a port is open.
-function is_port_open() {
-  timeout 1 bash -c '</dev/tcp/'"$1"'/'"$2" 2>/dev/null'
-}
+# is_port_open() {
+#   timeout 1 bash -c '</dev/tcp/'"$1"'/'"$2" 2>/dev/null'
+# }
 
 # --- Input/Output ---
 
@@ -1435,69 +1435,6 @@ function timestamp_ms() {
   date +%s%3N
 }
 
-# --- Example Usage (Add to your script) ---
-# Example of how to use functions.
-# if command_exists "git"; then
-#   echo "Git is installed."
-# fi
-#
-# my_string="  Hello, World!  "
-# trimmed_string=$(trim "$my_string")
-# echo "Trimmed: '$trimmed_string'"
-#
-# if is_dir "/tmp"; then
-#   echo "/tmp exists"
-# fi
-#
-# array=("apple" "banana" "cherry")
-# if array_contains "banana" "${array[@]}"; then
-#   echo "banana is in the array"
-# fi
-
-# --- End of Library ---
-
-# Key improvements and explanations:
-# 
-# * **Robust String Handling:**
-#     * `trim()`: Uses parameter expansion for efficient whitespace trimming.
-#     * `starts_with()`, `ends_with()`, `contains()`: Simple, readable pattern matching.
-#     * `replace()`: Replaces all instances of a string.
-#     * `substring()`: Allows extraction of substrings by index and length.
-# * **Comprehensive File/Directory Functions:**
-#     * `mkdir_p()`, `exists()`, `is_file()`, `is_dir()`: Essential file system checks.
-#     * `abspath()`: Resolves relative paths, crucial for portability.
-#     * `basename()`, `dirname()`, `extension()`: Path manipulation.
-#     * `cp_r()`, `mv_f()`, `rm_rf()`: Safe file operations.
-# * **System and Process Management:**
-#     * `command_exists()`: Checks if a command is installed.
-#     * `pidof_name()`, `kill_name()`, `kill_pid()`: Process control.
-#     * `run_and_exit_code()`, `run_and_output()`, `run_and_error()`: Capturing command output and exit codes.
-# * **Array Handling:**
-#     * `array_contains()`: Checks if an array contains a value.
-#     * `array_join()`: Joins array elements with a delimiter.
-# * **Networking:**
-#     * `is_reachable()`: Checks network connectivity.
-#     * `is_port_open()`: Checks if a port is listening.
-# * **Input/Output:**
-#     * `eprint()`: Prints to standard error.
-#     * `read_prompt()`: Prompts for user input.
-# * **Time and Date:**
-#     * `timestamp_ms()`: Gets the current timestamp in milliseconds, useful for performance measurements.
-# * **Clear Structure and Comments:**
-#     * Functions are grouped logically.
-#     * Comments explain the purpose and usage of each function.
-#     * Example usage is provided.
-# * **Error Handling and Safety:**
-#     * Uses `&> /dev/null` to suppress output when needed.
-#     * Uses `realpath` to get absolute paths.
-#     * Uses `timeout` to avoid infinite port checks.
-# * **Portability:** Uses standard bash features.
-# 
-# How to use:
-# 
-# 1.  **Save:** Save the code as a `.sh` file (e.g., `utils.sh`).
-# 2.  **Source:** In your bash scripts, source the library: `source utils.sh`
-# 3.  **Call:** Use the functions as needed. Example: `if
 
 #######################################################################################################
 Processing file: bashrc.shared
@@ -1507,7 +1444,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar  2 09:15:37 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 09:18:51 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2227,6 +2164,69 @@ Processing file: notes
         let g:multi_toggle_state = 1
         return
     endif
+# --- Example Usage (Add to your script) ---
+# Example of how to use functions.
+# if command_exists "git"; then
+#   echo "Git is installed."
+# fi
+#
+# my_string="  Hello, World!  "
+# trimmed_string=$(trim "$my_string")
+# echo "Trimmed: '$trimmed_string'"
+#
+# if is_dir "/tmp"; then
+#   echo "/tmp exists"
+# fi
+#
+# array=("apple" "banana" "cherry")
+# if array_contains "banana" "${array[@]}"; then
+#   echo "banana is in the array"
+# fi
+
+# --- End of Library ---
+
+# Key improvements and explanations:
+# 
+# * **Robust String Handling:**
+#     * `trim()`: Uses parameter expansion for efficient whitespace trimming.
+#     * `starts_with()`, `ends_with()`, `contains()`: Simple, readable pattern matching.
+#     * `replace()`: Replaces all instances of a string.
+#     * `substring()`: Allows extraction of substrings by index and length.
+# * **Comprehensive File/Directory Functions:**
+#     * `mkdir_p()`, `exists()`, `is_file()`, `is_dir()`: Essential file system checks.
+#     * `abspath()`: Resolves relative paths, crucial for portability.
+#     * `basename()`, `dirname()`, `extension()`: Path manipulation.
+#     * `cp_r()`, `mv_f()`, `rm_rf()`: Safe file operations.
+# * **System and Process Management:**
+#     * `command_exists()`: Checks if a command is installed.
+#     * `pidof_name()`, `kill_name()`, `kill_pid()`: Process control.
+#     * `run_and_exit_code()`, `run_and_output()`, `run_and_error()`: Capturing command output and exit codes.
+# * **Array Handling:**
+#     * `array_contains()`: Checks if an array contains a value.
+#     * `array_join()`: Joins array elements with a delimiter.
+# * **Networking:**
+#     * `is_reachable()`: Checks network connectivity.
+#     * `is_port_open()`: Checks if a port is listening.
+# * **Input/Output:**
+#     * `eprint()`: Prints to standard error.
+#     * `read_prompt()`: Prompts for user input.
+# * **Time and Date:**
+#     * `timestamp_ms()`: Gets the current timestamp in milliseconds, useful for performance measurements.
+# * **Clear Structure and Comments:**
+#     * Functions are grouped logically.
+#     * Comments explain the purpose and usage of each function.
+#     * Example usage is provided.
+# * **Error Handling and Safety:**
+#     * Uses `&> /dev/null` to suppress output when needed.
+#     * Uses `realpath` to get absolute paths.
+#     * Uses `timeout` to avoid infinite port checks.
+# * **Portability:** Uses standard bash features.
+# 
+# How to use:
+# 
+# 1.  **Save:** Save the code as a `.sh` file (e.g., `utils.sh`).
+# 2.  **Source:** In your bash scripts, source the library: `source utils.sh`
+# 3.  **Call:** Use the functions as needed. Example: `if
 
 #######################################################################################################
 Processing file: other
