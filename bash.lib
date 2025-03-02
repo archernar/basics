@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Mar  2 08:55:53 EST 2025
-# *********************************************************HASHOMATIC: b495dfc6b60b6348fe8fc440582fcc2c
+# *********************************************************DATEOMATIC: Sun Mar  2 09:15:37 EST 2025
+# *********************************************************HASHOMATIC: 15ac643b1547cc6afe0e96637925d3b3
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 function git_toplevel() {
@@ -59,3 +59,4 @@ function backup_file() {
 }
 # Example usage:
 # backup_file my_file.txt /path/to/backup/directory
+
