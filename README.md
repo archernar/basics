@@ -9,10 +9,6 @@
 
 ## bash.lib includes
 
-| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |
-|----------|----------|----------|----------|----------|----------|
-| git_toplevel() | git_branch() | git_origin() | git_originsync() | collapse_pwd() | collapse_hostname() |
-| backup_file() |  |  |  |  |  |
 
 
 ```
@@ -25,7 +21,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar  2 09:20:47 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 09:21:42 EST 2025
 # *********************************************************HASHOMATIC: 00da6432c87aaa4cb45b423e3f000abb
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -119,7 +115,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar  2 09:20:47 EST 2025
+" *********************************************************DATEOMATIC: Sun Mar  2 09:21:42 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1084,68 +1080,8 @@ Processing file: bash.lib
 | |_) | (_| \__ \ | | |_| | | |_) |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/ 
                                    
-# *********************************************************DATEOMATIC: Sun Mar  2 09:20:47 EST 2025
-# *********************************************************HASHOMATIC: 15ac643b1547cc6afe0e96637925d3b3
-
-# show up to 3 parent dirs, except ~, resolve all other dir aliases
-function git_toplevel() {
-     if [ -d ".git" ]; then
-         git rev-parse --show-toplevel 2> /dev/null | sed -e "s,^$HOME,~,"
-     fi
-}
-function git_branch() {
-     #git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-     if [ -d ".git" ]; then
-         git branch 2> /dev/null | sed 's/^..//' | sed 's/master/m/'
-     fi
-}
-function git_origin() {
-     # git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-     if [ -d ".git" ]; then
-         git config --get remote.origin.url 2> /dev/null
-     fi
-}
-function git_originsync() {
-     if [ -d ".git" ]; then
-         git config color.ui false
-         git branch -vv 2> /dev/null |  gawk 'match($0, /\[([^\]]+)\]/, a) { print a[1] }' | sed 's/origin/o/' | sed 's/master/m/' | sed 's/ ahead /+/'
-     else
-         echo ""
-     fi
-}
-function collapse_pwd() {
-    curr_pwd=$(pwd | sed -e "s,^$HOME,~,")
-    echo $curr_pwd
-}
-function collapse_hostname() {
-    curr_hostname=$(hostname)
-    echo $curr_hostname
-}
-
-function backup_file() {
-  local filename="$1"
-  local backup_dir="$2" # New argument for backup directory
-  local timestamp=$(date +%Y%m%d%H%M%S)
-  local backup_filename="${filename##*/}.backup.${timestamp}" # Extract filename only
-  local backup_path="${backup_dir}/${backup_filename}"
-
-  if [ -f "$filename" ]; then
-    if [ -d "$backup_dir" ]; then # Check if backup directory exists
-      cp "$filename" "$backup_path"
-      echo "File '$filename' backed up to '$backup_path'."
-    else
-      echo "Error: Backup directory '$backup_dir' does not exist."
-      return 1
-    fi
-
-  else
-    echo "Error: File '$filename' not found."
-    return 1
-  fi
-}
-# Example usage:
-# backup_file my_file.txt /path/to/backup/directory
-
+# *********************************************************DATEOMATIC: Sun Mar  2 09:21:42 EST 2025
+# *********************************************************HASHOMATIC: d41d8cd98f00b204e9800998ecf8427e
 
 #######################################################################################################
 Processing file: bash.library
@@ -1444,7 +1380,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar  2 09:20:47 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 09:21:42 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
