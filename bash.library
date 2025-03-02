@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Mar  2 08:55:53 EST 2025
-# *********************************************************HASHOMATIC: b495dfc6b60b6348fe8fc440582fcc2c
+# *********************************************************DATEOMATIC: Sun Mar  2 09:23:01 EST 2025
+# *********************************************************HASHOMATIC: 77e792af1f9803f78a4bf512f1f7b045
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 function git_toplevel() {

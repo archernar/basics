@@ -104,7 +104,7 @@ echo "# *********************************************************HASHOMATIC: $IH
 cat $Tmp  >> $Tmp1
 cat $Tmp1  > "$FILE"
 
-FILE="./bash.lib"
+FILE="./bash.library"
 grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
 IHASH=$(md5sum "$Tmp" | awk '{print $1}')
 echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
@@ -129,14 +129,14 @@ cat get.raw | sort | uniq | gawk '
     print "[" A[n] "](" $0 ")"
 }' > $Tmp
 
-grep function bash.lib | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp1
+grep function bash.library | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp1
 
 grep bash get.raw | gawk '{print "wget " $0}' > getme
 
 create_markdown_table "$Tmp"   > README.md
 echo ""     >> README.md
 echo ""     >> README.md
-echo "## bash.lib includes"     >> README.md
+echo "## bash.library includes"     >> README.md
 echo ""     >> README.md
 create_markdown_table "$Tmp1" >> README.md
 echo ""     >> README.md

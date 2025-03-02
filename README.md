@@ -7,8 +7,17 @@
 | [testtest](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) | [zeddd](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/zeddd) |  |  |
 
 
-## bash.lib includes
+## bash.library includes
 
+| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |
+|----------|----------|----------|----------|----------|----------|
+| git_toplevel() | git_branch() | git_origin() | git_originsync() | collapse_pwd() | collapse_hostname() |
+| backup_file() | trim() | starts_with() | ends_with() | contains() | replace() |
+| substring() | mkdir_p() | exists() | is_file() | is_dir() | abspath() |
+| basename() | dirname() | extension() | cp_r() | mv_f() | rm_rf() |
+| command_exists() | pidof_name() | kill_name() | kill_pid() | run_and_exit_code() | run_and_output() |
+| run_and_error() | array_contains() | array_join() | is_reachable() | eprint() | read_prompt() |
+| timestamp_ms() |  |  |  |  |  |
 
 
 ```
@@ -21,7 +30,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar  2 09:21:42 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 09:23:01 EST 2025
 # *********************************************************HASHOMATIC: 00da6432c87aaa4cb45b423e3f000abb
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -115,7 +124,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar  2 09:21:42 EST 2025
+" *********************************************************DATEOMATIC: Sun Mar  2 09:23:01 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1091,8 +1100,8 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sun Mar  2 08:55:53 EST 2025
-# *********************************************************HASHOMATIC: b495dfc6b60b6348fe8fc440582fcc2c
+# *********************************************************DATEOMATIC: Sun Mar  2 09:23:01 EST 2025
+# *********************************************************HASHOMATIC: 77e792af1f9803f78a4bf512f1f7b045
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 function git_toplevel() {
@@ -1380,7 +1389,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar  2 09:21:42 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 09:23:01 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2761,7 +2770,7 @@ echo "# *********************************************************HASHOMATIC: $IH
 cat $Tmp  >> $Tmp1
 cat $Tmp1  > "$FILE"
 
-FILE="./bash.lib"
+FILE="./bash.library"
 grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
 IHASH=$(md5sum "$Tmp" | awk '{print $1}')
 echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
@@ -2786,14 +2795,14 @@ cat get.raw | sort | uniq | gawk '
     print "[" A[n] "](" $0 ")"
 }' > $Tmp
 
-grep function bash.lib | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp1
+grep function bash.library | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp1
 
 grep bash get.raw | gawk '{print "wget " $0}' > getme
 
 create_markdown_table "$Tmp"   > README.md
 echo ""     >> README.md
 echo ""     >> README.md
-echo "## bash.lib includes"     >> README.md
+echo "## bash.library includes"     >> README.md
 echo ""     >> README.md
 create_markdown_table "$Tmp1" >> README.md
 echo ""     >> README.md
