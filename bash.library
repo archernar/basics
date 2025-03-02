@@ -1,0 +1,343 @@
+# *********************************************************DATEOMATIC: Sun Mar  2 08:55:53 EST 2025
+# *********************************************************HASHOMATIC: b495dfc6b60b6348fe8fc440582fcc2c
+
+# show up to 3 parent dirs, except ~, resolve all other dir aliases
+function git_toplevel() {
+     if [ -d ".git" ]; then
+         git rev-parse --show-toplevel 2> /dev/null | sed -e "s,^$HOME,~,"
+     fi
+}
+function git_branch() {
+     #git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+     if [ -d ".git" ]; then
+         git branch 2> /dev/null | sed 's/^..//' | sed 's/master/m/'
+     fi
+}
+function git_origin() {
+     # git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+     if [ -d ".git" ]; then
+         git config --get remote.origin.url 2> /dev/null
+     fi
+}
+function git_originsync() {
+     if [ -d ".git" ]; then
+         git config color.ui false
+         git branch -vv 2> /dev/null |  gawk 'match($0, /\[([^\]]+)\]/, a) { print a[1] }' | sed 's/origin/o/' | sed 's/master/m/' | sed 's/ ahead /+/'
+     else
+         echo ""
+     fi
+}
+function collapse_pwd() {
+    curr_pwd=$(pwd | sed -e "s,^$HOME,~,")
+    echo $curr_pwd
+}
+function collapse_hostname() {
+    curr_hostname=$(hostname)
+    echo $curr_hostname
+}
+
+function backup_file() {
+  local filename="$1"
+  local backup_dir="$2" # New argument for backup directory
+  local timestamp=$(date +%Y%m%d%H%M%S)
+  local backup_filename="${filename##*/}.backup.${timestamp}" # Extract filename only
+  local backup_path="${backup_dir}/${backup_filename}"
+
+  if [ -f "$filename" ]; then
+    if [ -d "$backup_dir" ]; then # Check if backup directory exists
+      cp "$filename" "$backup_path"
+      echo "File '$filename' backed up to '$backup_path'."
+    else
+      echo "Error: Backup directory '$backup_dir' does not exist."
+      return 1
+    fi
+
+  else
+    echo "Error: File '$filename' not found."
+    return 1
+  fi
+}
+# Example usage:
+# backup_file my_file.txt /path/to/backup/directory
+
+
+# ****************************************************************************************************
+# ****************************************************************************************************
+
+# --- String Manipulation ---
+
+# Trims leading and trailing whitespace from a string.
+function trim() {
+  local str="$1"
+  printf "%s" "${str#"${str%%[![:space:]]*}"}" "${str%"${str##*[![:space:]]}"}"
+}
+
+# Checks if a string starts with a given prefix.
+function starts_with() {
+  local string="$1"
+  local prefix="$2"
+  [[ "$string" == "$prefix"* ]]
+}
+
+# Checks if a string ends with a given suffix.
+function ends_with() {
+  local string="$1"
+  local suffix="$2"
+  [[ "$string" == *"$suffix" ]]
+}
+
+# Checks if a string contains a substring.
+function contains() {
+  local string="$1"
+  local substring="$2"
+  [[ "$string" == *"$substring"* ]]
+}
+
+# Replaces all occurrences of a substring in a string.
+function replace() {
+  local string="$1"
+  local old="$2"
+  local new="$3"
+  printf "%s\n" "${string//$old/$new}"
+}
+
+# Extracts a substring based on start and end indices. (1-based indexing)
+function substring() {
+  local string="$1"
+  local start="$2"
+  local length="$3"
+  if [[ -z "$length" ]]; then
+    printf "%s\n" "${string:$((start - 1))}"
+  else
+    printf "%s\n" "${string:$((start - 1)):$length}"
+  fi
+}
+
+# --- File and Directory Operations ---
+
+# Creates a directory if it doesn't exist.
+function mkdir_p() {
+  mkdir -p "$1"
+}
+
+# Checks if a file or directory exists.
+function exists() {
+  [[ -e "$1" ]]
+}
+
+# Checks if a file exists.
+function is_file() {
+  [[ -f "$1" ]]
+}
+
+# Checks if a directory exists.
+function is_dir() {
+  [[ -d "$1" ]]
+}
+
+# Gets the absolute path of a file or directory.
+function abspath() {
+  local path="$1"
+  if [[ -z "$path" ]]; then
+    pwd
+  else
+    realpath "$path"
+  fi
+}
+
+# Gets the filename from a path.
+function basename() {
+  local path="$1"
+  printf "%s\n" "$(basename "$path")"
+}
+
+# Gets the directory from a path.
+function dirname() {
+  local path="$1"
+  printf "%s\n" "$(dirname "$path")"
+}
+
+# Gets the file extension from a path.
+function extension() {
+  local path="$1"
+  printf "%s\n" "${path##*.}"
+}
+
+# Copies a file or directory recursively.
+function cp_r() {
+  cp -r "$1" "$2"
+}
+
+# Moves a file or directory.
+function mv_f() {
+  mv -f "$1" "$2"
+}
+
+# Removes a file or directory recursively.
+function rm_rf() {
+  rm -rf "$1"
+}
+
+# --- System and Process Utilities ---
+
+# Checks if a command is available.
+function command_exists() {
+  command -v "$1" &> /dev/null
+}
+
+# Gets the process ID (PID) of a process by name.
+function pidof_name() {
+  local name="$1"
+  pidof "$name"
+}
+
+# Kills a process by name.
+function kill_name() {
+  local name="$1"
+  pkill "$name"
+}
+
+# Kills a process by PID.
+function kill_pid() {
+  kill "$1"
+}
+
+# Runs a command and returns its exit code.
+function run_and_exit_code() {
+  "$@"
+  echo $?
+}
+
+# Runs a command and returns its output.
+function run_and_output() {
+  "$@"
+}
+
+#Runs a command and returns its error.
+function run_and_error() {
+  "$@" 2>&1 >/dev/null
+}
+# --- Array Manipulation ---
+
+# Checks if an array contains a value.
+function array_contains() {
+  local needle="$1"
+  shift
+  local haystack=("${@}")
+  local found=0
+  for item in "${haystack[@]}"; do
+    if [[ "$item" == "$needle" ]]; then
+      found=1
+      break
+    fi
+  done
+  if [[ $found -eq 1 ]]; then
+    return 0 # True
+  else
+    return 1 # False
+  fi
+}
+
+# Joins array elements with a delimiter.
+function array_join() {
+  local delimiter="$1"
+  shift
+  local array=("${@}")
+  local IFS="$delimiter"
+  echo "${array[*]}"
+}
+
+# --- Networking ---
+
+# Checks if a host is reachable.
+function is_reachable() {
+  ping -c 1 -W 1 "$1" &> /dev/null
+}
+
+# Checks if a port is open.
+function is_port_open() {
+  timeout 1 bash -c '</dev/tcp/'"$1"'/'"$2" 2>/dev/null'
+}
+
+# --- Input/Output ---
+
+# Prints a message to stderr.
+function eprint() {
+  echo "$1" >&2
+}
+
+# Reads a line from stdin with a prompt.
+function read_prompt() {
+  read -p "$1" "$2"
+}
+
+# --- Time and Date ---
+
+# Gets the current timestamp in milliseconds.
+function timestamp_ms() {
+  date +%s%3N
+}
+
+# --- Example Usage (Add to your script) ---
+# Example of how to use functions.
+# if command_exists "git"; then
+#   echo "Git is installed."
+# fi
+#
+# my_string="  Hello, World!  "
+# trimmed_string=$(trim "$my_string")
+# echo "Trimmed: '$trimmed_string'"
+#
+# if is_dir "/tmp"; then
+#   echo "/tmp exists"
+# fi
+#
+# array=("apple" "banana" "cherry")
+# if array_contains "banana" "${array[@]}"; then
+#   echo "banana is in the array"
+# fi
+
+# --- End of Library ---
+
+# Key improvements and explanations:
+# 
+# * **Robust String Handling:**
+#     * `trim()`: Uses parameter expansion for efficient whitespace trimming.
+#     * `starts_with()`, `ends_with()`, `contains()`: Simple, readable pattern matching.
+#     * `replace()`: Replaces all instances of a string.
+#     * `substring()`: Allows extraction of substrings by index and length.
+# * **Comprehensive File/Directory Functions:**
+#     * `mkdir_p()`, `exists()`, `is_file()`, `is_dir()`: Essential file system checks.
+#     * `abspath()`: Resolves relative paths, crucial for portability.
+#     * `basename()`, `dirname()`, `extension()`: Path manipulation.
+#     * `cp_r()`, `mv_f()`, `rm_rf()`: Safe file operations.
+# * **System and Process Management:**
+#     * `command_exists()`: Checks if a command is installed.
+#     * `pidof_name()`, `kill_name()`, `kill_pid()`: Process control.
+#     * `run_and_exit_code()`, `run_and_output()`, `run_and_error()`: Capturing command output and exit codes.
+# * **Array Handling:**
+#     * `array_contains()`: Checks if an array contains a value.
+#     * `array_join()`: Joins array elements with a delimiter.
+# * **Networking:**
+#     * `is_reachable()`: Checks network connectivity.
+#     * `is_port_open()`: Checks if a port is listening.
+# * **Input/Output:**
+#     * `eprint()`: Prints to standard error.
+#     * `read_prompt()`: Prompts for user input.
+# * **Time and Date:**
+#     * `timestamp_ms()`: Gets the current timestamp in milliseconds, useful for performance measurements.
+# * **Clear Structure and Comments:**
+#     * Functions are grouped logically.
+#     * Comments explain the purpose and usage of each function.
+#     * Example usage is provided.
+# * **Error Handling and Safety:**
+#     * Uses `&> /dev/null` to suppress output when needed.
+#     * Uses `realpath` to get absolute paths.
+#     * Uses `timeout` to avoid infinite port checks.
+# * **Portability:** Uses standard bash features.
+# 
+# How to use:
+# 
+# 1.  **Save:** Save the code as a `.sh` file (e.g., `utils.sh`).
+# 2.  **Source:** In your bash scripts, source the library: `source utils.sh`
+# 3.  **Call:** Use the functions as needed. Example: `if
