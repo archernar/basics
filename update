@@ -121,6 +121,8 @@ cat get.raw | sort | uniq | gawk '
     print "[" A[n] "](" $0 ")"
 }' > $Tmp
 
+grep bashrc get.raw > getme
+
 create_markdown_table "$Tmp" > README.md
 echo ""     >> README.md
 echo ""     >> README.md
