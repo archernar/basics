@@ -1,11 +1,7 @@
 | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |
 |----------|----------|----------|----------|----------|----------|
-| [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) | [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) | [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp) | [bash.lib](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.lib) |
-| [bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared) | [bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop) | [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) | [fred](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/fred) | [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) |
-| [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) | [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) |
-| [listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing) | [make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make) | [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) |
-| [testtest](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) | [zeddd](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/zeddd) |  |  |
-
+| git_toplevel() | git_branch() | git_origin() | git_originsync() | collapse_pwd() | collapse_hostname() |
+| backup_file() |  |  |  |  |  |
 
 
 ```
@@ -18,7 +14,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar  2 08:49:21 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 08:53:45 EST 2025
 # *********************************************************HASHOMATIC: 18941fa221770b9cb7272287d29fa696
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -112,7 +108,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar  2 08:49:21 EST 2025
+" *********************************************************DATEOMATIC: Sun Mar  2 08:53:45 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1077,7 +1073,7 @@ Processing file: bash.lib
 | |_) | (_| \__ \ | | |_| | | |_) |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/ 
                                    
-# *********************************************************DATEOMATIC: Sun Mar  2 08:49:21 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 08:53:45 EST 2025
 # *********************************************************HASHOMATIC: b495dfc6b60b6348fe8fc440582fcc2c
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
@@ -1147,7 +1143,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar  2 08:49:21 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 08:53:45 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -1445,7 +1441,6 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.lib
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/fred
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal
@@ -2489,10 +2484,14 @@ cat get.raw | sort | uniq | gawk '
     print "[" A[n] "](" $0 ")"
 }' > $Tmp
 
+grep function bash.lib | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp1
+
 grep bash get.raw | gawk '{print "wget " $0}' > getme
 
 create_markdown_table "$Tmp" > README.md
 echo ""     >> README.md
+echo ""     >> README.md
+create_markdown_table "$Tmp1" > README.md
 echo ""     >> README.md
 echo ""     >> README.md
 ./listing   >> README.md
