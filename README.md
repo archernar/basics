@@ -1,10 +1,10 @@
 | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |
 |----------|----------|----------|----------|----------|----------|
-| [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) | [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) | [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp) | [bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared) |
-| [bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop) | [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) | [fred](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/fred) | [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) |
-| [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) | [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) | [listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing) |
-| [make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make) | [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) | [testtest](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest) |
-| [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) | [zeddd](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/zeddd) |  |  |  |
+| [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) | [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) | [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp) | [bash.lib](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.lib) |
+| [bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared) | [bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop) | [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) | [fred](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/fred) | [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) |
+| [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) | [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) |
+| [listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing) | [make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make) | [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) |
+| [testtest](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) | [zeddd](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/zeddd) |  |  |
 
 
 
@@ -18,8 +18,8 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar  2 08:08:35 EST 2025
-# *********************************************************HASHOMATIC: f13fde2c119ab2920ae2ce1765afd44a
+# *********************************************************DATEOMATIC: Sun Mar  2 08:15:09 EST 2025
+# *********************************************************HASHOMATIC: d55af51758f0db31a69d890074b0f0e2
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -92,6 +92,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+source ~/bash.lib
 source ~/bashrc.shared
 
 
@@ -110,7 +111,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar  2 08:08:35 EST 2025
+" *********************************************************DATEOMATIC: Sun Mar  2 08:15:09 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1068,31 +1069,15 @@ usagefull() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#[%+-]" | sed -e "s/
 scriptinfo() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#-" | sed -e "s/^#-//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g"; }
 
 #######################################################################################################
-Processing file: bashrc.shared
- _               _                    _                        _ 
-| |__   __ _ ___| |__  _ __ ___   ___| |__   __ _ _ __ ___  __| |
-| '_ \ / _` / __| '_ \| '__/ __| / __| '_ \ / _` | '__/ _ \/ _` |
-| |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
-|_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
-                                                                 
+Processing file: bash.lib
+ _               _       _ _ _     
+| |__   __ _ ___| |__   | (_) |__  
+| '_ \ / _` / __| '_ \  | | | '_ \ 
+| |_) | (_| \__ \ | | |_| | | |_) |
+|_.__/ \__,_|___/_| |_(_)_|_|_.__/ 
+                                   
 # *********************************************************DATEOMATIC: Sun Mar  2 08:08:35 EST 2025
 # *********************************************************HASHOMATIC: aedd080d839a692fbd026771b9136df2
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# make less more friendly for non-text input files, see lesspipe(1)
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 git_toplevel() {
@@ -1119,7 +1104,6 @@ git_originsync() {
      else
          echo ""
      fi
-
 }
 function collapse_pwd {
     curr_pwd=$(pwd | sed -e "s,^$HOME,~,")
@@ -1153,6 +1137,31 @@ backup_file() {
 }
 # Example usage:
 # backup_file my_file.txt /path/to/backup/directory
+
+#######################################################################################################
+Processing file: bashrc.shared
+ _               _                    _                        _ 
+| |__   __ _ ___| |__  _ __ ___   ___| |__   __ _ _ __ ___  __| |
+| '_ \ / _` / __| '_ \| '__/ __| / __| '_ \ / _` | '__/ _ \/ _` |
+| |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
+|_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
+                                                                 
+# *********************************************************DATEOMATIC: Sun Mar  2 08:15:09 EST 2025
+# *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 #export PS1='$(collapse_hostname)$(collapse_pwd)$(git_origin)$(git_branch)\n>> '
 #export PS1='$(git_origin)$(git_branch)\n$(collapse_hostname)$(collapse_pwd)>> '
@@ -1460,6 +1469,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.lib
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy

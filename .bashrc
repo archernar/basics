@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Mar  2 08:08:35 EST 2025
-# *********************************************************HASHOMATIC: f13fde2c119ab2920ae2ce1765afd44a
+# *********************************************************DATEOMATIC: Sun Mar  2 08:15:09 EST 2025
+# *********************************************************HASHOMATIC: d55af51758f0db31a69d890074b0f0e2
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -72,6 +72,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+source ~/bash.lib
 source ~/bashrc.shared
 
 
