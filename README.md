@@ -18,8 +18,8 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sat Mar  1 20:59:22 EST 2025
-# *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
+# *********************************************************DATEOMATIC: Sat Mar  1 21:11:32 EST 2025
+# *********************************************************HASHOMATIC: f13fde2c119ab2920ae2ce1765afd44a
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -97,7 +97,10 @@ source ~/bashrc.shared
 
 export JAVA_HOME=/home/mestes/jdk-23.0.2
 export PATH=$JAVA_HOME/bin:$PATH
-
+mkdir -p                     ~/BACKUPS
+backup_file   .bashrc        ~/BACKUPS
+backup_file   bashrc.shared  ~/BACKUPS
+backup_file   .vimrc         ~/BACKUPS
 
 #######################################################################################################
 Processing file: .vimrc
@@ -107,7 +110,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sat Mar  1 20:59:22 EST 2025
+" *********************************************************DATEOMATIC: Sat Mar  1 21:11:32 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1072,8 +1075,8 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sat Mar  1 20:59:22 EST 2025
-# *********************************************************HASHOMATIC: 2a80d4af46ee248e1284c4071e0f35af
+# *********************************************************DATEOMATIC: Sat Mar  1 21:11:32 EST 2025
+# *********************************************************HASHOMATIC: 684afb10c7028a928f1fccdacdc63d2f
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -1115,6 +1118,31 @@ function collapse_hostname {
     curr_hostname=$(hostname)
     echo $curr_hostname
 }
+
+backup_file() {
+  local filename="$1"
+  local backup_dir="$2" # New argument for backup directory
+  local timestamp=$(date +%Y%m%d%H%M%S)
+  local backup_filename="${filename##*/}.backup.${timestamp}" # Extract filename only
+  local backup_path="${backup_dir}/${backup_filename}"
+
+  if [ -f "$filename" ]; then
+    if [ -d "$backup_dir" ]; then # Check if backup directory exists
+      cp "$filename" "$backup_path"
+      echo "File '$filename' backed up to '$backup_path'."
+    else
+      echo "Error: Backup directory '$backup_dir' does not exist."
+      return 1
+    fi
+
+  else
+    echo "Error: File '$filename' not found."
+    return 1
+  fi
+}
+# Example usage:
+# backup_file my_file.txt /path/to/backup/directory
+
 #export PS1='$(collapse_hostname)$(collapse_pwd)$(git_origin)$(git_branch)\n>> '
 #export PS1='$(git_origin)$(git_branch)\n$(collapse_hostname)$(collapse_pwd)>> '
 export PS1='$(collapse_hostname) $(collapse_pwd) ($(git_toplevel):$(git_branch):$(git_originsync))>> '

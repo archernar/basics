@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat Mar  1 20:59:22 EST 2025
-# *********************************************************HASHOMATIC: 2a80d4af46ee248e1284c4071e0f35af
+# *********************************************************DATEOMATIC: Sat Mar  1 21:11:32 EST 2025
+# *********************************************************HASHOMATIC: 684afb10c7028a928f1fccdacdc63d2f
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -41,6 +41,31 @@ function collapse_hostname {
     curr_hostname=$(hostname)
     echo $curr_hostname
 }
+
+backup_file() {
+  local filename="$1"
+  local backup_dir="$2" # New argument for backup directory
+  local timestamp=$(date +%Y%m%d%H%M%S)
+  local backup_filename="${filename##*/}.backup.${timestamp}" # Extract filename only
+  local backup_path="${backup_dir}/${backup_filename}"
+
+  if [ -f "$filename" ]; then
+    if [ -d "$backup_dir" ]; then # Check if backup directory exists
+      cp "$filename" "$backup_path"
+      echo "File '$filename' backed up to '$backup_path'."
+    else
+      echo "Error: Backup directory '$backup_dir' does not exist."
+      return 1
+    fi
+
+  else
+    echo "Error: File '$filename' not found."
+    return 1
+  fi
+}
+# Example usage:
+# backup_file my_file.txt /path/to/backup/directory
+
 #export PS1='$(collapse_hostname)$(collapse_pwd)$(git_origin)$(git_branch)\n>> '
 #export PS1='$(git_origin)$(git_branch)\n$(collapse_hostname)$(collapse_pwd)>> '
 export PS1='$(collapse_hostname) $(collapse_pwd) ($(git_toplevel):$(git_branch):$(git_originsync))>> '
