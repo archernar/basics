@@ -19,7 +19,7 @@
 | extension() | cp_r() | mv_f() | rm_rf() | command_exists() |
 | pidof_name() | kill_name() | kill_pid() | run_and_exit_code() | run_and_output() |
 | run_and_error() | array_contains() | array_join() | is_reachable() | eprint() |
-| read_prompt() | timestamp_ms() |  |  |  |
+| read_prompt() | timestamp_ms() | scan_for_secrets() |  |  |
 
 
 ```
@@ -32,7 +32,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar  2 09:28:06 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 09:51:19 EST 2025
 # *********************************************************HASHOMATIC: 00da6432c87aaa4cb45b423e3f000abb
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -126,7 +126,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar  2 09:28:06 EST 2025
+" *********************************************************DATEOMATIC: Sun Mar  2 09:51:19 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1102,8 +1102,8 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sun Mar  2 09:28:06 EST 2025
-# *********************************************************HASHOMATIC: 77e792af1f9803f78a4bf512f1f7b045
+# *********************************************************DATEOMATIC: Sun Mar  2 09:51:19 EST 2025
+# *********************************************************HASHOMATIC: f1fdec0c08a9afed2dae1bdc72d92a2f
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 function git_toplevel() {
@@ -1382,6 +1382,80 @@ function timestamp_ms() {
   date +%s%3N
 }
 
+function scan_for_secrets() {
+  local file="$1"
+
+  if [[ -z "$file" ]]; then
+    echo "Usage: scan_for_secrets <file>"
+    return 1
+  fi
+
+  if [[ ! -f "$file" ]]; then
+    echo "Error: File '$file' not found."
+    return 1
+  fi
+
+  # Define patterns to search for (add/modify as needed)
+  local patterns=(
+    "API_KEY=[a-zA-Z0-9_-]{20,}"
+    "SECRET_KEY=[a-zA-Z0-9_-]{20,}"
+    "PASSWORD=[a-zA-Z0-9_-]{8,}"
+    "AWS_ACCESS_KEY_ID=[A-Z0-9]{20}"
+    "AWS_SECRET_ACCESS_KEY=[A-Za-z0-9+/]{40}"
+    "ssh-rsa [A-Za-z0-9+/=]{20,}"
+    "ssh-ed25519 [A-Za-z0-9+/=]{20,}"
+    "-----BEGIN RSA PRIVATE KEY-----"
+    "-----BEGIN PGP PRIVATE KEY BLOCK-----"
+    "-----BEGIN OPENSSH PRIVATE KEY-----"
+    "Bearer [A-Za-z0-9._-]{20,}"
+    "Authorization: Basic [A-Za-z0-9+/=]{20,}"
+    "Authorization: Token [A-Za-z0-9]{20,}"
+    "[a-zA-Z0-9_-]+:[a-zA-Z0-9_-]+" #look for username:password type strings.
+    "PGPASSWORD=[a-zA-Z0-9_-]{8,}" # postgres password
+    "DATABASE_URL=postgres://[a-zA-Z0-9_-]+:[a-zA-Z0-9_-]+@" # postgres database url, catches username and password.
+    "MONGO_URI=mongodb://[a-zA-Z0-9_-]+:[a-zA-Z0-9_-]+@" #mongodb uri, catches username and password
+    "password[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?"  # Basic password pattern
+    "secret[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?"   # Secret pattern
+    "key[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?"      # Key pattern
+    "AWS_ACCESS_KEY_ID[[:space:]]*[:=][[:space:]]*[\"']?[A-Z0-9]*[\"']?" # AWS Access Key ID
+    "AWS_SECRET_ACCESS_KEY[[:space:]]*[:=][[:space:]]*[\"']?[a-zA-Z0-9/+=]*[\"']?" # AWS Secret Access Key
+    "api_key[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # API Key pattern
+    "database_url[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # Database URL
+    "connection_string[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # Connection String
+    "private_key[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # Private Key
+    "client_secret[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # Client Secret
+    "oauth_token[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # OAuth Token
+    "bearer_token[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # Bearer Token
+  )
+
+    # "export [A-Z_]+=[\"']?[A-Za-z0-9_\\-./+=@$%^&*()!~`?<>:;']+" # look for exported environment variables.
+  local found=0
+
+  for pattern in "${patterns[@]}"; do
+    if grep -E "$pattern" "$file" > /dev/null; then
+      found=1
+      echo "Potential secret found in '$file' matching pattern: '$pattern'"
+      grep -E "$pattern" "$file"
+    fi
+  done
+
+  if [[ "$found" -eq 0 ]]; then
+    echo "No potential secrets found in '$file'."
+  fi
+
+  return 0
+}
+
+# Example usage (if you want to run it directly from the script):
+# if [[ "$0" == "$BASH_SOURCE" ]]; then
+#   if [[ $# -eq 1 ]]; then
+#     scan_for_secrets "$1"
+#   else
+#     echo "Usage: $0 <file>"
+#     exit 1
+#   fi
+# fi
+
 
 #######################################################################################################
 Processing file: bashrc.shared
@@ -1391,7 +1465,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar  2 09:28:06 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 09:51:19 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -3147,38 +3221,4 @@ Diff
     :diffthis - make current window part of diff
     :dif[fupdate] - update differences
     :diffo[ff] - switch off diff mode for current window
-
-#######################################################################################################
-Processing file: zeddd
-             _     _     _ 
- _______  __| | __| | __| |
-|_  / _ \/ _` |/ _` |/ _` |
- / /  __/ (_| | (_| | (_| |
-/___\___|\__,_|\__,_|\__,_|
-                           
-[.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc)
-[.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc)
-[README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md)
-[bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions)
-[bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp)
-[bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared)
-[bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop)
-[deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy)
-[fred](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/fred)
-[gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff)
-[gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync)
-[gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal)
-[gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus)
-[gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate)
-[gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin)
-[get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw)
-[listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing)
-[make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make)
-[newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript)
-[notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes)
-[other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other)
-[setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit)
-[testtest](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest)
-[update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update)
-[vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt)
 ```
