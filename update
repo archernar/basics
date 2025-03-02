@@ -133,10 +133,12 @@ grep function bash.lib | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp1
 
 grep bash get.raw | gawk '{print "wget " $0}' > getme
 
-create_markdown_table "$Tmp" > README.md
+create_markdown_table "$Tmp"   > README.md
 echo ""     >> README.md
 echo ""     >> README.md
-create_markdown_table "$Tmp1" > README.md
+echo "## bash.lib includes"     >> README.md
+echo ""     >> README.md
+create_markdown_table "$Tmp1" >> README.md
 echo ""     >> README.md
 echo ""     >> README.md
 ./listing   >> README.md
