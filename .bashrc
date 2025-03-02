@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Mar  2 08:16:52 EST 2025
-# *********************************************************HASHOMATIC: d55af51758f0db31a69d890074b0f0e2
+# *********************************************************DATEOMATIC: Sun Mar  2 08:22:56 EST 2025
+# *********************************************************HASHOMATIC: 18941fa221770b9cb7272287d29fa696
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -81,4 +81,5 @@ export PATH=$JAVA_HOME/bin:$PATH
 mkdir -p                     ~/BACKUPS
 backup_file   .bashrc        ~/BACKUPS
 backup_file   bashrc.shared  ~/BACKUPS
+backup_file   bashrc.lib     ~/BACKUPS
 backup_file   .vimrc         ~/BACKUPS

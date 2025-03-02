@@ -18,8 +18,8 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar  2 08:16:52 EST 2025
-# *********************************************************HASHOMATIC: d55af51758f0db31a69d890074b0f0e2
+# *********************************************************DATEOMATIC: Sun Mar  2 08:22:56 EST 2025
+# *********************************************************HASHOMATIC: 18941fa221770b9cb7272287d29fa696
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -101,6 +101,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 mkdir -p                     ~/BACKUPS
 backup_file   .bashrc        ~/BACKUPS
 backup_file   bashrc.shared  ~/BACKUPS
+backup_file   bashrc.lib     ~/BACKUPS
 backup_file   .vimrc         ~/BACKUPS
 
 #######################################################################################################
@@ -111,7 +112,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar  2 08:16:52 EST 2025
+" *********************************************************DATEOMATIC: Sun Mar  2 08:22:56 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1076,8 +1077,8 @@ Processing file: bash.lib
 | |_) | (_| \__ \ | | |_| | | |_) |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/ 
                                    
-# *********************************************************DATEOMATIC: Sun Mar  2 08:08:35 EST 2025
-# *********************************************************HASHOMATIC: aedd080d839a692fbd026771b9136df2
+# *********************************************************DATEOMATIC: Sun Mar  2 08:22:56 EST 2025
+# *********************************************************HASHOMATIC: cc9cc35bccda74c8885e418bcfc97c77
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 git_toplevel() {
@@ -1146,7 +1147,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar  2 08:16:52 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 08:22:56 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2486,6 +2487,14 @@ cat $Tmp  >> $Tmp1
 cat $Tmp1  > "$FILE"
 
 FILE="./bashrc.shared"
+grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
+IHASH=$(md5sum "$Tmp" | awk '{print $1}')
+echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
+echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+cat $Tmp  >> $Tmp1
+cat $Tmp1  > "$FILE"
+
+FILE="./bash.lib"
 grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
 IHASH=$(md5sum "$Tmp" | awk '{print $1}')
 echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
