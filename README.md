@@ -18,7 +18,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar  2 08:15:15 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 08:16:47 EST 2025
 # *********************************************************HASHOMATIC: d55af51758f0db31a69d890074b0f0e2
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -111,7 +111,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar  2 08:15:15 EST 2025
+" *********************************************************DATEOMATIC: Sun Mar  2 08:16:47 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1146,7 +1146,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar  2 08:15:15 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 08:16:47 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -1271,6 +1271,7 @@ Processing file: deploy
 
 cp ./.bashrc              ~
 cp ./bashrc.shared        ~
+cp ./bash.lib             ~
 cp ./getme                ~
 
 #######################################################################################################
@@ -1502,7 +1503,12 @@ Processing file: getme
  \__, |\___|\__|_| |_| |_|\___|
  |___/                         
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.lib
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript
 
 #######################################################################################################
 Processing file: listing
@@ -2504,7 +2510,7 @@ cat get.raw | sort | uniq | gawk '
     print "[" A[n] "](" $0 ")"
 }' > $Tmp
 
-grep bashrc get.raw | gawk '{print "wget " $0}' > getme
+grep bash get.raw | gawk '{print "wget " $0}' > getme
 
 create_markdown_table "$Tmp" > README.md
 echo ""     >> README.md
