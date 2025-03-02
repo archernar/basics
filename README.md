@@ -5,7 +5,7 @@
 | [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) |
 | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) | [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) | [listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing) | [make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make) |
 | [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) | [testtest](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest) |
-| [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) | [zeddd](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/zeddd) |  |  |
+| [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |  |  |  |
 
 
 ## bash.library includes
@@ -32,7 +32,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar  2 09:51:19 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 10:20:41 EST 2025
 # *********************************************************HASHOMATIC: 00da6432c87aaa4cb45b423e3f000abb
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -126,7 +126,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar  2 09:51:19 EST 2025
+" *********************************************************DATEOMATIC: Sun Mar  2 10:20:41 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1102,7 +1102,7 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sun Mar  2 09:51:19 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 10:20:41 EST 2025
 # *********************************************************HASHOMATIC: f1fdec0c08a9afed2dae1bdc72d92a2f
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
@@ -1465,7 +1465,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar  2 09:51:19 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 10:20:41 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -1781,7 +1781,6 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/zeddd
 
 #######################################################################################################
 Processing file: getme
