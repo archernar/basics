@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat Mar  1 21:11:41 EST 2025
-# *********************************************************HASHOMATIC: 684afb10c7028a928f1fccdacdc63d2f
+# *********************************************************DATEOMATIC: Sat Mar  1 09:23:33 PM EST 2025
+# *********************************************************HASHOMATIC: aedd080d839a692fbd026771b9136df2
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -19,19 +19,30 @@ shopt -s checkwinsize
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 git_toplevel() {
-    git rev-parse --show-toplevel 2> /dev/null | sed -e "s,^$HOME,~,"
+     if [ -d ".git" ]; then
+         git rev-parse --show-toplevel 2> /dev/null | sed -e "s,^$HOME,~,"
+     fi
 }
 git_branch() {
      #git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-     git branch 2> /dev/null | sed 's/^..//' | sed 's/master/m/'
+     if [ -d ".git" ]; then
+         git branch 2> /dev/null | sed 's/^..//' | sed 's/master/m/'
+     fi
 }
 git_origin() {
      # git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-     git config --get remote.origin.url 2> /dev/null
+     if [ -d ".git" ]; then
+         git config --get remote.origin.url 2> /dev/null
+     fi
 }
 git_originsync() {
-     git config color.ui false
-     git branch -vv 2> /dev/null |  gawk 'match($0, /\[([^\]]+)\]/, a) { print a[1] }' | sed 's/origin/o/' | sed 's/master/m/' | sed 's/ ahead /+/'
+     if [ -d ".git" ]; then
+         git config color.ui false
+         git branch -vv 2> /dev/null |  gawk 'match($0, /\[([^\]]+)\]/, a) { print a[1] }' | sed 's/origin/o/' | sed 's/master/m/' | sed 's/ ahead /+/'
+     else
+         echo ""
+     fi
+
 }
 function collapse_pwd {
     curr_pwd=$(pwd | sed -e "s,^$HOME,~,")
