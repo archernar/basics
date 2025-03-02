@@ -18,7 +18,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sat Mar  1 19:33:37 EST 2025
+# *********************************************************DATEOMATIC: Sat Mar  1 19:40:57 EST 2025
 # *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -107,7 +107,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sat Mar  1 19:33:37 EST 2025
+" *********************************************************DATEOMATIC: Sat Mar  1 19:40:57 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1072,8 +1072,8 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sat Mar  1 19:33:37 EST 2025
-# *********************************************************HASHOMATIC: 2acfa67ab81b5e3354abf249b4d32069
+# *********************************************************DATEOMATIC: Sat Mar  1 19:40:57 EST 2025
+# *********************************************************HASHOMATIC: 83262e6249839a4f6211993694e9b212
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -1097,11 +1097,15 @@ git_toplevel() {
 }
 git_branch() {
      #git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-     git branch 2> /dev/null | sed 's/^..//'
+     git branch 2> /dev/null | sed 's/^..//' | sed 's/master/m/'
 }
 git_origin() {
      # git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
      git config --get remote.origin.url 2> /dev/null
+}
+git_originsync() {
+     git config color.ui false
+     git branch -vv 2> /dev/null | gawk '{print $4}' | sed 's/origin/o/' | sed 's/master/m/'
 }
 function collapse_pwd {
     curr_pwd=$(pwd | sed -e "s,^$HOME,~,")
@@ -1113,7 +1117,7 @@ function collapse_hostname {
 }
 #export PS1='$(collapse_hostname)$(collapse_pwd)$(git_origin)$(git_branch)\n>> '
 #export PS1='$(git_origin)$(git_branch)\n$(collapse_hostname)$(collapse_pwd)>> '
-export PS1='$(collapse_hostname) $(collapse_pwd) ($(git_toplevel):$(git_branch))>> '
+export PS1='$(collapse_hostname) $(collapse_pwd) ($(git_toplevel):$(git_branch):$(git_originsync))>> '
 
 alias ls='ls -t'
 alias scm='cd /etc/scm'
