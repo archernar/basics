@@ -1,25 +1,25 @@
-# *********************************************************DATEOMATIC: Sun Mar  2 08:22:56 EST 2025
-# *********************************************************HASHOMATIC: cc9cc35bccda74c8885e418bcfc97c77
+# *********************************************************DATEOMATIC: Sun Mar  2 08:49:21 EST 2025
+# *********************************************************HASHOMATIC: b495dfc6b60b6348fe8fc440582fcc2c
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
-git_toplevel() {
+function git_toplevel() {
      if [ -d ".git" ]; then
          git rev-parse --show-toplevel 2> /dev/null | sed -e "s,^$HOME,~,"
      fi
 }
-git_branch() {
+function git_branch() {
      #git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
      if [ -d ".git" ]; then
          git branch 2> /dev/null | sed 's/^..//' | sed 's/master/m/'
      fi
 }
-git_origin() {
+function git_origin() {
      # git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
      if [ -d ".git" ]; then
          git config --get remote.origin.url 2> /dev/null
      fi
 }
-git_originsync() {
+function git_originsync() {
      if [ -d ".git" ]; then
          git config color.ui false
          git branch -vv 2> /dev/null |  gawk 'match($0, /\[([^\]]+)\]/, a) { print a[1] }' | sed 's/origin/o/' | sed 's/master/m/' | sed 's/ ahead /+/'
@@ -27,16 +27,16 @@ git_originsync() {
          echo ""
      fi
 }
-function collapse_pwd {
+function collapse_pwd() {
     curr_pwd=$(pwd | sed -e "s,^$HOME,~,")
     echo $curr_pwd
 }
-function collapse_hostname {
+function collapse_hostname() {
     curr_hostname=$(hostname)
     echo $curr_hostname
 }
 
-backup_file() {
+function backup_file() {
   local filename="$1"
   local backup_dir="$2" # New argument for backup directory
   local timestamp=$(date +%Y%m%d%H%M%S)

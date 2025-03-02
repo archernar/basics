@@ -18,7 +18,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar  2 08:22:56 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 08:49:21 EST 2025
 # *********************************************************HASHOMATIC: 18941fa221770b9cb7272287d29fa696
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -112,7 +112,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar  2 08:22:56 EST 2025
+" *********************************************************DATEOMATIC: Sun Mar  2 08:49:21 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1077,28 +1077,28 @@ Processing file: bash.lib
 | |_) | (_| \__ \ | | |_| | | |_) |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/ 
                                    
-# *********************************************************DATEOMATIC: Sun Mar  2 08:22:56 EST 2025
-# *********************************************************HASHOMATIC: cc9cc35bccda74c8885e418bcfc97c77
+# *********************************************************DATEOMATIC: Sun Mar  2 08:49:21 EST 2025
+# *********************************************************HASHOMATIC: b495dfc6b60b6348fe8fc440582fcc2c
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
-git_toplevel() {
+function git_toplevel() {
      if [ -d ".git" ]; then
          git rev-parse --show-toplevel 2> /dev/null | sed -e "s,^$HOME,~,"
      fi
 }
-git_branch() {
+function git_branch() {
      #git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
      if [ -d ".git" ]; then
          git branch 2> /dev/null | sed 's/^..//' | sed 's/master/m/'
      fi
 }
-git_origin() {
+function git_origin() {
      # git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
      if [ -d ".git" ]; then
          git config --get remote.origin.url 2> /dev/null
      fi
 }
-git_originsync() {
+function git_originsync() {
      if [ -d ".git" ]; then
          git config color.ui false
          git branch -vv 2> /dev/null |  gawk 'match($0, /\[([^\]]+)\]/, a) { print a[1] }' | sed 's/origin/o/' | sed 's/master/m/' | sed 's/ ahead /+/'
@@ -1106,16 +1106,16 @@ git_originsync() {
          echo ""
      fi
 }
-function collapse_pwd {
+function collapse_pwd() {
     curr_pwd=$(pwd | sed -e "s,^$HOME,~,")
     echo $curr_pwd
 }
-function collapse_hostname {
+function collapse_hostname() {
     curr_hostname=$(hostname)
     echo $curr_hostname
 }
 
-backup_file() {
+function backup_file() {
   local filename="$1"
   local backup_dir="$2" # New argument for backup directory
   local timestamp=$(date +%Y%m%d%H%M%S)
@@ -1147,7 +1147,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar  2 08:22:56 EST 2025
+# *********************************************************DATEOMATIC: Sun Mar  2 08:49:21 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -1274,36 +1274,6 @@ cp ./.bashrc              ~
 cp ./bashrc.shared        ~
 cp ./bash.lib             ~
 cp ./getme                ~
-
-#######################################################################################################
-Processing file: fred
-  __              _ 
- / _|_ __ ___  __| |
-| |_| '__/ _ \/ _` |
-|  _| | |  __/ (_| |
-|_| |_|  \___|\__,_|
-                    
-#!/usr/bin/bash
-# *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
-# *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
-Tmp=/tmp/$$
-Tmp0=/tmp/$$_$$
-Tmp1=/tmp/$$_$$_$$
-Tmp2=/tmp/$$_$$_$$_$$
-Tmp3=/tmp/$$_$$_$$_$$_$$
-trap 'ex:it 0' INT HUP QUIT TERM ALRM USR1
-trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
-rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
-
-git status > $Tmp
-cat $Tmp | gawk '
-/Your branch is up to date with .origin.master./ {
-    print ":oOK"
-}
-{
-    next
-}
-'
 
 #######################################################################################################
 Processing file: gDiff
