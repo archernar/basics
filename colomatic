@@ -1,5 +1,4 @@
 #!/usr/bin/bash
-#!/usr/bin/bash
 Tmp=/tmp/$$
 Tmp1=/tmp/$$_$$
 Tmp2=/tmp/$$_$$_$$
@@ -10,6 +9,8 @@ rm -f "$Tmp1"  >/dev/null 2>&1
 rm -f "$Tmp2"  >/dev/null 2>&1
 #================================================================
 # paste -d' ' file1 file2 > output_file
+
+source ~/bash.library
 
 # Get the filename from the command-line argument
 filename1="$1"

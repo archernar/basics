@@ -1,5 +1,4 @@
 #!/usr/bin/bash
-#!/usr/bin/bash
 Tmp=/tmp/$$
 Tmp1=/tmp/$$_$$
 trap 'exit 0' INT HUP QUIT TERM ALRM USR1
@@ -8,6 +7,8 @@ rm -f "$Tmp"  >/dev/null 2>&1
 rm -f "$Tmp1"  >/dev/null 2>&1
 #================================================================
 # paste -d' ' file1 file2 > output_file
+
+source ~/bash.library
 
 # Get the filename from the command-line argument
 filename="$1"
@@ -24,13 +25,15 @@ if [ ! -f "$filename" ]; then
   exit 1
 fi
 
+backup_file  "$filename"   ~/BACKUPS
+
 sed 's/[[:space:]]*$//' "$filename" > $Tmp
 
 # Find the longest line length
 max_len=$(wc -L "$Tmp" | awk '{print $1}')
 
 # Calculate the padding length
-padding_length=$((max_len + 2))
+padding_length=$((max_len + 1))
 
 # Create a temporary file to store the padded content
 temp_file=$(mktemp)
@@ -41,7 +44,6 @@ while IFS= read -r line; do
 done  < "$Tmp"
 
 # Replace the original file with the padded content
-# mv "$temp_file" "$filename"
-cat "$temp_file"
+cat "$temp_file"  >   "$filename"
 
-# echo "File '$filename' padded successfully."
+echo "File '$filename' padded successfully."
