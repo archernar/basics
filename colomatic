@@ -1,0 +1,53 @@
+#!/usr/bin/bash
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp1=/tmp/$$_$$
+Tmp2=/tmp/$$_$$_$$
+trap 'exit 0' INT HUP QUIT TERM ALRM USR1
+trap 'rm -f "$Tmp" "$Tmp1" "$Tmp2"' EXIT
+rm -f "$Tmp"  >/dev/null 2>&1
+rm -f "$Tmp1"  >/dev/null 2>&1
+rm -f "$Tmp2"  >/dev/null 2>&1
+#================================================================
+# paste -d' ' file1 file2 > output_file
+
+# Get the filename from the command-line argument
+filename1="$1"
+filename2="$2"
+
+# Check if a filenameis are provided
+if [ -z "$filename1" ]; then
+  echo "Usage: <filename> <filename>"
+  exit 1
+fi
+if [ -z "$filename2" ]; then
+  echo "Usage: <filename> <filename>"
+  exit 1
+fi
+
+# Check if the files exist
+if [ ! -f "$filename1" ]; then
+  echo "Error: File '$filename' not found."
+  exit 1
+fi
+if [ ! -f "$filename2" ]; then
+  echo "Error: File '$filename' not found."
+  exit 1
+fi
+
+sed 's/[[:space:]]*$//' "$filename1" > $Tmp1
+sed 's/[[:space:]]*$//' "$filename2" > $Tmp2
+
+# Find the longest line length
+max_len=$(wc -L "$Tmp1" | awk '{print $1}')
+
+# Calculate the padding length
+padding_length=$((max_len + 2))
+
+# Iterate through each line of the file and pad it
+while IFS= read -r line; do
+  printf "%-${padding_length}s\n" "$line" >> "$Tmp" # Pad to the right
+done  < "$Tmp1"
+
+paste -d' ' "$Tmp" "$Tmp2"
+
