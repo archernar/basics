@@ -46,4 +46,4 @@ done  < "$Tmp"
 # Replace the original file with the padded content
 cat "$temp_file"  >   "$filename"
 
-echo "File '$filename' padded successfully."
+# echo "File '$filename' padded successfully."
