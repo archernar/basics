@@ -5,7 +5,7 @@
 | [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) | [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) |
 | [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [gawk.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gawk.library) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) | [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) |
 | [listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing) | [make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make) | [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) |
-| [padomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) | [testtest](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |
+| [padomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |  |
 
 
 ## bash.library includes
@@ -32,7 +32,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Tue Mar  4 22:52:28 EST 2025
+# *********************************************************DATEOMATIC: Tue Mar  4 22:53:04 EST 2025
 # *********************************************************HASHOMATIC: 00da6432c87aaa4cb45b423e3f000abb
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -126,7 +126,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Tue Mar  4 22:52:28 EST 2025
+" *********************************************************DATEOMATIC: Tue Mar  4 22:53:04 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1102,7 +1102,7 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Tue Mar  4 22:52:28 EST 2025
+# *********************************************************DATEOMATIC: Tue Mar  4 22:53:04 EST 2025
 # *********************************************************HASHOMATIC: 96135f6548e88a01fbc3b60afe07d4a9
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
@@ -1465,7 +1465,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Tue Mar  4 22:52:28 EST 2025
+# *********************************************************DATEOMATIC: Tue Mar  4 22:53:04 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -1859,7 +1859,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Tue Mar  4 22:52:28 EST 2025
+# *********************************************************DATEOMATIC: Tue Mar  4 22:53:04 EST 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
@@ -2225,7 +2225,6 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt
 
@@ -3224,17 +3223,6 @@ done  < "$Tmp"
 cat "$temp_file"  >   "$filename"
 
 # echo "File '$filename' padded successfully."
-
-#######################################################################################################
-Processing file: testtest
- _            _   _            _   
-| |_ ___  ___| |_| |_ ___  ___| |_ 
-| __/ _ \/ __| __| __/ _ \/ __| __|
-| ||  __/\__ \ |_| ||  __/\__ \ |_ 
- \__\___||___/\__|\__\___||___/\__|
-                                   
-test
-test
 
 #######################################################################################################
 Processing file: update
