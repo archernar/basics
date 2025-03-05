@@ -86,6 +86,7 @@ echo "\" *********************************************************DATEOMATIC: $D
 echo "\" *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
 cat $Tmp  >> $Tmp1
 cat $Tmp1  > "$FILE"
+git add "$FILE"
 
 FILE="./.bashrc"
 grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
@@ -94,6 +95,7 @@ echo "# *********************************************************DATEOMATIC: $D"
 echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
 cat $Tmp  >> $Tmp1
 cat $Tmp1  > "$FILE"
+git add "$FILE"
 
 FILE="./bashrc.shared"
 grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
@@ -102,6 +104,7 @@ echo "# *********************************************************DATEOMATIC: $D"
 echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
 cat $Tmp  >> $Tmp1
 cat $Tmp1  > "$FILE"
+git add "$FILE"
 
 FILE="./bash.library"
 grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
@@ -110,6 +113,7 @@ echo "# *********************************************************DATEOMATIC: $D"
 echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
 cat $Tmp  >> $Tmp1
 cat $Tmp1  > "$FILE"
+git add "$FILE"
 
 FILE="./gawk.library"
 grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
@@ -118,6 +122,7 @@ echo "# *********************************************************DATEOMATIC: $D"
 echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
 cat $Tmp  >> $Tmp1
 cat $Tmp1  > "$FILE"
+git add "$FILE"
 
 git ls-files | gawk '
 BEGIN {
@@ -139,6 +144,7 @@ cat get.raw | sort | uniq | gawk '
 grep function bash.library | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp1
 
 grep bash get.raw | gawk '{print "wget " $0}' > getme
+git add getme
 
 create_markdown_table "$Tmp"   > README.md
 echo ""     >> README.md
@@ -149,16 +155,15 @@ create_markdown_table "$Tmp1" >> README.md
 echo ""     >> README.md
 echo ""     >> README.md
 ./listing   >> README.md
+git add README.md
 
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
 
 if [ "$UPDATE" == "LOCAL" ]; then                                                                                               
-    git add -A 
     git commit  -m "Update"
     git status
 fi
 if [ "$UPDATE" == "REMOTE" ]; then                                                                                               
-    git add -A
     git commit  -m "Update"
     git push -u origin master
     git status
