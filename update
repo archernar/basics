@@ -153,12 +153,12 @@ echo ""     >> README.md
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
 
 if [ "$UPDATE" == "LOCAL" ]; then                                                                                               
-    git add .
+    git add -A 
     git commit  -m "Update"
     git status
 fi
 if [ "$UPDATE" == "REMOTE" ]; then                                                                                               
-    git add .
+    git add -A
     git commit  -m "Update"
     git push -u origin master
     git status

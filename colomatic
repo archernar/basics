@@ -14,16 +14,14 @@ rm -f "$Tmp3"  >/dev/null 2>&1
 
 source ~/bash.library
 
-
-
 function implColomatic() {
     local tmp1="/tmp/temp_$$"
     local tmp2="/tmp/temp_$$_$$"
     local tmp3="/tmp/temp_$$_$$_$$"
 
     # Get the filename from the command-line argument
-    filename1="$1"
-    filename2="$2"
+    local filename1="$1"
+    local filename2="$2"
 
     # Check if a filenameis are provided
     if [ -z "$filename1" ]; then
@@ -52,7 +50,11 @@ function implColomatic() {
     max_len=$(wc -L "$tmp1" | awk '{print $1}')
 
     # Calculate the padding length
-    padding_length=$((max_len + 2))
+    if [ "$DELIM" == "," ]; then                                                                                               
+        padding_length=$((0 + 0))
+    else
+        padding_length=$((max_len + 2))
+    fi
 
     # Iterate through each line of the file and pad it
     rm -f "$tmp3" >/dev/null 2>&1
@@ -60,27 +62,35 @@ function implColomatic() {
       printf "%-${padding_length}s\n" "$line" >> "$tmp3" # Pad to the right
     done  < "$tmp1"
 
-    paste -d' ' "$tmp3" "$tmp2"
+    #paste -d'$3' "$tmp3" "$tmp2"
+    if [ "$DELIM" == "," ]; then                                                                                               
+        paste -d',' "$tmp3" "$tmp2"
+    else
+        paste -d' ' "$tmp3" "$tmp2"
+    fi
 
     rm -f "$tmp1" >/dev/null 2>&1
     rm -f "$tmp2" >/dev/null 2>&1
     rm -f "$tmp3" >/dev/null 2>&1
 }
 
-if [ $# -gt 0 ]; then  # Check if any arguments were provided
-  if [ $# -eq 2 ]; then
-      implColomatic "$1" "$2"
-      exit 0
-  fi
-  if [ $# -eq 3 ]; then
-      implColomatic "$1" "$2" > "$Tmp"
-      implColomatic "$Tmp" "$3"
-      exit 0
-  fi
-  if [ $# -eq 4 ]; then
-      implColomatic "$1"    "$2" > "$Tmp1"
-      implColomatic "$Tmp1" "$3" > "$Tmp2"
-      implColomatic "$Tmp2" "$4"
-      exit 0
-  fi
+DELIM=" "
+while getopts "c" arg
+do
+    case $arg in
+        c) DELIM=","
+           ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+if [ $# -gt 1 ]; then
+    implColomatic "$1" "$2" "$DELIM" > "$Tmp2"
+    shift
+    shift
+    for item in "$@"; do
+        implColomatic "$Tmp2" "$item" "$DELIM" > "$Tmp1"
+        cp "$Tmp1" "$Tmp2"
+    done
+    cat "$Tmp2"
 fi
