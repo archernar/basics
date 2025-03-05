@@ -1,12 +1,11 @@
 |    A     |    B     |    C     |    D     |    E     |
 |----------|----------|----------|----------|----------|
-| [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) | [0.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/0.txt) | [1.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/1.txt) | [2.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/2.txt) |
-| [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) | [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp) | [bash.lib](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.lib) | [bash.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library) |
-| [bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared) | [bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop) | [colomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/colomatic) | [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) | [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) |
-| [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) |
-| [gawk.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gawk.library) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) | [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) | [listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing) | [make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make) |
-| [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) | [padomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) |
-| [testtest](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |  |  |
+| [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) | [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) | [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp) |
+| [bash.lib](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.lib) | [bash.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library) | [bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared) | [bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop) | [colomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/colomatic) |
+| [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) | [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) |
+| [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [gawk.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gawk.library) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) | [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) |
+| [listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing) | [make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make) | [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) |
+| [padomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) | [testtest](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/testtest) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |
 
 
 ## bash.library includes
@@ -33,7 +32,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Tue Mar  4 22:45:29 EST 2025
+# *********************************************************DATEOMATIC: Tue Mar  4 22:51:28 EST 2025
 # *********************************************************HASHOMATIC: 00da6432c87aaa4cb45b423e3f000abb
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -127,7 +126,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Tue Mar  4 22:45:29 EST 2025
+" *********************************************************DATEOMATIC: Tue Mar  4 22:51:28 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -662,251 +661,6 @@ endfunction
 
 
 #######################################################################################################
-Processing file: 0.txt
-  ___  _        _   
- / _ \| |___  _| |_ 
-| | | | __\ \/ / __|
-| |_| | |_ >  <| |_ 
- \___(_)__/_/\_\\__|
-                    
-Global                                                           
-    :h[elp] keyword - open help for keyword                      
-    :sav[eas] file - save file as                                
-    :clo[se] - close current pane                                
-    :ter[minal] - open a terminal window                         
-    K - open man page for word under the cursor                  
-Cursor movement                                                  
-    h - move cursor left                                         
-    j - move cursor down                                         
-    k - move cursor up                                           
-    l - move cursor right                                        
-    gj - move cursor down (multi-line text)                      
-    gk - move cursor up (multi-line text)                        
-    H - move to top of screen                                    
-    M - move to middle of screen                                 
-    L - move to bottom of screen                                 
-    w - jump forwards to SOW                                     
-    W - jump forwards to SOW (words can contain Punc.)           
-    e - jump forwards to EOW                                     
-    E - jump forwards to EOW (words can contain Punc.)           
-    b - jump backwards to SOW                                    
-    B - jump backwards to SOW (words can contain Punc.)          
-    ge - jump backwards to EOW                                   
-    gE - jump backwards to EOW (words can contain Punc.)         
-    % - move cursor to matching char (pairs: '()', '{}', '[]'    
-      - use :h matchpairs in vim for more info)                  
-    0 - jump to the start of the line                            
-    ^ - jump to the first non-blank char of the line             
-    $ - jump to the end of the line                              
-    g_ - jump to the last non-blank char of the line             
-    gg - go to the first line of the document                    
-    G - go to the last line of the document                      
-    5gg or 5G - go to line 5                                     
-    gd - move to local declaration                               
-    gD - move to global declaration                              
-    fx - jump to next occurrence of char x                       
-    tx - jump to before next occurrence of char x                
-    Fx - jump to the previous occurrence of char x               
-    Tx - jump to after previous occurrence of char x             
-    ; - repeat previous f, t, F or T movement                    
-    , - repeat previous f, t, F or T movement, backwards         
-    } - jump to next para (or func/block, editing code)          
-    { - jump to previous para (or func/block, editing code)      
-    zz - center cursor on screen                                 
-    zt - position cursor on top of the screen                    
-    zb - position cursor on bottom of the screen                 
-    Ctrl + e - move screen down one line (without moving cursor) 
-    Ctrl + y - move screen up one line (without moving cursor)   
-    Ctrl + b - move screen up one page (cursor to last line)     
-    Ctrl + f - move screen down one page (cursor to first line)  
-    Ctrl + d - move cursor and screen down 1/2 page              
-    Ctrl + u - move cursor and screen up 1/2 page                
-
-#######################################################################################################
-Processing file: 1.txt
- _  _        _   
-/ || |___  _| |_ 
-| || __\ \/ / __|
-| || |_ >  <| |_ 
-|_(_)__/_/\_\\__|
-                 
-Insert mode - inserting/appending text                                               
-    i - insert before the cursor                                                     
-    I - insert at the beginning of the line                                          
-    a - insert (append) after the cursor                                             
-    A - insert (append) at the end of the line                                       
-    o - append (open) a new line below the current line                              
-    O - append (open) a new line above the current line                              
-    ea - insert (append) at the end of the word                                      
-    C+h - delete the char before the cursor during insert mode                       
-    C+w - delete word before the cursor during insert mode                           
-    C+j - add a line break at the cursor position during insert mode                 
-    C+t - indent (move right) line one shiftwidth during insert mode                 
-    C+d - de-indent (move left) line one shiftwidth during insert mode               
-    C+n - insert (auto-complete) next match before the cursor during insert mode     
-    C+p - insert (auto-complete) previous match before the cursor during insert mode 
-    C+rx - insert the contents of register x                                         
-    C+ox - Temporarily enter normal mode to issue one normal-mode command x.         
-    Esc or Ctrl + c - exit insert mode                                               
-Editing                                                                              
-    r - replace a single char.                                                       
-    R - replace more than one char, until ESC is pressed.                            
-    J - join line below to the current one with one space in between                 
-    gJ - join line below to the current one without space in between                 
-    gwip - reflow para                                                               
-    g~ - switch case up to motion                                                    
-    gu - change to lowercase up to motion                                            
-    gU - change to uppercase up to motion                                            
-    cc - change (replace) entire line                                                
-    c$ or C - change (replace) to the end of the line                                
-    ciw - change (replace) entire word                                               
-    cw or ce - change (replace) to the end of the word                               
-    s - delete char and substitute text (same as cl)                                 
-    S - delete line and substitute text (same as cc)                                 
-    xp - transpose two letters (delete and paste)                                    
-    u - undo                                                                         
-    U - restore (undo) last changed line                                             
-    Ctrl + r - redo                                                                  
-    . - repeat last command                                                          
-Marking text (visual mode)                                                           
-    v - start visual mode, mark lines, then do a command (like y-yank)               
-    V - start linewise visual mode                                                   
-    o - move to other end of marked area                                             
-    Ctrl + v - start visual block mode                                               
-    O - move to other corner of block                                                
-    aw - mark a word                                                                 
-    ab - a block with ()                                                             
-    aB - a block with {}                                                             
-    at - a block with <> tags                                                        
-    ib - inner block with ()                                                         
-    iB - inner block with {}                                                         
-    it - inner block with <> tags                                                    
-    Esc or Ctrl + c - exit visual mode                                               
-
-#######################################################################################################
-Processing file: 2.txt
- ____   _        _   
-|___ \ | |___  _| |_ 
-  __) || __\ \/ / __|
- / __/ | |_ >  <| |_ 
-|_____(_)__/_/\_\\__|
-                     
-Diff                                                               
-    zf - manually define a fold up to motion                       
-    zd - delete fold under the cursor                              
-    za - toggle fold under the cursor                              
-    zo - open fold under the cursor                                
-    zc - close fold under the cursor                               
-    zr - reduce (open) all folds by one level                      
-    zm - fold more (close) all folds by one level                  
-    zi - toggle folding functionality                              
-    ]c - jump to start of next change                              
-    [c - jump to start of previous change                          
-    do or :diffg[et] - obtain (get) difference (from other buffer) 
-    dp or :diffpu[t] - put difference (to other buffer)            
-    :diffthis - make current window part of diff                   
-    :dif[fupdate] - update differences                             
-    :diffo[ff] - switch off diff mode for current window           
-
-#######################################################################################################
-Processing file: a
-       
-  __ _ 
- / _` |
-| (_| |
- \__,_|
-       
-52
-52
-16
-4014
-0
-1
-354
-51
-2
-354
-46
-58
-1
-86
-1
-5
-1
-30
-3
-2
-40
-4
-14
-330
-30
-8
-1
-2
-39
-7
-243
-124
-463
-49
-32
-2
-176
-304
-56
-7053
-
-#######################################################################################################
-Processing file: b
- _     
-| |__  
-| '_ \ 
-| |_) |
-|_.__/ 
-       
-52
-52
-16
-4014
-40
-1
-354
-51
-2
-354
-46
-58
-1
-86
-1
-5
-1
-30
-3
-2
-40
-4
-14
-330
-30
-8
-1
-2
-39
-7
-243
-124
-463
-49
-32
-2
-176
-304
-56
-7093
-
-#######################################################################################################
 Processing file: bash.functions
  _               _        __                  _   _                 
 | |__   __ _ ___| |__    / _|_   _ _ __   ___| |_(_) ___  _ __  ___ 
@@ -1348,7 +1102,7 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Tue Mar  4 22:45:29 EST 2025
+# *********************************************************DATEOMATIC: Tue Mar  4 22:51:28 EST 2025
 # *********************************************************HASHOMATIC: 96135f6548e88a01fbc3b60afe07d4a9
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
@@ -1711,7 +1465,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Tue Mar  4 22:45:29 EST 2025
+# *********************************************************DATEOMATIC: Tue Mar  4 22:51:28 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -1826,55 +1580,6 @@ file_type=$(file -b --mime-type "$full_filename")
 
 
 #######################################################################################################
-Processing file: c
-      
-  ___ 
- / __|
-| (__ 
- \___|
-      
-52
-52
-16
-4014
-40
-40
-354
-51
-2
-354
-46
-58
-0
-86
-1
-5
-1
-30
-3
-2
-40
-4
-14
-330
-30
-8
-1
-2
-39
-7
-243
-124
-463
-49
-32
-2
-176
-304
-56
-7131
-
-#######################################################################################################
 Processing file: colomatic
            _                       _   _      
   ___ ___ | | ___  _ __ ___   __ _| |_(_) ___ 
@@ -1980,55 +1685,6 @@ if [ $# -gt 1 ]; then
 fi
 
 #######################################################################################################
-Processing file: d
-     _ 
-  __| |
- / _` |
-| (_| |
- \__,_|
-       
-52
-52
-16
-4014
-40
-40
-354
-51
-2
-354
-46
-58
-40
-86
-0
-5
-1
-30
-3
-2
-40
-4
-14
-330
-30
-8
-1
-2
-39
-7
-243
-124
-463
-49
-32
-2
-176
-304
-56
-7170
-
-#######################################################################################################
 Processing file: deploy
      _            _             
   __| | ___ _ __ | | ___  _   _ 
@@ -2041,167 +1697,6 @@ cp ./.bashrc              ~
 cp ./bashrc.shared        ~
 cp ./bash.library         ~
 cp ./getme                ~
-
-#######################################################################################################
-Processing file: e
-      
-  ___ 
- / _ \
-|  __/
- \___|
-      
-52
-52
-16
-4014
-40
-40
-354
-51
-2
-354
-46
-58
-40
-86
-40
-5
-1
-30
-3
-2
-40
-4
-14
-330
-30
-8
-1
-2
-39
-7
-243
-124
-463
-49
-32
-2
-176
-304
-56
-7210
-
-#######################################################################################################
-Processing file: f
-  __ 
- / _|
-| |_ 
-|  _|
-|_|  
-     
-52
-52
-16
-4014
-40
-40
-354
-51
-2
-354
-46
-58
-40
-86
-40
-5
-40
-1
-30
-3
-2
-40
-4
-14
-330
-30
-8
-1
-2
-39
-7
-243
-124
-463
-49
-32
-2
-176
-304
-56
-7250
-
-#######################################################################################################
-Processing file: fred
-  __              _ 
- / _|_ __ ___  __| |
-| |_| '__/ _ \/ _` |
-|  _| | |  __/ (_| |
-|_| |_|  \___|\__,_|
-                    
-A   B 
-
-#######################################################################################################
-Processing file: g
-       
-  __ _ 
- / _` |
-| (_| |
- \__, |
- |___/ 
-52
-52
-16
-4014
-40
-40
-354
-51
-2
-354
-46
-58
-40
-86
-40
-5
-40
-41
-42
-1
-30
-3
-2
-40
-4
-14
-330
-30
-8
-1
-2
-39
-7
-243
-124
-463
-49
-32
-2
-176
-304
-56
-7333
 
 #######################################################################################################
 Processing file: gDiff
@@ -2364,7 +1859,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Tue Mar  4 22:45:29 EST 2025
+# *********************************************************DATEOMATIC: Tue Mar  4 22:51:28 EST 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
@@ -2705,9 +2200,6 @@ Processing file: get.raw
  |___/                               
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/0.txt
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/1.txt
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/2.txt
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
@@ -3856,6 +3348,7 @@ echo "# *********************************************************DATEOMATIC: $D"
 echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
 cat $Tmp  >> $Tmp1
 cat $Tmp1  > "$FILE"
+git add "$FILE"
 
 FILE="./bash.library"
 grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
@@ -3864,6 +3357,7 @@ echo "# *********************************************************DATEOMATIC: $D"
 echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
 cat $Tmp  >> $Tmp1
 cat $Tmp1  > "$FILE"
+git add "$FILE"
 
 FILE="./gawk.library"
 grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
@@ -3872,6 +3366,7 @@ echo "# *********************************************************DATEOMATIC: $D"
 echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
 cat $Tmp  >> $Tmp1
 cat $Tmp1  > "$FILE"
+git add "$FILE"
 
 git ls-files | gawk '
 BEGIN {
@@ -3893,6 +3388,7 @@ cat get.raw | sort | uniq | gawk '
 grep function bash.library | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp1
 
 grep bash get.raw | gawk '{print "wget " $0}' > getme
+git add getme
 
 create_markdown_table "$Tmp"   > README.md
 echo ""     >> README.md
@@ -3903,16 +3399,15 @@ create_markdown_table "$Tmp1" >> README.md
 echo ""     >> README.md
 echo ""     >> README.md
 ./listing   >> README.md
+git add README.md
 
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
 
 if [ "$UPDATE" == "LOCAL" ]; then                                                                                               
-    git add -A 
     git commit  -m "Update"
     git status
 fi
 if [ "$UPDATE" == "REMOTE" ]; then                                                                                               
-    git add -A
     git commit  -m "Update"
     git push -u origin master
     git status
@@ -4241,69 +3736,4 @@ Diff
     :diffthis - make current window part of diff
     :dif[fupdate] - update differences
     :diffo[ff] - switch off diff mode for current window
-
-#######################################################################################################
-Processing file: xxx
-                  
-__  ____  ____  __
-\ \/ /\ \/ /\ \/ /
- >  <  >  <  >  < 
-/_/\_\/_/\_\/_/\_\
-                  
-Global                                                                                 Insert mode - inserting/appending text
-                                                                                       
-    :h[elp] keyword - open help for keyword                                                i - insert before the cursor
-    :sav[eas] file - save file as                                                          I - insert at the beginning of the line
-    :clo[se] - close current pane                                                          a - insert (append) after the cursor
-    :ter[minal] - open a terminal window                                                   A - insert (append) at the end of the line
-    K - open man page for word under the cursor                                            o - append (open) a new line below the current line
-    Tip Run vimtutor in a terminal to learn the first Vim commands.                        O - append (open) a new line above the current line
-                                                                                           ea - insert (append) at the end of the word
-Cursor movement                                                                            Ctrl + h - delete the character before the cursor during insert mode
-                                                                                           Ctrl + w - delete word before the cursor during insert mode
-    h - move cursor left                                                                   Ctrl + j - add a line break at the cursor position during insert mode
-    j - move cursor down                                                                   Ctrl + t - indent (move right) line one shiftwidth during insert mode
-    k - move cursor up                                                                     Ctrl + d - de-indent (move left) line one shiftwidth during insert mode
-    l - move cursor right                                                                  Ctrl + n - insert (auto-complete) next match before the cursor during insert mode
-    gj - move cursor down (multi-line text)                                                Ctrl + p - insert (auto-complete) previous match before the cursor during insert mode
-    gk - move cursor up (multi-line text)                                                  Ctrl + rx - insert the contents of register x
-    H - move to top of screen                                                              Ctrl + ox - Temporarily enter normal mode to issue one normal-mode command x.
-    M - move to middle of screen                                                           Esc or Ctrl + c - exit insert mode
-    L - move to bottom of screen                                                       
-    w - jump forwards to the start of a word                                           Editing
-    W - jump forwards to the start of a word (words can contain punctuation)           
-    e - jump forwards to the end of a word                                                 r - replace a single character.
-    E - jump forwards to the end of a word (words can contain punctuation)                 R - replace more than one character, until ESC is pressed.
-    b - jump backwards to the start of a word                                              J - join line below to the current one with one space in between
-    B - jump backwards to the start of a word (words can contain punctuation)              gJ - join line below to the current one without space in between
-    ge - jump backwards to the end of a word                                               gwip - reflow paragraph
-    gE - jump backwards to the end of a word (words can contain punctuation)               g~ - switch case up to motion
-    % - move cursor to matching character (default supported pairs: '()', '{}', '[]'       gu - change to lowercase up to motion
-      - use :h matchpairs in vim for more info)                                            gU - change to uppercase up to motion
-    0 - jump to the start of the line                                                      cc - change (replace) entire line
-    ^ - jump to the first non-blank character of the line                                  c$ or C - change (replace) to the end of the line
-    $ - jump to the end of the line                                                        ciw - change (replace) entire word
-    g_ - jump to the last non-blank character of the line                                  cw or ce - change (replace) to the end of the word
-    gg - go to the first line of the document                                              s - delete character and substitute text (same as cl)
-    G - go to the last line of the document                                                S - delete line and substitute text (same as cc)
-    5gg or 5G - go to line 5                                                               xp - transpose two letters (delete and paste)
-    gd - move to local declaration                                                         u - undo
-    gD - move to global declaration                                                        U - restore (undo) last changed line
-    fx - jump to next occurrence of character x                                            Ctrl + r - redo
-    tx - jump to before next occurrence of character x                                     . - repeat last command
-    Fx - jump to the previous occurrence of character x                                
-    Tx - jump to after previous occurrence of character x                              
-    ; - repeat previous f, t, F or T movement                                          
-    , - repeat previous f, t, F or T movement, backwards                               
-    } - jump to next paragraph (or function/block, when editing code)                  
-    { - jump to previous paragraph (or function/block, when editing code)              
-    zz - center cursor on screen                                                       
-    zt - position cursor on top of the screen                                          
-    zb - position cursor on bottom of the screen                                       
-    Ctrl + e - move screen down one line (without moving cursor)                       
-    Ctrl + y - move screen up one line (without moving cursor)                         
-    Ctrl + b - move screen up one page (cursor to last line)                           
-    Ctrl + f - move screen down one page (cursor to first line)                        
-    Ctrl + d - move cursor and screen down 1/2 page                                    
-    Ctrl + u - move cursor and screen up 1/2 page                                      
 ```
