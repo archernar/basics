@@ -466,8 +466,8 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Wed Mar  5 19:01:43 EST 2025
-# *********************************************************HASHOMATIC: 96135f6548e88a01fbc3b60afe07d4a9
+# *********************************************************DATEOMATIC: Thu Mar  6 09:39:49 AM EST 2025
+# *********************************************************HASHOMATIC: 4f611216729f04dcc1f123f78479fe42
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 function git_toplevel() {
@@ -813,8 +813,6 @@ function scan_for_secrets() {
 function isSameHash() {
     local tmp=/tmp/HASHCHECK_$$
     local FILE="$1"
-    local OH=`grep HASHOMATIC "$FILE" | gawk '{n=split($0,A," ");print A[n]}'`
-    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $tmp
     local CH=$(md5sum "$tmp" | awk '{print $1}')
     if [[ "$CH" == "$OH" ]]; then
         echo "1"
@@ -2820,7 +2818,9 @@ fi
 
 
 FILE="./bashrc.shared"
-if [ $(isSameHash "$FILE") == "1" ]; then
+if [ $(isSameHash "$FILE") == "0" ]; then
+    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
+
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
     echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
@@ -2828,10 +2828,13 @@ if [ $(isSameHash "$FILE") == "1" ]; then
     cat $Tmp  >> $Tmp1
     cat $Tmp1  > "$FILE"
     git add "$FILE"
+    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
 fi
 
 FILE="./bash.library"
-if [ $(isSameHash "$FILE") == "1" ]; then
+if [ $(isSameHash "$FILE") == "0" ]; then
+    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
+
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
     echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
@@ -2839,10 +2842,13 @@ if [ $(isSameHash "$FILE") == "1" ]; then
     cat $Tmp  >> $Tmp1
     cat $Tmp1  > "$FILE"
     git add "$FILE"
+    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
 fi
 
 FILE="./gawk.library"
-if [ $(isSameHash "$FILE") == "1" ]; then
+if [ $(isSameHash "$FILE") == "0" ]; then
+    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
+
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
     echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
@@ -2850,6 +2856,7 @@ if [ $(isSameHash "$FILE") == "1" ]; then
     cat $Tmp  >> $Tmp1
     cat $Tmp1  > "$FILE"
     git add "$FILE"
+    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
 fi
 
 git ls-files | gawk '
