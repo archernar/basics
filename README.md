@@ -917,6 +917,7 @@ if ! shopt -oq posix; then
 fi
 
 source ~/bash.library
+
 source ~/bashrc.shared
 
 
@@ -936,7 +937,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Thu Mar  6 09:31:27 AM EST 2025
+# *********************************************************DATEOMATIC: Thu Mar  6 09:32:58 AM EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -1177,7 +1178,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Thu Mar  6 09:31:27 AM EST 2025
+# *********************************************************DATEOMATIC: Thu Mar  6 09:32:58 AM EST 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
@@ -2789,6 +2790,7 @@ D=`date`
 
 FILE="./.vimrc"
 if [ $(isSameHash "$FILE") == "1" ]; then
+    echo "Updating $FILE"
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
     echo "\" *********************************************************DATEOMATIC: $D"      > $Tmp1
@@ -2801,6 +2803,7 @@ fi
 
 FILE="./.bashrc"
 if [ $(isSameHash "$FILE") == "1" ]; then
+    echo "Updating $FILE"
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
     echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
@@ -2908,7 +2911,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Thu Mar  6 09:31:27 AM EST 2025
+" *********************************************************DATEOMATIC: Thu Mar  6 09:32:58 AM EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
