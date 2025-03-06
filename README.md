@@ -32,7 +32,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Tue Mar  4 22:53:04 EST 2025
+# *********************************************************DATEOMATIC: Wed Mar  5 19:01:43 EST 2025
 # *********************************************************HASHOMATIC: 00da6432c87aaa4cb45b423e3f000abb
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -126,7 +126,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Tue Mar  4 22:53:04 EST 2025
+" *********************************************************DATEOMATIC: Wed Mar  5 19:01:43 EST 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1102,7 +1102,7 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Tue Mar  4 22:53:04 EST 2025
+# *********************************************************DATEOMATIC: Wed Mar  5 19:01:43 EST 2025
 # *********************************************************HASHOMATIC: 96135f6548e88a01fbc3b60afe07d4a9
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
@@ -1465,7 +1465,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Tue Mar  4 22:53:04 EST 2025
+# *********************************************************DATEOMATIC: Wed Mar  5 19:01:43 EST 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -1859,7 +1859,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Tue Mar  4 22:53:04 EST 2025
+# *********************************************************DATEOMATIC: Wed Mar  5 19:01:43 EST 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
@@ -3242,6 +3242,20 @@ trap 'exit 0' INT HUP QUIT TERM ALRM USR1
 trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
+function isSameHash() {
+    local tmp=/tmp/HASHCHECK_$$
+    local FILE="$1"
+    local OH=`grep HASHOMATIC "$FILE" | gawk '{n=split($0,A," ");print A[n]}'`
+    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $tmp
+    local CH=$(md5sum "$tmp" | awk '{print $1}')
+    if [[ "$CH" == "$OH" ]]; then
+        echo "1"
+    else
+        echo "0"
+    fi
+}
+
+
 UPDATE="NO"
 while getopts "ruls" arg
 do
@@ -3313,50 +3327,63 @@ create_markdown_table() {
 # create_markdown_table "input.txt"
 
 D=`date`
+
 FILE="./.vimrc"
-grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
-IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-echo "\" *********************************************************DATEOMATIC: $D"      > $Tmp1
-echo "\" *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
-cat $Tmp  >> $Tmp1
-cat $Tmp1  > "$FILE"
-git add "$FILE"
+if [ $(isSameHash "$FILE") == "1" ]; then
+    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
+    IHASH=$(md5sum "$Tmp" | awk '{print $1}')
+    echo "\" *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "\" *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    cat $Tmp  >> $Tmp1
+    cat $Tmp1  > "$FILE"
+    git add "$FILE"
+fi
+
 
 FILE="./.bashrc"
-grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
-IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
-echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
-cat $Tmp  >> $Tmp1
-cat $Tmp1  > "$FILE"
-git add "$FILE"
+if [ $(isSameHash "$FILE") == "1" ]; then
+    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
+    IHASH=$(md5sum "$Tmp" | awk '{print $1}')
+    echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    cat $Tmp  >> $Tmp1
+    cat $Tmp1  > "$FILE"
+    git add "$FILE"
+fi
+
 
 FILE="./bashrc.shared"
-grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
-IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
-echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
-cat $Tmp  >> $Tmp1
-cat $Tmp1  > "$FILE"
-git add "$FILE"
+if [ $(isSameHash "$FILE") == "1" ]; then
+    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
+    IHASH=$(md5sum "$Tmp" | awk '{print $1}')
+    echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    cat $Tmp  >> $Tmp1
+    cat $Tmp1  > "$FILE"
+    git add "$FILE"
+fi
 
 FILE="./bash.library"
-grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
-IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
-echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
-cat $Tmp  >> $Tmp1
-cat $Tmp1  > "$FILE"
-git add "$FILE"
+if [ $(isSameHash "$FILE") == "1" ]; then
+    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
+    IHASH=$(md5sum "$Tmp" | awk '{print $1}')
+    echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    cat $Tmp  >> $Tmp1
+    cat $Tmp1  > "$FILE"
+    git add "$FILE"
+fi
 
 FILE="./gawk.library"
-grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
-IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
-echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
-cat $Tmp  >> $Tmp1
-cat $Tmp1  > "$FILE"
-git add "$FILE"
+if [ $(isSameHash "$FILE") == "1" ]; then
+    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
+    IHASH=$(md5sum "$Tmp" | awk '{print $1}')
+    echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    cat $Tmp  >> $Tmp1
+    cat $Tmp1  > "$FILE"
+    git add "$FILE"
+fi
 
 git ls-files | gawk '
 BEGIN {

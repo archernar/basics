@@ -1,4 +1,4 @@
-# *********************************************************DATEOMATIC: Tue Mar  4 22:53:04 EST 2025
+# *********************************************************DATEOMATIC: Wed Mar  5 19:01:43 EST 2025
 # *********************************************************HASHOMATIC: 96135f6548e88a01fbc3b60afe07d4a9
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
@@ -340,6 +340,19 @@ function scan_for_secrets() {
   fi
 
   return 0
+}
+
+function isSameHash() {
+    local tmp=/tmp/HASHCHECK_$$
+    local FILE="$1"
+    local OH=`grep HASHOMATIC "$FILE" | gawk '{n=split($0,A," ");print A[n]}'`
+    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $tmp
+    local CH=$(md5sum "$tmp" | awk '{print $1}')
+    if [[ "$CH" == "$OH" ]]; then
+        echo "1"
+    else
+        echo "0"
+    fi
 }
 
 # Example usage (if you want to run it directly from the script):
