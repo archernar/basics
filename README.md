@@ -19,7 +19,7 @@
 | extension() | cp_r() | mv_f() | rm_rf() | command_exists() |
 | pidof_name() | kill_name() | kill_pid() | run_and_exit_code() | run_and_output() |
 | run_and_error() | array_contains() | array_join() | is_reachable() | eprint() |
-| read_prompt() | timestamp_ms() | scan_for_secrets() |  |  |
+| read_prompt() | timestamp_ms() | scan_for_secrets() | isSameHash() |  |
 
 
 ```
@@ -1444,6 +1444,19 @@ function scan_for_secrets() {
   fi
 
   return 0
+}
+
+function isSameHash() {
+    local tmp=/tmp/HASHCHECK_$$
+    local FILE="$1"
+    local OH=`grep HASHOMATIC "$FILE" | gawk '{n=split($0,A," ");print A[n]}'`
+    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $tmp
+    local CH=$(md5sum "$tmp" | awk '{print $1}')
+    if [[ "$CH" == "$OH" ]]; then
+        echo "1"
+    else
+        echo "0"
+    fi
 }
 
 # Example usage (if you want to run it directly from the script):
@@ -3241,19 +3254,6 @@ Tmp3=/tmp/$$_$$_$$_$$_$$
 trap 'exit 0' INT HUP QUIT TERM ALRM USR1
 trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
-
-function isSameHash() {
-    local tmp=/tmp/HASHCHECK_$$
-    local FILE="$1"
-    local OH=`grep HASHOMATIC "$FILE" | gawk '{n=split($0,A," ");print A[n]}'`
-    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $tmp
-    local CH=$(md5sum "$tmp" | awk '{print $1}')
-    if [[ "$CH" == "$OH" ]]; then
-        echo "1"
-    else
-        echo "0"
-    fi
-}
 
 
 UPDATE="NO"
