@@ -8,6 +8,7 @@ trap 'exit 0' INT HUP QUIT TERM ALRM USR1
 trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
+
 UPDATE="NO"
 while getopts "ruls" arg
 do
@@ -79,50 +80,63 @@ create_markdown_table() {
 # create_markdown_table "input.txt"
 
 D=`date`
+
 FILE="./.vimrc"
-grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
-IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-echo "\" *********************************************************DATEOMATIC: $D"      > $Tmp1
-echo "\" *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
-cat $Tmp  >> $Tmp1
-cat $Tmp1  > "$FILE"
-git add "$FILE"
+if [ $(isSameHash "$FILE") == "1" ]; then
+    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
+    IHASH=$(md5sum "$Tmp" | awk '{print $1}')
+    echo "\" *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "\" *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    cat $Tmp  >> $Tmp1
+    cat $Tmp1  > "$FILE"
+    git add "$FILE"
+fi
+
 
 FILE="./.bashrc"
-grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
-IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
-echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
-cat $Tmp  >> $Tmp1
-cat $Tmp1  > "$FILE"
-git add "$FILE"
+if [ $(isSameHash "$FILE") == "1" ]; then
+    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
+    IHASH=$(md5sum "$Tmp" | awk '{print $1}')
+    echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    cat $Tmp  >> $Tmp1
+    cat $Tmp1  > "$FILE"
+    git add "$FILE"
+fi
+
 
 FILE="./bashrc.shared"
-grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
-IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
-echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
-cat $Tmp  >> $Tmp1
-cat $Tmp1  > "$FILE"
-git add "$FILE"
+if [ $(isSameHash "$FILE") == "1" ]; then
+    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
+    IHASH=$(md5sum "$Tmp" | awk '{print $1}')
+    echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    cat $Tmp  >> $Tmp1
+    cat $Tmp1  > "$FILE"
+    git add "$FILE"
+fi
 
 FILE="./bash.library"
-grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
-IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
-echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
-cat $Tmp  >> $Tmp1
-cat $Tmp1  > "$FILE"
-git add "$FILE"
+if [ $(isSameHash "$FILE") == "1" ]; then
+    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
+    IHASH=$(md5sum "$Tmp" | awk '{print $1}')
+    echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    cat $Tmp  >> $Tmp1
+    cat $Tmp1  > "$FILE"
+    git add "$FILE"
+fi
 
 FILE="./gawk.library"
-grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
-IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
-echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
-cat $Tmp  >> $Tmp1
-cat $Tmp1  > "$FILE"
-git add "$FILE"
+if [ $(isSameHash "$FILE") == "1" ]; then
+    grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
+    IHASH=$(md5sum "$Tmp" | awk '{print $1}')
+    echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    cat $Tmp  >> $Tmp1
+    cat $Tmp1  > "$FILE"
+    git add "$FILE"
+fi
 
 git ls-files | gawk '
 BEGIN {
