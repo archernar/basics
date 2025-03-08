@@ -75,9 +75,43 @@ function implColomatic() {
 }
 
 DELIM=" "
-while getopts "c" arg
+while getopts "2:3:4:5:c" arg
 do
     case $arg in
+        2) DELIM=" "
+           rm -f "$Tmp1" "$Tmp2" "$Tmp3" >/dev/null 2>&1
+           split_file_n "$OPTARG" "2" "${3:-split_}"
+           implColomatic "split_1"    "split_2"    "$DELIM"
+           rm -f "$Tmp1" "$Tmp2" "$Tmp3" >/dev/null 2>&1
+           exit 0
+           ;;
+        3) DELIM=" "
+           rm -f "$Tmp1" "$Tmp2" "$Tmp3" >/dev/null 2>&1
+           split_file_n "$OPTARG" "3" "${3:-split_}"
+           implColomatic "split_1"    "split_2"    "$DELIM"    > "$Tmp1"
+           implColomatic "$Tmp1"      "split_3"    "$DELIM"
+           rm -f "$Tmp1" "$Tmp2" "$Tmp3" >/dev/null 2>&1
+           exit 0
+           ;;
+        4) DELIM=" "
+           rm -f "$Tmp1" "$Tmp2" "$Tmp3" >/dev/null 2>&1
+           split_file_n "$OPTARG" "4" "${3:-split_}"
+           implColomatic "split_1"    "split_2"    "$DELIM"    > "$Tmp1"
+           implColomatic "$Tmp1"      "split_3"    "$DELIM"    > "$Tmp2"
+           implColomatic "$Tmp2"      "split_4"    "$DELIM"
+           rm -f "$Tmp1" "$Tmp2" "$Tmp3" >/dev/null 2>&1
+           exit 0
+           ;;
+        5) DELIM=" "
+           rm -f "$Tmp1" "$Tmp2" "$Tmp3" >/dev/null 2>&1
+           split_file_n "$OPTARG" "5" "${3:-split_}"
+           implColomatic "split_1"    "split_2"    "$DELIM"    > "$Tmp1"
+           implColomatic "$Tmp1"      "split_3"    "$DELIM"    > "$Tmp2"
+           implColomatic "$Tmp2"      "split_4"    "$DELIM"    > "$Tmp3"
+           implColomatic "$Tmp3"      "split_5"    "$DELIM"
+           rm -f "$Tmp1" "$Tmp2" "$Tmp3" >/dev/null 2>&1
+           exit 0
+           ;;
         c) DELIM=","
            ;;
     esac
