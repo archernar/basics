@@ -1,6 +1,15 @@
 # *********************************************************DATEOMATIC: Thu Mar  6 09:39:49 AM EST 2025
 # *********************************************************HASHOMATIC: 4f611216729f04dcc1f123f78479fe42
+DEBUGLEVEL=1
 
+function fecho() {
+  echo "$FUNCNAME : $1 $2 $3 $4 $5"
+}
+function fdebug() {
+    if [ "$DEBUGLEVEL" -gt "0" ]; then
+        echo "DBG $FUNCNAME : $1 $2 $3 $4 $"
+    fi
+}
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 function git_toplevel() {
      if [ -d ".git" ]; then
@@ -353,6 +362,41 @@ function isSameHash() {
     fi
 }
 
+function padout_file_lines() {
+  local filename="$1"
+  local tmp1=$(mktemp)
+  local tmp2=$(mktemp)
+  rm -f "$tmp1" >/dev/null 2>&1
+  rm -f "$tmp2" >/dev/null 2>&1
+
+  if [[ -z "$filename" ]]; then
+    fecho "Error: Filename not provided."
+    return 1
+  fi
+
+  if [[ ! -f "$filename" ]]; then
+    fecho "Error: File '$filename' not found."
+    return 1
+  fi
+
+  sed 's/[[:space:]]*$//' "$filename"  > "$tmp1"
+  max_len=$(wc -L "$tmp1" | awk '{print $1}')
+  padding_length=$((max_len + 0))
+
+  # Iterate through each line of the file and pad it
+  rm -f "$tmp2" >/dev/null 2>&1
+  while IFS= read -r line; do
+    printf "%-${padding_length}s\n" "$line" >> "$tmp2" # Pad to the right
+  done < "$tmp1"
+
+  mv "$tmp2" "$filename"
+
+  rm -f "$tmp1" >/dev/null 2>&1
+  rm -f "$tmp2" >/dev/null 2>&1
+  return 0
+}
+
+
 # Example usage (if you want to run it directly from the script):
 # if [[ "$0" == "$BASH_SOURCE" ]]; then
 #   if [[ $# -eq 1 ]]; then
@@ -364,7 +408,7 @@ function isSameHash() {
 # fi
 
 # Function to split a file into N files
-split_file_n() {
+function split_file_n() {
   local input_file="$1"
   local num_files="$2"
   local prefix="${3:-split_}" # Default prefix is "split_"
@@ -412,7 +456,7 @@ split_file_n() {
 #   fi
 # fi
 
-truncate_file_lines() {
+function truncate_file_lines() {
   local filename="$1"
   local num_chars="$2"
 
@@ -450,5 +494,63 @@ truncate_file_lines() {
   return 0
 }
 
-# Example usage:
-# truncate_file_lines "my_file.txt" 10
+function string_before_file_lines() {
+  local filename="$1"
+  local str="$2"
+
+  if [[ -z "$filename" ]]; then
+    echo "string_before Error: Filename not provided."
+    return 1
+  fi
+
+  if [[ ! -f "$filename" ]]; then
+    echo "string_before Error: File '$filename' not found."
+    return 1
+  fi
+
+  if [[ -z "$str" ]]; then
+    echo "string_before Error: Number of characters not provided."
+    return 1
+  fi
+
+  local temp_file=$(mktemp)
+
+  while IFS= read -r line; do
+    printf "${str}%s\n" "$line" >> "$temp_file"
+  done < "$filename"
+
+  mv "$temp_file" "$filename"
+
+  return 0
+}
+function string_after_file_lines() {
+  local filename="$1"
+  local str="$2"
+
+  if [[ -z "$filename" ]]; then
+    echo "string_before Error: Filename not provided."
+    return 1
+  fi
+
+  if [[ ! -f "$filename" ]]; then
+    echo "string_before Error: File '$filename' not found."
+    return 1
+  fi
+
+  if [[ -z "$str" ]]; then
+    echo "string_before Error: Number of characters not provided."
+    return 1
+  fi
+
+  local temp_file=$(mktemp)
+
+  while IFS= read -r line; do
+    printf "%s${str}\n" "$line" >> "$temp_file"
+  done < "$filename"
+
+  mv "$temp_file" "$filename"
+
+  return 0
+}
+
+
