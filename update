@@ -84,7 +84,6 @@ D=`date`
 
 FILE="./.vimrc"
 if [ $(isSameHash "$FILE") == "0" ]; then
-    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
 
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
@@ -93,13 +92,11 @@ if [ $(isSameHash "$FILE") == "0" ]; then
     cat $Tmp  >> $Tmp1
     cat $Tmp1  > "$FILE"
     git add "$FILE"
-    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
 fi
 
 
 FILE="./.bashrc"
 if [ $(isSameHash "$FILE") == "0" ]; then
-    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
 
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
@@ -108,13 +105,11 @@ if [ $(isSameHash "$FILE") == "0" ]; then
     cat $Tmp  >> $Tmp1
     cat $Tmp1  > "$FILE"
     git add "$FILE"
-    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
 fi
 
 
 FILE="./bashrc.shared"
 if [ $(isSameHash "$FILE") == "0" ]; then
-    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
 
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
@@ -123,12 +118,10 @@ if [ $(isSameHash "$FILE") == "0" ]; then
     cat $Tmp  >> $Tmp1
     cat $Tmp1  > "$FILE"
     git add "$FILE"
-    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
 fi
 
 FILE="./bash.library"
 if [ $(isSameHash "$FILE") == "0" ]; then
-    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
 
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
@@ -137,12 +130,10 @@ if [ $(isSameHash "$FILE") == "0" ]; then
     cat $Tmp  >> $Tmp1
     cat $Tmp1  > "$FILE"
     git add "$FILE"
-    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
 fi
 
 FILE="./gawk.library"
 if [ $(isSameHash "$FILE") == "0" ]; then
-    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
 
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
@@ -151,7 +142,6 @@ if [ $(isSameHash "$FILE") == "0" ]; then
     cat $Tmp  >> $Tmp1
     cat $Tmp1  > "$FILE"
     git add "$FILE"
-    echo "$FILE";grep DATEOMATIC "$FILE";grep HASHOMATIC "$FILE"
 fi
 
 git ls-files | gawk '
