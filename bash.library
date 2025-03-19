@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Thu Mar 13 06:51:37 EDT 2025
-# *********************************************************HASHOMATIC: a71c2d8220efe753672a0d6921f8796c
+# *********************************************************DATEOMATIC: Wed Mar 19 13:23:08 EDT 2025
+# *********************************************************HASHOMATIC: b08908665dd44c8fe01d4de04f577b1f
 DEBUGLEVEL=1
 
 function fecho() {
@@ -582,3 +582,93 @@ function sort_file() {
   return 0
 }
 
+function justify_line() {
+    local tmp1=$(mktemp)
+    local str="$1"
+    local num="$2"
+    echo "$1" | gawk -v num=$2 '
+        function justify(szIn,  l,n,i,sz,m,k,A) {
+            sz = "";
+            n =  split(szIn,A," ");
+            r = 1
+            delim = ""
+            for (i=1; i<=n; i++) {
+                sz = delim sz A[i] " ";
+                delim = ""
+                l = l + length(A[i] " ");
+                if (l > (num*r)) {
+                    r=r+1;
+                    sz = sz "\n"
+                    delim = ""
+                }
+            }
+            return sz;
+        }
+        {
+            print justify($0);
+        }' > "$tmp1"
+
+    cat "$tmp1"
+    rm -f "$tmp1" >/dev/null 2>&1
+}
+function justify_file() {
+  local filename="$1"
+  local num="$2"
+
+  if [[ -z "$filename" ]]; then
+    echo "Truncate Error: Filename not provided."
+    return 1
+  fi
+
+  if [[ ! -f "$filename" ]]; then
+    echo "Truncate Error: File '$filename' not found."
+    return 1
+  fi
+
+  if [[ -z "$num" ]]; then
+    echo "Truncate Error: Number of characters not provided."
+    return 1
+  fi
+
+  if ! [[ "$num" =~ ^[0-9]+$ ]]; then
+    echo "Truncate Error: Number of characters must be a positive integer."
+    return 1
+  fi
+  if [[ "$num" == "0" ]]; then
+    return 0
+  fi
+
+  local temp_file=$(mktemp)
+
+  while IFS= read -r line; do
+    justify_line "$line" "$num" >> "$temp_file"
+  done < "$filename"
+
+  mv "$temp_file" "$filename"
+
+  return 0
+}
+
+function indent_file() {
+  local filename="$1"
+
+  if [[ -z "$filename" ]]; then
+    echo "Truncate Error: Filename not provided."
+    return 1
+  fi
+
+  if [[ ! -f "$filename" ]]; then
+    echo "Truncate Error: File '$filename' not found."
+    return 1
+  fi
+
+  local temp_file=$(mktemp)
+
+  while IFS= read -r line; do
+    echo "    $line" >> "$temp_file"
+  done < "$filename"
+
+  mv "$temp_file" "$filename"
+
+  return 0
+}
