@@ -9,9 +9,8 @@
 | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |  |  |  |
 
 
-|    A     |    B     |    C     |    D     |    E     |
-|----------|----------|----------|----------|----------|
-| [colomatic](colomatic) | [indentomatic](indentomatic) | [justomatic](justomatic) | [padomatic](padomatic) |  |
+|----------|----------|----------|----------|
+| [colomatic](colomatic) | [indentomatic](indentomatic) | [justomatic](justomatic) | [padomatic](padomatic) |
 
 
 ## bash.library includes
@@ -41,7 +40,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sat Mar 22 10:48:48 EDT 2025
+# *********************************************************DATEOMATIC: Sat Mar 22 10:52:31 EDT 2025
 # *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -158,7 +157,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sat Mar 22 10:48:48 EDT 2025
+" *********************************************************DATEOMATIC: Sat Mar 22 10:52:31 EDT 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1436,7 +1435,7 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sat Mar 22 10:48:48 EDT 2025
+# *********************************************************DATEOMATIC: Sat Mar 22 10:52:31 EDT 2025
 # *********************************************************HASHOMATIC: 6396dfed8447e1a2e7e317447951bf45
 DEBUGLEVEL=1
 
@@ -2151,7 +2150,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sat Mar 22 10:48:48 EDT 2025
+# *********************************************************DATEOMATIC: Sat Mar 22 10:52:31 EDT 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2632,7 +2631,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Sat Mar 22 10:48:48 EDT 2025
+# *********************************************************DATEOMATIC: Sat Mar 22 10:52:31 EDT 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
@@ -4772,7 +4771,47 @@ else
     RETVAL="NO"                                                                                                              
 fi                                                                                                                           
 
-# Function to create a markdown table from a text file with 6 columns
+create_markdown_table4() {
+  local input_file="$1"
+
+  # Check if the input file exists
+  if [[ ! -f "$input_file" ]]; then
+    echo "Error: Input file '$input_file' not found."
+    return 1
+  fi
+
+  # Read lines from the file and create table rows
+  local line_count=0
+  local row=""
+  local first_row=1
+
+  while IFS= read -r line; do
+    if [[ $line_count -eq 0 ]]; then
+      if [[ $first_row -eq 1 ]]; then
+          echo "|----------|----------|----------|----------|"
+          first_row=0
+      fi
+    fi
+
+    row+="| $line "
+
+    line_count=$((line_count + 1))
+
+    if [[ $line_count -eq 4 ]]; then
+      echo "$row|"
+      row=""
+      line_count=0
+    fi
+  done < "$input_file"
+
+  # Handle remaining lines if the total line count is not a multiple of 5
+  if [[ $line_count -gt 0 ]]; then
+    for ((i = line_count; i < 5; i++)); do
+        row+="|  "
+    done
+    echo "$row|"
+  fi
+}
 create_markdown_table() {
   local input_file="$1"
 
@@ -4914,7 +4953,7 @@ ls *omatic | sort | uniq | gawk '
     n=split($0,A,"/")
     print "[" A[n] "](" $0 ")"
 }' > $Tmp
-create_markdown_table "$Tmp"  >> README.md
+create_markdown_table4 "$Tmp"  >> README.md
 echo ""     >> README.md
 echo ""     >> README.md
 echo "## bash.library includes"     >> README.md
