@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat Mar 22 10:53:23 EDT 2025
-# *********************************************************HASHOMATIC: 6396dfed8447e1a2e7e317447951bf45
+# *********************************************************DATEOMATIC: Sat Mar 22 11:01:55 EDT 2025
+# *********************************************************HASHOMATIC: 6bb30a7c497535f8e8855e7efecacbb6
 DEBUGLEVEL=1
 
 function fecho() {
@@ -703,4 +703,49 @@ function trim_leading_whitespace_file() {
   mv "$temp_file" "$filename"
 
   return 0
+}
+create_markdown_table4() {
+  local input_file="$1"
+  local tmp=$(mktemp)
+
+  # Check if the input file exists
+  if [[ ! -f "$input_file" ]]; then
+    fecho "Error: Input file '$input_file' not found."
+    return 1
+  fi
+
+  cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $Tmp
+
+  # Read lines from the file and create table rows
+  local line_count=0
+  local row=""
+  local first_row=1
+
+  while IFS= read -r line; do
+    if [[ $line_count -eq 0 ]]; then
+      if [[ $first_row -eq 1 ]]; then
+          echo "|    A     |    B     |    C     |    D     |"
+          echo "|----------|----------|----------|----------|"
+          first_row=0
+      fi
+    fi
+
+    row+="| $line "
+
+    line_count=$((line_count + 1))
+
+    if [[ $line_count -eq 4 ]]; then
+      echo "$row|"
+      row=""
+      line_count=0
+    fi
+  done < "$tmp"
+
+  # Handle remaining lines if the total line count is not a multiple of 5
+  if [[ $line_count -gt 0 ]]; then
+    for ((i = line_count; i < 5; i++)); do
+        row+="|  "
+    done
+    echo "$row|"
+  fi
 }
