@@ -9,6 +9,11 @@
 | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |  |  |  |
 
 
+|    A     |    B     |    C     |    D     |    E     |
+|----------|----------|----------|----------|----------|
+| [colomatic](colomatic) | [indentomatic](indentomatic) | [justomatic](justomatic) | [padomatic](padomatic) |  |
+
+
 ## bash.library includes
 
 |    A     |    B     |    C     |    D     |    E     |
@@ -36,7 +41,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sat Mar 22 10:45:36 EDT 2025
+# *********************************************************DATEOMATIC: Sat Mar 22 10:48:45 EDT 2025
 # *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -153,7 +158,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sat Mar 22 10:45:36 EDT 2025
+" *********************************************************DATEOMATIC: Sat Mar 22 10:48:45 EDT 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1431,7 +1436,7 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sat Mar 22 10:45:36 EDT 2025
+# *********************************************************DATEOMATIC: Sat Mar 22 10:48:45 EDT 2025
 # *********************************************************HASHOMATIC: 6396dfed8447e1a2e7e317447951bf45
 DEBUGLEVEL=1
 
@@ -2146,7 +2151,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sat Mar 22 10:45:36 EDT 2025
+# *********************************************************DATEOMATIC: Sat Mar 22 10:48:45 EDT 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2467,30 +2472,6 @@ cp ./bash.library         ~
 cp ./getme                ~
 
 #######################################################################################################
-Processing file: fed
-  __          _ 
- / _| ___  __| |
-| |_ / _ \/ _` |
-|  _|  __/ (_| |
-|_|  \___|\__,_|
-                
-fecho : Error: Control word not provided.    
- :h[elp] keyword - open help for keyword                          gk - move cursor up (multi-line text)                                            
- :sav[eas] file - save file as                                    H - move to top of screen                                                        
- :clo[se] - close current pane                                    M - move to middle of screen                                                     
- :ter[minal] - open a terminal window                             L - move to bottom of screen                                                     
- K - open man page for word under the cursor                      w - jump forwards to the start of a word                                         
- Tip Run vimtutor in a terminal to learn the first Vim commands.  W - jump forwards to the start of a word (words can contain punctuation)         
-                                                                  e - jump forwards to the end of a word                                           
- Cursor movement                                                  E - jump forwards to the end of a word (words can contain punctuation)           
-                                                                  b - jump backwards to the start of a word                                        
- h - move cursor left                                             B - jump backwards to the start of a word (words can contain punctuation)        
- j - move cursor down                                             ge - jump backwards to the end of a word                                         
- k - move cursor up                                               gE - jump backwards to the end of a word (words can contain punctuation)         
- l - move cursor right                                            % - move cursor to matching character (default supported pairs: '()', '{}', '[]' 
- gj - move cursor down (multi-line text)                         
-
-#######################################################################################################
 Processing file: gDiff
        ____  _  __  __ 
   __ _|  _ \(_)/ _|/ _|
@@ -2651,7 +2632,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Sat Mar 22 10:45:36 EDT 2025
+# *********************************************************DATEOMATIC: Sat Mar 22 10:48:45 EDT 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
@@ -4928,6 +4909,14 @@ git add getme
 create_markdown_table "$Tmp"   > README.md
 echo ""     >> README.md
 echo ""     >> README.md
+ls *omatic | sort | uniq | gawk '
+{
+    n=split($0,A,"/")
+    print "[" A[n] "](" $0 ")"
+}' > $Tmp
+create_markdown_table "$Tmp"  >> README.md
+echo ""     >> README.md
+echo ""     >> README.md
 echo "## bash.library includes"     >> README.md
 echo ""     >> README.md
 create_markdown_table "$Tmp1" >> README.md
@@ -5584,40 +5573,4 @@ Diff
     :diffthis - make current window part of diff
     :dif[fupdate] - update differences
     :diffo[ff] - switch off diff mode for current window
-
-#######################################################################################################
-Processing file: zed
-             _ 
- _______  __| |
-|_  / _ \/ _` |
- / /  __/ (_| |
-/___\___|\__,_|
-               
-        :h[elp] keyword - open help for keyword
-        :sav[eas] file - save file as
-        :clo[se] - close current pane
-        :ter[minal] - open a terminal window
-        K - open man page for word under the cursor
-        Tip Run vimtutor in a terminal to learn the first Vim commands.
-        
-        Cursor movement
-        
-        h - move cursor left
-        j - move cursor down
-        k - move cursor up
-        l - move cursor right
-        gj - move cursor down (multi-line text)
-        gk - move cursor up (multi-line text)
-        H - move to top of screen
-        M - move to middle of screen
-        L - move to bottom of screen
-        w - jump forwards to the start of a word
-        W - jump forwards to the start of a word (words can contain punctuation)
-        e - jump forwards to the end of a word
-        E - jump forwards to the end of a word (words can contain punctuation)
-        b - jump backwards to the start of a word
-        B - jump backwards to the start of a word (words can contain punctuation)
-        ge - jump backwards to the end of a word
-        gE - jump backwards to the end of a word (words can contain punctuation)
-        % - move cursor to matching character (default supported pairs: '()', '{}', '[]' 
 ```
