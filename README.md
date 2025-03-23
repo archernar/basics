@@ -45,7 +45,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar 23 08:38:17 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:47:31 EDT 2025
 # *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -162,7 +162,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar 23 08:38:17 EDT 2025
+" *********************************************************DATEOMATIC: Sun Mar 23 08:47:31 EDT 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1440,8 +1440,8 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:38:17 EDT 2025
-# *********************************************************HASHOMATIC: 933d4dd5218b1ceae746b5dc79fd01a9
+# *********************************************************DATEOMATIC: Sun Mar 23 08:47:31 EDT 2025
+# *********************************************************HASHOMATIC: 93d27bf32f2197db65487014417f7964
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -2181,7 +2181,7 @@ function trim_leading_whitespace_file() {
   return 0
 }
 function create_markdown_table4() {
-         local input_file="$1";local str="$2"
+         local input_file="$1";local str="$2"                   # Bash-Function-Args
   local tmp=$(mktemp)
   local LEN=""
   local STRING=""
@@ -2244,7 +2244,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar 23 08:38:17 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:47:31 EDT 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2725,7 +2725,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:38:17 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:47:31 EDT 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
@@ -5006,7 +5006,9 @@ echo ""     >> README.md
 echo "## bash.library includes"     >> README.md
 echo ""     >> README.md
 
-grep function bash.library | grep "()" | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp
+# grep function bash.library | grep "()" | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp
+egrep "(function.*[(][)])|(Function-Args)" bash.library | grep "()" | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp
+
 create_markdown_table4 "$Tmp"  >> README.md
 echo ""     >> README.md
 echo ""     >> README.md

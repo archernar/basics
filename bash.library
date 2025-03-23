@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Mar 23 08:38:17 EDT 2025
-# *********************************************************HASHOMATIC: 933d4dd5218b1ceae746b5dc79fd01a9
+# *********************************************************DATEOMATIC: Sun Mar 23 08:47:31 EDT 2025
+# *********************************************************HASHOMATIC: 93d27bf32f2197db65487014417f7964
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -739,7 +739,7 @@ function trim_leading_whitespace_file() {
   return 0
 }
 function create_markdown_table4() {
-         local input_file="$1";local str="$2"
+         local input_file="$1";local str="$2"                   # Bash-Function-Args
   local tmp=$(mktemp)
   local LEN=""
   local STRING=""
