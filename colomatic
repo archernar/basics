@@ -23,7 +23,7 @@ function implColomatic() {
     local filename1="$1"
     local filename2="$2"
 
-    # Check if a filenameis are provided
+    # Check if a filename is are provided
     if [ -z "$filename1" ]; then
       echo "Usage: <filename> <filename>"
       exit 1
@@ -60,7 +60,7 @@ function implColomatic() {
 }
 
 DELIM=" "
-BAR=""
+BAR=" "
 SORT=""
 W=0
 while getopts "sbn:2:3:4:5:c" arg
@@ -75,7 +75,10 @@ do
         2) DELIM=""
            rm -f "split_0" "split_1" "split_2" "split_3" "split_4" "split_5" >/dev/null 2>&1
            cp "$OPTARG" "split_0"
+           trim_leading_whitespace_file "split_0"
+           justify_file "split_0" "44"
            sort_file "split_0" "$SORT"
+#           indentomatic -f split_0 
            split_file_n "split_0" "2" "split_"
            truncate_file_lines "split_1" $W 
                padout_file_lines "split_1"
