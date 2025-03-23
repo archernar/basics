@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Mar 23 08:06:28 EDT 2025
-# *********************************************************HASHOMATIC: e7ee85848cb6124a7a77505d69c5a4ee
+# *********************************************************DATEOMATIC: Sun Mar 23 08:07:38 EDT 2025
+# *********************************************************HASHOMATIC: bb2510a00d01f1852399f209bc7a6e83
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -752,7 +752,7 @@ create_markdown_table4() {
   fi
 
   LEN=`longest_string_length < "$input_file"`
-  STRING=`repeat_char "x" "$LEN"`
+  STRING=`repeat_char "x" "20"`
 
   cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
 
