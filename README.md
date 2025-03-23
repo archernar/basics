@@ -21,18 +21,18 @@
 |----------|----------|----------|----------|
 | abspath() | array_contains() | array_join() | backup_file() |
 | basename() | collapse_hostname() | collapse_pwd() | command_exists() |
-| contains() | cp_r() | dirname() | ends_with() |
-| eprint() | exists() | extension() | fdebug() |
-| fecho() | git_branch() | git_origin() | git_originsync() |
-| git_toplevel() | indent_file() | isSameHash() | is_dir() |
-| is_file() | is_reachable() | justify_file() | justify_line() |
-| kill_name() | kill_pid() | longest_string_length() | mkdir_p() |
-| mv_f() | padout_file_lines() | pidof_name() | read_prompt() |
-| repeat_char() | replace() | rm_rf() | run_and_error() |
-| run_and_exit_code() | run_and_output() | scan_for_secrets() | sort_file() |
-| split_file_n() | starts_with() | string_after_file_lines() | string_before_file_lines() |
-| substring() | timestamp_ms() | trim() | trim_leading_whitespace_file() |
-| truncate_file_lines() |  |  |  |  |
+| contains() | cp_r() | create_markdown_table4() | dirname() |
+| ends_with() | eprint() | exists() | extension() |
+| fdebug() | fecho() | git_branch() | git_origin() |
+| git_originsync() | git_toplevel() | indent_file() | isSameHash() |
+| is_dir() | is_file() | is_reachable() | justify_file() |
+| justify_line() | kill_name() | kill_pid() | longest_string_length() |
+| mkdir_p() | mv_f() | padout_file_lines() | pidof_name() |
+| read_prompt() | repeat_char() | replace() | rm_rf() |
+| run_and_error() | run_and_exit_code() | run_and_output() | scan_for_secrets() |
+| sort_file() | split_file_n() | starts_with() | string_after_file_lines() |
+| string_before_file_lines() | substring() | timestamp_ms() | trim() |
+| trim_leading_whitespace_file() | truncate_file_lines() |  |  |  |
 
 
 ```
@@ -45,7 +45,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar 23 08:35:55 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:38:17 EDT 2025
 # *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -162,7 +162,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar 23 08:35:55 EDT 2025
+" *********************************************************DATEOMATIC: Sun Mar 23 08:38:17 EDT 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1440,8 +1440,8 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:35:55 EDT 2025
-# *********************************************************HASHOMATIC: f49d86db620f0a04a572eb468a128ab9
+# *********************************************************DATEOMATIC: Sun Mar 23 08:38:17 EDT 2025
+# *********************************************************HASHOMATIC: 933d4dd5218b1ceae746b5dc79fd01a9
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -2180,8 +2180,8 @@ function trim_leading_whitespace_file() {
 
   return 0
 }
-create_markdown_table4() {
-  local input_file="$1"
+function create_markdown_table4() {
+         local input_file="$1";local str="$2"
   local tmp=$(mktemp)
   local LEN=""
   local STRING=""
@@ -2196,7 +2196,7 @@ create_markdown_table4() {
   STRING=`repeat_char "-" "24"`
 
   rm -f "$tmp" >/dev/null 2>&1
-  if [[ "$2" == "MAKELINKS" ]]; then
+  if [[ "$str" == "MAKELINKS" ]]; then
       cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
   else
       cat "$input_file" |sort|uniq > $tmp
@@ -2244,7 +2244,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar 23 08:35:55 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:38:17 EDT 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2725,7 +2725,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:35:55 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:38:17 EDT 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.

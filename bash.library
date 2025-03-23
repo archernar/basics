@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Mar 23 08:35:55 EDT 2025
-# *********************************************************HASHOMATIC: f49d86db620f0a04a572eb468a128ab9
+# *********************************************************DATEOMATIC: Sun Mar 23 08:38:17 EDT 2025
+# *********************************************************HASHOMATIC: 933d4dd5218b1ceae746b5dc79fd01a9
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -738,8 +738,8 @@ function trim_leading_whitespace_file() {
 
   return 0
 }
-create_markdown_table4() {
-  local input_file="$1"
+function create_markdown_table4() {
+         local input_file="$1";local str="$2"
   local tmp=$(mktemp)
   local LEN=""
   local STRING=""
@@ -754,7 +754,7 @@ create_markdown_table4() {
   STRING=`repeat_char "-" "24"`
 
   rm -f "$tmp" >/dev/null 2>&1
-  if [[ "$2" == "MAKELINKS" ]]; then
+  if [[ "$str" == "MAKELINKS" ]]; then
       cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
   else
       cat "$input_file" |sort|uniq > $tmp
