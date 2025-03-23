@@ -1,3 +1,13 @@
+| xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx |
+|----------|----------|----------|----------|
+| [.bashrc)]([.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc)) | [.gitignore)]([.gitignore](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.gitignore)) | [.vimrc)]([.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc)) | [README.md)]([README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md)) |
+| [bash.functions)]([bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions)) | [bash.justhelp)]([bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp)) | [bash.library)]([bash.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library)) | [bashrc.shared)]([bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared)) |
+| [bashtop)]([bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop)) | [colomatic)]([colomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/colomatic)) | [deploy)]([deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy)) | [gDiff)]([gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff)) |
+| [gHardSync)]([gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync)) | [gLocal)]([gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal)) | [gStatus)]([gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus)) | [gUpdateFromOrigin)]([gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin)) |
+| [gUpdate)]([gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate)) | [gawk.library)]([gawk.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gawk.library)) | [get.raw)]([get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw)) | [getme)]([getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme)) |
+| [indentomatic)]([indentomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/indentomatic)) | [justomatic)]([justomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/justomatic)) | [listing)]([listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing)) | [make)]([make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make)) |
+| [newbashscript)]([newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript)) | [notes)]([notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes)) | [other)]([other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other)) | [padomatic)]([padomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic)) |
+| [rmLeadingWhiteSpace)]([rmLeadingWhiteSpace](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/rmLeadingWhiteSpace)) | [setgit)]([setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit)) | [update)]([update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update)) | [vim.txt)]([vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt)) |
 
 
 | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx |
@@ -35,7 +45,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar 23 08:12:34 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:13:09 EDT 2025
 # *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -152,7 +162,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar 23 08:12:34 EDT 2025
+" *********************************************************DATEOMATIC: Sun Mar 23 08:13:09 EDT 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1430,7 +1440,7 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:12:34 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:13:09 EDT 2025
 # *********************************************************HASHOMATIC: bb2510a00d01f1852399f209bc7a6e83
 DEBUGLEVEL=1
 
@@ -2232,7 +2242,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar 23 08:12:34 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:13:09 EDT 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2713,7 +2723,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:12:34 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:13:09 EDT 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
@@ -4980,7 +4990,7 @@ rm -f "$Tmp"  >/dev/null 2>&1;
 grep bash get.raw | gawk '{print "wget " $0}' > getme
 git add getme
 
-cat get.raw |sort|uniq| gawk ' {n=split($0,A,"/") print "[" A[n] "](" $0 ")"}' > $Tmp
+cat get.raw |sort|uniq| gawk ' {n=split($0,A,"/");print "[" A[n] "](" $0 ")"}' > $Tmp
 create_markdown_table4 "$Tmp"   > README.md
 echo ""     >> README.md
 echo ""     >> README.md
