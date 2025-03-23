@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Mar 23 08:30:57 EDT 2025
-# *********************************************************HASHOMATIC: 1c9bbb699f28607af2dc0fed4d412d89
+# *********************************************************DATEOMATIC: Sun Mar 23 08:35:55 EDT 2025
+# *********************************************************HASHOMATIC: f49d86db620f0a04a572eb468a128ab9
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -564,8 +564,7 @@ function string_before_file_lines() {
   return 0
 }
 function string_after_file_lines() {
-  local filename="$1"
-  local str="$2"
+         local filename="$1";local str="$2"
 
   if [[ -z "$filename" ]]; then
     echo "string_before Error: Filename not provided."
