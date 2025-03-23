@@ -9,7 +9,7 @@
 | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |  |  |  |
 
 
-| xxxxxxxxxxxx | -------- | -------- | -------- |
+| xxxxxxxxxxxx | xxxxxxxxxxxx | xxxxxxxxxxxx | xxxxxxxxxxxx |
 |----------|----------|----------|----------|
 | [colomatic](colomatic) | [indentomatic](indentomatic) | [justomatic](justomatic) | [padomatic](padomatic) |
 
@@ -41,7 +41,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar 23 08:04:31 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:06:28 EDT 2025
 # *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -158,7 +158,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar 23 08:04:31 EDT 2025
+" *********************************************************DATEOMATIC: Sun Mar 23 08:06:28 EDT 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1436,8 +1436,8 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:04:31 EDT 2025
-# *********************************************************HASHOMATIC: d0a8d47bd6e1f1560675bfdbed7b3e43
+# *********************************************************DATEOMATIC: Sun Mar 23 08:06:28 EDT 2025
+# *********************************************************HASHOMATIC: e7ee85848cb6124a7a77505d69c5a4ee
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -2204,7 +2204,7 @@ create_markdown_table4() {
       if [[ $first_row -eq 1 ]]; then
           # echo "|    A     |    B     |    C     |    D     |"
           #echo "| -------- | -------- | -------- | -------- |"
-          echo "| $STRING | -------- | -------- | -------- |"
+          echo "| $STRING | $STRING | $STRING | $STRING |"
           echo "|----------|----------|----------|----------|"
           first_row=0
       fi
@@ -2238,7 +2238,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar 23 08:04:31 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:06:28 EDT 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2719,7 +2719,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:04:31 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:06:28 EDT 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
