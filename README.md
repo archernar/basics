@@ -1,4 +1,4 @@
-| -------------------- | -------------------- | -------------------- | -------------------- |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
 |----------|----------|----------|----------|
 | [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [.gitignore](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.gitignore) | [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) | [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) |
 | [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp) | [bash.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library) | [bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared) |
@@ -10,14 +10,14 @@
 | [rmLeadingWhiteSpace](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/rmLeadingWhiteSpace) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |
 
 
-| -------------------- | -------------------- | -------------------- | -------------------- |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
 |----------|----------|----------|----------|
 | colomatic | indentomatic | justomatic | padomatic |
 
 
 ## bash.library includes
 
-| -------------------- | -------------------- | -------------------- | -------------------- |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
 |----------|----------|----------|----------|
 |         justify(szIn,  l,n,i,sz,m,k,A, flag) | abspath() | array_contains() | array_join() |
 | backup_file() | basename() | collapse_hostname() | collapse_pwd() |
@@ -45,7 +45,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar 23 08:23:32 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:24:22 EDT 2025
 # *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -162,7 +162,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar 23 08:23:32 EDT 2025
+" *********************************************************DATEOMATIC: Sun Mar 23 08:24:22 EDT 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1440,8 +1440,8 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:23:32 EDT 2025
-# *********************************************************HASHOMATIC: 5c4bcba0d374e5f0a4bb1c4bd9bfbafe
+# *********************************************************DATEOMATIC: Sun Mar 23 08:24:22 EDT 2025
+# *********************************************************HASHOMATIC: f1279f8a11af058886052ec1a87b3ce3
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -2194,7 +2194,7 @@ create_markdown_table4() {
   fi
 
   LEN=`longest_string_length < "$input_file"`
-  STRING=`repeat_char "-" "20"`
+  STRING=`repeat_char "-" "32"`
 
   rm -f "$tmp" >/dev/null 2>&1
   if [[ "$2" == "MAKELINKS" ]]; then
@@ -2247,7 +2247,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar 23 08:23:32 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:24:22 EDT 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2728,7 +2728,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:23:32 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:24:22 EDT 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.

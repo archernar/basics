@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Mar 23 08:23:32 EDT 2025
-# *********************************************************HASHOMATIC: 5c4bcba0d374e5f0a4bb1c4bd9bfbafe
+# *********************************************************DATEOMATIC: Sun Mar 23 08:24:22 EDT 2025
+# *********************************************************HASHOMATIC: f1279f8a11af058886052ec1a87b3ce3
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -752,7 +752,7 @@ create_markdown_table4() {
   fi
 
   LEN=`longest_string_length < "$input_file"`
-  STRING=`repeat_char "-" "20"`
+  STRING=`repeat_char "-" "32"`
 
   rm -f "$tmp" >/dev/null 2>&1
   if [[ "$2" == "MAKELINKS" ]]; then
