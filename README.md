@@ -1,38 +1,38 @@
 | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx |
 |----------|----------|----------|----------|
-| [.bashrc)]([.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc)) | [.gitignore)]([.gitignore](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.gitignore)) | [.vimrc)]([.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc)) | [README.md)]([README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md)) |
-| [bash.functions)]([bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions)) | [bash.justhelp)]([bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp)) | [bash.library)]([bash.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library)) | [bashrc.shared)]([bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared)) |
-| [bashtop)]([bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop)) | [colomatic)]([colomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/colomatic)) | [deploy)]([deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy)) | [gDiff)]([gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff)) |
-| [gHardSync)]([gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync)) | [gLocal)]([gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal)) | [gStatus)]([gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus)) | [gUpdateFromOrigin)]([gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin)) |
-| [gUpdate)]([gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate)) | [gawk.library)]([gawk.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gawk.library)) | [get.raw)]([get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw)) | [getme)]([getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme)) |
-| [indentomatic)]([indentomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/indentomatic)) | [justomatic)]([justomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/justomatic)) | [listing)]([listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing)) | [make)]([make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make)) |
-| [newbashscript)]([newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript)) | [notes)]([notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes)) | [other)]([other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other)) | [padomatic)]([padomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic)) |
-| [rmLeadingWhiteSpace)]([rmLeadingWhiteSpace](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/rmLeadingWhiteSpace)) | [setgit)]([setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit)) | [update)]([update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update)) | [vim.txt)]([vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt)) |
+| [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [.gitignore](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.gitignore) | [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) | [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) |
+| [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp) | [bash.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library) | [bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared) |
+| [bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop) | [colomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/colomatic) | [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) | [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) |
+| [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) |
+| [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [gawk.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gawk.library) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) | [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) |
+| [indentomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/indentomatic) | [justomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/justomatic) | [listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing) | [make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make) |
+| [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) | [padomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic) |
+| [rmLeadingWhiteSpace](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/rmLeadingWhiteSpace) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |
 
 
 | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx |
 |----------|----------|----------|----------|
-| [colomatic](colomatic) | [indentomatic](indentomatic) | [justomatic](justomatic) | [padomatic](padomatic) |
+| colomatic | indentomatic | justomatic | padomatic |
 
 
 ## bash.library includes
 
 | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxx |
 |----------|----------|----------|----------|
-| [        justify(szIn,  l,n,i,sz,m,k,A, flag)](        justify(szIn,  l,n,i,sz,m,k,A, flag)) | [abspath()](abspath()) | [array_contains()](array_contains()) | [array_join()](array_join()) |
-| [backup_file()](backup_file()) | [basename()](basename()) | [collapse_hostname()](collapse_hostname()) | [collapse_pwd()](collapse_pwd()) |
-| [command_exists()](command_exists()) | [contains()](contains()) | [cp_r()](cp_r()) | [dirname()](dirname()) |
-| [ends_with()](ends_with()) | [eprint()](eprint()) | [exists()](exists()) | [extension()](extension()) |
-| [fdebug()](fdebug()) | [fecho()](fecho()) | [git_branch()](git_branch()) | [git_origin()](git_origin()) |
-| [git_originsync()](git_originsync()) | [git_toplevel()](git_toplevel()) | [indent_file()](indent_file()) | [isSameHash()](isSameHash()) |
-| [is_dir()](is_dir()) | [is_file()](is_file()) | [is_reachable()](is_reachable()) | [justify_file()](justify_file()) |
-| [justify_line()](justify_line()) | [kill_name()](kill_name()) | [kill_pid()](kill_pid()) | [longest_string_length()](longest_string_length()) |
-| [mkdir_p()](mkdir_p()) | [mv_f()](mv_f()) | [padout_file_lines()](padout_file_lines()) | [pidof_name()](pidof_name()) |
-| [read_prompt()](read_prompt()) | [repeat_char()](repeat_char()) | [replace()](replace()) | [rm_rf()](rm_rf()) |
-| [run_and_error()](run_and_error()) | [run_and_exit_code()](run_and_exit_code()) | [run_and_output()](run_and_output()) | [scan_for_secrets()](scan_for_secrets()) |
-| [sort_file()](sort_file()) | [split_file_n()](split_file_n()) | [starts_with()](starts_with()) | [string_after_file_lines()](string_after_file_lines()) |
-| [string_before_file_lines()](string_before_file_lines()) | [substring()](substring()) | [timestamp_ms()](timestamp_ms()) | [trim()](trim()) |
-| [trim_leading_whitespace_file()](trim_leading_whitespace_file()) | [truncate_file_lines()](truncate_file_lines()) |  |  |  |
+|         justify(szIn,  l,n,i,sz,m,k,A, flag) | abspath() | array_contains() | array_join() |
+| backup_file() | basename() | collapse_hostname() | collapse_pwd() |
+| command_exists() | contains() | cp_r() | dirname() |
+| ends_with() | eprint() | exists() | extension() |
+| fdebug() | fecho() | git_branch() | git_origin() |
+| git_originsync() | git_toplevel() | indent_file() | isSameHash() |
+| is_dir() | is_file() | is_reachable() | justify_file() |
+| justify_line() | kill_name() | kill_pid() | longest_string_length() |
+| mkdir_p() | mv_f() | padout_file_lines() | pidof_name() |
+| read_prompt() | repeat_char() | replace() | rm_rf() |
+| run_and_error() | run_and_exit_code() | run_and_output() | scan_for_secrets() |
+| sort_file() | split_file_n() | starts_with() | string_after_file_lines() |
+| string_before_file_lines() | substring() | timestamp_ms() | trim() |
+| trim_leading_whitespace_file() | truncate_file_lines() |  |  |  |
 
 
 ```
@@ -45,7 +45,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar 23 08:13:09 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:17:46 EDT 2025
 # *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -162,7 +162,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar 23 08:13:09 EDT 2025
+" *********************************************************DATEOMATIC: Sun Mar 23 08:17:46 EDT 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1440,8 +1440,8 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:13:09 EDT 2025
-# *********************************************************HASHOMATIC: bb2510a00d01f1852399f209bc7a6e83
+# *********************************************************DATEOMATIC: Sun Mar 23 08:17:46 EDT 2025
+# *********************************************************HASHOMATIC: e20d37c3813a911f87b1a6f7c2bbeefe
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -2196,7 +2196,11 @@ create_markdown_table4() {
   LEN=`longest_string_length < "$input_file"`
   STRING=`repeat_char "x" "20"`
 
-  cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
+  if [[ "$2" == "MAKELINKS" ]]; then
+      cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
+  else
+      cat "$input_file" |sort|uniq > $tmp
+  fi
 
   # Read lines from the file and create table rows
   local line_count=0
@@ -2242,7 +2246,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar 23 08:13:09 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:17:46 EDT 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2723,7 +2727,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:13:09 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:17:46 EDT 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.

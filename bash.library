@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Mar 23 08:13:09 EDT 2025
-# *********************************************************HASHOMATIC: bb2510a00d01f1852399f209bc7a6e83
+# *********************************************************DATEOMATIC: Sun Mar 23 08:17:46 EDT 2025
+# *********************************************************HASHOMATIC: e20d37c3813a911f87b1a6f7c2bbeefe
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -754,7 +754,11 @@ create_markdown_table4() {
   LEN=`longest_string_length < "$input_file"`
   STRING=`repeat_char "x" "20"`
 
-  cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
+  if [[ "$2" == "MAKELINKS" ]]; then
+      cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
+  else
+      cat "$input_file" |sort|uniq > $tmp
+  fi
 
   # Read lines from the file and create table rows
   local line_count=0
