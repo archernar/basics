@@ -1,7 +1,42 @@
-# *********************************************************DATEOMATIC: Sun Mar 23 07:54:33 EDT 2025
-# *********************************************************HASHOMATIC: 7893fdee81cc22c459a230e85d7373f0
+# *********************************************************DATEOMATIC: Sun Mar 23 08:04:04 EDT 2025
+# *********************************************************HASHOMATIC: eae2dc656230131b5798728128eada11
 DEBUGLEVEL=1
 
+function repeat_char() {
+  local char="$1"
+  local count="$2"
+  local result=""
+
+  if [[ -z "$char" || -z "$count" ]]; then
+    echo "Usage: repeat_char <character> <count>" >&2
+    return 1
+  fi
+
+  if [[ "$count" -lt 0 ]]; then
+    echo "Count must be a non-negative integer." >&2
+    return 1
+  fi
+
+  for ((i = 0; i < count; i++)); do
+    result+="$char"
+  done
+
+  echo "$result"
+}
+function longest_string_length() {
+  local max_length=0
+  local current_length
+  local line
+
+  while IFS= read -r line; do
+    current_length=${#line}
+    if [[ $current_length -gt $max_length ]]; then
+      max_length=$current_length
+    fi
+  done
+
+  echo "$max_length"
+}
 function fecho() {
   echo "$FUNCNAME : $1 $2 $3 $4 $5"
 }
@@ -707,12 +742,17 @@ function trim_leading_whitespace_file() {
 create_markdown_table4() {
   local input_file="$1"
   local tmp=$(mktemp)
+  local LEN=""
+  local STRING=""
 
   # Check if the input file exists
   if [[ ! -f "$input_file" ]]; then
     fecho "Error: Input file '$input_file' not found."
     return 1
   fi
+
+  LEN=`longest_string_length < "$input_file"`
+  STRING=`repeat_char "x" "$LEN"`
 
   cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
 
@@ -725,7 +765,8 @@ create_markdown_table4() {
     if [[ $line_count -eq 0 ]]; then
       if [[ $first_row -eq 1 ]]; then
           # echo "|    A     |    B     |    C     |    D     |"
-          echo "| -------- | -------- | -------- | -------- |"
+          $echo "| -------- | -------- | -------- | -------- |"
+          echo "| $STRING | -------- | -------- | -------- |"
           echo "|----------|----------|----------|----------|"
           first_row=0
       fi

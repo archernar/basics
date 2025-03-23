@@ -9,7 +9,7 @@
 | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |  |  |  |
 
 
-| -------- | -------- | -------- | -------- |
+| xxxxxxxxxxxx | -------- | -------- | -------- |
 |----------|----------|----------|----------|
 | [colomatic](colomatic) | [indentomatic](indentomatic) | [justomatic](justomatic) | [padomatic](padomatic) |
 
@@ -18,17 +18,17 @@
 
 |    A     |    B     |    C     |    D     |    E     |
 |----------|----------|----------|----------|----------|
-| fecho() | fdebug() | git_toplevel() | git_branch() | git_origin() |
-| git_originsync() | collapse_pwd() | collapse_hostname() | backup_file() | trim() |
-| starts_with() | ends_with() | contains() | replace() | substring() |
-| mkdir_p() | exists() | is_file() | is_dir() | abspath() |
-| basename() | dirname() | extension() | cp_r() | mv_f() |
-| rm_rf() | command_exists() | pidof_name() | kill_name() | kill_pid() |
-| run_and_exit_code() | run_and_output() | run_and_error() | array_contains() | array_join() |
-| is_reachable() | eprint() | read_prompt() | timestamp_ms() | scan_for_secrets() |
-| isSameHash() | padout_file_lines() | split_file_n() | truncate_file_lines() | string_before_file_lines() |
-| string_after_file_lines() | sort_file() | justify_line() |         justify(szIn,  l,n,i,sz,m,k,A, flag) | justify_file() |
-| indent_file() | trim_leading_whitespace_file() |  |  |  |
+| repeat_char() | longest_string_length() | fecho() | fdebug() | git_toplevel() |
+| git_branch() | git_origin() | git_originsync() | collapse_pwd() | collapse_hostname() |
+| backup_file() | trim() | starts_with() | ends_with() | contains() |
+| replace() | substring() | mkdir_p() | exists() | is_file() |
+| is_dir() | abspath() | basename() | dirname() | extension() |
+| cp_r() | mv_f() | rm_rf() | command_exists() | pidof_name() |
+| kill_name() | kill_pid() | run_and_exit_code() | run_and_output() | run_and_error() |
+| array_contains() | array_join() | is_reachable() | eprint() | read_prompt() |
+| timestamp_ms() | scan_for_secrets() | isSameHash() | padout_file_lines() | split_file_n() |
+| truncate_file_lines() | string_before_file_lines() | string_after_file_lines() | sort_file() | justify_line() |
+|         justify(szIn,  l,n,i,sz,m,k,A, flag) | justify_file() | indent_file() | trim_leading_whitespace_file() |  |
 
 
 ```
@@ -41,7 +41,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar 23 07:54:33 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:04:04 EDT 2025
 # *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -158,7 +158,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar 23 07:54:33 EDT 2025
+" *********************************************************DATEOMATIC: Sun Mar 23 08:04:04 EDT 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1436,10 +1436,45 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 07:54:33 EDT 2025
-# *********************************************************HASHOMATIC: 7893fdee81cc22c459a230e85d7373f0
+# *********************************************************DATEOMATIC: Sun Mar 23 08:04:04 EDT 2025
+# *********************************************************HASHOMATIC: eae2dc656230131b5798728128eada11
 DEBUGLEVEL=1
 
+function repeat_char() {
+  local char="$1"
+  local count="$2"
+  local result=""
+
+  if [[ -z "$char" || -z "$count" ]]; then
+    echo "Usage: repeat_char <character> <count>" >&2
+    return 1
+  fi
+
+  if [[ "$count" -lt 0 ]]; then
+    echo "Count must be a non-negative integer." >&2
+    return 1
+  fi
+
+  for ((i = 0; i < count; i++)); do
+    result+="$char"
+  done
+
+  echo "$result"
+}
+function longest_string_length() {
+  local max_length=0
+  local current_length
+  local line
+
+  while IFS= read -r line; do
+    current_length=${#line}
+    if [[ $current_length -gt $max_length ]]; then
+      max_length=$current_length
+    fi
+  done
+
+  echo "$max_length"
+}
 function fecho() {
   echo "$FUNCNAME : $1 $2 $3 $4 $5"
 }
@@ -2145,12 +2180,17 @@ function trim_leading_whitespace_file() {
 create_markdown_table4() {
   local input_file="$1"
   local tmp=$(mktemp)
+  local LEN=""
+  local STRING=""
 
   # Check if the input file exists
   if [[ ! -f "$input_file" ]]; then
     fecho "Error: Input file '$input_file' not found."
     return 1
   fi
+
+  LEN=`longest_string_length < "$input_file"`
+  STRING=`repeat_char "x" "$LEN"`
 
   cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
 
@@ -2163,7 +2203,8 @@ create_markdown_table4() {
     if [[ $line_count -eq 0 ]]; then
       if [[ $first_row -eq 1 ]]; then
           # echo "|    A     |    B     |    C     |    D     |"
-          echo "| -------- | -------- | -------- | -------- |"
+          $echo "| -------- | -------- | -------- | -------- |"
+          echo "| $STRING | -------- | -------- | -------- |"
           echo "|----------|----------|----------|----------|"
           first_row=0
       fi
@@ -2197,7 +2238,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar 23 07:54:33 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:04:04 EDT 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2678,7 +2719,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 07:54:33 EDT 2025
+# *********************************************************DATEOMATIC: Sun Mar 23 08:04:04 EDT 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
