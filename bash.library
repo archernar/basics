@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat Mar 22 11:02:55 EDT 2025
-# *********************************************************HASHOMATIC: 6bb30a7c497535f8e8855e7efecacbb6
+# *********************************************************DATEOMATIC: Sun Mar 23 07:49:22 EDT 2025
+# *********************************************************HASHOMATIC: 1f6d1c1bdb8d4565bed930720f1c4226
 DEBUGLEVEL=1
 
 function fecho() {
@@ -706,7 +706,7 @@ function trim_leading_whitespace_file() {
 }
 create_markdown_table4() {
   local input_file="$1"
-  local tmp=$(mktemp)
+  local Tmp=$(mktemp)
 
   # Check if the input file exists
   if [[ ! -f "$input_file" ]]; then
@@ -714,7 +714,7 @@ create_markdown_table4() {
     return 1
   fi
 
-  cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $Tmp
+  cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
 
   # Read lines from the file and create table rows
   local line_count=0
