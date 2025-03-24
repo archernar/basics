@@ -46,7 +46,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Mon Mar 24 14:12:10 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 14:13:03 EDT 2025
 # *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -163,7 +163,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Mon Mar 24 14:12:10 EDT 2025
+" *********************************************************DATEOMATIC: Mon Mar 24 14:13:03 EDT 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1441,7 +1441,7 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Mon Mar 24 14:12:10 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 14:13:03 EDT 2025
 # *********************************************************HASHOMATIC: c8ade33411894a2b0873038ea166f75c
 DEBUGLEVEL=1
 
@@ -2234,7 +2234,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Mon Mar 24 14:12:10 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 14:13:03 EDT 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2715,7 +2715,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Mon Mar 24 14:12:10 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 14:13:03 EDT 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
@@ -3575,10 +3575,28 @@ Processing file: local.html
     <meta charset="utf-8">
     <meta name="date" content=''>
     <title></title>
+    <link rel="stylesheet" href="markdown.css">
   </head>
   <body>
-      <link rel="stylesheet" href="markdown.css">
     <p>Date: </p>
+    <style>
+	.markdown-body {
+		box-sizing: border-box;
+		min-width: 200px;
+		max-width: 980px;
+		margin: 0 auto;
+		padding: 45px;
+	}
+
+	@media (max-width: 767px) {
+		.markdown-body {
+			padding: 15px;
+		}
+	}
+</style>
+<article class="markdown-body">
+	<h1>Unicorns</h1>
+	<p>
 <table>
 <thead>
 <tr class="header">
@@ -3769,7 +3787,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Mon Mar 24 11:21:36 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 14:12:10 EDT 2025
 # *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -3886,7 +3904,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-&quot; *********************************************************DATEOMATIC: Mon Mar 24 11:21:36 EDT 2025
+&quot; *********************************************************DATEOMATIC: Mon Mar 24 14:12:10 EDT 2025
 &quot; *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 &quot; *****************************************************************************************************
                 &quot; W e l c o m e   t o   m y  V I M R C
@@ -5164,7 +5182,7 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Mon Mar 24 11:21:36 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 14:12:10 EDT 2025
 # *********************************************************HASHOMATIC: c8ade33411894a2b0873038ea166f75c
 DEBUGLEVEL=1
 
@@ -5957,7 +5975,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Mon Mar 24 11:21:36 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 14:12:10 EDT 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don&#39;t put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -6438,7 +6456,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   &lt; _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Mon Mar 24 11:21:36 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 14:12:10 EDT 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
@@ -7300,6 +7318,7 @@ Processing file: local.html
     &lt;title&gt;&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;markdown.css&quot;&gt;
     &lt;p&gt;Date: &lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -7491,7 +7510,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Mon Mar 24 11:16:15 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 11:21:36 EDT 2025
 # *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -7608,7 +7627,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-&amp;quot; *********************************************************DATEOMATIC: Mon Mar 24 11:16:15 EDT 2025
+&amp;quot; *********************************************************DATEOMATIC: Mon Mar 24 11:21:36 EDT 2025
 &amp;quot; *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 &amp;quot; *****************************************************************************************************
                 &amp;quot; W e l c o m e   t o   m y  V I M R C
@@ -8886,7 +8905,7 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Mon Mar 24 11:16:15 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 11:21:36 EDT 2025
 # *********************************************************HASHOMATIC: c8ade33411894a2b0873038ea166f75c
 DEBUGLEVEL=1
 
@@ -9679,7 +9698,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Mon Mar 24 11:16:15 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 11:21:36 EDT 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don&amp;#39;t put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -10160,7 +10179,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   &amp;lt; _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Mon Mar 24 11:16:15 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 11:21:36 EDT 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
@@ -11007,6 +11026,5888 @@ echo &amp;quot;\`\`\`&amp;quot;
 
 
 #######################################################################################################
+Processing file: local.html
+ _                 _   _     _             _ 
+| | ___   ___ __ _| | | |__ | |_ _ __ ___ | |
+| |/ _ \ / __/ _` | | | &amp;#39;_ \| __| &amp;#39;_ ` _ \| |
+| | (_) | (_| (_| | |_| | | | |_| | | | | | |
+|_|\___/ \___\__,_|_(_)_| |_|\__|_| |_| |_|_|
+                                             
+&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+    &amp;lt;meta name=&amp;quot;date&amp;quot; content=&amp;#39;&amp;#39;&amp;gt;
+    &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;p&amp;gt;Date: &amp;lt;/p&amp;gt;
+&amp;lt;table&amp;gt;
+&amp;lt;thead&amp;gt;
+&amp;lt;tr class=&amp;quot;header&amp;quot;&amp;gt;
+&amp;lt;th&amp;gt;————————&amp;lt;/th&amp;gt;
+&amp;lt;th&amp;gt;————————&amp;lt;/th&amp;gt;
+&amp;lt;th&amp;gt;————————&amp;lt;/th&amp;gt;
+&amp;lt;th&amp;gt;————————&amp;lt;/th&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;/thead&amp;gt;
+&amp;lt;tbody&amp;gt;
+&amp;lt;tr class=&amp;quot;odd&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc&amp;quot;&amp;gt;.bashrc&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.gitignore&amp;quot;&amp;gt;.gitignore&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc&amp;quot;&amp;gt;.vimrc&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md&amp;quot;&amp;gt;README.md&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;even&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions&amp;quot;&amp;gt;bash.functions&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp&amp;quot;&amp;gt;bash.justhelp&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library&amp;quot;&amp;gt;bash.library&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared&amp;quot;&amp;gt;bashrc.shared&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;odd&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop&amp;quot;&amp;gt;bashtop&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/colomatic&amp;quot;&amp;gt;colomatic&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy&amp;quot;&amp;gt;deploy&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff&amp;quot;&amp;gt;gDiff&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;even&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync&amp;quot;&amp;gt;gHardSync&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal&amp;quot;&amp;gt;gLocal&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus&amp;quot;&amp;gt;gStatus&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate&amp;quot;&amp;gt;gUpdate&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;odd&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin&amp;quot;&amp;gt;gUpdateFromOrigin&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gawk.library&amp;quot;&amp;gt;gawk.library&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw&amp;quot;&amp;gt;get.raw&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme&amp;quot;&amp;gt;getme&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;even&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/indentomatic&amp;quot;&amp;gt;indentomatic&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/justomatic&amp;quot;&amp;gt;justomatic&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing&amp;quot;&amp;gt;listing&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make&amp;quot;&amp;gt;make&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;odd&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript&amp;quot;&amp;gt;newbashscript&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes&amp;quot;&amp;gt;notes&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other&amp;quot;&amp;gt;other&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic&amp;quot;&amp;gt;padomatic&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;even&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/rmLeadingWhiteSpace&amp;quot;&amp;gt;rmLeadingWhiteSpace&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit&amp;quot;&amp;gt;setgit&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/template.html&amp;quot;&amp;gt;template.html&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update&amp;quot;&amp;gt;update&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;odd&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;a href=&amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt&amp;quot;&amp;gt;vim.txt&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;/tbody&amp;gt;
+&amp;lt;/table&amp;gt;
+&amp;lt;table&amp;gt;
+&amp;lt;thead&amp;gt;
+&amp;lt;tr class=&amp;quot;header&amp;quot;&amp;gt;
+&amp;lt;th&amp;gt;————————&amp;lt;/th&amp;gt;
+&amp;lt;th&amp;gt;————————&amp;lt;/th&amp;gt;
+&amp;lt;th&amp;gt;————————&amp;lt;/th&amp;gt;
+&amp;lt;th&amp;gt;————————&amp;lt;/th&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;/thead&amp;gt;
+&amp;lt;tbody&amp;gt;
+&amp;lt;tr class=&amp;quot;odd&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;colomatic&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;indentomatic&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;justomatic&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;padomatic&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;/tbody&amp;gt;
+&amp;lt;/table&amp;gt;
+&amp;lt;h2 id=&amp;quot;bash.library-includes&amp;quot;&amp;gt;bash.library includes&amp;lt;/h2&amp;gt;
+&amp;lt;table&amp;gt;
+&amp;lt;thead&amp;gt;
+&amp;lt;tr class=&amp;quot;header&amp;quot;&amp;gt;
+&amp;lt;th&amp;gt;————————&amp;lt;/th&amp;gt;
+&amp;lt;th&amp;gt;————————&amp;lt;/th&amp;gt;
+&amp;lt;th&amp;gt;————————&amp;lt;/th&amp;gt;
+&amp;lt;th&amp;gt;————————&amp;lt;/th&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;/thead&amp;gt;
+&amp;lt;tbody&amp;gt;
+&amp;lt;tr class=&amp;quot;odd&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;abspath()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;array_contains()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;array_join()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;backup_file()&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;even&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;basename()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;collapse_hostname()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;collapse_pwd()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;command_exists()&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;odd&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;contains()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;cp_r()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;create_markdown_table4()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;dirname()&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;even&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;ends_with()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;eprint()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;exists()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;extension()&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;odd&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;fdebug()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;fecho()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;git_branch()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;git_origin()&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;even&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;git_originsync()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;git_toplevel()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;indent_file()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;isSameHash()&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;odd&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;is_dir()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;is_file()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;is_reachable()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;justify_file()&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;even&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;justify_line()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;kill_name()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;kill_pid()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;longest_string_length()&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;odd&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;mkdir_p()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;mv_f()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;padout_file_lines()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;pidof_name()&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;even&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;read_prompt()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;repeat_char()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;replace()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;rm_rf()&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;odd&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;run_and_error()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;run_and_exit_code()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;run_and_output()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;scan_for_secrets()&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;even&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;sort_file()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;split_file_n()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;starts_with()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;string_after_file_lines()&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;odd&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;string_before_file_lines()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;substring()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;timestamp_ms()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;trim()&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;even&amp;quot;&amp;gt;
+&amp;lt;td&amp;gt;trim_leading_whitespace_file()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;truncate_file_lines()&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;/tbody&amp;gt;
+&amp;lt;/table&amp;gt;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;
+#######################################################################################################
+Processing file: .bashrc
+   _               _              
+  | |__   __ _ ___| |__  _ __ ___ 
+  | &amp;amp;#39;_ \ / _` / __| &amp;amp;#39;_ \| &amp;amp;#39;__/ __|
+ _| |_) | (_| \__ \ | | | | | (__ 
+(_)_.__/ \__,_|___/_| |_|_|  \___|
+                                  
+# *********************************************************DATEOMATIC: Mon Mar 24 11:16:15 EDT 2025
+# *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don&amp;amp;#39;t do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# don&amp;amp;#39;t put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don&amp;amp;#39;t overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern &amp;amp;quot;**&amp;amp;quot; used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] &amp;amp;amp;&amp;amp;amp; eval &amp;amp;quot;$(SHELL=/bin/sh lesspipe)&amp;amp;quot;
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z &amp;amp;quot;${debian_chroot:-}&amp;amp;quot; ] &amp;amp;amp;&amp;amp;amp; [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# disable color support of ls and grep
+alias ls=&amp;amp;#39;ls --color=never&amp;amp;#39;
+alias grep=&amp;amp;#39;grep --color=never&amp;amp;#39;
+alias fgrep=&amp;amp;#39;fgrep --color=never&amp;amp;#39;
+alias egrep=&amp;amp;#39;egrep --color=never&amp;amp;#39;
+
+# some more ls aliases
+alias ll=&amp;amp;#39;ls -alF&amp;amp;#39;
+alias la=&amp;amp;#39;ls -A&amp;amp;#39;
+alias l=&amp;amp;#39;ls -CF&amp;amp;#39;
+
+# Add an &amp;amp;quot;alert&amp;amp;quot; alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert=&amp;amp;#39;notify-send --urgency=low -i &amp;amp;quot;$([ $? = 0 ] &amp;amp;amp;&amp;amp;amp; echo terminal || echo error)&amp;amp;quot; &amp;amp;quot;$(history|tail -n1|sed -e &amp;amp;#39;\&amp;amp;#39;&amp;amp;#39;s/^\s*[0-9]\+\s*//;s/[;&amp;amp;amp;|]\s*alert$//&amp;amp;#39;\&amp;amp;#39;&amp;amp;#39;)&amp;amp;quot;&amp;amp;#39;
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don&amp;amp;#39;t need to enable
+# this, if it&amp;amp;#39;s already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+source ~/bash.library
+
+
+source ~/bashrc.shared
+
+
+export JAVA_HOME=/home/mestes/jdk-23.0.2
+export PATH=$JAVA_HOME/bin:$PATH
+mkdir -p                     ~/BACKUPS
+backup_file   .bashrc        ~/BACKUPS
+backup_file   bashrc.shared  ~/BACKUPS
+backup_file   bash.library   ~/BACKUPS
+backup_file   .vimrc         ~/BACKUPS
+
+#######################################################################################################
+Processing file: .vim.vimsession
+       _                 _                             _             
+__   _(_)_ __ ___ __   _(_)_ __ ___  ___  ___  ___ ___(_) ___  _ __  
+\ \ / / | &amp;amp;#39;_ ` _ \\ \ / / | &amp;amp;#39;_ ` _ \/ __|/ _ \/ __/ __| |/ _ \| &amp;amp;#39;_ \ 
+ \ V /| | | | | | |\ V /| | | | | | \__ \  __/\__ \__ \ | (_) | | | |
+(_)_/ |_|_| |_| |_(_)_/ |_|_| |_| |_|___/\___||___/___/_|\___/|_| |_|
+                                                                     
+/home/mestes/scm/basics/colomatic
+/home/mestes/scm/basics/bash.library
+
+#######################################################################################################
+Processing file: .vim.vimwindow
+       _                 _                   _           _               
+__   _(_)_ __ ___ __   _(_)_ __ _____      _(_)_ __   __| | _____      __
+\ \ / / | &amp;amp;#39;_ ` _ \\ \ / / | &amp;amp;#39;_ ` _ \ \ /\ / / | &amp;amp;#39;_ \ / _` |/ _ \ \ /\ / /
+ \ V /| | | | | | |\ V /| | | | | | \ V  V /| | | | | (_| | (_) \ V  V / 
+(_)_/ |_|_| |_| |_(_)_/ |_|_| |_| |_|\_/\_/ |_|_| |_|\__,_|\___/ \_/\_/  
+                                                                         
+/home/mestes/scm/basics/bash.library
+
+#######################################################################################################
+Processing file: .vimrc
+       _                    
+__   _(_)_ __ ___  _ __ ___ 
+\ \ / / | &amp;amp;#39;_ ` _ \| &amp;amp;#39;__/ __|
+ \ V /| | | | | | | | | (__ 
+(_)_/ |_|_| |_| |_|_|  \___|
+                            
+&amp;amp;quot; *********************************************************DATEOMATIC: Mon Mar 24 11:16:15 EDT 2025
+&amp;amp;quot; *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; W e l c o m e   t o   m y  V I M R C
+                &amp;amp;quot; *************************************************************************************
+set nocompatible
+set hidden                        &amp;amp;quot; Will switch to next buffer without raising an error
+set nowrap
+set nohlsearch
+set noerrorbells
+set scrolloff=8
+let loaded_matchparen = 1         
+            &amp;amp;quot; http://vimrc-dissection.blogspot.com/2006/09/vim-7-re-turn-off-parenparenthesiswhat.html
+set splitbelow
+set splitright
+set cmdheight=2                   &amp;amp;quot; Set the command window height to 2 lines, to avoid many cases
+                                  &amp;amp;quot; of having to  press &amp;amp;lt;Enter&amp;amp;gt; to continue
+set ruler                         &amp;amp;quot; Display crsr pos on last line of scr or in status line of a window
+set number                        &amp;amp;quot; Display line numbers on the left
+set wildmenu                      &amp;amp;quot; Better command-line completion
+set showcmd                       &amp;amp;quot; Show partial commands in the last line of the screen
+set ignorecase                    &amp;amp;quot; Use case insensitive search, except when using capital letters
+set smartcase
+set backspace=indent,eol,start    &amp;amp;quot; Allow bckspcing over autoindent, line brks &amp;amp;amp; start of insrt action
+set nostartofline                 &amp;amp;quot; Stop certain movements from always going to the 1st char of a line.
+set laststatus=2                  &amp;amp;quot; Always display the status line, even if only 1 window is displayed
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set colorcolumn=104
+set background=dark
+set laststatus=2                  &amp;amp;quot; For Status Line
+set t_Co=256                      &amp;amp;quot; For Status Line
+
+&amp;amp;quot; set relativenumber
+&amp;amp;quot; set signcolumn=yes
+&amp;amp;quot; set incsearch
+&amp;amp;quot; set hlsearch incsearch          &amp;amp;quot; Highlight searches (use &amp;amp;lt;C-L&amp;amp;gt; to temporarily turn off highlighting
+                                  &amp;amp;quot; see the mapping of &amp;amp;lt;C-L&amp;amp;gt; below)
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Indent and Tab  Setup
+                &amp;amp;quot; *************************************************************************************
+&amp;amp;quot; There are in fact four main methods available for indentation, each one
+&amp;amp;quot; overrides the previous if it is enabled, or non-empty for &amp;amp;#39;indentexpr&amp;amp;#39;:
+&amp;amp;quot; &amp;amp;#39;autoindent&amp;amp;#39;  uses the indent from the previous line.
+&amp;amp;quot;               When opening a new line and no filetype-specific indenting is enabled, keep same
+&amp;amp;quot;               indent as line currently on.
+&amp;amp;quot; &amp;amp;#39;smartindent&amp;amp;#39; is like &amp;amp;#39;autoindent&amp;amp;#39; but also recognizes some C syntax to
+&amp;amp;quot;       increase/reduce the indent where appropriate.
+&amp;amp;quot; &amp;amp;#39;cindent&amp;amp;#39; Works more cleverly than the other two and is configurable to
+&amp;amp;quot;       different indenting styles.
+&amp;amp;quot; &amp;amp;#39;indentexpr&amp;amp;#39;  The most flexible of all: Evaluates an expression to compute
+&amp;amp;quot;       the indent of a line.  When non-empty this method overrides
+&amp;amp;quot;       the other ones.  See |indent-expression|.
+&amp;amp;quot; set cindent                       
+set tabstop=4 softtabstop=4
+set shiftwidth=4     &amp;amp;quot; Indent settings for using 4 spaces instead of tabs.
+                     &amp;amp;quot; Do not change &amp;amp;#39;tabstop&amp;amp;#39; from its default value of 8 
+set expandtab
+set smartindent
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Syntax Highlighting
+                &amp;amp;quot; *************************************************************************************
+syntax off
+
+set confirm                       &amp;amp;quot; Instead of failing a command because of unsaved changes,
+                                  &amp;amp;quot; raise a dialogue asking to save changed files.
+set visualbell                    &amp;amp;quot; Use visual bell instead of beeping when doing something wrong
+set t_vb=
+                                  &amp;amp;quot; reset terminal code for visual bell. 
+                                  &amp;amp;quot; If visualbell is set, and this line is also included vim will
+                                  &amp;amp;quot; neither flash nor beep. If visualbell is unset, this does nothing.
+let mapleader = &amp;amp;quot; &amp;amp;quot;               &amp;amp;quot; Leader - ( Spacebar )
+let MRU_Auto_Close = 1            &amp;amp;quot; Set MRU window to close after selection
+set notimeout ttimeout ttimeoutlen=200  &amp;amp;quot; Quickly time out on keycodes, but never time out on mappings
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Commands
+                &amp;amp;quot; *************************************************************************************
+command! -nargs=+ GREP call GrepBuffers(&amp;amp;lt;q-args&amp;amp;gt;)
+command! SESSION      :call CaptureSession() 
+command! MyLinter :caddexpr system(&amp;amp;quot;cat zzzz&amp;amp;quot;) | copen
+command! ZZZZ :caddexpr system(&amp;amp;quot;cat zzzz&amp;amp;quot;) | copen
+map &amp;amp;lt;C-j&amp;amp;gt; :cn&amp;amp;lt;CR&amp;amp;gt;
+map &amp;amp;lt;C-k&amp;amp;gt; :cp&amp;amp;lt;CR&amp;amp;gt;
+map &amp;amp;lt;C-@&amp;amp;gt; @a
+
+&amp;amp;quot;  :copen &amp;amp;quot; Open the quickfix window
+&amp;amp;quot;  :ccl   &amp;amp;quot; Close it
+&amp;amp;quot;  :cw    &amp;amp;quot; Open it if there are &amp;amp;quot;errors&amp;amp;quot;, close it otherwise (some people prefer this)
+&amp;amp;quot;  :cn    &amp;amp;quot; Go to the next error in the window
+&amp;amp;quot;  :cp    &amp;amp;quot; Go to the previous error in the window
+&amp;amp;quot;  :cnf   &amp;amp;quot; Go to the first error in the next file
+&amp;amp;quot;  :.cc   &amp;amp;quot; Go to error under cursor (if cursor is in quickfix window)
+&amp;amp;quot;
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Pre Vundle Setup
+                &amp;amp;quot; *************************************************************************************
+filetype off
+
+&amp;amp;quot; let NOVUNDLE = 1
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Vundle            - see :h vundle for more details or wiki for FAQ
+                &amp;amp;quot; *******************************************************************
+                &amp;amp;quot; git clone  https://github.com/VundleVim/Vundle.vim.git  ~/.vim/bundle/Vundle.vim
+                &amp;amp;quot; git clone  https://github.com/archernar/home.git .
+                &amp;amp;quot; git clone  https://github.com/archernar/dotfiles.git    ~/tmp
+                &amp;amp;quot; git clone
+                &amp;amp;quot; OLD TO BE REMOVED git clone  https://github.com/archernar/Snips.git .
+                &amp;amp;quot; :PluginList       - lists configured plugins
+                &amp;amp;quot; :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+                &amp;amp;quot; :PluginUpdate     - &amp;amp;lt;leader&amp;amp;gt;p
+                &amp;amp;quot; :PluginSearch foo - searches for foo; append `!` to refresh local cache
+                &amp;amp;quot; :PluginClean      - confirms removal of unused plugins;
+                &amp;amp;quot;                     append `!` to auto-approve removal
+                &amp;amp;quot; *************************************************************************************
+                
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Vundle Begin
+                &amp;amp;quot; *************************************************************************************
+if !exists(&amp;amp;quot;NOVUNDLE&amp;amp;quot;)
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    &amp;amp;quot; Plugin &amp;amp;#39;VundleVim/Vundle.vim&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-flashcard&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-dir&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-progsnips&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-map&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-utils&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-session&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-program&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-monochrome&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-mru&amp;amp;#39;
+    Plugin &amp;amp;#39;vim-scripts/grep.vim&amp;amp;#39;      &amp;amp;quot; https://github.com/vim-scripts/grep.vim
+    Plugin &amp;amp;#39;gruvbox-community/gruvbox&amp;amp;#39;
+    Bundle &amp;amp;#39;Lokaltog/vim-monotone.git&amp;amp;#39;
+    Bundle &amp;amp;#39;owickstrom/vim-colors-paramount&amp;amp;#39;
+    Plugin &amp;amp;#39;tpope/vim-surround&amp;amp;#39;
+    Plugin &amp;amp;#39;vim-airline/vim-airline&amp;amp;#39;
+    &amp;amp;quot; Plugin &amp;amp;#39;tpope/vim-fugitive&amp;amp;#39;
+    &amp;amp;quot; Plugin &amp;amp;#39;vim-airline/vim-airline-themes&amp;amp;#39;
+    &amp;amp;quot; Plugin &amp;amp;#39;jeetsukumaran/vim-buffergator&amp;amp;#39;
+    &amp;amp;quot; Plugin &amp;amp;#39;ctrlpvim/ctrlp.vim&amp;amp;#39;
+    &amp;amp;quot;
+    call vundle#end()
+endif
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Vundle End
+                &amp;amp;quot; *************************************************************************************
+                                  
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Post Vundle Setup
+                &amp;amp;quot; *************************************************************************************
+filetype plugin indent on         &amp;amp;quot; required, to ignore plugin indent changes, instead use: 
+                                  &amp;amp;quot; filetype plugin on
+                                  &amp;amp;quot; Put non-Plugin stuff after this line
+
+
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Functions
+                &amp;amp;quot; *************************************************************************************
+function g:LogMessage(...)
+    let l:ret = 0
+
+    let l:messages=[]
+    call add(l:messages, a:1)
+    call writefile(l:messages, &amp;amp;quot;/tmp/vimscript.log&amp;amp;quot;, &amp;amp;quot;a&amp;amp;quot;)
+    return l:ret
+endfunction
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Remaps
+                &amp;amp;quot; *************************************************************************************
+nnoremap         &amp;amp;lt;F1&amp;amp;gt;      :cclose&amp;amp;lt;cr&amp;amp;gt;:bnext&amp;amp;lt;cr&amp;amp;gt;
+nnoremap &amp;amp;lt;leader&amp;amp;gt;&amp;amp;lt;F1&amp;amp;gt;      :cclose&amp;amp;lt;cr&amp;amp;gt;
+inoremap         &amp;amp;lt;F5&amp;amp;gt; &amp;amp;lt;esc&amp;amp;gt;:call ProgramCompile()&amp;amp;lt;cr&amp;amp;gt;
+nnoremap         &amp;amp;lt;F5&amp;amp;gt;      :call ProgramCompile()&amp;amp;lt;cr&amp;amp;gt;
+nnoremap &amp;amp;lt;leader&amp;amp;gt;&amp;amp;lt;F6&amp;amp;gt;      :cclose&amp;amp;lt;cr&amp;amp;gt;
+inoremap         &amp;amp;lt;F6&amp;amp;gt; &amp;amp;lt;esc&amp;amp;gt;:call ProgramRun()&amp;amp;lt;cr&amp;amp;gt;
+nnoremap         &amp;amp;lt;F6&amp;amp;gt;      :call ProgramRun()&amp;amp;lt;cr&amp;amp;gt;
+nnoremap &amp;amp;lt;Leader&amp;amp;gt;p         :PluginUpdate&amp;amp;lt;cr&amp;amp;gt;
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Folding
+                &amp;amp;quot; *************************************************************************************
+
+&amp;amp;quot; set foldcolumn=3
+&amp;amp;quot; set foldmethod=marker
+&amp;amp;quot; set foldlevelstart=20
+&amp;amp;quot; set foldlevelstart=20
+set foldlevel=1
+set foldmethod=marker
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Auto Commands
+                &amp;amp;quot; *************************************************************************************
+    augroup AUTOGROUPONE
+        autocmd!
+        &amp;amp;quot;au BufNewFile,BufRead *.ses let s=g:SessionMan()
+    augroup END
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Session Setup
+                &amp;amp;quot; *************************************************************************************
+if ( 1 == 0 ) 
+    if ( argc() == 0 ) 
+         augroup VIMAUTOGROUPA
+             autocmd!
+             autocmd VimEnter * :call LoadSession()
+         augroup END
+    endif
+    if ( argc() == 1 ) 
+         let s:n=match(argv(0), &amp;amp;quot;vimsession$&amp;amp;quot;)
+         if (s:n&amp;amp;gt;0)
+             let $VIMFIRSTFILE=argv(0)
+             let s:temp = argv(0)
+             let s:temp = substitute(s:temp, &amp;amp;quot;.vimsession$&amp;amp;quot;, &amp;amp;quot;&amp;amp;quot;, &amp;amp;quot;&amp;amp;quot;)
+             let $VIMSESSION=s:temp
+             let $VIMWINDOW=&amp;amp;quot;NIL&amp;amp;quot;
+             let $VIMSPLIT=&amp;amp;quot;NIL&amp;amp;quot;
+             if ( 1 == 1 ) 
+             augroup VIMAUTOGROUPB
+                 autocmd!
+                 autocmd VimEnter * :call LoadSession()
+                 &amp;amp;quot;autocmd VimEnter * :echom &amp;amp;quot;POPEYE&amp;amp;quot;
+             augroup END
+             endif
+         endif
+    endif
+endif
+
+&amp;amp;quot;   ***************************************************************************************************
+                &amp;amp;quot; Jump to Last Position When Reopening a File
+                &amp;amp;quot; *************************************************************************************
+   if has(&amp;amp;quot;autocmd&amp;amp;quot;)
+      au BufReadPost * if line(&amp;amp;quot;&amp;amp;#39;\&amp;amp;quot;&amp;amp;quot;) &amp;amp;gt; 0 &amp;amp;amp;&amp;amp;amp; line(&amp;amp;quot;&amp;amp;#39;\&amp;amp;quot;&amp;amp;quot;) &amp;amp;lt;= line(&amp;amp;quot;$&amp;amp;quot;)
+      \| exe &amp;amp;quot;normal! g&amp;amp;#39;\&amp;amp;quot;&amp;amp;quot; | endif
+   endif
+function! s:SLine(msg)
+    let save_statusline = &amp;amp;amp;statusline  &amp;amp;quot; Save the current statusline
+    let &amp;amp;amp;statusline = a:msg
+    &amp;amp;quot;let &amp;amp;amp;statusline = save_statusline
+endfunction
+&amp;amp;quot;
+&amp;amp;quot; wget -O ~/.vim/vim.txt https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt
+&amp;amp;quot; nnoremap         &amp;amp;lt;F7&amp;amp;gt; :call g:FlashCard($HOME . &amp;amp;quot;/.vim/1.fc&amp;amp;quot;)&amp;amp;lt;cr&amp;amp;gt;
+&amp;amp;quot; nnoremap &amp;amp;lt;leader&amp;amp;gt;&amp;amp;lt;F7&amp;amp;gt; :call g:UnFlashCard()&amp;amp;lt;cr&amp;amp;gt;
+&amp;amp;quot;   ***************************************************************************************************
+                &amp;amp;quot; Multi Toggle
+                &amp;amp;quot; *************************************************************************************
+function! MultiToggle()
+    let sMt=[]
+    call add(sMt, [0, &amp;amp;quot;Upper Mode&amp;amp;quot;,                  &amp;amp;quot;:call ToUpperUnderCursor()&amp;amp;lt;cr&amp;amp;gt;&amp;amp;quot;])
+    call add(sMt, [1, &amp;amp;quot;Lower Mode&amp;amp;quot;,                  &amp;amp;quot;:call ToLowerUnderCursor()&amp;amp;lt;cr&amp;amp;gt;&amp;amp;quot;])
+    call add(sMt, [2, &amp;amp;quot;ls&amp;amp;quot;,                          &amp;amp;quot;:ls&amp;amp;lt;cr&amp;amp;gt;&amp;amp;quot;])
+    call add(sMt, [3 ,&amp;amp;quot;Edit dots and configs&amp;amp;quot;,       &amp;amp;quot;:call EditDotFiles()&amp;amp;lt;cr&amp;amp;gt;&amp;amp;quot;])
+    call add(sMt, [4, &amp;amp;quot;Open Vim Sheatsheet&amp;amp;quot;,         &amp;amp;quot;:e ~/.vim/vimbrief.txt&amp;amp;lt;cr&amp;amp;gt;&amp;amp;quot;])
+    call add(sMt, [5, &amp;amp;quot;Reselect Visual Selection&amp;amp;quot;,   &amp;amp;quot;gv&amp;amp;quot;])
+    call add(sMt, [6, &amp;amp;quot;Search for Word Under Cursor&amp;amp;quot;,&amp;amp;quot;:%s/\&amp;amp;lt;&amp;amp;lt;C-r&amp;amp;gt;&amp;amp;lt;C-w&amp;amp;gt;\&amp;amp;gt;//gI&amp;amp;lt;Left&amp;amp;gt;&amp;amp;lt;Left&amp;amp;gt;&amp;amp;lt;Left&amp;amp;gt;&amp;amp;quot;])
+    call add(sMt, [6, &amp;amp;quot;6One&amp;amp;quot;, &amp;amp;quot;Two&amp;amp;quot;])
+    call add(sMt, [7, &amp;amp;quot;7One&amp;amp;quot;, &amp;amp;quot;Two&amp;amp;quot;])
+    call add(sMt, [8, &amp;amp;quot;8TestMeMe&amp;amp;quot;, &amp;amp;quot;silent nnoremap  &amp;amp;lt;F7&amp;amp;gt; :call g:Test()&amp;amp;quot; ])
+    call add(sMt, [9, &amp;amp;quot;9One&amp;amp;quot;, &amp;amp;quot;Two&amp;amp;quot;])
+    let g:multi_toggle_state = g:multi_toggle_state  + 1
+    if g:multi_toggle_state == 7
+        let g:multi_toggle_state = 0
+    endif
+    execute &amp;amp;quot;silent nnoremap &amp;amp;lt;F7&amp;amp;gt; &amp;amp;quot; . sMt[g:multi_toggle_state][2]
+    let &amp;amp;amp;statusline = sMt[g:multi_toggle_state][1]
+endfunction
+
+function! g:Test()
+    echom &amp;amp;quot;TEST TEST TEST TEST&amp;amp;quot;
+endfunction
+
+function! EditDotFiles()
+        execute  &amp;amp;quot;edit ~/.bashrc&amp;amp;quot;
+        execute  &amp;amp;quot;edit ~/.vimrc&amp;amp;quot;
+        execute  &amp;amp;quot;edit ~/.profile&amp;amp;quot;
+        execute  &amp;amp;quot;edit ~/.vim/vimbrief.txt&amp;amp;quot;
+        execute  &amp;amp;quot;edit ~/.vim/vim.txt&amp;amp;quot;
+endfunction
+function! MultiToggleVoid()
+        let g:multi_toggle_state = 0
+endfunction
+
+let g:multi_toggle_state = -1
+let &amp;amp;amp;statusline = &amp;amp;quot;Void Mode&amp;amp;quot;
+nnoremap &amp;amp;lt;F7&amp;amp;gt; :call MultiToggleVoid()&amp;amp;lt;CR&amp;amp;gt;
+nnoremap &amp;amp;lt;F8&amp;amp;gt; :call MultiToggle()&amp;amp;lt;CR&amp;amp;gt;
+nnoremap &amp;amp;lt;F9&amp;amp;gt; :call GitPopUp()&amp;amp;lt;CR&amp;amp;gt;
+nnoremap &amp;amp;lt;F10&amp;amp;gt; :call UtilityPopUp(&amp;amp;quot;/home/mestes/vim.txt&amp;amp;quot;)&amp;amp;lt;CR&amp;amp;gt;
+
+
+
+function! ToLowerUnderCursor()
+  &amp;amp;quot; Get the current cursor position.
+  let [row, col] = getpos(&amp;amp;#39;.&amp;amp;#39;)[1:2]
+
+  &amp;amp;quot; Get the character under the cursor.
+  let char = getline(row)[col-1]
+
+  &amp;amp;quot; Check if a character exists at the cursor position (not end of line).
+  if char != &amp;amp;quot;&amp;amp;quot;
+
+    &amp;amp;quot; Convert the character to lowercase.
+    let lower_char = tolower(char)
+
+    &amp;amp;quot; Replace the character under the cursor with the lowercase version.
+    call setline(row, strpart(getline(row), 0, col-1) . lower_char . strpart(getline(row), col))
+
+    &amp;amp;quot; Restore the cursor position (important!).
+    call cursor(row, col)
+  endif
+endfunction
+function! ToUpperUnderCursor()
+  &amp;amp;quot; Get the current cursor position.
+  let [row, col] = getpos(&amp;amp;#39;.&amp;amp;#39;)[1:2]
+
+  &amp;amp;quot; Get the character under the cursor.
+  let char = getline(row)[col-1]
+
+  &amp;amp;quot; Check if a character exists at the cursor position (not end of line).
+  if char != &amp;amp;quot;&amp;amp;quot;
+
+    &amp;amp;quot; Convert the character to uppercase.
+    let upper_char = toupper(char)
+
+    &amp;amp;quot; Replace the character under the cursor with the uppercase version.
+    call setline(row, strpart(getline(row), 0, col-1) . upper_char . strpart(getline(row), col))
+
+    &amp;amp;quot; Restore the cursor position (important!).
+    call cursor(row, col)
+  endif
+endfunction
+
+&amp;amp;quot; Map a key to call the function.  For example, map &amp;amp;lt;Leader&amp;amp;gt;u to it.
+&amp;amp;quot; You can choose any key combination you prefer.  &amp;amp;lt;Leader&amp;amp;gt; is often \.
+&amp;amp;quot; See :help leader for more about setting the leader key.
+&amp;amp;quot; Example:
+&amp;amp;quot;
+&amp;amp;quot; hello
+&amp;amp;quot;
+&amp;amp;quot;
+&amp;amp;quot; Option 1: Add the current file
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gaf :!git add %&amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 2: Add the current file and stage changes
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gac :!git add % &amp;amp;amp;&amp;amp;amp; git commit -m &amp;amp;quot;Staged changes&amp;amp;quot; &amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 3: Add all changes in the current directory
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gaa :!git add .&amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 4: Add all changes in the current directory and stage changes
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gss :!git add . &amp;amp;amp;&amp;amp;amp; git commit -m &amp;amp;quot;Staged all changes&amp;amp;quot; &amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 5: Add the current file and show git status
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gas :!git add %&amp;amp;lt;CR&amp;amp;gt;:!git status&amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 6: Add all changes in the current directory and show git status
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gaas :!git add .&amp;amp;lt;CR&amp;amp;gt;:!git status&amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 7: Add the current file and run a custom git command
+&amp;amp;quot;nnoremap &amp;amp;lt;leader&amp;amp;gt;gac :!git add % &amp;amp;amp;&amp;amp;amp; git commit -m &amp;amp;lt;C-r&amp;amp;gt;=@%&amp;amp;lt;CR&amp;amp;gt;&amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 8: Add all changes in the current directory and run a custom git command
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gacc :!git add . &amp;amp;amp;&amp;amp;amp; git commit -m &amp;amp;lt;C-r&amp;amp;gt;=getcwd()&amp;amp;lt;CR&amp;amp;gt;&amp;amp;lt;CR&amp;amp;gt;
+
+
+function! g:OpenReadOnlyFileExit()
+    silent exe &amp;amp;quot;bd!&amp;amp;quot;
+    echom &amp;amp;quot;&amp;amp;quot;
+endfunction
+function! g:BufferDelete(...)
+        if (a:1 == 0)
+            nnoremap &amp;amp;lt;silent&amp;amp;gt; &amp;amp;lt;buffer&amp;amp;gt; q     :call g:BufferDelete(1)&amp;amp;lt;cr&amp;amp;gt;
+            nnoremap &amp;amp;lt;silent&amp;amp;gt; &amp;amp;lt;buffer&amp;amp;gt; &amp;amp;lt;F1&amp;amp;gt;  :call g:BufferDelete(1)&amp;amp;lt;cr&amp;amp;gt;
+            nnoremap &amp;amp;lt;silent&amp;amp;gt; &amp;amp;lt;buffer&amp;amp;gt; &amp;amp;lt;esc&amp;amp;gt; :call g:BufferDelete(1)&amp;amp;lt;cr&amp;amp;gt;
+        else
+            silent exe &amp;amp;quot;bd!&amp;amp;quot;
+        endif
+    echom &amp;amp;quot;&amp;amp;quot;
+endfunction
+function! g:OpenReadOnlyFile(...)
+        let l:filename = a:1
+        exe &amp;amp;quot;set nopaste&amp;amp;quot;
+        let l:f = l:filename
+        if filereadable(l:f)
+            &amp;amp;quot; silent exe &amp;amp;quot;tabnew &amp;amp;quot; . l:f
+            silent execute &amp;amp;quot;edit &amp;amp;quot; . l:f
+            silent exe &amp;amp;quot;set buftype=nowrite&amp;amp;quot;
+            nnoremap &amp;amp;lt;silent&amp;amp;gt; &amp;amp;lt;buffer&amp;amp;gt; q     :call g:OpenReadOnlyFileExit()&amp;amp;lt;cr&amp;amp;gt;
+            nnoremap &amp;amp;lt;silent&amp;amp;gt; &amp;amp;lt;buffer&amp;amp;gt; &amp;amp;lt;F1&amp;amp;gt;  :call g:OpenReadOnlyFileExit()&amp;amp;lt;cr&amp;amp;gt;
+            nnoremap &amp;amp;lt;silent&amp;amp;gt; &amp;amp;lt;buffer&amp;amp;gt; &amp;amp;lt;esc&amp;amp;gt; :call g:OpenReadOnlyFileExit()&amp;amp;lt;cr&amp;amp;gt;
+            silent exe &amp;amp;quot;normal gg0&amp;amp;quot;
+        endif
+        exe &amp;amp;quot;set paste&amp;amp;quot;
+endfunction
+
+&amp;amp;quot;https://www.baeldung.com/linux/vim-find-full-path-current-file#:~:text=The%20%25%20Register,%2C%20depending%20on%20the%20context).
+&amp;amp;quot;let l:command = &amp;amp;quot;/usr/bin/git add &amp;amp;quot; . expand(&amp;amp;#39;%&amp;amp;#39;) . &amp;amp;quot;;git commit -m \&amp;amp;quot;Update\&amp;amp;quot;; git push origin master&amp;amp;quot;
+func! MenuCB(id, result)
+    if ( a:result == 1 )
+        let l:command = &amp;amp;quot;git status &amp;amp;gt; /tmp/out&amp;amp;quot;
+        call system(l:command)
+        call UtilityPopUp(&amp;amp;quot;/tmp/out&amp;amp;quot;)
+        &amp;amp;quot;execute &amp;amp;quot;new | r ! &amp;amp;quot; . l:command
+        &amp;amp;quot;call g:BufferDelete(0)
+    endif
+    if ( a:result == 2 )
+        let l:command = &amp;amp;quot;/usr/bin/git add &amp;amp;quot; . expand(&amp;amp;#39;%&amp;amp;#39;)
+        execute &amp;amp;quot;new | r ! &amp;amp;quot; . l:command
+        call g:BufferDelete(0)
+    endif
+    if ( a:result == 3 )
+        let l:command = &amp;amp;quot;git commit -m \&amp;amp;quot;Update\&amp;amp;quot;&amp;amp;quot;
+        execute &amp;amp;quot;new | r ! &amp;amp;quot; . l:command
+        call g:BufferDelete(0)
+    endif
+    if ( a:result == 4 )
+        let l:command = &amp;amp;quot;git push origin master&amp;amp;quot;
+        execute &amp;amp;quot;new | r ! &amp;amp;quot; . l:command
+        call g:BufferDelete(0)
+    endif
+    if ( a:result == 5 )
+        let l:command = &amp;amp;quot;/usr/bin/git add &amp;amp;quot; . expand(&amp;amp;#39;%&amp;amp;#39;) . &amp;amp;quot;;git commit -m \&amp;amp;quot;Update\&amp;amp;quot;; git push origin master&amp;amp;quot;
+        execute &amp;amp;quot;new | r ! &amp;amp;quot; . l:command
+        call g:BufferDelete(0)
+    endif
+    if ( a:result == 6 )
+        let l:command = &amp;amp;quot;./make&amp;amp;quot;
+        execute &amp;amp;quot;new | r ! &amp;amp;quot; . l:command
+        call g:BufferDelete(0)
+    endif
+    if ( a:result == 7 )
+        let l:command = &amp;amp;quot;./deploy&amp;amp;quot;
+        execute &amp;amp;quot;new | r ! &amp;amp;quot; . l:command
+        call g:BufferDelete(0)
+    endif
+    if ( a:result == 8 )
+        call g:UtilityPopupCommand(&amp;amp;quot;df -h&amp;amp;quot;)
+    endif
+    if ( a:result == 9 )
+        call g:UtilityBufferCommand(&amp;amp;quot;cat /usr/share/vim/vim82/doc/*.txt&amp;amp;quot;)
+    endif
+    if ( a:result == 10 )
+        call g:UtilityBufferCommand(&amp;amp;quot;cat /usr/share/vim/vim82/doc/pop*.txt&amp;amp;quot;)
+    endif
+
+endfunc
+
+func! DoNothingCB(id, result)
+    let l:NOTHING=0
+endfunc
+
+
+&amp;amp;quot; https://vi.stackexchange.com/questions/24462/what-are-the-new-popup-windows-in-vim-8-2
+function! g:GitPopUp()
+call popup_menu([&amp;amp;#39;Status&amp;amp;#39;, &amp;amp;#39;add&amp;amp;#39;, &amp;amp;#39;commit&amp;amp;#39;, &amp;amp;#39;push&amp;amp;#39;, &amp;amp;#39;all&amp;amp;#39;, &amp;amp;#39;make&amp;amp;#39;, &amp;amp;#39;deploy&amp;amp;#39;,&amp;amp;#39;df&amp;amp;#39;,&amp;amp;#39;vim&amp;amp;#39;, &amp;amp;#39;pop&amp;amp;#39; ], 
+     \ #{ title: &amp;amp;quot;Git&amp;amp;quot;, callback: &amp;amp;#39;MenuCB&amp;amp;#39;, line: 25, col: 40, 
+     \ highlight: &amp;amp;#39;Question&amp;amp;#39;, border: [], close: &amp;amp;#39;click&amp;amp;#39;,  padding: [1,1,0,1]} )
+endfunction
+
+
+
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Utility Popup
+                &amp;amp;quot; *************************************************************************************
+function! g:UtilityPopupCommand(...)
+    call system( a:1 . &amp;amp;quot; &amp;amp;gt; /tmp/out&amp;amp;quot; )
+    call UtilityPopUp(&amp;amp;quot;/tmp/out&amp;amp;quot;)
+endfunction
+let g:utilityPopupFilename = &amp;amp;quot;&amp;amp;quot;
+function! g:UtilityPopUp(...)
+    if filereadable(a:1)
+        let g:utilityPopupFilename = a:1 
+        call popup_create(readfile(a:1), #{ line: 1, col: 1, border: [], padding: [1,1,1,1] } )
+        let l:id = popup_list()[0]
+        call popup_move(l:id, #{ line: 2, col: 4, 
+                    \ minwidth: &amp;amp;amp;columns -14,
+                    \ maxheight: &amp;amp;amp;lines -8, maxwidth: &amp;amp;amp;columns -8,
+                    \ })
+        hi MyPopupColor ctermbg=black guibg=black
+        call setwinvar(l:id, &amp;amp;#39;&amp;amp;amp;wincolor&amp;amp;#39;, &amp;amp;#39;MyPopupColor&amp;amp;#39;)
+        nnoremap &amp;amp;lt;DOWN&amp;amp;gt; :call ScrollPopup(1)&amp;amp;lt;CR&amp;amp;gt;
+        nnoremap &amp;amp;lt;UP&amp;amp;gt;   :call ScrollPopup(-1)&amp;amp;lt;CR&amp;amp;gt;
+        nnoremap &amp;amp;lt;F10&amp;amp;gt;  :call UtilityPopUpClear(g:utilityPopupFilename)&amp;amp;lt;CR&amp;amp;gt;
+    endif
+endfunction
+function! g:UtilityBufferCommand(...)
+    call system( a:1 . &amp;amp;quot; &amp;amp;gt; /tmp/out&amp;amp;quot; )
+    call UtilityBuffer(&amp;amp;quot;/tmp/out&amp;amp;quot;)
+endfunction
+function! g:UtilityBuffer(...)
+    if filereadable(a:1)
+        execute &amp;amp;quot;edit &amp;amp;quot; . a:1
+    endif
+endfunction
+
+function! g:UtilityPopUpClear(...)
+    call popup_clear(1)
+    nnoremap &amp;amp;lt;DOWN&amp;amp;gt; &amp;amp;lt;down&amp;amp;gt;
+    nnoremap &amp;amp;lt;UP&amp;amp;gt;   &amp;amp;lt;up&amp;amp;gt;
+    nnoremap &amp;amp;lt;F10&amp;amp;gt;  :call UtilityPopUp(g:utilityPopupFilename)&amp;amp;lt;CR&amp;amp;gt;
+endfunction
+
+function! ScrollPopup(nlines)
+    let winids = popup_list()
+    if len(winids) == 0
+        return
+    endif
+
+    &amp;amp;quot; Ignore hidden popups
+    let prop = popup_getpos(winids[0])
+    if prop.visible != 1
+        return
+    endif
+
+    let firstline = prop.firstline + a:nlines
+    let buf_lastline = str2nr(trim(win_execute(winids[0], &amp;amp;quot;echo line(&amp;amp;#39;$&amp;amp;#39;)&amp;amp;quot;)))
+    if firstline &amp;amp;lt; 1
+        let firstline = 1
+    elseif prop.lastline + a:nlines &amp;amp;gt; buf_lastline
+        let firstline = buf_lastline + prop.firstline - prop.lastline
+    endif
+
+    call popup_setoptions(winids[0], {&amp;amp;#39;firstline&amp;amp;#39;: firstline})
+endfunction
+
+
+#######################################################################################################
+Processing file: a
+       
+  __ _ 
+ / _` |
+| (_| |
+ \__,_|
+       
+Global
+
+:h[elp] keyword - open help for keyword
+:sav[eas] file - save file as
+:clo[se] - close current pane
+:ter[minal] - open a terminal window
+K - open man page for word under the cursor
+Tip Run vimtutor in a terminal to learn the first Vim commands.
+
+Cursor movement
+
+h - move cursor left
+j - move cursor down
+k - move cursor up
+l - move cursor right
+gj - move cursor down (multi-line text)
+gk - move cursor up (multi-line text)
+H - move to top of screen
+M - move to middle of screen
+L - move to bottom of screen
+w - jump forwards to the start of a word
+W - jump forwards to the start of a word (words can contain punctuation)
+e - jump forwards to the end of a word
+E - jump forwards to the end of a word (words can contain punctuation)
+b - jump backwards to the start of a word
+B - jump backwards to the start of a word (words can contain punctuation)
+ge - jump backwards to the end of a word
+gE - jump backwards to the end of a word (words can contain punctuation)
+% - move cursor to matching character (default supported pairs: &amp;amp;#39;()&amp;amp;#39;, &amp;amp;#39;{}&amp;amp;#39;, &amp;amp;#39;[]&amp;amp;#39; 
+- use :h matchpairs in vim for more info)
+0 - jump to the start of the line
+^ - jump to the first non-blank character of the line
+$ - jump to the end of the line
+g_ - jump to the last non-blank character of the line
+gg - go to the first line of the document
+G - go to the last line of the document
+5gg or 5G - go to line 5
+gd - move to local declaration
+gD - move to global declaration
+fx - jump to next occurrence of character x
+tx - jump to before next occurrence of character x
+Fx - jump to the previous occurrence of character x
+Tx - jump to after previous occurrence of character x
+; - repeat previous f, t, F or T movement
+, - repeat previous f, t, F or T movement, backwards
+} - jump to next paragraph (or function/block, when editing code)
+{ - jump to previous paragraph (or function/block, when editing code)
+zz - center cursor on screen
+zt - position cursor on top of the screen
+zb - position cursor on bottom of the screen
+Ctrl + e - move screen down one line (without moving cursor)
+Ctrl + y - move screen up one line (without moving cursor)
+Ctrl + b - move screen up one page (cursor to last line)
+Ctrl + f - move screen down one page (cursor to first line)
+Ctrl + d - move cursor and screen down 1/2 page
+Ctrl + u - move cursor and screen up 1/2 page
+
+Insert mode - inserting/appending text
+
+i - insert before the cursor
+I - insert at the beginning of the line
+a - insert (append) after the cursor
+A - insert (append) at the end of the line
+o - append (open) a new line below the current line
+O - append (open) a new line above the current line
+ea - insert (append) at the end of the word
+Ctrl + h - delete the character before the cursor during insert mode
+Ctrl + w - delete word before the cursor during insert mode
+Ctrl + j - add a line break at the cursor position during insert mode
+Ctrl + t - indent (move right) line one shiftwidth during insert mode
+Ctrl + d - de-indent (move left) line one shiftwidth during insert mode
+Ctrl + n - insert (auto-complete) next match before the cursor during insert mode
+Ctrl + p - insert (auto-complete) previous match before the cursor during insert mode
+Ctrl + rx - insert the contents of register x
+Ctrl + ox - Temporarily enter normal mode to issue one normal-mode command x.
+Esc or Ctrl + c - exit insert mode
+
+Editing
+
+r - replace a single character.
+R - replace more than one character, until ESC is pressed.
+J - join line below to the current one with one space in between
+gJ - join line below to the current one without space in between
+gwip - reflow paragraph
+g~ - switch case up to motion
+gu - change to lowercase up to motion
+gU - change to uppercase up to motion
+cc - change (replace) entire line
+c$ or C - change (replace) to the end of the line
+ciw - change (replace) entire word
+cw or ce - change (replace) to the end of the word
+s - delete character and substitute text (same as cl)
+S - delete line and substitute text (same as cc)
+xp - transpose two letters (delete and paste)
+u - undo
+U - restore (undo) last changed line
+Ctrl + r - redo
+. - repeat last command
+
+Marking text (visual mode)
+
+v - start visual mode, mark lines, then do a command (like y-yank)
+V - start linewise visual mode
+o - move to other end of marked area
+Ctrl + v - start visual block mode
+O - move to other corner of block
+aw - mark a word
+ab - a block with ()
+aB - a block with {}
+at - a block with &amp;amp;lt;&amp;amp;gt; tags
+ib - inner block with ()
+iB - inner block with {}
+it - inner block with &amp;amp;lt;&amp;amp;gt; tags
+Esc or Ctrl + c - exit visual mode
+
+Visual commands
+
+&amp;amp;gt; - shift text right
+&amp;amp;lt; - shift text left
+y - yank (copy) marked text
+d - delete marked text
+~ - switch case
+u - change marked text to lowercase
+U - change marked text to uppercase
+
+Registers
+
+:reg[isters] - show registers content
+&amp;amp;quot;xy - yank into register x
+&amp;amp;quot;xp - paste contents of register x
+&amp;amp;quot;+y - yank into the system clipboard register
+&amp;amp;quot;+p - paste from the system clipboard register
+Tip Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.
+
+Special registers:
+
+0 - last yank
+&amp;amp;quot; - unnamed register, last delete or yank
+% - current file name
+# - alternate file name
+* - clipboard contents (X11 primary)
++ - clipboard contents (X11 clipboard)
+/ - last search pattern
+: - last command-line
+. - last inserted text
+- - last small (less than a line) delete
+= - expression register
+_ - black hole register
+
+Marks and positions
+
+:marks - list of marks
+ma - set current position for mark A
+`a - jump to position of mark A
+y`a - yank text to position of mark A
+`0 - go to the position where Vim was previously exited
+`&amp;amp;quot; - go to the position when last editing this file
+`. - go to the position of the last change in this file
+`` - go to the position before the last jump
+:ju[mps] - list of jumps
+Ctrl + i - go to newer position in jump list
+Ctrl + o - go to older position in jump list
+:changes - list of changes
+g, - go to newer position in change list
+g; - go to older position in change list
+Ctrl + ] - jump to the tag under cursor
+Tip To jump to a mark you can either use a backtick (`) or an apostrophe (&amp;amp;#39;).
+Using an apostrophe jumps to the beginning (first non-blank) of the line holding the mark.
+
+Macros
+
+qa - record macro a
+q - stop recording macro
+@a - run macro a
+@@ - rerun last run macro
+
+Cut and paste
+
+yy - yank (copy) a line
+2yy - yank (copy) 2 lines
+yw - yank (copy) the characters of the word from the cursor position to the start of the next word
+yiw - yank (copy) word under the cursor
+yaw - yank (copy) word under the cursor and the space after or before it
+y$ or Y - yank (copy) to end of line
+p - put (paste) the clipboard after cursor
+P - put (paste) before cursor
+gp - put (paste) the clipboard after cursor and leave cursor after the new text
+gP - put (paste) before cursor and leave cursor after the new text
+dd - delete (cut) a line
+2dd - delete (cut) 2 lines
+dw - delete (cut) the characters of the word from the cursor position to the start of the next word
+diw - delete (cut) word under the cursor
+daw - delete (cut) word under the cursor and the space after or before it
+:3,5d - delete lines starting from 3 to 5
+Tip You can also use the following characters to specify the range:
+e.g.
+:.,$d - From the current line to the end of the file
+:.,1d - From the current line to the beginning of the file
+:10,1d - From the 10th line to the beginning of the file
+:g/{pattern}/d - delete all lines containing pattern
+:g!/{pattern}/d - delete all lines not containing pattern
+d$ or D - delete (cut) to the end of the line
+x - delete (cut) character
+
+Indent text
+
+&amp;amp;gt;&amp;amp;gt; - indent (move right) line one shiftwidth
+&amp;amp;lt;&amp;amp;lt; - de-indent (move left) line one shiftwidth
+&amp;amp;gt;% - indent a block with () or {} (cursor on brace)
+&amp;amp;lt;% - de-indent a block with () or {} (cursor on brace)
+&amp;amp;gt;ib - indent inner block with ()
+&amp;amp;gt;at - indent a block with &amp;amp;lt;&amp;amp;gt; tags
+3== - re-indent 3 lines
+=% - re-indent a block with () or {} (cursor on brace)
+=iB - re-indent inner block with {}
+gg=G - re-indent entire buffer
+]p - paste and adjust indent to current line
+
+Exiting
+
+:w - write (save) the file, but don&amp;amp;#39;t exit
+:w !sudo tee % - write out the current file using sudo
+:wq or :x or ZZ - write (save) and quit
+:q - quit (fails if there are unsaved changes)
+:q! or ZQ - quit and throw away unsaved changes
+:wqa - write (save) and quit on all tabs
+
+Search and replace
+
+/pattern - search for pattern
+?pattern - search backward for pattern
+\vpattern - &amp;amp;#39;very magic&amp;amp;#39; pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
+n - repeat search in same direction
+N - repeat search in opposite direction
+:%s/old/new/g - replace all old with new throughout file
+:%s/old/new/gc - replace all old with new throughout file with confirmations
+:noh[lsearch] - remove highlighting of search matches
+
+Search in multiple files
+
+:vim[grep] /pattern/ {`{file}`} - search for pattern in multiple files
+e.g. :vim[grep] /foo/ **/*
+:cn[ext] - jump to the next match
+:cp[revious] - jump to the previous match
+:cope[n] - open a window containing the list of matches
+:ccl[ose] - close the quickfix window
+
+Tabs
+
+:tabnew or :tabnew {page.words.file} - open a file in a new tab
+Ctrl + wT - move the current split window into its own tab
+gt or :tabn[ext] - move to the next tab
+gT or :tabp[revious] - move to the previous tab
+#gt - move to tab number #
+:tabm[ove] # - move current tab to the #th position (indexed from 0)
+:tabc[lose] - close the current tab and all its windows
+:tabo[nly] - close all tabs except for the current one
+:tabdo command - run the command on all tabs (e.g. :tabdo q - closes all opened tabs)
+
+Working with multiple files
+
+:e[dit] file - edit a file in a new buffer
+:bn[ext] - go to the next buffer
+:bp[revious] - go to the previous buffer
+:bd[elete] - delete a buffer (close a file)
+:b[uffer]# - go to a buffer by index #
+:b[uffer] file - go to a buffer by file
+:ls or :buffers - list all open buffers
+:sp[lit] file - open a file in a new buffer and split window
+:vs[plit] file - open a file in a new buffer and vertically split window
+:vert[ical] ba[ll] - edit all buffers as vertical windows
+:tab ba[ll] - edit all buffers as tabs
+Ctrl + ws - split window
+Ctrl + wv - split window vertically
+Ctrl + ww - switch windows
+Ctrl + wq - quit a window
+Ctrl + wx - exchange current window with next one
+Ctrl + w= - make all windows equal height &amp;amp;amp; width
+Ctrl + wh - move cursor to the left window (vertical split)
+Ctrl + wl - move cursor to the right window (vertical split)
+Ctrl + wj - move cursor to the window below (horizontal split)
+Ctrl + wk - move cursor to the window above (horizontal split)
+Ctrl + wH - make current window full height at far left (leftmost vertical window)
+Ctrl + wL - make current window full height at far right (rightmost vertical window)
+Ctrl + wJ - make current window full width at the very bottom (bottommost horizontal window)
+Ctrl + wK - make current window full width at the very top (topmost horizontal window)
+
+Diff
+
+zf - manually define a fold up to motion
+zd - delete fold under the cursor
+za - toggle fold under the cursor
+zo - open fold under the cursor
+zc - close fold under the cursor
+zr - reduce (open) all folds by one level
+zm - fold more (close) all folds by one level
+zi - toggle folding functionality
+]c - jump to start of next change
+[c - jump to start of previous change
+do or :diffg[et] - obtain (get) difference (from other buffer)
+dp or :diffpu[t] - put difference (to other buffer)
+:diffthis - make current window part of diff
+:dif[fupdate] - update differences
+:diffo[ff] - switch off diff mode for current window
+
+#######################################################################################################
+Processing file: bash.functions
+ _               _        __                  _   _                 
+| |__   __ _ ___| |__    / _|_   _ _ __   ___| |_(_) ___  _ __  ___ 
+| &amp;amp;#39;_ \ / _` / __| &amp;amp;#39;_ \  | |_| | | | &amp;amp;#39;_ \ / __| __| |/ _ \| &amp;amp;#39;_ \/ __|
+| |_) | (_| \__ \ | | |_|  _| |_| | | | | (__| |_| | (_) | | | \__ \
+|_.__/ \__,_|___/_| |_(_)_|  \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
+                                                                    
+#
+# bash functions
+############################################################################################
+# ./BashDirName.sh
+############################################################################################
+No need for basename, and especially no need for a subshell running pwd (which adds an extra, and expensive, fork operation); the shell can do this internally using parameter expansion:
+
+result=${PWD##*/}          # to assign to a variable
+result=${result:-/}        # to correct for the case where PWD=/
+
+printf &amp;amp;#39;%s\n&amp;amp;#39; &amp;amp;quot;${PWD##*/}&amp;amp;quot; # to print to stdout
+                           # ...more robust than echo for unusual names
+                           #    (consider a directory named -e or -n)
+
+printf &amp;amp;#39;%q\n&amp;amp;#39; &amp;amp;quot;${PWD##*/}&amp;amp;quot; # to print to stdout, quoted for use as shell input
+                           # ...useful to make hidden characters readable.
+Note that if you&amp;amp;#39;re applying this technique in other circumstances (not PWD, but some other variable holding a directory name), you might need to trim any trailing slashes. The below uses bash&amp;amp;#39;s extglob support to work even with multiple trailing slashes:
+
+dirname=/path/to/somewhere//
+shopt -s extglob           # enable +(...) glob syntax
+result=${dirname%%+(/)}    # trim however many trailing slashes exist
+result=${result##*/}       # remove everything before the last / that still remains
+result=${result:-/}        # correct for dirname=/ case
+printf &amp;amp;#39;%s\n&amp;amp;#39; &amp;amp;quot;$result&amp;amp;quot;
+
+
+############################################################################################
+# ./CheckIfFileExists.sh
+############################################################################################
+#Check if file exists
+
+if [[ -f &amp;amp;lt;file&amp;amp;gt; ]]
+then
+    echo &amp;amp;quot;&amp;amp;lt;file&amp;amp;gt; exists on your filesystem.&amp;amp;quot;
+fi
+
+
+# Check if file does not exist
+
+if [[ ! -f &amp;amp;lt;file&amp;amp;gt; ]]
+then
+    echo &amp;amp;quot;&amp;amp;lt;file&amp;amp;gt; does not exist on your filesystem.&amp;amp;quot;
+fi
+
+
+# Check if directory exist
+
+if [[ -d &amp;amp;quot;$DIRECTORY&amp;amp;quot; ]]
+then
+    echo &amp;amp;quot;$DIRECTORY exists on your filesystem.&amp;amp;quot;
+fi
+
+
+
+############################################################################################
+# ./console.sh
+############################################################################################
+consolebar () {
+    echo &amp;amp;quot;********************************************************************************************&amp;amp;quot;
+}
+consolemsg () {
+#   consolebar
+    echo &amp;amp;quot;** $1&amp;amp;quot;
+#   consolebar
+    A=$A
+}
+optconsolemsg () {
+#    echo &amp;amp;quot;** $1&amp;amp;quot;
+    A=$A
+}
+
+
+############################################################################################
+# ./finddirectories.sh
+############################################################################################
+find . -type d
+
+
+############################################################################################
+# ./findfiles1g.sh
+############################################################################################
+find . -type f -size +1G 2&amp;amp;gt;/dev/null | sed &amp;amp;#39;s#^.#/tmp#&amp;amp;#39;
+
+
+############################################################################################
+# ./findfiles2g.sh
+############################################################################################
+find . -type f -size +2G 2&amp;amp;gt;/dev/null | sed &amp;amp;#39;s#^.#/tmp#&amp;amp;#39;
+
+
+############################################################################################
+# ./findfiles.sh
+############################################################################################
+find . -type f
+
+
+############################################################################################
+# ./find_secrets.sh
+############################################################################################
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp1=/tmp/$$_$$
+trap &amp;amp;#39;exit 0&amp;amp;#39; INT HUP QUIT TERM ALRM USR1
+trap &amp;amp;#39;rm -f &amp;amp;quot;$Tmp&amp;amp;quot;&amp;amp;#39; EXIT
+rm -f &amp;amp;quot;$Tmp&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+
+# Define patterns for sensitive data (expand as needed)
+# patterns=(
+#     &amp;amp;quot;password[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot;  # Basic password pattern
+#     &amp;amp;quot;secret[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot;   # Secret pattern
+#     &amp;amp;quot;key[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot;      # Key pattern
+#     &amp;amp;quot;AWS_ACCESS_KEY_ID[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[A-Z0-9]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # AWS Access Key ID
+#     &amp;amp;quot;AWS_SECRET_ACCESS_KEY[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[a-zA-Z0-9/+=]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # AWS Secret Access Key
+#     &amp;amp;quot;api_key[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # API Key pattern
+#     &amp;amp;quot;database_url[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # Database URL
+#     &amp;amp;quot;connection_string[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # Connection String
+#     &amp;amp;quot;private_key[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # Private Key
+#     &amp;amp;quot;client_secret[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # Client Secret
+#     &amp;amp;quot;oauth_token[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # OAuth Token
+#     &amp;amp;quot;bearer_token[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # Bearer Token
+# )
+. ./secure_patterns
+
+# Define file types to search (customize as needed)
+file_types=(&amp;amp;quot;*.sh&amp;amp;quot; &amp;amp;quot;*.py&amp;amp;quot; &amp;amp;quot;*.js&amp;amp;quot; &amp;amp;quot;*.php&amp;amp;quot; &amp;amp;quot;*.html&amp;amp;quot; &amp;amp;quot;*.xml&amp;amp;quot; &amp;amp;quot;*.json&amp;amp;quot; &amp;amp;quot;*.txt&amp;amp;quot; &amp;amp;quot;*.conf&amp;amp;quot; &amp;amp;quot;*.yaml&amp;amp;quot; &amp;amp;quot;*.yml&amp;amp;quot; &amp;amp;quot;*.sh&amp;amp;quot; &amp;amp;quot;*.bash&amp;amp;quot; &amp;amp;quot;*.c&amp;amp;quot; &amp;amp;quot;*.cpp&amp;amp;quot; &amp;amp;quot;*.java&amp;amp;quot; &amp;amp;quot;*.go&amp;amp;quot;)
+
+
+# Function to search a single file
+search_file() {
+    local file=&amp;amp;quot;$1&amp;amp;quot;
+    local line_num
+    local line
+
+    for pattern in &amp;amp;quot;${patterns[@]}&amp;amp;quot;; do
+        while IFS= read -r line; do
+            line_num=$((line_num + 1))
+            if [[ &amp;amp;quot;$line&amp;amp;quot; =~ $pattern ]]; then
+                echo &amp;amp;quot;File: $file, Line: $line_num: $line, Pattern: $pattern&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; $Tmp
+            fi
+        done &amp;amp;lt; &amp;amp;quot;$file&amp;amp;quot;
+        line_num=0 # Reset line number for next pattern
+    done
+}
+
+# Find files and search them
+# find . \( -name &amp;amp;quot;${file_types[@]}&amp;amp;quot; \) -print0 | while IFS= read -r -d $&amp;amp;#39;\0&amp;amp;#39; file; do
+find . \( -name &amp;amp;quot;*.sh&amp;amp;quot; \) -print0 | while IFS= read -r -d $&amp;amp;#39;\0&amp;amp;#39; file; do
+    if [ -f &amp;amp;quot;$file&amp;amp;quot; ]; then # Check if it&amp;amp;#39;s a regular file (not a directory)
+      search_file &amp;amp;quot;$file&amp;amp;quot;
+    fi
+done
+
+
+
+if [ -f $Tmp ]; then
+    echo &amp;amp;quot;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&amp;amp;quot;
+    echo &amp;amp;quot;!!!!    Secrets Found    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&amp;amp;quot;
+    echo &amp;amp;quot;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&amp;amp;quot;
+    cat $Tmp | sort | uniq
+    exit 1
+fi
+
+echo &amp;amp;quot;Finished searching.&amp;amp;quot;
+exit 0
+
+
+############################################################################################
+# ./ForEachDirectory.sh
+############################################################################################
+for d in */ ; do
+    echo &amp;amp;quot;$d&amp;amp;quot;
+done
+
+
+############################################################################################
+# ./ForEachFile.sh
+############################################################################################
+for f in ./*.java; do MakeHTMLCodePage &amp;amp;quot;$f&amp;amp;quot;; done
+
+
+############################################################################################
+# ./fullpathd.sh
+############################################################################################
+find . -type d 2&amp;amp;gt;/dev/null | sed &amp;amp;#39;s#^.#/tmp#&amp;amp;#39;
+
+
+############################################################################################
+# ./fullpath.sh
+############################################################################################
+find . -type f 2&amp;amp;gt;/dev/null | sed &amp;amp;#39;s#^.#/tmp#&amp;amp;#39;
+
+
+############################################################################################
+# ./gitgraphlog.sh
+############################################################################################
+git log --graph --all --date=relative --pretty=format:&amp;amp;#39;%Cred%h %Creset%&amp;amp;lt;|(100,trunc)%s %C(bold blue)&amp;amp;lt;%an&amp;amp;gt;%Creset %Cgreen(%cd)%Creset%C(auto)%d&amp;amp;#39;
+
+
+############################################################################################
+# ./IsFileEmpty.sh
+############################################################################################
+if [ -s /tmp/myfile.txt ]
+then
+     echo &amp;amp;quot;File not empty&amp;amp;quot;
+else
+     echo &amp;amp;quot;File empty&amp;amp;quot;
+fi
+
+
+############################################################################################
+# ./IsHostUp.sh
+############################################################################################
+
+hostname_or_ip_address=$1
+if ping -q -c 1 -W 1 wind2 &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1; then
+    echo &amp;amp;quot;$hostname_or_ip_address is alive&amp;amp;quot;
+else
+    echo &amp;amp;quot;$hostname_or_ip_address is pining for the fjords&amp;amp;quot;
+fi
+
+
+############################################################################################
+# ./isnfs.sh
+############################################################################################
+isnfs () {                                                                                                                       
+    LOCAL=`stat -f -c %T &amp;amp;quot;$1&amp;amp;quot;`                                                                                                   
+    if [ &amp;amp;quot;$LOCAL&amp;amp;quot; == &amp;amp;quot;nfs&amp;amp;quot; ]; then                                                                                               
+         RETVAL=&amp;amp;quot;YES&amp;amp;quot;                                                                                                             
+    else                                                                                                                         
+         RETVAL=&amp;amp;quot;NO&amp;amp;quot;                                                                                                              
+    fi                                                                                                                           
+}
+
+
+############################################################################################
+# ./MonitorOpenNetstatConnections.sh
+############################################################################################
+watch -n 1 &amp;amp;#39;netstat -tpanl | grep ESTABLISHED&amp;amp;#39;
+
+
+############################################################################################
+# ./slapfilename.sh
+############################################################################################
+#!/usr/bin/bash
+Tmp=/tmp/$$
+
+if [ $# -eq 0 ]
+  then
+        rm -f ./taggerdo
+
+        for filename in *.$1; do
+            FILE=&amp;amp;quot;$filename&amp;amp;quot;
+            NAME=&amp;amp;quot;$filename&amp;amp;quot;
+            NAME=`echo &amp;amp;quot;$NAME&amp;amp;quot;     | sed &amp;amp;quot;s/ \[.*\]//g&amp;amp;quot;`
+            NAME=`echo &amp;amp;quot;$NAME&amp;amp;quot;     | sed &amp;amp;quot;s/^[&amp;amp;amp;]//g&amp;amp;quot;`
+            NAME=`echo &amp;amp;quot;$NAME&amp;amp;quot;     | sed &amp;amp;quot;s/[&amp;amp;#39;]//g&amp;amp;quot;`
+            NAME=`echo &amp;amp;quot;$NAME&amp;amp;quot; | sed &amp;amp;quot;s/_/ /g&amp;amp;quot;`
+            NAME=`echo &amp;amp;quot;$NAME&amp;amp;quot; | sed &amp;amp;quot;s/  / /g&amp;amp;quot;`
+            NAME=`echo &amp;amp;quot;$NAME&amp;amp;quot; | sed &amp;amp;quot;s/  / /g&amp;amp;quot;`
+            NAME=`echo &amp;amp;quot;$NAME&amp;amp;quot; | sed &amp;amp;quot;s/  / /g&amp;amp;quot;`
+            NAME=`echo &amp;amp;quot;$NAME&amp;amp;quot; | sed &amp;amp;quot;s/^ //&amp;amp;quot;`
+            NAME=`echo &amp;amp;quot;$NAME&amp;amp;quot; | sed &amp;amp;quot;s/^ //&amp;amp;quot;`
+            NAME=`echo &amp;amp;quot;$NAME&amp;amp;quot; | sed &amp;amp;quot;s/^ //&amp;amp;quot;`
+            NAME=`echo &amp;amp;quot;$NAME&amp;amp;quot; | sed &amp;amp;quot;s/ [.]mp3/.mp3/&amp;amp;quot;`
+            NAME=`echo &amp;amp;quot;$NAME&amp;amp;quot; | sed &amp;amp;quot;s/ [.]mp3/.mp3/&amp;amp;quot;`
+            NAME=`echo &amp;amp;quot;$NAME&amp;amp;quot; | sed &amp;amp;quot;s/ [.]mp3/.mp3/&amp;amp;quot;`
+           CMD=&amp;amp;quot;mv \&amp;amp;quot;./$filename\&amp;amp;quot; \&amp;amp;quot;$NAME\&amp;amp;quot;&amp;amp;quot;
+           echo $CMD
+           echo $CMD &amp;amp;gt; ./taggerdo
+           chmod 777  ./taggerdo
+           ./taggerdo
+           rm -f ./taggerdo
+        done
+
+fi
+
+
+############################################################################################
+# ./topTenCommands.sh
+############################################################################################
+history | awk &amp;amp;#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &amp;amp;quot; &amp;amp;quot; CMD[a]/count*100 &amp;amp;quot;% &amp;amp;quot; a;}&amp;amp;#39; | grep -v &amp;amp;quot;./&amp;amp;quot; | column -c3 -s &amp;amp;quot; &amp;amp;quot; -t | sort -nr | nl |  head -n10
+
+
+############################################################################################
+# ./update.sh
+############################################################################################
+rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
+
+rm -f README.md
+PART=header
+echo &amp;amp;quot;# $PART&amp;amp;quot;      &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;&amp;amp;quot;             &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;\`\`\`&amp;amp;quot;       &amp;amp;gt;&amp;amp;gt; README.md
+cat $PART           &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;\`\`\`&amp;amp;quot;       &amp;amp;gt;&amp;amp;gt; README.md
+
+PART=update
+echo &amp;amp;quot;# $PART&amp;amp;quot;      &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;&amp;amp;quot;             &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;\`\`\`&amp;amp;quot;       &amp;amp;gt;&amp;amp;gt; README.md
+cat $PART           &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;\`\`\`&amp;amp;quot;       &amp;amp;gt;&amp;amp;gt; README.md
+
+PART=getheader
+echo &amp;amp;quot;# $PART&amp;amp;quot;      &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;&amp;amp;quot;             &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;\`\`\`&amp;amp;quot;       &amp;amp;gt;&amp;amp;gt; README.md
+cat $PART           &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;\`\`\`&amp;amp;quot;       &amp;amp;gt;&amp;amp;gt; README.md
+
+cat README.md
+git add README.md
+
+
+echo &amp;amp;quot;#&amp;amp;quot;                      &amp;amp;gt; bash.functions
+echo &amp;amp;quot;# bash functions&amp;amp;quot;      &amp;amp;gt;&amp;amp;gt; bash.functions
+for fn in ./*.sh; do
+    echo &amp;amp;quot;############################################################################################&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; bash.functions
+    echo &amp;amp;quot;# $fn&amp;amp;quot;                 &amp;amp;gt;&amp;amp;gt; bash.functions
+    echo &amp;amp;quot;############################################################################################&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; bash.functions
+    cat &amp;amp;quot;$fn&amp;amp;quot;                    &amp;amp;gt;&amp;amp;gt; bash.functions
+    echo &amp;amp;quot;&amp;amp;quot;                      &amp;amp;gt;&amp;amp;gt; bash.functions
+    echo &amp;amp;quot;&amp;amp;quot;                      &amp;amp;gt;&amp;amp;gt; bash.functions
+done
+git add bash.functions
+
+
+git status
+git add -u;git commit  -m &amp;amp;quot;Update&amp;amp;quot;
+git push -u origin master
+
+cp ./getheader       /etc/center
+cp ./bash.functions  /etc/center
+
+
+
+
+
+############################################################################################
+# ./UpperToLowerCase.sh
+############################################################################################
+str=&amp;amp;quot;Hello World&amp;amp;quot;
+lowerStr=$(echo &amp;amp;quot;$str&amp;amp;quot; | tr &amp;amp;#39;[:upper:]&amp;amp;#39; &amp;amp;#39;[:lower:]&amp;amp;#39;)
+ 
+echo &amp;amp;quot;Input String: $str&amp;amp;quot;
+echo &amp;amp;quot;Result String:  $lowerStr&amp;amp;quot;
+
+
+############################################################################################
+# ./WatchCpuProcesses.sh
+############################################################################################
+watch -n 1 &amp;amp;#39;ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head&amp;amp;#39;
+
+
+
+#######################################################################################################
+Processing file: bash.justhelp
+ _               _        _           _   _          _       
+| |__   __ _ ___| |__    (_)_   _ ___| |_| |__   ___| |_ __  
+| &amp;amp;#39;_ \ / _` / __| &amp;amp;#39;_ \   | | | | / __| __| &amp;amp;#39;_ \ / _ \ | &amp;amp;#39;_ \ 
+| |_) | (_| \__ \ | | |_ | | |_| \__ \ |_| | | |  __/ | |_) |
+|_.__/ \__,_|___/_| |_(_)/ |\__,_|___/\__|_| |_|\___|_| .__/ 
+                       |__/                           |_|    
+#================================================================
+# HEADER
+#=====================:===========================================
+#% SYNOPSIS
+#+    ${SCRIPT_NAME} [-hv] [-o[file]] args ...
+#%
+#% DESCRIPTION
+#%    This is a script template
+#%    to start any good shell script.
+#%
+#% OPTIONS
+#%    -o [file], --output=[file]    Set log file (default=/dev/null)
+#%                                  use DEFAULT keyword to autoname file
+#%                                  The default value is /dev/null.
+#%    -t, --timelog                 Add timestamp to log (&amp;amp;quot;+%y/%m/%d@%H:%M:%S&amp;amp;quot;)
+#%    -x, --ignorelock              Ignore if lock file exists
+#%    -h, --help                    Print this help
+#%    -v, --version                 Print script information
+#%
+#% EXAMPLES
+#%    ${SCRIPT_NAME} -o DEFAULT arg1 arg2
+#%
+#================================================================
+#- IMPLEMENTATION
+#-    version         ${SCRIPT_NAME} 0.0.1
+#-    author          MJE
+#-    copyright       Copyright (c) All Rights Reserved
+#-    license         All Rights Reserved
+#-    script_id       0.0.1
+#-
+#================================================================
+#  HISTORY
+#     2024/12/30 : XXX : Script creation
+# 
+#================================================================
+#  DEBUG OPTION
+#    set -n  # Uncomment to check your syntax, without execution.
+#    set -x  # Uncomment to debug this shell script
+#
+#================================================================
+# END_OF_HEADER
+#================================================================
+
+#== needed variables ==#
+SCRIPT_HEADSIZE=$(head -200 ${0} |grep -n &amp;amp;quot;^# END_OF_HEADER&amp;amp;quot; | cut -f1 -d:)
+SCRIPT_NAME=&amp;amp;quot;$(basename ${0})&amp;amp;quot;
+
+#== usage functions ==#
+usage() { printf &amp;amp;quot;Usage: &amp;amp;quot;; head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e &amp;amp;quot;^#+&amp;amp;quot; | sed -e &amp;amp;quot;s/^#+[ ]*//g&amp;amp;quot; -e &amp;amp;quot;s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g&amp;amp;quot; ; }
+usagefull() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e &amp;amp;quot;^#[%+-]&amp;amp;quot; | sed -e &amp;amp;quot;s/^#[%+-]//g&amp;amp;quot; -e &amp;amp;quot;s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g&amp;amp;quot; ; }
+scriptinfo() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e &amp;amp;quot;^#-&amp;amp;quot; | sed -e &amp;amp;quot;s/^#-//g&amp;amp;quot; -e &amp;amp;quot;s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g&amp;amp;quot;; }
+
+#######################################################################################################
+Processing file: bash.library
+ _               _       _ _ _                          
+| |__   __ _ ___| |__   | (_) |__  _ __ __ _ _ __ _   _ 
+| &amp;amp;#39;_ \ / _` / __| &amp;amp;#39;_ \  | | | &amp;amp;#39;_ \| &amp;amp;#39;__/ _` | &amp;amp;#39;__| | | |
+| |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
+|_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
+                                                  |___/ 
+# *********************************************************DATEOMATIC: Mon Mar 24 11:16:15 EDT 2025
+# *********************************************************HASHOMATIC: c8ade33411894a2b0873038ea166f75c
+DEBUGLEVEL=1
+
+function repeat_char() {
+  local char=&amp;amp;quot;$1&amp;amp;quot;
+  local count=&amp;amp;quot;$2&amp;amp;quot;
+  local result=&amp;amp;quot;&amp;amp;quot;
+
+  if [[ -z &amp;amp;quot;$char&amp;amp;quot; || -z &amp;amp;quot;$count&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;Usage: repeat_char &amp;amp;lt;character&amp;amp;gt; &amp;amp;lt;count&amp;amp;gt;&amp;amp;quot; &amp;amp;gt;&amp;amp;amp;2
+    return 1
+  fi
+
+  if [[ &amp;amp;quot;$count&amp;amp;quot; -lt 0 ]]; then
+    echo &amp;amp;quot;Count must be a non-negative integer.&amp;amp;quot; &amp;amp;gt;&amp;amp;amp;2
+    return 1
+  fi
+
+  for ((i = 0; i &amp;amp;lt; count; i++)); do
+    result+=&amp;amp;quot;$char&amp;amp;quot;
+  done
+
+  echo &amp;amp;quot;$result&amp;amp;quot;
+}
+function longest_string_length() {
+  local max_length=0
+  local current_length
+  local line
+
+  while IFS= read -r line; do
+    current_length=${#line}
+    if [[ $current_length -gt $max_length ]]; then
+      max_length=$current_length
+    fi
+  done
+
+  echo &amp;amp;quot;$max_length&amp;amp;quot;
+}
+function fecho() {
+  echo &amp;amp;quot;$FUNCNAME : $1 $2 $3 $4 $5&amp;amp;quot;
+}
+function fdebug() {
+    if [ &amp;amp;quot;$DEBUGLEVEL&amp;amp;quot; -gt &amp;amp;quot;0&amp;amp;quot; ]; then
+        echo &amp;amp;quot;DBG $FUNCNAME : $1 $2 $3 $4 $&amp;amp;quot;
+    fi
+}
+# show up to 3 parent dirs, except ~, resolve all other dir aliases
+function git_toplevel() {
+     if [ -d &amp;amp;quot;.git&amp;amp;quot; ]; then
+         git rev-parse --show-toplevel 2&amp;amp;gt; /dev/null | sed -e &amp;amp;quot;s,^$HOME,~,&amp;amp;quot;
+     fi
+}
+function git_branch() {
+     #git branch 2&amp;amp;gt; /dev/null | sed -e &amp;amp;#39;/^[^*]/d&amp;amp;#39; -e &amp;amp;#39;s/* \(.*\)/ (\1)/&amp;amp;#39;
+     if [ -d &amp;amp;quot;.git&amp;amp;quot; ]; then
+         git branch 2&amp;amp;gt; /dev/null | sed &amp;amp;#39;s/^..//&amp;amp;#39; | sed &amp;amp;#39;s/master/m/&amp;amp;#39;
+     fi
+}
+function git_origin() {
+     # git branch 2&amp;amp;gt; /dev/null | sed -e &amp;amp;#39;/^[^*]/d&amp;amp;#39; -e &amp;amp;#39;s/* \(.*\)/ (\1)/&amp;amp;#39;
+     if [ -d &amp;amp;quot;.git&amp;amp;quot; ]; then
+         git config --get remote.origin.url 2&amp;amp;gt; /dev/null
+     fi
+}
+function git_originsync() {
+     if [ -d &amp;amp;quot;.git&amp;amp;quot; ]; then
+         git config color.ui false
+         git branch -vv 2&amp;amp;gt; /dev/null |  gawk &amp;amp;#39;match($0, /\[([^\]]+)\]/, a) { print a[1] }&amp;amp;#39; | sed &amp;amp;#39;s/origin/o/&amp;amp;#39; | sed &amp;amp;#39;s/master/m/&amp;amp;#39; | sed &amp;amp;#39;s/ ahead /+/&amp;amp;#39;
+     else
+         echo &amp;amp;quot;&amp;amp;quot;
+     fi
+}
+function collapse_pwd() {
+    curr_pwd=$(pwd | sed -e &amp;amp;quot;s,^$HOME,~,&amp;amp;quot;)
+    echo $curr_pwd
+}
+function collapse_hostname() {
+    curr_hostname=$(hostname)
+    echo $curr_hostname
+}
+
+function backup_file() {
+  local filename=&amp;amp;quot;$1&amp;amp;quot;
+  local backup_dir=&amp;amp;quot;$2&amp;amp;quot; # New argument for backup directory
+  local timestamp=$(date +%Y%m%d%H%M%S)
+  local backup_filename=&amp;amp;quot;${filename##*/}.backup.${timestamp}&amp;amp;quot; # Extract filename only
+  local backup_path=&amp;amp;quot;${backup_dir}/${backup_filename}&amp;amp;quot;
+
+  if [ -f &amp;amp;quot;$filename&amp;amp;quot; ]; then
+    if [ -d &amp;amp;quot;$backup_dir&amp;amp;quot; ]; then # Check if backup directory exists
+      cp &amp;amp;quot;$filename&amp;amp;quot; &amp;amp;quot;$backup_path&amp;amp;quot;
+      #echo &amp;amp;quot;File &amp;amp;#39;$filename&amp;amp;#39; backed up to &amp;amp;#39;$backup_path&amp;amp;#39;.&amp;amp;quot;
+    else
+      #echo &amp;amp;quot;Error: Backup directory &amp;amp;#39;$backup_dir&amp;amp;#39; does not exist.&amp;amp;quot;
+      return 1
+    fi
+
+  else
+    #echo &amp;amp;quot;Error: File &amp;amp;#39;$filename&amp;amp;#39; not found.&amp;amp;quot;
+    return 1
+  fi
+}
+# Example usage:
+# backup_file my_file.txt /path/to/backup/directory
+
+
+# ****************************************************************************************************
+# ****************************************************************************************************
+
+# --- String Manipulation ---
+
+# Trims leading and trailing whitespace from a string.
+function trim() {
+  local str=&amp;amp;quot;$1&amp;amp;quot;
+  printf &amp;amp;quot;%s&amp;amp;quot; &amp;amp;quot;${str#&amp;amp;quot;${str%%[![:space:]]*}&amp;amp;quot;}&amp;amp;quot; &amp;amp;quot;${str%&amp;amp;quot;${str##*[![:space:]]}&amp;amp;quot;}&amp;amp;quot;
+}
+remove_leading_whitespace() {
+         local input=&amp;amp;quot;$1&amp;amp;quot;       # Bash-Function-Args
+  local output=&amp;amp;quot;${input#&amp;amp;quot;${input%%[![:space:]]*}&amp;amp;quot;}&amp;amp;quot;
+  echo &amp;amp;quot;$output&amp;amp;quot;
+}
+
+# Checks if a string starts with a given prefix.
+function starts_with() {
+         local string=&amp;amp;quot;$1&amp;amp;quot;;local prefix=&amp;amp;quot;$2&amp;amp;quot;  # Bash-Function-Args
+  [[ &amp;amp;quot;$string&amp;amp;quot; == &amp;amp;quot;$prefix&amp;amp;quot;* ]]
+}
+
+# Checks if a string ends with a given suffix.
+function ends_with() {
+         local string=&amp;amp;quot;$1&amp;amp;quot;;local suffix=&amp;amp;quot;$2&amp;amp;quot;  # Bash-Function-Args
+  [[ &amp;amp;quot;$string&amp;amp;quot; == *&amp;amp;quot;$suffix&amp;amp;quot; ]]
+}
+
+# Checks if a string contains a substring.
+function contains() {
+         local string=&amp;amp;quot;$1&amp;amp;quot;;local substring=&amp;amp;quot;$2&amp;amp;quot;  # Bash-Function-Args
+  [[ &amp;amp;quot;$string&amp;amp;quot; == *&amp;amp;quot;$substring&amp;amp;quot;* ]]
+}
+
+# Replaces all occurrences of a substring in a string.
+function replace() {
+         local string=&amp;amp;quot;$1&amp;amp;quot;;local old=&amp;amp;quot;$2&amp;amp;quot;;local new=&amp;amp;quot;$3&amp;amp;quot;  # Bash-Function-Args
+  printf &amp;amp;quot;%s\n&amp;amp;quot; &amp;amp;quot;${string//$old/$new}&amp;amp;quot;
+}
+
+# Extracts a substring based on start and end indices. (1-based indexing)
+function substring() {
+         local string=&amp;amp;quot;$1&amp;amp;quot;;local start=&amp;amp;quot;$2&amp;amp;quot;;local length=&amp;amp;quot;$3&amp;amp;quot;  # Bash-Function-Args
+  if [[ -z &amp;amp;quot;$length&amp;amp;quot; ]]; then
+    printf &amp;amp;quot;%s\n&amp;amp;quot; &amp;amp;quot;${string:$((start - 1))}&amp;amp;quot;
+  else
+    printf &amp;amp;quot;%s\n&amp;amp;quot; &amp;amp;quot;${string:$((start - 1)):$length}&amp;amp;quot;
+  fi
+}
+
+# --- File and Directory Operations ---
+
+# Creates a directory if it doesn&amp;amp;#39;t exist.
+function mkdir_p() {
+  mkdir -p &amp;amp;quot;$1&amp;amp;quot;
+}
+
+# Checks if a file or directory exists.
+function exists() {
+  [[ -e &amp;amp;quot;$1&amp;amp;quot; ]]
+}
+
+# Checks if a file exists.
+function is_file() {
+  [[ -f &amp;amp;quot;$1&amp;amp;quot; ]]
+}
+
+# Checks if a directory exists.
+function is_dir() {
+  [[ -d &amp;amp;quot;$1&amp;amp;quot; ]]
+}
+
+# Gets the absolute path of a file or directory.
+function abspath() {
+  local path=&amp;amp;quot;$1&amp;amp;quot;
+  if [[ -z &amp;amp;quot;$path&amp;amp;quot; ]]; then
+    pwd
+  else
+    realpath &amp;amp;quot;$path&amp;amp;quot;
+  fi
+}
+
+# Gets the filename from a path.
+function basename() {
+  local path=&amp;amp;quot;$1&amp;amp;quot;
+  printf &amp;amp;quot;%s\n&amp;amp;quot; &amp;amp;quot;$(basename &amp;amp;quot;$path&amp;amp;quot;)&amp;amp;quot;
+}
+
+# Gets the directory from a path.
+function dirname() {
+  local path=&amp;amp;quot;$1&amp;amp;quot;
+  printf &amp;amp;quot;%s\n&amp;amp;quot; &amp;amp;quot;$(dirname &amp;amp;quot;$path&amp;amp;quot;)&amp;amp;quot;
+}
+
+# Gets the file extension from a path.
+function extension() {
+  local path=&amp;amp;quot;$1&amp;amp;quot;
+  printf &amp;amp;quot;%s\n&amp;amp;quot; &amp;amp;quot;${path##*.}&amp;amp;quot;
+}
+
+# Copies a file or directory recursively.
+function cp_r() {
+  cp -r &amp;amp;quot;$1&amp;amp;quot; &amp;amp;quot;$2&amp;amp;quot;
+}
+
+# Moves a file or directory.
+function mv_f() {
+  mv -f &amp;amp;quot;$1&amp;amp;quot; &amp;amp;quot;$2&amp;amp;quot;
+}
+
+# Removes a file or directory recursively.
+function rm_rf() {
+  rm -rf &amp;amp;quot;$1&amp;amp;quot;
+}
+
+# --- System and Process Utilities ---
+
+# Checks if a command is available.
+function command_exists() {
+  command -v &amp;amp;quot;$1&amp;amp;quot; &amp;amp;amp;&amp;amp;gt; /dev/null
+}
+
+# Gets the process ID (PID) of a process by name.
+function pidof_name() {
+         local name=&amp;amp;quot;$1&amp;amp;quot;               # Bash-Function-Args
+  pidof &amp;amp;quot;$name&amp;amp;quot;
+}
+
+# Kills a process by name.
+function kill_name() {
+         local name=&amp;amp;quot;$1&amp;amp;quot;               # Bash-Function-Args
+  pkill &amp;amp;quot;$name&amp;amp;quot;
+}
+
+# Kills a process by PID.
+function kill_pid() {
+         local pid=&amp;amp;quot;$1&amp;amp;quot;               # Bash-Function-Args
+  kill &amp;amp;quot;$pid&amp;amp;quot;
+}
+
+# Runs a command and returns its exit code.
+function run_and_exit_code() {
+  &amp;amp;quot;$@&amp;amp;quot;
+  echo $?
+}
+
+# Runs a command and returns its output.
+function run_and_output() {
+  &amp;amp;quot;$@&amp;amp;quot;
+}
+
+#Runs a command and returns its error.
+function run_and_error() {
+  &amp;amp;quot;$@&amp;amp;quot; 2&amp;amp;gt;&amp;amp;amp;1 &amp;amp;gt;/dev/null
+}
+# --- Array Manipulation ---
+
+# Checks if an array contains a value.
+function array_contains() {
+         local needle=&amp;amp;quot;$1&amp;amp;quot;               # Bash-Function-Args
+  shift
+  local haystack=(&amp;amp;quot;${@}&amp;amp;quot;)
+  local found=0
+  for item in &amp;amp;quot;${haystack[@]}&amp;amp;quot;; do
+    if [[ &amp;amp;quot;$item&amp;amp;quot; == &amp;amp;quot;$needle&amp;amp;quot; ]]; then
+      found=1
+      break
+    fi
+  done
+  if [[ $found -eq 1 ]]; then
+    return 0 # True
+  else
+    return 1 # False
+  fi
+}
+
+# Joins array elements with a delimiter.
+function array_join() {
+         local delimiter=&amp;amp;quot;$1&amp;amp;quot;               # Bash-Function-Args
+  shift
+  local array=(&amp;amp;quot;${@}&amp;amp;quot;)
+  local IFS=&amp;amp;quot;$delimiter&amp;amp;quot;
+  echo &amp;amp;quot;${array[*]}&amp;amp;quot;
+}
+
+# --- Networking ---
+
+# Checks if a host is reachable.
+function is_reachable() {
+  ping -c 1 -W 1 &amp;amp;quot;$1&amp;amp;quot; &amp;amp;amp;&amp;amp;gt; /dev/null
+}
+
+# Checks if a port is open.
+# is_port_open() {
+#   timeout 1 bash -c &amp;amp;#39;&amp;amp;lt;/dev/tcp/&amp;amp;#39;&amp;amp;quot;$1&amp;amp;quot;&amp;amp;#39;/&amp;amp;#39;&amp;amp;quot;$2&amp;amp;quot; 2&amp;amp;gt;/dev/null&amp;amp;#39;
+# }
+
+# --- Input/Output ---
+
+# Prints a message to stderr.
+function eprint() {
+  echo &amp;amp;quot;$1&amp;amp;quot; &amp;amp;gt;&amp;amp;amp;2
+}
+
+# Reads a line from stdin with a prompt.
+function read_prompt() {
+  read -p &amp;amp;quot;$1&amp;amp;quot; &amp;amp;quot;$2&amp;amp;quot;
+}
+
+# --- Time and Date ---
+
+# Gets the current timestamp in milliseconds.
+function timestamp_ms() {
+  date +%s%3N
+}
+
+function scan_for_secrets() {
+         local file=&amp;amp;quot;$1&amp;amp;quot;               # Bash-Function-Args
+
+  if [[ -z &amp;amp;quot;$file&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;Usage: scan_for_secrets &amp;amp;lt;file&amp;amp;gt;&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ ! -f &amp;amp;quot;$file&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;Error: File &amp;amp;#39;$file&amp;amp;#39; not found.&amp;amp;quot;
+    return 1
+  fi
+
+  # Define patterns to search for (add/modify as needed)
+  local patterns=(
+    &amp;amp;quot;API_KEY=[a-zA-Z0-9_-]{20,}&amp;amp;quot;
+    &amp;amp;quot;SECRET_KEY=[a-zA-Z0-9_-]{20,}&amp;amp;quot;
+    &amp;amp;quot;PASSWORD=[a-zA-Z0-9_-]{8,}&amp;amp;quot;
+    &amp;amp;quot;AWS_ACCESS_KEY_ID=[A-Z0-9]{20}&amp;amp;quot;
+    &amp;amp;quot;AWS_SECRET_ACCESS_KEY=[A-Za-z0-9+/]{40}&amp;amp;quot;
+    &amp;amp;quot;ssh-rsa [A-Za-z0-9+/=]{20,}&amp;amp;quot;
+    &amp;amp;quot;ssh-ed25519 [A-Za-z0-9+/=]{20,}&amp;amp;quot;
+    &amp;amp;quot;-----BEGIN RSA PRIVATE KEY-----&amp;amp;quot;
+    &amp;amp;quot;-----BEGIN PGP PRIVATE KEY BLOCK-----&amp;amp;quot;
+    &amp;amp;quot;-----BEGIN OPENSSH PRIVATE KEY-----&amp;amp;quot;
+    &amp;amp;quot;Bearer [A-Za-z0-9._-]{20,}&amp;amp;quot;
+    &amp;amp;quot;Authorization: Basic [A-Za-z0-9+/=]{20,}&amp;amp;quot;
+    &amp;amp;quot;Authorization: Token [A-Za-z0-9]{20,}&amp;amp;quot;
+    &amp;amp;quot;[a-zA-Z0-9_-]+:[a-zA-Z0-9_-]+&amp;amp;quot; #look for username:password type strings.
+    &amp;amp;quot;PGPASSWORD=[a-zA-Z0-9_-]{8,}&amp;amp;quot; # postgres password
+    &amp;amp;quot;DATABASE_URL=postgres://[a-zA-Z0-9_-]+:[a-zA-Z0-9_-]+@&amp;amp;quot; # postgres database url, catches username and password.
+    &amp;amp;quot;MONGO_URI=mongodb://[a-zA-Z0-9_-]+:[a-zA-Z0-9_-]+@&amp;amp;quot; #mongodb uri, catches username and password
+    &amp;amp;quot;password[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot;  # Basic password pattern
+    &amp;amp;quot;secret[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot;   # Secret pattern
+    &amp;amp;quot;key[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot;      # Key pattern
+    &amp;amp;quot;AWS_ACCESS_KEY_ID[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[A-Z0-9]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # AWS Access Key ID
+    &amp;amp;quot;AWS_SECRET_ACCESS_KEY[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[a-zA-Z0-9/+=]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # AWS Secret Access Key
+    &amp;amp;quot;api_key[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # API Key pattern
+    &amp;amp;quot;database_url[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # Database URL
+    &amp;amp;quot;connection_string[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # Connection String
+    &amp;amp;quot;private_key[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # Private Key
+    &amp;amp;quot;client_secret[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # Client Secret
+    &amp;amp;quot;oauth_token[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # OAuth Token
+    &amp;amp;quot;bearer_token[[:space:]]*[:=][[:space:]]*[\&amp;amp;quot;&amp;amp;#39;]?[^\&amp;amp;quot;&amp;amp;#39;]*[\&amp;amp;quot;&amp;amp;#39;]?&amp;amp;quot; # Bearer Token
+  )
+
+    # &amp;amp;quot;export [A-Z_]+=[\&amp;amp;quot;&amp;amp;#39;]?[A-Za-z0-9_\\-./+=@$%^&amp;amp;amp;*()!~`?&amp;amp;lt;&amp;amp;gt;:;&amp;amp;#39;]+&amp;amp;quot; # look for exported environment variables.
+  local found=0
+
+  for pattern in &amp;amp;quot;${patterns[@]}&amp;amp;quot;; do
+    if grep -E &amp;amp;quot;$pattern&amp;amp;quot; &amp;amp;quot;$file&amp;amp;quot; &amp;amp;gt; /dev/null; then
+      found=1
+      echo &amp;amp;quot;Potential secret found in &amp;amp;#39;$file&amp;amp;#39; matching pattern: &amp;amp;#39;$pattern&amp;amp;#39;&amp;amp;quot;
+      grep -E &amp;amp;quot;$pattern&amp;amp;quot; &amp;amp;quot;$file&amp;amp;quot;
+    fi
+  done
+
+  if [[ &amp;amp;quot;$found&amp;amp;quot; -eq 0 ]]; then
+    echo &amp;amp;quot;No potential secrets found in &amp;amp;#39;$file&amp;amp;#39;.&amp;amp;quot;
+  fi
+
+  return 0
+}
+
+function isSameHash() {
+    local FILE=&amp;amp;quot;$1&amp;amp;quot;               # Bash-Function-Args
+    local tmp=/tmp/HASHCHECK_$$
+    local CH=$(md5sum &amp;amp;quot;$FILE&amp;amp;quot; | awk &amp;amp;#39;{print $1}&amp;amp;#39;)
+    if [[ &amp;amp;quot;$CH&amp;amp;quot; == &amp;amp;quot;$OH&amp;amp;quot; ]]; then
+        echo &amp;amp;quot;1&amp;amp;quot;
+    else
+        echo &amp;amp;quot;0&amp;amp;quot;
+    fi
+}
+
+function padout_file_lines() {
+         local filename=&amp;amp;quot;$1&amp;amp;quot;    # Bash-Function-Args
+  local tmp1=$(mktemp)
+  local tmp2=$(mktemp)
+  rm -f &amp;amp;quot;$tmp1&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+  rm -f &amp;amp;quot;$tmp2&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+
+  if [[ -z &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    fecho &amp;amp;quot;Error: Filename not provided.&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ ! -f &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    fecho &amp;amp;quot;Error: File &amp;amp;#39;$filename&amp;amp;#39; not found.&amp;amp;quot;
+    return 1
+  fi
+
+  sed &amp;amp;#39;s/[[:space:]]*$//&amp;amp;#39; &amp;amp;quot;$filename&amp;amp;quot;  &amp;amp;gt; &amp;amp;quot;$tmp1&amp;amp;quot;
+  max_len=$(wc -L &amp;amp;quot;$tmp1&amp;amp;quot; | awk &amp;amp;#39;{print $1}&amp;amp;#39;)
+  padding_length=$((max_len + 0))
+
+  # Iterate through each line of the file and pad it
+  rm -f &amp;amp;quot;$tmp2&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+  while IFS= read -r line; do
+    printf &amp;amp;quot;%-${padding_length}s\n&amp;amp;quot; &amp;amp;quot;$line&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; &amp;amp;quot;$tmp2&amp;amp;quot; # Pad to the right
+  done &amp;amp;lt; &amp;amp;quot;$tmp1&amp;amp;quot;
+
+  mv &amp;amp;quot;$tmp2&amp;amp;quot; &amp;amp;quot;$filename&amp;amp;quot;
+
+  rm -f &amp;amp;quot;$tmp1&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+  rm -f &amp;amp;quot;$tmp2&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+  return 0
+}
+
+
+# Example usage (if you want to run it directly from the script):
+# if [[ &amp;amp;quot;$0&amp;amp;quot; == &amp;amp;quot;$BASH_SOURCE&amp;amp;quot; ]]; then
+#   if [[ $# -eq 1 ]]; then
+#     scan_for_secrets &amp;amp;quot;$1&amp;amp;quot;
+#   else
+#     echo &amp;amp;quot;Usage: $0 &amp;amp;lt;file&amp;amp;gt;&amp;amp;quot;
+#     exit 1
+#   fi
+# fi
+
+# Function to split a file into N files
+function split_file_n() {
+         local input_file=&amp;amp;quot;$1&amp;amp;quot;;local num_files=&amp;amp;quot;$2&amp;amp;quot; # Bash-Function-Args
+  local prefix=&amp;amp;quot;${3:-split_}&amp;amp;quot; # Default prefix is &amp;amp;quot;split_&amp;amp;quot;
+
+  if [[ -z &amp;amp;quot;$input_file&amp;amp;quot; || -z &amp;amp;quot;$num_files&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;Usage: split_file_n &amp;amp;lt;input_file&amp;amp;gt; &amp;amp;lt;number_of_files&amp;amp;gt; [prefix]&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ ! -f &amp;amp;quot;$input_file&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;Error: Input file &amp;amp;#39;$input_file&amp;amp;#39; not found.&amp;amp;quot;
+    return 1
+  fi
+
+  if ! [[ &amp;amp;quot;$num_files&amp;amp;quot; =~ ^[0-9]+$ ]]; then
+      echo &amp;amp;quot;Error: Number of files must be a positive integer.&amp;amp;quot;
+      return 1
+  fi
+
+  local total_lines=$(wc -l &amp;amp;lt; &amp;amp;quot;$input_file&amp;amp;quot;)
+  local lines_per_file=$((total_lines / num_files))
+  local remainder=$((total_lines % num_files))
+
+  local start_line=1
+  for ((i=1; i&amp;amp;lt;=num_files; i++)); do
+    local output_file=&amp;amp;quot;${prefix}${i}&amp;amp;quot;
+    local current_lines=$lines_per_file
+
+    if [[ $i -le $remainder ]]; then
+      ((current_lines++)) # Distribute remainder lines
+    fi
+
+    head -n &amp;amp;quot;$((start_line + current_lines - 1))&amp;amp;quot; &amp;amp;quot;$input_file&amp;amp;quot; | tail -n &amp;amp;quot;$current_lines&amp;amp;quot; &amp;amp;gt; &amp;amp;quot;$output_file&amp;amp;quot;
+
+    ((start_line += current_lines))
+  done
+}
+
+# Example usage (if you want to test it from the script itself):
+# if [[ &amp;amp;quot;$0&amp;amp;quot; == &amp;amp;quot;$BASH_SOURCE&amp;amp;quot; ]]; then
+#   if [[ $# -ge 2 ]]; then
+#     split_file_n &amp;amp;quot;$1&amp;amp;quot; &amp;amp;quot;$2&amp;amp;quot; &amp;amp;quot;${3:-split_}&amp;amp;quot;
+#   else
+#     echo &amp;amp;quot;Usage: $0 &amp;amp;lt;input_file&amp;amp;gt; &amp;amp;lt;number_of_files&amp;amp;gt; [prefix]&amp;amp;quot;
+#   fi
+# fi
+
+function truncate_file_lines() {
+         local filename=&amp;amp;quot;$1&amp;amp;quot;;local num_chars=&amp;amp;quot;$2&amp;amp;quot; # Bash-Function-Args
+
+  if [[ -z &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;Truncate Error: Filename not provided.&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ ! -f &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;Truncate Error: File &amp;amp;#39;$filename&amp;amp;#39; not found.&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ -z &amp;amp;quot;$num_chars&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;Truncate Error: Number of characters not provided.&amp;amp;quot;
+    return 1
+  fi
+
+  if ! [[ &amp;amp;quot;$num_chars&amp;amp;quot; =~ ^[0-9]+$ ]]; then
+    echo &amp;amp;quot;Truncate Error: Number of characters must be a positive integer.&amp;amp;quot;
+    return 1
+  fi
+  if [[ &amp;amp;quot;$num_chars&amp;amp;quot; == &amp;amp;quot;0&amp;amp;quot; ]]; then
+    return 0
+  fi
+
+  local temp_file=$(mktemp)
+
+  while IFS= read -r line; do
+    printf &amp;amp;quot;%.${num_chars}s\n&amp;amp;quot; &amp;amp;quot;$line&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; &amp;amp;quot;$temp_file&amp;amp;quot;
+  done &amp;amp;lt; &amp;amp;quot;$filename&amp;amp;quot;
+
+  mv &amp;amp;quot;$temp_file&amp;amp;quot; &amp;amp;quot;$filename&amp;amp;quot;
+
+  return 0
+}
+
+function string_before_file_lines() {
+         local filename=&amp;amp;quot;$1&amp;amp;quot;;local str=&amp;amp;quot;$2&amp;amp;quot; # Bash-Function-Args
+
+  if [[ -z &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;string_before Error: Filename not provided.&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ ! -f &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;string_before Error: File &amp;amp;#39;$filename&amp;amp;#39; not found.&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ -z &amp;amp;quot;$str&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;string_before Error: Number of characters not provided.&amp;amp;quot;
+    return 1
+  fi
+
+  local temp_file=$(mktemp)
+
+  while IFS= read -r line; do
+    printf &amp;amp;quot;${str}%s\n&amp;amp;quot; &amp;amp;quot;$line&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; &amp;amp;quot;$temp_file&amp;amp;quot;
+  done &amp;amp;lt; &amp;amp;quot;$filename&amp;amp;quot;
+
+  mv &amp;amp;quot;$temp_file&amp;amp;quot; &amp;amp;quot;$filename&amp;amp;quot;
+
+  return 0
+}
+function string_after_file_lines() {
+         local filename=&amp;amp;quot;$1&amp;amp;quot;;local str=&amp;amp;quot;$2&amp;amp;quot; # Bash-Function-Args
+
+  if [[ -z &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;string_before Error: Filename not provided.&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ ! -f &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;string_before Error: File &amp;amp;#39;$filename&amp;amp;#39; not found.&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ -z &amp;amp;quot;$str&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;string_before Error: Number of characters not provided.&amp;amp;quot;
+    return 1
+  fi
+
+  local temp_file=$(mktemp)
+
+  while IFS= read -r line; do
+    printf &amp;amp;quot;%s${str}\n&amp;amp;quot; &amp;amp;quot;$line&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; &amp;amp;quot;$temp_file&amp;amp;quot;
+  done &amp;amp;lt; &amp;amp;quot;$filename&amp;amp;quot;
+
+  mv &amp;amp;quot;$temp_file&amp;amp;quot; &amp;amp;quot;$filename&amp;amp;quot;
+
+  return 0
+}
+
+function sort_file() {
+         local filename=&amp;amp;quot;$1&amp;amp;quot;; local str=&amp;amp;quot;$2&amp;amp;quot; # Bash-Function-Args
+
+  if [[ -z &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    fecho &amp;amp;quot;Error: Filename not provided.&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ ! -f &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    fecho &amp;amp;quot;Error: File &amp;amp;#39;$filename&amp;amp;#39; not found.&amp;amp;quot;
+    return 1
+  fi
+  if [[ -z &amp;amp;quot;$str&amp;amp;quot; ]]; then
+    fecho &amp;amp;quot;Error: Control word not provided.&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ &amp;amp;quot;$str&amp;amp;quot; == &amp;amp;quot;&amp;amp;quot; ]]; then
+      NOTHING=0
+  else
+      local tmp1=$(mktemp)
+      cat &amp;amp;quot;$filename&amp;amp;quot; | sort &amp;amp;gt; &amp;amp;quot;$tmp1&amp;amp;quot;
+      mv &amp;amp;quot;$tmp1&amp;amp;quot; &amp;amp;quot;$filename&amp;amp;quot;
+  fi
+
+  return 0
+}
+
+function justify_line() {
+         local str=&amp;amp;quot;$1&amp;amp;quot;; local num=&amp;amp;quot;$2&amp;amp;quot; # Bash-Function-Args
+
+    local tmp1=$(mktemp)
+    echo &amp;amp;quot;$1&amp;amp;quot; | gawk -v num=$2 &amp;amp;#39;
+        function justify(szIn,  l,n,i,sz,m,k,A, flag) {
+            sz = &amp;amp;quot;&amp;amp;quot;;
+            n =  split(szIn,A,&amp;amp;quot; &amp;amp;quot;);
+            r = 1
+            delim = &amp;amp;quot;&amp;amp;quot;
+            flag=0
+            for (i=1; i&amp;amp;lt;=n; i++) {
+                sz = delim sz A[i] &amp;amp;quot; &amp;amp;quot;;
+                delim = &amp;amp;quot;&amp;amp;quot;
+                l = l + length(A[i] &amp;amp;quot; &amp;amp;quot;);
+                if (l &amp;amp;gt; (num*r)) {
+                    r=r+1;
+                    sz = sz &amp;amp;quot;\n&amp;amp;quot;
+                    flag=1
+                    delim = &amp;amp;quot;&amp;amp;quot;
+                }
+            }
+            if (flag == 1) sz = sz &amp;amp;quot;\n&amp;amp;quot;
+            return sz;
+        }
+        {
+            print justify($0);
+        }&amp;amp;#39; &amp;amp;gt; &amp;amp;quot;$tmp1&amp;amp;quot;
+
+    cat &amp;amp;quot;$tmp1&amp;amp;quot;
+    rm -f &amp;amp;quot;$tmp1&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+}
+function justify_file() {
+         local filename=&amp;amp;quot;$1&amp;amp;quot;;local num=&amp;amp;quot;$2&amp;amp;quot; # Bash-Function-Args
+
+  if [[ -z &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;Truncate Error: Filename not provided.&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ ! -f &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;Truncate Error: File &amp;amp;#39;$filename&amp;amp;#39; not found.&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ -z &amp;amp;quot;$num&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;Truncate Error: Number of characters not provided.&amp;amp;quot;
+    return 1
+  fi
+
+  if ! [[ &amp;amp;quot;$num&amp;amp;quot; =~ ^[0-9]+$ ]]; then
+    echo &amp;amp;quot;Truncate Error: Number of characters must be a positive integer.&amp;amp;quot;
+    return 1
+  fi
+  if [[ &amp;amp;quot;$num&amp;amp;quot; == &amp;amp;quot;0&amp;amp;quot; ]]; then
+    return 0
+  fi
+
+  local temp_file=$(mktemp)
+
+  while IFS= read -r line; do
+    justify_line &amp;amp;quot;$line&amp;amp;quot; &amp;amp;quot;$num&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; &amp;amp;quot;$temp_file&amp;amp;quot;
+  done &amp;amp;lt; &amp;amp;quot;$filename&amp;amp;quot;
+
+  mv &amp;amp;quot;$temp_file&amp;amp;quot; &amp;amp;quot;$filename&amp;amp;quot;
+
+  return 0
+}
+
+function indent_file() {
+         local filename=&amp;amp;quot;$1&amp;amp;quot;   # Bash-Function-Args
+
+  if [[ -z &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    fecho &amp;amp;quot;Error: Filename not provided.&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ ! -f &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    fecho &amp;amp;quot;Error: File &amp;amp;#39;$filename&amp;amp;#39; not found.&amp;amp;quot;
+    return 1
+  fi
+
+  local temp_file=$(mktemp)
+
+  while IFS= read -r line; do
+    echo &amp;amp;quot;    $line&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; &amp;amp;quot;$temp_file&amp;amp;quot;
+  done &amp;amp;lt; &amp;amp;quot;$filename&amp;amp;quot;
+
+  mv &amp;amp;quot;$temp_file&amp;amp;quot; &amp;amp;quot;$filename&amp;amp;quot;
+
+  return 0
+}
+function trim_leading_whitespace_file() {
+         local filename=&amp;amp;quot;$1&amp;amp;quot;            # Bash-Function-Args
+  local sz=&amp;amp;quot;&amp;amp;quot;
+
+  if [[ -z &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    fecho &amp;amp;quot;Error: Filename not provided.&amp;amp;quot;
+    return 1
+  fi
+
+  if [[ ! -f &amp;amp;quot;$filename&amp;amp;quot; ]]; then
+    fecho &amp;amp;quot;Error: File &amp;amp;#39;$filename&amp;amp;#39; not found.&amp;amp;quot;
+    return 1
+  fi
+
+  local temp_file=$(mktemp)
+
+  while IFS= read -r line; do
+    remove_leading_whitespace &amp;amp;quot;$line&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; &amp;amp;quot;$temp_file&amp;amp;quot;
+  done &amp;amp;lt; &amp;amp;quot;$filename&amp;amp;quot;
+
+  mv &amp;amp;quot;$temp_file&amp;amp;quot; &amp;amp;quot;$filename&amp;amp;quot;
+
+  return 0
+}
+function create_markdown_table4() {
+         local input_file=&amp;amp;quot;$1&amp;amp;quot;;local str=&amp;amp;quot;$2&amp;amp;quot;                   # Bash-Function-Args
+  local tmp=$(mktemp)
+  local LEN=&amp;amp;quot;&amp;amp;quot;
+  local STRING=&amp;amp;quot;&amp;amp;quot;
+
+  # Check if the input file exists
+  if [[ ! -f &amp;amp;quot;$input_file&amp;amp;quot; ]]; then
+    fecho &amp;amp;quot;Error: Input file &amp;amp;#39;$input_file&amp;amp;#39; not found.&amp;amp;quot;
+    return 1
+  fi
+
+  LEN=`longest_string_length &amp;amp;lt; &amp;amp;quot;$input_file&amp;amp;quot;`
+  STRING=`repeat_char &amp;amp;quot;-&amp;amp;quot; &amp;amp;quot;24&amp;amp;quot;`
+
+  rm -f &amp;amp;quot;$tmp&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+  if [[ &amp;amp;quot;$str&amp;amp;quot; == &amp;amp;quot;MAKELINKS&amp;amp;quot; ]]; then
+      cat &amp;amp;quot;$input_file&amp;amp;quot; |sort|uniq|gawk &amp;amp;#39;{n=split($0,A,&amp;amp;quot;/&amp;amp;quot;);print &amp;amp;quot;[&amp;amp;quot; A[n] &amp;amp;quot;](&amp;amp;quot; $0 &amp;amp;quot;)&amp;amp;quot;;}&amp;amp;#39; &amp;amp;gt; $tmp
+  else
+      cat &amp;amp;quot;$input_file&amp;amp;quot; |sort|uniq &amp;amp;gt; $tmp
+  fi
+
+  # Read lines from the file and create table rows
+  local line_count=0
+  local row=&amp;amp;quot;&amp;amp;quot;
+  local first_row=1
+
+  while IFS= read -r line; do
+    if [[ $line_count -eq 0 ]]; then
+      if [[ $first_row -eq 1 ]]; then
+          echo &amp;amp;quot;| $STRING | $STRING | $STRING | $STRING |&amp;amp;quot;
+          echo &amp;amp;quot;|----------|----------|----------|----------|&amp;amp;quot;
+          first_row=0
+      fi
+    fi
+
+    row+=&amp;amp;quot;| $line &amp;amp;quot;
+
+    line_count=$((line_count + 1))
+
+    if [[ $line_count -eq 4 ]]; then
+      echo &amp;amp;quot;$row|&amp;amp;quot;
+      row=&amp;amp;quot;&amp;amp;quot;
+      line_count=0
+    fi
+  done &amp;amp;lt; &amp;amp;quot;$tmp&amp;amp;quot;
+
+  # Handle remaining lines if the total line count is not a multiple of 5
+  if [[ $line_count -gt 0 ]]; then
+    for ((i = line_count; i &amp;amp;lt; 5; i++)); do
+        row+=&amp;amp;quot;|  &amp;amp;quot;
+    done
+    echo &amp;amp;quot;$row|&amp;amp;quot;
+  fi
+}
+
+#######################################################################################################
+Processing file: bashrc.shared
+ _               _                    _                        _ 
+| |__   __ _ ___| |__  _ __ ___   ___| |__   __ _ _ __ ___  __| |
+| &amp;amp;#39;_ \ / _` / __| &amp;amp;#39;_ \| &amp;amp;#39;__/ __| / __| &amp;amp;#39;_ \ / _` | &amp;amp;#39;__/ _ \/ _` |
+| |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
+|_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
+                                                                 
+# *********************************************************DATEOMATIC: Mon Mar 24 11:16:15 EDT 2025
+# *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
+# don&amp;amp;#39;t put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don&amp;amp;#39;t overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+#export PS1=&amp;amp;#39;$(collapse_hostname)$(collapse_pwd)$(git_origin)$(git_branch)\n&amp;amp;gt;&amp;amp;gt; &amp;amp;#39;
+#export PS1=&amp;amp;#39;$(git_origin)$(git_branch)\n$(collapse_hostname)$(collapse_pwd)&amp;amp;gt;&amp;amp;gt; &amp;amp;#39;
+export PS1=&amp;amp;#39;$(collapse_hostname) $(collapse_pwd) ($(git_toplevel):$(git_branch):$(git_originsync))&amp;amp;gt;&amp;amp;gt; &amp;amp;#39;
+
+alias ls=&amp;amp;#39;ls -t&amp;amp;#39;
+alias scm=&amp;amp;#39;cd /etc/scm&amp;amp;#39;
+alias center=&amp;amp;#39;cd /etc/center&amp;amp;#39;
+alias cgi=&amp;amp;#39;cd /var/www/cgi&amp;amp;#39;
+alias grep=&amp;amp;#39;grep --color=never&amp;amp;#39;
+alias qgrep=&amp;amp;#39;grep -nHP --color=none&amp;amp;#39;
+alias qg=&amp;amp;#39;grep -nHP --color=none&amp;amp;#39;
+alias fullpath=&amp;amp;#39;find . -type f 2&amp;amp;gt;/dev/null | sed &amp;amp;quot;s#^.#$(pwd)#&amp;amp;quot;&amp;amp;#39;
+alias fullpathd=&amp;amp;#39;find . -type d 2&amp;amp;gt;/dev/null | sed &amp;amp;quot;s#^.#$(pwd)#&amp;amp;quot;&amp;amp;#39;
+
+export FC1=&amp;amp;quot;~/1.fc&amp;amp;quot;
+export FC2=&amp;amp;quot;~/2.fc&amp;amp;quot;
+export FC3=&amp;amp;quot;~/applog&amp;amp;quot;
+export FC4=&amp;amp;quot;~/vimlog&amp;amp;quot;
+export FC5=&amp;amp;quot;./notes&amp;amp;quot;
+export VIMSESSIONDEFAULT=~/.vimsessiondefault
+# Just the name part here
+export VIMSESSION=.vim
+export VIMWINDOW=.vim
+export VIMSPLIT=.vim
+export VIMWINDOWS=.vimwindows
+export VIMLAYOUT=.vimlayout
+export VIMNOSPLITS=.vimnosplits
+export VIMSPLITCMDS=&amp;amp;quot;vsplit | split | vertical resize 53&amp;amp;quot;
+export VIMTEMPLATES=&amp;amp;quot;~/TPLS/&amp;amp;quot;
+
+#######################################################################################################
+Processing file: bashtop
+ _               _     _              
+| |__   __ _ ___| |__ | |_ ___  _ __  
+| &amp;amp;#39;_ \ / _` / __| &amp;amp;#39;_ \| __/ _ \| &amp;amp;#39;_ \ 
+| |_) | (_| \__ \ | | | || (_) | |_) |
+|_.__/ \__,_|___/_| |_|\__\___/| .__/ 
+                               |_|    
+#!/usr/bin/bash
+# *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
+# *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap &amp;amp;#39;exit 0&amp;amp;#39; INT HUP QUIT TERM ALRM USR1
+trap &amp;amp;#39;rm -f &amp;amp;quot;$Tmp&amp;amp;quot; &amp;amp;quot;$Tmp0&amp;amp;quot; &amp;amp;quot;$Tmp1&amp;amp;quot; &amp;amp;quot;$Tmp2&amp;amp;quot; &amp;amp;quot;$Tmp3&amp;amp;quot;&amp;amp;#39; EXIT
+rm -f &amp;amp;quot;$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1;
+
+UPDATE=&amp;amp;quot;NO&amp;amp;quot;
+while getopts &amp;amp;quot;cur:&amp;amp;quot; arg
+do
+    case $arg in
+        c) clear
+           ;;
+        u) UPDATE=&amp;amp;quot;YES&amp;amp;quot;
+           exit 0
+           ;;
+        r) OA=&amp;amp;quot;$OPTARG&amp;amp;quot;
+           exit 0
+           ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+# Check if the number of arguments is correct
+if [ $# -ne 2 ]; theni
+  echo &amp;amp;quot;Usage: $0 &amp;amp;lt;arg1&amp;amp;gt; &amp;amp;lt;arg2&amp;amp;gt;&amp;amp;quot;
+  echo &amp;amp;quot;Error: Incorrect number of arguments.&amp;amp;quot;
+  exit 1  # Exit with an error code
+fi
+arg1=&amp;amp;quot;$1&amp;amp;quot;
+arg2=&amp;amp;quot;$2&amp;amp;quot;
+
+if [ &amp;amp;quot;$UPDATE&amp;amp;quot; == &amp;amp;quot;YES&amp;amp;quot; ]; then                                                                                               
+    RETVAL=&amp;amp;quot;YES&amp;amp;quot;                                                                                                             
+else                                                                                                                         
+    RETVAL=&amp;amp;quot;NO&amp;amp;quot;                                                                                                              
+fi                                                                                                                           
+
+full_filename=&amp;amp;quot;$1&amp;amp;quot;
+filename=$(basename &amp;amp;quot;$full_filename&amp;amp;quot;)
+directory=$(dirname &amp;amp;quot;$full_filename&amp;amp;quot;)
+extension=&amp;amp;quot;${filename##*.}&amp;amp;quot; # Remove everything up to the last dot
+if [ &amp;amp;quot;$extension&amp;amp;quot; == &amp;amp;quot;$filename&amp;amp;quot; ]; then # No extension found
+  extension=&amp;amp;quot;&amp;amp;quot;
+fi
+filename_no_ext=&amp;amp;quot;${filename%.*}&amp;amp;quot; # Remove everything after the last dot
+file_size=$(stat -c %s &amp;amp;quot;$full_filename&amp;amp;quot;)
+file_permissions=$(stat -c %a &amp;amp;quot;$full_filename&amp;amp;quot;)
+file_owner=$(stat -c %U &amp;amp;quot;$full_filename&amp;amp;quot;)
+last_modified=$(stat -c %y &amp;amp;quot;$full_filename&amp;amp;quot;)
+last_access=$(stat -c %x &amp;amp;quot;$full_filename&amp;amp;quot;)
+file_type=$(file -b --mime-type &amp;amp;quot;$full_filename&amp;amp;quot;)
+
+
+#######################################################################################################
+Processing file: colomatic
+           _                       _   _      
+  ___ ___ | | ___  _ __ ___   __ _| |_(_) ___ 
+ / __/ _ \| |/ _ \| &amp;amp;#39;_ ` _ \ / _` | __| |/ __|
+| (_| (_) | | (_) | | | | | | (_| | |_| | (__ 
+ \___\___/|_|\___/|_| |_| |_|\__,_|\__|_|\___|
+                                              
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp1=/tmp/$$_$$
+Tmp2=/tmp/$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$
+trap &amp;amp;#39;exit 0&amp;amp;#39; INT HUP QUIT TERM ALRM USR1
+trap &amp;amp;#39;rm -f &amp;amp;quot;$Tmp&amp;amp;quot; &amp;amp;quot;$Tmp1&amp;amp;quot; &amp;amp;quot;$Tmp2&amp;amp;quot; &amp;amp;quot;$Tmp3&amp;amp;quot;&amp;amp;#39; EXIT
+rm -f &amp;amp;quot;$Tmp&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+rm -f &amp;amp;quot;$Tmp1&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+rm -f &amp;amp;quot;$Tmp2&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+rm -f &amp;amp;quot;$Tmp3&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+#================================================================
+# paste -d&amp;amp;#39; &amp;amp;#39; file1 file2 &amp;amp;gt; output_file
+
+source ~/bash.library
+
+function implColomatic() {
+    local tmp1=&amp;amp;quot;/tmp/temp_$$&amp;amp;quot;
+    local tmp2=&amp;amp;quot;/tmp/temp_$$_$$&amp;amp;quot;
+    local tmp3=&amp;amp;quot;/tmp/temp_$$_$$_$$&amp;amp;quot;
+
+    # Get the filename from the command-line argument
+    local filename1=&amp;amp;quot;$1&amp;amp;quot;
+    local filename2=&amp;amp;quot;$2&amp;amp;quot;
+
+    # Check if a filename is are provided
+    if [ -z &amp;amp;quot;$filename1&amp;amp;quot; ]; then
+      echo &amp;amp;quot;Usage: &amp;amp;lt;filename&amp;amp;gt; &amp;amp;lt;filename&amp;amp;gt;&amp;amp;quot;
+      exit 1
+    fi
+    if [ -z &amp;amp;quot;$filename2&amp;amp;quot; ]; then
+      echo &amp;amp;quot;Usage: &amp;amp;lt;filename&amp;amp;gt; &amp;amp;lt;filename&amp;amp;gt;&amp;amp;quot;
+      exit 1
+    fi
+
+    # Check if the files exist
+    if [ ! -f &amp;amp;quot;$filename1&amp;amp;quot; ]; then
+      echo &amp;amp;quot;Error: File &amp;amp;#39;$filename&amp;amp;#39; not found.&amp;amp;quot;
+      exit 1
+    fi
+    if [ ! -f &amp;amp;quot;$filename2&amp;amp;quot; ]; then
+      echo &amp;amp;quot;Error: File &amp;amp;#39;$filename&amp;amp;#39; not found.&amp;amp;quot;
+      exit 1
+    fi
+    cat &amp;amp;quot;$filename1&amp;amp;quot; &amp;amp;gt; $tmp1
+    cat &amp;amp;quot;$filename2&amp;amp;quot; &amp;amp;gt; $tmp2
+
+    if [ &amp;amp;quot;$DELIM&amp;amp;quot; == &amp;amp;quot;,&amp;amp;quot; ]; then                                                                                               
+        paste &amp;amp;quot;$tmp1&amp;amp;quot; &amp;amp;quot;$tmp2&amp;amp;quot; | sed &amp;amp;#39;s/\t/,/g&amp;amp;#39;
+    else
+        if [ &amp;amp;quot;$BAR&amp;amp;quot; == &amp;amp;quot;|&amp;amp;quot; ]; then                                                                                               
+            paste &amp;amp;quot;$tmp1&amp;amp;quot; &amp;amp;quot;$tmp2&amp;amp;quot; | sed &amp;amp;#39;s/\t//g&amp;amp;#39;
+        else
+            paste &amp;amp;quot;$tmp1&amp;amp;quot; &amp;amp;quot;$tmp2&amp;amp;quot; | sed &amp;amp;#39;s/\t/ /g&amp;amp;#39;
+        fi
+    fi
+    rm -f &amp;amp;quot;$tmp1&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+    rm -f &amp;amp;quot;$tmp2&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+    rm -f &amp;amp;quot;$tmp3&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+}
+
+DELIM=&amp;amp;quot; &amp;amp;quot;
+BAR=&amp;amp;quot; &amp;amp;quot;
+SORT=&amp;amp;quot;&amp;amp;quot;
+W=0
+while getopts &amp;amp;quot;sbn:2:3:4:5:c&amp;amp;quot; arg
+do
+    case $arg in
+        s) SORT=&amp;amp;quot;YES&amp;amp;quot;
+           ;;
+        b) BAR=&amp;amp;quot;|&amp;amp;quot;
+           ;;
+        n) W=$OPTARG
+           ;;
+        2) DELIM=&amp;amp;quot;&amp;amp;quot;
+           rm -f &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;split_1&amp;amp;quot; &amp;amp;quot;split_2&amp;amp;quot; &amp;amp;quot;split_3&amp;amp;quot; &amp;amp;quot;split_4&amp;amp;quot; &amp;amp;quot;split_5&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+           cp &amp;amp;quot;$OPTARG&amp;amp;quot; &amp;amp;quot;split_0&amp;amp;quot;
+           trim_leading_whitespace_file &amp;amp;quot;split_0&amp;amp;quot;
+           justify_file &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;44&amp;amp;quot;
+           sort_file &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;$SORT&amp;amp;quot;
+#           indentomatic -f split_0 
+           split_file_n &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;2&amp;amp;quot; &amp;amp;quot;split_&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_1&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_1&amp;amp;quot;
+               string_before_file_lines &amp;amp;quot;split_1&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_2&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_2&amp;amp;quot;
+               string_before_file_lines &amp;amp;quot;split_2&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+               string_after_file_lines  &amp;amp;quot;split_2&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+
+           implColomatic &amp;amp;quot;split_1&amp;amp;quot;    &amp;amp;quot;split_2&amp;amp;quot;    &amp;amp;quot;$DELIM&amp;amp;quot;
+           rm -f &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;split_1&amp;amp;quot; &amp;amp;quot;split_2&amp;amp;quot; &amp;amp;quot;split_3&amp;amp;quot; &amp;amp;quot;split_4&amp;amp;quot; &amp;amp;quot;split_5&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+           exit 0
+           ;;
+        3) DELIM=&amp;amp;quot; &amp;amp;quot;
+           rm -f &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;split_1&amp;amp;quot; &amp;amp;quot;split_2&amp;amp;quot; &amp;amp;quot;split_3&amp;amp;quot; &amp;amp;quot;split_4&amp;amp;quot; &amp;amp;quot;split_5&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+           cp &amp;amp;quot;$OPTARG&amp;amp;quot; &amp;amp;quot;split_0&amp;amp;quot;
+           sort_file &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;$SORT&amp;amp;quot;
+           split_file_n &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;3&amp;amp;quot; &amp;amp;quot;split_&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_1&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_1&amp;amp;quot;
+                   string_before_file_lines &amp;amp;quot;split_1&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_2&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_2&amp;amp;quot;
+                   string_before_file_lines &amp;amp;quot;split_2&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_3&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_3&amp;amp;quot;
+                   string_before_file_lines &amp;amp;quot;split_3&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+                   string_after_file_lines  &amp;amp;quot;split_3&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+
+           implColomatic &amp;amp;quot;split_1&amp;amp;quot;    &amp;amp;quot;split_2&amp;amp;quot;    &amp;amp;quot;$DELIM&amp;amp;quot;    &amp;amp;gt; &amp;amp;quot;$Tmp1&amp;amp;quot;
+           implColomatic &amp;amp;quot;$Tmp1&amp;amp;quot;      &amp;amp;quot;split_3&amp;amp;quot;    &amp;amp;quot;$DELIM&amp;amp;quot;
+           rm -f &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;split_1&amp;amp;quot; &amp;amp;quot;split_2&amp;amp;quot; &amp;amp;quot;split_3&amp;amp;quot; &amp;amp;quot;split_4&amp;amp;quot; &amp;amp;quot;split_5&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+           exit 0
+           ;;
+        4) DELIM=&amp;amp;quot; &amp;amp;quot;
+           rm -f &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;split_1&amp;amp;quot; &amp;amp;quot;split_2&amp;amp;quot; &amp;amp;quot;split_3&amp;amp;quot; &amp;amp;quot;split_4&amp;amp;quot; &amp;amp;quot;split_5&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+           cp &amp;amp;quot;$OPTARG&amp;amp;quot; &amp;amp;quot;split_0&amp;amp;quot;
+           sort_file &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;$SORT&amp;amp;quot;
+           split_file_n &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;4&amp;amp;quot; &amp;amp;quot;split_&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_1&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_1&amp;amp;quot;
+                   string_before_file_lines &amp;amp;quot;split_1&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_2&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_2&amp;amp;quot;
+                   string_before_file_lines &amp;amp;quot;split_2&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_3&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_3&amp;amp;quot;
+                   string_before_file_lines &amp;amp;quot;split_3&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_4&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_4&amp;amp;quot;
+                   string_before_file_lines &amp;amp;quot;split_4&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+                   string_after_file_lines  &amp;amp;quot;split_4&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+           implColomatic &amp;amp;quot;split_1&amp;amp;quot;    &amp;amp;quot;split_2&amp;amp;quot;    &amp;amp;quot;$DELIM&amp;amp;quot;    &amp;amp;gt; &amp;amp;quot;$Tmp1&amp;amp;quot;
+           implColomatic &amp;amp;quot;$Tmp1&amp;amp;quot;      &amp;amp;quot;split_3&amp;amp;quot;    &amp;amp;quot;$DELIM&amp;amp;quot;    &amp;amp;gt; &amp;amp;quot;$Tmp2&amp;amp;quot;
+           implColomatic &amp;amp;quot;$Tmp2&amp;amp;quot;      &amp;amp;quot;split_4&amp;amp;quot;    &amp;amp;quot;$DELIM&amp;amp;quot;
+           rm -f &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;split_1&amp;amp;quot; &amp;amp;quot;split_2&amp;amp;quot; &amp;amp;quot;split_3&amp;amp;quot; &amp;amp;quot;split_4&amp;amp;quot; &amp;amp;quot;split_5&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+           exit 0
+           ;;
+        5) DELIM=&amp;amp;quot; &amp;amp;quot;
+           rm -f &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;split_1&amp;amp;quot; &amp;amp;quot;split_2&amp;amp;quot; &amp;amp;quot;split_3&amp;amp;quot; &amp;amp;quot;split_4&amp;amp;quot; &amp;amp;quot;split_5&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+           cp &amp;amp;quot;$OPTARG&amp;amp;quot; &amp;amp;quot;split_0&amp;amp;quot;
+           sort_file &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;$SORT&amp;amp;quot;
+           split_file_n &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;5&amp;amp;quot; &amp;amp;quot;split_&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_1&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_1&amp;amp;quot;
+                   string_before_file_lines &amp;amp;quot;split_1&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_2&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_2&amp;amp;quot;
+                   string_before_file_lines &amp;amp;quot;split_2&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_3&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_3&amp;amp;quot;
+                   string_before_file_lines &amp;amp;quot;split_3&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_4&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_4&amp;amp;quot;
+                   string_before_file_lines &amp;amp;quot;split_4&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+           truncate_file_lines &amp;amp;quot;split_5&amp;amp;quot; $W 
+               padout_file_lines &amp;amp;quot;split_5&amp;amp;quot;
+                   string_before_file_lines &amp;amp;quot;split_5&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+                   string_after_file_lines  &amp;amp;quot;split_5&amp;amp;quot; &amp;amp;quot;$BAR&amp;amp;quot;
+           implColomatic &amp;amp;quot;split_1&amp;amp;quot;    &amp;amp;quot;split_2&amp;amp;quot;    &amp;amp;quot;$DELIM&amp;amp;quot;    &amp;amp;gt; &amp;amp;quot;$Tmp1&amp;amp;quot;
+           implColomatic &amp;amp;quot;$Tmp1&amp;amp;quot;      &amp;amp;quot;split_3&amp;amp;quot;    &amp;amp;quot;$DELIM&amp;amp;quot;    &amp;amp;gt; &amp;amp;quot;$Tmp2&amp;amp;quot;
+           implColomatic &amp;amp;quot;$Tmp2&amp;amp;quot;      &amp;amp;quot;split_4&amp;amp;quot;    &amp;amp;quot;$DELIM&amp;amp;quot;    &amp;amp;gt; &amp;amp;quot;$Tmp3&amp;amp;quot;
+           implColomatic &amp;amp;quot;$Tmp3&amp;amp;quot;      &amp;amp;quot;split_5&amp;amp;quot;    &amp;amp;quot;$DELIM&amp;amp;quot;
+           rm -f &amp;amp;quot;split_0&amp;amp;quot; &amp;amp;quot;split_1&amp;amp;quot; &amp;amp;quot;split_2&amp;amp;quot; &amp;amp;quot;split_3&amp;amp;quot; &amp;amp;quot;split_4&amp;amp;quot; &amp;amp;quot;split_5&amp;amp;quot; &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+           exit 0
+           ;;
+        c) DELIM=&amp;amp;quot;,&amp;amp;quot;
+           ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+if [ $# -gt 1 ]; then
+    implColomatic &amp;amp;quot;$1&amp;amp;quot; &amp;amp;quot;$2&amp;amp;quot; &amp;amp;quot;$DELIM&amp;amp;quot; &amp;amp;gt; &amp;amp;quot;$Tmp2&amp;amp;quot;
+    shift
+    shift
+    for item in &amp;amp;quot;$@&amp;amp;quot;; do
+        implColomatic &amp;amp;quot;$Tmp2&amp;amp;quot; &amp;amp;quot;$item&amp;amp;quot; &amp;amp;quot;$DELIM&amp;amp;quot; &amp;amp;gt; &amp;amp;quot;$Tmp1&amp;amp;quot;
+        cp &amp;amp;quot;$Tmp1&amp;amp;quot; &amp;amp;quot;$Tmp2&amp;amp;quot;
+    done
+    cat &amp;amp;quot;$Tmp2&amp;amp;quot;
+fi
+
+#######################################################################################################
+Processing file: deploy
+     _            _             
+  __| | ___ _ __ | | ___  _   _ 
+ / _` |/ _ \ &amp;amp;#39;_ \| |/ _ \| | | |
+| (_| |  __/ |_) | | (_) | |_| |
+ \__,_|\___| .__/|_|\___/ \__, |
+           |_|            |___/ 
+
+cp ./.bashrc              ~
+cp ./bashrc.shared        ~
+cp ./bash.library         ~
+cp ./getme                ~
+
+#######################################################################################################
+Processing file: gDiff
+       ____  _  __  __ 
+  __ _|  _ \(_)/ _|/ _|
+ / _` | | | | | |_| |_ 
+| (_| | |_| | |  _|  _|
+ \__, |____/|_|_| |_|  
+ |___/                 
+#!/usr/bin/bash
+# *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
+# *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap &amp;amp;#39;ex:it 0&amp;amp;#39; INT HUP QUIT TERM ALRM USR1
+trap &amp;amp;#39;rm -f &amp;amp;quot;$Tmp&amp;amp;quot; &amp;amp;quot;$Tmp0&amp;amp;quot; &amp;amp;quot;$Tmp1&amp;amp;quot; &amp;amp;quot;$Tmp2&amp;amp;quot; &amp;amp;quot;$Tmp3&amp;amp;quot;&amp;amp;#39; EXIT
+rm -f &amp;amp;quot;$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1;
+
+UPDATE=&amp;amp;quot;NO&amp;amp;quot;
+while getopts &amp;amp;quot;ur:&amp;amp;quot; arg
+do
+    case $arg in
+        u) UPDATE=&amp;amp;quot;YES&amp;amp;quot;
+           exit 0
+           ;;
+        r) UA=&amp;amp;quot;$OPTARG&amp;amp;quot;
+           exit 0
+           ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+clear
+git fetch origin        &amp;amp;gt; $Tmp
+git diff origin/master &amp;amp;gt;&amp;amp;gt; $Tmp
+cat $Tmp
+
+#######################################################################################################
+Processing file: gHardSync
+       _   _               _ ____                   
+  __ _| | | | __ _ _ __ __| / ___| _   _ _ __   ___ 
+ / _` | |_| |/ _` | &amp;amp;#39;__/ _` \___ \| | | | &amp;amp;#39;_ \ / __|
+| (_| |  _  | (_| | | | (_| |___) | |_| | | | | (__ 
+ \__, |_| |_|\__,_|_|  \__,_|____/ \__, |_| |_|\___|
+ |___/                             |___/            
+git fetch origin
+git reset --hard origin/master
+git clean -fd
+
+#######################################################################################################
+Processing file: gLocal
+       _                    _ 
+  __ _| |    ___   ___ __ _| |
+ / _` | |   / _ \ / __/ _` | |
+| (_| | |__| (_) | (_| (_| | |
+ \__, |_____\___/ \___\__,_|_|
+ |___/                        
+git add &amp;amp;quot;$1&amp;amp;quot;
+git commit -m &amp;amp;quot;Update&amp;amp;quot;
+
+#######################################################################################################
+Processing file: gStatus
+       ____  _        _             
+  __ _/ ___|| |_ __ _| |_ _   _ ___ 
+ / _` \___ \| __/ _` | __| | | / __|
+| (_| |___) | || (_| | |_| |_| \__ \
+ \__, |____/ \__\__,_|\__|\__,_|___/
+ |___/                              
+#!/usr/bin/bash
+# *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
+# *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap &amp;amp;#39;exit 0&amp;amp;#39; INT HUP QUIT TERM ALRM USR1
+trap &amp;amp;#39;rm -f &amp;amp;quot;$Tmp&amp;amp;quot; &amp;amp;quot;$Tmp0&amp;amp;quot; &amp;amp;quot;$Tmp1&amp;amp;quot; &amp;amp;quot;$Tmp2&amp;amp;quot; &amp;amp;quot;$Tmp3&amp;amp;quot;&amp;amp;#39; EXIT
+rm -f &amp;amp;quot;$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1;
+
+UPDATE=&amp;amp;quot;NO&amp;amp;quot;
+while getopts &amp;amp;quot;c&amp;amp;quot; arg
+do
+    case $arg in
+        c) clear
+           ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+rm -f zed zedd qed qedd  fed fedd
+echo &amp;amp;quot;&amp;amp;quot;           &amp;amp;gt; $Tmp
+echo &amp;amp;quot;&amp;amp;quot;          &amp;amp;gt;&amp;amp;gt; $Tmp
+
+git rev-parse --show-toplevel 2&amp;amp;gt; /dev/null | sed -e &amp;amp;quot;s,^$HOME,~,&amp;amp;quot;  &amp;amp;gt;&amp;amp;gt; $Tmp
+git branch 2&amp;amp;gt; /dev/null | sed &amp;amp;#39;s/^..//&amp;amp;#39;                            &amp;amp;gt;&amp;amp;gt; $Tmp
+echo &amp;amp;quot;&amp;amp;quot;          &amp;amp;gt;&amp;amp;gt; $Tmp
+echo &amp;amp;quot;&amp;amp;quot;          &amp;amp;gt;&amp;amp;gt; $Tmp
+git remote -v    &amp;amp;gt;&amp;amp;gt; $Tmp
+echo &amp;amp;quot;&amp;amp;quot;          &amp;amp;gt;&amp;amp;gt; $Tmp
+echo &amp;amp;quot;&amp;amp;quot;          &amp;amp;gt;&amp;amp;gt; $Tmp
+git status       &amp;amp;gt;&amp;amp;gt; $Tmp
+echo &amp;amp;quot;&amp;amp;quot;          &amp;amp;gt;&amp;amp;gt; $Tmp
+echo &amp;amp;quot;&amp;amp;quot;          &amp;amp;gt;&amp;amp;gt; $Tmp
+cat $Tmp
+git rev-parse --show-toplevel 2&amp;amp;gt; /dev/null | sed -e &amp;amp;quot;s,^$HOME,~,&amp;amp;quot;  &amp;amp;gt; $Tmp
+git branch 2&amp;amp;gt; /dev/null | sed &amp;amp;#39;s/^..//&amp;amp;#39;  &amp;amp;gt;&amp;amp;gt; $Tmp
+git config --get remote.origin.url 2&amp;amp;gt; /dev/null  &amp;amp;gt;&amp;amp;gt; $Tmp
+
+#######################################################################################################
+Processing file: gUpdate
+       _   _           _       _       
+  __ _| | | |_ __   __| | __ _| |_ ___ 
+ / _` | | | | &amp;amp;#39;_ \ / _` |/ _` | __/ _ \
+| (_| | |_| | |_) | (_| | (_| | ||  __/
+ \__, |\___/| .__/ \__,_|\__,_|\__\___|
+ |___/      |_|                        
+git add &amp;amp;quot;$1&amp;amp;quot;
+git commit -m &amp;amp;quot;Update&amp;amp;quot;
+git push origin master
+git status
+
+#######################################################################################################
+Processing file: gUpdateFromOrigin
+       _   _           _       _       _____                     ___       _ 
+  __ _| | | |_ __   __| | __ _| |_ ___|  ___| __ ___  _ __ ___  / _ \ _ __(_)
+ / _` | | | | &amp;amp;#39;_ \ / _` |/ _` | __/ _ \ |_ | &amp;amp;#39;__/ _ \| &amp;amp;#39;_ ` _ \| | | | &amp;amp;#39;__| |
+| (_| | |_| | |_) | (_| | (_| | ||  __/  _|| | | (_) | | | | | | |_| | |  | |
+ \__, |\___/| .__/ \__,_|\__,_|\__\___|_|  |_|  \___/|_| |_| |_|\___/|_|  |_|
+ |___/      |_|                                                              
+       _       
+  __ _(_)_ __  
+ / _` | | &amp;amp;#39;_ \ 
+| (_| | | | | |
+ \__, |_|_| |_|
+ |___/         
+#!/usr/bin/bash
+# *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
+# *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap &amp;amp;#39;exit 0&amp;amp;#39; INT HUP QUIT TERM ALRM USR1
+trap &amp;amp;#39;rm -f &amp;amp;quot;$Tmp&amp;amp;quot; &amp;amp;quot;$Tmp0&amp;amp;quot; &amp;amp;quot;$Tmp1&amp;amp;quot; &amp;amp;quot;$Tmp2&amp;amp;quot; &amp;amp;quot;$Tmp3&amp;amp;quot;&amp;amp;#39; EXIT
+rm -f &amp;amp;quot;$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1;
+
+
+git pull
+
+#######################################################################################################
+Processing file: gawk.library
+                      _      _ _ _                          
+  __ _  __ ___      _| | __ | (_) |__  _ __ __ _ _ __ _   _ 
+ / _` |/ _` \ \ /\ / / |/ / | | | &amp;amp;#39;_ \| &amp;amp;#39;__/ _` | &amp;amp;#39;__| | | |
+| (_| | (_| |\ V  V /|   &amp;amp;lt; _| | | |_) | | | (_| | |  | |_| |
+ \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
+ |___/                                                |___/ 
+# *********************************************************DATEOMATIC: Mon Mar 24 11:16:15 EDT 2025
+# *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
+
+# Trims leading and trailing whitespace from a string.
+function trim(str,  trimmed) {
+  sub(/^[ \t\r\n]+/, &amp;amp;quot;&amp;amp;quot;, str);
+  sub(/[ \t\r\n]+$/, &amp;amp;quot;&amp;amp;quot;, str);
+  return str;
+}
+
+# Splits a string into an array based on a delimiter, handles empty fields
+function split_preserve_empty(str, arr, delim,  i, field) {
+  delete arr;
+  i = 1;
+  while (match(str, &amp;amp;quot;([^&amp;amp;quot; delim &amp;amp;quot;]*)&amp;amp;quot; delim &amp;amp;quot;?&amp;amp;quot;, field)) {
+    arr[i++] = field[1];
+    str = substr(str, RLENGTH + 1);
+  }
+  if (length(str) &amp;amp;gt; 0) {
+    arr[i] = str;
+  }
+  return i;
+}
+
+# Checks if a string starts with a given prefix.
+function starts_with(str, prefix) {
+  return substr(str, 1, length(prefix)) == prefix;
+}
+
+# Checks if a string ends with a given suffix.
+function ends_with(str, suffix) {
+  return substr(str, length(str) - length(suffix) + 1) == suffix;
+}
+
+# Replaces all occurrences of a substring with another string.
+function replace_all(str, from, to,  result) {
+  result = str;
+  while (sub(from, to, result)) {}
+  return result;
+}
+
+#Checks if a string contains a given substring
+function contains(str, sub) {
+    return index(str, sub) != 0;
+}
+
+# --- Array Manipulation ---
+
+# Checks if an array contains a given value.
+function array_contains(arr, val,  i) {
+  for (i in arr) {
+    if (arr[i] == val) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
+# Joins array elements into a string with a delimiter.
+function array_join(arr, delim,  i, result) {
+  result = &amp;amp;quot;&amp;amp;quot;;
+  for (i in arr) {
+    result = result (result == &amp;amp;quot;&amp;amp;quot; ? &amp;amp;quot;&amp;amp;quot; : delim) arr[i];
+  }
+  return result;
+}
+
+#Filters an array based on a given condition (function).
+function array_filter(arr, filter_func,  i, new_arr, index) {
+    delete new_arr;
+    index = 1;
+    for (i in arr){
+        if(filter_func(arr[i])){
+            new_arr[index++] = arr[i];
+        }
+    }
+    return index -1; #Return the size of the new array.
+}
+
+#Maps an array to a new array using a function.
+function array_map(arr, map_func,  i, new_arr, index){
+    delete new_arr;
+    index = 1;
+    for(i in arr){
+        new_arr[index++] = map_func(arr[i]);
+    }
+    return index -1;
+}
+
+# --- Data Processing ---
+
+# Calculates the sum of values in an array.
+function array_sum(arr,  i, sum) {
+  sum = 0;
+  for (i in arr) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+# Calculates the average of values in an array.
+function array_average(arr,  sum, count) {
+  sum = array_sum(arr);
+  count = length(arr);
+  if (count == 0) {
+    return 0;
+  }
+  return sum / count;
+}
+
+#Parses CSV data into a 2D array.
+function parse_csv(data, arr, delimiter,  lines, i, fields, j) {
+    lines = split(data, lines, &amp;amp;quot;\n&amp;amp;quot;);
+    for (i = 1; i &amp;amp;lt;= lines; i++) {
+        split_preserve_empty(lines[i], fields, delimiter);
+        for (j = 1; j &amp;amp;lt;= length(fields); j++) {
+            arr[i, j] = fields[j];
+        }
+    }
+    return lines;
+}
+
+# --- List Operations (Arrays as Lists) ---
+
+# Append an element to the end of a list (array).
+function list_append(arr, val,  len) {
+  len = length(arr) + 1;
+  arr[len] = val;
+  return len;
+}
+
+# Prepend an element to the beginning of a list (array).
+function list_prepend(arr, val,  i, temp_arr, len) {
+    len = length(arr);
+    for(i = len; i &amp;amp;gt;= 1; i--){
+        temp_arr[i+1] = arr[i];
+    }
+    arr[1] = val;
+    for(i = 2; i &amp;amp;lt;= len+1; i++){
+        arr[i] = temp_arr[i];
+    }
+    return len +1;
+}
+
+# Insert an element at a specific index in a list (array).
+function list_insert(arr, index, val,  i, temp_arr, len) {
+  len = length(arr);
+  if (index &amp;amp;lt; 1 || index &amp;amp;gt; len + 1) {
+    return len; # Invalid index, return original length.
+  }
+
+  for (i = len; i &amp;amp;gt;= index; i--) {
+    temp_arr[i + 1] = arr[i];
+  }
+  arr[index] = val;
+  for (i = index + 1; i &amp;amp;lt;= len + 1; i++) {
+    arr[i] = temp_arr[i];
+  }
+  return len + 1;
+}
+
+# Remove an element at a specific index in a list (array).
+function list_remove_at(arr, index,  i, len) {
+  len = length(arr);
+  if (index &amp;amp;lt; 1 || index &amp;amp;gt; len) {
+    return len; # Invalid index, return original length.
+  }
+
+  for (i = index; i &amp;amp;lt; len; i++) {
+    arr[i] = arr[i + 1];
+  }
+  delete arr[len];
+  return len - 1;
+}
+
+# Remove the first occurrence of a value from a list (array).
+function list_remove_value(arr, val,  i, len) {
+  len = length(arr);
+  for (i = 1; i &amp;amp;lt;= len; i++) {
+    if (arr[i] == val) {
+      list_remove_at(arr, i);
+      return len - 1;
+    }
+  }
+  return len; # Value not found, return original length.
+}
+
+# Get the element at a specific index in a list (array).
+function list_get(arr, index,  len) {
+  len = length(arr);
+  if (index &amp;amp;lt; 1 || index &amp;amp;gt; len) {
+    return &amp;amp;quot;&amp;amp;quot;; # Invalid index, return empty string.
+  }
+  return arr[index];
+}
+
+# Get the index of the first occurrence of a value in a list (array).
+function list_index_of(arr, val,  i, len) {
+  len = length(arr);
+  for (i = 1; i &amp;amp;lt;= len; i++) {
+    if (arr[i] == val) {
+      return i;
+    }
+  }
+  return -1; # Value not found, return -1.
+}
+
+# Get the last index of a value in a list (array).
+function list_last_index_of(arr, val, i, len, last_index){
+    len = length(arr);
+    last_index = -1;
+    for(i = 1; i &amp;amp;lt;= len; i++){
+        if(arr[i] == val){
+            last_index = i;
+        }
+    }
+    return last_index;
+}
+
+# Reverse a list (array).
+function list_reverse(arr,  i, len, temp_arr) {
+  len = length(arr);
+  for (i = 1; i &amp;amp;lt;= len; i++) {
+    temp_arr[i] = arr[i];
+  }
+  for (i = 1; i &amp;amp;lt;= len; i++) {
+    arr[i] = temp_arr[len - i + 1];
+  }
+  return len;
+}
+
+# Slice a list (array) from start_index to end_index (inclusive).
+function list_slice(arr, start_index, end_index,  i, len, new_arr, new_index) {
+  len = length(arr);
+  if (start_index &amp;amp;lt; 1) {
+    start_index = 1;
+  }
+  if (end_index &amp;amp;gt; len) {
+    end_index = len;
+  }
+  if (start_index &amp;amp;gt; end_index) {
+    return 0; # Empty slice, return 0.
+  }
+
+  delete new_arr;
+  new_index = 1;
+  for (i = start_index; i &amp;amp;lt;= end_index; i++) {
+    new_arr[new_index++] = arr[i];
+  }
+  return new_index - 1;
+}
+
+# Concatenate two lists (arrays).
+function list_concat(arr1, arr2,  i, len1, len2, new_arr, new_index) {
+  len1 = length(arr1);
+  len2 = length(arr2);
+  delete new_arr;
+  new_index = 1;
+  for (i = 1; i &amp;amp;lt;= len1; i++) {
+    new_arr[new_index++] = arr1[i];
+  }
+  for (i = 1; i &amp;amp;lt;= len2; i++) {
+    new_arr[new_index++] = arr2[i];
+  }
+  return new_index - 1;
+}
+
+# --- Example Usage (Illustrative) ---
+BEGIN {
+  # String manipulation examples
+  str = &amp;amp;quot;   hello world   &amp;amp;quot;;
+  print &amp;amp;quot;[&amp;amp;quot; trim(str) &amp;amp;quot;]&amp;amp;quot;;
+
+  text = &amp;amp;quot;apple,banana,,orange&amp;amp;quot;;
+  count = split_preserve_empty(text, fruits, &amp;amp;quot;,&amp;amp;quot;);
+  for (i = 1; i &amp;amp;lt;= count; i++) {
+    print &amp;amp;quot;Fruit &amp;amp;quot; i &amp;amp;quot;: [&amp;amp;quot; fruits[i] &amp;amp;quot;]&amp;amp;quot;;
+  }
+
+  print starts_with(&amp;amp;quot;awk is fun&amp;amp;quot;, &amp;amp;quot;awk&amp;amp;quot;);
+  print ends_with(&amp;amp;quot;awk is fun&amp;amp;quot;, &amp;amp;quot;fun&amp;amp;quot;);
+  print replace_all(&amp;amp;quot;awk is fun&amp;amp;quot;, &amp;amp;quot;fun&amp;amp;quot;, &amp;amp;quot;powerful&amp;amp;quot;);
+  print contains(&amp;amp;quot;awk is fun&amp;amp;quot;, &amp;amp;quot;is&amp;amp;quot;);
+
+  # Array manipulation examples
+  numbers[1] = 10; numbers[2] = 20; numbers[3] = 30;
+  print array_contains(numbers, 20);
+  print array_join(numbers, &amp;amp;quot;, &amp;amp;quot;);
+  print array_sum(numbers);
+  print array_average(numbers);
+
+  # CSV parsing example
+  csv_data = &amp;amp;quot;name,age,city\nJohn,30,New York\nJane,25,London&amp;amp;quot;;
+  rows = parse_csv(csv_data, csv_array, &amp;amp;quot;,&amp;amp;quot;);
+  for (i = 1; i &amp;amp;lt;= rows; i++) {
+    print csv_array[i, 1] &amp;amp;quot;, &amp;amp;quot; csv_array[i, 2] &amp;amp;quot;, &amp;amp;quot; csv_array[i, 3];
+  }
+
+  # Array filter and map examples
+  function is_even(num){return num % 2 == 0;}
+  even_count = array_filter(numbers, &amp;amp;quot;is_even&amp;amp;quot;, even_numbers);
+  print &amp;amp;quot;Even numbers: &amp;amp;quot; array_join(even_numbers, &amp;amp;quot;, &amp;amp;quot;);
+
+  function double(num){return num * 2;}
+  doubled_count = array_map(numbers, &amp;amp;quot;double&amp;amp;quot;, doubled_numbers);
+  print &amp;amp;quot;Doubled numbers: &amp;amp;quot; array_join(doubled_numbers, &amp;amp;quot;, &amp;amp;quot;);
+
+  # List operation examples
+  list[1] = 10; list[2] = 20; list[3] = 30;
+
+  list_append(list, 40);
+  list_prepend(list, 5);
+  list_insert(list, 3, 25);
+  list_remove_at(list, 4);
+  list_remove_value(list, 20);
+
+  print &amp;amp;quot;List: &amp;amp;quot; array_join(list, &amp;amp;quot;, &amp;amp;quot;);
+  print &amp;amp;quot;Get index 2: &amp;amp;quot; list_get(list, 2);
+  print &amp;amp;quot;Index of 30: &amp;amp;quot; list_index_of(list, 30);
+  print &amp;amp;quot;Last Index of 10: &amp;amp;quot; list_last_index_of(list,10);
+  list_reverse(list);
+  print &amp;amp;quot;Reversed list: &amp;amp;quot; array_join(list, &amp;amp;quot;, &amp;amp;quot;);
+
+  list2[1] = 100; list2[2] = 200;
+  list_concat(list, list2, combined_list);
+  print &amp;amp;quot;Combined List: &amp;amp;quot; array_join(combined_list, &amp;amp;quot;, &amp;amp;quot;);
+
+  list_slice(combined_list, 2, 4, sliced_list);
+  print &amp;amp;quot;Sliced List: &amp;amp;quot; array_join(sliced_list, &amp;amp;quot;, &amp;amp;quot;);
+}
+
+#######################################################################################################
+Processing file: get.raw
+            _                        
+  __ _  ___| |_   _ __ __ ___      __
+ / _` |/ _ \ __| | &amp;amp;#39;__/ _` \ \ /\ / /
+| (_| |  __/ |_ _| | | (_| |\ V  V / 
+ \__, |\___|\__(_)_|  \__,_| \_/\_/  
+ |___/                               
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.gitignore
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/colomatic
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gawk.library
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/indentomatic
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/justomatic
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/rmLeadingWhiteSpace
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/template.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt
+
+#######################################################################################################
+Processing file: getme
+            _                  
+  __ _  ___| |_ _ __ ___   ___ 
+ / _` |/ _ \ __| &amp;amp;#39;_ ` _ \ / _ \
+| (_| |  __/ |_| | | | | |  __/
+ \__, |\___|\__|_| |_| |_|\___|
+ |___/                         
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript
+
+#######################################################################################################
+Processing file: indentomatic
+ _           _            _                        _   _      
+(_)_ __   __| | ___ _ __ | |_ ___  _ __ ___   __ _| |_(_) ___ 
+| | &amp;amp;#39;_ \ / _` |/ _ \ &amp;amp;#39;_ \| __/ _ \| &amp;amp;#39;_ ` _ \ / _` | __| |/ __|
+| | | | | (_| |  __/ | | | || (_) | | | | | | (_| | |_| | (__ 
+|_|_| |_|\__,_|\___|_| |_|\__\___/|_| |_| |_|\__,_|\__|_|\___|
+                                                              
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp1=/tmp/$$_$$
+Tmp2=/tmp/$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$
+trap &amp;amp;#39;exit 0&amp;amp;#39; INT HUP QUIT TERM ALRM USR1
+trap &amp;amp;#39;rm -f &amp;amp;quot;$Tmp&amp;amp;quot; &amp;amp;quot;$Tmp1&amp;amp;quot; &amp;amp;quot;$Tmp2&amp;amp;quot; &amp;amp;quot;$Tmp3&amp;amp;quot;&amp;amp;#39; EXIT
+rm -f &amp;amp;quot;$Tmp&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+rm -f &amp;amp;quot;$Tmp1&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+rm -f &amp;amp;quot;$Tmp2&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+rm -f &amp;amp;quot;$Tmp3&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+#================================================================
+
+source ~/bash.library
+
+filename=&amp;amp;quot;$1&amp;amp;quot;
+
+# Check if a filename is are provided
+if [ -z &amp;amp;quot;$filename&amp;amp;quot; ]; then
+  fecho &amp;amp;quot;Usage: &amp;amp;lt;filename&amp;amp;gt; &amp;amp;lt;filename&amp;amp;gt;&amp;amp;quot;
+  exit 1
+fi
+
+# Check if the files exist
+if [ ! -f &amp;amp;quot;$filename&amp;amp;quot; ]; then
+  fecho &amp;amp;quot;Error: File &amp;amp;#39;$filename&amp;amp;#39; not found.&amp;amp;quot;
+  exit 1
+fi
+
+indent_file &amp;amp;quot;$filename&amp;amp;quot; 
+
+
+#######################################################################################################
+Processing file: input.txt
+ _                   _    _        _   
+(_)_ __  _ __  _   _| |_ | |___  _| |_ 
+| | &amp;amp;#39;_ \| &amp;amp;#39;_ \| | | | __|| __\ \/ / __|
+| | | | | |_) | |_| | |_ | |_ &amp;amp;gt;  &amp;amp;lt;| |_ 
+|_|_| |_| .__/ \__,_|\__(_)__/_/\_\\__|
+        |_|                            
+Global
+
+:h[elp] keyword - open help for keyword
+:sav[eas] file - save file as
+:clo[se] - close current pane
+:ter[minal] - open a terminal window
+K - open man page for word under the cursor
+Tip Run vimtutor in a terminal to learn the first Vim commands.
+
+Cursor movement
+
+h - move cursor left
+j - move cursor down
+k - move cursor up
+l - move cursor right
+gj - move cursor down (multi-line text)
+gk - move cursor up (multi-line text)
+H - move to top of screen
+M - move to middle of screen
+L - move to bottom of screen
+w - jump forwards to the start of a word
+W - jump forwards to the start of a word (words can contain punctuation)
+e - jump forwards to the end of a word
+E - jump forwards to the end of a word (words can contain punctuation)
+b - jump backwards to the start of a word
+B - jump backwards to the start of a word (words can contain punctuation)
+ge - jump backwards to the end of a word
+gE - jump backwards to the end of a word (words can contain punctuation)
+% - move cursor to matching character (default supported pairs: &amp;amp;#39;()&amp;amp;#39;, &amp;amp;#39;{}&amp;amp;#39;, &amp;amp;#39;[]&amp;amp;#39; 
+- use :h matchpairs in vim for more info)
+0 - jump to the start of the line
+^ - jump to the first non-blank character of the line
+$ - jump to the end of the line
+g_ - jump to the last non-blank character of the line
+gg - go to the first line of the document
+G - go to the last line of the document
+5gg or 5G - go to line 5
+gd - move to local declaration
+gD - move to global declaration
+fx - jump to next occurrence of character x
+tx - jump to before next occurrence of character x
+Fx - jump to the previous occurrence of character x
+Tx - jump to after previous occurrence of character x
+; - repeat previous f, t, F or T movement
+, - repeat previous f, t, F or T movement, backwards
+} - jump to next paragraph (or function/block, when editing code)
+{ - jump to previous paragraph (or function/block, when editing code)
+zz - center cursor on screen
+zt - position cursor on top of the screen
+zb - position cursor on bottom of the screen
+Ctrl + e - move screen down one line (without moving cursor)
+Ctrl + y - move screen up one line (without moving cursor)
+Ctrl + b - move screen up one page (cursor to last line)
+Ctrl + f - move screen down one page (cursor to first line)
+Ctrl + d - move cursor and screen down 1/2 page
+Ctrl + u - move cursor and screen up 1/2 page
+
+Insert mode - inserting/appending text
+
+i - insert before the cursor
+I - insert at the beginning of the line
+a - insert (append) after the cursor
+A - insert (append) at the end of the line
+o - append (open) a new line below the current line
+O - append (open) a new line above the current line
+ea - insert (append) at the end of the word
+Ctrl + h - delete the character before the cursor during insert mode
+Ctrl + w - delete word before the cursor during insert mode
+Ctrl + j - add a line break at the cursor position during insert mode
+Ctrl + t - indent (move right) line one shiftwidth during insert mode
+Ctrl + d - de-indent (move left) line one shiftwidth during insert mode
+Ctrl + n - insert (auto-complete) next match before the cursor during insert mode
+Ctrl + p - insert (auto-complete) previous match before the cursor during insert mode
+Ctrl + rx - insert the contents of register x
+Ctrl + ox - Temporarily enter normal mode to issue one normal-mode command x.
+Esc or Ctrl + c - exit insert mode
+
+Editing
+
+r - replace a single character.
+R - replace more than one character, until ESC is pressed.
+J - join line below to the current one with one space in between
+gJ - join line below to the current one without space in between
+gwip - reflow paragraph
+g~ - switch case up to motion
+gu - change to lowercase up to motion
+gU - change to uppercase up to motion
+cc - change (replace) entire line
+c$ or C - change (replace) to the end of the line
+ciw - change (replace) entire word
+cw or ce - change (replace) to the end of the word
+s - delete character and substitute text (same as cl)
+S - delete line and substitute text (same as cc)
+xp - transpose two letters (delete and paste)
+u - undo
+U - restore (undo) last changed line
+Ctrl + r - redo
+. - repeat last command
+
+Marking text (visual mode)
+
+v - start visual mode, mark lines, then do a command (like y-yank)
+V - start linewise visual mode
+o - move to other end of marked area
+Ctrl + v - start visual block mode
+O - move to other corner of block
+aw - mark a word
+ab - a block with ()
+aB - a block with {}
+at - a block with &amp;amp;lt;&amp;amp;gt; tags
+ib - inner block with ()
+iB - inner block with {}
+it - inner block with &amp;amp;lt;&amp;amp;gt; tags
+Esc or Ctrl + c - exit visual mode
+
+Visual commands
+
+&amp;amp;gt; - shift text right
+&amp;amp;lt; - shift text left
+y - yank (copy) marked text
+d - delete marked text
+~ - switch case
+u - change marked text to lowercase
+U - change marked text to uppercase
+
+Registers
+
+:reg[isters] - show registers content
+&amp;amp;quot;xy - yank into register x
+&amp;amp;quot;xp - paste contents of register x
+&amp;amp;quot;+y - yank into the system clipboard register
+&amp;amp;quot;+p - paste from the system clipboard register
+Tip Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.
+
+Special registers:
+
+0 - last yank
+&amp;amp;quot; - unnamed register, last delete or yank
+% - current file name
+# - alternate file name
+* - clipboard contents (X11 primary)
++ - clipboard contents (X11 clipboard)
+/ - last search pattern
+: - last command-line
+. - last inserted text
+- - last small (less than a line) delete
+= - expression register
+_ - black hole register
+
+Marks and positions
+
+:marks - list of marks
+ma - set current position for mark A
+`a - jump to position of mark A
+y`a - yank text to position of mark A
+`0 - go to the position where Vim was previously exited
+`&amp;amp;quot; - go to the position when last editing this file
+`. - go to the position of the last change in this file
+`` - go to the position before the last jump
+:ju[mps] - list of jumps
+Ctrl + i - go to newer position in jump list
+Ctrl + o - go to older position in jump list
+:changes - list of changes
+g, - go to newer position in change list
+g; - go to older position in change list
+Ctrl + ] - jump to the tag under cursor
+Tip To jump to a mark you can either use a backtick (`) or an apostrophe (&amp;amp;#39;).
+Using an apostrophe jumps to the beginning (first non-blank) of the line holding the mark.
+
+Macros
+
+qa - record macro a
+q - stop recording macro
+@a - run macro a
+@@ - rerun last run macro
+
+Cut and paste
+
+yy - yank (copy) a line
+2yy - yank (copy) 2 lines
+yw - yank (copy) the characters of the word from the cursor position to the start of the next word
+yiw - yank (copy) word under the cursor
+yaw - yank (copy) word under the cursor and the space after or before it
+y$ or Y - yank (copy) to end of line
+p - put (paste) the clipboard after cursor
+P - put (paste) before cursor
+gp - put (paste) the clipboard after cursor and leave cursor after the new text
+gP - put (paste) before cursor and leave cursor after the new text
+dd - delete (cut) a line
+2dd - delete (cut) 2 lines
+dw - delete (cut) the characters of the word from the cursor position to the start of the next word
+diw - delete (cut) word under the cursor
+daw - delete (cut) word under the cursor and the space after or before it
+:3,5d - delete lines starting from 3 to 5
+Tip You can also use the following characters to specify the range:
+e.g.
+:.,$d - From the current line to the end of the file
+:.,1d - From the current line to the beginning of the file
+:10,1d - From the 10th line to the beginning of the file
+:g/{pattern}/d - delete all lines containing pattern
+:g!/{pattern}/d - delete all lines not containing pattern
+d$ or D - delete (cut) to the end of the line
+x - delete (cut) character
+
+Indent text
+
+&amp;amp;gt;&amp;amp;gt; - indent (move right) line one shiftwidth
+&amp;amp;lt;&amp;amp;lt; - de-indent (move left) line one shiftwidth
+&amp;amp;gt;% - indent a block with () or {} (cursor on brace)
+&amp;amp;lt;% - de-indent a block with () or {} (cursor on brace)
+&amp;amp;gt;ib - indent inner block with ()
+&amp;amp;gt;at - indent a block with &amp;amp;lt;&amp;amp;gt; tags
+3== - re-indent 3 lines
+=% - re-indent a block with () or {} (cursor on brace)
+=iB - re-indent inner block with {}
+gg=G - re-indent entire buffer
+]p - paste and adjust indent to current line
+
+Exiting
+
+:w - write (save) the file, but don&amp;amp;#39;t exit
+:w !sudo tee % - write out the current file using sudo
+:wq or :x or ZZ - write (save) and quit
+:q - quit (fails if there are unsaved changes)
+:q! or ZQ - quit and throw away unsaved changes
+:wqa - write (save) and quit on all tabs
+
+Search and replace
+
+/pattern - search for pattern
+?pattern - search backward for pattern
+\vpattern - &amp;amp;#39;very magic&amp;amp;#39; pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
+n - repeat search in same direction
+N - repeat search in opposite direction
+:%s/old/new/g - replace all old with new throughout file
+:%s/old/new/gc - replace all old with new throughout file with confirmations
+:noh[lsearch] - remove highlighting of search matches
+
+Search in multiple files
+
+:vim[grep] /pattern/ {`{file}`} - search for pattern in multiple files
+e.g. :vim[grep] /foo/ **/*
+:cn[ext] - jump to the next match
+:cp[revious] - jump to the previous match
+:cope[n] - open a window containing the list of matches
+:ccl[ose] - close the quickfix window
+
+Tabs
+
+:tabnew or :tabnew {page.words.file} - open a file in a new tab
+Ctrl + wT - move the current split window into its own tab
+gt or :tabn[ext] - move to the next tab
+gT or :tabp[revious] - move to the previous tab
+#gt - move to tab number #
+:tabm[ove] # - move current tab to the #th position (indexed from 0)
+:tabc[lose] - close the current tab and all its windows
+:tabo[nly] - close all tabs except for the current one
+:tabdo command - run the command on all tabs (e.g. :tabdo q - closes all opened tabs)
+
+Working with multiple files
+
+:e[dit] file - edit a file in a new buffer
+:bn[ext] - go to the next buffer
+:bp[revious] - go to the previous buffer
+:bd[elete] - delete a buffer (close a file)
+:b[uffer]# - go to a buffer by index #
+:b[uffer] file - go to a buffer by file
+:ls or :buffers - list all open buffers
+:sp[lit] file - open a file in a new buffer and split window
+:vs[plit] file - open a file in a new buffer and vertically split window
+:vert[ical] ba[ll] - edit all buffers as vertical windows
+:tab ba[ll] - edit all buffers as tabs
+Ctrl + ws - split window
+Ctrl + wv - split window vertically
+Ctrl + ww - switch windows
+Ctrl + wq - quit a window
+Ctrl + wx - exchange current window with next one
+Ctrl + w= - make all windows equal height &amp;amp;amp; width
+Ctrl + wh - move cursor to the left window (vertical split)
+Ctrl + wl - move cursor to the right window (vertical split)
+Ctrl + wj - move cursor to the window below (horizontal split)
+Ctrl + wk - move cursor to the window above (horizontal split)
+Ctrl + wH - make current window full height at far left (leftmost vertical window)
+Ctrl + wL - make current window full height at far right (rightmost vertical window)
+Ctrl + wJ - make current window full width at the very bottom (bottommost horizontal window)
+Ctrl + wK - make current window full width at the very top (topmost horizontal window)
+
+Diff
+
+zf - manually define a fold up to motion
+zd - delete fold under the cursor
+za - toggle fold under the cursor
+zo - open fold under the cursor
+zc - close fold under the cursor
+zr - reduce (open) all folds by one level
+zm - fold more (close) all folds by one level
+zi - toggle folding functionality
+]c - jump to start of next change
+[c - jump to start of previous change
+do or :diffg[et] - obtain (get) difference (from other buffer)
+dp or :diffpu[t] - put difference (to other buffer)
+:diffthis - make current window part of diff
+:dif[fupdate] - update differences
+:diffo[ff] - switch off diff mode for current window
+
+#######################################################################################################
+Processing file: justomatic
+   _           _                        _   _      
+  (_)_   _ ___| |_ ___  _ __ ___   __ _| |_(_) ___ 
+  | | | | / __| __/ _ \| &amp;amp;#39;_ ` _ \ / _` | __| |/ __|
+  | | |_| \__ \ || (_) | | | | | | (_| | |_| | (__ 
+ _/ |\__,_|___/\__\___/|_| |_| |_|\__,_|\__|_|\___|
+|__/                                               
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp1=/tmp/$$_$$
+Tmp2=/tmp/$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$
+trap &amp;amp;#39;exit 0&amp;amp;#39; INT HUP QUIT TERM ALRM USR1
+trap &amp;amp;#39;rm -f &amp;amp;quot;$Tmp&amp;amp;quot; &amp;amp;quot;$Tmp1&amp;amp;quot; &amp;amp;quot;$Tmp2&amp;amp;quot; &amp;amp;quot;$Tmp3&amp;amp;quot;&amp;amp;#39; EXIT
+rm -f &amp;amp;quot;$Tmp&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+rm -f &amp;amp;quot;$Tmp1&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+rm -f &amp;amp;quot;$Tmp2&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+rm -f &amp;amp;quot;$Tmp3&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+#================================================================
+
+source ~/bash.library
+
+INDENT=&amp;amp;quot;&amp;amp;quot;
+DELIM=&amp;amp;quot; &amp;amp;quot;
+BAR=&amp;amp;quot;&amp;amp;quot;
+SPACE=&amp;amp;quot;&amp;amp;quot;
+W=32
+
+while getopts &amp;amp;quot;isn:f:c&amp;amp;quot; arg
+do
+    case $arg in
+        i) INDENT=&amp;amp;quot;YES&amp;amp;quot;
+           echo &amp;amp;quot;$INDENT&amp;amp;quot;
+           ;;
+        s) SPACE=&amp;amp;quot;    &amp;amp;quot;
+           ;;
+        n) W=$OPTARG
+           ;;
+        f) DELIM=&amp;amp;quot;&amp;amp;quot;
+           justify_file &amp;amp;quot;$OPTARG&amp;amp;quot; &amp;amp;quot;$W&amp;amp;quot;
+           exit 0
+           ;;
+        c) DELIM=&amp;amp;quot;,&amp;amp;quot;
+           ;;
+    esac
+done
+shift $(($OPTIND - 1))
+echo &amp;amp;quot;$INDENT&amp;amp;quot;
+
+if [ &amp;amp;quot;$INDENT&amp;amp;quot; == &amp;amp;quot;YES&amp;amp;quot; ]; then    
+    indent_file &amp;amp;quot;$OPTARG&amp;amp;quot;
+fi
+
+
+
+#######################################################################################################
+Processing file: listing
+ _ _     _   _             
+| (_)___| |_(_)_ __   __ _ 
+| | / __| __| | &amp;amp;#39;_ \ / _` |
+| | \__ \ |_| | | | | (_| |
+|_|_|___/\__|_|_| |_|\__, |
+                     |___/ 
+#!/usr/bin/bash
+# *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
+# *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap &amp;amp;#39;exit 0&amp;amp;#39; INT HUP QUIT TERM ALRM USR1
+trap &amp;amp;#39;rm -f &amp;amp;quot;$Tmp&amp;amp;quot; &amp;amp;quot;$Tmp0&amp;amp;quot; &amp;amp;quot;$Tmp1&amp;amp;quot; &amp;amp;quot;$Tmp2&amp;amp;quot; &amp;amp;quot;$Tmp3&amp;amp;quot;&amp;amp;#39; EXIT
+rm -f &amp;amp;quot;$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1;
+
+UPDATE=&amp;amp;quot;NO&amp;amp;quot;
+while getopts &amp;amp;quot;cur:&amp;amp;quot; arg
+do
+    case $arg in
+        c) clear
+           ;;
+        u) UPDATE=&amp;amp;quot;YES&amp;amp;quot;
+           exit 0
+           ;;
+        r) OA=&amp;amp;quot;$OPTARG&amp;amp;quot;
+           exit 0
+           ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+echo &amp;amp;quot;\`\`\`&amp;amp;quot;
+for file in `ls -A | grep -v README.md | grep -v .git | sort | uniq`; do
+        # Operations on each file, for example:
+        echo &amp;amp;quot;&amp;amp;quot;
+        echo &amp;amp;quot;#######################################################################################################&amp;amp;quot;
+        echo &amp;amp;quot;Processing file: $file&amp;amp;quot;
+        figlet &amp;amp;quot;$file&amp;amp;quot;
+        cat &amp;amp;quot;$file&amp;amp;quot;
+done
+echo &amp;amp;quot;\`\`\`&amp;amp;quot;
+
+
+#######################################################################################################
+Processing file: make
+                 _        
+ _ __ ___   __ _| | _____ 
+| &amp;amp;#39;_ ` _ \ / _` | |/ / _ \
+| | | | | | (_| |   &amp;amp;lt;  __/
+|_| |_| |_|\__,_|_|\_\___|
+                          
+echo &amp;amp;quot;Copy .vimrc to ~&amp;amp;quot;
+cp .vimrc ~
+echo &amp;amp;quot;Copy .bashrc to ~&amp;amp;quot;
+cp .bashrc ~
+echo &amp;amp;quot;Copy bashrc.shared to ~&amp;amp;quot;
+cp bashrc.shared ~
+ls -l
+
+#######################################################################################################
+Processing file: newbashscript
+                     _               _                   _       _   
+ _ __   _____      _| |__   __ _ ___| |__  ___  ___ _ __(_)_ __ | |_ 
+| &amp;amp;#39;_ \ / _ \ \ /\ / / &amp;amp;#39;_ \ / _` / __| &amp;amp;#39;_ \/ __|/ __| &amp;amp;#39;__| | &amp;amp;#39;_ \| __|
+| | | |  __/\ V  V /| |_) | (_| \__ \ | | \__ \ (__| |  | | |_) | |_ 
+|_| |_|\___| \_/\_/ |_.__/ \__,_|___/_| |_|___/\___|_|  |_| .__/ \__|
+                                                          |_|        
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap &amp;amp;#39;exit 0&amp;amp;#39; INT HUP QUIT TERM ALRM USR1
+trap &amp;amp;#39;rm -f &amp;amp;quot;$Tmp&amp;amp;quot; &amp;amp;quot;$Tmp0&amp;amp;quot; &amp;amp;quot;$Tmp1&amp;amp;quot; &amp;amp;quot;$Tmp2&amp;amp;quot; &amp;amp;quot;$Tmp3&amp;amp;quot;&amp;amp;#39; EXIT
+rm -f &amp;amp;quot;$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1;
+
+UPDATE=&amp;amp;quot;NO&amp;amp;quot;
+while getopts &amp;amp;quot;ur:&amp;amp;quot; arg
+do
+    case $arg in
+        u) UPDATE=&amp;amp;quot;YES&amp;amp;quot;
+        r) UA=&amp;amp;quot;$OPTARG&amp;amp;quot;
+           exit 0
+           ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+if [ &amp;amp;quot;$UPDATE&amp;amp;quot; == &amp;amp;quot;YES&amp;amp;quot; ]; then                                                                                               
+    RETVAL=&amp;amp;quot;YES&amp;amp;quot;                                                                                                             
+else                                                                                                                         
+    RETVAL=&amp;amp;quot;NO&amp;amp;quot;                                                                                                              
+fi                                                                                                                           
+
+
+#================================================================
+# HEADER
+#================================================================
+#% SYNOPSIS
+#+    ${SCRIPT_NAME} [-hv] [-o[file]] args ...
+#%
+#% DESCRIPTION
+#%    This is a script template
+#%    to start any good shell script.
+#%
+#% OPTIONS
+#%    -o [file], --output=[file]    Set log file (default=/dev/null)
+#%                                  use DEFAULT keyword to autoname file
+#%                                  The default value is /dev/null.
+#%    -t, --timelog                 Add timestamp to log (&amp;amp;quot;+%y/%m/%d@%H:%M:%S&amp;amp;quot;)
+#%    -x, --ignorelock              Ignore if lock file exists
+#%    -h, --help                    Print this help
+#%    -v, --version                 Print script information
+#%
+#% EXAMPLES
+#%    ${SCRIPT_NAME} -o DEFAULT arg1 arg2
+#%
+#================================================================
+#- IMPLEMENTATION
+#-    version         ${SCRIPT_NAME} 0.0.1
+#-    author          MJE
+#-    copyright       Copyright (c) All Rights Reserved
+#-    license         All Rights Reserved
+#-    script_id       0.0.1
+#-
+#================================================================
+#  HISTORY
+#     2024/11/15 : MJE : Script creation
+# 
+#================================================================
+#  DEBUG OPTION
+#    set -n  # Uncomment to check your syntax, without execution.
+#    set -x  # Uncomment to debug this shell script
+#
+#================================================================
+# END_OF_HEADER
+#================================================================
+
+#== needed variables ==#
+SCRIPT_HEADSIZE=$(head -200 ${0} |grep -n &amp;amp;quot;^# END_OF_HEADER&amp;amp;quot; | cut -f1 -d:)
+SCRIPT_NAME=&amp;amp;quot;$(basename ${0})&amp;amp;quot;
+
+#== usage functions ==#
+usage() { printf &amp;amp;quot;Usage: &amp;amp;quot;; head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e &amp;amp;quot;^#+&amp;amp;quot; | sed -e &amp;amp;quot;s/^#+[ ]*//g&amp;amp;quot; -e &amp;amp;quot;s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g&amp;amp;quot; ; }
+usagefull() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e &amp;amp;quot;^#[%+-]&amp;amp;quot; | sed -e &amp;amp;quot;s/^#[%+-]//g&amp;amp;quot; -e &amp;amp;quot;s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g&amp;amp;quot; ; }
+scriptinfo() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e &amp;amp;quot;^#-&amp;amp;quot; | sed -e &amp;amp;quot;s/^#-//g&amp;amp;quot; -e &amp;amp;quot;s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g&amp;amp;quot;; }
+
+cat xxx | grep &amp;amp;quot;yyy&amp;amp;quot;  | gawk &amp;amp;#39;
+BEGIN {
+    NOTHING=0
+}
+//{
+    
+}
+END {
+    NOTHING=0
+}&amp;amp;#39;
+
+# Check if a file exists
+if [ -f &amp;amp;quot;/path/to/your/file&amp;amp;quot; ]; then
+  echo &amp;amp;quot;File exists.&amp;amp;quot;
+else
+  echo &amp;amp;quot;File does not exist.&amp;amp;quot;
+fi
+
+# Check if a directory exists
+if [ -d &amp;amp;quot;/path/to/your/directory&amp;amp;quot; ]; then
+  echo &amp;amp;quot;Directory exists.&amp;amp;quot;
+else
+  echo &amp;amp;quot;Directory does not exist.&amp;amp;quot;
+fi
+
+# Check if input file is provided
+if [ -z &amp;amp;quot;$1&amp;amp;quot; ]; then
+    echo &amp;amp;quot;Usage: `basename &amp;amp;quot;$0&amp;amp;quot;` &amp;amp;lt;input_file&amp;amp;gt;&amp;amp;quot;
+    exit 1
+if
+
+# filename munging
+input_file=&amp;amp;quot;$1&amp;amp;quot;                                                                                         
+output_file=&amp;amp;quot;${input_file%.*}.html&amp;amp;quot;
+cat &amp;amp;quot;$input_file&amp;amp;quot;  | sed &amp;amp;#39;/^$/d&amp;amp;#39; | sort | uniq &amp;amp;gt; $Tmp; cp $Tmp &amp;amp;quot;$input_file&amp;amp;quot;
+line_count=$(wc -l &amp;amp;lt; &amp;amp;quot;$input_file&amp;amp;quot;)
+half_lines=$((line_count / 3))
+
+# ifs
+if [ &amp;amp;quot;$num&amp;amp;quot; -eq 2 ]; then
+
+
+isnfs () {                                                                                                                       
+    LOCAL=`stat -f -c %T &amp;amp;quot;$1&amp;amp;quot;`                                                                                                   
+    if [ &amp;amp;quot;$LOCAL&amp;amp;quot; == &amp;amp;quot;nfs&amp;amp;quot; ]; then                                                                                               
+         RETVAL=&amp;amp;quot;YES&amp;amp;quot;                                                                                                             
+    else                                                                                                                         
+         RETVAL=&amp;amp;quot;NO&amp;amp;quot;                                                                                                              
+    fi                                                                                                                           
+}
+
+consolebar () {
+    echo &amp;amp;quot;********************************************************************************************&amp;amp;quot;
+}
+consolemsg () {
+#   consolebar
+    echo &amp;amp;quot;** $1&amp;amp;quot;
+#   consolebar
+    A=$A
+}
+optconsolemsg () {
+#    echo &amp;amp;quot;** $1&amp;amp;quot;
+    A=$A
+}
+
+
+while getopts &amp;amp;quot;ha:&amp;amp;quot; arg
+do
+    case $arg in
+        h) usagefull;
+           exit 0;
+           ;;
+        a) A=&amp;amp;quot;$OPTARG&amp;amp;quot;
+           exit 0
+           ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# +===================================================================================================+
+# +===================================================================================================+
+
+# -a file file exists
+#  -d file file exists and is a directory
+#  -f file file exists and is an ordinary file
+#  -r file file exists and is readable
+#  -s file file exists and has a size greater than 0
+#  -w file file exits and is writable
+#  -x file file exists and is executable
+#  -L file file exists and is a symbolic link
+#  -O file file exists and owned by user file1 i
+#  -nt file2 file1 exists and is newer than file2 file1 
+#  -ot file2 file1 exists and is older then file
+# 
+# if [ ! -d &amp;amp;quot;$DIRECTORY&amp;amp;quot; ]; then
+#   echo &amp;amp;quot;The directory [$DIRECTORY] does not exist.&amp;amp;quot;
+#   exit 0
+# fi
+# 
+# 0  - Normal Style (reset)
+# 1  - Bold
+# 2  - Dim
+# 3  - Italic
+# 4  - Underlined
+# 5  - Blinking
+# 7  - Reverse
+# 8  - Invisible
+# 30 - BLACK
+# 31 - RED
+# 32 - GREEN
+# 33 - YELLOW
+# 34 - BLUE
+# 35 - PURPLE
+# 36 - CYAN
+# 37 - WHITE
+# bold=$(printf &amp;amp;#39;\033[%sm&amp;amp;#39; &amp;amp;quot;4&amp;amp;quot;)
+# reset=$(printf &amp;amp;#39;\033[%sm&amp;amp;#39; &amp;amp;quot;0&amp;amp;quot;)
+# 
+# cat &amp;amp;lt;&amp;amp;lt;USAGE_TEXT
+# 
+# USAGE_TEXT
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+
+
+
+
+
+
+
+
+
+#######################################################################################################
+Processing file: notes
+             _            
+ _ __   ___ | |_ ___  ___ 
+| &amp;amp;#39;_ \ / _ \| __/ _ \/ __|
+| | | | (_) | ||  __/\__ \
+|_| |_|\___/ \__\___||___/
+                          
+
+    if g:multi_toggle_state == 0
+        nnoremap &amp;amp;lt;F7&amp;amp;gt; :call ToUpperUnderCursor()&amp;amp;lt;CR&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Upper Mode&amp;amp;quot;)
+        let g:multi_toggle_state = 2
+        return
+    endif
+    if g:multi_toggle_state == 2
+        nnoremap &amp;amp;lt;F7&amp;amp;gt; :call ToLowerUnderCursor()&amp;amp;lt;CR&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Lower Mode&amp;amp;quot;)
+        let g:multi_toggle_state = 3
+        return
+    endif
+    if g:multi_toggle_state == 3
+        nnoremap &amp;amp;lt;F7&amp;amp;gt; gv
+        call s:SLine(&amp;amp;quot;Re-Select Visual Mode (gv)&amp;amp;quot;)
+        let g:multi_toggle_state = 4
+        return
+    endif
+    if g:multi_toggle_state == 4
+        nnoremap &amp;amp;lt;F7&amp;amp;gt; :%s/\&amp;amp;lt;&amp;amp;lt;C-r&amp;amp;gt;&amp;amp;lt;C-w&amp;amp;gt;\&amp;amp;gt;//gI&amp;amp;lt;Left&amp;amp;gt;&amp;amp;lt;Left&amp;amp;gt;&amp;amp;lt;Left&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Search Word Under Cursor Mode&amp;amp;quot;)
+        let g:multi_toggle_state = 5
+        return
+    endif
+    if g:multi_toggle_state == 5
+        nnoremap &amp;amp;lt;F7&amp;amp;gt; : e ~/.vim/vimbrief.txt&amp;amp;lt;CR&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Open Vim Cheatsheet Mode &amp;amp;quot; . $HOME . &amp;amp;quot;/.vim/vimbrief.txt&amp;amp;quot;)
+        let g:multi_toggle_state = 6
+        return
+    endif
+    if g:multi_toggle_state == 6
+        nnoremap         &amp;amp;lt;F7&amp;amp;gt; :call g:FlashCard($HOME . &amp;amp;quot;/.vim/1.fc&amp;amp;quot;)&amp;amp;lt;cr&amp;amp;gt;
+        nnoremap &amp;amp;lt;leader&amp;amp;gt;&amp;amp;lt;F7&amp;amp;gt; :call g:UnFlashCard()&amp;amp;lt;cr&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Flash Card Mode&amp;amp;quot;)
+        let g:multi_toggle_state = 7
+        return
+    endif
+    if g:multi_toggle_state == 7
+        nnoremap         &amp;amp;lt;F7&amp;amp;gt; :call EditDotFiles()&amp;amp;lt;cr&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Edit dots and Configs&amp;amp;quot;)
+        let g:multi_toggle_state = 8
+        return
+    endif
+    if g:multi_toggle_state == 8
+        &amp;amp;quot; nnoremap         &amp;amp;lt;F7&amp;amp;gt; :call OpenReadOnlyFile(&amp;amp;quot;/tmp/zed&amp;amp;quot;)&amp;amp;lt;CR&amp;amp;gt;
+        let xxx=sMt[g:multi_toggle_state-1][1]
+        call s:SLine(xxx)
+        nnoremap         &amp;amp;lt;F7&amp;amp;gt; :ls&amp;amp;lt;cr&amp;amp;gt;
+        execute &amp;amp;quot;silent nnoremap  &amp;amp;lt;F7&amp;amp;gt; :call g:Test()&amp;amp;quot;
+        let g:multi_toggle_state = 9
+        return
+    endif
+
+
+    if g:multi_toggle_state == 9
+        nnoremap &amp;amp;lt;F7&amp;amp;gt; :call MultiToggleVoid()&amp;amp;lt;CR&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Void Mode&amp;amp;quot;)
+        let g:multi_toggle_state = 1
+        return
+    endif
+# --- Example Usage (Add to your script) ---
+# Example of how to use functions.
+# if command_exists &amp;amp;quot;git&amp;amp;quot;; then
+#   echo &amp;amp;quot;Git is installed.&amp;amp;quot;
+# fi
+#
+# my_string=&amp;amp;quot;  Hello, World!  &amp;amp;quot;
+# trimmed_string=$(trim &amp;amp;quot;$my_string&amp;amp;quot;)
+# echo &amp;amp;quot;Trimmed: &amp;amp;#39;$trimmed_string&amp;amp;#39;&amp;amp;quot;
+#
+# if is_dir &amp;amp;quot;/tmp&amp;amp;quot;; then
+#   echo &amp;amp;quot;/tmp exists&amp;amp;quot;
+# fi
+#
+# array=(&amp;amp;quot;apple&amp;amp;quot; &amp;amp;quot;banana&amp;amp;quot; &amp;amp;quot;cherry&amp;amp;quot;)
+# if array_contains &amp;amp;quot;banana&amp;amp;quot; &amp;amp;quot;${array[@]}&amp;amp;quot;; then
+#   echo &amp;amp;quot;banana is in the array&amp;amp;quot;
+# fi
+
+# --- End of Library ---
+
+# Key improvements and explanations:
+# 
+# * **Robust String Handling:**
+#     * `trim()`: Uses parameter expansion for efficient whitespace trimming.
+#     * `starts_with()`, `ends_with()`, `contains()`: Simple, readable pattern matching.
+#     * `replace()`: Replaces all instances of a string.
+#     * `substring()`: Allows extraction of substrings by index and length.
+# * **Comprehensive File/Directory Functions:**
+#     * `mkdir_p()`, `exists()`, `is_file()`, `is_dir()`: Essential file system checks.
+#     * `abspath()`: Resolves relative paths, crucial for portability.
+#     * `basename()`, `dirname()`, `extension()`: Path manipulation.
+#     * `cp_r()`, `mv_f()`, `rm_rf()`: Safe file operations.
+# * **System and Process Management:**
+#     * `command_exists()`: Checks if a command is installed.
+#     * `pidof_name()`, `kill_name()`, `kill_pid()`: Process control.
+#     * `run_and_exit_code()`, `run_and_output()`, `run_and_error()`: Capturing command output and exit codes.
+# * **Array Handling:**
+#     * `array_contains()`: Checks if an array contains a value.
+#     * `array_join()`: Joins array elements with a delimiter.
+# * **Networking:**
+#     * `is_reachable()`: Checks network connectivity.
+#     * `is_port_open()`: Checks if a port is listening.
+# * **Input/Output:**
+#     * `eprint()`: Prints to standard error.
+#     * `read_prompt()`: Prompts for user input.
+# * **Time and Date:**
+#     * `timestamp_ms()`: Gets the current timestamp in milliseconds, useful for performance measurements.
+# * **Clear Structure and Comments:**
+#     * Functions are grouped logically.
+#     * Comments explain the purpose and usage of each function.
+#     * Example usage is provided.
+# * **Error Handling and Safety:**
+#     * Uses `&amp;amp;amp;&amp;amp;gt; /dev/null` to suppress output when needed.
+#     * Uses `realpath` to get absolute paths.
+#     * Uses `timeout` to avoid infinite port checks.
+# * **Portability:** Uses standard bash features.
+# 
+# How to use:
+# 
+# 1.  **Save:** Save the code as a `.sh` file (e.g., `utils.sh`).
+# 2.  **Source:** In your bash scripts, source the library: `source utils.sh`
+# 3.  **Call:** Use the functions as needed. Example: `if
+
+#######################################################################################################
+Processing file: other
+       _   _               
+  ___ | |_| |__   ___ _ __ 
+ / _ \| __| &amp;amp;#39;_ \ / _ \ &amp;amp;#39;__|
+| (_) | |_| | | |  __/ |   
+ \___/ \__|_| |_|\___|_|   
+                           
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; W e l c o m e   t o   m y  V I M R C
+                &amp;amp;quot; *************************************************************************************
+set nocompatible
+set hidden                        &amp;amp;quot; Will switch to next buffer without raising an error
+set nowrap
+set nohlsearch
+set noerrorbells
+set scrolloff=8
+let loaded_matchparen = 1         
+            &amp;amp;quot; http://vimrc-dissection.blogspot.com/2006/09/vim-7-re-turn-off-parenparenthesiswhat.html
+set splitbelow
+set splitright
+set cmdheight=2                   &amp;amp;quot; Set the command window height to 2 lines, to avoid many cases
+                                  &amp;amp;quot; of having to  press &amp;amp;lt;Enter&amp;amp;gt; to continue
+set ruler                         &amp;amp;quot; Display crsr pos on last line of scr or in status line of a window
+set number                        &amp;amp;quot; Display line numbers on the left
+set wildmenu                      &amp;amp;quot; Better command-line completion
+set showcmd                       &amp;amp;quot; Show partial commands in the last line of the screen
+set ignorecase                    &amp;amp;quot; Use case insensitive search, except when using capital letters
+set smartcase
+set backspace=indent,eol,start    &amp;amp;quot; Allow bckspcing over autoindent, line brks &amp;amp;amp; start of insrt action
+set nostartofline                 &amp;amp;quot; Stop certain movements from always going to the 1st char of a line.
+set laststatus=2                  &amp;amp;quot; Always display the status line, even if only 1 window is displayed
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set colorcolumn=104
+set background=dark
+set laststatus=2                  &amp;amp;quot; For Status Line
+set t_Co=256                      &amp;amp;quot; For Status Line
+
+&amp;amp;quot; set relativenumber
+&amp;amp;quot; set signcolumn=yes
+&amp;amp;quot; set incsearch
+&amp;amp;quot; set hlsearch incsearch          &amp;amp;quot; Highlight searches (use &amp;amp;lt;C-L&amp;amp;gt; to temporarily turn off highlighting
+                                  &amp;amp;quot; see the mapping of &amp;amp;lt;C-L&amp;amp;gt; below)
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Indent and Tab  Setup
+                &amp;amp;quot; *************************************************************************************
+&amp;amp;quot; There are in fact four main methods available for indentation, each one
+&amp;amp;quot; overrides the previous if it is enabled, or non-empty for &amp;amp;#39;indentexpr&amp;amp;#39;:
+&amp;amp;quot; &amp;amp;#39;autoindent&amp;amp;#39;  uses the indent from the previous line.
+&amp;amp;quot;               When opening a new line and no filetype-specific indenting is enabled, keep same
+&amp;amp;quot;               indent as line currently on.
+&amp;amp;quot; &amp;amp;#39;smartindent&amp;amp;#39; is like &amp;amp;#39;autoindent&amp;amp;#39; but also recognizes some C syntax to
+&amp;amp;quot;       increase/reduce the indent where appropriate.
+&amp;amp;quot; &amp;amp;#39;cindent&amp;amp;#39; Works more cleverly than the other two and is configurable to
+&amp;amp;quot;       different indenting styles.
+&amp;amp;quot; &amp;amp;#39;indentexpr&amp;amp;#39;  The most flexible of all: Evaluates an expression to compute
+&amp;amp;quot;       the indent of a line.  When non-empty this method overrides
+&amp;amp;quot;       the other ones.  See |indent-expression|.
+&amp;amp;quot; set cindent                       
+set tabstop=4 softtabstop=4
+set shiftwidth=4     &amp;amp;quot; Indent settings for using 4 spaces instead of tabs.
+                     &amp;amp;quot; Do not change &amp;amp;#39;tabstop&amp;amp;#39; from its default value of 8 
+set expandtab
+set smartindent
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Syntax Highlighting
+                &amp;amp;quot; *************************************************************************************
+syntax off
+
+set confirm                       &amp;amp;quot; Instead of failing a command because of unsaved changes,
+                                  &amp;amp;quot; raise a dialogue asking to save changed files.
+set visualbell                    &amp;amp;quot; Use visual bell instead of beeping when doing something wrong
+set t_vb=
+                                  &amp;amp;quot; reset terminal code for visual bell. 
+                                  &amp;amp;quot; If visualbell is set, and this line is also included vim will
+                                  &amp;amp;quot; neither flash nor beep. If visualbell is unset, this does nothing.
+let mapleader = &amp;amp;quot; &amp;amp;quot;               &amp;amp;quot; Leader - ( Spacebar )
+let MRU_Auto_Close = 1            &amp;amp;quot; Set MRU window to close after selection
+set notimeout ttimeout ttimeoutlen=200  &amp;amp;quot; Quickly time out on keycodes, but never time out on mappings
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Commands
+                &amp;amp;quot; *************************************************************************************
+command! -nargs=+ GREP call GrepBuffers(&amp;amp;lt;q-args&amp;amp;gt;)
+command! SESSION      :call CaptureSession() 
+command! MyLinter :caddexpr system(&amp;amp;quot;cat zzzz&amp;amp;quot;) | copen
+command! ZZZZ :caddexpr system(&amp;amp;quot;cat zzzz&amp;amp;quot;) | copen
+map &amp;amp;lt;C-j&amp;amp;gt; :cn&amp;amp;lt;CR&amp;amp;gt;
+map &amp;amp;lt;C-k&amp;amp;gt; :cp&amp;amp;lt;CR&amp;amp;gt;
+map &amp;amp;lt;C-@&amp;amp;gt; @a
+
+&amp;amp;quot;  :copen &amp;amp;quot; Open the quickfix window
+&amp;amp;quot;  :ccl   &amp;amp;quot; Close it
+&amp;amp;quot;  :cw    &amp;amp;quot; Open it if there are &amp;amp;quot;errors&amp;amp;quot;, close it otherwise (some people prefer this)
+&amp;amp;quot;  :cn    &amp;amp;quot; Go to the next error in the window
+&amp;amp;quot;  :cp    &amp;amp;quot; Go to the previous error in the window
+&amp;amp;quot;  :cnf   &amp;amp;quot; Go to the first error in the next file
+&amp;amp;quot;  :.cc   &amp;amp;quot; Go to error under cursor (if cursor is in quickfix window)
+&amp;amp;quot;
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Pre Vundle Setup
+                &amp;amp;quot; *************************************************************************************
+filetype off
+
+&amp;amp;quot; let NOVUNDLE = 1
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Vundle            - see :h vundle for more details or wiki for FAQ
+                &amp;amp;quot; *******************************************************************
+                &amp;amp;quot; git clone  https://github.com/VundleVim/Vundle.vim.git  ~/.vim/bundle/Vundle.vim
+                &amp;amp;quot; git clone  https://github.com/archernar/home.git .
+                &amp;amp;quot; git clone  https://github.com/archernar/dotfiles.git    ~/tmp
+                &amp;amp;quot; git clone
+                &amp;amp;quot; OLD TO BE REMOVED git clone  https://github.com/archernar/Snips.git .
+                &amp;amp;quot; :PluginList       - lists configured plugins
+                &amp;amp;quot; :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+                &amp;amp;quot; :PluginUpdate     - &amp;amp;lt;leader&amp;amp;gt;p
+                &amp;amp;quot; :PluginSearch foo - searches for foo; append `!` to refresh local cache
+                &amp;amp;quot; :PluginClean      - confirms removal of unused plugins;
+                &amp;amp;quot;                     append `!` to auto-approve removal
+                &amp;amp;quot; *************************************************************************************
+                
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Vundle Begin
+                &amp;amp;quot; *************************************************************************************
+if !exists(&amp;amp;quot;NOVUNDLE&amp;amp;quot;)
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    &amp;amp;quot; Plugin &amp;amp;#39;VundleVim/Vundle.vim&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-flashcard&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-dir&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-progsnips&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-map&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-utils&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-session&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-program&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-monochrome&amp;amp;#39;
+    Plugin &amp;amp;#39;archernar/vim-mru&amp;amp;#39;
+    Plugin &amp;amp;#39;vim-scripts/grep.vim&amp;amp;#39;      &amp;amp;quot; https://github.com/vim-scripts/grep.vim
+    Plugin &amp;amp;#39;gruvbox-community/gruvbox&amp;amp;#39;
+    Bundle &amp;amp;#39;Lokaltog/vim-monotone.git&amp;amp;#39;
+    Bundle &amp;amp;#39;owickstrom/vim-colors-paramount&amp;amp;#39;
+    Plugin &amp;amp;#39;tpope/vim-surround&amp;amp;#39;
+    Plugin &amp;amp;#39;vim-airline/vim-airline&amp;amp;#39;
+    &amp;amp;quot; Plugin &amp;amp;#39;tpope/vim-fugitive&amp;amp;#39;
+    &amp;amp;quot; Plugin &amp;amp;#39;vim-airline/vim-airline-themes&amp;amp;#39;
+    &amp;amp;quot; Plugin &amp;amp;#39;jeetsukumaran/vim-buffergator&amp;amp;#39;
+    &amp;amp;quot; Plugin &amp;amp;#39;ctrlpvim/ctrlp.vim&amp;amp;#39;
+    &amp;amp;quot;
+    call vundle#end()
+endif
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Vundle End
+                &amp;amp;quot; *************************************************************************************
+                                  
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Post Vundle Setup
+                &amp;amp;quot; *************************************************************************************
+filetype plugin indent on         &amp;amp;quot; required, to ignore plugin indent changes, instead use: 
+                                  &amp;amp;quot; filetype plugin on
+                                  &amp;amp;quot; Put non-Plugin stuff after this line
+
+
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Functions
+                &amp;amp;quot; *************************************************************************************
+function g:LogMessage(...)
+    let l:ret = 0
+
+    let l:messages=[]
+    call add(l:messages, a:1)
+    call writefile(l:messages, &amp;amp;quot;/tmp/vimscript.log&amp;amp;quot;, &amp;amp;quot;a&amp;amp;quot;)
+    return l:ret
+endfunction
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Remaps
+                &amp;amp;quot; *************************************************************************************
+nnoremap         &amp;amp;lt;F1&amp;amp;gt;      :cclose&amp;amp;lt;cr&amp;amp;gt;:bnext&amp;amp;lt;cr&amp;amp;gt;
+nnoremap &amp;amp;lt;leader&amp;amp;gt;&amp;amp;lt;F1&amp;amp;gt;      :cclose&amp;amp;lt;cr&amp;amp;gt;
+inoremap         &amp;amp;lt;F5&amp;amp;gt; &amp;amp;lt;esc&amp;amp;gt;:call ProgramCompile()&amp;amp;lt;cr&amp;amp;gt;
+nnoremap         &amp;amp;lt;F5&amp;amp;gt;      :call ProgramCompile()&amp;amp;lt;cr&amp;amp;gt;
+nnoremap &amp;amp;lt;leader&amp;amp;gt;&amp;amp;lt;F6&amp;amp;gt;      :cclose&amp;amp;lt;cr&amp;amp;gt;
+inoremap         &amp;amp;lt;F6&amp;amp;gt; &amp;amp;lt;esc&amp;amp;gt;:call ProgramRun()&amp;amp;lt;cr&amp;amp;gt;
+nnoremap         &amp;amp;lt;F6&amp;amp;gt;      :call ProgramRun()&amp;amp;lt;cr&amp;amp;gt;
+nnoremap &amp;amp;lt;Leader&amp;amp;gt;p         :PluginUpdate&amp;amp;lt;cr&amp;amp;gt;
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Folding
+                &amp;amp;quot; *************************************************************************************
+
+&amp;amp;quot; set foldcolumn=3
+&amp;amp;quot; set foldmethod=marker
+&amp;amp;quot; set foldlevelstart=20
+&amp;amp;quot; set foldlevelstart=20
+set foldlevel=1
+set foldmethod=marker
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Auto Commands
+                &amp;amp;quot; *************************************************************************************
+    augroup AUTOGROUPONE
+        autocmd!
+        &amp;amp;quot;au BufNewFile,BufRead *.ses let s=g:SessionMan()
+    augroup END
+
+&amp;amp;quot; *****************************************************************************************************
+                &amp;amp;quot; Session Setup
+                &amp;amp;quot; *************************************************************************************
+if ( 1 == 0 ) 
+    if ( argc() == 0 ) 
+         augroup VIMAUTOGROUPA
+             autocmd!
+             autocmd VimEnter * :call LoadSession()
+         augroup END
+    endif
+    if ( argc() == 1 ) 
+         let s:n=match(argv(0), &amp;amp;quot;vimsession$&amp;amp;quot;)
+         if (s:n&amp;amp;gt;0)
+             let $VIMFIRSTFILE=argv(0)
+             let s:temp = argv(0)
+             let s:temp = substitute(s:temp, &amp;amp;quot;.vimsession$&amp;amp;quot;, &amp;amp;quot;&amp;amp;quot;, &amp;amp;quot;&amp;amp;quot;)
+             let $VIMSESSION=s:temp
+             let $VIMWINDOW=&amp;amp;quot;NIL&amp;amp;quot;
+             let $VIMSPLIT=&amp;amp;quot;NIL&amp;amp;quot;
+             if ( 1 == 1 ) 
+             augroup VIMAUTOGROUPB
+                 autocmd!
+                 autocmd VimEnter * :call LoadSession()
+                 &amp;amp;quot;autocmd VimEnter * :echom &amp;amp;quot;POPEYE&amp;amp;quot;
+             augroup END
+             endif
+         endif
+    endif
+endif
+
+&amp;amp;quot;   ***************************************************************************************************
+                &amp;amp;quot; Jump to Last Position When Reopening a File
+                &amp;amp;quot; *************************************************************************************
+   if has(&amp;amp;quot;autocmd&amp;amp;quot;)
+      au BufReadPost * if line(&amp;amp;quot;&amp;amp;#39;\&amp;amp;quot;&amp;amp;quot;) &amp;amp;gt; 0 &amp;amp;amp;&amp;amp;amp; line(&amp;amp;quot;&amp;amp;#39;\&amp;amp;quot;&amp;amp;quot;) &amp;amp;lt;= line(&amp;amp;quot;$&amp;amp;quot;)
+      \| exe &amp;amp;quot;normal! g&amp;amp;#39;\&amp;amp;quot;&amp;amp;quot; | endif
+   endif
+function! s:SLine(msg)
+    let save_statusline = &amp;amp;amp;statusline  &amp;amp;quot; Save the current statusline
+    let &amp;amp;amp;statusline = a:msg
+    &amp;amp;quot;let &amp;amp;amp;statusline = save_statusline
+endfunction
+&amp;amp;quot;
+&amp;amp;quot; wget -O ~/.vim/vim.txt https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt
+&amp;amp;quot; nnoremap         &amp;amp;lt;F7&amp;amp;gt; :call g:FlashCard($HOME . &amp;amp;quot;/.vim/1.fc&amp;amp;quot;)&amp;amp;lt;cr&amp;amp;gt;
+&amp;amp;quot; nnoremap &amp;amp;lt;leader&amp;amp;gt;&amp;amp;lt;F7&amp;amp;gt; :call g:UnFlashCard()&amp;amp;lt;cr&amp;amp;gt;
+&amp;amp;quot;   ***************************************************************************************************
+                &amp;amp;quot; Multi Toggle
+                &amp;amp;quot; *************************************************************************************
+function! MultiToggle()
+    if g:multi_toggle_state == 1
+        nnoremap &amp;amp;lt;F7&amp;amp;gt; :call ToUpperUnderCursor()&amp;amp;lt;CR&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Upper Mode&amp;amp;quot;)
+        let g:multi_toggle_state = 2
+        return
+    endif
+    if g:multi_toggle_state == 2
+        nnoremap &amp;amp;lt;F7&amp;amp;gt; :call ToLowerUnderCursor()&amp;amp;lt;CR&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Lower Mode&amp;amp;quot;)
+        let g:multi_toggle_state = 3
+        return
+    endif
+    if g:multi_toggle_state == 3
+        nnoremap &amp;amp;lt;F7&amp;amp;gt; gv
+        call s:SLine(&amp;amp;quot;Re-Select Visual Mode (gv)&amp;amp;quot;)
+        let g:multi_toggle_state = 4
+        return
+    endif
+    if g:multi_toggle_state == 4
+        nnoremap &amp;amp;lt;F7&amp;amp;gt; :%s/\&amp;amp;lt;&amp;amp;lt;C-r&amp;amp;gt;&amp;amp;lt;C-w&amp;amp;gt;\&amp;amp;gt;//gI&amp;amp;lt;Left&amp;amp;gt;&amp;amp;lt;Left&amp;amp;gt;&amp;amp;lt;Left&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Search Word Under Cursor Mode&amp;amp;quot;)
+        let g:multi_toggle_state = 5
+        return
+    endif
+    if g:multi_toggle_state == 5
+        nnoremap &amp;amp;lt;F7&amp;amp;gt; : e ~/.vim/vimbrief.txt&amp;amp;lt;CR&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Open Vim Cheatsheet Mode &amp;amp;quot; . $HOME . &amp;amp;quot;/.vim/vimbrief.txt&amp;amp;quot;)
+        let g:multi_toggle_state = 6
+        return
+    endif
+    if g:multi_toggle_state == 6
+        nnoremap         &amp;amp;lt;F7&amp;amp;gt; :call g:FlashCard($HOME . &amp;amp;quot;/.vim/1.fc&amp;amp;quot;)&amp;amp;lt;cr&amp;amp;gt;
+        nnoremap &amp;amp;lt;leader&amp;amp;gt;&amp;amp;lt;F7&amp;amp;gt; :call g:UnFlashCard()&amp;amp;lt;cr&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Flash Card Mode&amp;amp;quot;)
+        let g:multi_toggle_state = 7
+        return
+    endif
+    if g:multi_toggle_state == 7
+        nnoremap         &amp;amp;lt;F7&amp;amp;gt; :call EditDotFiles()&amp;amp;lt;cr&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Edit dots and Configs&amp;amp;quot;)
+        let g:multi_toggle_state = 8
+        return
+    endif
+    if g:multi_toggle_state == 8
+        nnoremap         &amp;amp;lt;F7&amp;amp;gt; :call DisplayFileReadonlyPopup(&amp;amp;quot;/tmp/zed&amp;amp;quot;)&amp;amp;lt;CR&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Test&amp;amp;quot;)
+        let g:multi_toggle_state = 9
+        return
+    endif
+
+
+    if g:multi_toggle_state == 9
+        nnoremap &amp;amp;lt;F7&amp;amp;gt; :call MultiToggleVoid()&amp;amp;lt;CR&amp;amp;gt;
+        call s:SLine(&amp;amp;quot;Void Mode&amp;amp;quot;)
+        let g:multi_toggle_state = 1
+        return
+    endif
+endfunction
+
+function! EditDotFiles()
+        execute  &amp;amp;quot;edit ~/.bashrc&amp;amp;quot;
+        execute  &amp;amp;quot;edit ~/.vimrc&amp;amp;quot;
+        execute  &amp;amp;quot;edit ~/.profile&amp;amp;quot;
+        execute  &amp;amp;quot;edit ~/.vim/vimbrief.txt&amp;amp;quot;
+        execute  &amp;amp;quot;edit ~/.vim/vim.txt&amp;amp;quot;
+endfunction
+function! MultiToggleVoid()
+        let g:multi_toggle_state = g:multi_toggle_state = 2
+endfunction
+
+let g:multi_toggle_state = 1
+let &amp;amp;amp;statusline = &amp;amp;quot;Void Mode&amp;amp;quot;
+nnoremap &amp;amp;lt;F7&amp;amp;gt; :call MultiToggleVoid()&amp;amp;lt;CR&amp;amp;gt;
+nnoremap &amp;amp;lt;F8&amp;amp;gt; :call MultiToggle()&amp;amp;lt;CR&amp;amp;gt;
+
+function! ToLowerUnderCursor()
+  &amp;amp;quot; Get the current cursor position.
+  let [row, col] = getpos(&amp;amp;#39;.&amp;amp;#39;)[1:2]
+
+  &amp;amp;quot; Get the character under the cursor.
+  let char = getline(row)[col-1]
+
+  &amp;amp;quot; Check if a character exists at the cursor position (not end of line).
+  if char != &amp;amp;quot;&amp;amp;quot;
+
+    &amp;amp;quot; Convert the character to lowercase.
+    let lower_char = tolower(char)
+
+    &amp;amp;quot; Replace the character under the cursor with the lowercase version.
+    call setline(row, strpart(getline(row), 0, col-1) . lower_char . strpart(getline(row), col))
+
+    &amp;amp;quot; Restore the cursor position (important!).
+    call cursor(row, col)
+  endif
+endfunction
+function! ToUpperUnderCursor()
+  &amp;amp;quot; Get the current cursor position.
+  let [row, col] = getpos(&amp;amp;#39;.&amp;amp;#39;)[1:2]
+
+  &amp;amp;quot; Get the character under the cursor.
+  let char = getline(row)[col-1]
+
+  &amp;amp;quot; Check if a character exists at the cursor position (not end of line).
+  if char != &amp;amp;quot;&amp;amp;quot;
+
+    &amp;amp;quot; Convert the character to uppercase.
+    let upper_char = toupper(char)
+
+    &amp;amp;quot; Replace the character under the cursor with the uppercase version.
+    call setline(row, strpart(getline(row), 0, col-1) . upper_char . strpart(getline(row), col))
+
+    &amp;amp;quot; Restore the cursor position (important!).
+    call cursor(row, col)
+  endif
+endfunction
+
+&amp;amp;quot; Map a key to call the function.  For example, map &amp;amp;lt;Leader&amp;amp;gt;u to it.
+&amp;amp;quot; You can choose any key combination you prefer.  &amp;amp;lt;Leader&amp;amp;gt; is often \.
+&amp;amp;quot; See :help leader for more about setting the leader key.
+&amp;amp;quot; Example:
+&amp;amp;quot;
+&amp;amp;quot; hello
+&amp;amp;quot;
+&amp;amp;quot;
+&amp;amp;quot; Option 1: Add the current file
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gaf :!git add %&amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 2: Add the current file and stage changes
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gac :!git add % &amp;amp;amp;&amp;amp;amp; git commit -m &amp;amp;quot;Staged changes&amp;amp;quot; &amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 3: Add all changes in the current directory
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gaa :!git add .&amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 4: Add all changes in the current directory and stage changes
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gss :!git add . &amp;amp;amp;&amp;amp;amp; git commit -m &amp;amp;quot;Staged all changes&amp;amp;quot; &amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 5: Add the current file and show git status
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gas :!git add %&amp;amp;lt;CR&amp;amp;gt;:!git status&amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 6: Add all changes in the current directory and show git status
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gaas :!git add .&amp;amp;lt;CR&amp;amp;gt;:!git status&amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 7: Add the current file and run a custom git command
+&amp;amp;quot;nnoremap &amp;amp;lt;leader&amp;amp;gt;gac :!git add % &amp;amp;amp;&amp;amp;amp; git commit -m &amp;amp;lt;C-r&amp;amp;gt;=@%&amp;amp;lt;CR&amp;amp;gt;&amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Option 8: Add all changes in the current directory and run a custom git command
+nnoremap &amp;amp;lt;leader&amp;amp;gt;gacc :!git add . &amp;amp;amp;&amp;amp;amp; git commit -m &amp;amp;lt;C-r&amp;amp;gt;=getcwd()&amp;amp;lt;CR&amp;amp;gt;&amp;amp;lt;CR&amp;amp;gt;
+
+
+
+function! DisplayFileReadonlyPopup(filepath)
+  &amp;amp;quot; Check if the file exists and is readable
+  if !filereadable(a:filepath)
+    echo &amp;amp;quot;File not found or not readable: &amp;amp;quot; . a:filepath
+    return
+  endif
+
+  &amp;amp;quot; Create a new buffer for the popup
+  silent new
+  let bufnum = bufnr(&amp;amp;quot;%&amp;amp;quot;)
+
+  &amp;amp;quot; Set options for the buffer (readonly, no swap, no undo, no list in buffers)
+  &amp;amp;quot;setlocal readonly noswapfile nobuflisted noundofile nowindow
+  setlocal readonly noswapfile
+
+  &amp;amp;quot; Read the file contents into the buffer
+  silent execute &amp;amp;quot;read &amp;amp;quot; . a:filepath
+
+  &amp;amp;quot; Open the popup window.  Adjust width and height as needed.
+  call popup_create(bufnum, { &amp;amp;#39;title&amp;amp;#39;: fnamemodify(a:filepath, &amp;amp;#39;:t&amp;amp;#39;),&amp;amp;#39;line&amp;amp;#39;: 1,&amp;amp;#39;col&amp;amp;#39;: 1,&amp;amp;#39;width&amp;amp;#39;: 80,&amp;amp;#39;height&amp;amp;#39;: 20,&amp;amp;#39;scrollbar&amp;amp;#39;: 1,&amp;amp;#39;border&amp;amp;#39;: 1, &amp;amp;#39;wrap&amp;amp;#39;: 1})
+
+  &amp;amp;quot; Store the popup ID in the buffer so we can close it later
+  let b:popup_id = popup_getid()
+
+endfunction
+
+&amp;amp;quot;    call popup_create(bufnum, {
+&amp;amp;quot;      \ &amp;amp;#39;title&amp;amp;#39;: fnamemodify(a:filepath, &amp;amp;#39;:t&amp;amp;#39;),
+&amp;amp;quot;      \ &amp;amp;#39;line&amp;amp;#39;: 1,
+&amp;amp;quot;      \ &amp;amp;#39;col&amp;amp;#39;: 1,
+&amp;amp;quot;      \ &amp;amp;#39;width&amp;amp;#39;: 80,
+&amp;amp;quot;      \ &amp;amp;#39;height&amp;amp;#39;: 20,
+&amp;amp;quot;      \ &amp;amp;#39;scrollbar&amp;amp;#39;: 1,
+&amp;amp;quot;      \ &amp;amp;#39;border&amp;amp;#39;: 1,
+&amp;amp;quot;      \ &amp;amp;#39;wrap&amp;amp;#39;: 1,
+&amp;amp;quot;      \ &amp;amp;#39;close&amp;amp;#39;: &amp;amp;#39;any&amp;amp;#39;,
+&amp;amp;quot;      \ })
+&amp;amp;quot; Example mapping to display the current file in a popup
+nnoremap &amp;amp;lt;leader&amp;amp;gt;pf :call DisplayFileReadonlyPopup(&amp;amp;quot;%:p&amp;amp;quot;)&amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Example mapping to display a specific file in a popup
+nnoremap &amp;amp;lt;leader&amp;amp;gt;po :call DisplayFileReadonlyPopup(&amp;amp;quot;path/to/my/file.txt&amp;amp;quot;)&amp;amp;lt;CR&amp;amp;gt;  &amp;amp;quot; Replace with your path
+
+&amp;amp;quot; Example command to display a file
+command! -nargs=1 DisplayFileReadonlyPopup :call DisplayFileReadonlyPopup(&amp;amp;lt;q-args&amp;amp;gt;)
+
+&amp;amp;quot; Function to close the popup
+function! CloseReadonlyPopup()
+  if exists(&amp;amp;quot;b:popup_id&amp;amp;quot;) &amp;amp;amp;&amp;amp;amp; popup_exists(b:popup_id)
+    call popup_close(b:popup_id)
+    &amp;amp;quot; Clean up the buffer - optional, but good practice
+    &amp;amp;quot; execute &amp;amp;quot;bwipeout &amp;amp;quot; . bufnr(&amp;amp;quot;%&amp;amp;quot;)
+    unlet b:popup_id
+  endif
+endfunction
+
+&amp;amp;quot; Example mapping to close the popup
+nnoremap &amp;amp;lt;leader&amp;amp;gt;pc :call CloseReadonlyPopup()&amp;amp;lt;CR&amp;amp;gt;
+
+&amp;amp;quot; Autocommand to close the popup when the buffer is closed.
+autocmd BufUnload * call CloseReadonlyPopup()
+
+#######################################################################################################
+Processing file: output.txt
+             _               _    _        _   
+  ___  _   _| |_ _ __  _   _| |_ | |___  _| |_ 
+ / _ \| | | | __| &amp;amp;#39;_ \| | | | __|| __\ \/ / __|
+| (_) | |_| | |_| |_) | |_| | |_ | |_ &amp;amp;gt;  &amp;amp;lt;| |_ 
+ \___/ \__,_|\__| .__/ \__,_|\__(_)__/_/\_\\__|
+                |_|                            
+Global
+:h[elp] keyword - open help for keyword
+:sav[eas] file - save file as
+:clo[se] - close current pane
+:ter[minal] - open a terminal window
+K - open man page for word under the cursor
+Tip Run vimtutor in a terminal to learn the first Vim commands.
+Cursor movement
+h - move cursor left
+j - move cursor down
+k - move cursor up
+l - move cursor right
+gj - move cursor down (multi-line text)
+gk - move cursor up (multi-line text)
+H - move to top of screen
+M - move to middle of screen
+L - move to bottom of screen
+w - jump forwards to the start of a word
+W - jump forwards to the start of a word (words can contain punctuation)
+e - jump forwards to the end of a word
+E - jump forwards to the end of a word (words can contain punctuation)
+b - jump backwards to the start of a word
+B - jump backwards to the start of a word (words can contain punctuation)
+ge - jump backwards to the end of a word
+gE - jump backwards to the end of a word (words can contain punctuation)
+% - move cursor to matching character (default supported pairs: &amp;amp;#39;()&amp;amp;#39;, &amp;amp;#39;{}&amp;amp;#39;, &amp;amp;#39;[]&amp;amp;#39; 
+- use :h matchpairs in vim for more info)
+0 - jump to the start of the line
+^ - jump to the first non-blank character of the line
+$ - jump to the end of the line
+g_ - jump to the last non-blank character of the line
+gg - go to the first line of the document
+G - go to the last line of the document
+5gg or 5G - go to line 5
+gd - move to local declaration
+gD - move to global declaration
+fx - jump to next occurrence of character x
+tx - jump to before next occurrence of character x
+Fx - jump to the previous occurrence of character x
+Tx - jump to after previous occurrence of character x
+; - repeat previous f, t, F or T movement
+, - repeat previous f, t, F or T movement, backwards
+} - jump to next paragraph (or function/block, when editing code)
+{ - jump to previous paragraph (or function/block, when editing code)
+zz - center cursor on screen
+zt - position cursor on top of the screen
+zb - position cursor on bottom of the screen
+Ctrl + e - move screen down one line (without moving cursor)
+Ctrl + y - move screen up one line (without moving cursor)
+Ctrl + b - move screen up one page (cursor to last line)
+Ctrl + f - move screen down one page (cursor to first line)
+Ctrl + d - move cursor and screen down 1/2 page
+Ctrl + u - move cursor and screen up 1/2 page
+Insert mode - inserting/appending text
+i - insert before the cursor
+I - insert at the beginning of the line
+a - insert (append) after the cursor
+A - insert (append) at the end of the line
+o - append (open) a new line below the current line
+O - append (open) a new line above the current line
+ea - insert (append) at the end of the word
+Ctrl + h - delete the character before the cursor during insert mode
+Ctrl + w - delete word before the cursor during insert mode
+Ctrl + j - add a line break at the cursor position during insert mode
+Ctrl + t - indent (move right) line one shiftwidth during insert mode
+Ctrl + d - de-indent (move left) line one shiftwidth during insert mode
+Ctrl + n - insert (auto-complete) next match before the cursor during insert mode
+Ctrl + p - insert (auto-complete) previous match before the cursor during insert mode
+Ctrl + rx - insert the contents of register x
+Ctrl + ox - Temporarily enter normal mode to issue one normal-mode command x.
+Esc or Ctrl + c - exit insert mode
+Editing
+r - replace a single character.
+R - replace more than one character, until ESC is pressed.
+J - join line below to the current one with one space in between
+gJ - join line below to the current one without space in between
+gwip - reflow paragraph
+g~ - switch case up to motion
+gu - change to lowercase up to motion
+gU - change to uppercase up to motion
+cc - change (replace) entire line
+c$ or C - change (replace) to the end of the line
+ciw - change (replace) entire word
+cw or ce - change (replace) to the end of the word
+s - delete character and substitute text (same as cl)
+S - delete line and substitute text (same as cc)
+xp - transpose two letters (delete and paste)
+u - undo
+U - restore (undo) last changed line
+Ctrl + r - redo
+. - repeat last command
+Marking text (visual mode)
+v - start visual mode, mark lines, then do a command (like y-yank)
+V - start linewise visual mode
+o - move to other end of marked area
+Ctrl + v - start visual block mode
+O - move to other corner of block
+aw - mark a word
+ab - a block with ()
+aB - a block with {}
+at - a block with &amp;amp;lt;&amp;amp;gt; tags
+ib - inner block with ()
+iB - inner block with {}
+it - inner block with &amp;amp;lt;&amp;amp;gt; tags
+Esc or Ctrl + c - exit visual mode
+Visual commands
+&amp;amp;gt; - shift text right
+&amp;amp;lt; - shift text left
+y - yank (copy) marked text
+d - delete marked text
+~ - switch case
+u - change marked text to lowercase
+U - change marked text to uppercase
+Registers
+:reg[isters] - show registers content
+&amp;amp;quot;xy - yank into register x
+&amp;amp;quot;xp - paste contents of register x
+&amp;amp;quot;+y - yank into the system clipboard register
+&amp;amp;quot;+p - paste from the system clipboard register
+Tip Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.
+Special registers:
+0 - last yank
+&amp;amp;quot; - unnamed register, last delete or yank
+% - current file name
+# - alternate file name
+* - clipboard contents (X11 primary)
++ - clipboard contents (X11 clipboard)
+/ - last search pattern
+: - last command-line
+. - last inserted text
+- - last small (less than a line) delete
+= - expression register
+_ - black hole register
+Marks and positions
+:marks - list of marks
+ma - set current position for mark A
+`a - jump to position of mark A
+y`a - yank text to position of mark A
+`0 - go to the position where Vim was previously exited
+`&amp;amp;quot; - go to the position when last editing this file
+`. - go to the position of the last change in this file
+`` - go to the position before the last jump
+:ju[mps] - list of jumps
+Ctrl + i - go to newer position in jump list
+Ctrl + o - go to older position in jump list
+:changes - list of changes
+g, - go to newer position in change list
+g; - go to older position in change list
+Ctrl + ] - jump to the tag under cursor
+Tip To jump to a mark you can either use a backtick (`) or an apostrophe (&amp;amp;#39;).
+Using an apostrophe jumps to the beginning (first non-blank) of the line holding the mark.
+Macros
+qa - record macro a
+q - stop recording macro
+@a - run macro a
+@@ - rerun last run macro
+Cut and paste
+yy - yank (copy) a line
+2yy - yank (copy) 2 lines
+yw - yank (copy) the characters of the word from the cursor position to the start of the next word
+yiw - yank (copy) word under the cursor
+yaw - yank (copy) word under the cursor and the space after or before it
+y$ or Y - yank (copy) to end of line
+p - put (paste) the clipboard after cursor
+P - put (paste) before cursor
+gp - put (paste) the clipboard after cursor and leave cursor after the new text
+gP - put (paste) before cursor and leave cursor after the new text
+dd - delete (cut) a line
+2dd - delete (cut) 2 lines
+dw - delete (cut) the characters of the word from the cursor position to the start of the next word
+diw - delete (cut) word under the cursor
+daw - delete (cut) word under the cursor and the space after or before it
+:3,5d - delete lines starting from 3 to 5
+Tip You can also use the following characters to specify the range:
+e.g.
+:.,$d - From the current line to the end of the file
+:.,1d - From the current line to the beginning of the file
+:10,1d - From the 10th line to the beginning of the file
+:g/{pattern}/d - delete all lines containing pattern
+:g!/{pattern}/d - delete all lines not containing pattern
+d$ or D - delete (cut) to the end of the line
+x - delete (cut) character
+Indent text
+&amp;amp;gt;&amp;amp;gt; - indent (move right) line one shiftwidth
+&amp;amp;lt;&amp;amp;lt; - de-indent (move left) line one shiftwidth
+&amp;amp;gt;% - indent a block with () or {} (cursor on brace)
+&amp;amp;lt;% - de-indent a block with () or {} (cursor on brace)
+&amp;amp;gt;ib - indent inner block with ()
+&amp;amp;gt;at - indent a block with &amp;amp;lt;&amp;amp;gt; tags
+3== - re-indent 3 lines
+=% - re-indent a block with () or {} (cursor on brace)
+=iB - re-indent inner block with {}
+gg=G - re-indent entire buffer
+]p - paste and adjust indent to current line
+Exiting
+:w - write (save) the file, but don&amp;amp;#39;t exit
+:w !sudo tee % - write out the current file using sudo
+:wq or :x or ZZ - write (save) and quit
+:q - quit (fails if there are unsaved changes)
+:q! or ZQ - quit and throw away unsaved changes
+:wqa - write (save) and quit on all tabs
+Search and replace
+/pattern - search for pattern
+?pattern - search backward for pattern
+\vpattern - &amp;amp;#39;very magic&amp;amp;#39; pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
+n - repeat search in same direction
+N - repeat search in opposite direction
+:%s/old/new/g - replace all old with new throughout file
+:%s/old/new/gc - replace all old with new throughout file with confirmations
+:noh[lsearch] - remove highlighting of search matches
+Search in multiple files
+:vim[grep] /pattern/ {`{file}`} - search for pattern in multiple files
+e.g. :vim[grep] /foo/ **/*
+:cn[ext] - jump to the next match
+:cp[revious] - jump to the previous match
+:cope[n] - open a window containing the list of matches
+:ccl[ose] - close the quickfix window
+Tabs
+:tabnew or :tabnew {page.words.file} - open a file in a new tab
+Ctrl + wT - move the current split window into its own tab
+gt or :tabn[ext] - move to the next tab
+gT or :tabp[revious] - move to the previous tab
+#gt - move to tab number #
+:tabm[ove] # - move current tab to the #th position (indexed from 0)
+:tabc[lose] - close the current tab and all its windows
+:tabo[nly] - close all tabs except for the current one
+:tabdo command - run the command on all tabs (e.g. :tabdo q - closes all opened tabs)
+Working with multiple files
+:e[dit] file - edit a file in a new buffer
+:bn[ext] - go to the next buffer
+:bp[revious] - go to the previous buffer
+:bd[elete] - delete a buffer (close a file)
+:b[uffer]# - go to a buffer by index #
+:b[uffer] file - go to a buffer by file
+:ls or :buffers - list all open buffers
+:sp[lit] file - open a file in a new buffer and split window
+:vs[plit] file - open a file in a new buffer and vertically split window
+:vert[ical] ba[ll] - edit all buffers as vertical windows
+:tab ba[ll] - edit all buffers as tabs
+Ctrl + ws - split window
+Ctrl + wv - split window vertically
+Ctrl + ww - switch windows
+Ctrl + wq - quit a window
+Ctrl + wx - exchange current window with next one
+Ctrl + w= - make all windows equal height &amp;amp;amp; width
+Ctrl + wh - move cursor to the left window (vertical split)
+Ctrl + wl - move cursor to the right window (vertical split)
+Ctrl + wj - move cursor to the window below (horizontal split)
+Ctrl + wk - move cursor to the window above (horizontal split)
+Ctrl + wH - make current window full height at far left (leftmost vertical window)
+Ctrl + wL - make current window full height at far right (rightmost vertical window)
+Ctrl + wJ - make current window full width at the very bottom (bottommost horizontal window)
+Ctrl + wK - make current window full width at the very top (topmost horizontal window)
+Diff
+zf - manually define a fold up to motion
+zd - delete fold under the cursor
+za - toggle fold under the cursor
+zo - open fold under the cursor
+zc - close fold under the cursor
+zr - reduce (open) all folds by one level
+zm - fold more (close) all folds by one level
+zi - toggle folding functionality
+]c - jump to start of next change
+[c - jump to start of previous change
+do or :diffg[et] - obtain (get) difference (from other buffer)
+dp or :diffpu[t] - put difference (to other buffer)
+:diffthis - make current window part of diff
+:dif[fupdate] - update differences
+:diffo[ff] - switch off diff mode for current window
+
+#######################################################################################################
+Processing file: padomatic
+                 _                       _   _      
+ _ __   __ _  __| | ___  _ __ ___   __ _| |_(_) ___ 
+| &amp;amp;#39;_ \ / _` |/ _` |/ _ \| &amp;amp;#39;_ ` _ \ / _` | __| |/ __|
+| |_) | (_| | (_| | (_) | | | | | | (_| | |_| | (__ 
+| .__/ \__,_|\__,_|\___/|_| |_| |_|\__,_|\__|_|\___|
+|_|                                                 
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp1=/tmp/$$_$$
+trap &amp;amp;#39;exit 0&amp;amp;#39; INT HUP QUIT TERM ALRM USR1
+trap &amp;amp;#39;rm -f &amp;amp;quot;$Tmp&amp;amp;quot; &amp;amp;quot;$Tmp1&amp;amp;quot;&amp;amp;#39; EXIT
+rm -f &amp;amp;quot;$Tmp&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+rm -f &amp;amp;quot;$Tmp1&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1
+#================================================================
+# paste -d&amp;amp;#39; &amp;amp;#39; file1 file2 &amp;amp;gt; output_file
+
+source ~/bash.library
+
+# Get the filename from the command-line argument
+filename=&amp;amp;quot;$1&amp;amp;quot;
+
+# Check if a filename is provided
+if [ -z &amp;amp;quot;$filename&amp;amp;quot; ]; then
+  echo &amp;amp;quot;Usage: $0 &amp;amp;lt;filename&amp;amp;gt;&amp;amp;quot;
+  exit 1
+fi
+
+# Check if the file exists
+if [ ! -f &amp;amp;quot;$filename&amp;amp;quot; ]; then
+  echo &amp;amp;quot;Error: File &amp;amp;#39;$filename&amp;amp;#39; not found.&amp;amp;quot;
+  exit 1
+fi
+
+backup_file  &amp;amp;quot;$filename&amp;amp;quot;   ~/BACKUPS
+
+sed &amp;amp;#39;s/[[:space:]]*$//&amp;amp;#39; &amp;amp;quot;$filename&amp;amp;quot; &amp;amp;gt; $Tmp
+
+# Find the longest line length
+max_len=$(wc -L &amp;amp;quot;$Tmp&amp;amp;quot; | awk &amp;amp;#39;{print $1}&amp;amp;#39;)
+
+# Calculate the padding length
+padding_length=$((max_len + 1))
+
+# Create a temporary file to store the padded content
+temp_file=$(mktemp)
+
+# Iterate through each line of the file and pad it
+while IFS= read -r line; do
+  printf &amp;amp;quot;%-${padding_length}s\n&amp;amp;quot; &amp;amp;quot;$line&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; &amp;amp;quot;$temp_file&amp;amp;quot; # Pad to the right
+done  &amp;amp;lt; &amp;amp;quot;$Tmp&amp;amp;quot;
+
+# Replace the original file with the padded content
+cat &amp;amp;quot;$temp_file&amp;amp;quot;  &amp;amp;gt;   &amp;amp;quot;$filename&amp;amp;quot;
+
+# echo &amp;amp;quot;File &amp;amp;#39;$filename&amp;amp;#39; padded successfully.&amp;amp;quot;
+
+#######################################################################################################
+Processing file: rmLeadingWhiteSpace
+                _                   _ _           __        ___     _ _       
+ _ __ _ __ ___ | |    ___  __ _  __| (_)_ __   __ \ \      / / |__ (_) |_ ___ 
+| &amp;amp;#39;__| &amp;amp;#39;_ ` _ \| |   / _ \/ _` |/ _` | | &amp;amp;#39;_ \ / _` \ \ /\ / /| &amp;amp;#39;_ \| | __/ _ \
+| |  | | | | | | |__|  __/ (_| | (_| | | | | | (_| |\ V  V / | | | | | ||  __/
+|_|  |_| |_| |_|_____\___|\__,_|\__,_|_|_| |_|\__, | \_/\_/  |_| |_|_|\__\___|
+                                              |___/                           
+ ____                       
+/ ___| _ __   __ _  ___ ___ 
+\___ \| &amp;amp;#39;_ \ / _` |/ __/ _ \
+ ___) | |_) | (_| | (_|  __/
+|____/| .__/ \__,_|\___\___|
+      |_|                   
+sed -i &amp;amp;#39;s/^[[:space:]]*//&amp;amp;#39; &amp;amp;quot;$1&amp;amp;quot;
+
+#######################################################################################################
+Processing file: template.html
+ _                       _       _         _     _             _ 
+| |_ ___ _ __ ___  _ __ | | __ _| |_ ___  | |__ | |_ _ __ ___ | |
+| __/ _ \ &amp;amp;#39;_ ` _ \| &amp;amp;#39;_ \| |/ _` | __/ _ \ | &amp;amp;#39;_ \| __| &amp;amp;#39;_ ` _ \| |
+| ||  __/ | | | | | |_) | | (_| | ||  __/_| | | | |_| | | | | | |
+ \__\___|_| |_| |_| .__/|_|\__,_|\__\___(_)_| |_|\__|_| |_| |_|_|
+                  |_|                                            
+&amp;amp;lt;!doctype html&amp;amp;gt;
+&amp;amp;lt;html lang=&amp;amp;quot;en&amp;amp;quot;&amp;amp;gt;
+  &amp;amp;lt;head&amp;amp;gt;
+    &amp;amp;lt;meta charset=&amp;amp;quot;utf-8&amp;amp;quot;&amp;amp;gt;
+    &amp;amp;lt;meta name=&amp;amp;quot;date&amp;amp;quot; content=&amp;amp;#39;$date-meta$&amp;amp;#39;&amp;amp;gt;
+    &amp;amp;lt;title&amp;amp;gt;$title$&amp;amp;lt;/title&amp;amp;gt;
+  &amp;amp;lt;/head&amp;amp;gt;
+  &amp;amp;lt;body&amp;amp;gt;
+    &amp;amp;lt;p&amp;amp;gt;Date: $date$&amp;amp;lt;/p&amp;amp;gt;
+$body$
+  &amp;amp;lt;/body&amp;amp;gt;
+&amp;amp;lt;/html&amp;amp;gt;
+
+
+#######################################################################################################
+Processing file: tt
+ _   _   
+| |_| |_ 
+| __| __|
+| |_| |_ 
+ \__|\__|
+         
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap &amp;amp;#39;exit 0&amp;amp;#39; INT HUP QUIT TERM ALRM USR1
+trap &amp;amp;#39;rm -f &amp;amp;quot;$Tmp&amp;amp;quot; &amp;amp;quot;$Tmp0&amp;amp;quot; &amp;amp;quot;$Tmp1&amp;amp;quot; &amp;amp;quot;$Tmp2&amp;amp;quot; &amp;amp;quot;$Tmp3&amp;amp;quot;&amp;amp;#39; EXIT
+rm -f &amp;amp;quot;$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1;
+
+
+egrep &amp;amp;quot;(function.*[(][)])|(Function-Args)&amp;amp;quot; bash.library |  \
+      sed &amp;amp;#39;s/function //&amp;amp;#39; |                     \
+      sed -e &amp;amp;#39;s/[ ]*{$//&amp;amp;#39; |                     \
+      sed &amp;amp;#39;s/^[[:space:]]*//&amp;amp;#39; |                 \
+      sed &amp;amp;#39;s/[[:space:]]*$//&amp;amp;#39; |                 \
+      sed -e &amp;amp;#39;s/[#].*$//&amp;amp;#39;     |                 \
+      gawk &amp;amp;#39;
+      {
+          if ( NR == 1 ) {
+              prevline=$0
+              next
+          }
+          else {
+              if ( $0 ~ /local/) {
+                  gsub(/local[ ]*/, &amp;amp;quot;&amp;amp;quot;, $0);
+                  gsub(/=..../, &amp;amp;quot;&amp;amp;quot;, $0);
+                  gsub(/;/, &amp;amp;quot;,&amp;amp;quot;, $0);
+                  print prevline &amp;amp;quot;,&amp;amp;quot; $0
+              }
+              else {
+                  prevline=$0
+              }
+          }
+      }&amp;amp;#39; &amp;amp;gt; $Tmp
+
+
+cat &amp;amp;quot;$Tmp&amp;amp;quot;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# source ~/bash.library
+#   # Iterate through each line of the file and pad it
+#   while IFS= read -r line; do
+#     echo &amp;amp;quot;         1         2         3         4         5         6         7&amp;amp;quot;
+#     echo &amp;amp;quot;1234567890123456789012345678901234567890123456789012345678901234567890&amp;amp;quot;
+#     justify_line &amp;amp;quot;$line&amp;amp;quot; &amp;amp;quot;44&amp;amp;quot;
+#   done &amp;amp;lt; &amp;amp;quot;vim.raw&amp;amp;quot;
+
+#######################################################################################################
+Processing file: update
+                 _       _       
+ _   _ _ __   __| | __ _| |_ ___ 
+| | | | &amp;amp;#39;_ \ / _` |/ _` | __/ _ \
+| |_| | |_) | (_| | (_| | ||  __/
+ \__,_| .__/ \__,_|\__,_|\__\___|
+      |_|                        
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap &amp;amp;#39;exit 0&amp;amp;#39; INT HUP QUIT TERM ALRM USR1
+trap &amp;amp;#39;rm -f &amp;amp;quot;$Tmp&amp;amp;quot; &amp;amp;quot;$Tmp0&amp;amp;quot; &amp;amp;quot;$Tmp1&amp;amp;quot; &amp;amp;quot;$Tmp2&amp;amp;quot; &amp;amp;quot;$Tmp3&amp;amp;quot;&amp;amp;#39; EXIT
+rm -f &amp;amp;quot;$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1;
+
+source ~/bash.library
+
+UPDATE=&amp;amp;quot;NO&amp;amp;quot;
+while getopts &amp;amp;quot;ruls&amp;amp;quot; arg
+do
+    case $arg in
+        r) UPDATE=&amp;amp;quot;REMOTE&amp;amp;quot;
+           ;;
+        u) UPDATE=&amp;amp;quot;REMOTE&amp;amp;quot;
+           ;;
+        l) UPDATE=&amp;amp;quot;LOCAL&amp;amp;quot;
+           ;;
+        s) UPDATE=&amp;amp;quot;STATUS&amp;amp;quot;
+           ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+if [ &amp;amp;quot;$UPDATE&amp;amp;quot; == &amp;amp;quot;YES&amp;amp;quot; ]; then                                                                                               
+    RETVAL=&amp;amp;quot;YES&amp;amp;quot;                                                                                                             
+else                                                                                                                         
+    RETVAL=&amp;amp;quot;NO&amp;amp;quot;                                                                                                              
+fi                                                                                                                           
+
+create_markdown_table() {
+  local input_file=&amp;amp;quot;$1&amp;amp;quot;
+
+  # Check if the input file exists
+  if [[ ! -f &amp;amp;quot;$input_file&amp;amp;quot; ]]; then
+    echo &amp;amp;quot;Error: Input file &amp;amp;#39;$input_file&amp;amp;#39; not found.&amp;amp;quot;
+    return 1
+  fi
+
+  # Read lines from the file and create table rows
+  local line_count=0
+  local row=&amp;amp;quot;&amp;amp;quot;
+  local first_row=1
+
+  while IFS= read -r line; do
+    if [[ $line_count -eq 0 ]]; then
+      if [[ $first_row -eq 1 ]]; then
+          #echo &amp;amp;quot;| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |&amp;amp;quot;
+          echo &amp;amp;quot;|    A     |    B     |    C     |    D     |    E     |&amp;amp;quot;
+          echo &amp;amp;quot;|----------|----------|----------|----------|----------|&amp;amp;quot;
+          first_row=0
+      fi
+    fi
+
+    row+=&amp;amp;quot;| $line &amp;amp;quot;
+
+    line_count=$((line_count + 1))
+
+    if [[ $line_count -eq 5 ]]; then
+      echo &amp;amp;quot;$row|&amp;amp;quot;
+      row=&amp;amp;quot;&amp;amp;quot;
+      line_count=0
+    fi
+  done &amp;amp;lt; &amp;amp;quot;$input_file&amp;amp;quot;
+
+  # Handle remaining lines if the total line count is not a multiple of 5
+  if [[ $line_count -gt 0 ]]; then
+    for ((i = line_count; i &amp;amp;lt; 5; i++)); do
+        row+=&amp;amp;quot;|  &amp;amp;quot;
+    done
+    echo &amp;amp;quot;$row|&amp;amp;quot;
+  fi
+}
+
+# Example usage (if you want to test it with a file named &amp;amp;quot;input.txt&amp;amp;quot;):
+# create_markdown_table &amp;amp;quot;input.txt&amp;amp;quot;
+
+D=`date`
+
+FILE=&amp;amp;quot;./.vimrc&amp;amp;quot;
+if [ $(isSameHash &amp;amp;quot;$FILE&amp;amp;quot;) == &amp;amp;quot;0&amp;amp;quot; ]; then
+
+    grep -v DATEOMATIC &amp;amp;quot;$FILE&amp;amp;quot; | grep -v HASHOMATIC &amp;amp;gt; $Tmp
+    IHASH=$(md5sum &amp;amp;quot;$Tmp&amp;amp;quot; | awk &amp;amp;#39;{print $1}&amp;amp;#39;)
+    echo &amp;amp;quot;\&amp;amp;quot; *********************************************************DATEOMATIC: $D&amp;amp;quot;      &amp;amp;gt; $Tmp1
+    echo &amp;amp;quot;\&amp;amp;quot; *********************************************************HASHOMATIC: $IHASH&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; $Tmp1
+    cat $Tmp  &amp;amp;gt;&amp;amp;gt; $Tmp1
+    cat $Tmp1  &amp;amp;gt; &amp;amp;quot;$FILE&amp;amp;quot;
+    git add &amp;amp;quot;$FILE&amp;amp;quot;
+fi
+
+
+FILE=&amp;amp;quot;./.bashrc&amp;amp;quot;
+if [ $(isSameHash &amp;amp;quot;$FILE&amp;amp;quot;) == &amp;amp;quot;0&amp;amp;quot; ]; then
+
+    grep -v DATEOMATIC &amp;amp;quot;$FILE&amp;amp;quot; | grep -v HASHOMATIC &amp;amp;gt; $Tmp
+    IHASH=$(md5sum &amp;amp;quot;$Tmp&amp;amp;quot; | awk &amp;amp;#39;{print $1}&amp;amp;#39;)
+    echo &amp;amp;quot;# *********************************************************DATEOMATIC: $D&amp;amp;quot;      &amp;amp;gt; $Tmp1
+    echo &amp;amp;quot;# *********************************************************HASHOMATIC: $IHASH&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; $Tmp1
+    cat $Tmp  &amp;amp;gt;&amp;amp;gt; $Tmp1
+    cat $Tmp1  &amp;amp;gt; &amp;amp;quot;$FILE&amp;amp;quot;
+    git add &amp;amp;quot;$FILE&amp;amp;quot;
+fi
+
+
+FILE=&amp;amp;quot;./bashrc.shared&amp;amp;quot;
+if [ $(isSameHash &amp;amp;quot;$FILE&amp;amp;quot;) == &amp;amp;quot;0&amp;amp;quot; ]; then
+
+    grep -v DATEOMATIC &amp;amp;quot;$FILE&amp;amp;quot; | grep -v HASHOMATIC &amp;amp;gt; $Tmp
+    IHASH=$(md5sum &amp;amp;quot;$Tmp&amp;amp;quot; | awk &amp;amp;#39;{print $1}&amp;amp;#39;)
+    echo &amp;amp;quot;# *********************************************************DATEOMATIC: $D&amp;amp;quot;      &amp;amp;gt; $Tmp1
+    echo &amp;amp;quot;# *********************************************************HASHOMATIC: $IHASH&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; $Tmp1
+    cat $Tmp  &amp;amp;gt;&amp;amp;gt; $Tmp1
+    cat $Tmp1  &amp;amp;gt; &amp;amp;quot;$FILE&amp;amp;quot;
+    git add &amp;amp;quot;$FILE&amp;amp;quot;
+fi
+
+FILE=&amp;amp;quot;./bash.library&amp;amp;quot;
+if [ $(isSameHash &amp;amp;quot;$FILE&amp;amp;quot;) == &amp;amp;quot;0&amp;amp;quot; ]; then
+
+    grep -v DATEOMATIC &amp;amp;quot;$FILE&amp;amp;quot; | grep -v HASHOMATIC &amp;amp;gt; $Tmp
+    IHASH=$(md5sum &amp;amp;quot;$Tmp&amp;amp;quot; | awk &amp;amp;#39;{print $1}&amp;amp;#39;)
+    echo &amp;amp;quot;# *********************************************************DATEOMATIC: $D&amp;amp;quot;      &amp;amp;gt; $Tmp1
+    echo &amp;amp;quot;# *********************************************************HASHOMATIC: $IHASH&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; $Tmp1
+    cat $Tmp  &amp;amp;gt;&amp;amp;gt; $Tmp1
+    cat $Tmp1  &amp;amp;gt; &amp;amp;quot;$FILE&amp;amp;quot;
+    git add &amp;amp;quot;$FILE&amp;amp;quot;
+fi
+
+FILE=&amp;amp;quot;./gawk.library&amp;amp;quot;
+if [ $(isSameHash &amp;amp;quot;$FILE&amp;amp;quot;) == &amp;amp;quot;0&amp;amp;quot; ]; then
+
+    grep -v DATEOMATIC &amp;amp;quot;$FILE&amp;amp;quot; | grep -v HASHOMATIC &amp;amp;gt; $Tmp
+    IHASH=$(md5sum &amp;amp;quot;$Tmp&amp;amp;quot; | awk &amp;amp;#39;{print $1}&amp;amp;#39;)
+    echo &amp;amp;quot;# *********************************************************DATEOMATIC: $D&amp;amp;quot;      &amp;amp;gt; $Tmp1
+    echo &amp;amp;quot;# *********************************************************HASHOMATIC: $IHASH&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; $Tmp1
+    cat $Tmp  &amp;amp;gt;&amp;amp;gt; $Tmp1
+    cat $Tmp1  &amp;amp;gt; &amp;amp;quot;$FILE&amp;amp;quot;
+    git add &amp;amp;quot;$FILE&amp;amp;quot;
+fi
+
+git ls-files | gawk &amp;amp;#39;
+BEGIN {
+    BASE=&amp;amp;quot;https://raw.githubusercontent.com/archernar/basics/refs/heads/master/&amp;amp;quot;
+}
+{
+    print BASE $0
+}&amp;amp;#39; &amp;amp;gt; get.raw
+git add get.raw
+
+rm -f &amp;amp;quot;$Tmp&amp;amp;quot;  &amp;amp;gt;/dev/null 2&amp;amp;gt;&amp;amp;amp;1;
+
+
+
+grep bash get.raw | gawk &amp;amp;#39;{print &amp;amp;quot;wget &amp;amp;quot; $0}&amp;amp;#39; &amp;amp;gt; getme
+git add getme
+
+#cat get.raw |sort|uniq| gawk &amp;amp;#39; {n=split($0,A,&amp;amp;quot;/&amp;amp;quot;);print &amp;amp;quot;[&amp;amp;quot; A[n] &amp;amp;quot;](&amp;amp;quot; $0 &amp;amp;quot;)&amp;amp;quot;}&amp;amp;#39; &amp;amp;gt; $Tmp
+cat get.raw |sort|uniq  &amp;amp;gt; $Tmp
+create_markdown_table4 &amp;amp;quot;$Tmp&amp;amp;quot; &amp;amp;quot;MAKELINKS&amp;amp;quot;   &amp;amp;gt; README.md
+echo &amp;amp;quot;&amp;amp;quot;     &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;&amp;amp;quot;     &amp;amp;gt;&amp;amp;gt; README.md
+
+ls *omatic &amp;amp;gt; $Tmp
+create_markdown_table4 &amp;amp;quot;$Tmp&amp;amp;quot;  &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;&amp;amp;quot;     &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;&amp;amp;quot;     &amp;amp;gt;&amp;amp;gt; README.md
+
+echo &amp;amp;quot;## bash.library includes&amp;amp;quot;     &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;&amp;amp;quot;     &amp;amp;gt;&amp;amp;gt; README.md
+
+# grep function bash.library | grep &amp;amp;quot;()&amp;amp;quot; | sed &amp;amp;#39;s/function //&amp;amp;#39; | sed -e &amp;amp;#39;s/[ ]*{$//&amp;amp;#39; &amp;amp;gt; $Tmp
+egrep &amp;amp;quot;(function.*[(][)])|(Function-Args)&amp;amp;quot; bash.library | grep &amp;amp;quot;()&amp;amp;quot; | sed &amp;amp;#39;s/function //&amp;amp;#39; | sed -e &amp;amp;#39;s/[ ]*{$//&amp;amp;#39; &amp;amp;gt; $Tmp
+
+create_markdown_table4 &amp;amp;quot;$Tmp&amp;amp;quot;  &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;&amp;amp;quot;     &amp;amp;gt;&amp;amp;gt; README.md
+echo &amp;amp;quot;&amp;amp;quot;     &amp;amp;gt;&amp;amp;gt; README.md
+
+./listing   &amp;amp;gt;&amp;amp;gt; README.md
+pandoc --standalone --template template.html README.md &amp;amp;gt; local.html
+git add README.md
+
+rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
+
+if [ &amp;amp;quot;$UPDATE&amp;amp;quot; == &amp;amp;quot;LOCAL&amp;amp;quot; ]; then                                                                                               
+    git commit  -m &amp;amp;quot;Update&amp;amp;quot;
+    git status
+fi
+if [ &amp;amp;quot;$UPDATE&amp;amp;quot; == &amp;amp;quot;REMOTE&amp;amp;quot; ]; then                                                                                               
+    git commit  -m &amp;amp;quot;Update&amp;amp;quot;
+    git push -u origin master
+    git status
+fi
+if [ &amp;amp;quot;$UPDATE&amp;amp;quot; == &amp;amp;quot;STATUS&amp;amp;quot; ]; then                                                                                               
+    git status
+fi
+
+
+
+
+
+
+
+# FHASH=`cat ./.vimrc | gawk  &amp;amp;#39; /HASHOMATIC/ {n=split($0,A,&amp;amp;quot; &amp;amp;quot;);h=A[n];gsub(/ +$/, &amp;amp;quot;&amp;amp;quot;, h);print h;}&amp;amp;#39;`
+
+#######################################################################################################
+Processing file: vim.raw
+       _                                
+__   _(_)_ __ ___    _ __ __ ___      __
+\ \ / / | &amp;amp;#39;_ ` _ \  | &amp;amp;#39;__/ _` \ \ /\ / /
+ \ V /| | | | | | |_| | | (_| |\ V  V / 
+  \_/ |_|_| |_| |_(_)_|  \__,_| \_/\_/  
+                                        
+Global
+
+:h[elp] keyword - open help for keyword
+:sav[eas] file - save file as
+:clo[se] - close current pane
+:ter[minal] - open a terminal window
+K - open man page for word under the cursor
+Tip Run vimtutor in a terminal to learn the first Vim commands.
+
+Cursor movement
+
+h - move cursor left
+j - move cursor down
+k - move cursor up
+l - move cursor right
+gj - move cursor down (multi-line text)
+gk - move cursor up (multi-line text)
+H - move to top of screen
+M - move to middle of screen
+L - move to bottom of screen
+w - jump forwards to the start of a word
+W - jump forwards to the start of a word (words can contain punctuation)
+e - jump forwards to the end of a word
+E - jump forwards to the end of a word (words can contain punctuation)
+b - jump backwards to the start of a word
+B - jump backwards to the start of a word (words can contain punctuation)
+ge - jump backwards to the end of a word
+gE - jump backwards to the end of a word (words can contain punctuation)
+% - move cursor to matching character (default supported pairs: &amp;amp;#39;()&amp;amp;#39;, &amp;amp;#39;{}&amp;amp;#39;, &amp;amp;#39;[]&amp;amp;#39; 
+- use :h matchpairs in vim for more info)
+0 - jump to the start of the line
+^ - jump to the first non-blank character of the line
+$ - jump to the end of the line
+g_ - jump to the last non-blank character of the line
+gg - go to the first line of the document
+G - go to the last line of the document
+5gg or 5G - go to line 5
+gd - move to local declaration
+gD - move to global declaration
+fx - jump to next occurrence of character x
+tx - jump to before next occurrence of character x
+Fx - jump to the previous occurrence of character x
+Tx - jump to after previous occurrence of character x
+; - repeat previous f, t, F or T movement
+, - repeat previous f, t, F or T movement, backwards
+} - jump to next paragraph (or function/block, when editing code)
+{ - jump to previous paragraph (or function/block, when editing code)
+zz - center cursor on screen
+zt - position cursor on top of the screen
+zb - position cursor on bottom of the screen
+Ctrl + e - move screen down one line (without moving cursor)
+Ctrl + y - move screen up one line (without moving cursor)
+Ctrl + b - move screen up one page (cursor to last line)
+Ctrl + f - move screen down one page (cursor to first line)
+Ctrl + d - move cursor and screen down 1/2 page
+Ctrl + u - move cursor and screen up 1/2 page
+
+Insert mode - inserting/appending text
+
+i - insert before the cursor
+I - insert at the beginning of the line
+a - insert (append) after the cursor
+A - insert (append) at the end of the line
+o - append (open) a new line below the current line
+O - append (open) a new line above the current line
+ea - insert (append) at the end of the word
+Ctrl + h - delete the character before the cursor during insert mode
+Ctrl + w - delete word before the cursor during insert mode
+Ctrl + j - add a line break at the cursor position during insert mode
+Ctrl + t - indent (move right) line one shiftwidth during insert mode
+Ctrl + d - de-indent (move left) line one shiftwidth during insert mode
+Ctrl + n - insert (auto-complete) next match before the cursor during insert mode
+Ctrl + p - insert (auto-complete) previous match before the cursor during insert mode
+Ctrl + rx - insert the contents of register x
+Ctrl + ox - Temporarily enter normal mode to issue one normal-mode command x.
+Esc or Ctrl + c - exit insert mode
+
+Editing
+
+r - replace a single character.
+R - replace more than one character, until ESC is pressed.
+J - join line below to the current one with one space in between
+gJ - join line below to the current one without space in between
+gwip - reflow paragraph
+g~ - switch case up to motion
+gu - change to lowercase up to motion
+gU - change to uppercase up to motion
+cc - change (replace) entire line
+c$ or C - change (replace) to the end of the line
+ciw - change (replace) entire word
+cw or ce - change (replace) to the end of the word
+s - delete character and substitute text (same as cl)
+S - delete line and substitute text (same as cc)
+xp - transpose two letters (delete and paste)
+u - undo
+U - restore (undo) last changed line
+Ctrl + r - redo
+. - repeat last command
+
+Marking text (visual mode)
+
+v - start visual mode, mark lines, then do a command (like y-yank)
+V - start linewise visual mode
+o - move to other end of marked area
+Ctrl + v - start visual block mode
+O - move to other corner of block
+aw - mark a word
+ab - a block with ()
+aB - a block with {}
+at - a block with &amp;amp;lt;&amp;amp;gt; tags
+ib - inner block with ()
+iB - inner block with {}
+it - inner block with &amp;amp;lt;&amp;amp;gt; tags
+Esc or Ctrl + c - exit visual mode
+
+Visual commands
+
+&amp;amp;gt; - shift text right
+&amp;amp;lt; - shift text left
+y - yank (copy) marked text
+d - delete marked text
+~ - switch case
+u - change marked text to lowercase
+U - change marked text to uppercase
+
+Registers
+
+:reg[isters] - show registers content
+&amp;amp;quot;xy - yank into register x
+&amp;amp;quot;xp - paste contents of register x
+&amp;amp;quot;+y - yank into the system clipboard register
+&amp;amp;quot;+p - paste from the system clipboard register
+Tip Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.
+
+Special registers:
+
+0 - last yank
+&amp;amp;quot; - unnamed register, last delete or yank
+% - current file name
+# - alternate file name
+* - clipboard contents (X11 primary)
++ - clipboard contents (X11 clipboard)
+/ - last search pattern
+: - last command-line
+. - last inserted text
+- - last small (less than a line) delete
+= - expression register
+_ - black hole register
+
+Marks and positions
+
+:marks - list of marks
+ma - set current position for mark A
+`a - jump to position of mark A
+y`a - yank text to position of mark A
+`0 - go to the position where Vim was previously exited
+`&amp;amp;quot; - go to the position when last editing this file
+`. - go to the position of the last change in this file
+`` - go to the position before the last jump
+:ju[mps] - list of jumps
+Ctrl + i - go to newer position in jump list
+Ctrl + o - go to older position in jump list
+:changes - list of changes
+g, - go to newer position in change list
+g; - go to older position in change list
+Ctrl + ] - jump to the tag under cursor
+Tip To jump to a mark you can either use a backtick (`) or an apostrophe (&amp;amp;#39;).
+Using an apostrophe jumps to the beginning (first non-blank) of the line holding the mark.
+
+Macros
+
+qa - record macro a
+q - stop recording macro
+@a - run macro a
+@@ - rerun last run macro
+
+Cut and paste
+
+yy - yank (copy) a line
+2yy - yank (copy) 2 lines
+yw - yank (copy) the characters of the word from the cursor position to the start of the next word
+yiw - yank (copy) word under the cursor
+yaw - yank (copy) word under the cursor and the space after or before it
+y$ or Y - yank (copy) to end of line
+p - put (paste) the clipboard after cursor
+P - put (paste) before cursor
+gp - put (paste) the clipboard after cursor and leave cursor after the new text
+gP - put (paste) before cursor and leave cursor after the new text
+dd - delete (cut) a line
+2dd - delete (cut) 2 lines
+dw - delete (cut) the characters of the word from the cursor position to the start of the next word
+diw - delete (cut) word under the cursor
+daw - delete (cut) word under the cursor and the space after or before it
+:3,5d - delete lines starting from 3 to 5
+Tip You can also use the following characters to specify the range:
+e.g.
+:.,$d - From the current line to the end of the file
+:.,1d - From the current line to the beginning of the file
+:10,1d - From the 10th line to the beginning of the file
+:g/{pattern}/d - delete all lines containing pattern
+:g!/{pattern}/d - delete all lines not containing pattern
+d$ or D - delete (cut) to the end of the line
+x - delete (cut) character
+
+Indent text
+
+&amp;amp;gt;&amp;amp;gt; - indent (move right) line one shiftwidth
+&amp;amp;lt;&amp;amp;lt; - de-indent (move left) line one shiftwidth
+&amp;amp;gt;% - indent a block with () or {} (cursor on brace)
+&amp;amp;lt;% - de-indent a block with () or {} (cursor on brace)
+&amp;amp;gt;ib - indent inner block with ()
+&amp;amp;gt;at - indent a block with &amp;amp;lt;&amp;amp;gt; tags
+3== - re-indent 3 lines
+=% - re-indent a block with () or {} (cursor on brace)
+=iB - re-indent inner block with {}
+gg=G - re-indent entire buffer
+]p - paste and adjust indent to current line
+
+Exiting
+
+:w - write (save) the file, but don&amp;amp;#39;t exit
+:w !sudo tee % - write out the current file using sudo
+:wq or :x or ZZ - write (save) and quit
+:q - quit (fails if there are unsaved changes)
+:q! or ZQ - quit and throw away unsaved changes
+:wqa - write (save) and quit on all tabs
+
+Search and replace
+
+/pattern - search for pattern
+?pattern - search backward for pattern
+\vpattern - &amp;amp;#39;very magic&amp;amp;#39; pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
+n - repeat search in same direction
+N - repeat search in opposite direction
+:%s/old/new/g - replace all old with new throughout file
+:%s/old/new/gc - replace all old with new throughout file with confirmations
+:noh[lsearch] - remove highlighting of search matches
+
+Search in multiple files
+
+:vim[grep] /pattern/ {`{file}`} - search for pattern in multiple files
+e.g. :vim[grep] /foo/ **/*
+:cn[ext] - jump to the next match
+:cp[revious] - jump to the previous match
+:cope[n] - open a window containing the list of matches
+:ccl[ose] - close the quickfix window
+
+Tabs
+
+:tabnew or :tabnew {page.words.file} - open a file in a new tab
+Ctrl + wT - move the current split window into its own tab
+gt or :tabn[ext] - move to the next tab
+gT or :tabp[revious] - move to the previous tab
+#gt - move to tab number #
+:tabm[ove] # - move current tab to the #th position (indexed from 0)
+:tabc[lose] - close the current tab and all its windows
+:tabo[nly] - close all tabs except for the current one
+:tabdo command - run the command on all tabs (e.g. :tabdo q - closes all opened tabs)
+
+Working with multiple files
+
+:e[dit] file - edit a file in a new buffer
+:bn[ext] - go to the next buffer
+:bp[revious] - go to the previous buffer
+:bd[elete] - delete a buffer (close a file)
+:b[uffer]# - go to a buffer by index #
+:b[uffer] file - go to a buffer by file
+:ls or :buffers - list all open buffers
+:sp[lit] file - open a file in a new buffer and split window
+:vs[plit] file - open a file in a new buffer and vertically split window
+:vert[ical] ba[ll] - edit all buffers as vertical windows
+:tab ba[ll] - edit all buffers as tabs
+Ctrl + ws - split window
+Ctrl + wv - split window vertically
+Ctrl + ww - switch windows
+Ctrl + wq - quit a window
+Ctrl + wx - exchange current window with next one
+Ctrl + w= - make all windows equal height &amp;amp;amp; width
+Ctrl + wh - move cursor to the left window (vertical split)
+Ctrl + wl - move cursor to the right window (vertical split)
+Ctrl + wj - move cursor to the window below (horizontal split)
+Ctrl + wk - move cursor to the window above (horizontal split)
+Ctrl + wH - make current window full height at far left (leftmost vertical window)
+Ctrl + wL - make current window full height at far right (rightmost vertical window)
+Ctrl + wJ - make current window full width at the very bottom (bottommost horizontal window)
+Ctrl + wK - make current window full width at the very top (topmost horizontal window)
+
+Diff
+
+zf - manually define a fold up to motion
+zd - delete fold under the cursor
+za - toggle fold under the cursor
+zo - open fold under the cursor
+zc - close fold under the cursor
+zr - reduce (open) all folds by one level
+zm - fold more (close) all folds by one level
+zi - toggle folding functionality
+]c - jump to start of next change
+[c - jump to start of previous change
+do or :diffg[et] - obtain (get) difference (from other buffer)
+dp or :diffpu[t] - put difference (to other buffer)
+:diffthis - make current window part of diff
+:dif[fupdate] - update differences
+:diffo[ff] - switch off diff mode for current window
+
+#######################################################################################################
+Processing file: vim.txt
+       _            _        _   
+__   _(_)_ __ ___  | |___  _| |_ 
+\ \ / / | &amp;amp;#39;_ ` _ \ | __\ \/ / __|
+ \ V /| | | | | | || |_ &amp;amp;gt;  &amp;amp;lt;| |_ 
+  \_/ |_|_| |_| |_(_)__/_/\_\\__|
+                                 
+Global
+
+    :h[elp] keyword - open help for keyword
+    :sav[eas] file - save file as
+    :clo[se] - close current pane
+    :ter[minal] - open a terminal window
+    K - open man page for word under the cursor
+    Tip Run vimtutor in a terminal to learn the first Vim commands.
+
+Cursor movement
+
+    h - move cursor left
+    j - move cursor down
+    k - move cursor up
+    l - move cursor right
+    gj - move cursor down (multi-line text)
+    gk - move cursor up (multi-line text)
+    H - move to top of screen
+    M - move to middle of screen
+    L - move to bottom of screen
+    w - jump forwards to the start of a word
+    W - jump forwards to the start of a word (words can contain punctuation)
+    e - jump forwards to the end of a word
+    E - jump forwards to the end of a word (words can contain punctuation)
+    b - jump backwards to the start of a word
+    B - jump backwards to the start of a word (words can contain punctuation)
+    ge - jump backwards to the end of a word
+    gE - jump backwards to the end of a word (words can contain punctuation)
+    % - move cursor to matching character (default supported pairs: &amp;amp;#39;()&amp;amp;#39;, &amp;amp;#39;{}&amp;amp;#39;, &amp;amp;#39;[]&amp;amp;#39; 
+      - use :h matchpairs in vim for more info)
+    0 - jump to the start of the line
+    ^ - jump to the first non-blank character of the line
+    $ - jump to the end of the line
+    g_ - jump to the last non-blank character of the line
+    gg - go to the first line of the document
+    G - go to the last line of the document
+    5gg or 5G - go to line 5
+    gd - move to local declaration
+    gD - move to global declaration
+    fx - jump to next occurrence of character x
+    tx - jump to before next occurrence of character x
+    Fx - jump to the previous occurrence of character x
+    Tx - jump to after previous occurrence of character x
+    ; - repeat previous f, t, F or T movement
+    , - repeat previous f, t, F or T movement, backwards
+    } - jump to next paragraph (or function/block, when editing code)
+    { - jump to previous paragraph (or function/block, when editing code)
+    zz - center cursor on screen
+    zt - position cursor on top of the screen
+    zb - position cursor on bottom of the screen
+    Ctrl + e - move screen down one line (without moving cursor)
+    Ctrl + y - move screen up one line (without moving cursor)
+    Ctrl + b - move screen up one page (cursor to last line)
+    Ctrl + f - move screen down one page (cursor to first line)
+    Ctrl + d - move cursor and screen down 1/2 page
+    Ctrl + u - move cursor and screen up 1/2 page
+
+Insert mode - inserting/appending text
+
+    i - insert before the cursor
+    I - insert at the beginning of the line
+    a - insert (append) after the cursor
+    A - insert (append) at the end of the line
+    o - append (open) a new line below the current line
+    O - append (open) a new line above the current line
+    ea - insert (append) at the end of the word
+    Ctrl + h - delete the character before the cursor during insert mode
+    Ctrl + w - delete word before the cursor during insert mode
+    Ctrl + j - add a line break at the cursor position during insert mode
+    Ctrl + t - indent (move right) line one shiftwidth during insert mode
+    Ctrl + d - de-indent (move left) line one shiftwidth during insert mode
+    Ctrl + n - insert (auto-complete) next match before the cursor during insert mode
+    Ctrl + p - insert (auto-complete) previous match before the cursor during insert mode
+    Ctrl + rx - insert the contents of register x
+    Ctrl + ox - Temporarily enter normal mode to issue one normal-mode command x.
+    Esc or Ctrl + c - exit insert mode
+
+Editing
+
+    r - replace a single character.
+    R - replace more than one character, until ESC is pressed.
+    J - join line below to the current one with one space in between
+    gJ - join line below to the current one without space in between
+    gwip - reflow paragraph
+    g~ - switch case up to motion
+    gu - change to lowercase up to motion
+    gU - change to uppercase up to motion
+    cc - change (replace) entire line
+    c$ or C - change (replace) to the end of the line
+    ciw - change (replace) entire word
+    cw or ce - change (replace) to the end of the word
+    s - delete character and substitute text (same as cl)
+    S - delete line and substitute text (same as cc)
+    xp - transpose two letters (delete and paste)
+    u - undo
+    U - restore (undo) last changed line
+    Ctrl + r - redo
+    . - repeat last command
+
+Marking text (visual mode)
+
+    v - start visual mode, mark lines, then do a command (like y-yank)
+    V - start linewise visual mode
+    o - move to other end of marked area
+    Ctrl + v - start visual block mode
+    O - move to other corner of block
+    aw - mark a word
+    ab - a block with ()
+    aB - a block with {}
+    at - a block with &amp;amp;lt;&amp;amp;gt; tags
+    ib - inner block with ()
+    iB - inner block with {}
+    it - inner block with &amp;amp;lt;&amp;amp;gt; tags
+    Esc or Ctrl + c - exit visual mode
+
+Visual commands
+
+    &amp;amp;gt; - shift text right
+    &amp;amp;lt; - shift text left
+    y - yank (copy) marked text
+    d - delete marked text
+    ~ - switch case
+    u - change marked text to lowercase
+    U - change marked text to uppercase
+
+Registers
+
+    :reg[isters] - show registers content
+    &amp;amp;quot;xy - yank into register x
+    &amp;amp;quot;xp - paste contents of register x
+    &amp;amp;quot;+y - yank into the system clipboard register
+    &amp;amp;quot;+p - paste from the system clipboard register
+    Tip Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.
+
+Special registers:
+
+    0 - last yank
+    &amp;amp;quot; - unnamed register, last delete or yank
+    % - current file name
+    # - alternate file name
+    * - clipboard contents (X11 primary)
+    + - clipboard contents (X11 clipboard)
+    / - last search pattern
+    : - last command-line
+    . - last inserted text
+    - - last small (less than a line) delete
+    = - expression register
+    _ - black hole register
+
+Marks and positions
+
+    :marks - list of marks
+    ma - set current position for mark A
+    `a - jump to position of mark A
+    y`a - yank text to position of mark A
+    `0 - go to the position where Vim was previously exited
+    `&amp;amp;quot; - go to the position when last editing this file
+    `. - go to the position of the last change in this file
+    `` - go to the position before the last jump
+    :ju[mps] - list of jumps
+    Ctrl + i - go to newer position in jump list
+    Ctrl + o - go to older position in jump list
+    :changes - list of changes
+    g, - go to newer position in change list
+    g; - go to older position in change list
+    Ctrl + ] - jump to the tag under cursor
+    Tip To jump to a mark you can either use a backtick (`) or an apostrophe (&amp;amp;#39;).
+    Using an apostrophe jumps to the beginning (first non-blank) of the line holding the mark.
+
+Macros
+
+    qa - record macro a
+    q - stop recording macro
+    @a - run macro a
+    @@ - rerun last run macro
+
+Cut and paste
+
+    yy - yank (copy) a line
+    2yy - yank (copy) 2 lines
+    yw - yank (copy) the characters of the word from the cursor position to the start of the next word
+    yiw - yank (copy) word under the cursor
+    yaw - yank (copy) word under the cursor and the space after or before it
+    y$ or Y - yank (copy) to end of line
+    p - put (paste) the clipboard after cursor
+    P - put (paste) before cursor
+    gp - put (paste) the clipboard after cursor and leave cursor after the new text
+    gP - put (paste) before cursor and leave cursor after the new text
+    dd - delete (cut) a line
+    2dd - delete (cut) 2 lines
+    dw - delete (cut) the characters of the word from the cursor position to the start of the next word
+    diw - delete (cut) word under the cursor
+    daw - delete (cut) word under the cursor and the space after or before it
+    :3,5d - delete lines starting from 3 to 5
+    Tip You can also use the following characters to specify the range:
+    e.g.
+        :.,$d - From the current line to the end of the file
+        :.,1d - From the current line to the beginning of the file
+        :10,1d - From the 10th line to the beginning of the file
+    :g/{pattern}/d - delete all lines containing pattern
+    :g!/{pattern}/d - delete all lines not containing pattern
+    d$ or D - delete (cut) to the end of the line
+    x - delete (cut) character
+
+Indent text
+
+    &amp;amp;gt;&amp;amp;gt; - indent (move right) line one shiftwidth
+    &amp;amp;lt;&amp;amp;lt; - de-indent (move left) line one shiftwidth
+    &amp;amp;gt;% - indent a block with () or {} (cursor on brace)
+    &amp;amp;lt;% - de-indent a block with () or {} (cursor on brace)
+    &amp;amp;gt;ib - indent inner block with ()
+    &amp;amp;gt;at - indent a block with &amp;amp;lt;&amp;amp;gt; tags
+    3== - re-indent 3 lines
+    =% - re-indent a block with () or {} (cursor on brace)
+    =iB - re-indent inner block with {}
+    gg=G - re-indent entire buffer
+    ]p - paste and adjust indent to current line
+
+Exiting
+
+    :w - write (save) the file, but don&amp;amp;#39;t exit
+    :w !sudo tee % - write out the current file using sudo
+    :wq or :x or ZZ - write (save) and quit
+    :q - quit (fails if there are unsaved changes)
+    :q! or ZQ - quit and throw away unsaved changes
+    :wqa - write (save) and quit on all tabs
+
+Search and replace
+
+    /pattern - search for pattern
+    ?pattern - search backward for pattern
+    \vpattern - &amp;amp;#39;very magic&amp;amp;#39; pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
+    n - repeat search in same direction
+    N - repeat search in opposite direction
+    :%s/old/new/g - replace all old with new throughout file
+    :%s/old/new/gc - replace all old with new throughout file with confirmations
+    :noh[lsearch] - remove highlighting of search matches
+
+Search in multiple files
+
+    :vim[grep] /pattern/ {`{file}`} - search for pattern in multiple files
+    e.g. :vim[grep] /foo/ **/*
+        :cn[ext] - jump to the next match
+        :cp[revious] - jump to the previous match
+        :cope[n] - open a window containing the list of matches
+        :ccl[ose] - close the quickfix window
+
+Tabs
+
+    :tabnew or :tabnew {page.words.file} - open a file in a new tab
+    Ctrl + wT - move the current split window into its own tab
+    gt or :tabn[ext] - move to the next tab
+    gT or :tabp[revious] - move to the previous tab
+    #gt - move to tab number #
+    :tabm[ove] # - move current tab to the #th position (indexed from 0)
+    :tabc[lose] - close the current tab and all its windows
+    :tabo[nly] - close all tabs except for the current one
+    :tabdo command - run the command on all tabs (e.g. :tabdo q - closes all opened tabs)
+
+Working with multiple files
+
+    :e[dit] file - edit a file in a new buffer
+    :bn[ext] - go to the next buffer
+    :bp[revious] - go to the previous buffer
+    :bd[elete] - delete a buffer (close a file)
+    :b[uffer]# - go to a buffer by index #
+    :b[uffer] file - go to a buffer by file
+    :ls or :buffers - list all open buffers
+    :sp[lit] file - open a file in a new buffer and split window
+    :vs[plit] file - open a file in a new buffer and vertically split window
+    :vert[ical] ba[ll] - edit all buffers as vertical windows
+    :tab ba[ll] - edit all buffers as tabs
+    Ctrl + ws - split window
+    Ctrl + wv - split window vertically
+    Ctrl + ww - switch windows
+    Ctrl + wq - quit a window
+    Ctrl + wx - exchange current window with next one
+    Ctrl + w= - make all windows equal height &amp;amp;amp; width
+    Ctrl + wh - move cursor to the left window (vertical split)
+    Ctrl + wl - move cursor to the right window (vertical split)
+    Ctrl + wj - move cursor to the window below (horizontal split)
+    Ctrl + wk - move cursor to the window above (horizontal split)
+    Ctrl + wH - make current window full height at far left (leftmost vertical window)
+    Ctrl + wL - make current window full height at far right (rightmost vertical window)
+    Ctrl + wJ - make current window full width at the very bottom (bottommost horizontal window)
+    Ctrl + wK - make current window full width at the very top (topmost horizontal window)
+
+Diff
+
+    zf - manually define a fold up to motion
+    zd - delete fold under the cursor
+    za - toggle fold under the cursor
+    zo - open fold under the cursor
+    zc - close fold under the cursor
+    zr - reduce (open) all folds by one level
+    zm - fold more (close) all folds by one level
+    zi - toggle folding functionality
+    ]c - jump to start of next change
+    [c - jump to start of previous change
+    do or :diffg[et] - obtain (get) difference (from other buffer)
+    dp or :diffpu[t] - put difference (to other buffer)
+    :diffthis - make current window part of diff
+    :dif[fupdate] - update differences
+    :diffo[ff] - switch off diff mode for current window&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+
+#######################################################################################################
 Processing file: make
                  _        
  _ __ ___   __ _| | _____ 
@@ -11021,6 +16922,1120 @@ cp .bashrc ~
 echo &amp;quot;Copy bashrc.shared to ~&amp;quot;
 cp bashrc.shared ~
 ls -l
+
+#######################################################################################################
+Processing file: markdown.css
+                      _       _                                   
+ _ __ ___   __ _ _ __| | ____| | _____      ___ __    ___ ___ ___ 
+| &amp;#39;_ ` _ \ / _` | &amp;#39;__| |/ / _` |/ _ \ \ /\ / / &amp;#39;_ \  / __/ __/ __|
+| | | | | | (_| | |  |   &amp;lt; (_| | (_) \ V  V /| | | || (__\__ \__ \
+|_| |_| |_|\__,_|_|  |_|\_\__,_|\___/ \_/\_/ |_| |_(_)___|___/___/
+                                                                  
+/* dark */
+.markdown-body {
+  color-scheme: dark;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+  color: #f0f6fc;
+  background-color: #0d1117;
+  font-family: -apple-system,BlinkMacSystemFont,&amp;quot;Segoe UI&amp;quot;,&amp;quot;Noto Sans&amp;quot;,Helvetica,Arial,sans-serif,&amp;quot;Apple Color Emoji&amp;quot;,&amp;quot;Segoe UI Emoji&amp;quot;;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+.markdown-body h1:hover .anchor .octicon-link:before,
+.markdown-body h2:hover .anchor .octicon-link:before,
+.markdown-body h3:hover .anchor .octicon-link:before,
+.markdown-body h4:hover .anchor .octicon-link:before,
+.markdown-body h5:hover .anchor .octicon-link:before,
+.markdown-body h6:hover .anchor .octicon-link:before {
+  width: 16px;
+  height: 16px;
+  content: &amp;#39; &amp;#39;;
+  display: inline-block;
+  background-color: currentColor;
+  -webkit-mask-image: url(&amp;quot;data:image/svg+xml,&amp;lt;svg xmlns=&amp;#39;http://www.w3.org/2000/svg&amp;#39; viewBox=&amp;#39;0 0 16 16&amp;#39; version=&amp;#39;1.1&amp;#39; aria-hidden=&amp;#39;true&amp;#39;&amp;gt;&amp;lt;path fill-rule=&amp;#39;evenodd&amp;#39; d=&amp;#39;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&amp;#39;&amp;gt;&amp;lt;/path&amp;gt;&amp;lt;/svg&amp;gt;&amp;quot;);
+  mask-image: url(&amp;quot;data:image/svg+xml,&amp;lt;svg xmlns=&amp;#39;http://www.w3.org/2000/svg&amp;#39; viewBox=&amp;#39;0 0 16 16&amp;#39; version=&amp;#39;1.1&amp;#39; aria-hidden=&amp;#39;true&amp;#39;&amp;gt;&amp;lt;path fill-rule=&amp;#39;evenodd&amp;#39; d=&amp;#39;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&amp;#39;&amp;gt;&amp;lt;/path&amp;gt;&amp;lt;/svg&amp;gt;&amp;quot;);
+}
+
+.markdown-body details,
+.markdown-body figcaption,
+.markdown-body figure {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body [hidden] {
+  display: none !important;
+}
+
+.markdown-body a {
+  background-color: transparent;
+  color: #4493f8;
+  text-decoration: none;
+}
+
+.markdown-body abbr[title] {
+  border-bottom: none;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body dfn {
+  font-style: italic;
+}
+
+.markdown-body h1 {
+  margin: .67em 0;
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 2em;
+  border-bottom: 1px solid #3d444db3;
+}
+
+.markdown-body mark {
+  background-color: #bb800926;
+  color: #f0f6fc;
+}
+
+.markdown-body small {
+  font-size: 90%;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body sup {
+  top: -0.5em;
+}
+
+.markdown-body img {
+  border-style: none;
+  max-width: 100%;
+  box-sizing: content-box;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace;
+  font-size: 1em;
+}
+
+.markdown-body figure {
+  margin: 1em 2.5rem;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  overflow: hidden;
+  background: transparent;
+  border-bottom: 1px solid #3d444db3;
+  height: .25em;
+  padding: 0;
+  margin: 1.5rem 0;
+  background-color: #3d444d;
+  border: 0;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body [type=button],
+.markdown-body [type=reset],
+.markdown-body [type=submit] {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+.markdown-body [type=checkbox],
+.markdown-body [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body [type=number]::-webkit-inner-spin-button,
+.markdown-body [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+.markdown-body [type=search]::-webkit-search-cancel-button,
+.markdown-body [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.markdown-body ::-webkit-input-placeholder {
+  color: inherit;
+  opacity: .54;
+}
+
+.markdown-body ::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  appearance: button;
+  font: inherit;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body ::placeholder {
+  color: #9198a1;
+  opacity: 1;
+}
+
+.markdown-body hr::before {
+  display: table;
+  content: &amp;quot;&amp;quot;;
+}
+
+.markdown-body hr::after {
+  display: table;
+  clear: both;
+  content: &amp;quot;&amp;quot;;
+}
+
+.markdown-body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+  font-variant: tabular-nums;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body a:focus,
+.markdown-body [role=button]:focus,
+.markdown-body input[type=radio]:focus,
+.markdown-body input[type=checkbox]:focus {
+  outline: 2px solid #1f6feb;
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+.markdown-body a:focus:not(:focus-visible),
+.markdown-body [role=button]:focus:not(:focus-visible),
+.markdown-body input[type=radio]:focus:not(:focus-visible),
+.markdown-body input[type=checkbox]:focus:not(:focus-visible) {
+  outline: solid 1px transparent;
+}
+
+.markdown-body a:focus-visible,
+.markdown-body [role=button]:focus-visible,
+.markdown-body input[type=radio]:focus-visible,
+.markdown-body input[type=checkbox]:focus-visible {
+  outline: 2px solid #1f6feb;
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+.markdown-body a:not([class]):focus,
+.markdown-body a:not([class]):focus-visible,
+.markdown-body input[type=radio]:focus,
+.markdown-body input[type=radio]:focus-visible,
+.markdown-body input[type=checkbox]:focus,
+.markdown-body input[type=checkbox]:focus-visible {
+  outline-offset: 0;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 0.25rem;
+  font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  line-height: 10px;
+  color: #f0f6fc;
+  vertical-align: middle;
+  background-color: #151b23;
+  border: solid 1px #3d444db3;
+  border-bottom-color: #3d444db3;
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 #3d444db3;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-body h2 {
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid #3d444db3;
+}
+
+.markdown-body h3 {
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-weight: 600;
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  font-weight: 600;
+  font-size: .85em;
+  color: #9198a1;
+}
+
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+  padding: 0 1em;
+  color: #9198a1;
+  border-left: .25em solid #3d444d;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body tt,
+.markdown-body code,
+.markdown-body samp {
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 12px;
+  word-wrap: normal;
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-body input::-webkit-outer-spin-button,
+.markdown-body input::-webkit-inner-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.markdown-body .mr-2 {
+  margin-right: 0.5rem !important;
+}
+
+.markdown-body::before {
+  display: table;
+  content: &amp;quot;&amp;quot;;
+}
+
+.markdown-body::after {
+  display: table;
+  clear: both;
+  content: &amp;quot;&amp;quot;;
+}
+
+.markdown-body&amp;gt;*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body&amp;gt;*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .absent {
+  color: #f85149;
+}
+
+.markdown-body .anchor {
+  float: left;
+  padding-right: 0.25rem;
+  margin-left: -20px;
+  line-height: 1;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body details {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.markdown-body blockquote&amp;gt;:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote&amp;gt;:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #f0f6fc;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 tt,
+.markdown-body h1 code,
+.markdown-body h2 tt,
+.markdown-body h2 code,
+.markdown-body h3 tt,
+.markdown-body h3 code,
+.markdown-body h4 tt,
+.markdown-body h4 code,
+.markdown-body h5 tt,
+.markdown-body h5 code,
+.markdown-body h6 tt,
+.markdown-body h6 code {
+  padding: 0 .2em;
+  font-size: inherit;
+}
+
+.markdown-body summary h1,
+.markdown-body summary h2,
+.markdown-body summary h3,
+.markdown-body summary h4,
+.markdown-body summary h5,
+.markdown-body summary h6 {
+  display: inline-block;
+}
+
+.markdown-body summary h1 .anchor,
+.markdown-body summary h2 .anchor,
+.markdown-body summary h3 .anchor,
+.markdown-body summary h4 .anchor,
+.markdown-body summary h5 .anchor,
+.markdown-body summary h6 .anchor {
+  margin-left: -40px;
+}
+
+.markdown-body summary h1,
+.markdown-body summary h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.markdown-body ul.no-list,
+.markdown-body ol.no-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.markdown-body ol[type=&amp;quot;a s&amp;quot;] {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body ol[type=&amp;quot;A s&amp;quot;] {
+  list-style-type: upper-alpha;
+}
+
+.markdown-body ol[type=&amp;quot;i s&amp;quot;] {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol[type=&amp;quot;I s&amp;quot;] {
+  list-style-type: upper-roman;
+}
+
+.markdown-body ol[type=&amp;quot;1&amp;quot;] {
+  list-style-type: decimal;
+}
+
+.markdown-body div&amp;gt;ol:not([type]) {
+  list-style-type: decimal;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li&amp;gt;p {
+  margin-top: 1rem;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 1rem;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.markdown-body dl dd {
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #3d444d;
+}
+
+.markdown-body table td&amp;gt;:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table tr {
+  background-color: #0d1117;
+  border-top: 1px solid #3d444db3;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #151b23;
+}
+
+.markdown-body table img {
+  background-color: transparent;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body .emoji {
+  max-width: none;
+  vertical-align: text-top;
+  background-color: transparent;
+}
+
+.markdown-body span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.markdown-body span.frame&amp;gt;span {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 7px;
+  margin: 13px 0 0;
+  overflow: hidden;
+  border: 1px solid #3d444d;
+}
+
+.markdown-body span.frame span img {
+  display: block;
+  float: left;
+}
+
+.markdown-body span.frame span span {
+  display: block;
+  padding: 5px 0 0;
+  clear: both;
+  color: #f0f6fc;
+}
+
+.markdown-body span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.markdown-body span.align-center&amp;gt;span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.markdown-body span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.markdown-body span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.markdown-body span.align-right&amp;gt;span {
+  display: block;
+  margin: 13px 0 0;
+  overflow: hidden;
+  text-align: right;
+}
+
+.markdown-body span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.markdown-body span.float-left {
+  display: block;
+  float: left;
+  margin-right: 13px;
+  overflow: hidden;
+}
+
+.markdown-body span.float-left span {
+  margin: 13px 0 0;
+}
+
+.markdown-body span.float-right {
+  display: block;
+  float: right;
+  margin-left: 13px;
+  overflow: hidden;
+}
+
+.markdown-body span.float-right&amp;gt;span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: right;
+}
+
+.markdown-body code,
+.markdown-body tt {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  background-color: #656c7633;
+  border-radius: 6px;
+}
+
+.markdown-body code br,
+.markdown-body tt br {
+  display: none;
+}
+
+.markdown-body del code {
+  text-decoration: inherit;
+}
+
+.markdown-body samp {
+  font-size: 85%;
+}
+
+.markdown-body pre code {
+  font-size: 100%;
+}
+
+.markdown-body pre&amp;gt;code {
+  padding: 0;
+  margin: 0;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 1rem;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 1rem;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  color: #f0f6fc;
+  background-color: #151b23;
+  border-radius: 6px;
+}
+
+.markdown-body pre code,
+.markdown-body pre tt {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body .csv-data td,
+.markdown-body .csv-data th {
+  padding: 5px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.markdown-body .csv-data .blob-num {
+  padding: 10px 0.5rem 9px;
+  text-align: right;
+  background: #0d1117;
+  border: 0;
+}
+
+.markdown-body .csv-data tr {
+  border-top: 0;
+}
+
+.markdown-body .csv-data th {
+  font-weight: 600;
+  background: #151b23;
+  border-top: 0;
+}
+
+.markdown-body [data-footnote-ref]::before {
+  content: &amp;quot;[&amp;quot;;
+}
+
+.markdown-body [data-footnote-ref]::after {
+  content: &amp;quot;]&amp;quot;;
+}
+
+.markdown-body .footnotes {
+  font-size: 12px;
+  color: #9198a1;
+  border-top: 1px solid #3d444d;
+}
+
+.markdown-body .footnotes ol {
+  padding-left: 1rem;
+}
+
+.markdown-body .footnotes ol ul {
+  display: inline-block;
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+.markdown-body .footnotes li {
+  position: relative;
+}
+
+.markdown-body .footnotes li:target::before {
+  position: absolute;
+  top: calc(0.5rem*-1);
+  right: calc(0.5rem*-1);
+  bottom: calc(0.5rem*-1);
+  left: calc(1.5rem*-1);
+  pointer-events: none;
+  content: &amp;quot;&amp;quot;;
+  border: 2px solid #1f6feb;
+  border-radius: 6px;
+}
+
+.markdown-body .footnotes li:target {
+  color: #f0f6fc;
+}
+
+.markdown-body .footnotes .data-footnote-backref g-emoji {
+  font-family: monospace;
+}
+
+.markdown-body body:has(:modal) {
+  padding-right: var(--dialog-scrollgutter) !important;
+}
+
+.markdown-body .pl-c {
+  color: #9198a1;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #79c0ff;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #d2a8ff;
+}
+
+.markdown-body .pl-smi,
+.markdown-body .pl-s .pl-s1 {
+  color: #f0f6fc;
+}
+
+.markdown-body .pl-ent {
+  color: #7ee787;
+}
+
+.markdown-body .pl-k {
+  color: #ff7b72;
+}
+
+.markdown-body .pl-s,
+.markdown-body .pl-pds,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-sr .pl-sra {
+  color: #a5d6ff;
+}
+
+.markdown-body .pl-v,
+.markdown-body .pl-smw {
+  color: #ffa657;
+}
+
+.markdown-body .pl-bu {
+  color: #f85149;
+}
+
+.markdown-body .pl-ii {
+  color: #f0f6fc;
+  background-color: #8e1519;
+}
+
+.markdown-body .pl-c2 {
+  color: #f0f6fc;
+  background-color: #b62324;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  font-weight: bold;
+  color: #7ee787;
+}
+
+.markdown-body .pl-ml {
+  color: #f2cc60;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  font-weight: bold;
+  color: #1f6feb;
+}
+
+.markdown-body .pl-mi {
+  font-style: italic;
+  color: #f0f6fc;
+}
+
+.markdown-body .pl-mb {
+  font-weight: bold;
+  color: #f0f6fc;
+}
+
+.markdown-body .pl-md {
+  color: #ffdcd7;
+  background-color: #67060c;
+}
+
+.markdown-body .pl-mi1 {
+  color: #aff5b4;
+  background-color: #033a16;
+}
+
+.markdown-body .pl-mc {
+  color: #ffdfb6;
+  background-color: #5a1e02;
+}
+
+.markdown-body .pl-mi2 {
+  color: #f0f6fc;
+  background-color: #1158c7;
+}
+
+.markdown-body .pl-mdr {
+  font-weight: bold;
+  color: #d2a8ff;
+}
+
+.markdown-body .pl-ba {
+  color: #9198a1;
+}
+
+.markdown-body .pl-sg {
+  color: #3d444d;
+}
+
+.markdown-body .pl-corl {
+  text-decoration: underline;
+  color: #a5d6ff;
+}
+
+.markdown-body [role=button]:focus:not(:focus-visible),
+.markdown-body [role=tabpanel][tabindex=&amp;quot;0&amp;quot;]:focus:not(:focus-visible),
+.markdown-body button:focus:not(:focus-visible),
+.markdown-body summary:focus:not(:focus-visible),
+.markdown-body a:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.markdown-body [tabindex=&amp;quot;0&amp;quot;]:focus:not(:focus-visible),
+.markdown-body details-dialog:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.markdown-body g-emoji {
+  display: inline-block;
+  min-width: 1ch;
+  font-family: &amp;quot;Apple Color Emoji&amp;quot;,&amp;quot;Segoe UI Emoji&amp;quot;,&amp;quot;Segoe UI Symbol&amp;quot;;
+  font-size: 1em;
+  font-style: normal !important;
+  font-weight: 400;
+  line-height: 1;
+  vertical-align: -0.075em;
+}
+
+.markdown-body g-emoji img {
+  width: 1em;
+  height: 1em;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item label {
+  font-weight: 400;
+}
+
+.markdown-body .task-list-item.enabled label {
+  cursor: pointer;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 0.25rem;
+}
+
+.markdown-body .task-list-item .handle {
+  display: none;
+}
+
+.markdown-body .task-list-item-checkbox {
+  margin: 0 .2em .25em -1.4em;
+  vertical-align: middle;
+}
+
+.markdown-body ul:dir(rtl) .task-list-item-checkbox {
+  margin: 0 -1.6em .25em .2em;
+}
+
+.markdown-body ol:dir(rtl) .task-list-item-checkbox {
+  margin: 0 -1.6em .25em .2em;
+}
+
+.markdown-body .contains-task-list:hover .task-list-item-convert-container,
+.markdown-body .contains-task-list:focus-within .task-list-item-convert-container {
+  display: block;
+  width: auto;
+  height: 24px;
+  overflow: visible;
+  clip: auto;
+}
+
+.markdown-body ::-webkit-calendar-picker-indicator {
+  filter: invert(50%);
+}
+
+.markdown-body .markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  color: inherit;
+  border-left: .25em solid #3d444d;
+}
+
+.markdown-body .markdown-alert&amp;gt;:first-child {
+  margin-top: 0;
+}
+
+.markdown-body .markdown-alert&amp;gt;:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body .markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1;
+}
+
+.markdown-body .markdown-alert.markdown-alert-note {
+  border-left-color: #1f6feb;
+}
+
+.markdown-body .markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: #4493f8;
+}
+
+.markdown-body .markdown-alert.markdown-alert-important {
+  border-left-color: #8957e5;
+}
+
+.markdown-body .markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: #ab7df8;
+}
+
+.markdown-body .markdown-alert.markdown-alert-warning {
+  border-left-color: #9e6a03;
+}
+
+.markdown-body .markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: #d29922;
+}
+
+.markdown-body .markdown-alert.markdown-alert-tip {
+  border-left-color: #238636;
+}
+
+.markdown-body .markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: #3fb950;
+}
+
+.markdown-body .markdown-alert.markdown-alert-caution {
+  border-left-color: #da3633;
+}
+
+.markdown-body .markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: #f85149;
+}
+
+.markdown-body&amp;gt;*:first-child&amp;gt;.heading-element:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .highlight pre:has(+.zeroclipboard-container) {
+  min-height: 52px;
+}
+
 
 #######################################################################################################
 Processing file: newbashscript
@@ -12247,6 +19262,7 @@ Processing file: template.html
     &amp;lt;title&amp;gt;$title$&amp;lt;/title&amp;gt;
   &amp;lt;/head&amp;gt;
   &amp;lt;body&amp;gt;
+      &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;markdown.css&amp;quot;&amp;gt;
     &amp;lt;p&amp;gt;Date: $date$&amp;lt;/p&amp;gt;
 $body$
   &amp;lt;/body&amp;gt;
@@ -15519,11 +22535,31 @@ Processing file: template.html
     &lt;meta charset=&quot;utf-8&quot;&gt;
     &lt;meta name=&quot;date&quot; content=&#39;$date-meta$&#39;&gt;
     &lt;title&gt;$title$&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;markdown.css&quot;&gt;
   &lt;/head&gt;
   &lt;body&gt;
-      &lt;link rel=&quot;stylesheet&quot; href=&quot;markdown.css&quot;&gt;
     &lt;p&gt;Date: $date$&lt;/p&gt;
+    &lt;style&gt;
+    .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+&lt;/style&gt;
+&lt;article class=&quot;markdown-body&quot;&gt;
+    &lt;h1&gt;Unicorns&lt;/h1&gt;
+    &lt;p&gt;
 $body$
+    &lt;/p&gt;
+&lt;/article&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 
@@ -16438,6 +23474,8 @@ Diff
     :diffthis - make current window part of diff
     :dif[fupdate] - update differences
     :diffo[ff] - switch off diff mode for current window</code></pre>
+    </p>
+</article>
   </body>
 </html>
 
@@ -18797,7 +25835,6 @@ Processing file: template.html
     <link rel="stylesheet" href="markdown.css">
   </head>
   <body>
-    <p>Date: $date$</p>
     <style>
 	.markdown-body {
 		box-sizing: border-box;
@@ -18815,9 +25852,7 @@ Processing file: template.html
 </style>
 <article class="markdown-body">
 	<h1>Unicorns</h1>
-	<p>
-$body$
-    </p>
+	<p>$body$</p>
 </article>
   </body>
 </html>
