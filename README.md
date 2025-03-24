@@ -45,7 +45,7 @@ Processing file: .bashrc
  _| |_) | (_| \__ \ | | | | | (__ 
 (_)_.__/ \__,_|___/_| |_|_|  \___|
                                   
-# *********************************************************DATEOMATIC: Sun Mar 23 08:47:31 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 11:09:50 EDT 2025
 # *********************************************************HASHOMATIC: e5bceedce2750c47d9d26c395afd43b0
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -162,7 +162,7 @@ __   _(_)_ __ ___  _ __ ___
  \ V /| | | | | | | | | (__ 
 (_)_/ |_|_| |_| |_|_|  \___|
                             
-" *********************************************************DATEOMATIC: Sun Mar 23 08:47:31 EDT 2025
+" *********************************************************DATEOMATIC: Mon Mar 24 11:09:50 EDT 2025
 " *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -1440,8 +1440,8 @@ Processing file: bash.library
 | |_) | (_| \__ \ | | |_| | | |_) | | | (_| | |  | |_| |
 |_.__/ \__,_|___/_| |_(_)_|_|_.__/|_|  \__,_|_|   \__, |
                                                   |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:47:31 EDT 2025
-# *********************************************************HASHOMATIC: 93d27bf32f2197db65487014417f7964
+# *********************************************************DATEOMATIC: Mon Mar 24 11:09:50 EDT 2025
+# *********************************************************HASHOMATIC: c8ade33411894a2b0873038ea166f75c
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -1558,45 +1558,38 @@ function trim() {
   printf "%s" "${str#"${str%%[![:space:]]*}"}" "${str%"${str##*[![:space:]]}"}"
 }
 remove_leading_whitespace() {
-  local input="$1"
+         local input="$1"       # Bash-Function-Args
   local output="${input#"${input%%[![:space:]]*}"}"
   echo "$output"
 }
 
 # Checks if a string starts with a given prefix.
 function starts_with() {
-  local string="$1"
-  local prefix="$2"
+         local string="$1";local prefix="$2"  # Bash-Function-Args
   [[ "$string" == "$prefix"* ]]
 }
 
 # Checks if a string ends with a given suffix.
 function ends_with() {
-  local string="$1"
-  local suffix="$2"
+         local string="$1";local suffix="$2"  # Bash-Function-Args
   [[ "$string" == *"$suffix" ]]
 }
 
 # Checks if a string contains a substring.
 function contains() {
-  local string="$1"
-  local substring="$2"
+         local string="$1";local substring="$2"  # Bash-Function-Args
   [[ "$string" == *"$substring"* ]]
 }
 
 # Replaces all occurrences of a substring in a string.
 function replace() {
-  local string="$1"
-  local old="$2"
-  local new="$3"
+         local string="$1";local old="$2";local new="$3"  # Bash-Function-Args
   printf "%s\n" "${string//$old/$new}"
 }
 
 # Extracts a substring based on start and end indices. (1-based indexing)
 function substring() {
-  local string="$1"
-  local start="$2"
-  local length="$3"
+         local string="$1";local start="$2";local length="$3"  # Bash-Function-Args
   if [[ -z "$length" ]]; then
     printf "%s\n" "${string:$((start - 1))}"
   else
@@ -1678,19 +1671,20 @@ function command_exists() {
 
 # Gets the process ID (PID) of a process by name.
 function pidof_name() {
-  local name="$1"
+         local name="$1"               # Bash-Function-Args
   pidof "$name"
 }
 
 # Kills a process by name.
 function kill_name() {
-  local name="$1"
+         local name="$1"               # Bash-Function-Args
   pkill "$name"
 }
 
 # Kills a process by PID.
 function kill_pid() {
-  kill "$1"
+         local pid="$1"               # Bash-Function-Args
+  kill "$pid"
 }
 
 # Runs a command and returns its exit code.
@@ -1712,7 +1706,7 @@ function run_and_error() {
 
 # Checks if an array contains a value.
 function array_contains() {
-  local needle="$1"
+         local needle="$1"               # Bash-Function-Args
   shift
   local haystack=("${@}")
   local found=0
@@ -1731,7 +1725,7 @@ function array_contains() {
 
 # Joins array elements with a delimiter.
 function array_join() {
-  local delimiter="$1"
+         local delimiter="$1"               # Bash-Function-Args
   shift
   local array=("${@}")
   local IFS="$delimiter"
@@ -1770,7 +1764,7 @@ function timestamp_ms() {
 }
 
 function scan_for_secrets() {
-  local file="$1"
+         local file="$1"               # Bash-Function-Args
 
   if [[ -z "$file" ]]; then
     echo "Usage: scan_for_secrets <file>"
@@ -1834,8 +1828,8 @@ function scan_for_secrets() {
 }
 
 function isSameHash() {
+    local FILE="$1"               # Bash-Function-Args
     local tmp=/tmp/HASHCHECK_$$
-    local FILE="$1"
     local CH=$(md5sum "$FILE" | awk '{print $1}')
     if [[ "$CH" == "$OH" ]]; then
         echo "1"
@@ -1845,7 +1839,7 @@ function isSameHash() {
 }
 
 function padout_file_lines() {
-  local filename="$1"
+         local filename="$1"    # Bash-Function-Args
   local tmp1=$(mktemp)
   local tmp2=$(mktemp)
   rm -f "$tmp1" >/dev/null 2>&1
@@ -1891,8 +1885,7 @@ function padout_file_lines() {
 
 # Function to split a file into N files
 function split_file_n() {
-  local input_file="$1"
-  local num_files="$2"
+         local input_file="$1";local num_files="$2" # Bash-Function-Args
   local prefix="${3:-split_}" # Default prefix is "split_"
 
   if [[ -z "$input_file" || -z "$num_files" ]]; then
@@ -1939,8 +1932,7 @@ function split_file_n() {
 # fi
 
 function truncate_file_lines() {
-  local filename="$1"
-  local num_chars="$2"
+         local filename="$1";local num_chars="$2" # Bash-Function-Args
 
   if [[ -z "$filename" ]]; then
     echo "Truncate Error: Filename not provided."
@@ -1977,8 +1969,7 @@ function truncate_file_lines() {
 }
 
 function string_before_file_lines() {
-  local filename="$1"
-  local str="$2"
+         local filename="$1";local str="$2" # Bash-Function-Args
 
   if [[ -z "$filename" ]]; then
     echo "string_before Error: Filename not provided."
@@ -2006,7 +1997,7 @@ function string_before_file_lines() {
   return 0
 }
 function string_after_file_lines() {
-         local filename="$1";local str="$2"
+         local filename="$1";local str="$2" # Bash-Function-Args
 
   if [[ -z "$filename" ]]; then
     echo "string_before Error: Filename not provided."
@@ -2035,8 +2026,7 @@ function string_after_file_lines() {
 }
 
 function sort_file() {
-  local filename="$1"
-  local str="$2"
+         local filename="$1"; local str="$2" # Bash-Function-Args
 
   if [[ -z "$filename" ]]; then
     fecho "Error: Filename not provided."
@@ -2064,9 +2054,9 @@ function sort_file() {
 }
 
 function justify_line() {
+         local str="$1"; local num="$2" # Bash-Function-Args
+
     local tmp1=$(mktemp)
-    local str="$1"
-    local num="$2"
     echo "$1" | gawk -v num=$2 '
         function justify(szIn,  l,n,i,sz,m,k,A, flag) {
             sz = "";
@@ -2096,8 +2086,7 @@ function justify_line() {
     rm -f "$tmp1" >/dev/null 2>&1
 }
 function justify_file() {
-  local filename="$1"
-  local num="$2"
+         local filename="$1";local num="$2" # Bash-Function-Args
 
   if [[ -z "$filename" ]]; then
     echo "Truncate Error: Filename not provided."
@@ -2134,7 +2123,7 @@ function justify_file() {
 }
 
 function indent_file() {
-  local filename="$1"
+         local filename="$1"   # Bash-Function-Args
 
   if [[ -z "$filename" ]]; then
     fecho "Error: Filename not provided."
@@ -2157,8 +2146,8 @@ function indent_file() {
   return 0
 }
 function trim_leading_whitespace_file() {
+         local filename="$1"            # Bash-Function-Args
   local sz=""
-  local filename="$1"
 
   if [[ -z "$filename" ]]; then
     fecho "Error: Filename not provided."
@@ -2244,7 +2233,7 @@ Processing file: bashrc.shared
 | |_) | (_| \__ \ | | | | | (__ _\__ \ | | | (_| | | |  __/ (_| |
 |_.__/ \__,_|___/_| |_|_|  \___(_)___/_| |_|\__,_|_|  \___|\__,_|
                                                                  
-# *********************************************************DATEOMATIC: Sun Mar 23 08:47:31 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 11:09:50 EDT 2025
 # *********************************************************HASHOMATIC: 54a9bc07a629dfb2173395753b1dd926
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -2725,7 +2714,7 @@ Processing file: gawk.library
 | (_| | (_| |\ V  V /|   < _| | | |_) | | | (_| | |  | |_| |
  \__, |\__,_| \_/\_/ |_|\_(_)_|_|_.__/|_|  \__,_|_|   \__, |
  |___/                                                |___/ 
-# *********************************************************DATEOMATIC: Sun Mar 23 08:47:31 EDT 2025
+# *********************************************************DATEOMATIC: Mon Mar 24 11:09:50 EDT 2025
 # *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
@@ -4814,14 +4803,54 @@ trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
 
-source ~/bash.library
-  # Iterate through each line of the file and pad it
-  while IFS= read -r line; do
-    echo "         1         2         3         4         5         6         7"
-    echo "1234567890123456789012345678901234567890123456789012345678901234567890"
-    justify_line "$line" "44"
-  done < "vim.raw"
+egrep "(function.*[(][)])|(Function-Args)" bash.library |  \
+      sed 's/function //' |                     \
+      sed -e 's/[ ]*{$//' |                     \
+      sed 's/^[[:space:]]*//' |                 \
+      sed 's/[[:space:]]*$//' |                 \
+      sed -e 's/[#].*$//'     |                 \
+      gawk '
+      {
+          if ( NR == 1 ) {
+              prevline=$0
+              next
+          }
+          else {
+              if ( $0 ~ /local/) {
+                  gsub(/local[ ]*/, "", $0);
+                  gsub(/=..../, "", $0);
+                  gsub(/;/, ",", $0);
+                  print prevline "," $0
+              }
+              else {
+                  prevline=$0
+              }
+          }
+      }' > $Tmp
 
+
+cat "$Tmp"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# source ~/bash.library
+#   # Iterate through each line of the file and pad it
+#   while IFS= read -r line; do
+#     echo "         1         2         3         4         5         6         7"
+#     echo "1234567890123456789012345678901234567890123456789012345678901234567890"
+#     justify_line "$line" "44"
+#   done < "vim.raw"
 
 #######################################################################################################
 Processing file: update
