@@ -4,4 +4,5 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.j
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/functionlist.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript

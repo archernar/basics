@@ -1,10 +1,9 @@
-# *********************************************************DATEOMATIC: Wed Mar 26 08:29:12 EDT 2025
-# *********************************************************HASHOMATIC: c8ade33411894a2b0873038ea166f75c
+# *********************************************************DATEOMATIC: Mon Mar 31 14:16:56 EDT 2025
+# *********************************************************HASHOMATIC: 9f2dd2ff30d52ce902d93b3a799964d1
 DEBUGLEVEL=1
 
 function repeat_char() {
-  local char="$1"
-  local count="$2"
+         local char="$1"; local count="$2" # Bash-Function-Args
   local result=""
 
   if [[ -z "$char" || -z "$count" ]]; then
@@ -81,8 +80,7 @@ function collapse_hostname() {
 }
 
 function backup_file() {
-  local filename="$1"
-  local backup_dir="$2" # New argument for backup directory
+         local filename="$1"; local backup_dir="$2"   # Bash-Function-Args
   local timestamp=$(date +%Y%m%d%H%M%S)
   local backup_filename="${filename##*/}.backup.${timestamp}" # Extract filename only
   local backup_path="${backup_dir}/${backup_filename}"
@@ -112,10 +110,10 @@ function backup_file() {
 
 # Trims leading and trailing whitespace from a string.
 function trim() {
-  local str="$1"
+         local str="$1";  # Bash-Function-Args
   printf "%s" "${str#"${str%%[![:space:]]*}"}" "${str%"${str##*[![:space:]]}"}"
 }
-remove_leading_whitespace() {
+function remove_leading_whitespace() {
          local input="$1"       # Bash-Function-Args
   local output="${input#"${input%%[![:space:]]*}"}"
   echo "$output"
@@ -386,9 +384,9 @@ function scan_for_secrets() {
 }
 
 function isSameHash() {
-    local FILE="$1"               # Bash-Function-Args
+    local filename="$1"               # Bash-Function-Args
     local tmp=/tmp/HASHCHECK_$$
-    local CH=$(md5sum "$FILE" | awk '{print $1}')
+    local CH=$(md5sum "$filename" | awk '{print $1}')
     if [[ "$CH" == "$OH" ]]; then
         echo "1"
     else
