@@ -20,33 +20,16 @@
 
 | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|
-| abspath() | array_contains() | array_contains(needle) |
-| array_join() | array_join(delimiter) | backup_file() |
-| backup_file(filename,backup_dir) | basename() | collapse_hostname() |
-| collapse_pwd() | command_exists() | contains() |
-| contains(string,substring) | cp_r() | create_markdown_table3() |
-| create_markdown_table3(input_file,str) | create_markdown_table4() | create_markdown_table4(input_file,str) |
-| dirname() | ends_with() | ends_with(string,suffix) |
-| eprint() | exists() | extension() |
-| fdebug() | fecho() | git_branch() |
-| git_origin() | git_originsync() | git_toplevel() |
-| indent_file() | indent_file(filename) | isSameHash() |
-| isSameHash(filename) | is_dir() | is_file() |
-| is_reachable() | justify_file() | justify_file(filename,num) |
-| justify_line() | justify_line(str,num) | kill_name() |
-| kill_name(name) | kill_pid() | kill_pid(pid) |
-| longest_string_length() | mkdir_p() | mv_f() |
-| padout_file_lines() | padout_file_lines(filename) | pidof_name() |
-| pidof_name(name) | read_prompt() | remove_leading_whitespace() |
-| remove_leading_whitespace(input) | repeat_char() | repeat_char(char,count) |
-| replace() | replace(string,old,new) | rm_rf() |
-| run_and_error() | run_and_exit_code() | run_and_output() |
-| scan_for_secrets() | scan_for_secrets(file) | sort_file() |
-| sort_file(filename,str) | split_file_n() | split_file_n(input_file,num_files) |
-| starts_with() | starts_with(string,prefix) | string_after_file_lines() |
-| string_after_file_lines(filename,str) | string_before_file_lines() | string_before_file_lines(filename,str) |
-| substring() | substring(string,start,length) | timestamp_ms() |
-| trim() | trim(str) | trim_leading_whitespace_file() |
-| trim_leading_whitespace_file(filename) | truncate_file_lines() | truncate_file_lines(filename,num_chars) |
+| array_contains(needle) | array_join(delimiter) | backup_file(filename,backup_dir) |
+| colomatic | contains(string,substring) | create_markdown_table3(input_file,str) |
+| create_markdown_table4(input_file,str) | ends_with(string,suffix) | indent_file(filename) |
+| indentomatic | isSameHash(filename) | justify_file(filename,num) |
+| justify_line(str,num) | justomatic | kill_name(name) |
+| kill_pid(pid) | padomatic | padout_file_lines(filename) |
+| pidof_name(name) | remove_leading_whitespace(input) | repeat_char(char,count) |
+| replace(string,old,new) | scan_for_secrets(file) | sort_file(filename,str) |
+| split_file_n(input_file,num_files) | starts_with(string,prefix) | string_after_file_lines(filename,str) |
+| string_before_file_lines(filename,str) | substring(string,start,length) | trim(str) |
+| trim_leading_whitespace_file(filename) | truncate_file_lines(filename,num_chars) |  |
 
 
