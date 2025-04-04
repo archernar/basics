@@ -20,15 +20,15 @@
 
 | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|
-| aaaaa(char,count) | array_contains(needle) | array_join(delimiter) |
-| backup_file(filename,backup_dir) | contains(string,substring) | create_markdown_table3(input_file,str) |
-| create_markdown_table4(input_file,str) | ends_with(string,suffix) | indent_file(filename) |
-| isSameHash(filename) | justify_file(filename,num) | justify_line(str,num) |
-| kill_name(name) | kill_pid(pid) | padout_file_lines(filename) |
-| pidof_name(name) | remove_leading_whitespace(input) | repeat_char(char,count) |
-| replace(string,old,new) | scan_for_secrets(file) | sort_file(filename,str) |
-| split_file_n(input_file,num_files) | starts_with(string,prefix) | string_after_file_lines(filename,str) |
-| string_before_file_lines(filename,str) | substring(string,start,length) | trim_leading_whitespace_file(filename) |
-| trim(str) | truncate_file_lines(filename,num_chars) | &nbsp; |
+| aaaaa(char,count) | justify_file(filename,num) | sort_file(filename,str) |
+| array_contains(needle) | justify_line(str,num) | split_file_n(input_file,num_files) |
+| array_join(delimiter) | kill_name(name) | starts_with(string,prefix) |
+| backup_file(filename,backup_dir) | kill_pid(pid) | string_after_file_lines(filename,str) |
+| contains(string,substring) | padout_file_lines(filename) | string_before_file_lines(filename,str) |
+| create_markdown_table3(input_file,str) | pidof_name(name) | substring(string,start,length) |
+| create_markdown_table4(input_file,str) | remove_leading_whitespace(input) | trim_leading_whitespace_file(filename) |
+| ends_with(string,suffix) | repeat_char(char,count) | trim(str) |
+| indent_file(filename) | replace(string,old,new) | truncate_file_lines(filename,num_chars) |
+| isSameHash(filename) | scan_for_secrets(file) | &nbsp; |
 
 
