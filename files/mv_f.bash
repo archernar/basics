@@ -1,0 +1,2 @@
+function mv_f() {
+}

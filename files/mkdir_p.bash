@@ -1,0 +1,2 @@
+function mkdir_p() {
+}

@@ -1,0 +1,2 @@
+function rm_rf() {
+}

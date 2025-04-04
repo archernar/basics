@@ -1,0 +1,4 @@
+function git_toplevel() {
+         git rev-parse --show-toplevel 2> /dev/null | sed -e "s,^$HOME,~,"
+     fi
+}

@@ -1,0 +1,2 @@
+function timestamp_ms() {
+}
