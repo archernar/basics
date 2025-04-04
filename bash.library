@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Fri Apr  4 09:07:44 AM EDT 2025
-# *********************************************************HASHOMATIC: 752fca0739de240fe8e275d3a5fa4a25
+# *********************************************************DATEOMATIC: Fri Apr  4 09:15:00 AM EDT 2025
+# *********************************************************HASHOMATIC: 8a8ec091c5be4c8a88867024e78a679b
 DEBUGLEVEL=1
 
 function aaaaa() {
@@ -745,9 +745,9 @@ function create_markdown_table4() {
 
   rm -f "$tmp" >/dev/null 2>&1
   if [[ "$str" == "MAKELINKS" ]]; then
-      cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
+      cat "$input_file" |gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
   else
-      cat "$input_file" |sort|uniq > $tmp
+      cat "$input_file"  > $tmp
   fi
 
   # Read lines from the file and create table rows
@@ -800,9 +800,9 @@ function create_markdown_table3() {
 
   rm -f "$tmp" >/dev/null 2>&1
   if [[ "$str" == "MAKELINKS" ]]; then
-      cat "$input_file" |sort|uniq|gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
+      cat "$input_file" |gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
   else
-      cat "$input_file" |sort|uniq > $tmp
+      cat "$input_file" > $tmp
   fi
 
   # Read lines from the file and create table rows
