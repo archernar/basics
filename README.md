@@ -20,7 +20,6 @@
 
 | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|
-| aaaaa(char,count) | justify_file(filename,num) | sort_file(filename,str) |
 | array_contains(needle) | justify_line(str,num) | split_file_n(input_file,num_files) |
 | array_join(delimiter) | kill_name(name) | starts_with(string,prefix) |
 | backup_file(filename,backup_dir) | kill_pid(pid) | string_after_file_lines(filename,str) |
@@ -30,5 +29,6 @@
 | ends_with(string,suffix) | repeat_char(char,count) | trim(str) |
 | indent_file(filename) | replace(string,old,new) | truncate_file_lines(filename,num_chars) |
 | isSameHash(filename) | scan_for_secrets(file) | &nbsp; |
+| justify_file(filename,num) | sort_file(filename,str) | &nbsp; |
 
 
