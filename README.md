@@ -24,11 +24,11 @@
 | contains(string,substring) | create_markdown_table3(input_file,str) | create_markdown_table4(input_file,str) |
 | ends_with(string,suffix) | indent_file(filename) | isSameHash(filename) |
 | justify_file(filename,num) | justify_line(str,num) | kill_name(name) |
-| kill_pid(pid) | one() | padout_file_lines(filename) |
-| pidof_name(name) | remove_leading_whitespace(input) | repeat_char(char,count) |
-| replace(string,old,new) | scan_for_secrets(file) | sort_file(filename,str) |
-| split_file_n(input_file,num_files) | starts_with(string,prefix) | string_after_file_lines(filename,str) |
-| string_before_file_lines(filename,str) | substring(string,start,length) | trim(str) |
-| trim_leading_whitespace_file(filename) | truncate_file_lines(filename,num_chars) | two() |
+| kill_pid(pid) | padout_file_lines(filename) | pidof_name(name) |
+| remove_leading_whitespace(input) | repeat_char(char,count) | replace(string,old,new) |
+| scan_for_secrets(file) | sort_file(filename,str) | split_file_n(input_file,num_files) |
+| starts_with(string,prefix) | string_after_file_lines(filename,str) | string_before_file_lines(filename,str) |
+| substring(string,start,length) | trim(str) | trim_leading_whitespace_file(filename) |
+| truncate_file_lines(filename,num_chars) | zzzone() | zzztwo() |
 
 

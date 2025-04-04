@@ -182,12 +182,12 @@ M=$((N % 3));
 echo "The function list contains $N functions"
 if [ "$M" == "2" ]; then                                                                                               
     echo "Adding 1 function"
-    echo "one()" >> "$Tmp"
+    echo "zzzone()" >> "$Tmp"
 fi
 if [ "$M" == "1" ]; then                                                                                               
     echo "Adding 2 functions"
-    echo "one()" >> "$Tmp"
-    echo "two()" >> "$Tmp"
+    echo "zzzone()" >> "$Tmp"
+    echo "zzztwo()" >> "$Tmp"
 fi
 
 N=`wc -l "$Tmp" | gawk '{print $1}'`
