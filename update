@@ -155,7 +155,6 @@ git add get.raw
 rm -f "$Tmp"  >/dev/null 2>&1;
 
 
-
 grep bash get.raw | gawk '{print "wget " $0}' > getme
 git add getme
 
@@ -174,14 +173,40 @@ echo "## bash.library includes"     >> README.md
 echo ""     >> README.md
 
 # grep function bash.library | grep "()" | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp
-egrep "(function.*[(][)])|(Function-Args)" bash.library | grep "()" | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp
+#egrep "(function.*[(][)])|(Function-Args)" bash.library | grep "()" | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp
 
-create_markdown_table4 "$Tmp"  >> README.md
+./functionlist.bash > $Tmp
+cat "$Tmp" | sort | uniq > "$Tmp1"; cp "$Tmp1" "$Tmp"
+N=`wc -l "$Tmp" | gawk '{print $1}'`
+M=$((N % 3));
+echo "The function list contains $N functions"
+if [ "$M" == "2" ]; then                                                                                               
+    echo "Adding 1 function"
+    echo "one()" >> "$Tmp"
+fi
+if [ "$M" == "1" ]; then                                                                                               
+    echo "Adding 2 functions"
+    echo "one()" >> "$Tmp"
+    echo "two()" >> "$Tmp"
+fi
+
+N=`wc -l "$Tmp" | gawk '{print $1}'`
+echo "The function list contains $N functions"
+N=$((N / 3));
+rm -f sfa*  >/dev/null 2>&1
+split -l $N "$Tmp" sf
+paste -d'\n' sfaa sfab sfac > "$Tmp"
+cat $Tmp
+
+create_markdown_table3 "$Tmp"  >> README.md
 echo ""     >> README.md
 echo ""     >> README.md
 
-./listing   >> README.md
+#./listing   > fed
+#./listing   >> README.md
+echo "Step 1 Complete"
 pandoc --standalone --template template.html README.md > local.html
+echo "Step 2 Complete"
 git add README.md
 
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
