@@ -20,6 +20,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dirname.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ends_with.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eprint.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/examplesComparison.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/exists.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/extension.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/fdebug.bash
