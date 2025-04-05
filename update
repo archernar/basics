@@ -11,9 +11,11 @@ rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 source ~/bash.library
 
 UPDATE="NO"
-while getopts "ruls" arg
+while getopts "xruls" arg
 do
     case $arg in
+        x) UPDATE="EXTRACT"
+           ;;
         r) UPDATE="REMOTE"
            ;;
         u) UPDATE="REMOTE"
@@ -25,6 +27,24 @@ do
     esac
 done
 shift $(($OPTIND - 1))
+
+if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
+    ./bashfunctionextractor
+    git add ./files
+    git commit -m "Updated ./files"
+    N=`git ls-files --deleted ./files | wc -l`
+    echo "$N files were deleted from ./files"
+    git diff --name-only ./files
+    if [ "$N" -gt 0 ]; then
+      echo "===================================================="
+      echo "./files needs updating"
+      git rm $(git ls-files --deleted ./files)
+      echo "===================================================="
+    fi
+    exit 0
+fi
+
+
 
 if [ "$UPDATE" == "YES" ]; then                                                                                               
     RETVAL="YES"                                                                                                             
@@ -190,14 +210,15 @@ if [ "$M" == "1" ]; then
     echo "zzztwo()" >> "$Tmp"
 fi
 
+cat "$Tmp" | sort | uniq > "$Tmp1"; cp "$Tmp1" "$Tmp"
 N=`wc -l "$Tmp" | gawk '{print $1}'`
 echo "The function list contains $N functions"
 N=$((N / 3));
 rm -f sfa*  >/dev/null 2>&1
+sed -i 's/zzz.*$/\&nbsp;/g' "$Tmp"
+
 split -l $N "$Tmp" sf
 paste -d'\n' sfaa sfab sfac > "$Tmp"
-cat $Tmp
-
 create_markdown_table3 "$Tmp"  >> README.md
 echo ""     >> README.md
 echo ""     >> README.md
