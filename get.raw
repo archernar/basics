@@ -22,9 +22,11 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/conta
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/cp_r.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table3.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table4.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/current_timestamp.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dirname.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ends_with.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eprint.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/error.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/examplesComparison.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/exists.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/extension.bash
@@ -35,6 +37,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_o
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_originsync.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_toplevel.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/indent_file.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/info.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/isSameHash.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_dir.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_file.bash
@@ -48,6 +51,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mkdir
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mv_f.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/padout_file_lines.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/pidof_name.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/prompter.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/read_prompt.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/remove_leading_whitespace.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/repeat_char.bash
@@ -67,6 +71,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/times
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim_leading_whitespace_file.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/truncate_file_lines.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/warn.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/functionlist.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync

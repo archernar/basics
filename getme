@@ -17,9 +17,11 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/cp_r.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table3.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table4.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/current_timestamp.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dirname.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ends_with.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eprint.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/error.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/examplesComparison.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/exists.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/extension.bash
@@ -30,6 +32,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_originsync.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_toplevel.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/indent_file.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/info.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/isSameHash.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_dir.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_file.bash
@@ -43,6 +46,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mv_f.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/padout_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/pidof_name.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/prompter.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/read_prompt.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/remove_leading_whitespace.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/repeat_char.bash
@@ -62,5 +66,6 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim_leading_whitespace_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/truncate_file_lines.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/warn.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/functionlist.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript

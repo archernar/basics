@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat Apr  5 09:05:56 AM EDT 2025
-# *********************************************************HASHOMATIC: 002eed065381fc9cb57d141d1ea8959c
+# *********************************************************DATEOMATIC: Sat Apr  5 09:14:26 AM EDT 2025
+# *********************************************************HASHOMATIC: 9188d0a2bc7a4a4b9504a3ad48de78ba
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -301,7 +301,8 @@ function is_reachable() {
 # }
 
 # --- Input/Output ---
-
+# --- Input/Output and Logging ---
+ 
 # Prints a message to stderr.
 function eprint() {
   echo "$1" >&2
@@ -312,6 +313,38 @@ function read_prompt() {
   read -p "$1" "$2"
 }
 
+            # Bash-Function-Args
+# Print an informational message with a timestamp
+function info() {
+         local msg="$1"                 # Bash-Function-Args
+  date "+%Y-%m-%d %H:%M:%S"
+  echo "INFO: $msg"
+}
+
+# Print a warning message with a timestamp
+function warn() {
+         local msg="$1"                 # Bash-Function-Args
+  date "+%Y-%m-%d %H:%M:%S"
+  echo "WARN: $msg" >&2
+}
+
+# Print an error message with a timestamp
+function error() {
+         local msg="$1"                 # Bash-Function-Args
+  date "+%Y-%m-%d %H:%M:%S"
+  echo "ERROR: $msg" >&2
+}
+
+# Prompt the user for input with a default value
+function prompter() {
+         local question="$1";local default="${2:-}";         # Bash-Function-Args
+  read -p "$question (default: $default): " response
+  if [ -z "$response" ]; then
+    echo "$default"
+  else
+    echo "$response"
+  fi
+}
 # --- Time and Date ---
 
 # Gets the current timestamp in milliseconds.
@@ -319,6 +352,10 @@ function timestamp_ms() {
   date +%s%3N
 }
 
+# Get the current date and time in a specific format
+function current_timestamp() {
+  date "+%Y%m%d_%H%M%S"
+}
 function scan_for_secrets() {
          local file="$1"               # Bash-Function-Args
 
