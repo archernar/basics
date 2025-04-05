@@ -1,0 +1,2 @@
+function current_timestamp() {
+}
