@@ -179,8 +179,9 @@ grep bash get.raw | gawk '{print "wget " $0}' > getme
 git add getme
 
 #cat get.raw |sort|uniq| gawk ' {n=split($0,A,"/");print "[" A[n] "](" $0 ")"}' > $Tmp
-cat get.raw |sort|uniq  > $Tmp
-create_markdown_table4 "$Tmp" "MAKELINKS"   > README.md
+cat get.raw | egrep -v "files[/]" |sort|uniq  > $Tmp
+alpha_normal2 "$Tmp"
+create_markdown_table2 "$Tmp" "MAKELINKS"   > README.md
 echo ""     >> README.md
 echo ""     >> README.md
 
@@ -198,28 +199,27 @@ echo ""     >> README.md
 ./functionlist.bash > $Tmp
 cat "$Tmp" | sort | uniq > "$Tmp1"; cp "$Tmp1" "$Tmp"
 N=`wc -l "$Tmp" | gawk '{print $1}'`
-M=$((N % 3));
+M=$((N % 2));
 echo "The function list contains $N functions"
 if [ "$M" == "2" ]; then                                                                                               
     echo "Adding 1 function"
     echo "zzzone()" >> "$Tmp"
 fi
 if [ "$M" == "1" ]; then                                                                                               
-    echo "Adding 2 functions"
+    echo "Adding 1 functions"
     echo "zzzone()" >> "$Tmp"
-    echo "zzztwo()" >> "$Tmp"
 fi
 
 cat "$Tmp" | sort | uniq > "$Tmp1"; cp "$Tmp1" "$Tmp"
 N=`wc -l "$Tmp" | gawk '{print $1}'`
 echo "The function list contains $N functions"
-N=$((N / 3));
+N=$((N / 2));
 rm -f sfa*  >/dev/null 2>&1
 sed -i 's/zzz.*$/\&nbsp;/g' "$Tmp"
 
 split -l $N "$Tmp" sf
-paste -d'\n' sfaa sfab sfac > "$Tmp"
-create_markdown_table3 "$Tmp"  >> README.md
+paste -d'\n' sfaa sfab > "$Tmp"
+create_markdown_table2 "$Tmp"  >> README.md
 echo ""     >> README.md
 echo ""     >> README.md
 
