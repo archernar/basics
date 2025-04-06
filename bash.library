@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr  6 08:08:19 AM EDT 2025
-# *********************************************************HASHOMATIC: 28e53d93971eb769072556ab5753723d
+# *********************************************************DATEOMATIC: Sun Apr  6 08:13:11 AM EDT 2025
+# *********************************************************HASHOMATIC: d4b2afc09589346bcb6d2898af222a2e
 DEBUGLEVEL=1
 
 function alpha_normal2() {
@@ -206,13 +206,13 @@ function substring() {
 
 # Creates a directory if it doesn't exist.
 function mkdir_p() {
-         xvoid="$1";                          # Bash-Function-Args
+         local void="$1";                          # Bash-Function-Args
   mkdir -p "$1"
 }
 
 # Checks if a file or directory exists.
 function exists() {
-         xvoid="$1";                          # Bash-Function-Args
+         local void="$1";                          # Bash-Function-Args
   [[ -e "$1" ]]
 }
 
@@ -374,11 +374,6 @@ function info() {
 
 # Print a warning message with a timestamp
 function warn() {
-         local msg="$1"                 # Bash-Function-Args
-  date "+%Y-%m-%d %H:%M:%S"
-  echo "WARN: $msg" >&2
-}
-function warn2() {
          local msg="$1"                 # Bash-Function-Args
   date "+%Y-%m-%d %H:%M:%S"
   echo "WARN: $msg" >&2
