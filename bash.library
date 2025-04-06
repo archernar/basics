@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr  6 08:19:11 AM EDT 2025
-# *********************************************************HASHOMATIC: eb7a1e809e62e7c1ed54c7a1930e4290
+# *********************************************************DATEOMATIC: Sun Apr  6 11:31:03 AM EDT 2025
+# *********************************************************HASHOMATIC: 238d9b817f28c2be9aa86025ce9fe328
 DEBUGLEVEL=1
 
 function alpha_normal2() {
@@ -264,24 +264,33 @@ function extension() {
 
 # Copies a file or directory recursively.
 function cp_r() {
-  cp -r "$1" "$2"
+         local filename1="$1";local filename2="$2";      # Bash-Function-Args
+  cp -r "$filename1" "$filename2"
 }
 
 # Moves a file or directory.
 function mv_f() {
-  mv -f "$1" "$2"
+         local filename1="$1";local filename2="$2";      # Bash-Function-Args
+  mv -f "$filename1" "$filename2"
 }
 
 # Removes a file or directory recursively.
 function rm_rf() {
-  rm -rf "$1"
+         local filename="$1";      # Bash-Function-Args
+  rm -rf "$filename"
+}
+# Removes a file or directory recursively, silently.
+function rm_rf_silent() {
+         local filename="$1";      # Bash-Function-Args
+  rm -rf "$filename" >/dev/null 2>&1;
 }
 
 # --- System and Process Utilities ---
 
 # Checks if a command is available.
 function command_exists() {
-  command -v "$1" &> /dev/null
+         local command="$1";      # Bash-Function-Args
+  command -v "$command" &> /dev/null
 }
 
 # Gets the process ID (PID) of a process by name.
@@ -304,17 +313,20 @@ function kill_pid() {
 
 # Runs a command and returns its exit code.
 function run_and_exit_code() {
+         local command="$1";      # Bash-Function-Args
   "$@"
   echo $?
 }
 
 # Runs a command and returns its output.
 function run_and_output() {
+         local command="$1";      # Bash-Function-Args
   "$@"
 }
 
 #Runs a command and returns its error.
 function run_and_error() {
+         local command="$1";      # Bash-Function-Args
   "$@" 2>&1 >/dev/null
 }
 # --- Array Manipulation ---
@@ -351,7 +363,8 @@ function array_join() {
 
 # Checks if a host is reachable.
 function is_reachable() {
-  ping -c 1 -W 1 "$1" &> /dev/null
+         local hostname="$1"               # Bash-Function-Args
+  ping -c 1 -W 1 "$hostname" &> /dev/null
 }
 
 # Checks if a port is open.
@@ -408,11 +421,13 @@ function prompter() {
 
 # Gets the current timestamp in milliseconds.
 function timestamp_ms() {
+         local void="11";                          # Bash-Function-Args
   date +%s%3N
 }
 
 # Get the current date and time in a specific format
 function current_timestamp() {
+         local void="11";                          # Bash-Function-Args
   date "+%Y%m%d_%H%M%S"
 }
 function scan_for_secrets() {
