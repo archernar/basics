@@ -11,9 +11,11 @@ rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 source ~/bash.library
 
 UPDATE="NO"
-while getopts "xruls" arg
+while getopts "txruls" arg
 do
     case $arg in
+        t) UPDATE="TEST"
+           ;;
         x) UPDATE="EXTRACT"
            ;;
         r) UPDATE="REMOTE"
@@ -28,6 +30,12 @@ do
 done
 shift $(($OPTIND - 1))
 
+if [ "$UPDATE" == "TEST" ]; then                                                                                               
+      echo "===================================================="
+      echo "Test"
+      echo "===================================================="
+      exit 0
+fi
 if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
     ./bashfunctionextractor
     git add ./files
@@ -197,6 +205,7 @@ echo ""     >> README.md
 #egrep "(function.*[(][)])|(Function-Args)" bash.library | grep "()" | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp
 
 ./functionlist.bash > $Tmp
+cp $Tmp moe
 cat "$Tmp" | sort | uniq > "$Tmp1"; cp "$Tmp1" "$Tmp"
 N=`wc -l "$Tmp" | gawk '{print $1}'`
 M=$((N % 2));
@@ -230,7 +239,7 @@ pandoc --standalone --template template.html README.md > local.html
 echo "Step 2 Complete"
 git add README.md
 
-rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy moe
+rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy
 
 if [ "$UPDATE" == "LOCAL" ]; then                                                                                               
     git commit  -m "Update"
