@@ -34,18 +34,25 @@
 
 ## bash.library includes
 
-| ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|
-| array_contains(needle) | isSameHash(filename) | scan_for_secrets(file) |
-| array_join(delimiter) | justify_file(filename,num) | sort_file(filename,str) |
-| backup_file(filename,backup_dir) | justify_line(str,num) | split_file_n(input_file,num_files) |
-| contains(string,substring) | kill_name(name) | starts_with(string,prefix) |
-| create_markdown_table3(input_file,str) | kill_pid(pid) | string_after_file_lines(filename,str) |
-| create_markdown_table4(input_file,str) | padout_file_lines(filename) | string_before_file_lines(filename,str) |
-| ends_with(string,suffix) | pidof_name(name) | substring(string,start,length) |
-| error(msg) | prompter(question,default:-}") | trim_leading_whitespace_file(filename) |
-| examplesComparison(str) | remove_leading_whitespace(input) | trim(str) |
-| indent_file(filename) | repeat_char(char,count) | truncate_file_lines(filename,num_chars) |
-| info(msg) | replace(string,old,new) | warn(msg) |
+| ------------------------  ------------------------ |
+|--------------------|
+| array_contains(needle) | isSameHash(filename) |
+| sort_file(filename,str) | array_join(delimiter) |
+| justify_file(filename,num) | split_file_n(input_file,num_files) |
+| backup_file(filename,backup_dir) | justify_line(str,num) |
+| starts_with(string,prefix) | contains(string,substring) |
+| kill_name(name) | string_after_file_lines(filename,str) |
+| create_markdown_table2(input_file,str) | kill_pid(pid) |
+| string_before_file_lines(filename,str) | create_markdown_table3(input_file,str) |
+| padout_file_lines(filename) | substring(string,start,length) |
+| create_markdown_table4(input_file,str) | pidof_name(name) |
+| trim_leading_whitespace_file(filename) | ends_with(string,suffix) |
+| prompter(question,default:-}") | trim(str) |
+| error(msg) | remove_leading_whitespace(input) |
+| truncate_file_lines(filename,num_chars) | examplesComparison(str) |
+| repeat_char(char,count) | warn(msg) |
+| indent_file(filename) | replace(string,old,new) |
+| &nbsp; | info(msg) |
+| scan_for_secrets(file) | &nbsp; |
 
 
