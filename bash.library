@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr  6 08:13:11 AM EDT 2025
-# *********************************************************HASHOMATIC: d4b2afc09589346bcb6d2898af222a2e
+# *********************************************************DATEOMATIC: Sun Apr  6 08:19:11 AM EDT 2025
+# *********************************************************HASHOMATIC: eb7a1e809e62e7c1ed54c7a1930e4290
 DEBUGLEVEL=1
 
 function alpha_normal2() {
@@ -95,23 +95,27 @@ function fdebug() {
 }
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 function git_toplevel() {
+         local void="11";                          # Bash-Function-Args
      if [ -d ".git" ]; then
          git rev-parse --show-toplevel 2> /dev/null | sed -e "s,^$HOME,~,"
      fi
 }
 function git_branch() {
+         local void="11";                          # Bash-Function-Args
      #git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
      if [ -d ".git" ]; then
          git branch 2> /dev/null | sed 's/^..//' | sed 's/master/m/'
      fi
 }
 function git_origin() {
+         local void="11";                          # Bash-Function-Args
      # git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
      if [ -d ".git" ]; then
          git config --get remote.origin.url 2> /dev/null
      fi
 }
 function git_originsync() {
+         local void="11";                          # Bash-Function-Args
      if [ -d ".git" ]; then
          git config color.ui false
          git branch -vv 2> /dev/null |  gawk 'match($0, /\[([^\]]+)\]/, a) { print a[1] }' | sed 's/origin/o/' | sed 's/master/m/' | sed 's/ ahead /+/'
@@ -120,10 +124,12 @@ function git_originsync() {
      fi
 }
 function collapse_pwd() {
+         local void="11";                          # Bash-Function-Args
     curr_pwd=$(pwd | sed -e "s,^$HOME,~,")
     echo $curr_pwd
 }
 function collapse_hostname() {
+         local void="11";                          # Bash-Function-Args
     curr_hostname=$(hostname)
     echo $curr_hostname
 }
@@ -206,29 +212,31 @@ function substring() {
 
 # Creates a directory if it doesn't exist.
 function mkdir_p() {
-         local void="$1";                          # Bash-Function-Args
+         local void="11";                          # Bash-Function-Args
   mkdir -p "$1"
 }
 
 # Checks if a file or directory exists.
 function exists() {
-         local void="$1";                          # Bash-Function-Args
+         local void="11";                          # Bash-Function-Args
   [[ -e "$1" ]]
 }
 
 # Checks if a file exists.
 function is_file() {
+         local void="11";                          # Bash-Function-Args
   [[ -f "$1" ]]
 }
 
 # Checks if a directory exists.
 function is_dir() {
+         local void="11";                          # Bash-Function-Args
   [[ -d "$1" ]]
 }
 
 # Gets the absolute path of a file or directory.
 function abspath() {
-  local path="$1"
+         local path="$1";                          # Bash-Function-Args
   if [[ -z "$path" ]]; then
     pwd
   else
@@ -238,19 +246,19 @@ function abspath() {
 
 # Gets the filename from a path.
 function basename() {
-  local path="$1"
+         local path="$1";                          # Bash-Function-Args
   printf "%s\n" "$(basename "$path")"
 }
 
 # Gets the directory from a path.
 function dirname() {
-  local path="$1"
+         local path="$1";                          # Bash-Function-Args
   printf "%s\n" "$(dirname "$path")"
 }
 
 # Gets the file extension from a path.
 function extension() {
-  local path="$1"
+         local path="$1";                          # Bash-Function-Args
   printf "%s\n" "${path##*.}"
 }
 
