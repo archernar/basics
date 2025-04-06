@@ -30,7 +30,7 @@
 
 | ------------------------ | ------------------------ |
 |----------|----------|
-| alpha_normal(filename) | padout_file_lines(filename) |
+| alpha_normal2(filename) | padout_file_lines(filename) |
 | array_contains(needle) | pidof_name(name) |
 | array_join(delimiter) | prompter(question,default:-}") |
 | backup_file(filename,backup_dir) | remove_leading_whitespace(input) |

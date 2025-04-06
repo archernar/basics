@@ -1,8 +1,8 @@
-# *********************************************************DATEOMATIC: Sun Apr  6 07:45:17 AM EDT 2025
-# *********************************************************HASHOMATIC: 0815cd81f58f5329855da71f8fe78235
+# *********************************************************DATEOMATIC: Sun Apr  6 07:48:44 AM EDT 2025
+# *********************************************************HASHOMATIC: 609db41fa8e3c556e60a64c1521eaec4
 DEBUGLEVEL=1
 
-function alpha_normal() {
+function alpha_normal2() {
          local filename="$1"    # Bash-Function-Args
   local tmp1=$(mktemp)
   local tmp2=$(mktemp)
@@ -23,14 +23,16 @@ cat "$filename" | sort | uniq > "$tmp1"
 N=`wc -l "$tmp1" | gawk '{print $1}'`
 M=$((N % 2));
 echo "The function list contains $N functions"
+if [ "$M" == "0" ]; then                                                                                               
+    echo "Nothing to Add"
+fi
 if [ "$M" == "2" ]; then                                                                                               
     echo "Adding 1 function"
     echo "zzzone()" >> "$tmp1"
 fi
 if [ "$M" == "1" ]; then                                                                                               
-    echo "Adding 2 functions"
+    echo "Adding 1 functions"
     echo "zzzone()" >> "$tmp1"
-    echo "zzztwo()" >> "$tmp1"
 fi
 
 cat "$tmp1" | sort | uniq > "$tmp2"; cp "$tmp2" "$tmp1"
