@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr  6 07:51:50 AM EDT 2025
-# *********************************************************HASHOMATIC: f41761d06f62b12d6ebd630634b13163
+# *********************************************************DATEOMATIC: Sun Apr  6 07:54:19 AM EDT 2025
+# *********************************************************HASHOMATIC: 8c9c25c6c9dc47b2bdea7adf1a00acb4
 DEBUGLEVEL=1
 
 function alpha_normal2() {
@@ -879,7 +879,7 @@ function create_markdown_table2() {
   fi
 
   LEN=`longest_string_length < "$input_file"`
-  STRING=`repeat_char "-" "24"`
+  STRING=`repeat_char "-" "40"`
 
   rm -f "$tmp" >/dev/null 2>&1
   if [[ "$str" == "MAKELINKS" ]]; then

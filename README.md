@@ -1,4 +1,4 @@
-| ------------------------ | ------------------------ |
+| ---------------------------------------- | ---------------------------------------- |
 |----------|----------|
 | [bashfunctionextractor](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashfunctionextractor) | [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) |
 | [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) |
@@ -28,7 +28,7 @@
 
 ## bash.library includes
 
-| ------------------------ | ------------------------ |
+| ---------------------------------------- | ---------------------------------------- |
 |----------|----------|
 | alpha_normal2(filename) | padout_file_lines(filename) |
 | array_contains(needle) | pidof_name(name) |
