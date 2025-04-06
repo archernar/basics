@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr  6 07:59:24 AM EDT 2025
-# *********************************************************HASHOMATIC: 8c9c25c6c9dc47b2bdea7adf1a00acb4
+# *********************************************************DATEOMATIC: Sun Apr  6 08:05:10 AM EDT 2025
+# *********************************************************HASHOMATIC: 56d87659b041d960ef09aaed57989c49
 DEBUGLEVEL=1
 
 function alpha_normal2() {
@@ -206,11 +206,13 @@ function substring() {
 
 # Creates a directory if it doesn't exist.
 function mkdir_p() {
+         void="$1";                          # Bash-Function-Args
   mkdir -p "$1"
 }
 
 # Checks if a file or directory exists.
 function exists() {
+         void="$1";                          # Bash-Function-Args
   [[ -e "$1" ]]
 }
 
