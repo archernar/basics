@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr  6 07:25:27 AM EDT 2025
-# *********************************************************HASHOMATIC: 1878bea489d7ce72cbb9c7819da2cdcc
+# *********************************************************DATEOMATIC: Sun Apr  6 07:28:22 AM EDT 2025
+# *********************************************************HASHOMATIC: 063a5beb308b6b452b8071fb71482530
 DEBUGLEVEL=1
 
 function repeat_char() {
@@ -847,8 +847,8 @@ function create_markdown_table2() {
   while IFS= read -r line; do
     if [[ $line_count -eq 0 ]]; then
       if [[ $first_row -eq 1 ]]; then
-          echo "| $STRING  $STRING |"
-          echo "|--------------------|"
+          echo "| $STRING | $STRING |"
+          echo "|----------|----------|"
           first_row=0
       fi
     fi
@@ -872,6 +872,7 @@ function create_markdown_table2() {
     echo "$row|"
   fi
 }
+
 function create_markdown_table3() {
          local input_file="$1";local str="$2"                   # Bash-Function-Args
   local tmp=$(mktemp)
