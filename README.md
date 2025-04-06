@@ -46,7 +46,7 @@
 | isSameHash(filename) | trim_leading_whitespace_file(filename) |
 | justify_file(filename,num) | trim(str) |
 | justify_line(str,num) | truncate_file_lines(filename,num_chars) |
-| kill_name(name) | warn(msg) |
-| kill_pid(pid) | &nbsp; |
+| kill_name(name) | warn2(msg) |
+| kill_pid(pid) | warn(msg) |
 
 
