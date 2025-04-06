@@ -1,9 +1,10 @@
-# *********************************************************DATEOMATIC: Sun Apr  6 07:48:44 AM EDT 2025
-# *********************************************************HASHOMATIC: 609db41fa8e3c556e60a64c1521eaec4
+# *********************************************************DATEOMATIC: Sun Apr  6 07:50:59 AM EDT 2025
+# *********************************************************HASHOMATIC: f41761d06f62b12d6ebd630634b13163
 DEBUGLEVEL=1
 
 function alpha_normal2() {
          local filename="$1"    # Bash-Function-Args
+  echo "$FUNCNAME : STR ******************************************************************************"
   local tmp1=$(mktemp)
   local tmp2=$(mktemp)
   rm -f "$tmp1" >/dev/null 2>&1
@@ -46,6 +47,7 @@ split -l $N "$tmp1" sf
 paste -d'\n' sfaa sfab > "$tmp1"
 
 cp "$tmp1" "$filename"
+echo "$FUNCNAME : END ******************************************************************************"
 
 }
 
