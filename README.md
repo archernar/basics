@@ -34,8 +34,8 @@
 
 ## bash.library includes
 
-| ------------------------  ------------------------ |
-|--------------------|
+| ------------------------ | ------------------------ |
+|----------|----------|
 | array_contains(needle) | padout_file_lines(filename) |
 | array_join(delimiter) | pidof_name(name) |
 | backup_file(filename,backup_dir) | prompter(question,default:-}") |
