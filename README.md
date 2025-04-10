@@ -1,24 +1,24 @@
 | ---------------------------------------- | ---------------------------------------- |
 |----------|----------|
-| [bashfunctionextractor](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashfunctionextractor) | [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) |
-| [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) |
-| [bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp) | [indentomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/indentomatic) |
-| [bash.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library) | [justomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/justomatic) |
-| [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing) |
-| [bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared) | [make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make) |
-| [bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop) | [markdown.css](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/markdown.css) |
-| [colomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/colomatic) | [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) |
-| [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) |
-| [functionlist.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/functionlist.bash) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) |
-| [gawk.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gawk.library) | [padomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic) |
-| [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) |
-| [gemini.vim](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gemini.vim) | [rmLeadingWhiteSpace](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/rmLeadingWhiteSpace) |
-| [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) |
-| [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) | [template.html](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/template.html) |
-| [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) |
-| [.gitignore](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.gitignore) | [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) |
-| [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |
-| [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [&nbsp;](&nbsp;) |
+| [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [gawk.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gawk.library) |
+| [.gitignore](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.gitignore) | [gemini.vim](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gemini.vim) |
+| [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) |
+| [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) | [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) |
+| [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [indentomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/indentomatic) |
+| [bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp) | [justomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/justomatic) |
+| [bash.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library) | [listing](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing) |
+| [bashfunctionextractor](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashfunctionextractor) | [make](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make) |
+| [bashrc.shared](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared) | [markdown.css](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/markdown.css) |
+| [bashtop](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop) | [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) |
+| [colomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/colomatic) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) |
+| [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) |
+| [functionlist.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/functionlist.bash) | [padomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic) |
+| [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [rmLeadingWhiteSpace](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/rmLeadingWhiteSpace) |
+| [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) |
+| [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [template.html](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/template.html) |
+| [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [thinner.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/thinner.bash) |
+| [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) |
+| [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |
 
 
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
@@ -30,7 +30,7 @@
 
 | ---------------------------------------- | ---------------------------------------- |
 |----------|----------|
-| abspath(path) | isSameHash(filename) |
+| abspath(path) | is_reachable(hostname) |
 | alpha_normal2(filename) | justify_file(filename,num) |
 | array_contains(needle) | justify_line(str,num) |
 | array_join(delimiter) | kill_name(name) |
@@ -52,13 +52,13 @@
 | exists(void) | sort_file(filename,str) |
 | extension(path) | split_file_n(input_file,num_files) |
 | git_branch(void) | starts_with(string,prefix) |
-| git_originsync(void) | string_after_file_lines(filename,str) |
-| git_origin(void) | string_before_file_lines(filename,str) |
+| git_origin(void) | string_after_file_lines(filename,str) |
+| git_originsync(void) | string_before_file_lines(filename,str) |
 | git_toplevel(void) | substring(string,start,length) |
 | indent_file(filename) | timestamp_ms(void) |
-| info(msg) | trim_leading_whitespace_file(filename) |
-| is_dir(void) | trim(str) |
-| is_file(void) | truncate_file_lines(filename,num_chars) |
-| is_reachable(hostname) | warn(msg) |
+| info(msg) | trim(str) |
+| isSameHash(filename) | trim_leading_whitespace_file(filename) |
+| is_dir(void) | truncate_file_lines(filename,num_chars) |
+| is_file(void) | warn(msg) |
 
 

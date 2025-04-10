@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr  6 11:31:34 AM EDT 2025
-# *********************************************************HASHOMATIC: 238d9b817f28c2be9aa86025ce9fe328
+# *********************************************************DATEOMATIC: Wed Apr  9 20:33:08 EDT 2025
+# *********************************************************HASHOMATIC: 163bc44b0ea7fcda6cd7e514315038f8
 DEBUGLEVEL=1
 
 function alpha_normal2() {
@@ -143,20 +143,17 @@ function backup_file() {
   if [ -f "$filename" ]; then
     if [ -d "$backup_dir" ]; then # Check if backup directory exists
       cp "$filename" "$backup_path"
-      #echo "File '$filename' backed up to '$backup_path'."
+      echo "File '$filename' backed up to '$backup_path'."
     else
-      #echo "Error: Backup directory '$backup_dir' does not exist."
+      echo "Error: Backup directory '$backup_dir' does not exist."
       return 1
     fi
 
   else
-    #echo "Error: File '$filename' not found."
+    echo "Error: File '$filename' not found."
     return 1
   fi
 }
-# Example usage:
-# backup_file my_file.txt /path/to/backup/directory
-
 
 # ****************************************************************************************************
 # ****************************************************************************************************
