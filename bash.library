@@ -1,17 +1,17 @@
-# *********************************************************DATEOMATIC: Wed Apr  9 20:40:22 EDT 2025
-# *********************************************************HASHOMATIC: 62246e56051dfb667ae87f752f886c85
+# *********************************************************DATEOMATIC: Wed Apr  9 20:41:55 EDT 2025
+# *********************************************************HASHOMATIC: 76d5e53f3e73b6168c8b80405313d6cf
 DEBUGLEVEL=1
 
-function mecho {
+function mecho() {
          local sz="$1"    # Bash-Function-Args
     echo ""
     echo "$sz"
 }
-function necho {
+function necho() {
          local sz="$1"    # Bash-Function-Args
     echo "$sz"
 }
-function eecho {
+function eecho() {
          local sz="$1"    # Bash-Function-Args
     echo "$sz"
 }
