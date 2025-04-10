@@ -28,40 +28,6 @@
 
 ## bash.library includes
 
-| ---------------------------------------- | ---------------------------------------- |
-|----------|----------|
-| abspath(path) | justify_file(filename,num) |
-| alpha_normal2(filename) | justify_line(str,num) |
-| array_contains(needle) | kill_name(name) |
-| array_join(delimiter) | kill_pid(pid) |
-| backup_file(filename,backup_dir) | mecho(sz) |
-| basename(path) | mkdir_p(void) |
-| collapse_hostname(void) | mv_f(filename1,filename2) |
-| collapse_pwd(void) | necho(sz) |
-| command_exists(command) | padout_file_lines(filename) |
-| contains(string,substring) | pidof_name(name) |
-| cp_r(filename1,filename2) | prompter(question,default:-}") |
-| create_markdown_table2(input_file,str) | remove_leading_whitespace(input) |
-| create_markdown_table3(input_file,str) | repeat_char(char,count) |
-| create_markdown_table4(input_file,str) | replace(string,old,new) |
-| current_timestamp(void) | rm_rf(filename) |
-| dirname(path) | rm_rf_silent(filename) |
-| eecho(sz) | run_and_error(command) |
-| ends_with(string,suffix) | run_and_exit_code(command) |
-| error(msg) | run_and_output(command) |
-| examplesComparison(str) | scan_for_secrets(file) |
-| exists(void) | sort_file(filename,str) |
-| extension(path) | split_file_n(input_file,num_files) |
-| git_branch(void) | starts_with(string,prefix) |
-| git_origin(void) | string_after_file_lines(filename,str) |
-| git_originsync(void) | string_before_file_lines(filename,str) |
-| git_toplevel(void) | substring(string,start,length) |
-| indent_file(filename) | timestamp_ms(void) |
-| info(msg) | trim(str) |
-| isSameHash(filename) | trim_leading_whitespace_file(filename) |
-| is_dir(void) | truncate_file_lines(filename,num_chars) |
-| is_file(void) | warn(msg) |
-| is_reachable(hostname) | &nbsp; |
 
 
 ## bash.library includes
