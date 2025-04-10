@@ -1,3 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code</title>
+    <style>
+        body {
+            background-color: #1e1e1e; /* Dark background for the page */
+            color: #d4d4d4; /* Light text color for the page */
+        }
+
+        .code-container {
+            background-color: #252526; /* Darker background for the code block */
+            border: 1px solid #333; /* Dark gray border */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: monospace, sans-serif;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        .code-container pre {
+            margin: 0;
+        }
+
+        .comment {
+            color: #6a9955; /* Green for comments */
+        }
+
+        .keyword {
+            color: #569cd6; /* Light blue for keywords */
+            font-weight: bold;
+        }
+
+        .string {
+            color: #ce9178; /* Orange/brown for strings */
+        }
+
+        .number {
+            color: #b5cea8; /* Light green for numbers */
+        }
+
+        .class-name {
+            color: #4ec9b0; /* Cyan for class names */
+        }
+
+        .method-name {
+            color: #dcdcaa; /* Yellow for method names */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Displaying Code (Dark Theme)</h1>
+
+    <div class="code-container">
+        <pre>
+
 #!/usr/bin/bash
 Tmp=/tmp/$$
 Tmp0=/tmp/$$_$$
@@ -232,12 +292,11 @@ echo ""     >> README.md
 echo ""     >> README.md
 
 rm -f "$Tmp"  >/dev/null 2>&1;
-./functionlist.bash | gawk '{sz=$0;gsub(/[(].*[)]/, "", sz);print "files/" sz ".html";}' > $Tmp1
+./functionlist.bash | gawk '{sz=$0;gsub(/[(].*[)]/, "", sz);print "files/" sz ".bash";}' > $Tmp1
 #git ls-files | gawk '
 cat $Tmp1 | gawk '
 BEGIN {
     BASE="https://raw.githubusercontent.com/archernar/basics/refs/heads/master/"
-    BASE="https://archernar.github.io/"
 }
 /files./ {
     print BASE $0
@@ -280,3 +339,9 @@ fi
 
 
 # FHASH=`cat ./.vimrc | gawk  ' /HASHOMATIC/ {n=split($0,A," ");h=A[n];gsub(/ +$/, "", h);print h;}'`
+        </pre>
+    </div>
+
+
+</body>
+</html>
