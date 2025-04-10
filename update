@@ -205,7 +205,6 @@ echo ""     >> README.md
 #egrep "(function.*[(][)])|(Function-Args)" bash.library | grep "()" | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp
 
 ./functionlist.bash > $Tmp
-cp $Tmp moe
 cat "$Tmp" | sort | uniq > "$Tmp1"; cp "$Tmp1" "$Tmp"
 N=`wc -l "$Tmp" | gawk '{print $1}'`
 M=$((N % 2));
@@ -231,6 +230,25 @@ paste -d'\n' sfaa sfab > "$Tmp"
 create_markdown_table2 "$Tmp"  >> README.md
 echo ""     >> README.md
 echo ""     >> README.md
+
+rm -f "$Tmp"  >/dev/null 2>&1;
+./functionlist.bash | gawk '{sz=$0;gsub(/[(].*[)]/, "", sz);print "files/" sz ".bash";}' > $Tmp1
+#git ls-files | gawk '
+cat $Tmp1 | gawk '
+BEGIN {
+    BASE="https://raw.githubusercontent.com/archernar/basics/refs/heads/master/"
+}
+/files./ {
+    print BASE $0
+}' | sort|uniq  > $Tmp
+alpha_normal2 "$Tmp"
+echo "## bash.library includes"     >> README.md
+create_markdown_table2 "$Tmp" "MAKELINKS"   >> README.md
+
+
+
+
+
 
 #./listing   > fed
 #./listing   >> README.md

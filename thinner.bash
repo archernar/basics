@@ -39,17 +39,6 @@ function init {
 function showDuDirToClean {
     du -h ${dirToClean}
 }
-function mecho {
-    echo ""
-    echo "$1"
-}
-function necho {
-    echo "$1"
-}
-function eecho {
-    echo "$1"
-}
-
 
 tar cvf /tmp/backups.tar ~/BACKUPS     >/dev/null 2>&1;
 mkdir -p                            ~/ARCHIVES
