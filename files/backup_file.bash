@@ -6,14 +6,14 @@ function backup_file() {
   if [ -f "$filename" ]; then
     if [ -d "$backup_dir" ]; then # Check if backup directory exists
       cp "$filename" "$backup_path"
-      #echo "File '$filename' backed up to '$backup_path'."
+      echo "File '$filename' backed up to '$backup_path'."
     else
-      #echo "Error: Backup directory '$backup_dir' does not exist."
+      echo "Error: Backup directory '$backup_dir' does not exist."
       return 1
     fi
 
   else
-    #echo "Error: File '$filename' not found."
+    echo "Error: File '$filename' not found."
     return 1
   fi
 }
