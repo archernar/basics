@@ -30,11 +30,11 @@
 
 | ---------------------------------------- | ---------------------------------------- |
 |----------|----------|
-| abspath(path) | is_reachable(hostname) |
-| alpha_normal2(filename) | justify_file(filename,num) |
-| array_contains(needle) | justify_line(str,num) |
-| array_join(delimiter) | kill_name(name) |
-| backup_file(filename,backup_dir) | kill_pid(pid) |
+| abspath(path) | justify_file(filename,num) |
+| alpha_normal2(filename) | justify_line(str,num) |
+| array_contains(needle) | kill_name(name) |
+| array_join(delimiter) | kill_pid(pid) |
+| backup_file(filename,backup_dir) | local sz="$1"    (sz) |
 | basename(path) | mkdir_p(void) |
 | collapse_hostname(void) | mv_f(filename1,filename2) |
 | collapse_pwd(void) | padout_file_lines(filename) |
@@ -60,5 +60,6 @@
 | isSameHash(filename) | trim_leading_whitespace_file(filename) |
 | is_dir(void) | truncate_file_lines(filename,num_chars) |
 | is_file(void) | warn(msg) |
+| is_reachable(hostname) | &nbsp; |
 
 
