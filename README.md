@@ -64,3 +64,40 @@
 | is_reachable(hostname) | &nbsp; |
 
 
+## bash.library includes
+| ---------------------------------------- | ---------------------------------------- |
+|----------|----------|
+| [abspath.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/abspath.bash) | [is_reachable.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_reachable.bash) |
+| [alpha_normal2.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/alpha_normal2.bash) | [justify_file.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/justify_file.bash) |
+| [array_contains.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/array_contains.bash) | [justify_line.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/justify_line.bash) |
+| [array_join.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/array_join.bash) | [kill_name.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/kill_name.bash) |
+| [backup_file.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/backup_file.bash) | [kill_pid.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/kill_pid.bash) |
+| [basename.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/basename.bash) | [longest_string_length.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/longest_string_length.bash) |
+| [collapse_hostname.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/collapse_hostname.bash) | [mecho.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mecho.bash) |
+| [collapse_pwd.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/collapse_pwd.bash) | [mkdir_p.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mkdir_p.bash) |
+| [command_exists.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/command_exists.bash) | [mv_f.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mv_f.bash) |
+| [contains.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/contains.bash) | [necho.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/necho.bash) |
+| [cp_r.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/cp_r.bash) | [padout_file_lines.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/padout_file_lines.bash) |
+| [create_markdown_table2.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table2.bash) | [pidof_name.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/pidof_name.bash) |
+| [create_markdown_table3.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table3.bash) | [prompter.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/prompter.bash) |
+| [create_markdown_table4.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table4.bash) | [read_prompt.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/read_prompt.bash) |
+| [current_timestamp.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/current_timestamp.bash) | [remove_leading_whitespace.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/remove_leading_whitespace.bash) |
+| [dirname.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dirname.bash) | [repeat_char.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/repeat_char.bash) |
+| [eecho.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eecho.bash) | [replace.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/replace.bash) |
+| [ends_with.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ends_with.bash) | [rm_rf.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rm_rf.bash) |
+| [eprint.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eprint.bash) | [rm_rf_silent.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rm_rf_silent.bash) |
+| [error.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/error.bash) | [run_and_error.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_error.bash) |
+| [examplesComparison.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/examplesComparison.bash) | [run_and_exit_code.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_exit_code.bash) |
+| [exists.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/exists.bash) | [run_and_output.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_output.bash) |
+| [extension.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/extension.bash) | [scan_for_secrets.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/scan_for_secrets.bash) |
+| [fdebug.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/fdebug.bash) | [sort_file.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/sort_file.bash) |
+| [fecho.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/fecho.bash) | [split_file_n.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/split_file_n.bash) |
+| [git_branch.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_branch.bash) | [starts_with.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/starts_with.bash) |
+| [git_origin.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_origin.bash) | [string_after_file_lines.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/string_after_file_lines.bash) |
+| [git_originsync.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_originsync.bash) | [string_before_file_lines.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/string_before_file_lines.bash) |
+| [git_toplevel.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_toplevel.bash) | [substring.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/substring.bash) |
+| [indent_file.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/indent_file.bash) | [timestamp_ms.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/timestamp_ms.bash) |
+| [info.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/info.bash) | [trim.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim.bash) |
+| [isSameHash.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/isSameHash.bash) | [trim_leading_whitespace_file.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim_leading_whitespace_file.bash) |
+| [is_dir.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_dir.bash) | [truncate_file_lines.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/truncate_file_lines.bash) |
+| [is_file.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_file.bash) | [warn.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/warn.bash) |
