@@ -26,6 +26,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/creat
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table4.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/current_timestamp.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dirname.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eecho.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ends_with.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eprint.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/error.bash
@@ -49,8 +50,10 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/justi
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/kill_name.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/kill_pid.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/longest_string_length.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mecho.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mkdir_p.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mv_f.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/necho.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/padout_file_lines.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/pidof_name.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/prompter.bash
@@ -59,6 +62,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/remov
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/repeat_char.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/replace.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rm_rf.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rm_rf_silent.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_error.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_exit_code.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_output.bash

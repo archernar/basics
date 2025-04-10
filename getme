@@ -21,6 +21,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table4.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/current_timestamp.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dirname.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eecho.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ends_with.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eprint.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/error.bash
@@ -44,8 +45,10 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/kill_name.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/kill_pid.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/longest_string_length.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mecho.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mkdir_p.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mv_f.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/necho.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/padout_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/pidof_name.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/prompter.bash
@@ -54,6 +57,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/repeat_char.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/replace.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rm_rf.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rm_rf_silent.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_error.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_exit_code.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_output.bash
