@@ -49,6 +49,16 @@ if [ "$UPDATE" == "EXTRACT" ]; then
       git rm $(git ls-files --deleted ./files)
       echo "===================================================="
     fi
+    D=`pwd`
+    cd ../archernar.github.io
+    cp ../basics/files/* ./files
+    git add ./files
+    git rm $(git ls-files --deleted ./files)
+    git commit -m "Updated ./files"
+    git push origin master
+
+    cd "$D"
+
     exit 0
 fi
 
@@ -227,6 +237,7 @@ sed -i 's/zzz.*$/\&nbsp;/g' "$Tmp"
 
 split -l $N "$Tmp" sf
 paste -d'\n' sfaa sfab > "$Tmp"
+rm -f sfa*  >/dev/null 2>&1
 #create_markdown_table2 "$Tmp"  >> README.md
 echo ""     >> README.md
 echo ""     >> README.md
@@ -274,6 +285,8 @@ if [ "$UPDATE" == "STATUS" ]; then
 fi
 
 
+echo "Cleaning up"
+rm -f sfa*  >/dev/null 2>&1
 
 
 
