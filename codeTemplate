@@ -1,3 +1,14 @@
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap 'exit 0' INT HUP QUIT TERM ALRM USR1
+trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
+rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
+
+
 cat <<EOF
 <!DOCTYPE html>
 <html lang="en">
@@ -61,15 +72,17 @@ cat <<EOF
 EOF
 
 cat "$1"
-
+myU="https://raw.githubusercontent.com/archernar/archernar.github.io/refs/heads/master/files/$2"
+echo  "<a href='$myU' download class='bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2.5 px-5 rounded-md shadow-md transition duration-300 ease-in-out'>Download File</a>" > "$Tmp"
 cat <<EOF
+
         </pre>
     </div>
-U="https://raw.githubusercontent.com/archernar/archernar.github.io/refs/heads/master/files/$2"
-  <a href="$U" download class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2.5 px-5 rounded-md shadow-md transition duration-300 ease-in-out">
-        Download File
-    </a>
+EOF
 
+cat "$Tmp"
+
+cat <<EOF
     <script>
         // This script handles the file download, triggering it when the button is clicked.
         // It's important to replace 'your_file_url_here' with the actual URL.
