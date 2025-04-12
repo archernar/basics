@@ -65,24 +65,17 @@ cat <<EOF
 </head>
 <body>
 
-    <h1>Displaying Code (Dark Theme)</h1>
+    <h1>Code</h1>
 
     <div class="code-container">
         <pre>
 EOF
 
 cat "$1"
-myU="https://raw.githubusercontent.com/archernar/archernar.github.io/refs/heads/master/files/$2"
-echo  "<a href='$myU' download='dlfile'>Download</a>" > "$Tmp"
 cat <<EOF
 
         </pre>
     </div>
-EOF
-
-cat "$Tmp"
-
-cat <<EOF
 </body>
 </html>
 EOF
