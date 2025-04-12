@@ -15,6 +15,17 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/collapse_pwd.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/command_exists.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/contains.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core._should_print_color.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.panic.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_debug.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_debug_fn.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_error.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_fatal.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_fatal_fn.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_info.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_info_fn.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_warn.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_warn_fn.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/cp_r.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table2.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table3.bash
