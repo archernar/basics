@@ -73,7 +73,7 @@ EOF
 
 cat "$1"
 myU="https://raw.githubusercontent.com/archernar/archernar.github.io/refs/heads/master/files/$2"
-echo  "<a href='$myU' download='$2.mama'>Download</a>" > "$Tmp"
+echo  "<a href='$myU' download='dlfile'>Download</a>" > "$Tmp"
 cat <<EOF
 
         </pre>
