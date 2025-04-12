@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat Apr 12 06:38:57 EDT 2025
-# *********************************************************HASHOMATIC: a661ab2f8d46c6b10ed5354791dca40d
+# *********************************************************DATEOMATIC: Sat Apr 12 06:44:22 EDT 2025
+# *********************************************************HASHOMATIC: 24e798972e9b4e8d17347da18d295b51
 DEBUGLEVEL=1
 
 function mecho() {
@@ -1269,7 +1269,7 @@ function core.print_info() {
 
 # @description Print a debug message to standard output if the environment variable "DEBUG" is present
 # @arg $1 string message
-function core_print_debug() {
+function core.print_debug() {
          local msg="$1"    # Bash-Function-Args
 	if [[ -v DEBUG ]]; then
 		printf "%s: %s\n" 'Debug' "$msg"

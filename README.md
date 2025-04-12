@@ -19,7 +19,8 @@
 | [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [template.html](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/template.html) |
 | [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [thinner.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/thinner.bash) |
 | [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) |
-| [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |
+| [gUntracked](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUntracked) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |
+| [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [&nbsp;](&nbsp;) |
 
 
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
@@ -45,15 +46,15 @@
 | [command_exists.html](https://archernar.github.io/files/command_exists.html) | [kill_pid.html](https://archernar.github.io/files/kill_pid.html) |
 | [contains.html](https://archernar.github.io/files/contains.html) | [mecho.html](https://archernar.github.io/files/mecho.html) |
 | [core.panic.html](https://archernar.github.io/files/core.panic.html) | [mkdir_p.html](https://archernar.github.io/files/mkdir_p.html) |
-| [core.print_debug_fn.html](https://archernar.github.io/files/core.print_debug_fn.html) | [mv_f.html](https://archernar.github.io/files/mv_f.html) |
-| [core.print_error.html](https://archernar.github.io/files/core.print_error.html) | [necho.html](https://archernar.github.io/files/necho.html) |
-| [core.print_fatal.html](https://archernar.github.io/files/core.print_fatal.html) | [padout_file_lines.html](https://archernar.github.io/files/padout_file_lines.html) |
-| [core.print_fatal_fn.html](https://archernar.github.io/files/core.print_fatal_fn.html) | [pidof_name.html](https://archernar.github.io/files/pidof_name.html) |
-| [core.print_info.html](https://archernar.github.io/files/core.print_info.html) | [prompter.html](https://archernar.github.io/files/prompter.html) |
-| [core.print_info_fn.html](https://archernar.github.io/files/core.print_info_fn.html) | [remove_leading_whitespace.html](https://archernar.github.io/files/remove_leading_whitespace.html) |
-| [core.print_warn.html](https://archernar.github.io/files/core.print_warn.html) | [repeat_char.html](https://archernar.github.io/files/repeat_char.html) |
-| [core.print_warn_fn.html](https://archernar.github.io/files/core.print_warn_fn.html) | [replace.html](https://archernar.github.io/files/replace.html) |
-| [core_print_debug.html](https://archernar.github.io/files/core_print_debug.html) | [rm_rf.html](https://archernar.github.io/files/rm_rf.html) |
+| [core.print_debug.html](https://archernar.github.io/files/core.print_debug.html) | [mv_f.html](https://archernar.github.io/files/mv_f.html) |
+| [core.print_debug_fn.html](https://archernar.github.io/files/core.print_debug_fn.html) | [necho.html](https://archernar.github.io/files/necho.html) |
+| [core.print_error.html](https://archernar.github.io/files/core.print_error.html) | [padout_file_lines.html](https://archernar.github.io/files/padout_file_lines.html) |
+| [core.print_fatal.html](https://archernar.github.io/files/core.print_fatal.html) | [pidof_name.html](https://archernar.github.io/files/pidof_name.html) |
+| [core.print_fatal_fn.html](https://archernar.github.io/files/core.print_fatal_fn.html) | [prompter.html](https://archernar.github.io/files/prompter.html) |
+| [core.print_info.html](https://archernar.github.io/files/core.print_info.html) | [remove_leading_whitespace.html](https://archernar.github.io/files/remove_leading_whitespace.html) |
+| [core.print_info_fn.html](https://archernar.github.io/files/core.print_info_fn.html) | [repeat_char.html](https://archernar.github.io/files/repeat_char.html) |
+| [core.print_warn.html](https://archernar.github.io/files/core.print_warn.html) | [replace.html](https://archernar.github.io/files/replace.html) |
+| [core.print_warn_fn.html](https://archernar.github.io/files/core.print_warn_fn.html) | [rm_rf.html](https://archernar.github.io/files/rm_rf.html) |
 | [cp_r.html](https://archernar.github.io/files/cp_r.html) | [rm_rf_silent.html](https://archernar.github.io/files/rm_rf_silent.html) |
 | [create_markdown_table2.html](https://archernar.github.io/files/create_markdown_table2.html) | [run_and_error.html](https://archernar.github.io/files/run_and_error.html) |
 | [create_markdown_table3.html](https://archernar.github.io/files/create_markdown_table3.html) | [run_and_exit_code.html](https://archernar.github.io/files/run_and_exit_code.html) |
