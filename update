@@ -36,32 +36,6 @@ if [ "$UPDATE" == "TEST" ]; then
       echo "===================================================="
       exit 0
 fi
-if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
-    ./bashfunctionextractor
-    git add ./files
-    git commit -m "Updated ./files"
-    N=`git ls-files --deleted ./files | wc -l`
-    echo "$N files were deleted from ./files"
-    git diff --name-only ./files
-    if [ "$N" -gt 0 ]; then
-      echo "===================================================="
-      echo "./files needs updating"
-      git rm $(git ls-files --deleted ./files)
-      echo "===================================================="
-    fi
-    D=`pwd`
-    cd ../archernar.github.io
-    cp ../basics/files/* ./files
-    git add ./files
-    git rm $(git ls-files --deleted ./files)
-    git commit -m "Updated ./files"
-    git push origin master
-
-    cd "$D"
-
-    exit 0
-fi
-
 
 
 if [ "$UPDATE" == "YES" ]; then                                                                                               
@@ -256,6 +230,7 @@ BEGIN {
 alpha_normal2 "$Tmp"
 echo "## bash.library includes"     >> README.md
 create_markdown_table2 "$Tmp" "MAKELINKS"   >> README.md
+create_markdown_table2 "$Tmp" "MAKELINKS"   >  README2.md
 
 
 
@@ -264,12 +239,40 @@ create_markdown_table2 "$Tmp" "MAKELINKS"   >> README.md
 
 #./listing   > fed
 #./listing   >> README.md
-echo "Step 1 Complete"
+core.print_flag
+core.print_info "Step 1 Complete"
 pandoc --standalone --template template.html README.md > local.html
-echo "Step 2 Complete"
+pandoc --standalone --template template.html README1.md > ./files/index.html
+core.print_info "Step 2 Complete"
 git add README.md
 
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy
+
+if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
+    ./bashfunctionextractor
+    git add ./files
+    git commit -m "Updated ./files"
+    N=`git ls-files --deleted ./files | wc -l`
+    echo "$N files were deleted from ./files"
+    git diff --name-only ./files
+    if [ "$N" -gt 0 ]; then
+      echo "===================================================="
+      echo "./files needs updating"
+      git rm $(git ls-files --deleted ./files)
+      echo "===================================================="
+    fi
+    D=`pwd`
+    cd ../archernar.github.io
+    cp ../basics/files/* ./files
+    git add ./files
+    git rm $(git ls-files --deleted ./files)
+    git commit -m "Updated ./files"
+    git push origin master
+
+    cd "$D"
+
+    exit 0
+fi
 
 if [ "$UPDATE" == "LOCAL" ]; then                                                                                               
     git commit  -m "Update"

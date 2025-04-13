@@ -30,7 +30,7 @@ extract_and_write_function() {
       # Write the function to a file named after the function
       echo "$signature" >> "./files/$function_name.bash"
       echo "$function_body" >> "./files/$function_name.bash"
-      echo "Function '$function_name' written to './files/$function_name.bash'"
+      #echo "Function '$function_name' written to './files/$function_name.bash'"
       ./codeTemplate "./files/$function_name.bash" "$function_name.bash" > "./files/$function_name.html"
     fi
   done < "$input_file"
@@ -40,6 +40,6 @@ extract_and_write_function() {
 # Assuming your file of functions is named 'my_functions.sh'
 #cp xx /tmp/xx
 #cp bash.library /tmp/bash.library
-rm -rf   ./files
-mkdir -p ./files
+#rm -rf   ./files
+#mkdir -p ./files
 extract_and_write_function bash.library
