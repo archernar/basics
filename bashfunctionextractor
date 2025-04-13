@@ -28,8 +28,8 @@ extract_and_write_function() {
       # Remove the opening and closing curly braces from the body
       function_body=$(echo "$function_body" | sed -e '1d' -e '$d')
       # Write the function to a file named after the function
-      echo "$signature" > "./files/$function_name.bash"
-      echo "$function_body" > "./files/$function_name.bash"
+      echo "$signature"      > "./files/$function_name.bash"
+      echo "$function_body" >> "./files/$function_name.bash"
       #echo "Function '$function_name' written to './files/$function_name.bash'"
       ./codeTemplate "./files/$function_name.bash" "$function_name.bash" > "./files/$function_name.html"
     fi
