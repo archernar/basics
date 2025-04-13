@@ -1,10 +1,10 @@
 | ---------------------------------------- | ---------------------------------------- |
 |----------|----------|
-| [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) |
-| [.gitignore](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.gitignore) | [gawk.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gawk.library) |
-| [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) | [gemini.vim](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gemini.vim) |
-| [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) |
-| [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) |
+| [.bashrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc) | [gawk.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gawk.library) |
+| [.gitignore](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.gitignore) | [gemini.vim](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gemini.vim) |
+| [.vimrc](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc) | [get.raw](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/get.raw) |
+| [README.md](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md) | [getme](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme) |
+| [bash.functions](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions) | [htmlTemplate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/htmlTemplate) |
 | [bash.justhelp](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp) | [indentomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/indentomatic) |
 | [bash.library](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library) | [index.html](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/index.html) |
 | [bashfunctionextractor](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashfunctionextractor) | [justomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/justomatic) |
@@ -21,6 +21,7 @@
 | [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [thinner.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/thinner.bash) |
 | [gUntracked](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUntracked) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) |
 | [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |
+| [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [&nbsp;](&nbsp;) |
 
 
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
