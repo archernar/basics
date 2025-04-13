@@ -20,8 +20,10 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_debug.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_debug_fn.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_error.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_error_fn.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_fatal.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_fatal_fn.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_flag.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_info.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_info_fn.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_warn.bash

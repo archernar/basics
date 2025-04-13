@@ -1,3 +1,0 @@
-function contains() {
-  [[ "$string" == *"$substring"* ]]
-}
