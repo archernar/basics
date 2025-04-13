@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat Apr 12 20:27:34 EDT 2025
-# *********************************************************HASHOMATIC: 24e798972e9b4e8d17347da18d295b51
+# *********************************************************DATEOMATIC: Sat Apr 12 20:33:21 EDT 2025
+# *********************************************************HASHOMATIC: b2b1b093eb3f597f058b53f2f3ee57fa
 DEBUGLEVEL=1
 
 function mecho() {
@@ -1195,7 +1195,7 @@ function core.print_fatal_fn() {
 # @description Print an error message including the function name of the callee
 # to standard error
 # @arg $1 string message
-funciton core.print_error_fn() {
+function core.print_error_fn() {
          local msg="$1"    # Bash-Function-Args
 	core.print_error "${FUNCNAME[1]}()${msg:+": "}$msg"
 }
@@ -1256,6 +1256,18 @@ function core.print_warn() {
 	fi
 }
 
+function core.print_flag() {
+         local msg="********************************************************************************"
+	if core._should_print_color 1; then
+		printf "\033[1;32m%s:\033[0m %s\n" 'Info' "$msg"
+		printf "\033[1;32m%s:\033[0m %s\n" 'Info' "$msg"
+		printf "\033[1;32m%s:\033[0m %s\n" 'Info' "$msg"
+	else
+		printf "%s: %s\n" 'Info' "$msg"
+		printf "%s: %s\n" 'Info' "$msg"
+		printf "%s: %s\n" 'Info' "$msg"
+	fi
+}
 # @description Print an informative message to standard output
 # @arg $1 string message
 function core.print_info() {

@@ -35,20 +35,21 @@
 ## bash.library includes
 | ---------------------------------------- | ---------------------------------------- |
 |----------|----------|
-| [abspath.html](https://archernar.github.io/files/abspath.html) | [info.html](https://archernar.github.io/files/info.html) |
-| [alpha_normal2.html](https://archernar.github.io/files/alpha_normal2.html) | [isSameHash.html](https://archernar.github.io/files/isSameHash.html) |
-| [array_contains.html](https://archernar.github.io/files/array_contains.html) | [is_dir.html](https://archernar.github.io/files/is_dir.html) |
-| [array_join.html](https://archernar.github.io/files/array_join.html) | [is_file.html](https://archernar.github.io/files/is_file.html) |
-| [backup_file.html](https://archernar.github.io/files/backup_file.html) | [is_reachable.html](https://archernar.github.io/files/is_reachable.html) |
-| [basename.html](https://archernar.github.io/files/basename.html) | [justify_file.html](https://archernar.github.io/files/justify_file.html) |
-| [collapse_hostname.html](https://archernar.github.io/files/collapse_hostname.html) | [justify_line.html](https://archernar.github.io/files/justify_line.html) |
-| [collapse_pwd.html](https://archernar.github.io/files/collapse_pwd.html) | [kill_name.html](https://archernar.github.io/files/kill_name.html) |
-| [command_exists.html](https://archernar.github.io/files/command_exists.html) | [kill_pid.html](https://archernar.github.io/files/kill_pid.html) |
-| [contains.html](https://archernar.github.io/files/contains.html) | [mecho.html](https://archernar.github.io/files/mecho.html) |
-| [core.panic.html](https://archernar.github.io/files/core.panic.html) | [mkdir_p.html](https://archernar.github.io/files/mkdir_p.html) |
-| [core.print_debug.html](https://archernar.github.io/files/core.print_debug.html) | [mv_f.html](https://archernar.github.io/files/mv_f.html) |
-| [core.print_debug_fn.html](https://archernar.github.io/files/core.print_debug_fn.html) | [necho.html](https://archernar.github.io/files/necho.html) |
-| [core.print_error.html](https://archernar.github.io/files/core.print_error.html) | [padout_file_lines.html](https://archernar.github.io/files/padout_file_lines.html) |
+| [abspath.html](https://archernar.github.io/files/abspath.html) | [indent_file.html](https://archernar.github.io/files/indent_file.html) |
+| [alpha_normal2.html](https://archernar.github.io/files/alpha_normal2.html) | [info.html](https://archernar.github.io/files/info.html) |
+| [array_contains.html](https://archernar.github.io/files/array_contains.html) | [isSameHash.html](https://archernar.github.io/files/isSameHash.html) |
+| [array_join.html](https://archernar.github.io/files/array_join.html) | [is_dir.html](https://archernar.github.io/files/is_dir.html) |
+| [backup_file.html](https://archernar.github.io/files/backup_file.html) | [is_file.html](https://archernar.github.io/files/is_file.html) |
+| [basename.html](https://archernar.github.io/files/basename.html) | [is_reachable.html](https://archernar.github.io/files/is_reachable.html) |
+| [collapse_hostname.html](https://archernar.github.io/files/collapse_hostname.html) | [justify_file.html](https://archernar.github.io/files/justify_file.html) |
+| [collapse_pwd.html](https://archernar.github.io/files/collapse_pwd.html) | [justify_line.html](https://archernar.github.io/files/justify_line.html) |
+| [command_exists.html](https://archernar.github.io/files/command_exists.html) | [kill_name.html](https://archernar.github.io/files/kill_name.html) |
+| [contains.html](https://archernar.github.io/files/contains.html) | [kill_pid.html](https://archernar.github.io/files/kill_pid.html) |
+| [core.panic.html](https://archernar.github.io/files/core.panic.html) | [mecho.html](https://archernar.github.io/files/mecho.html) |
+| [core.print_debug.html](https://archernar.github.io/files/core.print_debug.html) | [mkdir_p.html](https://archernar.github.io/files/mkdir_p.html) |
+| [core.print_debug_fn.html](https://archernar.github.io/files/core.print_debug_fn.html) | [mv_f.html](https://archernar.github.io/files/mv_f.html) |
+| [core.print_error.html](https://archernar.github.io/files/core.print_error.html) | [necho.html](https://archernar.github.io/files/necho.html) |
+| [core.print_error_fn.html](https://archernar.github.io/files/core.print_error_fn.html) | [padout_file_lines.html](https://archernar.github.io/files/padout_file_lines.html) |
 | [core.print_fatal.html](https://archernar.github.io/files/core.print_fatal.html) | [pidof_name.html](https://archernar.github.io/files/pidof_name.html) |
 | [core.print_fatal_fn.html](https://archernar.github.io/files/core.print_fatal_fn.html) | [prompter.html](https://archernar.github.io/files/prompter.html) |
 | [core.print_info.html](https://archernar.github.io/files/core.print_info.html) | [remove_leading_whitespace.html](https://archernar.github.io/files/remove_leading_whitespace.html) |
@@ -71,4 +72,3 @@
 | [git_origin.html](https://archernar.github.io/files/git_origin.html) | [trim_leading_whitespace_file.html](https://archernar.github.io/files/trim_leading_whitespace_file.html) |
 | [git_originsync.html](https://archernar.github.io/files/git_originsync.html) | [truncate_file_lines.html](https://archernar.github.io/files/truncate_file_lines.html) |
 | [git_toplevel.html](https://archernar.github.io/files/git_toplevel.html) | [warn.html](https://archernar.github.io/files/warn.html) |
-| [indent_file.html](https://archernar.github.io/files/indent_file.html) | [&nbsp;](&nbsp;) |
