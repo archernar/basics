@@ -64,8 +64,8 @@ cat <<EOF
     </style>
 </head>
 <body>
-
-    <h1>Code</h1>
+    <a href='https://archernar.github.io/files/index.html'>home</a><br>
+    <h1>Code Library</h1>
 
     <div class="code-container">
         <pre>

@@ -230,7 +230,7 @@ BEGIN {
 alpha_normal2 "$Tmp"
 echo "## bash.library includes"     >> README.md
 create_markdown_table2 "$Tmp" "MAKELINKS"   >> README.md
-create_markdown_table2 "$Tmp" "MAKELINKS"   >  README2.md
+create_markdown_table2 "$Tmp" "MAKELINKS"   >  README1.md
 
 
 
@@ -243,6 +243,11 @@ core.print_flag
 core.print_info "Step 1 Complete"
 pandoc --standalone --template template.html README.md > local.html
 pandoc --standalone --template template.html README1.md > ./files/index.html
+pandoc --standalone README1.md > "$Tmp1"
+cat "$Tmp1" | gawk ' /^<table>/, /^<[/]table>/ { print $0 } ' > "./files/index.txt"
+cp "$Tmp" ./files/index.html
+./codeTemplate "./files/index.txt" "index.txt" > "./files/index.html"
+
 core.print_info "Step 2 Complete"
 git add README.md
 
@@ -251,7 +256,8 @@ rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy
 if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
     ./bashfunctionextractor
     git add ./files
-    git commit -m "Updated ./files"
+    git add ./index.html
+    git commit -m "Updated ./files amd index.html"
     N=`git ls-files --deleted ./files | wc -l`
     echo "$N files were deleted from ./files"
     git diff --name-only ./files
@@ -264,9 +270,11 @@ if [ "$UPDATE" == "EXTRACT" ]; then
     D=`pwd`
     cd ../archernar.github.io
     cp ../basics/files/* ./files
+    cp ../basics/index.html ./
     git add ./files
+    git add ./index.html
     git rm $(git ls-files --deleted ./files)
-    git commit -m "Updated ./files"
+    git commit -m "Updated ./files and index.html"
     git push origin master
 
     cd "$D"
