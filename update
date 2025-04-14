@@ -246,7 +246,7 @@ pandoc --standalone --template template.html README1.md > ./files/index.html
 pandoc --standalone README1.md > "$Tmp1"
 cat "$Tmp1" | gawk ' /^<table>/, /^<[/]table>/ { print $0 } ' > "./files/index.txt"
 cp "$Tmp" ./files/index.html
-./codeTemplate "./files/index.txt" "index.txt" > "./files/index.html"
+./htmlTemplate "./files/index.txt" "index.txt" > "./files/index.html"
 
 core.print_info "Step 2 Complete"
 git add README.md

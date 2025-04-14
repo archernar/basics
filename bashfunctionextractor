@@ -31,7 +31,7 @@ extract_and_write_function() {
       echo "$signature"      > "./files/$function_name.bash"
       echo "$function_body" >> "./files/$function_name.bash"
       #echo "Function '$function_name' written to './files/$function_name.bash'"
-      ./htmlTemplate "./files/$function_name.bash" "$function_name.bash" > "./files/$function_name.html"
+      ./codeTemplate "./files/$function_name.bash" "$function_name.bash" > "./files/$function_name.html"
     fi
   done < "$input_file"
 }
