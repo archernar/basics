@@ -227,10 +227,16 @@ BEGIN {
 /files./ {
     print BASE $0
 }' | sort|uniq  > $Tmp
+cp $Tmp $Tmp1
+
+cp $Tmp1 $Tmp
 alpha_normal2 "$Tmp"
 echo "## bash.library includes"     >> README.md
 create_markdown_table2 "$Tmp" "MAKELINKS"   >> README.md
-create_markdown_table2 "$Tmp" "MAKELINKS"   >  README1.md
+
+cp $Tmp1 $Tmp
+alpha_normal4 "$Tmp"
+create_markdown_table4 "$Tmp" "MAKELINKS"   >  README1.md
 
 
 
@@ -247,6 +253,7 @@ pandoc --standalone README1.md > "$Tmp1"
 cat "$Tmp1" | gawk ' /^<table>/, /^<[/]table>/ { print $0 } ' > "./files/index.txt"
 cp "$Tmp" ./files/index.html
 ./htmlTemplate "./files/index.txt" "index.txt" > "./files/index.html"
+./htmlTemplate "./files/index.txt" "index.txt" > "./index.html"
 
 core.print_info "Step 2 Complete"
 git add README.md

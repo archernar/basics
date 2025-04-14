@@ -7,6 +7,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/abspath.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/alpha_normal2.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/alpha_normal4.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/array_contains.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/array_join.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/backup_file.bash
