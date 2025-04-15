@@ -14,14 +14,14 @@
 | [codeTemplate.html](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/codeTemplate.html) | [newbashscript](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript) |
 | [colomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/colomatic) | [notes](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/notes) |
 | [deploy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy) | [other](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/other) |
-| [functionlist.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/functionlist.bash) | [padomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic) |
-| [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [rmLeadingWhiteSpace](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/rmLeadingWhiteSpace) |
-| [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) |
-| [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [template.html](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/template.html) |
-| [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [thinner.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/thinner.bash) |
-| [gUntracked](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUntracked) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) |
-| [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |
-| [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [&nbsp;](&nbsp;) |
+| [functionlist.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/functionlist.bash) | [paddy](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/paddy) |
+| [gDiff](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff) | [padomatic](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/padomatic) |
+| [gHardSync](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync) | [rmLeadingWhiteSpace](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/rmLeadingWhiteSpace) |
+| [gLocal](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gLocal) | [setgit](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/setgit) |
+| [gStatus](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gStatus) | [template.html](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/template.html) |
+| [gUntracked](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUntracked) | [thinner.bash](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/thinner.bash) |
+| [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) |
+| [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |
 
 
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
