@@ -22,9 +22,18 @@
 | [gUntracked](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUntracked) | [update](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/update) |
 | [gUpdate](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdate) | [vim.txt](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/vim.txt) |
 | [gUpdateFromOrigin](https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gUpdateFromOrigin) | [&nbsp;](&nbsp;) |
+
+
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
 | colomatic | indentomatic | justomatic | padomatic |
+
+
+## bash.library includes
+
+
+
+## bash.library includes
 | ---------------------------------------- | ---------------------------------------- |
 |----------|----------|
 | [abspath.html](https://archernar.github.io/files/abspath.html) | [git_toplevel.html](https://archernar.github.io/files/git_toplevel.html) |
