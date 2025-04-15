@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Tue Apr 15 16:53:59 EDT 2025
-# *********************************************************HASHOMATIC: 4efc0007485bf7bf85033b0095cc7cae
+# *********************************************************DATEOMATIC: Tue Apr 15 16:57:17 EDT 2025
+# *********************************************************HASHOMATIC: 2e9f2b5c911d15eda55c84827e50e6e7
 DEBUGLEVEL=1
 
 function mecho() {
@@ -1340,9 +1340,9 @@ function core.echo() {
 function core.print.info() {
          local msg="$1"    # Bash-Function-Args
 	if core._should_print_color 1; then
-		printf "\033[1;32m%s: %s:\033[0m %s\n" 'Info' "$FUNCNAME" "$msg"
+		printf "\033[1;32m%s: %s:\033[0m %s\n" 'Info' "$FUNCNAME[1]" "$msg"
 	else
-		printf "%s: %s: %s\n" 'Info' "$FUNCNAME" "$msg"
+		printf "%s: %s: %s\n" 'Info' "$FUNCNAME[1]" "$msg"
 	fi
 }
 
