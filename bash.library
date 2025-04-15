@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr 13 20:35:13 EDT 2025
-# *********************************************************HASHOMATIC: 368f1180b80bb7d0e9ea088f50cb12ce
+# *********************************************************DATEOMATIC: Tue Apr 15 15:48:41 EDT 2025
+# *********************************************************HASHOMATIC: 3c5cd9b506d6495ccf985ead755c2f2d
 DEBUGLEVEL=1
 
 function mecho() {
@@ -923,7 +923,7 @@ function create_markdown_table4() {
 
   rm -f "$tmp" >/dev/null 2>&1
   if [[ "$str" == "MAKELINKS" ]]; then
-      cat "$input_file" |gawk '{n=split($0,A,"/");print "[" A[n] "](" $0 ")";}' > $tmp
+      cat "$input_file" |gawk '{n=split($0,A,"/");sub(/[.]html$/, "", A[n]);print "[" A[n] "](" $0 ")";}' > $tmp
   else
       cat "$input_file"  > $tmp
   fi
