@@ -76,6 +76,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mkdir_p.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mv_f.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/necho.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/paddy.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/padout_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/pidof_name.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/prompter.bash
