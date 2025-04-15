@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Tue Apr 15 17:13:41 EDT 2025
-# *********************************************************HASHOMATIC: c3fcf9c7ed4e15416f00a307518b161b
+# *********************************************************DATEOMATIC: Tue Apr 15 17:14:33 EDT 2025
+# *********************************************************HASHOMATIC: 3df3b3724eeb92df3acaf28aa094d4c8
 DEBUGLEVEL=1
 
 function mecho() {
@@ -1312,7 +1312,7 @@ function core.print.warn() {
 }
 
 function core.print.flag() {
-         local msg="********************************************************************************"
+         local msg="************************"
 	if core._should_print_color 1; then
 		printf "\033[1;32m%s:\033[0m %s\n" 'Info' "$msg"
 		printf "\033[1;32m%s:\033[0m %s\n" 'Info' "$msg"
