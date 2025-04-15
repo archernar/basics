@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Tue Apr 15 17:27:11 EDT 2025
-# *********************************************************HASHOMATIC: 3f26c294e34fb0c9141c7efc05dfef46
+# *********************************************************DATEOMATIC: Tue Apr 15 17:32:58 EDT 2025
+# *********************************************************HASHOMATIC: c5629fc3fb7e4cecfb01106a09de7706
 DEBUGLEVEL=1
 
 function mecho() {
@@ -569,6 +569,15 @@ function isSameHash() {
     else
         echo "0"
     fi
+}
+
+function paddy() {
+         local sz="$1"    # Bash-Function-Args
+  local tmp1=$(mktemp)
+  rm -f "$tmp1" >/dev/null 2>&1
+  #printf "%-${50}s\n" "$sz" > "$tmp1" # Pad to the right
+  printf "%-50s\n" "$sz" > "$tmp1" # Pad to the right
+  return `cat $tmp1`
 }
 
 function padout_file_lines() {
