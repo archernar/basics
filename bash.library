@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Tue Apr 15 17:11:11 EDT 2025
-# *********************************************************HASHOMATIC: a97cb68cfacc4410b28bd4dbbae2f652
+# *********************************************************DATEOMATIC: Tue Apr 15 17:12:24 EDT 2025
+# *********************************************************HASHOMATIC: fb9328187148d7d70575b02881b0b59a
 DEBUGLEVEL=1
 
 function mecho() {
@@ -46,16 +46,16 @@ if [ "$M" == "0" ]; then
     echo "Nothing to Add"
 fi
 if [ "$M" == "3" ]; then                                                                                               
-    echo "Adding 1 functions"
+    core.print.info "Adding 1 functions"
     echo "zzzone()" >> "$tmp1"
 fi
 if [ "$M" == "2" ]; then                                                                                               
-    echo "Adding 2 functions"
+    core.print.info "Adding 2 functions"
     echo "zzzone()" >> "$tmp1"
     echo "zzztwo()" >> "$tmp1"
 fi
 if [ "$M" == "1" ]; then                                                                                               
-    echo "Adding 3 functions"
+    core.print.info "Adding 3 functions"
     echo "zzzone()" >> "$tmp1"
     echo "zzztwo()" >> "$tmp1"
     echo "zzzthree()" >> "$tmp1"
@@ -101,11 +101,11 @@ if [ "$M" == "0" ]; then
     echo "Nothing to Add"
 fi
 if [ "$M" == "2" ]; then                                                                                               
-    echo "Adding 1 function"
+    core.print.info "Adding 1 function"
     echo "zzzone()" >> "$tmp1"
 fi
 if [ "$M" == "1" ]; then                                                                                               
-    echo "Adding 1 functions"
+    core.print.info "Adding 1 functions"
     echo "zzzone()" >> "$tmp1"
 fi
 
