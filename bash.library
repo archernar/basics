@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Tue Apr 15 16:02:45 EDT 2025
-# *********************************************************HASHOMATIC: 3c5cd9b506d6495ccf985ead755c2f2d
+# *********************************************************DATEOMATIC: Tue Apr 15 16:10:49 EDT 2025
+# *********************************************************HASHOMATIC: 761a41950db7229d1064749d5fd24fd1
 DEBUGLEVEL=1
 
 function mecho() {
@@ -1326,6 +1326,14 @@ function core.print_flag() {
 		printf "%s: %s\n" 'Info' "$msg"
 		printf "%s: %s\n" 'Info' "$msg"
 	fi
+}
+function core.print.echo() {
+         local msg="$1"    # Bash-Function-Args
+         echo "$msg"
+}
+function core.echo() {
+         local msg="$1"    # Bash-Function-Args
+         echo "$msg"
 }
 # @description Print an informative message to standard output
 # @arg $1 string message
