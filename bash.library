@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Wed Apr 16 22:25:18 EDT 2025
-# *********************************************************HASHOMATIC: a5416fc58bc5cfe1581d05b0534197c5
+# *********************************************************DATEOMATIC: Wed Apr 16 23:22:01 EDT 2025
+# *********************************************************HASHOMATIC: 6d6ccf54b8745dcc36560fb2087cea07
 DEBUGLEVEL=1
 
 function mecho() {
@@ -1353,4 +1353,17 @@ function core.print.debug() {
 	if [[ -v DEBUG ]]; then
 		printf "%s: %s\n" 'Debug' "$msg"
 	fi
+}
+right_pad_limited() {
+  local string="$1";local width="$2"     # Bash-Function-Args
+  local max_length=$((width - 1))
+  local truncated_string="${string:0:$max_length}" # Truncate if longer than max_length
+  local current_length="${#truncated_string}"
+  local padding_length=$((width - current_length))
+
+  if (( padding_length > 0 )); then
+    printf "%-${width}s" "$truncated_string"
+  else
+    printf "%s" "$truncated_string" # String is already at or wider than the width
+  fi
 }
