@@ -17,6 +17,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/command_exists.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/contains.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core._should_print_color.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.check_for_duplicates.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.echo.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.panic.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.debug.bash
