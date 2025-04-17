@@ -12,7 +12,7 @@ rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 source ~/bash.library
 
 UPDATE="NO"
-REMOTE="NO"
+REMOTE="YES"
 while getopts "txruls" arg
 do
     case $arg in
@@ -264,6 +264,17 @@ rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy
 
 if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
     ./bashfunctionextractor
+    test_file="./output"
+    core.check_for_duplicates "$test_file"
+    return_code=$?
+    if ((return_code == 0)); then
+      core.print.info "No duplicate lines found in '$test_file'."
+    elif ((return_code == 1)); then
+      core.print.info "Duplicate lines found in '$test_file' (see stderr for details)."
+    elif ((return_code == 2)); then
+      core.print.info "Error: File '$test_file' not found or not readable."
+    fi
+
     git add ./files
     git add ./index.html
     git commit -m "Updated ./files amd index.html"         >/dev/null 2>&1;
