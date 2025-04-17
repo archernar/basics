@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Wed Apr 16 23:22:10 EDT 2025
-# *********************************************************HASHOMATIC: 6d6ccf54b8745dcc36560fb2087cea07
+# *********************************************************DATEOMATIC: Thu Apr 17 09:40:18 EDT 2025
+# *********************************************************HASHOMATIC: 703f53382f794be60896a12794eafbad
 DEBUGLEVEL=1
 
 function mecho() {
@@ -1367,3 +1367,233 @@ right_pad_limited() {
     printf "%s" "$truncated_string" # String is already at or wider than the width
   fi
 }
+
+
+# Function to get the length of a string
+function core.string.length() {
+  local str="$1"
+  echo "${#str}"
+}
+
+# Function to check if a string is empty
+function core.string.isempty() {
+  local str="$1"
+  if [ -z "$str" ]; then
+    echo 0 # True (empty)
+  else
+    echo 1 # False (not empty)
+  fi
+}
+
+# Function to check if a string contains a substring
+function core.string.contains() {
+  local str="$1"
+  local sub="$2"
+  if [[ "$str" == *"$sub"* ]]; then
+    echo 0 # True (contains)
+  else
+    echo 1 # False (does not contain)
+  fi
+}
+
+# Function to get a substring from a string (starting at index, length)
+function core.string.substring() {
+  local str="$1"
+  local start="$2"
+  local len="$3"
+
+  # Adjust start index for bash's 0-based indexing
+  local adjusted_start=$((start - 1))
+
+  # Handle potential negative or zero length
+  if [[ "$len" -le 0 ]]; then
+    echo ""
+    return 0
+  fi
+
+  # Check if the starting index is within bounds
+  if [[ "$adjusted_start" -lt 0 || "$adjusted_start" -ge "${#str}" ]]; then
+    echo ""
+    return 1 # Indicate error: invalid starting index
+  fi
+
+  echo "${str:$adjusted_start:$len}"
+}
+
+# Function to find the index of the first occurrence of a substring
+function core.string.indexof() {
+  local str="$1"
+  local sub="$2"
+  local index
+
+  if [[ -z "$sub" ]]; then
+    echo 0 # Empty substring found at the beginning
+    return 0
+  fi
+
+  index=$(expr index "$str" "$sub")
+  if [[ "$index" -gt 0 ]]; then
+    echo $((index - 1)) # Adjust to 0-based indexing
+    return 0
+  else
+    echo -1 # Substring not found
+    return 1
+  fi
+}
+
+# Function to replace the first occurrence of a substring
+function core.string.replacefirst() {
+  local str="$1"
+  local old="$2"
+  local new="$3"
+
+  if [[ -z "$old" ]]; then
+    echo "$str"
+    return 0
+  fi
+
+  echo "${str/$old/$new}"
+}
+
+# Function to replace all occurrences of a substring
+function core.string.replace.all() {
+  local str="$1"
+  local old="$2"
+  local new="$3"
+
+  if [[ -z "$old" ]]; then
+    echo "$str"
+    return 0
+  fi
+
+  echo "${str//$old/$new}"
+}
+
+# Function to convert a string to uppercase
+function core.string.toupper() {
+  local str="$1"
+  echo "${str^^}"
+}
+
+# Function to convert a string to lowercase
+function core.string.tolower() {
+  local str="$1"
+  echo "${str,,}"
+}
+
+# Function to split a string into an array using a delimiter
+function core.string.split() {
+  local str="$1"
+  local delim="$2"
+  local -n array_name="$3" # Name of the array to store the result
+
+  IFS="$delim" read -ra array_name <<< "$str"
+}
+
+# --- String Padding Functions ---
+
+# Function to pad a string on the left with a specified character to a target length
+function core.string.padleft() {
+  local str="$1"
+  local len="$2"
+  local pad_char="${3:- }" # Default padding character is space
+  local current_length=$(string_length "$str")
+  local padding_length=$((len - current_length))
+  local padding=""
+
+  if [[ "$padding_length" -gt 0 ]]; then
+    for ((i=0; i<padding_length; i++)); do
+      padding+="$pad_char"
+    done
+    echo "$padding$str"
+  else
+    echo "$str" # No padding needed
+  fi
+}
+
+# Function to pad a string on the right with a specified character to a target length
+function core.string.padright() {
+  local str="$1"
+  local len="$2"
+  local pad_char="${3:- }" # Default padding character is space
+  local current_length=$(string_length "$str")
+  local padding_length=$((len - current_length))
+  local padding=""
+
+  if [[ "$padding_length" -gt 0 ]]; then
+    for ((i=0; i<padding_length; i++)); do
+      padding+="$pad_char"
+    done
+    echo "$str$padding"
+  else
+    echo "$str" # No padding needed
+  fi
+}
+
+# Function to center a string within a specified width using a padding character
+function core.string.padcenter() {
+  local str="$1"
+  local width="$2"
+  local pad_char="${3:- }" # Default padding character is space
+  local current_length=$(string_length "$str")
+
+  if [[ "$width" -le "$current_length" ]]; then
+    echo "$str" # No padding needed
+    return 0
+  fi
+
+  local left_padding_length=$(( (width - current_length) / 2 ))
+  local right_padding_length=$(( width - current_length - left_padding_length ))
+  local left_padding=""
+  local right_padding=""
+
+  for ((i=0; i<left_padding_length; i++)); do
+    left_padding+="$pad_char"
+  done
+  for ((i=0; i<right_padding_length; i++)); do
+    right_padding+="$pad_char"
+  done
+
+  echo "$left_padding$str$right_padding"
+}
+
+# # Example usage (including padding functions):
+# if [[ "$0" == "$BASH_SOURCE" ]]; then
+#   my_string="Hello"
+#   substring="World"
+# 
+#   echo "--- Basic String Operations ---"
+#   echo "Original string: '$my_string'"
+#   echo "Length: $(string_length "$my_string")"
+#   echo "Is empty? $(string_is_empty "$my_string")"
+#   echo "Contains '$substring'? $(string_contains "$my_string" "$substring")"
+#   echo "Substring from index 2, length 3: '$(string_substring "$my_string" 2 3)'"
+#   echo "Index of 'll': $(string_index_of "$my_string" "ll")"
+#   echo "Replace first 'l' with '*': '$(string_replace_first "$my_string" "l" "*")'"
+#   echo "Replace all 'l' with '*': '$(string_replace_all "$my_string" "l" "*")'"
+#   echo "Uppercase: '$(string_to_upper "$my_string")'"
+#   echo "Lowercase: '$(string_to_lower "$my_string")'"
+# 
+#   my_string_to_split="one,two,three"
+#   local -a parts
+#   string_split "$my_string_to_split" "," parts
+#   echo "Split string into array: ${parts[@]}"
+# 
+#   echo ""
+#   echo "--- String Padding Operations ---"
+#   text_to_pad="Test"
+#   target_length=10
+#   padding_char="*"
+# 
+#   padded_left=$(string_pad_left "$text_to_pad" "$target_length" "$padding_char")
+#   echo "Padded left ('$padding_char', length $target_length): '$padded_left'"
+# 
+#   padded_right=$(string_pad_right "$text_to_pad" "$target_length" "$padding_char")
+#   echo "Padded right ('$padding_char', length $target_length): '$padded_right'"
+# 
+#   centered=$(string_pad_center "$text_to_pad" "$target_length" "_")
+#   echo "Centered ('_', width $target_length): '$centered'"
+# 
+#   centered_even=$(string_pad_center "Even" 10 "#")
+#   echo "Centered 'Even' (width 10, '#'): '$centered_even'"
+# fi
