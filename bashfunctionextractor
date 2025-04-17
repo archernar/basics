@@ -7,6 +7,8 @@ extract_and_write_function() {
   local function_body
   local in_function=0
 
+  rm -f   ./output
+
   while IFS= read -r line; do
     # Check for the start of a function definition
     if [[ "$line" =~ ^[[:space:]]*function[[:space:]]*([a-zA-Z_][a-zA-Z0-9_.]*)[[:space:]]*\(\)[[:space:]]*\{ ]]; then
@@ -28,6 +30,7 @@ extract_and_write_function() {
       # Remove the opening and closing curly braces from the body
       function_body=$(echo "$function_body" | sed -e '1d' -e '$d')
       # Write the function to a file named after the function
+      echo "$signature"      >> "./output"
       echo "$signature"      > "./files/$function_name.bash"
       echo "$function_body" >> "./files/$function_name.bash"
       #echo "Function '$function_name' written to './files/$function_name.bash'"
