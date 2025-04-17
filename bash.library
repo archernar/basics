@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Thu Apr 17 09:43:22 EDT 2025
-# *********************************************************HASHOMATIC: 703f53382f794be60896a12794eafbad
+# *********************************************************DATEOMATIC: Thu Apr 17 09:47:16 EDT 2025
+# *********************************************************HASHOMATIC: d4ee17d6a70842aef295d043127686ab
 DEBUGLEVEL=1
 
 function mecho() {
@@ -1597,3 +1597,99 @@ function core.string.padcenter() {
 #   centered_even=$(string_pad_center "Even" 10 "#")
 #   echo "Centered 'Even' (width 10, '#'): '$centered_even'"
 # fi
+#!/bin/bash
+
+# Function to check for duplicate lines in a file.
+# It uses associative arrays (supported in Bash 4.0+) for efficiency.
+#
+# Usage:
+#   check_for_duplicates "filename"
+#
+# Arguments:
+#   $1: The name of the file to check.
+#
+# Returns:
+#   0 if no duplicates are found.
+#   1 if duplicates are found.
+#   2 if the file does not exist or is not readable.
+#
+# Output:
+#   If duplicates are found, the function prints each duplicate line
+#   along with the number of times it appears.  The output is sent to
+#   stderr, so it can be redirected separately from the standard output
+#   of a script that uses this function.
+
+function core.check_for_duplicates() {
+  local filename="$1"
+  local -A lines  # Declare an associative array to store line counts.
+  local line
+  local duplicate_found=0
+
+  # Check if the file exists and is readable.
+  if [[ ! -r "$filename" ]]; then
+    printf "Error: File '%s' does not exist or is not readable.\n" "$filename" >&2
+    return 2
+  fi
+
+  # Read the file line by line.
+  while IFS= read -r line; do
+    # If the line exists as a key in the associative array, increment its count.
+    if [[ -v lines["$line"] ]]; then
+      ((lines["$line"]++))
+      # Check if this is the first time we've seen this duplicate.
+      if ((lines["$line"] == 2)); then
+        duplicate_found=1 # Set the flag when the first duplicate is found
+        printf "Duplicate line found:\n" >&2 # print this only once
+      fi
+    else
+      # Otherwise, add the line to the array with a count of 1.
+      lines["$line"]=1
+    fi
+  done < "$filename"
+
+  # Print the duplicate lines and their counts.
+  if ((duplicate_found)); then
+    for line in "${!lines[@]}"; do # loop through the keys of the array
+      if ((lines["$line"] > 1)); then
+        printf "  \"%s\": %d times\n" "$line" "${lines["$line"]}" >&2
+      fi
+    done
+    return 1 # Return 1 to indicate duplicates were found.
+  else
+    return 0 # Return 0 to indicate no duplicates were found.
+  fi
+}
+
+# Example usage (demonstration):
+# Create a test file (if it doesn't exist).
+# test_file="test_duplicates.txt"
+# if [[ ! -f "$test_file" ]]; then
+#   cat > "$test_file" <<EOF
+# This is line 1.
+# This is line 2.
+# This is line 1.
+# This is line 3.
+# This is line 2.
+# This is line 1.
+# EOF
+# fi
+# 
+# # Call the function and check the return code.
+# check_for_duplicates "$test_file"
+# return_code=$?
+# 
+# if ((return_code == 0)); then
+#   echo "No duplicate lines found in '$test_file'."
+# elif ((return_code == 1)); then
+#   echo "Duplicate lines found in '$test_file' (see stderr for details)."
+# elif ((return_code == 2)); then
+#   echo "Error: File '$test_file' not found or not readable."
+# fi
+# 
+# # Example of calling the function with a non-existent file:
+# check_for_duplicates "nonexistent_file.txt"
+# return_code=$?
+# if ((return_code == 2)); then
+#   echo "Function correctly handled the non-existent file."
+# fi
+# 
