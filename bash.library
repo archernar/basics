@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr 20 10:23:59 EDT 2025
-# *********************************************************HASHOMATIC: 59887ba36a977d868a34c3c0918e4cac
+# *********************************************************DATEOMATIC: Sun Apr 20 10:33:05 EDT 2025
+# *********************************************************HASHOMATIC: 7898152e4f10e4a1a11901eaf11f6064
 DEBUGLEVEL=1
 
 function mecho() {
@@ -1532,8 +1532,7 @@ function core.string.padright() {
 
 # Function to center a string within a specified width using a padding character
 function core.string.padcenter() {
-  local str="$1"
-  local width="$2"
+         local str="$1";local width="$2"     # Bash-Function-Args
   local pad_char="${3:- }" # Default padding character is space
   local current_length=$(string_length "$str")
 
