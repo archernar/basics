@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr 20 10:34:59 EDT 2025
-# *********************************************************HASHOMATIC: c36835224c90bca4ba9675f0d5e5dae3
+# *********************************************************DATEOMATIC: Sun Apr 20 14:32:46 EDT 2025
+# *********************************************************HASHOMATIC: 65f095e355e3dea2afc7d07f9c96483c
 DEBUGLEVEL=1
 
 function mecho() {
@@ -958,6 +958,52 @@ function create_markdown_table4() {
     echo "$row|"
   fi
 }
+create_markdown_table() {
+  local input_file="$1"
+
+  # Check if the input file exists
+  if [[ ! -f "$input_file" ]]; then
+    core.print.echo "Error: Input file '$input_file' not found."
+    return 1
+  fi
+
+  # Read lines from the file and create table rows
+  local line_count=0
+  local row=""
+  local first_row=1
+
+  while IFS= read -r line; do
+    if [[ $line_count -eq 0 ]]; then
+      if [[ $first_row -eq 1 ]]; then
+          #core.print.echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
+          core.print.echo "|    A     |    B     |    C     |    D     |    E     |"
+          core.print.echo "|----------|----------|----------|----------|----------|"
+          first_row=0
+      fi
+    fi
+
+    row+="| $line "
+
+    line_count=$((line_count + 1))
+
+    if [[ $line_count -eq 5 ]]; then
+      core.print.echo "$row|"
+      row=""
+      line_count=0
+    fi
+  done < "$input_file"
+
+  # Handle remaining lines if the total line count is not a multiple of 5
+  if [[ $line_count -gt 0 ]]; then
+    for ((i = line_count; i < 5; i++)); do
+        row+="|  "
+    done
+    core.print.echo "$row|"
+  fi
+}
+
+# Example usage (if you want to test it with a file named "input.txt"):
+# create_markdown_table "input.txt"
 function create_markdown_table2() {
          local input_file="$1";local str="$2"                   # Bash-Function-Args
   local tmp=$(mktemp)
