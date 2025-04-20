@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr 20 14:32:46 EDT 2025
-# *********************************************************HASHOMATIC: 65f095e355e3dea2afc7d07f9c96483c
+# *********************************************************DATEOMATIC: Sun Apr 20 14:38:36 EDT 2025
+# *********************************************************HASHOMATIC: dab62c9ba5a6c4b074bc437037735899
 DEBUGLEVEL=1
 
 function mecho() {
@@ -1660,6 +1660,7 @@ function core.string.padcenter() {
 #   stderr, so it can be redirected separately from the standard output
 #   of a script that uses this function.
 
+
 function core.dumpfile.info() {
          local filename="$1"     # Bash-Function-Args
   local line
@@ -1670,10 +1671,12 @@ function core.dumpfile.info() {
     return 2
   fi
 
-  # Read the file line by line.
-  while IFS= read -r line; do
-      core.print.info "$line"
-  done < "$filename"
+  if [ "$DEBUGLEVEL" -ge 5 ]; then
+      # Read the file line by line.
+      while IFS= read -r line; do
+          core.print.info "$line"
+      done < "$filename"
+  fi
 }
 
 
