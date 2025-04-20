@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr 20 10:33:05 EDT 2025
-# *********************************************************HASHOMATIC: 7898152e4f10e4a1a11901eaf11f6064
+# *********************************************************DATEOMATIC: Sun Apr 20 10:34:52 EDT 2025
+# *********************************************************HASHOMATIC: c36835224c90bca4ba9675f0d5e5dae3
 DEBUGLEVEL=1
 
 function mecho() {
@@ -1471,20 +1471,19 @@ function core.string.replace.all() {
 
 # Function to convert a string to uppercase
 function core.string.toupper() {
-  local str="$1"
+         local str="$1"     # Bash-Function-Args
   echo "${str^^}"
 }
 
 # Function to convert a string to lowercase
 function core.string.tolower() {
-  local str="$1"
+         local str="$1"     # Bash-Function-Args
   echo "${str,,}"
 }
 
 # Function to split a string into an array using a delimiter
 function core.string.split() {
-  local str="$1"
-  local delim="$2"
+         local str="$1";local delim="$2"     # Bash-Function-Args
   local -n array_name="$3" # Name of the array to store the result
 
   IFS="$delim" read -ra array_name <<< "$str"
@@ -1494,8 +1493,7 @@ function core.string.split() {
 
 # Function to pad a string on the left with a specified character to a target length
 function core.string.padleft() {
-  local str="$1"
-  local len="$2"
+         local str="$1";local len="$2"     # Bash-Function-Args
   local pad_char="${3:- }" # Default padding character is space
   local current_length=$(string_length "$str")
   local padding_length=$((len - current_length))
@@ -1513,8 +1511,7 @@ function core.string.padleft() {
 
 # Function to pad a string on the right with a specified character to a target length
 function core.string.padright() {
-  local str="$1"
-  local len="$2"
+         local str="$1";local len="$2"     # Bash-Function-Args
   local pad_char="${3:- }" # Default padding character is space
   local current_length=$(string_length "$str")
   local padding_length=$((len - current_length))
