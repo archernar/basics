@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr 20 10:13:14 EDT 2025
-# *********************************************************HASHOMATIC: 089ec22b96c6c1cb611c785dc89c244c
+# *********************************************************DATEOMATIC: Sun Apr 20 10:21:12 EDT 2025
+# *********************************************************HASHOMATIC: 59887ba36a977d868a34c3c0918e4cac
 DEBUGLEVEL=1
 
 function mecho() {
@@ -1597,7 +1597,6 @@ function core.string.padcenter() {
 #   centered_even=$(string_pad_center "Even" 10 "#")
 #   echo "Centered 'Even' (width 10, '#'): '$centered_even'"
 # fi
-#!/bin/bash
 
 # Function to check for duplicate lines in a file.
 # It uses associative arrays (supported in Bash 4.0+) for efficiency.
@@ -1618,6 +1617,23 @@ function core.string.padcenter() {
 #   along with the number of times it appears.  The output is sent to
 #   stderr, so it can be redirected separately from the standard output
 #   of a script that uses this function.
+
+function core.dumpfile.info() {
+         local filename="$1"     # Bash-Function-Args
+  local line
+
+  # Check if the file exists and is readable.
+  if [[ ! -r "$filename" ]]; then
+    printf "Error: File '%s' does not exist or is not readable.\n" "$filename" >&2
+    return 2
+  fi
+
+  # Read the file line by line.
+  while IFS= read -r line; do
+      core.print.info "$line"
+  done < "$filename"
+}
+
 
 function core.check_for_duplicates() {
          local filename="$1"     # Bash-Function-Args
