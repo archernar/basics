@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr 20 14:56:50 EDT 2025
-# *********************************************************HASHOMATIC: 248a87f9ee94b6722fe50737d55afef1
+# *********************************************************DATEOMATIC: Mon Apr 21 08:35:44 EDT 2025
+# *********************************************************HASHOMATIC: 6029314a6ddb0675748a7f0d8b7554f5
 DEBUG=0
 DEBUGLEVEL=1
 
@@ -1361,11 +1361,11 @@ function core.print.warn() {
 
 function core.print.echo() {
          local msg="$1"    # Bash-Function-Args
-         echo "$msg"
+     echo "$msg"
 }
 function core.echo() {
          local msg="$1"    # Bash-Function-Args
-         echo "$msg"
+     echo "$msg"
 }
 
 
@@ -1386,6 +1386,7 @@ function core.print.info() {
 }
 
 function core.print.flag() {
+         local void=0;    # Bash-Function-Args
     local msg="************************"
     local f=${FUNCNAME[1]}
     if [ "$DEBUG" -gt 0 ]; then
@@ -1408,8 +1409,8 @@ function core.print.debug() {
 		printf "%s: %s\n" 'Debug' "$msg"
 	fi
 }
-right_pad_limited() {
-  local string="$1";local width="$2"     # Bash-Function-Args
+function right_pad_limited() {
+         local string="$1";local width="$2"     # Bash-Function-Args
   local max_length=$((width - 1))
   local truncated_string="${string:0:$max_length}" # Truncate if longer than max_length
   local current_length="${#truncated_string}"
@@ -1425,13 +1426,13 @@ right_pad_limited() {
 
 # Function to get the length of a string
 function core.string.length() {
-  local str="$1"
+         local str="$1";  # Bash-Function-Args
   echo "${#str}"
 }
 
 # Function to check if a string is empty
 function core.string.isempty() {
-  local str="$1"
+         local str="$1";  # Bash-Function-Args
   if [ -z "$str" ]; then
     echo 0 # True (empty)
   else
@@ -1441,8 +1442,7 @@ function core.string.isempty() {
 
 # Function to check if a string contains a substring
 function core.string.contains() {
-  local str="$1"
-  local sub="$2"
+         local str="$1"; local sub="$2";   # Bash-Function-Args
   if [[ "$str" == *"$sub"* ]]; then
     echo 0 # True (contains)
   else
@@ -1452,9 +1452,7 @@ function core.string.contains() {
 
 # Function to get a substring from a string (starting at index, length)
 function core.string.substring() {
-  local str="$1"
-  local start="$2"
-  local len="$3"
+         local str="$1"; local start="$2"; local len="$3";  # Bash-Function-Args
 
   # Adjust start index for bash's 0-based indexing
   local adjusted_start=$((start - 1))
@@ -1476,8 +1474,7 @@ function core.string.substring() {
 
 # Function to find the index of the first occurrence of a substring
 function core.string.indexof() {
-  local str="$1"
-  local sub="$2"
+         local str="$1"; local sub="$2";   # Bash-Function-Args
   local index
 
   if [[ -z "$sub" ]]; then
@@ -1497,9 +1494,7 @@ function core.string.indexof() {
 
 # Function to replace the first occurrence of a substring
 function core.string.replacefirst() {
-  local str="$1"
-  local old="$2"
-  local new="$3"
+         local str="$1"; local old="$2"; local new="$3";  # Bash-Function-Args
 
   if [[ -z "$old" ]]; then
     echo "$str"
@@ -1511,9 +1506,7 @@ function core.string.replacefirst() {
 
 # Function to replace all occurrences of a substring
 function core.string.replace.all() {
-  local str="$1"
-  local old="$2"
-  local new="$3"
+         local str="$1"; local old="$2"; local new="$3";  # Bash-Function-Args
 
   if [[ -z "$old" ]]; then
     echo "$str"
