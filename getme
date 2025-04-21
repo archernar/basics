@@ -99,6 +99,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/remove_leading_whitespace.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/repeat_char.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/replace.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/right_pad_limited.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rm_rf.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rm_rf_silent.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_error.bash
