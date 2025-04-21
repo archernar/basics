@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Mon Apr 21 08:50:48 EDT 2025
-# *********************************************************HASHOMATIC: ff3493c9a70231eca43d93b34ad6e0bf
+# *********************************************************DATEOMATIC: Mon Apr 21 08:52:50 EDT 2025
+# *********************************************************HASHOMATIC: 912ee359bd6b8cc7afecf2960b76b872
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -43,7 +43,7 @@ N=`wc -l "$tmp1" | gawk '{print $1}'`
 M=$((N % 4));
 core.print.info "The function list contains $N functions"
 if [ "$M" == "0" ]; then                                                                                               
-    echo "Nothing to Add"
+    core.print.info "Nothing to Add"
 fi
 if [ "$M" == "3" ]; then                                                                                               
     core.print.info "Adding 1 functions"
@@ -96,7 +96,7 @@ N=`wc -l "$tmp1" | gawk '{print $1}'`
 M=$((N % 2));
 core.print.info "The function list contains $N functions"
 if [ "$M" == "0" ]; then                                                                                               
-    echo "Nothing to Add"
+    core.print.info "Nothing to Add"
 fi
 if [ "$M" == "2" ]; then                                                                                               
     core.print.info "Adding 1 function"

@@ -21,6 +21,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.dumpfile.info.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.echo.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.panic.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.alert.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.debug.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.debug_fn.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.echo.bash
