@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Mon Apr 21 08:36:20 EDT 2025
-# *********************************************************HASHOMATIC: 6029314a6ddb0675748a7f0d8b7554f5
+# *********************************************************DATEOMATIC: Mon Apr 21 08:37:40 EDT 2025
+# *********************************************************HASHOMATIC: e989e81b7efd56203e5479304503be67
 DEBUG=0
 DEBUGLEVEL=1
 
@@ -1375,7 +1375,7 @@ function core.echo() {
 function core.print.info() {
          local msg="$1"    # Bash-Function-Args
     local f=${FUNCNAME[1]}
-    local ff=$(paddy "$f")
+    local ff=$(./paddy "$f")
     if [ "$DEBUG" -gt 0 ]; then
         if core._should_print_color 1; then
             printf "\033[1;32m%s: %s:\033[0m %s\n" 'Info' "$ff" "$msg"
