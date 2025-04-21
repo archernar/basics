@@ -81,7 +81,7 @@
 | [create_markdown_table2.html](https://archernar.github.io/files/create_markdown_table2.html) | [trim.html](https://archernar.github.io/files/trim.html) |
 | [create_markdown_table3.html](https://archernar.github.io/files/create_markdown_table3.html) | [trim_leading_whitespace_file.html](https://archernar.github.io/files/trim_leading_whitespace_file.html) |
 | [create_markdown_table4.html](https://archernar.github.io/files/create_markdown_table4.html) | [truncate_file_lines.html](https://archernar.github.io/files/truncate_file_lines.html) |
-| [current_timestamp.html](https://archernar.github.io/files/current_timestamp.html) | [util.print.magenta.html](https://archernar.github.io/files/util.print.magenta.html) |
-| [dirname.html](https://archernar.github.io/files/dirname.html) | [util.print.red.html](https://archernar.github.io/files/util.print.red.html) |
-| [eecho.html](https://archernar.github.io/files/eecho.html) | [warn.html](https://archernar.github.io/files/warn.html) |
-| [ends_with.html](https://archernar.github.io/files/ends_with.html) | [&nbsp;](&nbsp;) |
+| [current_timestamp.html](https://archernar.github.io/files/current_timestamp.html) | [util.println.magenta.html](https://archernar.github.io/files/util.println.magenta.html) |
+| [dirname.html](https://archernar.github.io/files/dirname.html) | [util.println.red.html](https://archernar.github.io/files/util.println.red.html) |
+| [eecho.html](https://archernar.github.io/files/eecho.html) | [util.println.white.html](https://archernar.github.io/files/util.println.white.html) |
+| [ends_with.html](https://archernar.github.io/files/ends_with.html) | [warn.html](https://archernar.github.io/files/warn.html) |
