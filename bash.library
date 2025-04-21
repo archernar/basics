@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Mon Apr 21 08:55:20 EDT 2025
-# *********************************************************HASHOMATIC: f0545a7fbc28838b7c316484eb6ec922
+# *********************************************************DATEOMATIC: Mon Apr 21 09:00:18 EDT 2025
+# *********************************************************HASHOMATIC: e301cba47539e19c017f036206b58488
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -1385,12 +1385,17 @@ function core.print.error() {
 		#printf "%s: %s\n" 'Err' "$msg" >&2
 	fi
 }
+function util.print.red() {
+         local msg="$1"    # Bash-Function-Args
+        printf "\033[1;31m%s\033[0m\n" "$msg"
+}
 function core.print.alert() {
          local msg="$1"    # Bash-Function-Args
     local f=${FUNCNAME[1]}
     local ff=$(printf "%-32s\n" "$f")
 	if core._should_print_color 2; then
-        printf "\033[1;31m%s: %s: %s\033[0m\n" 'Alt' "$ff" "$msg" >&2
+        util.print.red() $(printf "%s: %s: %s" 'Alt' "$ff" "$msg")
+        #printf "\033[1;31m%s: %s: %s\033[0m\n" 'Alt' "$ff" "$msg" >&2
 	else
         printf "%s: %s: %s\n" 'Alt' "$ff" "$msg" >&2
 	fi
