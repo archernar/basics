@@ -12,7 +12,7 @@ rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 source ~/bash.library
 
 UPDATE="NO"
-REMOTE="YES"
+REMOTE="NO"
 while getopts "txruls" arg
 do
     case $arg in
@@ -46,58 +46,14 @@ else
     RETVAL="NO"                                                                                                              
 fi                                                                                                                           
 
-create_markdown_table() {
-  local input_file="$1"
-
-  # Check if the input file exists
-  if [[ ! -f "$input_file" ]]; then
-    core.print.echo "Error: Input file '$input_file' not found."
-    return 1
-  fi
-
-  # Read lines from the file and create table rows
-  local line_count=0
-  local row=""
-  local first_row=1
-
-  while IFS= read -r line; do
-    if [[ $line_count -eq 0 ]]; then
-      if [[ $first_row -eq 1 ]]; then
-          #core.print.echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
-          core.print.echo "|    A     |    B     |    C     |    D     |    E     |"
-          core.print.echo "|----------|----------|----------|----------|----------|"
-          first_row=0
-      fi
-    fi
-
-    row+="| $line "
-
-    line_count=$((line_count + 1))
-
-    if [[ $line_count -eq 5 ]]; then
-      core.print.echo "$row|"
-      row=""
-      line_count=0
-    fi
-  done < "$input_file"
-
-  # Handle remaining lines if the total line count is not a multiple of 5
-  if [[ $line_count -gt 0 ]]; then
-    for ((i = line_count; i < 5; i++)); do
-        row+="|  "
-    done
-    core.print.echo "$row|"
-  fi
-}
-
-# Example usage (if you want to test it with a file named "input.txt"):
-# create_markdown_table "input.txt"
 
 D=`date`
+core.print.alert "$D"
 
 FILE="./.vimrc"
 if [ $(isSameHash "$FILE") == "0" ]; then
 
+    core.print.info "HashoMatic $FILE"
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
     core.print.echo "\" *********************************************************DATEOMATIC: $D"      > $Tmp1
@@ -110,7 +66,7 @@ fi
 
 FILE="./.bashrc"
 if [ $(isSameHash "$FILE") == "0" ]; then
-
+    core.print.info "HashoMatic $FILE"
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
     core.print.echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
@@ -123,7 +79,7 @@ fi
 
 FILE="./bashrc.shared"
 if [ $(isSameHash "$FILE") == "0" ]; then
-
+    core.print.info "HashoMatic $FILE"
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
     core.print.echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
@@ -135,7 +91,7 @@ fi
 
 FILE="./bash.library"
 if [ $(isSameHash "$FILE") == "0" ]; then
-
+    core.print.info "HashoMatic $FILE"
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
     core.print.echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
@@ -147,7 +103,7 @@ fi
 
 FILE="./gawk.library"
 if [ $(isSameHash "$FILE") == "0" ]; then
-
+    core.print.info "HashoMatic $FILE"
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
     core.print.echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
@@ -191,6 +147,8 @@ core.print.echo ""     >> README.md
 #egrep "(function.*[(][)])|(Function-Args)" bash.library | grep "()" | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp
 
 ./functionlist.bash > $Tmp
+core.dumpfile.info "$Tmp"
+
 cat "$Tmp" | sort | uniq > "$Tmp1"; cp "$Tmp1" "$Tmp"
 N=`wc -l "$Tmp" | gawk '{print $1}'`
 M=$((N % 2));
@@ -220,6 +178,8 @@ core.print.echo ""     >> README.md
 
 rm -f "$Tmp"  >/dev/null 2>&1;
 ./functionlist.bash | gawk '{sz=$0;gsub(/[(].*[)]/, "", sz);print "files/" sz ".html";}' > $Tmp1
+
+
 #git ls-files | gawk '
 cat $Tmp1 | gawk '
 BEGIN {
@@ -232,6 +192,11 @@ BEGIN {
 cp $Tmp $Tmp1
 
 cp $Tmp1 $Tmp
+
+
+
+
+
 alpha_normal2 "$Tmp"
 core.print.echo "## bash.library includes"     >> README.md
 create_markdown_table2 "$Tmp" "MAKELINKS"   >> README.md
