@@ -117,6 +117,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim_leading_whitespace_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/truncate_file_lines.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.magenta.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.red.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/warn.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/functionlist.bash
