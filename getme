@@ -119,6 +119,8 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/truncate_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.magenta.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.red.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.blue.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.green.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.magenta.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.red.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.white.bash

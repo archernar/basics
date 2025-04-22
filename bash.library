@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Mon Apr 21 14:44:03 EDT 2025
-# *********************************************************HASHOMATIC: 097d460d0a4784a59ab9a2a0039bfd62
+# *********************************************************DATEOMATIC: Mon Apr 21 23:28:48 EDT 2025
+# *********************************************************HASHOMATIC: 24de98320981b05024a648cfd72e36bc
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -1414,6 +1414,15 @@ function core.print.error() {
 #  VT100_BG_CYAN="\x1b[46m"
 #  VT100_BG_WHITE="\x1b[47m"
 
+  
+function core.position.cursor() {
+         local row="$1"; local col="$2";  # Bash-Function-Args
+  printf "\e[$row;${col}H"
+}
+function core.clear.EOL() {
+         local void=0;  # Bash-Function-Args
+    printf "\e[K"
+}
 function util.println.red() {
          local msg="$1"    # Bash-Function-Args
         printf "\033[1;31m%s\033[0m\n" "$msg"
