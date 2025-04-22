@@ -12,7 +12,7 @@ rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 source ~/bash.library
 
 UPDATE="NO"
-REMOTE="NO"
+REMOTE="YES"
 while getopts "txruls" arg
 do
     case $arg in
@@ -49,6 +49,7 @@ fi
 
 D=`date`
 core.print.alert "$D"
+core.print.alert "I am the lizard king"
 
 FILE="./.vimrc"
 if [ $(isSameHash "$FILE") == "0" ]; then
