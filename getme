@@ -10,6 +10,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/alpha_normal4.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.clear_line.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.clear_screen.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.constants.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.get_cursor_position.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.move_cursor_down.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.move_cursor_left.bash
