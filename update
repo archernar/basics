@@ -9,10 +9,10 @@ trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 #   >/dev/null 2>&1;
 
-source ~/bash.library
+source /home/mestes/scm/basics/bash.library
 
 UPDATE="NO"
-REMOTE="YES"
+REMOTE="NO"
 while getopts "txruls" arg
 do
     case $arg in
@@ -179,7 +179,7 @@ core.print.echo ""     >> README.md
 
 rm -f "$Tmp"  >/dev/null 2>&1;
 ./functionlist.bash | gawk '{sz=$0;gsub(/[(].*[)]/, "", sz);print "files/" sz ".html";}' > $Tmp1
-
+# ./functionlist.bash | gawk '{sz=$0; match(sz,/[(].*[)]/); m=substr(sz,RSTART,RLENGTH);gsub(/[(].*[)]/, "", sz); print "files/" sz ".html " sz m;}' > $Tmp1
 
 #git ls-files | gawk '
 cat $Tmp1 | gawk '
@@ -188,9 +188,10 @@ BEGIN {
     BASE="https://archernar.github.io/"
 }
 /files./ {
-    print BASE $0
+    print BASE $1
 }' | sort|uniq  > $Tmp
 cp $Tmp $Tmp1
+cp  "$Tmp1" zeda
 
 cp $Tmp1 $Tmp
 
