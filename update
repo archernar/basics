@@ -33,9 +33,11 @@ done
 shift $(($OPTIND - 1))
 
 if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
-file_name="./includer"
-./codeTemplate "./$file_name" "$file_name" > "./files/$file_name.html"
-core.print.critical "includer"
+    while IFS= read -r file_name; do
+        ./codeTemplate "./$file_name" "$file_name" > "./files/$file_name.html"
+        cp "./$file_name" ./files
+        core.print.critical "./$file_name"
+    done < "bash.tools"
 
     ./bashfunctionextractor
     test_file="./output"
@@ -48,12 +50,6 @@ core.print.critical "includer"
     elif ((return_code == 2)); then
       core.print.info "Error: File '$test_file' not found or not readable."
     fi
-    function_name="includer"
-    cp "./$function_name" ./files
-    core.print.info ""
-    core.print.info "./$function_name"
-    core.print.info ""
-    ./codeTemplate "./files/$function_name" "$function_name" > "./files/$function_name.html"
 
 
     git add ./files
@@ -68,7 +64,6 @@ core.print.critical "includer"
       git rm $(git ls-files --deleted ./files)
       core.print.info "===================================================="
     fi
-    ls files | grep incl
     D=`pwd`
     cd ../archernar.github.io
     cp ../basics/files/* ./files
