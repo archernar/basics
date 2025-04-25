@@ -12,7 +12,7 @@ rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 source /home/mestes/scm/basics/bash.library
 
 UPDATE="NO"
-REMOTE="NO"
+REMOTE="YES"
 while getopts "txruls" arg
 do
     case $arg in
@@ -32,6 +32,61 @@ do
 done
 shift $(($OPTIND - 1))
 
+if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
+file_name="./includer"
+./codeTemplate "./$file_name" "$file_name" > "./files/$file_name.html"
+core.print.critical "includer"
+
+    ./bashfunctionextractor
+    test_file="./output"
+    core.check_for_duplicates "$test_file"
+    return_code=$?
+    if ((return_code == 0)); then
+      core.print.info "No duplicate lines found in '$test_file'."
+    elif ((return_code == 1)); then
+      core.print.info "Duplicate lines found in '$test_file' (see stderr for details)."
+    elif ((return_code == 2)); then
+      core.print.info "Error: File '$test_file' not found or not readable."
+    fi
+    function_name="includer"
+    cp "./$function_name" ./files
+    core.print.info ""
+    core.print.info "./$function_name"
+    core.print.info ""
+    ./codeTemplate "./files/$function_name" "$function_name" > "./files/$function_name.html"
+
+
+    git add ./files
+    git add ./index.html
+    git commit -m "Updated ./files and index.html"         >/dev/null 2>&1;
+    N=`git ls-files --deleted ./files | wc -l`
+    core.print.info "$N files were deleted from ./files"
+    git diff --name-only ./files
+    if [ "$N" -gt 0 ]; then
+      core.print.info "===================================================="
+      core.print.info "./files needs updating"
+      git rm $(git ls-files --deleted ./files)
+      core.print.info "===================================================="
+    fi
+    ls files | grep incl
+    D=`pwd`
+    cd ../archernar.github.io
+    cp ../basics/files/* ./files
+    cp ../basics/index.html ./
+    git add ./files                                   >/dev/null 2>&1;
+    git add ./index.html                              >/dev/null 2>&1;
+    git rm $(git ls-files --deleted ./files)          >/dev/null 2>&1;
+    git commit -m "Updated ./files and index.html"    >/dev/null 2>&1;
+    if [ "$REMOTE" == "YES" ]; then                                                                                               
+        git push origin master
+    else
+        core.print.info "Not connected to remote"
+    fi 
+
+    cd "$D"
+
+    exit 0
+fi
 if [ "$UPDATE" == "TEST" ]; then                                                                                               
       core.print.echo "===================================================="
       core.print.echo "Test"
@@ -149,6 +204,7 @@ core.print.echo ""     >> README.md
 
 ./functionlist.bash > $Tmp
 core.dumpfile.info "$Tmp"
+cp  "$Tmp" zeda
 
 cat "$Tmp" | sort | uniq > "$Tmp1"; cp "$Tmp1" "$Tmp"
 N=`wc -l "$Tmp" | gawk '{print $1}'`
@@ -179,6 +235,8 @@ core.print.echo ""     >> README.md
 
 rm -f "$Tmp"  >/dev/null 2>&1;
 ./functionlist.bash | gawk '{sz=$0;gsub(/[(].*[)]/, "", sz);print "files/" sz ".html";}' > $Tmp1
+
+
 # ./functionlist.bash | gawk '{sz=$0; match(sz,/[(].*[)]/); m=substr(sz,RSTART,RLENGTH);gsub(/[(].*[)]/, "", sz); print "files/" sz ".html " sz m;}' > $Tmp1
 
 #git ls-files | gawk '
@@ -191,7 +249,6 @@ BEGIN {
     print BASE $1
 }' | sort|uniq  > $Tmp
 cp $Tmp $Tmp1
-cp  "$Tmp1" zeda
 
 cp $Tmp1 $Tmp
 
@@ -229,49 +286,6 @@ git add README.md
 
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy
 
-if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
-    ./bashfunctionextractor
-    test_file="./output"
-    core.check_for_duplicates "$test_file"
-    return_code=$?
-    if ((return_code == 0)); then
-      core.print.info "No duplicate lines found in '$test_file'."
-    elif ((return_code == 1)); then
-      core.print.info "Duplicate lines found in '$test_file' (see stderr for details)."
-    elif ((return_code == 2)); then
-      core.print.info "Error: File '$test_file' not found or not readable."
-    fi
-
-    git add ./files
-    git add ./index.html
-    git commit -m "Updated ./files amd index.html"         >/dev/null 2>&1;
-    N=`git ls-files --deleted ./files | wc -l`
-    core.print.info "$N files were deleted from ./files"
-    git diff --name-only ./files
-    if [ "$N" -gt 0 ]; then
-      core.print.info "===================================================="
-      core.print.info "./files needs updating"
-      git rm $(git ls-files --deleted ./files)
-      core.print.info "===================================================="
-    fi
-    D=`pwd`
-    cd ../archernar.github.io
-    cp ../basics/files/* ./files
-    cp ../basics/index.html ./
-    git add ./files                                   >/dev/null 2>&1;
-    git add ./index.html                              >/dev/null 2>&1;
-    git rm $(git ls-files --deleted ./files)          >/dev/null 2>&1;
-    git commit -m "Updated ./files and index.html"    >/dev/null 2>&1;
-    if [ "$REMOTE" == "YES" ]; then                                                                                               
-        git push origin master
-    else
-        core.print.info "Not connected to remote"
-    fi 
-
-    cd "$D"
-
-    exit 0
-fi
 
 if [ "$UPDATE" == "LOCAL" ]; then                                                                                               
     git commit  -m "Update"
