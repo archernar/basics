@@ -95,4 +95,4 @@
 | [core.string.substring.html](https://archernar.github.io/files/core.string.substring.html) | [util.println.red.html](https://archernar.github.io/files/util.println.red.html) |
 | [core.string.tolower.html](https://archernar.github.io/files/core.string.tolower.html) | [util.println.white.html](https://archernar.github.io/files/util.println.white.html) |
 | [core.string.toupper.html](https://archernar.github.io/files/core.string.toupper.html) | [warn.html](https://archernar.github.io/files/warn.html) |
-| [cp_r.html](https://archernar.github.io/files/cp_r.html) | [&nbsp;](&nbsp;) |
+| [cp_r.html](https://archernar.github.io/files/cp_r.html) | [split_file_n(input_file,num_files)](https://archernar.github.io/split_file_n(input_file,num_files)) |
