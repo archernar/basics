@@ -37,22 +37,22 @@
 ## bash.library includes
 | ---------------------------------------- | ---------------------------------------- |
 |----------|----------|
-| [abspath.html](https://archernar.github.io/files/abspath.html) | [cp_r.html](https://archernar.github.io/files/cp_r.html) |
-| [alpha_normal2.html](https://archernar.github.io/files/alpha_normal2.html) | [create_markdown_table2.html](https://archernar.github.io/files/create_markdown_table2.html) |
-| [alpha_normal4.html](https://archernar.github.io/files/alpha_normal4.html) | [create_markdown_table3.html](https://archernar.github.io/files/create_markdown_table3.html) |
-| [ansi.clear_line.html](https://archernar.github.io/files/ansi.clear_line.html) | [create_markdown_table4.html](https://archernar.github.io/files/create_markdown_table4.html) |
-| [ansi.clear_screen.html](https://archernar.github.io/files/ansi.clear_screen.html) | [current_timestamp.html](https://archernar.github.io/files/current_timestamp.html) |
-| [ansi.constants.html](https://archernar.github.io/files/ansi.constants.html) | [dirname.html](https://archernar.github.io/files/dirname.html) |
-| [ansi.get_cursor_position.html](https://archernar.github.io/files/ansi.get_cursor_position.html) | [eecho.html](https://archernar.github.io/files/eecho.html) |
-| [ansi.move_cursor_down.html](https://archernar.github.io/files/ansi.move_cursor_down.html) | [ends_with.html](https://archernar.github.io/files/ends_with.html) |
-| [ansi.move_cursor_left.html](https://archernar.github.io/files/ansi.move_cursor_left.html) | [error.html](https://archernar.github.io/files/error.html) |
-| [ansi.move_cursor_right.html](https://archernar.github.io/files/ansi.move_cursor_right.html) | [examplesComparison.html](https://archernar.github.io/files/examplesComparison.html) |
-| [ansi.move_cursor_to.html](https://archernar.github.io/files/ansi.move_cursor_to.html) | [exists.html](https://archernar.github.io/files/exists.html) |
-| [ansi.move_cursor_up.html](https://archernar.github.io/files/ansi.move_cursor_up.html) | [extension.html](https://archernar.github.io/files/extension.html) |
-| [ansi.reset_text_attributes.html](https://archernar.github.io/files/ansi.reset_text_attributes.html) | [git_branch.html](https://archernar.github.io/files/git_branch.html) |
-| [ansi.restore_cursor_position.html](https://archernar.github.io/files/ansi.restore_cursor_position.html) | [git_origin.html](https://archernar.github.io/files/git_origin.html) |
-| [ansi.save_cursor_position.html](https://archernar.github.io/files/ansi.save_cursor_position.html) | [git_originsync.html](https://archernar.github.io/files/git_originsync.html) |
-| [ansi.set_background_color.html](https://archernar.github.io/files/ansi.set_background_color.html) | [git_toplevel.html](https://archernar.github.io/files/git_toplevel.html) |
+| [abspath.html](https://archernar.github.io/files/abspath.html) | [create_markdown_table2.html](https://archernar.github.io/files/create_markdown_table2.html) |
+| [alpha_normal2.html](https://archernar.github.io/files/alpha_normal2.html) | [create_markdown_table3.html](https://archernar.github.io/files/create_markdown_table3.html) |
+| [alpha_normal4.html](https://archernar.github.io/files/alpha_normal4.html) | [create_markdown_table4.html](https://archernar.github.io/files/create_markdown_table4.html) |
+| [ansi.clear_line.html](https://archernar.github.io/files/ansi.clear_line.html) | [current_timestamp.html](https://archernar.github.io/files/current_timestamp.html) |
+| [ansi.clear_screen.html](https://archernar.github.io/files/ansi.clear_screen.html) | [dirname.html](https://archernar.github.io/files/dirname.html) |
+| [ansi.constants.html](https://archernar.github.io/files/ansi.constants.html) | [eecho.html](https://archernar.github.io/files/eecho.html) |
+| [ansi.get_cursor_position.html](https://archernar.github.io/files/ansi.get_cursor_position.html) | [ends_with.html](https://archernar.github.io/files/ends_with.html) |
+| [ansi.move_cursor_down.html](https://archernar.github.io/files/ansi.move_cursor_down.html) | [error.html](https://archernar.github.io/files/error.html) |
+| [ansi.move_cursor_left.html](https://archernar.github.io/files/ansi.move_cursor_left.html) | [examplesComparison.html](https://archernar.github.io/files/examplesComparison.html) |
+| [ansi.move_cursor_right.html](https://archernar.github.io/files/ansi.move_cursor_right.html) | [exists.html](https://archernar.github.io/files/exists.html) |
+| [ansi.move_cursor_to.html](https://archernar.github.io/files/ansi.move_cursor_to.html) | [extension.html](https://archernar.github.io/files/extension.html) |
+| [ansi.move_cursor_up.html](https://archernar.github.io/files/ansi.move_cursor_up.html) | [git_branch.html](https://archernar.github.io/files/git_branch.html) |
+| [ansi.reset_text_attributes.html](https://archernar.github.io/files/ansi.reset_text_attributes.html) | [git_origin.html](https://archernar.github.io/files/git_origin.html) |
+| [ansi.restore_cursor_position.html](https://archernar.github.io/files/ansi.restore_cursor_position.html) | [git_originsync.html](https://archernar.github.io/files/git_originsync.html) |
+| [ansi.save_cursor_position.html](https://archernar.github.io/files/ansi.save_cursor_position.html) | [git_toplevel.html](https://archernar.github.io/files/git_toplevel.html) |
+| [ansi.set_background_color.html](https://archernar.github.io/files/ansi.set_background_color.html) | [includer.html](https://archernar.github.io/files/includer.html) |
 | [ansi.set_text_attribute.html](https://archernar.github.io/files/ansi.set_text_attribute.html) | [indent_file.html](https://archernar.github.io/files/indent_file.html) |
 | [ansi.set_text_color.html](https://archernar.github.io/files/ansi.set_text_color.html) | [info.html](https://archernar.github.io/files/info.html) |
 | [array_contains.html](https://archernar.github.io/files/array_contains.html) | [isSameHash.html](https://archernar.github.io/files/isSameHash.html) |
@@ -96,3 +96,4 @@
 | [core.string.substring.html](https://archernar.github.io/files/core.string.substring.html) | [util.println.red.html](https://archernar.github.io/files/util.println.red.html) |
 | [core.string.tolower.html](https://archernar.github.io/files/core.string.tolower.html) | [util.println.white.html](https://archernar.github.io/files/util.println.white.html) |
 | [core.string.toupper.html](https://archernar.github.io/files/core.string.toupper.html) | [warn.html](https://archernar.github.io/files/warn.html) |
+| [cp_r.html](https://archernar.github.io/files/cp_r.html) | [&nbsp;](&nbsp;) |
