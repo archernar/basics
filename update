@@ -82,13 +82,14 @@ if [ "$UPDATE" == "EXTRACT" ]; then
     git rm $(git ls-files --deleted ./files)          >/dev/null 2>&1;
     git commit -m "Updated ./files and index.html"    >/dev/null 2>&1;
     if [ "$REMOTE" == "YES" ]; then                                                                                               
-        git push origin master
+        git push origin master     >/dev/null 2>&1;
     else
         core.print.info "Not connected to remote"
     fi 
 
     cd "$D"
 
+    core.print.info "Extraction complete"
     exit 0
 fi
 if [ "$UPDATE" == "TEST" ]; then                                                                                               
