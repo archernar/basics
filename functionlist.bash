@@ -49,6 +49,7 @@ egrep "(function.*[(][)])|(Function-Args)" bash.library |  \
 
 cat "$Tmp"      > "functionlist.txt"
 cat bash.tools >> "$Tmp"
+cat modifiedfilenames >> "$Tmp"
 
 cat "$Tmp"
 
