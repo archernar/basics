@@ -148,6 +148,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.magenta.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.red.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.white.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.silencer.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/warn.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/functionlist.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript

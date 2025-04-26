@@ -17,6 +17,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/colomatic
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/deploy
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/dot_macros.vim
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/dot_vimrc
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/.macros.vim
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/.macros.vim.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/.vimrc
@@ -293,6 +294,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_a
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_output.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/scan_for_secrets.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/scan_for_secrets.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/silencio
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/silencio.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/sort_file.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/sort_file.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/split_file_n.bash
@@ -327,6 +330,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.red.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.white.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.white.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.silencer.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.silencer.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/warn.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/warn.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/functionlist.bash
