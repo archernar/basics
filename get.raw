@@ -177,6 +177,10 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/curre
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/current_timestamp.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dirname.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dirname.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dot_macros.vim
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dot_macros.vim.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dot_vimrc
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dot_vimrc.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eecho.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eecho.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ends_with.bash
@@ -231,6 +235,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_di
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_dir.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_file.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_file.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_hidden_file.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_hidden_file.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_reachable.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_reachable.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/justify_file.bash
@@ -263,6 +269,10 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/read_
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/read_prompt.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/remove_leading_whitespace.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/remove_leading_whitespace.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rename_dot_file.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rename_dot_file.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/renamecopy_dot_file.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/renamecopy_dot_file.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/repeat_char.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/repeat_char.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/replace.bash

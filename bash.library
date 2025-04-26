@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat Apr 26 09:07:15 EDT 2025
-# *********************************************************HASHOMATIC: 571648e021c2652a299b03e6ac7d096d
+# *********************************************************DATEOMATIC: Sat Apr 26 09:29:41 EDT 2025
+# *********************************************************HASHOMATIC: f4f7a11df92916962831ab22a90de181
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -2091,3 +2091,30 @@ function ansi.get_cursor_position() {
   fi
 }
 
+function rename_dot_file() {
+         local filename="$1"             # Bash-Function-Args
+  if [[ "$filename" == .* ]]; then
+    echo "dot_${filename:1}"
+  else
+    echo "$filename"
+  fi
+}
+function renamecopy_dot_file() {
+         local filename="$1"             # Bash-Function-Args
+  MODIFIEDFILENAME=""
+  if [[ "$filename" == .* ]]; then
+    cp "$filename" "dot_${filename:1}"
+    MODIFIEDFILENAME="dot_${filename:1}"
+  fi
+}
+function is_hidden_file() {
+         local filename="$1"             # Bash-Function-Args
+  if [[ "$filename" == .* ]]; then
+    echo "true"
+  else
+    echo "false"
+  fi
+}
+
+# Example usage:
+#if is_hidden_file "$file1"; then

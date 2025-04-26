@@ -103,6 +103,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/isSameHash.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_dir.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_file.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_hidden_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_reachable.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/justify_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/justify_line.bash
@@ -119,6 +120,8 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/prompter.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/read_prompt.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/remove_leading_whitespace.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rename_dot_file.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/renamecopy_dot_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/repeat_char.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/replace.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/right_pad_limited.bash
