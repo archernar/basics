@@ -1,5 +1,5 @@
-" *********************************************************DATEOMATIC: Fri Apr 25 09:45:31 EDT 2025
-" *********************************************************HASHOMATIC: 2dfc1b0e6845bc5a5eb3fa9c7a96de5a
+" *********************************************************DATEOMATIC: Sat Apr 26 09:02:03 EDT 2025
+" *********************************************************HASHOMATIC: e923eafc78f4abd36680c1d28e9061fd
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
                 " *************************************************************************************
@@ -530,4 +530,67 @@ function! ScrollPopup(nlines)
 
     call popup_setoptions(winids[0], {'firstline': firstline})
 endfunction
+function! GetUserInput(prompt)
+  let user_input = input(a:prompt)
+  return user_input
+endfunction
+" let user_string = GetUserInput("Enter your name: ")
+"
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+" Gemini AI Interface
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+"
+function! InsertSystemOutput(command, query)
+  " Run the system command and store the output in a variable.
+  let output = system(a:command)
 
+  " Get the current cursor position.
+  let current_line = line('.')
+  let current_col = col('.')
+
+  " Insert the output into the buffer at the current cursor position.
+  call append(current_line - 1, split(output, '\n'))
+
+  let l:current_date = strftime("%Y-%m-%d")
+  call writefile( ['', l:current_date] , "/tmp/gem.txt", "a") 
+  call writefile( ['--------------------------------------'] , "/tmp/gem.txt", "a") 
+  call writefile( ['New Gemini Query  --------------------'] , "/tmp/gem.txt", "a") 
+  call writefile( ['--------------------------------------'] , "/tmp/gem.txt", "a") 
+  call writefile( [ a:query, '' ]                            , "/tmp/gem.txt", "a") 
+  let l:xx = split(output, '\n')
+  call writefile( l:xx,                      "/tmp/gem.txt", "a")
+
+  " Move the cursor to the end of the inserted text.
+  let output_lines = len(split(output, '\n'))
+  call cursor(current_line + output_lines, current_col)
+endfunction
+
+command! Gemini   :call Gemini() 
+command! Gem      :call Gemini() 
+command! GEM      :call Gemini() 
+function! GetUserInput(prompt)
+    " Displays a popup window and prompts the user to enter a string.
+    " Compatible with Vim 8.2 (using inputdialog).
+    " Args:    prompt (string): The prompt message to display in the popup.
+    " Returns: string: The user's input, or an empty string if cancelled.
+    let input = inputdialog(a:prompt, '')
+    if input == ''
+      return "" " User cancelled
+    else
+      return input
+    endif
+endfunction
+
+function! Gemini()
+    let l:dq="\""
+    let l:szIn = GetUserInput("Gemini prompt: ")
+    if l:szIn != ""
+      let l:sz = "/home/mestes/scm/private/qg " . l:dq . l:szIn . l:dq . " | fold -sw 80"
+      call InsertSystemOutput(l:sz, l:szIn)
+    else
+      echo "Input cancelled."
+    endif
+  return 0
+endfunction
+
+source ~/.macros.vim
