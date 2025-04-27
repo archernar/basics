@@ -30,6 +30,8 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/array_join.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/backup_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/basename.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/bash.secretscanner
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/bash.secretscanner.html
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/collapse_hostname.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/collapse_pwd.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/command_exists.bash
