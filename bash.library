@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr 27 13:19:07 EDT 2025
-# *********************************************************HASHOMATIC: 3e51e4ec5507ef2477b50db4d8c443de
+# *********************************************************DATEOMATIC: Sun Apr 27 19:40:52 EDT 2025
+# *********************************************************HASHOMATIC: 4f7fb86cab0ba0f580cf7c51969f468b
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -2084,7 +2084,7 @@ function hashomatic() {
   fi
   core.print.critical "HashoMatic $filename"
   if [ $(isSameHash "$filename") == "0" ]; then
-    IHASH=$(md5sum "tmp1" | awk '{print $1}')
+    IHASH=$(md5sum "$tmp1" | awk '{print $1}')
     cat $tmp1  > "$filename"
     git add "$filename"
     rm -f "$tmp1" >/dev/null 2>&1
