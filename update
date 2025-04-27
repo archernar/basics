@@ -220,7 +220,6 @@ core.print.echo ""     >> README.md
 
 ./functionlist.bash > $Tmp
 core.dumpfile.info "$Tmp"
-cp  "$Tmp" zeda
 
 cat "$Tmp" | sort | uniq > "$Tmp1"; cp "$Tmp1" "$Tmp"
 N=`wc -l "$Tmp" | gawk '{print $1}'`
@@ -298,6 +297,7 @@ cp "$Tmp" ./files/index.html
 ./htmlTemplate "./files/index.txt" "index.txt" > "./index.html"
 
 core.print.info "Step 2 Complete"
+cp README1.md README.md
 git add README.md
 
 rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy
