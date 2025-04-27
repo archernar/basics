@@ -102,6 +102,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_origin.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_originsync.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_toplevel.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/hashomatic.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/indent_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/info.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/isSameHash.bash

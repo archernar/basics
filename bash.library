@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Apr 27 08:17:04 EDT 2025
-# *********************************************************HASHOMATIC: 19a3f1dc1a95950e83f87b519bb63a0b
+# *********************************************************DATEOMATIC: Sun Apr 27 13:19:07 EDT 2025
+# *********************************************************HASHOMATIC: 3e51e4ec5507ef2477b50db4d8c443de
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -2070,3 +2070,23 @@ function is_hidden_file() {
 
 # Example usage:
 #if is_hidden_file "$file1"; then
+
+function hashomatic() {
+         local filename="$1"             # Bash-Function-Args
+  local tmp1=$(mktemp)
+  if [[ -z "$filename" ]]; then
+    fecho "Error: Filename not provided."
+    return 1
+  fi
+  if [[ ! -f "$filename" ]]; then
+    fecho "Error: File '$filename' not found."
+    return 1
+  fi
+  core.print.critical "HashoMatic $filename"
+  if [ $(isSameHash "$filename") == "0" ]; then
+    IHASH=$(md5sum "tmp1" | awk '{print $1}')
+    cat $tmp1  > "$filename"
+    git add "$filename"
+    rm -f "$tmp1" >/dev/null 2>&1
+  fi
+}
