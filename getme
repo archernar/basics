@@ -1,8 +1,8 @@
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.bashrc
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/0-bashtop
-wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.secretscanner
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashfunctionextractor
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop

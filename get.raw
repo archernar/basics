@@ -5,9 +5,9 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/.vimrc
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/0-bashtop
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/0-git
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/README.md
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.functions
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.secretscanner
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashfunctionextractor
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
@@ -342,6 +342,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.silencer.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/warn.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/warn.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/foreachfile
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/functionlist.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gDiff
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/gHardSync
