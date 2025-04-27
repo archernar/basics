@@ -32,7 +32,13 @@ do
 done
 shift $(($OPTIND - 1))
 
+if [ "$UPDATE" == "REMOTE" ]; then                                                                                               
+    git push -u origin master
+    core.print.info "Remote complete"
+    exit 0
+fi
 if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
+    core.print.alert "Extract"
     rm -f modifiedfilenames  >/dev/null 2>&1;
     touch modifiedfilenames
     while IFS= read -r file_name; do
@@ -294,11 +300,6 @@ rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy
 
 if [ "$UPDATE" == "LOCAL" ]; then                                                                                               
     git commit  -m "Update"
-    git status
-fi
-if [ "$UPDATE" == "REMOTE" ]; then                                                                                               
-    git commit  -m "Update"
-    git push -u origin master
     git status
 fi
 if [ "$UPDATE" == "STATUS" ]; then                                                                                               
