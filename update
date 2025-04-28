@@ -11,10 +11,6 @@ rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
 source /home/mestes/scm/basics/bash.library
 
-if ! scan; then
-    echo "Exiting main script."
-    exit 1
-fi
 
 UPDATE="NO"
 REMOTE="YES"
@@ -31,17 +27,48 @@ do
            ;;
         l) UPDATE="LOCAL"
            ;;
-        s) UPDATE="STATUS"
+        s) UPDATE="SCAN"
            ;;
     esac
 done
 shift $(($OPTIND - 1))
 
+if [ "$UPDATE" == "SCAN" ]; then                                                                                               
+    if ! scan; then
+        echo "Exiting main script."
+        exit 1
+    fi
+    exit 1
+fi
+
 if [ "$UPDATE" == "REMOTE" ]; then                                                                                               
+    if ! scan; then
+        echo "Exiting main script."
+        exit 1
+    fi
+fi
+if [ "$UPDATE" == "REMOTE" ]; then                                                                                               
+    core.print.info "push origin master (basics)"
     git push -u origin master
+
+    D=`pwd`
+
+    cd ../archernar.github.io
+    cp ../basics/files/* ./files
+    cp ../basics/index.html ./
+    git add ./files                                   >/dev/null 2>&1;
+    git add ./index.html                              >/dev/null 2>&1;
+    git rm $(git ls-files --deleted ./files)          >/dev/null 2>&1;
+    git commit -m "Updated ./files and index.html"    >/dev/null 2>&1;
+    core.print.info "push origin master (archernar.github.io)"
+    git push origin master     >/dev/null 2>&1;
+
+    cd "$D"
+
     core.print.info "Remote complete"
     exit 0
 fi
+
 if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
     core.print.alert "Extract"
     rm -f modifiedfilenames  >/dev/null 2>&1;
@@ -84,21 +111,6 @@ if [ "$UPDATE" == "EXTRACT" ]; then
       git rm $(git ls-files --deleted ./files)
       core.print.info "===================================================="
     fi
-    D=`pwd`
-    cd ../archernar.github.io
-    cp ../basics/files/* ./files
-    cp ../basics/index.html ./
-    git add ./files                                   >/dev/null 2>&1;
-    git add ./index.html                              >/dev/null 2>&1;
-    git rm $(git ls-files --deleted ./files)          >/dev/null 2>&1;
-    git commit -m "Updated ./files and index.html"    >/dev/null 2>&1;
-    if [ "$REMOTE" == "YES" ]; then                                                                                               
-        git push origin master     >/dev/null 2>&1;
-    else
-        core.print.info "Not connected to remote"
-    fi 
-
-    cd "$D"
 
     core.print.info "Extraction complete"
     exit 0
@@ -119,13 +131,12 @@ fi
 
 
 D=`date`
-core.print.alert "$D"
-core.print.alert "I am the lizard king"
+core.print.critical "$D"
+core.print.critical "I am the lizard king"
 
 FILE="./.vimrc"
 if [ $(isSameHash "$FILE") == "0" ]; then
-
-    core.print.info "HashoMatic $FILE"
+    core.print.alert "HashoMatic $FILE"
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
     core.print.echo "\" *********************************************************DATEOMATIC: $D"      > $Tmp1
@@ -250,7 +261,7 @@ core.print.echo ""     >> README.md
 
 rm -f "$Tmp"  >/dev/null 2>&1;
 ./functionlist.bash | gawk '{sz=$0;gsub(/[(].*[)]/, "", sz);print "files/" sz ".html";}' > $Tmp1
-cat modifiedfilename >> $Tmp1
+cat modifiedfilenames >> $Tmp1
 
 # ./functionlist.bash | gawk '{sz=$0; match(sz,/[(].*[)]/); m=substr(sz,RSTART,RLENGTH);gsub(/[(].*[)]/, "", sz); print "files/" sz ".html " sz m;}' > $Tmp1
 
@@ -305,9 +316,6 @@ rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy
 
 if [ "$UPDATE" == "LOCAL" ]; then                                                                                               
     git commit  -m "Update"
-    git status
-fi
-if [ "$UPDATE" == "STATUS" ]; then                                                                                               
     git status
 fi
 
