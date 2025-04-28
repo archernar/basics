@@ -45,7 +45,9 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.echo.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.panic.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.position.cursor.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.advice.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.alert.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.always.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.critical.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.debug.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.debug_fn.bash
@@ -57,6 +59,8 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.flag.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.info.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.info_fn.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.resetloglevel.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.setloglevel.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.warn.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.warn_fn.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_debug.bash
