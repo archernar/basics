@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Tue Apr 29 08:38:56 EDT 2025
-# *********************************************************HASHOMATIC: 72b29a39efe86ddd9b3ca047cddd0021
+# *********************************************************DATEOMATIC: Tue Apr 29 08:39:39 EDT 2025
+# *********************************************************HASHOMATIC: 042265e59291e2f07a6d5ea9e1ad3a97
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -1337,8 +1337,7 @@ function gitadd() {
     return 1
   fi
 
-  core.print.critical "git add filename"
-  core.print.critical "git add $filename"
+  core.print.advice "git add $filename"
   git add "$filename"
   return 0
 }
