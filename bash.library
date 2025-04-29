@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Tue Apr 29 08:30:35 EDT 2025
-# *********************************************************HASHOMATIC: 409ae3978a4a0ef542f06833e99e9898
+# *********************************************************DATEOMATIC: Tue Apr 29 08:37:31 EDT 2025
+# *********************************************************HASHOMATIC: 5c40f14cdecc08320687c8f1ced3db60
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -1326,6 +1326,21 @@ function core.echo() {
 #  VT100_BG_CYAN="\x1b[46m"
 #  VT100_BG_WHITE="\x1b[47m"
 
+function gitadd() {
+         local filename="$1"             # Bash-Function-Args
+  if [[ -z "$filename" ]]; then
+    fecho "Error: Filename not provided."
+    return 1
+  fi
+  if [[ ! -f "$filename" ]]; then
+    fecho "Error: File '$filename' not found."
+    return 1
+  fi
+
+  core.print.info "git add $filename"
+  git add "$filename"
+  return 0
+}
   
 function core.position.cursor() {
          local row="$1"; local col="$2";  # Bash-Function-Args
