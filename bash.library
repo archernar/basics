@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Mon Apr 28 08:40:04 EDT 2025
-# *********************************************************HASHOMATIC: ee83885ad4a3aa0e65a3bdbf33eb91cd
+# *********************************************************DATEOMATIC: Tue Apr 29 08:22:41 EDT 2025
+# *********************************************************HASHOMATIC: 409ae3978a4a0ef542f06833e99e9898
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -1367,35 +1367,57 @@ function util.println.white() {
 # ----------------------------------------------------------------------------------------------------
 # FLOG: core.print
 # ----------------------------------------------------------------------------------------------------
-#              Log Level
-# debug           5
-# info            4
-# advice          3
-# alert           2
-# error           1
-# critical        0
-#
-#
+#          Log Level
+LL5A=5   # debug
+LL4A=4   # info
+LL3A=3   # advice
+LL2A=2   # alert
+LL1A=1   # error
+LL0A=0   # critical
 DEFLOGLEVEL=5
 LOGLEVEL=$DEFLOGLEVEL
 
-function core.print.setloglevel() {
-         local level="$1"    # Bash-Function-Args
-         LOGLEVEL=$level
-         core.print.critical "$LOGLEVEL"
-}
-function core.print.resetloglevel() {
+function core.logdebug() {
          local void=0    # Bash-Function-Args
-         LOGLEVEL=$DEFLOGLEVEL
-         core.print.critical "$LOGLEVEL"
+    LOGLEVEL=$LL5
 }
+function core.loginfo() {
+         local void=0    # Bash-Function-Args
+    LOGLEVEL=$LL4
+}
+function core.logadvice() {
+         local void=0    # Bash-Function-Args
+    LOGLEVEL=$LL3
+}
+function core.logalert() {
+         local void=0    # Bash-Function-Args
+    LOGLEVEL=$LL2
+}
+function core.logerror() {
+         local void=0    # Bash-Function-Args
+    LOGLEVEL=$LL1
+}
+function core.logcritical() {
+         local void=0    # Bash-Function-Args
+    LOGLEVEL=$LL0
+}
+function core.logreset() {
+         local void=0    # Bash-Function-Args
+    LOGLEVEL=$DEFLOGLEVEL
+}
+function core.logset() {
+         local level="$1" # Bash-Function-Args
+   LOGLEVEL=$level
+}
+
+
 # @description Print a debug message to standard output if the environment variable "DEBUG" is present
 # @arg $1 string message
 function core.print.debug() {
          local msg="$1"    # Bash-Function-Args
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "Info" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -ge 5 ]; then
+    if [ "$LOGLEVEL" -ge $LL5A ]; then
         util.println.white "$sz"
     fi
 }
@@ -1403,7 +1425,7 @@ function core.print.info() {
          local msg="$1"    # Bash-Function-Args
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "Info" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -ge 4 ]; then
+    if [ "$LOGLEVEL" -ge $LL4A ]; then
         if core._should_print_color 1; then
             util.println.green "$sz"
         else
@@ -1415,7 +1437,7 @@ function core.print.advice() {
          local msg="$1"    # Bash-Function-Args
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "Alrt" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -gt 3 ]; then
+    if [ "$LOGLEVEL" -gt $LL3A ]; then
         if core._should_print_color 1; then
             util.println.blue  "$sz"
         else
@@ -1427,7 +1449,7 @@ function core.print.alert() {
          local msg="$1"    # Bash-Function-Args
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "Alrt" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -gt 2 ]; then
+    if [ "$LOGLEVEL" -gt $LL2A ]; then
         if core._should_print_color 1; then
             util.println.magenta "$sz"
         else
@@ -1440,7 +1462,7 @@ function core.print.error() {
          local msg="$1"    # Bash-Function-Args
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "Errr" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -ge 1 ]; then
+    if [ "$LOGLEVEL" -ge $LL1A ]; then
         if core._should_print_color 1; then
             util.println.red "$sz"
         else
@@ -1452,7 +1474,7 @@ function core.print.critical() {
          local msg="$1"    # Bash-Function-Args
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "Crit" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -ge 0 ]; then
+    if [ "$LOGLEVEL" -ge $LL0A ]; then
         if core._should_print_color 1; then
             util.println.red "$sz"
         else
