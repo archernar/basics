@@ -43,6 +43,14 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.clear.EOL.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.dumpfile.info.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.echo.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logadvice.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logalert.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logcritical.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logdebug.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logerror.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.loginfo.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logreset.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logset.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.panic.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.position.cursor.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print.advice.bash
@@ -106,6 +114,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_origin.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_originsync.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_toplevel.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/gitadd.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/hashomatic.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/indent_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/info.bash
@@ -125,6 +134,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/necho.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/paddy.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/padout_file_lines.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/paramsf.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/pidof_name.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/prompter.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/read_prompt.bash
