@@ -124,6 +124,7 @@ fi
 if [ "$UPDATE" == "TEST" ]; then                                                                                               
       core.print.echo "===================================================="
       core.print.echo "Test"
+      gitadd
       core.print.echo "===================================================="
       exit 0
 fi
@@ -199,76 +200,11 @@ if [ $(isSameHash "$FILE") == "0" ]; then
     git add "$FILE"
 fi
 
-git ls-files | gawk '
-BEGIN {
-    BASE="https://raw.githubusercontent.com/archernar/basics/refs/heads/master/"
-}
-{
-    print BASE $0
-}' > get.raw
-git add get.raw
-
 rm -f "$Tmp"  >/dev/null 2>&1;
 
 
-grep bash get.raw | gawk '{print "wget " $0}' > getme
-git add getme
-
-#cat get.raw |sort|uniq| gawk ' {n=split($0,A,"/");print "[" A[n] "](" $0 ")"}' > $Tmp
-cat get.raw | egrep -v "files[/]" |sort|uniq  > $Tmp
-alpha_normal2 "$Tmp"
-create_markdown_table2 "$Tmp" "MAKELINKS"   > README.md
-core.print.echo ""     >> README.md
-core.print.echo ""     >> README.md
-
-ls *omatic > $Tmp
-create_markdown_table4 "$Tmp"  >> README.md
-core.print.echo ""     >> README.md
-core.print.echo ""     >> README.md
-
-core.print.echo "## bash.library includes"     >> README.md
-core.print.echo ""     >> README.md
-
-# grep function bash.library | grep "()" | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp
-#egrep "(function.*[(][)])|(Function-Args)" bash.library | grep "()" | sed 's/function //' | sed -e 's/[ ]*{$//' > $Tmp
-
-./functionlist.bash > $Tmp
-core.dumpfile.info "$Tmp"
-
-cat "$Tmp" | sort | uniq > "$Tmp1"; cp "$Tmp1" "$Tmp"
-N=`wc -l "$Tmp" | gawk '{print $1}'`
-M=$((N % 2));
-core.print.info "The function list contains $N functions"
-if [ "$M" == "2" ]; then                                                                                               
-    core.print.info "Adding 1 function"
-    core.print.echo "zzzone()" >> "$Tmp"
-fi
-if [ "$M" == "1" ]; then                                                                                               
-    core.print.info "Adding 1 function"
-    core.print.echo "zzzone()" >> "$Tmp"
-fi
-
-cat "$Tmp" | sort | uniq > "$Tmp1"; cp "$Tmp1" "$Tmp"
-N=`wc -l "$Tmp" | gawk '{print $1}'`
-core.print.info "The function list contains $N functions"
-N=$((N / 2));
-rm -f sfa*  >/dev/null 2>&1
-sed -i 's/zzz.*$/\&nbsp;/g' "$Tmp"
-
-split -l $N "$Tmp" sf
-paste -d'\n' sfaa sfab > "$Tmp"
-rm -f sfa*  >/dev/null 2>&1
-#create_markdown_table2 "$Tmp"  >> README.md
-core.print.echo ""     >> README.md
-core.print.echo ""     >> README.md
-
-rm -f "$Tmp"  >/dev/null 2>&1;
 ./functionlist.bash | gawk '{sz=$0;gsub(/[(].*[)]/, "", sz);print "files/" sz ".html";}' > $Tmp1
 cat modifiedfilenames >> $Tmp1
-
-# ./functionlist.bash | gawk '{sz=$0; match(sz,/[(].*[)]/); m=substr(sz,RSTART,RLENGTH);gsub(/[(].*[)]/, "", sz); print "files/" sz ".html " sz m;}' > $Tmp1
-
-#git ls-files | gawk '
 cat $Tmp1 | gawk '
 BEGIN {
     BASE="https://raw.githubusercontent.com/archernar/basics/refs/heads/master/"
@@ -277,44 +213,30 @@ BEGIN {
 /files./ {
     print BASE $1
 }' | sort|uniq  > $Tmp
-cp $Tmp $Tmp1
 
-cp $Tmp1 $Tmp
-
-
-
-
-
-alpha_normal2 "$Tmp"
-core.print.echo "## bash.library includes"     >> README.md
-create_markdown_table2 "$Tmp" "MAKELINKS"   >> README.md
-
-cp $Tmp1 $Tmp
-alpha_normal4 "$Tmp"
-create_markdown_table4 "$Tmp" "MAKELINKS"   >  README1.md
+git ls-files | gawk '
+BEGIN {
+    BASE="https://raw.githubusercontent.com/archernar/basics/refs/heads/master/"
+}
+{
+    print BASE $0
+}' > get.raw
+git add get.raw
+grep bash get.raw | gawk '{print "wget " $0}' > getme
+git add getme
 
 
-
-
-
-
-#./listing   > fed
-#./listing   >> README.md
 core.print.flag
-core.print.info "Step 1 Complete"
-pandoc --metadata title="Document" --standalone --template template.html README.md > local.html
-pandoc --metadata title="Document" --standalone --template template.html README1.md > ./files/index.html
-pandoc --metadata title="Document" --standalone README1.md > "$Tmp1"
-cat "$Tmp1" | gawk ' /^<table>/, /^<[/]table>/ { print $0 } ' > "./files/index.txt"
+alpha_normal4 "$Tmp"
+create_markdown_table4 "$Tmp" "MAKELINKS"   >  README.md
+gitadd "README.md"
+core.print.info "Step 0 Complete"
+
 cp "$Tmp" ./files/index.html
 ./htmlTemplate "./files/index.txt" "index.txt" > "./files/index.html"
 ./htmlTemplate "./files/index.txt" "index.txt" > "./index.html"
+core.print.info "Step 1 Complete"
 
-core.print.info "Step 2 Complete"
-cp README1.md README.md
-git add README.md
-
-rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy
 
 
 if [ "$UPDATE" == "LOCAL" ]; then                                                                                               
@@ -324,6 +246,7 @@ fi
 
 
 core.print.info "Cleaning up"
+rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy
 rm -f sfa*  >/dev/null 2>&1
 
 
