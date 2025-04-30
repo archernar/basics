@@ -1,7 +1,24 @@
-# *********************************************************DATEOMATIC: Tue Apr 29 08:39:39 EDT 2025
-# *********************************************************HASHOMATIC: 042265e59291e2f07a6d5ea9e1ad3a97
+# *********************************************************DATEOMATIC: Wed Apr 30 08:38:22 EDT 2025
+# *********************************************************HASHOMATIC: 64c0e7062e81476898241b52df4f3dec
 DEBUG=1
 DEBUGLEVEL=1
+
+function paramsf() {
+         local filename="$1"             # Bash-Function-Args
+  if [ $# -eq 0 ]; then
+    core.print.fatal "Error: Filename not provided." 2
+    exit 1
+  fi
+  if [[ -z "$filename" ]]; then
+    core.print.fatal "Error: Filename not provided." 2
+    exit 1
+  fi
+  if [[ ! -f "$filename" ]]; then
+    core.print.fatal "Error: File '$filename' not found." 2
+    exit 1
+  fi
+  return 0
+}
 
 function mecho() {
          local sz="$1"    # Bash-Function-Args
@@ -1262,17 +1279,6 @@ function core.print.debug_fn() {
 	core.print.debug "${FUNCNAME[1]}()${msg:+": "}$msg"
 }
 
-# @description Print a fatal error message to standard error
-# @arg $1 string message
-function core.print.fatal() {
-         local msg="$1"    # Bash-Function-Args
-	if core._should_print_color 2; then
-		printf "\033[1;35m%s:\033[0m %s\n" 'Fatal' "$msg" >&2
-	else
-		printf "%s: %s\n" 'Fatal' "$msg" >&2
-	fi
-}
-
 # @description Print a warning message to standard error
 # @arg $1 string message
 function core.print.warn() {
@@ -1328,15 +1334,7 @@ function core.echo() {
 
 function gitadd() {
          local filename="$1"             # Bash-Function-Args
-  if [[ -z "$filename" ]]; then
-    fecho "Error: Filename not provided."
-    return 1
-  fi
-  if [[ ! -f "$filename" ]]; then
-    fecho "Error: File '$filename' not found."
-    return 1
-  fi
-
+         paramsf "$filename"
   core.print.advice "git add $filename"
   git add "$filename"
   return 0
@@ -1389,6 +1387,7 @@ LL3A=3   # advice
 LL2A=2   # alert
 LL1A=1   # error
 LL0A=0   # critical
+LL0A=0   # fatal
 DEFLOGLEVEL=5
 LOGLEVEL=$DEFLOGLEVEL
 
@@ -1486,9 +1485,39 @@ function core.print.error() {
     fi
 }
 function core.print.critical() {
-         local msg="$1"    # Bash-Function-Args
-    local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
+         local msg="$1"; local ctrl=$2    # Bash-Function-Args
+    local dex=0     
+    if [[ -z "$ctrl" ]]; then
+        dex=1
+    else
+        dex=ctrl
+    fi
+    local ff=$(printf "%-32s\n" "${FUNCNAME[dex]}")
     local sz="$(printf "%s %s: %s %s" "Crit" "$SILENT" "$ff" "$msg")"
+    if [ "$LOGLEVEL" -ge $LL0A ]; then
+        if core._should_print_color 1; then
+            util.println.red "$sz"
+        else
+            util.println.white "$sz"
+        fi
+    fi
+}
+function core.print.fatal() {
+         local msg="$1"; local ctrl=$2    # Bash-Function-Args
+    local dex=0     
+    if [[ -z "$ctrl" ]]; then
+        dex=1
+    else
+        dex=ctrl
+    fi
+    local sz=""
+	for ((i=0; i<${#FUNCNAME[@]}-1; ++i)); do
+		sz="$sz,${FUNCNAME[$i]}"
+    done
+    local ff="$sz"
+
+    #local ff=$(printf "%-32s\n" "${FUNCNAME[dex]}")
+    local sz="$(printf "%s %s: %s %s" "Fatl" "$SILENT" "$ff" "$msg")"
     if [ "$LOGLEVEL" -ge $LL0A ]; then
         if core._should_print_color 1; then
             util.println.red "$sz"
