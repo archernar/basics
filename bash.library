@@ -1363,7 +1363,7 @@ function util.println.red() {
 }
 function util.println.green() {
          local msg="$1"    # Bash-Function-Args
-        printf "\033[1;32m%s\033[0m\n" "$msg" | util.silencer
+        printf "\033[1;32m%s\033[0m\n" "$msg"
 }
 function util.println.blue() {
          local msg="$1"    # Bash-Function-Args
@@ -1371,7 +1371,7 @@ function util.println.blue() {
 }
 function util.println.magenta() {
          local msg="$1"    # Bash-Function-Args
-        printf "\033[1;35m%s\033[0m\n" "$msg" | util.silencer
+        printf "\033[1;35m%s\033[0m\n" "$msg"
 }
 function util.println.white() {
          local msg="$1"    # Bash-Function-Args
@@ -1391,6 +1391,18 @@ LL0A=0   # fatal
 DEFLOGLEVEL=5
 LOGLEVEL=$DEFLOGLEVEL
 
+function core.print.alltest() {
+         local void=0    # Bash-Function-Args
+      core.print.critical  "Log Level is $LOGLEVEL"
+      core.print.debug     "debug"
+      core.print.info      "info"
+      core.print.advice    "advice"
+      core.print.alert     "alert"
+      core.print.error     "error"
+      core.print.critical  "critical"
+      core.print.always    "always"
+      core.print.fatal     "fatal"
+}
 function core.logdebug() {
          local void=0    # Bash-Function-Args
     LOGLEVEL=$LL5
@@ -1429,17 +1441,19 @@ function core.logset() {
 # @arg $1 string message
 function core.print.debug() {
          local msg="$1"    # Bash-Function-Args
+         local lvl="$LL5A"
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "Info" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -ge $LL5A ]; then
+    local sz="$(printf "%s %s: %s %s" "Dbug$lvl" "$SILENT" "$ff" "$msg")"
+    if [ "$LOGLEVEL" -ge $lvl ]; then
         util.println.white "$sz"
     fi
 }
 function core.print.info() {
          local msg="$1"    # Bash-Function-Args
+         local lvl="$LL4A"
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "Info" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -ge $LL4A ]; then
+    local sz="$(printf "%s %s: %s %s" "Info$lvl" "$SILENT" "$ff" "$msg")"
+    if [ "$LOGLEVEL" -ge $lvl ]; then
         if core._should_print_color 1; then
             util.println.green "$sz"
         else
@@ -1461,9 +1475,10 @@ function core.print.stackline() {
 }
 function core.print.advice() {
          local msg="$1"    # Bash-Function-Args
+         local lvl="$LL3A"
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "Alrt" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -gt $LL3A ]; then
+    local sz="$(printf "%s %s: %s %s" "Advc$lvl" "$SILENT" "$ff" "$msg")"
+    if [ "$LOGLEVEL" -gt $lvl ]; then
         if core._should_print_color 1; then
             util.println.blue  "$sz"
         else
@@ -1473,9 +1488,10 @@ function core.print.advice() {
 }
 function core.print.alert() {
          local msg="$1"    # Bash-Function-Args
+         local lvl="$LL2A"
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "Alrt" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -gt $LL2A ]; then
+    local sz="$(printf "%s %s: %s %s" "Alrt$lvl" "$SILENT" "$ff" "$msg")"
+    if [ "$LOGLEVEL" -gt $lvl ]; then
         if core._should_print_color 1; then
             util.println.magenta "$sz"
         else
@@ -1486,9 +1502,10 @@ function core.print.alert() {
 
 function core.print.error() {
          local msg="$1"    # Bash-Function-Args
+         local lvl="$LL1A"
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "Errr" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -ge $LL1A ]; then
+    local sz="$(printf "%s %s: %s %s" "Errr$lvl" "$SILENT" "$ff" "$msg")"
+    if [ "$LOGLEVEL" -ge $lvl ]; then
         if core._should_print_color 1; then
             util.println.red "$sz"
         else
@@ -1498,6 +1515,7 @@ function core.print.error() {
 }
 function core.print.critical() {
          local msg="$1"; local ctrl=$2    # Bash-Function-Args
+         local lvl="$LL0A"
     local dex=0     
     if [[ -z "$ctrl" ]]; then
         dex=1
@@ -1505,8 +1523,8 @@ function core.print.critical() {
         dex=ctrl
     fi
     local ff=$(printf "%-32s\n" "${FUNCNAME[dex]}")
-    local sz="$(printf "%s %s: %s %s" "Crit" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -ge $LL0A ]; then
+    local sz="$(printf "%s %s: %s %s" "Crit$lvl" "$SILENT" "$ff" "$msg")"
+    if [ "$LOGLEVEL" -ge $lvl ]; then
         if core._should_print_color 1; then
             util.println.red "$sz"
         else
@@ -1516,6 +1534,7 @@ function core.print.critical() {
 }
 function core.print.fatal() {
          local msg="$1"; local ctrl=$2    # Bash-Function-Args
+         local lvl="$LL0A"
     local dex=0     
     if [[ -z "$ctrl" ]]; then
         dex=1
@@ -1525,8 +1544,8 @@ function core.print.fatal() {
 
 
     local ff=$(printf "%-32s\n" "${FUNCNAME[dex]}")
-    local sz="$(printf "%s %s: %s %s" "Fatl" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -ge $LL0A ]; then
+    local sz="$(printf "%s %s: %s %s" "Fatl$lvl" "$SILENT" "$ff" "$msg")"
+    if [ "$LOGLEVEL" -ge $lvl ]; then
         if core._should_print_color 1; then
             util.println.red "$sz"
         else
@@ -1546,7 +1565,7 @@ function core.print.fatal() {
 function core.print.always() {
          local msg="$1"    # Bash-Function-Args
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "Crit" "$SILENT" "$ff" "$msg")"
+    local sz="$(printf "%s %s: %s %s" "AlwsX" "$SILENT" "$ff" "$msg")"
     util.println.white "$sz"
 }
 function core.print.flag() {
@@ -2216,3 +2235,109 @@ function hashomatic() {
     rm -f "$tmp1" >/dev/null 2>&1
   fi
 }
+
+# Function to move files older than a specified number of days
+# to a destination directory.
+#
+# Parameters:
+#   $1: The source directory to check for old files.
+#   $2: The destination directory to move the old files to.
+#   $3: (Optional) The number of days.  Defaults to 60 if not provided.
+#
+# Returns:
+#   0 if the operation was successful.
+#   1 if the source directory does not exist.
+#   2 if the destination directory does not exist or is not a directory.
+#   3 if no files were moved (but no errors occurred).
+#   4 if an error occurred during the move operation.
+#
+# Usage:
+#   move_old_files "/path/to/source/directory" "/path/to/destination/directory" 90
+#
+move_old_files() {
+  local source_dir="$1"
+  local dest_dir="$2"
+  local days="${3:-60}" # Default to 60 days if not provided.
+  local moved_files=0
+  local file
+  local current_time_seconds
+  local file_modified_time_seconds
+  local seconds_in_a_day=86400 # 60 * 60 * 24
+  local szOut
+
+  # Check if the source directory exists.
+  if ! [ -d "$source_dir" ]; then
+    echo "Error: Source directory '$source_dir' does not exist." >&2
+    return 1
+  fi
+
+  # Check if the destination directory exists and is a directory.
+  if ! [ -d "$dest_dir" ]; then
+    echo "Error: Destination directory '$dest_dir' does not exist or is not a directory." >&2
+    return 2
+  fi
+
+  # Get the current time in seconds since the Epoch.
+  current_time_seconds=$(date +%s)
+
+  # Find files in the source directory and process them.
+  find "$source_dir" -type f -print0 | while IFS= read -r -d $'\0' file; do
+    # Get the file's last modification time in seconds since the Epoch.
+    file_modified_time_seconds=$(stat -c %Y "$file")
+
+    # Calculate the age of the file in seconds.
+    local file_age_seconds=$((current_time_seconds - file_modified_time_seconds))
+
+    # Check if the file is older than the specified number of days.
+    if [ "$file_age_seconds" -gt $((days * seconds_in_a_day)) ]; then
+      # Construct the destination path.  Preserve directory structure.
+      local dest_file="$dest_dir$(echo "$file" | sed "s|^$source_dir||")"
+      core.print.advice "OK for $dest_file"
+
+      # Create any necessary subdirectories in the destination.
+      #local dest_dir_path=$(dirname "$dest_file")
+      #if ! [ -d "$dest_dir_path" ]; then
+      #  mkdir -p "$dest_dir_path"
+      #fi
+      # Attempt to move the file.
+      szOut="$szOut$file "
+
+      if mv "$file" "$dest_file"; then
+        echo "Moved: '$file' to '$dest_file'"
+        moved_files=$((moved_files + 1))
+      else
+        echo "Error: Failed to move '$file' to '$dest_file'" >&2
+        return 4 # Return error code for move failure.
+      fi
+    fi
+  done
+
+  # Check if any files were moved.
+  if [ "$moved_files" -eq 0 ]; then
+    echo "No files older than $days days found in '$source_dir'."
+    return 3 # Return specific code for no files moved.
+  fi
+
+  core.print.advice "$szOut Files Moved"
+  return 0 # Return success.
+}
+
+# Example usage (you can uncomment this to test the function):
+# Create dummy directories and files for testing.
+# mkdir -p /tmp/source_dir /tmp/dest_dir
+# touch -d "2024-01-01" /tmp/source_dir/file1.txt  # Older than 60 days (as of 2024-03-04)
+# touch -d "2024-03-01" /tmp/source_dir/file2.txt  # Newer than 60 days (as of 2024-03-04)
+# touch -d "2024-01-15" /tmp/source_dir/subdir/file3.txt # Test subdirectory handling
+# mkdir /tmp/source_dir/empty_dir
+#
+# # Run the function.
+# move_old_files "/tmp/source_dir" "/tmp/dest_dir" 60
+#
+# # Check the results.
+# ls -l /tmp/dest_dir
+# ls -l /tmp/dest_dir/subdir
+# ls -l /tmp/source_dir
+#
+# # Clean up the dummy directories and files.
+# rm -rf /tmp/source_dir /tmp/dest_dir
+

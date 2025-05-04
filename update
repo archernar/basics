@@ -35,7 +35,6 @@ shift $(($OPTIND - 1))
 
 D=`date`
 core.print.critical "update $D"
-core.print.critical "Log Level is $LOGLEVEL"
 
 
 if [ "$UPDATE" == "SCAN" ]; then                                                                                               
@@ -118,14 +117,27 @@ if [ "$UPDATE" == "EXTRACT" ]; then
     fi
 
     core.print.info "Extraction complete"
+
+
+    D=`pwd`
+    cd /tmp
+    tar cvf basics.tar ~/scm/basics  >/dev/null 2>&1;
+#   >/dev/null 2>&1;
+    mkdir -p                     "$HOME/BACKUPS"
+    mkdir -p                     "$HOME/BACKUPS_ARCHIVE"
+    move_old_files "$HOME/BACKUPS"   "$HOME/BACKUPS_ARCHIVE" 60
+    
+    backup_file   basics.tar     ~/BACKUPS   >/dev/null 2>&1;
+    cd "$D"
+    core.print.advice "Backup complete"
+
     exit 0
 fi
 
 if [ "$UPDATE" == "TEST" ]; then                                                                                               
-      core.print.echo "===================================================="
-      core.print.echo "Test"
-      gitadd
-      core.print.echo "===================================================="
+      core.print.echo "Test Start ==============================================="
+      core.print.alltest
+      core.print.echo "Test End   ==============================================="
       exit 0
 fi
 
@@ -246,7 +258,7 @@ fi
 
 
 core.print.info "Cleaning up"
-rm -f zed zzed zerd qed qqed fed ffed xx yy xxx yyy
+rm -f zeda zedb zed zzed zerd qed qqed fed ffed xx yy xxx yyy
 rm -f sfa*  >/dev/null 2>&1
 
 
