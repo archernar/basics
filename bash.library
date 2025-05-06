@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun May  4 10:28:05 EDT 2025
-# *********************************************************HASHOMATIC: d6c094d6d59e562643cc7ece21326956
+# *********************************************************DATEOMATIC: Tue May  6 16:31:47 EDT 2025
+# *********************************************************HASHOMATIC: 0a0a105b03e894063bbd8ad2fb9585c0
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -1388,6 +1388,18 @@ LL2A=2   # alert
 LL1A=1   # error
 LL0A=0   # critical
 LL0A=0   # fatal
+BGWW="\033[47m"  # white
+BGBB="\033[40m"  # black
+
+#          black) printf "\033[40m" ;;
+#          red) printf "\033[41m" ;;
+#          green) printf "\033[42m" ;;
+#          yellow) printf "\033[43m" ;;
+#          blue) printf "\033[44m" ;;
+#          magenta) printf "\033[45m" ;;
+#          cyan) printf "\033[46m" ;;
+#          white) printf "\033[47m" ;;
+#          default) printf "\033[49m" ;; # Use 49 for default
 DEFLOGLEVEL=5
 LOGLEVEL=$DEFLOGLEVEL
 
@@ -1400,7 +1412,7 @@ function core.print.alltest() {
       core.print.alert     "alert"
       core.print.error     "error"
       core.print.critical  "critical"
-      core.print.always    "always"
+      corePrintAlways    "always"
       core.print.fatal     "fatal"
 }
 function core.logdebug() {
@@ -1437,6 +1449,45 @@ function core.logset() {
 }
 
 
+function util.set_background() {
+    local color=$1    # Bash-Function-Args
+    case "$color" in
+    printf "$BGWW"
+        black) 
+          printf "$BGWW";
+          printf "\033[40m"; 
+          printf "$BGBB" ;;
+        red) printf "\033[41m" ;;
+        green) printf "\033[42m" ;;
+        yellow) printf "\033[43m" ;;
+        blue) printf "\033[44m" ;;
+        magenta) printf "\033[45m" ;;
+        cyan) printf "\033[46m" ;;
+        white) printf "\033[47m" ;;
+        default) printf "\033[49m" ;; # Use 49 for default
+        *) echo "Invalid color: $color" >&2; return 1 ;;
+    esac
+}
+function util.print.color() {
+         local color=$1; local sz="$2"    # Bash-Function-Args
+    if core._should_print_color 1; then
+        case "$color" in
+            black)   util.println.white   "$sz" ;;
+            red)     util.println.red     "$sz" ;;
+            green)   util.println.green   "$sz" ;;
+            yellow)  util.println.white   "$sz" ;;
+            blue)    util.println.blue    "$sz" ;;
+            magenta) util.println.magenta "$sz" ;;
+            cyan)    util.println.white   "$sz" ;;
+            white)   util.println.white   "$sz" ;;
+            default) util.println.white   "$sz" ;;
+            *) echo "Invalid color: $color" >&2; return 1 ;;
+        esac
+    else
+        util.println.white "$sz"
+    fi
+}
+
 # @description Print a debug message to standard output if the environment variable "DEBUG" is present
 # @arg $1 string message
 function core.print.debug() {
@@ -1452,13 +1503,9 @@ function core.print.info() {
          local msg="$1"    # Bash-Function-Args
          local lvl="$LL4A"
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "Info$lvl" "$SILENT" "$ff" "$msg")"
+    local sz="$(printf "%s %s: %s %s" "Info$lvl" "$SILENT" "$ff"  "$msg")"
     if [ "$LOGLEVEL" -ge $lvl ]; then
-        if core._should_print_color 1; then
-            util.println.green "$sz"
-        else
-            util.println.white "$sz"
-        fi
+        util.print.color black "$sz"
     fi
 }
 function core.print.stackline() {
@@ -1466,11 +1513,7 @@ function core.print.stackline() {
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "Stck" "$SILENT" "" "$msg")"
     if [ "$LOGLEVEL" -gt $LL3A ]; then
-        if core._should_print_color 1; then
-            util.println.blue  "$sz"
-        else
-            util.println.white "$sz"
-        fi
+        util.print.color blue "$sz"
     fi
 }
 function core.print.advice() {
@@ -1479,11 +1522,7 @@ function core.print.advice() {
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "Advc$lvl" "$SILENT" "$ff" "$msg")"
     if [ "$LOGLEVEL" -gt $lvl ]; then
-        if core._should_print_color 1; then
-            util.println.blue  "$sz"
-        else
-            util.println.white "$sz"
-        fi
+        util.print.color blue "$sz"
     fi
 }
 function core.print.alert() {
@@ -1506,11 +1545,7 @@ function core.print.error() {
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "Errr$lvl" "$SILENT" "$ff" "$msg")"
     if [ "$LOGLEVEL" -ge $lvl ]; then
-        if core._should_print_color 1; then
-            util.println.red "$sz"
-        else
-            util.println.white "$sz"
-        fi
+        util.print.color red "$sz"
     fi
 }
 function core.print.critical() {
@@ -1525,11 +1560,7 @@ function core.print.critical() {
     local ff=$(printf "%-32s\n" "${FUNCNAME[dex]}")
     local sz="$(printf "%s %s: %s %s" "Crit$lvl" "$SILENT" "$ff" "$msg")"
     if [ "$LOGLEVEL" -ge $lvl ]; then
-        if core._should_print_color 1; then
-            util.println.red "$sz"
-        else
-            util.println.white "$sz"
-        fi
+        util.print.color red "$sz"
     fi
 }
 function core.print.fatal() {
@@ -1546,11 +1577,7 @@ function core.print.fatal() {
     local ff=$(printf "%-32s\n" "${FUNCNAME[dex]}")
     local sz="$(printf "%s %s: %s %s" "Fatl$lvl" "$SILENT" "$ff" "$msg")"
     if [ "$LOGLEVEL" -ge $lvl ]; then
-        if core._should_print_color 1; then
-            util.println.red "$sz"
-        else
-            util.println.white "$sz"
-        fi
+        util.print.color red "$sz"
 
         local sz=""
         local delim=""
@@ -1562,7 +1589,7 @@ function core.print.fatal() {
         done
     fi
 }
-function core.print.always() {
+function corePrintAlways() {
          local msg="$1"    # Bash-Function-Args
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "AlwsX" "$SILENT" "$ff" "$msg")"
@@ -2340,4 +2367,4 @@ move_old_files() {
 #
 # # Clean up the dummy directories and files.
 # rm -rf /tmp/source_dir /tmp/dest_dir
-
+#  :set iskeyword=@,48-57,_,192-255,.
