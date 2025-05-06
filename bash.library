@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Tue May  6 16:31:47 EDT 2025
-# *********************************************************HASHOMATIC: 0a0a105b03e894063bbd8ad2fb9585c0
+# *********************************************************DATEOMATIC: Tue May  6 16:33:25 EDT 2025
+# *********************************************************HASHOMATIC: c12446ecea9e9d1b637070aebcf1483f
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -1452,7 +1452,6 @@ function core.logset() {
 function util.set_background() {
     local color=$1    # Bash-Function-Args
     case "$color" in
-    printf "$BGWW"
         black) 
           printf "$BGWW";
           printf "\033[40m"; 
