@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Tue May  6 16:33:25 EDT 2025
-# *********************************************************HASHOMATIC: c12446ecea9e9d1b637070aebcf1483f
+# *********************************************************DATEOMATIC: Wed May  7 08:35:36 EDT 2025
+# *********************************************************HASHOMATIC: 2a4ae1c215acb80ff656cc6078d9bb42
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -878,7 +878,7 @@ function create_markdown_table4() {
   else
       cat "$input_file"  > $tmp
   fi
-
+cp $tmp frost
   # Read lines from the file and create table rows
   local line_count=0
   local row=""
@@ -1357,25 +1357,87 @@ function util.silencer() {
         fi
     fi
 }
+# Foreground Colors
+# BLACK_FG=$'\e[30m'
+# RED_FG=$'\e[31m'
+# GREEN_FG=$'\e[32m'
+# YELLOW_FG=$'\e[33m'
+# BLUE_FG=$'\e[34m'
+# MAGENTA_FG=$'\e[35m'
+# CYAN_FG=$'\e[36m'
+# WHITE_FG=$'\e[37m'
+
+function u.putln() {
+         local color="$1"; local sz="$2"    # Bash-Function-Args
+    printf "\033[1;%sm%s\033[0m\n" "$color" "$msg"
+}
+function u.put() {
+         local color="$1"; local sz="$2"    # Bash-Function-Args
+    printf "\033[1;%sm%s\033[0m" "$color" "$msg"
+}
+function util.println.black() {
+         local msg="$1"    # Bash-Function-Args
+    u.putln "30" "$msg"
+}
 function util.println.red() {
          local msg="$1"    # Bash-Function-Args
-        printf "\033[1;31m%s\033[0m\n" "$msg"
+    u.putln "31" "$msg"
 }
 function util.println.green() {
          local msg="$1"    # Bash-Function-Args
-        printf "\033[1;32m%s\033[0m\n" "$msg"
+    u.putln "32" "$msg"
+}
+function util.println.yellow() {
+         local msg="$1"    # Bash-Function-Args
+    u.putln "33" "$msg"
 }
 function util.println.blue() {
          local msg="$1"    # Bash-Function-Args
-        printf "\033[1;34m%s\033[0m\n" "$msg"
+    u.putln "34" "$msg"
 }
 function util.println.magenta() {
          local msg="$1"    # Bash-Function-Args
-        printf "\033[1;35m%s\033[0m\n" "$msg"
+    u.putln "35" "$msg"
+}
+function util.println.cyan() {
+         local msg="$1"    # Bash-Function-Args
+    u.putln "36" "$msg"
 }
 function util.println.white() {
          local msg="$1"    # Bash-Function-Args
-        printf "\033[1;37m%s\033[0m\n" "$msg"
+    u.putln "37" "$msg"
+}
+function util.print.black() {
+         local msg="$1"    # Bash-Function-Args
+    u.putln "30" "$msg"
+}
+function util.print.red() {
+         local msg="$1"    # Bash-Function-Args
+    u.putln "31" "$msg"
+}
+function util.print.green() {
+         local msg="$1"    # Bash-Function-Args
+    u.putln "32" "$msg"
+}
+function util.print.yellow() {
+         local msg="$1"    # Bash-Function-Args
+    u.putln "33" "$msg"
+}
+function util.print.blue() {
+         local msg="$1"    # Bash-Function-Args
+    u.putln "34" "$msg"
+}
+function util.print.magenta() {
+         local msg="$1"    # Bash-Function-Args
+    u.putln "35" "$msg"
+}
+function util.print.cyan() {
+         local msg="$1"    # Bash-Function-Args
+    u.putln "36" "$msg"
+}
+function util.print.white() {
+         local msg="$1"    # Bash-Function-Args
+    u.putln "37" "$msg"
 }
 # ----------------------------------------------------------------------------------------------------
 # FLOG: core.print
@@ -1544,7 +1606,7 @@ function core.print.error() {
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "Errr$lvl" "$SILENT" "$ff" "$msg")"
     if [ "$LOGLEVEL" -ge $lvl ]; then
-        util.print.color red "$sz"
+        util.print.color cyan "$sz"
     fi
 }
 function core.print.critical() {
