@@ -77,7 +77,7 @@ function create_markdown_table4() {
   else
       cat "$input_file"  > $tmp
   fi
-
+cp $tmp frost
   # Read lines from the file and create table rows
   local line_count=0
   local row=""
