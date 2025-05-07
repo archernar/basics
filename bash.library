@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Wed May  7 08:35:36 EDT 2025
-# *********************************************************HASHOMATIC: 2a4ae1c215acb80ff656cc6078d9bb42
+# *********************************************************DATEOMATIC: Wed May  7 08:38:20 EDT 2025
+# *********************************************************HASHOMATIC: b1b61aa37ca04cd3946794c314d86852
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -873,12 +873,15 @@ function create_markdown_table4() {
   STRING=`repeat_char "-" "24"`
 
   rm -f "$tmp" >/dev/null 2>&1
+  rm -f "frost" >/dev/null 2>&1
   if [[ "$str" == "MAKELINKS" ]]; then
       cat "$input_file" |gawk '{n=split($0,A,"/");sub(/[.]html$/, "", A[n]);print "[" A[n] "](" $0 ")";}' > $tmp
+      cat "$input_file" |gawk '{n=split($0,A,"/");sub(/[.]html$/, "", A[n]);print A[n];}' >> frost
   else
       cat "$input_file"  > $tmp
+      cat "$input_file"  > frost
   fi
-cp $tmp frost
+
   # Read lines from the file and create table rows
   local line_count=0
   local row=""
