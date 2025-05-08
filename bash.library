@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Thu May  8 09:44:45 EDT 2025
-# *********************************************************HASHOMATIC: 0244d827920ba7cf1e29f1554d146414
+# *********************************************************DATEOMATIC: Thu May  8 09:45:23 EDT 2025
+# *********************************************************HASHOMATIC: b40d042644e616e3bb95f5258a046fad
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -872,6 +872,7 @@ function create_simple_table4() {
   LEN=`longest_string_length < "$input_file"`
   STRING=`repeat_char "-" "24"`
   cat "$input_file" |gawk '{n=split($0,A,"/");sub(/[.]html$/, "", A[n]);print A[n];}' > "$tmp"
+  cat "$input_file" |gawk '{n=split($0,A,"/");sub(/[.]html$/, "", A[n]);print A[n];}' > "mosss"
   cat "$tmp" | sort | uniq | column > "$input_file"
   
 }
