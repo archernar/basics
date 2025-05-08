@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Thu May  8 09:39:55 EDT 2025
-# *********************************************************HASHOMATIC: 599976fe8bd705580f77edb6629caf8a
+# *********************************************************DATEOMATIC: Thu May  8 09:41:50 EDT 2025
+# *********************************************************HASHOMATIC: 0244d827920ba7cf1e29f1554d146414
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -872,7 +872,7 @@ function create_simple_table4() {
   LEN=`longest_string_length < "$input_file"`
   STRING=`repeat_char "-" "24"`
   cat "$input_file" |gawk '{n=split($0,A,"/");sub(/[.]html$/, "", A[n]);print A[n];}' > "$tmp"
-  mv "$tmp" "$input_file"
+  cat "$tmp" | sort | uniq | column > "$input_file"
   
 }
 
