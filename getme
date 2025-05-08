@@ -102,6 +102,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table2.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table3.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table4.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_simple_table4.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/current_timestamp.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dirname.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eecho.bash
