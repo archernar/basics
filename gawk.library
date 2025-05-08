@@ -1,5 +1,3 @@
-# *********************************************************DATEOMATIC: Thu May  8 09:55:23 EDT 2025
-# *********************************************************HASHOMATIC: b2301410a287f687ccf05e3fded983df
 
 # Trims leading and trailing whitespace from a string.
 function trim(str,  trimmed) {
