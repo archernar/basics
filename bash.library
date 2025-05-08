@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Thu May  8 09:45:23 EDT 2025
-# *********************************************************HASHOMATIC: b40d042644e616e3bb95f5258a046fad
+# *********************************************************DATEOMATIC: Thu May  8 09:52:36 EDT 2025
+# *********************************************************HASHOMATIC: 5e3ea0395e13ab77ecd540dd65e88208
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -872,7 +872,24 @@ function create_simple_table4() {
   LEN=`longest_string_length < "$input_file"`
   STRING=`repeat_char "-" "24"`
   cat "$input_file" |gawk '{n=split($0,A,"/");sub(/[.]html$/, "", A[n]);print A[n];}' > "$tmp"
-  cat "$input_file" |gawk '{n=split($0,A,"/");sub(/[.]html$/, "", A[n]);print A[n];}' > "mosss"
+  cat "$input_file" |gawk '{n=split($0,A,"/");sub(/[.]html$/, "", A[n]);print A[n];}' | gawk '
+      { 
+          if (NR % 4 == 1) { 
+              printf "%-30s", $0 
+              }
+          else 
+              if (NR % 4 == 2) {
+                   printf "%-30s", $0 
+              }
+              else
+                   if (NR % 4 == 3) {i
+                        printf "%-30s", $0
+                   }
+                   else {
+                        printf "%-30s\n", $0
+                   }
+     }' > mosss
+
   cat "$tmp" | sort | uniq | column > "$input_file"
   
 }
