@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Thu May  8 09:57:10 EDT 2025
-# *********************************************************HASHOMATIC: f09c14354b534e1a21611503ff4bffdb
+# *********************************************************DATEOMATIC: Thu May  8 09:59:41 EDT 2025
+# *********************************************************HASHOMATIC: 227b51b247009233fac2978f3bd73a30
 DEBUG=1
 DEBUGLEVEL=1
 
@@ -887,9 +887,9 @@ function create_simple_table4() {
                    else {
                         printf "%-30s\n", $0
                    }
-     }' > mosss
+     }' > "$tmp"
 
-  cat "$tmp" | sort | uniq | column > "$input_file"
+  cat "$tmp" > "$input_file"
   
 }
 
