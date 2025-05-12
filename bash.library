@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Fri May  9 17:58:26 EDT 2025
-# *********************************************************HASHOMATIC: c32895c7a0f23cdb30d36009b01c7103
+# *********************************************************DATEOMATIC: Mon May 12 08:59:42 EDT 2025
+# *********************************************************HASHOMATIC: 7fea5932ac0b4c31753e0bc1ece53273
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -1380,14 +1380,6 @@ function gitadd() {
   return 0
 }
   
-function core.position.cursor() {
-         local row="$1"; local col="$2";  # Bash-Function-Args
-  printf "\e[$row;${col}H"
-}
-function core.clear.EOL() {
-         local void=0;  # Bash-Function-Args
-    printf "\e[K"
-}
 function util.silencer() {
     if [[ -v SILENT ]]; then
         if [[ "$SILENT" -gt 0 ]]; then
@@ -2135,184 +2127,7 @@ export STRIKETHROUGH=$'\e[9m' # Strikethrough
 
 }
 
-#
-#
-# Examples:
-#
-# source ansi_screen_control.sh
-# clear_screen
-# move_cursor_to 10 20
-# set_text_color red
-# set_background_color blue
-# set_text_attribute bold
-# echo "Hello, colorful world!"
-# reset_text_attributes
-# move_cursor_to 12 1
-# echo "Back to normal."
-# get_cursor_position
-#
-# Notes:
-# -   ANSI escape sequences are terminal-specific and may not be
-#     supported by all terminals.
-# -   The get_cursor_position function requires the 'stty' command,
-#     which is available on most Unix-like systems.
-# -   This library uses printf instead of echo to handle escape sequences.
 
-# Function: clear_screen
-# Clears the entire screen and moves the cursor to the top-left corner.
-function ansi.clear_screen() {
-         local void=1    # Bash-Function-Args
-    printf "\033[2J\033[H"
-}
-
-# Function: clear_line
-# Clears the current line from the cursor position to the end of the line.
-function ansi.clear_line() {
-         local void=1    # Bash-Function-Args
-    printf "\033[K"
-}
-
-# Function: move_cursor_to <row> <column>
-# Moves the cursor to the specified row and column.
-# Arguments:
-#   -   row: The row number (1-based).
-#   -   column: The column number (1-based).
-function ansi.move_cursor_to() {
-    local row=$1; local column=$2;    # Bash-Function-Args
-    printf "\033[${row};${column}H"
-}
-
-# Function: move_cursor_up <count>
-# Moves the cursor up by the specified number of lines.
-# Argument:
-#   -   count: The number of lines to move the cursor up.
-function ansi.move_cursor_up() {
-    local count=$1    # Bash-Function-Args
-    printf "\033[${count}A"
-}
-
-# Function: move_cursor_down <count>
-# Moves the cursor down by the specified number of lines.
-# Argument:
-#   -   count: The number of lines to move the cursor down.
-function ansi.move_cursor_down() {
-    local count=$1    # Bash-Function-Args
-    printf "\033[${count}B"
-}
-
-# Function: move_cursor_right <count>
-# Moves the cursor right by the specified number of columns.
-# Argument:
-#   -   count: The number of columns to move the cursor right.
-function ansi.move_cursor_right() {
-    local count=$1    # Bash-Function-Args
-    printf "\033[${count}C"
-}
-
-# Function: move_cursor_left <count>
-# Moves the cursor left by the specified number of columns.
-# Argument:
-#   -   count: The number of columns to move the cursor left.
-function ansi.move_cursor_left() {
-    local count=$1    # Bash-Function-Args
-    printf "\033[${count}D"
-}
-
-# Function: save_cursor_position
-# Saves the current cursor position.
-function ansi.save_cursor_position() {
-         local void=1    # Bash-Function-Args
-    printf "\033[s"
-}
-
-# Function: restore_cursor_position
-# Restores the cursor position to the last saved position.
-function ansi.restore_cursor_position() {
-         local void=1    # Bash-Function-Args
-    printf "\033[u"
-}
-
-# Function: set_text_color <color>
-# Sets the text color.
-# Argument:
-#   -   color: The color name (e.g., red, blue, green).
-function ansi.set_text_color() {
-    local color=$1    # Bash-Function-Args
-    case "$color" in
-        black) printf "\033[30m" ;;
-        red) printf "\033[31m" ;;
-        green) printf "\033[32m" ;;
-        yellow) printf "\033[33m" ;;
-        blue) printf "\033[34m" ;;
-        magenta) printf "\033[35m" ;;
-        cyan) printf "\033[36m" ;;
-        white) printf "\033[37m" ;;
-        default) printf "\033[39m" ;; # Use 39 for default
-        *) echo "Invalid color: $color" >&2; return 1 ;;
-    esac
-}
-
-# Function: set_background_color <color>
-# Sets the background color.
-# Argument:
-#   -   color: The color name (e.g., black, red, green).
-function ansi.set_background_color() {
-    local color=$1    # Bash-Function-Args
-    case "$color" in
-        black) printf "\033[40m" ;;
-        red) printf "\033[41m" ;;
-        green) printf "\033[42m" ;;
-        yellow) printf "\033[43m" ;;
-        blue) printf "\033[44m" ;;
-        magenta) printf "\033[45m" ;;
-        cyan) printf "\033[46m" ;;
-        white) printf "\033[47m" ;;
-        default) printf "\033[49m" ;; # Use 49 for default
-        *) echo "Invalid color: $color" >&2; return 1 ;;
-    esac
-}
-
-# Function: set_text_attribute <attribute>
-# Sets the text attribute (e.g., bold, underline).
-# Argument:
-#   -   attribute: The attribute name (e.g., bold, underline).
-function ansi.set_text_attribute() {
-    local attribute=$1    # Bash-Function-Args
-    case "$attribute" in
-        normal) printf "\033[0m" ;;
-        bold) printf "\033[1m" ;;
-        dim) printf "\033[2m" ;;
-        underline) printf "\033[4m" ;;
-        blink) printf "\033[5m" ;;
-        reverse) printf "\033[7m" ;;
-        hidden) printf "\033[8m" ;;
-        *) echo "Invalid attribute: $attribute" >&2; return 1 ;;
-    esac
-}
-
-# Function: reset_text_attributes
-# Resets all text attributes to normal.  This also resets
-# colors to the terminal's default.
-function ansi.reset_text_attributes() {
-         local void=1    # Bash-Function-Args
-    printf "\033[0m"
-}
-
-# Function: get_cursor_position
-# Gets the current cursor position using stty and prints it to stdout.
-# Output is in the format "row,column".
-function ansi.get_cursor_position() {
-         local void=1    # Bash-Function-Args
-  local IFS=$'\n'
-  local answer=$( (stty -echo; stty raw; printf "\033[6n"; sleep 0.1; cat) )
-  stty cooked; stty echo
-  IFS=$' '
-  if [[ $answer =~ ^$'\033\[([0-9]+);([0-9]+)R' ]]; then
-    echo "${BASH_REMATCH[1]},${BASH_REMATCH[2]}"
-  else
-    echo "1,1" >&2 # Default to 1,1 on error, to avoid script break.
-  fi
-}
 
 function rename_dot_file() {
          local filename="$1"             # Bash-Function-Args
@@ -2469,3 +2284,114 @@ move_old_files() {
 # # Clean up the dummy directories and files.
 # rm -rf /tmp/source_dir /tmp/dest_dir
 #  :set iskeyword=@,48-57,_,192-255,.
+
+function ansi.clear() {
+         local void=1    # Bash-Function-Args
+    printf "\033[2J\033[H"
+}
+function ansi.clearEOL() {
+         local void=1    # Bash-Function-Args
+    printf "\033[K"
+}
+function ansi.clearline() {
+         local void=1    # Bash-Function-Args
+    printf "\033[K"
+}
+function ansi.move() {
+    local row=$1; local column=$2;    # Bash-Function-Args
+#   row,col: 1-based.
+    printf "\033[${row};${column}H"
+}
+function ansi.pos() {
+    local row=$1; local column=$2;    # Bash-Function-Args
+#   row,col: 1-based.
+    printf "\033[${row};${column}H"
+}
+function ansi.savepos() {
+         local void=1    # Bash-Function-Args
+    printf "\033[s"
+}
+function ansi.restorepos() {
+         local void=1    # Bash-Function-Args
+    printf "\033[u"
+}
+function ansi.moveup() {
+    local count=$1    # Bash-Function-Args
+    printf "\033[${count}A"
+}
+function ansi.movedown() {
+    local count=$1    # Bash-Function-Args
+    printf "\033[${count}B"
+}
+function ansi.moveright() {
+    local count=$1    # Bash-Function-Args
+    printf "\033[${count}C"
+}
+function ansi.moveleft() {
+    local count=$1    # Bash-Function-Args
+    printf "\033[${count}D"
+}
+function ansi.attributes() {
+    local attribute=$1    # Bash-Function-Args
+#   attribute: The attribute name (e.g., bold, underline).
+    case "$attribute" in
+        normal) printf "\033[0m" ;;
+        bold) printf "\033[1m" ;;
+        dim) printf "\033[2m" ;;
+        underline) printf "\033[4m" ;;
+        blink) printf "\033[5m" ;;
+        reverse) printf "\033[7m" ;;
+        hidden) printf "\033[8m" ;;
+        *) echo "Invalid attribute: $attribute" >&2; return 1 ;;
+    esac
+}
+function ansi.resetattributes() {
+         local void=1    # Bash-Function-Args
+    printf "\033[0m"
+}
+function ansi.getpos() {
+         local void=1    # Bash-Function-Args
+#        stdout, Output is in the format "row,column".
+  local IFS=$'\n'
+  local answer=$( (stty -echo; stty raw; printf "\033[6n"; sleep 0.1; cat) )
+  stty cooked; stty echo
+  IFS=$' '
+  if [[ $answer =~ ^$'\033\[([0-9]+);([0-9]+)R' ]]; then
+    echo "${BASH_REMATCH[1]},${BASH_REMATCH[2]}"
+  else
+    echo "1,1" >&2 # Default to 1,1 on error, to avoid script break.
+  fi
+}
+function ansi.textcolor() {
+    local color=$1    # Bash-Function-Args
+#   color: The color name (e.g., red, blue, green).
+    case "$color" in
+        black) printf "\033[30m" ;;
+        red) printf "\033[31m" ;;
+        green) printf "\033[32m" ;;
+        yellow) printf "\033[33m" ;;
+        blue) printf "\033[34m" ;;
+        magenta) printf "\033[35m" ;;
+        cyan) printf "\033[36m" ;;
+        white) printf "\033[37m" ;;
+        default) printf "\033[39m" ;; # Use 39 for default
+        *) echo "Invalid color: $color" >&2; return 1 ;;
+    esac
+}
+function ansi.backgroundcolor() {
+    local color=$1    # Bash-Function-Args
+#   color: The color name (e.g., black, red, green).
+    case "$color" in
+        black) printf "\033[40m" ;;
+        red) printf "\033[41m" ;;
+        green) printf "\033[42m" ;;
+        yellow) printf "\033[43m" ;;
+        blue) printf "\033[44m" ;;
+        magenta) printf "\033[45m" ;;
+        cyan) printf "\033[46m" ;;
+        white) printf "\033[47m" ;;
+        default) printf "\033[49m" ;; # Use 49 for default
+        *) echo "Invalid color: $color" >&2; return 1 ;;
+    esac
+}
+
