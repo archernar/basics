@@ -36,8 +36,6 @@ shift $(($OPTIND - 1))
 D=`date`
 core.print.critical "update $D"
 
-core.print.advice   "tagging"
-btags bash.library > tags
 
 if [ "$UPDATE" == "SCAN" ]; then                                                                                               
     if ! scan; then
@@ -76,6 +74,8 @@ if [ "$UPDATE" == "REMOTE" ]; then
 fi
 
 if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
+    core.print.advice   "tagging"
+    btags bash.library > tags
     core.print.info "Extract"
     rm -f modifiedfilenames  >/dev/null 2>&1;
     touch modifiedfilenames
