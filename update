@@ -36,6 +36,8 @@ shift $(($OPTIND - 1))
 D=`date`
 core.print.critical "update $D"
 
+core.print.advice   "tagging"
+btags bash.library > tags
 
 if [ "$UPDATE" == "SCAN" ]; then                                                                                               
     if ! scan; then
@@ -135,6 +137,7 @@ if [ "$UPDATE" == "EXTRACT" ]; then
 fi
 
 if [ "$UPDATE" == "TEST" ]; then                                                                                               
+      ansi.clear
       core.print.echo "Test Start ==============================================="
       core.print.alltest
       core.print.echo "Test End   ==============================================="
@@ -239,6 +242,12 @@ git add getme
 
 
 core.print.flag
+cp "$Tmp" "simple_table"
+alpha_normal4 "simple_table"
+create_simple_table4 "simple_table"
+cat "simple_table" | sed 's/^/# /' > toc
+
+
 alpha_normal4 "$Tmp"
 create_markdown_table4 "$Tmp" "MAKELINKS"   >  README.md
 gitadd "README.md"
