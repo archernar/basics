@@ -172,6 +172,10 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/scan_for_secrets.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/sort_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/split_file_n.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stacktracetest.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stacktracetest1.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stacktracetest2.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stacktracetest3.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/starts_with.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/string_after_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/string_before_file_lines.bash
@@ -182,6 +186,11 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/truncate_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.put.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putln.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.black.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.green.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.red.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.white.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.black.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.blue.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.color.bash
@@ -199,6 +208,8 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.red.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.white.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.yellow.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.put.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.putln.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.set_background.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.silencer.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/warn.bash

@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Mon May 12 09:03:23 EDT 2025
-# *********************************************************HASHOMATIC: 7fea5932ac0b4c31753e0bc1ece53273
+# *********************************************************DATEOMATIC: Mon May 12 21:46:00 EDT 2025
+# *********************************************************HASHOMATIC: 33302b0f5af8eb13bbaff248ff2f4e58
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -1235,7 +1235,18 @@ function core.panic() {
 	core.print.stacktrace
 	exit "$code"
 }
-
+function stacktracetest() {
+    stacktracetest1
+}
+function stacktracetest1() {
+    stacktracetest2
+}
+function stacktracetest2() {
+    stacktracetest3
+}
+function stacktracetest3() {
+    core.print.stacktrace
+}
 # @description Prints stacktrace
 # @noargs
 # @example
@@ -1280,44 +1291,7 @@ function core.print.stacktrace() {
 	fi
 } >&2
 
-# @description Print a fatal error message including the function name of the callee
-# to standard error
-# @arg $1 string message
-function core.print.fatal_fn() {
-         local msg="$1"    # Bash-Function-Args
-	core.print.fatal "${FUNCNAME[1]}()${msg:+": "}$msg"
-}
-
-# @description Print an error message including the function name of the callee
-# to standard error
-# @arg $1 string message
-function core.print.error_fn() {
-         local msg="$1"    # Bash-Function-Args
-	core.print.error "${FUNCNAME[1]}()${msg:+": "}$msg"
-}
-
-# @description Print a warning message including the function name of the callee
-# to standard error
-# @arg $1 string message
-function core.print.warn_fn() {
-         local msg="$1"    # Bash-Function-Args
-	core.print.warn "${FUNCNAME[1]}()${msg:+": "}$msg"
-}
-
-# @description Print an informative message including the function name of the callee
-# to standard output
-# @arg $1 string message
-function core.print.info_fn() {
-         local msg="$1"    # Bash-Function-Args
-	core.print.info "${FUNCNAME[1]}()${msg:+": "}$msg"
-}
-# @description Print a debug message including the function name of the callee
-# to standard output
-# @arg $1 string message
-function core.print.debug_fn() {
-         local msg="$1"    # Bash-Function-Args
-	core.print.debug "${FUNCNAME[1]}()${msg:+": "}$msg"
-}
+# core.print.fatal "${FUNCNAME[1]}()${msg:+": "}$msg"
 
 # @description Print a warning message to standard error
 # @arg $1 string message
@@ -1399,6 +1373,14 @@ function util.silencer() {
 # CYAN_FG=$'\e[36m'
 # WHITE_FG=$'\e[37m'
 
+function util.putln() {
+         local color="$1"; local sz="$2"    # Bash-Function-Args
+    printf "\033[1;%sm%s\033[0m\n" "$color" "$msg"
+}
+function util.put() {
+         local color="$1"; local sz="$2"    # Bash-Function-Args
+    printf "\033[1;%sm%s\033[0m" "$color" "$msg"
+}
 function u.putln() {
          local color="$1"; local sz="$2"    # Bash-Function-Args
     printf "\033[1;%sm%s\033[0m\n" "$color" "$msg"
@@ -1435,17 +1417,57 @@ function util.println.cyan() {
          local msg="$1"    # Bash-Function-Args
     u.putln "36" "$msg"
 }
+function util.posprint() {
+         local row="$1";local col="$2";local msg="$3";local n="$4"    # Bash-Function-Args
+         if [ "$n" == "" ]; then                                                                                               
+             n=1
+         fi
+    ansi.move "$row" "$col"; 
+    for ((i=0; i<$n; i++)); do
+        printf "%s" "$msg"
+    done
+}
+function util.posprint.white() {
+         local row="$1";local col="$2";local msg="$3";local n="$4"    # Bash-Function-Args
+         if [ "$n" == "" ]; then                                                                                               
+             n=1
+         fi
+    ansi.move "$row" "$col"; 
+    for ((i=0; i<$n; i++)); do
+        u.put "37" "$msg"
+    done
+}
 function util.println.white() {
          local msg="$1"    # Bash-Function-Args
     u.putln "37" "$msg"
+}
+function util.posprint.black() {
+         local row="$1";col="$2";msg="$3"    # Bash-Function-Args
+    ansi.move "$row" "$col"; 
+    u.put "30" "$msg"
 }
 function util.print.black() {
          local msg="$1"    # Bash-Function-Args
     u.putln "30" "$msg"
 }
+function util.posprint.red() {
+         local row="$1";col="$2";msg="$3"    # Bash-Function-Args
+    ansi.move "$row" "$col"; 
+    u.put "31" "$msg"
+}
 function util.print.red() {
          local msg="$1"    # Bash-Function-Args
     u.putln "31" "$msg"
+}
+function util.posprint.green() {
+         local row="$1";local col="$2";local msg="$3";local n="$4"    # Bash-Function-Args
+         if [ "$n" == "" ]; then                                                                                               
+             n=1
+         fi
+    ansi.move "$row" "$col"; 
+    for ((i=0; i<$n; i++)); do
+        u.put "32" "$msg"
+    done
 }
 function util.print.green() {
          local msg="$1"    # Bash-Function-Args
@@ -1499,6 +1521,15 @@ LOGLEVEL=$DEFLOGLEVEL
 
 function core.print.alltest() {
          local void=0    # Bash-Function-Args
+      ansi.clear
+      util.posprint.green 1   1 "X" 1
+      util.posprint       1   2 "-" 39
+      util.posprint.green 1  40 "X"
+      util.posprint.green 10  1 "X" 1
+      util.posprint       10  2 "-" 39
+      util.posprint.green 10 40 "X"
+      ansi.move "60" "1"
+exit 0
       core.print.critical  "Log Level is $LOGLEVEL"
       core.print.debug     "debug"
       core.print.info      "info"
@@ -1508,6 +1539,8 @@ function core.print.alltest() {
       core.print.critical  "critical"
       corePrintAlways    "always"
       core.print.fatal     "fatal"
+      stacktracetest
+
 }
 function core.logdebug() {
          local void=0    # Bash-Function-Args
