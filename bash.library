@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Mon May 12 21:46:22 EDT 2025
-# *********************************************************HASHOMATIC: 33302b0f5af8eb13bbaff248ff2f4e58
+# *********************************************************DATEOMATIC: Tue May 13 08:33:11 EDT 2025
+# *********************************************************HASHOMATIC: 1963d5a42594a405d335a3b6612087ab
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -1519,15 +1519,41 @@ BGBB="\033[40m"  # black
 DEFLOGLEVEL=5
 LOGLEVEL=$DEFLOGLEVEL
 
-function get_cursor_position {
-    local foo
+function save_cursor {
     echo -ne "\033[6n"            # ask the terminal for the position
     read -s -d\[ garbage          # discard the first part of the response
-    read -s -d R foo              # store the position in bash variable 'foo'
-    echo "$foo"                   # print the position
+    read -s -d R SAVECURSOR       # store the position in bash variable 'foo'
+    SAVECURSOR_ROW=`echo $SAVECURSOR | sed 's/;.*$//'`
+    SAVECURSOR_COL=`echo $SAVECURSOR | sed 's/^.*;//'`
+}
+function restore_cursor {
+    if [ "$SAVECURSOR_ROW" == "" ]; then                                                                                               
+        SAVECURSOR_ROW="0"
+    fi
+    if [ "$SAVECURSOR_COL" == "" ]; then                                                                                               
+        SAVECURSOR_COL="0"
+    fi
+    ansi.move "$SAVECURSOR_ROW" "$SAVECURSOR_COL"
+}
+function get_cursor {
+    echo -ne "\033[6n"            # ask the terminal for the position
+    read -s -d\[ garbage          # discard the first part of the response
+    read -s -d R CURSOR           # store the position in bash variable
+    CURSOR_ROW=`echo $CURSOR | sed 's/;.*$//'`
+    CURSOR_COL=`echo $CURSOR | sed 's/^.*;//'`
 }
 function core.print.alltest() {
          local void=0    # Bash-Function-Args
+      ansi.move "30" "10"
+      save_cursor
+      ansi.move "3" "3"
+      get_cursor
+      echo $CURSOR
+      echo $CURSOR_ROW
+      echo $CURSOR_COL
+      restore_cursor
+      echo "LALALALA"
+      exit 0
       ansi.clear
       util.posprint.green 1   1 "X" 1
       util.posprint       1   2 "-" 39
@@ -1536,7 +1562,6 @@ function core.print.alltest() {
       util.posprint       10  2 "-" 39
       util.posprint.green 10 40 "X"
       ansi.move "60" "1"
-get_cursor_position
       core.print.critical  "Log Level is $LOGLEVEL"
       core.print.debug     "debug"
       core.print.info      "info"
