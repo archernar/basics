@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Tue May 13 08:33:11 EDT 2025
-# *********************************************************HASHOMATIC: 1963d5a42594a405d335a3b6612087ab
+# *********************************************************DATEOMATIC: Tue May 13 08:36:34 EDT 2025
+# *********************************************************HASHOMATIC: ccef976d0a582ed4090d8f6022856e19
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -1519,40 +1519,10 @@ BGBB="\033[40m"  # black
 DEFLOGLEVEL=5
 LOGLEVEL=$DEFLOGLEVEL
 
-function save_cursor {
-    echo -ne "\033[6n"            # ask the terminal for the position
-    read -s -d\[ garbage          # discard the first part of the response
-    read -s -d R SAVECURSOR       # store the position in bash variable 'foo'
-    SAVECURSOR_ROW=`echo $SAVECURSOR | sed 's/;.*$//'`
-    SAVECURSOR_COL=`echo $SAVECURSOR | sed 's/^.*;//'`
-}
-function restore_cursor {
-    if [ "$SAVECURSOR_ROW" == "" ]; then                                                                                               
-        SAVECURSOR_ROW="0"
-    fi
-    if [ "$SAVECURSOR_COL" == "" ]; then                                                                                               
-        SAVECURSOR_COL="0"
-    fi
-    ansi.move "$SAVECURSOR_ROW" "$SAVECURSOR_COL"
-}
-function get_cursor {
-    echo -ne "\033[6n"            # ask the terminal for the position
-    read -s -d\[ garbage          # discard the first part of the response
-    read -s -d R CURSOR           # store the position in bash variable
-    CURSOR_ROW=`echo $CURSOR | sed 's/;.*$//'`
-    CURSOR_COL=`echo $CURSOR | sed 's/^.*;//'`
-}
 function core.print.alltest() {
          local void=0    # Bash-Function-Args
       ansi.move "30" "10"
-      save_cursor
       ansi.move "3" "3"
-      get_cursor
-      echo $CURSOR
-      echo $CURSOR_ROW
-      echo $CURSOR_COL
-      restore_cursor
-      echo "LALALALA"
       exit 0
       ansi.clear
       util.posprint.green 1   1 "X" 1
@@ -2350,6 +2320,29 @@ move_old_files() {
 # rm -rf /tmp/source_dir /tmp/dest_dir
 #  :set iskeyword=@,48-57,_,192-255,.
 
+function ansi.save.cursor {
+    echo -ne "\033[6n"            # ask the terminal for the position
+    read -s -d\[ garbage          # discard the first part of the response
+    read -s -d R SAVECURSOR       # store the position in bash variable 'foo'
+    SAVECURSOR_ROW=`echo $SAVECURSOR | sed 's/;.*$//'`
+    SAVECURSOR_COL=`echo $SAVECURSOR | sed 's/^.*;//'`
+}
+function ansi.restore.cursor {
+    if [ "$SAVECURSOR_ROW" == "" ]; then                                                                                               
+        SAVECURSOR_ROW="0"
+    fi
+    if [ "$SAVECURSOR_COL" == "" ]; then                                                                                               
+        SAVECURSOR_COL="0"
+    fi
+    ansi.move "$SAVECURSOR_ROW" "$SAVECURSOR_COL"
+}
+function ansi.getcursor {
+    echo -ne "\033[6n"            # ask the terminal for the position
+    read -s -d\[ garbage          # discard the first part of the response
+    read -s -d R CURSOR           # store the position in bash variable
+    CURSOR_ROW=`echo $CURSOR | sed 's/;.*$//'`
+    CURSOR_COL=`echo $CURSOR | sed 's/^.*;//'`
+}
 function ansi.clear() {
          local void=1    # Bash-Function-Args
     printf "\033[2J\033[H"
@@ -2413,19 +2406,6 @@ function ansi.attributes() {
 function ansi.resetattributes() {
          local void=1    # Bash-Function-Args
     printf "\033[0m"
-}
-function ansi.getpos() {
-         local void=1    # Bash-Function-Args
-#        stdout, Output is in the format "row,column".
-  local IFS=$'\n'
-  local answer=$( (stty -echo; stty raw; printf "\033[6n"; sleep 0.1; cat) )
-  stty cooked; stty echo
-  IFS=$' '
-  if [[ $answer =~ ^$'\033\[([0-9]+);([0-9]+)R' ]]; then
-    echo "${BASH_REMATCH[1]},${BASH_REMATCH[2]}"
-  else
-    echo "1,1" >&2 # Default to 1,1 on error, to avoid script break.
-  fi
 }
 function ansi.textcolor() {
     local color=$1    # Bash-Function-Args
