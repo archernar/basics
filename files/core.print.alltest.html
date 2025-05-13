@@ -59,14 +59,7 @@
         <pre>
 function core.print.alltest() {
       ansi.move "30" "10"
-      save_cursor
       ansi.move "3" "3"
-      get_cursor
-      echo $CURSOR
-      echo $CURSOR_ROW
-      echo $CURSOR_COL
-      restore_cursor
-      echo "LALALALA"
       exit 0
       ansi.clear
       util.posprint.green 1   1 "X" 1
