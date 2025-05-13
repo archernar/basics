@@ -74,9 +74,9 @@ if [ "$UPDATE" == "REMOTE" ]; then
 fi
 
 if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
-    core.print.advice   "tagging"
+    core.print.advice   "Tagging"
     btags bash.library > tags
-    core.print.info "Extract"
+    core.print.advice "Extract"
     rm -f modifiedfilenames  >/dev/null 2>&1;
     touch modifiedfilenames
     while IFS= read -r file_name; do
@@ -118,7 +118,7 @@ if [ "$UPDATE" == "EXTRACT" ]; then
       core.print.info "===================================================="
     fi
 
-    core.print.info "Extraction complete"
+    core.print.advice "Extraction complete"
 
 
     D=`pwd`
