@@ -1519,6 +1519,13 @@ BGBB="\033[40m"  # black
 DEFLOGLEVEL=5
 LOGLEVEL=$DEFLOGLEVEL
 
+function get_cursor_position {
+    local foo
+    echo -ne "\033[6n"            # ask the terminal for the position
+    read -s -d\[ garbage          # discard the first part of the response
+    read -s -d R foo              # store the position in bash variable 'foo'
+    echo "$foo"                   # print the position
+}
 function core.print.alltest() {
          local void=0    # Bash-Function-Args
       ansi.clear
@@ -1529,7 +1536,7 @@ function core.print.alltest() {
       util.posprint       10  2 "-" 39
       util.posprint.green 10 40 "X"
       ansi.move "60" "1"
-exit 0
+get_cursor_position
       core.print.critical  "Log Level is $LOGLEVEL"
       core.print.debug     "debug"
       core.print.info      "info"
