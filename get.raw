@@ -141,6 +141,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logerror.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.loginfo.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.loginfo.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.loglevels.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.loglevels.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logreset.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logreset.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logset.bash
@@ -211,6 +213,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_warn.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_warn_fn.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_warn_fn.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.stacktracedepth.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.stacktracedepth.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.string.contains.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.string.contains.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.string.indexof.bash

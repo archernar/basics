@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Tue May 13 08:39:57 EDT 2025
-# *********************************************************HASHOMATIC: e97196bb0e8feee9c9b58f778da9064c
+# *********************************************************DATEOMATIC: Wed May 14 08:34:44 EDT 2025
+# *********************************************************HASHOMATIC: a4d726356e5b5d3a46abe73289d2e94c
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -1507,6 +1507,16 @@ LL0A=0   # fatal
 BGWW="\033[47m"  # white
 BGBB="\033[40m"  # black
 
+function core.loglevels() {
+         local void=0    # Bash-Function-Args
+    core.print.advice "LL5A=5   # debug"
+    core.print.advice "LL4A=4   # info"
+    core.print.advice "LL3A=3   # advice"
+    core.print.advice "LL2A=2   # alert"
+    core.print.advice "LL1A=1   # error"
+    core.print.advice "LL0A=0   # critical"
+    core.print.advice "LL0A=0   # fatal"
+}
 #          black) printf "\033[40m" ;;
 #          red) printf "\033[41m" ;;
 #          green) printf "\033[42m" ;;
@@ -1517,21 +1527,18 @@ BGBB="\033[40m"  # black
 #          white) printf "\033[47m" ;;
 #          default) printf "\033[49m" ;; # Use 49 for default
 DEFLOGLEVEL=5
+STACKTRACEDEPTH=1
 LOGLEVEL=$DEFLOGLEVEL
 
+function core.stacktracedepth(){
+         local depth=$1    # Bash-Function-Args
+         STACKTRACEDEPTH=$depth
+}
 function core.print.alltest() {
          local void=0    # Bash-Function-Args
-      ansi.move "30" "10"
-      ansi.move "3" "3"
-      exit 0
-      ansi.clear
-      util.posprint.green 1   1 "X" 1
-      util.posprint       1   2 "-" 39
-      util.posprint.green 1  40 "X"
-      util.posprint.green 10  1 "X" 1
-      util.posprint       10  2 "-" 39
-      util.posprint.green 10 40 "X"
-      ansi.move "60" "1"
+
+      core.stacktracedepth 1
+      core.loglevels
       core.print.critical  "Log Level is $LOGLEVEL"
       core.print.debug     "debug"
       core.print.info      "info"
@@ -1648,6 +1655,9 @@ function core.print.advice() {
          local msg="$1"    # Bash-Function-Args
          local lvl="$LL3A"
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
+    if [ "$STACKTRACEDEPTH" -ge 2 ]; then
+        ff=$(printf "%-32s\n" "${FUNCNAME[2]} >> ${FUNCNAME[1]}")
+    fi
     local sz="$(printf "%s %s: %s %s" "Advc$lvl" "$SILENT" "$ff" "$msg")"
     if [ "$LOGLEVEL" -gt $lvl ]; then
         util.print.color blue "$sz"
@@ -2281,7 +2291,7 @@ move_old_files() {
       szOut="$szOut$file "
 
       if mv "$file" "$dest_file"; then
-        echo "Moved: '$file' to '$dest_file'"
+        ecore.print.advic "Moved: '$file' to '$dest_file'"
         moved_files=$((moved_files + 1))
       else
         echo "Error: Failed to move '$file' to '$dest_file'" >&2
@@ -2292,7 +2302,7 @@ move_old_files() {
 
   # Check if any files were moved.
   if [ "$moved_files" -eq 0 ]; then
-    echo "No files older than $days days found in '$source_dir'."
+    core.print.advice "No files older than $days days found in '$source_dir'."
     return 3 # Return specific code for no files moved.
   fi
 

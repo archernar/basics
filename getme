@@ -65,6 +65,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logdebug.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logerror.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.loginfo.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.loglevels.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logreset.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.logset.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.panic.bash
@@ -100,6 +101,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_info_fn.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_warn.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.print_warn_fn.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.stacktracedepth.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.string.contains.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.string.indexof.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.string.isempty.bash
