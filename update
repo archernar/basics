@@ -83,7 +83,7 @@ if [ "$UPDATE" == "EXTRACT" ]; then
         if [[ "$file_name" == .* ]]; then
             renamecopy_dot_file "$file_name"
             file_name="$MODIFIEDFILENAME"
-            git add "$MODIFIEDFILENAME"
+            gitadd "$MODIFIEDFILENAME"
             echo "$MODIFIEDFILENAME" >> "modifiedfilenames"
         fi
 
@@ -105,7 +105,9 @@ if [ "$UPDATE" == "EXTRACT" ]; then
     fi
 
 
+    core.print.advice "adding ./files"
     git add ./files
+    core.print.advice "adding ./index.html"
     git add ./index.html
     git commit -m "Updated ./files and index.html"         >/dev/null 2>&1;
     N=`git ls-files --deleted ./files | wc -l`
