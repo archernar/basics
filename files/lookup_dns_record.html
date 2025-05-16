@@ -57,8 +57,17 @@
 
     <div class="code-container">
         <pre>
-" *********************************************************DATEOMATIC: Wed May 14 08:34:51 EDT 2025
-" *********************************************************HASHOMATIC: d41d8cd98f00b204e9800998ecf8427e
+function lookup_dns_record() {
+
+  # Use dig to query the DNS record, include error handling
+  if ! dig "$domain" "$record_type" +short >/dev/null 2>&1; then
+    echo "Error: Could not retrieve $record_type records for $domain"
+    return 1 # Return a non-zero exit code to indicate failure
+  fi
+
+  # added the check to make sure the output is printed only if the command was successful
+  dig "$domain" "$record_type" +short
+}
 
         </pre>
     </div>
