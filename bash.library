@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Wed May 14 08:34:51 EDT 2025
-# *********************************************************HASHOMATIC: a4d726356e5b5d3a46abe73289d2e94c
+# *********************************************************DATEOMATIC: Fri May 16 06:16:09 EDT 2025
+# *********************************************************HASHOMATIC: b6282987e5b9bf10fbe60c8fbd5d3d76
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -2449,4 +2449,46 @@ function ansi.backgroundcolor() {
         *) echo "Invalid color: $color" >&2; return 1 ;;
     esac
 }
+
+function lookup_dns_record() {
+         local domain="$1"; local record_type="$2"                 # Bash-Function-Args
+
+  # Use dig to query the DNS record, include error handling
+  if ! dig "$domain" "$record_type" +short >/dev/null 2>&1; then
+    echo "Error: Could not retrieve $record_type records for $domain"
+    return 1 # Return a non-zero exit code to indicate failure
+  fi
+
+  # added the check to make sure the output is printed only if the command was successful
+  dig "$domain" "$record_type" +short
+}
+function get_name_servers() {
+         local domain="$1";                 # Bash-Function-Args
+
+  # Check if a domain is provided
+  if [ -z "$domain" ]; then
+    echo "Error: Please provide a domain name."
+    return 1 # Return an error code
+  fi
+
+  # Use 'dig' command to query for name server (NS) records
+  dig_output=$(dig +short NS "$domain")
+
+  # Check if the 'dig' command was successful
+  if [ $? -ne 0 ]; then
+    echo "Error: Failed to retrieve name server information for $domain."
+    return 1 # Return an error code
+  fi
+
+  # Print the name servers
+  if [ -z "$dig_output" ]; then
+    echo "No name server records found for $domain"
+    return 1
+   else
+    echo "Name servers for $domain:"
+    echo "$dig_output"
+  fi
+  return 0 # Return success code
+}
+
 

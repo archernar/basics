@@ -132,6 +132,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/extension.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/fdebug.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/fecho.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/get_name_servers.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_branch.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_origin.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_originsync.bash
@@ -150,6 +151,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/kill_name.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/kill_pid.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/longest_string_length.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/lookup_dns_record.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mecho.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mkdir_p.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mv_f.bash
