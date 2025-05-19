@@ -32,6 +32,11 @@ echo "--------------------------------------------------------"
 echo "DNS Records for: $domain"
 echo "--------------------------------------------------------"
 
+echo
+echo "SOA Records:"
+lookup_record "$domain" SOA 
+echo
+
 echo "A Records:"
 lookup_record "$domain" A
 echo
@@ -44,12 +49,20 @@ echo "MX Records (Mail Exchange):"
 lookup_record "$domain" MX
 echo
 
+echo "SPF Records (SPF):"
+lookup_record "$domain" SPF
+echo
+
 echo "CNAME Records (Canonical Name):"
 lookup_record "$domain" CNAME
 echo
 
 echo "TXT Records (Text):"
 lookup_record "$domain" TXT
+echo
+
+echo "PTR Records (PTR):"
+lookup_record "$domain" PTR
 echo
 
 echo "NS Records (Name Server):"
