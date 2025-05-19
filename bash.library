@@ -1,9 +1,18 @@
-# *********************************************************DATEOMATIC: Fri May 16 06:16:09 EDT 2025
-# *********************************************************HASHOMATIC: b6282987e5b9bf10fbe60c8fbd5d3d76
+# *********************************************************DATEOMATIC: Mon May 19 08:35:12 EDT 2025
+# *********************************************************HASHOMATIC: 2e73669b6c1c19a1cfeabcd7129ad0e1
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
 
+function check_command() {
+         local thecommand="$1"             # Bash-Function-Args
+#        Usage: check_command ping
+#
+    if ! command -v "$thecommand" >/dev/null 2>&1; then
+        echo "Error: Required command '$thecommand' is not installed.  Exiting."
+        exit 1
+    fi
+}
 function paramsf() {
          local filename="$1"             # Bash-Function-Args
   if [ $# -eq 0 ]; then
@@ -1427,6 +1436,16 @@ function util.posprint() {
         printf "%s" "$msg"
     done
 }
+function util.pprint() {
+         local row="$1";local col="$2";local msg="$3";local n="$4"    # Bash-Function-Args
+         if [ "$n" == "" ]; then                                                                                               
+             n=1
+         fi
+    ansi.move "$row" "$col"; 
+    for ((i=0; i<$n; i++)); do
+        u.put "37" "$msg"
+    done
+}
 function util.posprint.white() {
          local row="$1";local col="$2";local msg="$3";local n="$4"    # Bash-Function-Args
          if [ "$n" == "" ]; then                                                                                               
@@ -1537,6 +1556,20 @@ function core.stacktracedepth(){
 function core.print.alltest() {
          local void=0    # Bash-Function-Args
 
+       ansi.clear
+       ansi.home
+       N=1;util.pprint $N 1 "|" 1;util.pprint $N 2 "-" $(TCOLS -2);util.pprint $N $(TCOLS) "|" 1
+
+       R=2;C1=1;C2=$(TCOLS);util.pprint $R $C1 "|" 1;  util.pprint $R $C2 "|" 1
+       R=3;C1=1;C2=$(TCOLS);util.pprint $R $C1 "|" 1;  util.pprint $R $C2 "|" 1
+       R=4;C1=1;C2=$(TCOLS);util.pprint $R $C1 "|" 1;  util.pprint $R $C2 "|" 1
+       R=5;C1=1;C2=$(TCOLS);util.pprint $R $C1 "|" 1;  util.pprint $R 2 "-" $(( C2 + -2));util.pprint $R $C2 "|" 1
+
+       util.pprint $(TROWS) 1 "|" 1
+       util.pprint $(TROWS) 3 "-" $(TCOLS -4) 
+       util.pprint $(TROWS) $(TCOLS) "|" 1
+       ansi.home
+exit 0
       core.stacktracedepth 1
       core.loglevels
       core.print.critical  "Log Level is $LOGLEVEL"
@@ -2330,6 +2363,71 @@ move_old_files() {
 # rm -rf /tmp/source_dir /tmp/dest_dir
 #  :set iskeyword=@,48-57,_,192-255,.
 
+#!/bin/bash
+
+# This script defines a function to get the number of rows and columns in the terminal.
+function odd_or_less() {
+         local num=$1    # Bash-Function-Args
+  if [[ ! "$num" =~ ^[0-9]+$ ]]; then
+    echo "Error: Input must be a non-negative integer." >&2
+    exit 1
+    return 1
+  fi
+  if (( num % 2 != 0 )); then
+    echo "$num"
+  else
+    echo $((num - 1))
+  fi
+}
+function get_terminal_size() {
+         local void=1    # Bash-Function-Args
+  # Use the 'tput' command to get the number of rows and columns.
+  local rows=$(tput lines) # Use 'local' to keep variables within the function's scope.
+  local cols=$(tput cols) # Use 'local' to keep variables within the function's scope.
+  echo "$rows $cols" # Return the values, space-separated.  Simplifies parsing.
+}
+function TROWS() {
+         local offset=$1    # Bash-Function-Args
+  local rows=$(odd_or_less $(tput lines)) # Use 'local' to keep variables within the function's scope.
+  (( rows= rows + offset ))
+  echo "$rows"
+}
+function TCOLS() {
+         local offset=$1    # Bash-Function-Args
+  local cols=$(odd_or_less $(tput cols)) # Use 'local' to keep variables within the function's scope.
+  (( cols = cols + offset ))
+  echo "$cols"
+}
+function HALFTROWS() {
+         local void=1    # Bash-Function-Args
+  local rows=$(odd_or_less $(tput lines)) # Use 'local' to keep variables within the function's scope.
+  (( rows = rows / 2 ))
+  echo "$rows"
+}
+function HALFTCOLS() {
+         local void=1    # Bash-Function-Args
+  local cols=$(odd_or_less $(tput cols)) # Use 'local' to keep variables within the function's scope.
+  (( cols = cols / 2 ))
+  echo "$cols"
+}
+function QTRTROWS() {
+         local void=1    # Bash-Function-Args
+  local rows=$(odd_or_less $(tput lines)) # Use 'local' to keep variables within the function's scope.
+  (( rows = rows / 4 ))
+  echo "$rows"
+}
+function QTRTCOLS() {
+         local void=1    # Bash-Function-Args
+  local cols=$(odd_or_less $(tput cols)) # Use 'local' to keep variables within the function's scope.
+  (( cols = cols / 4 ))
+  echo "$cols"
+}
+
+# Call the function and store the output.
+# output=$(get_terminal_size)
+# Use read to parse the space-separated output into separate variables.
+# read rows cols <<< "$output"
+
 function ansi.save.cursor {
     echo -ne "\033[6n"            # ask the terminal for the position
     read -s -d\[ garbage          # discard the first part of the response
@@ -2364,6 +2462,10 @@ function ansi.clearEOL() {
 function ansi.clearline() {
          local void=1    # Bash-Function-Args
     printf "\033[K"
+}
+function ansi.home() {
+         local void=1    # Bash-Function-Args
+    printf "\033[$(HALFTROWS);$(HALFTCOLS)H"
 }
 function ansi.move() {
     local row=$1; local column=$2;    # Bash-Function-Args
@@ -2491,4 +2593,25 @@ function get_name_servers() {
   return 0 # Return success code
 }
 
-
+#  # Addition
+#  ((sum = a + b))
+#  echo "Sum: $sum"
+#  # Subtraction
+#  ((difference = a - b))
+#  echo "Difference: $difference"
+#  # Multiplication
+#  ((product = a * b))
+#  echo "Product: $product"
+#  # Division (integer division, truncates the decimal)
+#  ((quotient = a / b))
+#  echo "Quotient: $quotient"
+#  # Modulo (remainder)
+#  ((remainder = a % b))
+#  echo "Remainder: $remainder"
+#  # Exponentiation
+#  ((power = a ** b))
+#  echo "Power: $power"
+#  sum=$[x + y]
+#  product=$[x * y]
+#  let "p = p + q"
+#  let "r = p * q"

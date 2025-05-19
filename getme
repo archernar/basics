@@ -8,6 +8,12 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/0-bashtop
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/0-bashtop.html
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/HALFTCOLS.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/HALFTROWS.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/QTRTCOLS.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/QTRTROWS.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TCOLS.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TROWS.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/abspath.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/alpha_normal2.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/alpha_normal4.bash
@@ -21,6 +27,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.constants.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.get_cursor_position.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.getpos.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.home.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.move.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.move_cursor_down.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.move_cursor_left.bash
@@ -50,6 +57,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/bash.scanner.html
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/bash.secretscanner
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/bash.secretscanner.html
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/check_command.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/collapse_hostname.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/collapse_pwd.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/command_exists.bash
@@ -133,6 +141,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/fdebug.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/fecho.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/get_name_servers.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/get_terminal_size.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_branch.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_origin.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/git_originsync.bash
@@ -156,6 +165,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mkdir_p.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mv_f.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/necho.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/odd_or_less.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/paddy.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/padout_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/paramsf.bash
@@ -195,6 +205,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.green.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.red.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.white.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.pprint.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.black.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.blue.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.color.bash
