@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Wed May 21 08:40:28 EDT 2025
-# *********************************************************HASHOMATIC: 6aa0305c60ec1533f8aae347b8105197
+# *********************************************************DATEOMATIC: Wed May 21 18:53:03 EDT 2025
+# *********************************************************HASHOMATIC: 30bc693295c222c1bea397b1ec7398b4
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -2672,55 +2672,57 @@ function get_name_servers() {
   return 0 # Return success code
 }
 
-rints() {
+function rints() {
+  local min=$1; local max=$2;  # Bash-Function-Args
+  local range=$((max - min + 1))
+  R1=$((RANDOM % range + min))
+  R2=$((RANDOM % range + min))
+}
+function rrints() {
+  local min=$1; local max=$2;  # Bash-Function-Args
+  local range=$((max - min + 1))
+  RR1=$((RANDOM % range + min))
+  RR2=$((RANDOM % range + min))
+}
+function rrrints() {
   local min=$1
   local max=$2
-  random_integer $min $max; R1=$?
-  random_integer $min $max; R2=$?
+  local range=$((max - min + 1))
+  RRR1=$((RANDOM % range + min))
+  RRR2=$((RANDOM % range + min))
 }
-rrints() {
+function rrrrints() {
   local min=$1
   local max=$2
-  random_integer $min $max; RR1=$?
-  random_integer $min $max; RR2=$?
+  local range=$((max - min + 1))
+  RRRR1=$((RANDOM % range + min))
+  RRRR2=$((RANDOM % range + min))
 }
-rrrints() {
-  local min=$1
-  local max=$2
-  random_integer $min $max; RRR1=$?
-  random_integer $min $max; RRR2=$?
-}
-rrrrints() {
-  local min=$1
-  local max=$2
-  random_integer $min $max; RRRR1=$?
-  random_integer $min $max; RRRR2=$?
-}
-die() {
+function die() {
   local min=1
   local max=6
   random_integer $min $max; DIE1=$?
   random_integer $min $max; DIE2=$?
 }
-dice() {
+function dice() {
   local min=1
   local max=12
   random_integer $min $max; DIE1=$?
   random_integer $min $max; DIE2=$?
 }
-tensided() {
+function tensided() {
   local min=1
   local max=10
   random_integer $min $max; DIE1=$?
   random_integer $min $max; DIE2=$?
 }
-twosided() {
+function twosided() {
   local min=1
   local max=2
   random_integer $min $max; DIE1=$?
   random_integer $min $max; DIE2=$?
 }
-binarysided() {
+function binarysided() {
   local min=0
   local max=1
   random_integer $min $max; DIE1=$?
@@ -2729,7 +2731,7 @@ binarysided() {
 
 
 
-random_integer() {
+function random_integer() {
   local min=$1
   local max=$2
 

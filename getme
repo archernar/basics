@@ -137,6 +137,8 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table4.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_simple_table4.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/current_timestamp.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dice.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/die.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dirname.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eecho.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ends_with.bash
@@ -186,8 +188,12 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/repeat_char.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/replace.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/right_pad_limited.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rints.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rm_rf.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rm_rf_silent.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rrints.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rrrints.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rrrrints.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_error.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_exit_code.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_output.bash
@@ -202,6 +208,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/string_after_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/string_before_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/substring.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/tensided.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/timestamp_ms.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim_leading_whitespace_file.bash
