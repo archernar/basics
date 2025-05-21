@@ -3,17 +3,21 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/0-bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.scanner
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.tools
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashfunctionextractor
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/0-bashtop
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/0-bashtop.html
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/EIGTHTCOLS.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/EIGTHTROWS.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/HALFTCOLS.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/HALFTROWS.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/QTRTCOLS.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/QTRTROWS.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TCOLS.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TROWS.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TROWSACTUAL.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/abspath.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/alpha_normal2.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/alpha_normal4.bash
@@ -27,6 +31,8 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.constants.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.get_cursor_position.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.getpos.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.gutter.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.gutteractual.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.home.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.move.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.move_cursor_down.bash
@@ -61,6 +67,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/collapse_hostname.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/collapse_pwd.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/command_exists.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/console.rulers.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/contains.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core._should_print_color.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core.check_for_duplicates.bash
@@ -168,6 +175,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/odd_or_less.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/paddy.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/padout_file_lines.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/panel.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/paramsf.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/pidof_name.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/prompter.bash
@@ -199,6 +207,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim_leading_whitespace_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/truncate_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.put.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putc.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putln.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.black.bash

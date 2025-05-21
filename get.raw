@@ -9,6 +9,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/VimPoster.p
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.justhelp
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.library
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.scanner
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.tools
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashfunctionextractor
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
@@ -28,6 +29,10 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/0-bas
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/0-bashtop.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/0-git
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/0-git.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/EIGTHTCOLS.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/EIGTHTCOLS.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/EIGTHTROWS.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/EIGTHTROWS.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/HALFTCOLS.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/HALFTCOLS.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/HALFTROWS.bash
@@ -40,6 +45,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TCOLS
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TCOLS.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TROWS.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TROWS.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TROWSACTUAL.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TROWSACTUAL.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/VimPoster.pdf
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/VimPoster.pdf.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/abspath.bash
@@ -68,6 +75,10 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.get_cursor_position.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.getpos.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.getpos.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.gutter.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.gutter.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.gutteractual.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.gutteractual.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.home.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.home.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.move.bash
@@ -136,6 +147,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/colom
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/colomatic.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/command_exists.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/command_exists.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/console.rulers.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/console.rulers.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/contains.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/contains.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/core._should_print_color.bash
@@ -378,6 +391,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/padom
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/padomatic.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/padout_file_lines.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/padout_file_lines.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/panel.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/panel.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/paramsf.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/paramsf.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/pidof_name.bash
@@ -444,6 +459,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trunc
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/truncate_file_lines.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.put.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.put.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putc.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putc.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putln.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putln.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.bash
