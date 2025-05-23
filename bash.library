@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Thu May 22 12:36:59 EDT 2025
-# *********************************************************HASHOMATIC: 52858d8079c361127f25754b8fa58a33
+# *********************************************************DATEOMATIC: Fri May 23 06:20:47 EDT 2025
+# *********************************************************HASHOMATIC: 9b5c8ccceaef8d2f4edccb1a459432d3
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -1565,54 +1565,61 @@ function panel() {
          local TOP="-"
          local BOTTOM="-"
          local R=$1;C=$2;L=$3;W=$4;M=$5      # Bash-Function-Args
-         local REND=$((R+L))
-         local CEND=$((C+W))
+         local RPLUS=$((R+1))
+         local CPLUS=$((C+1))
+         local REND=$((R+L+1))
+         local CEND=$((C+W+1))
+         local TR=$(TROWS)
+         local TRE=$((TR-1))
+         local E=0
+    if [ $REND -ge $TRE ]; then
+        echo "PANEL FAIL:  $R $C $L $W" >> /tmp/err
+        return
+    fi
+    if [ $CEND -gt $(TCOLS) ]; then
+        echo "PANEL FAIL:  $R $C $L $W" >> /tmp/err
+        return
+    fi
     if [ $R -lt 4 ]; then
         R=4
-        echo "PANEL FAIL:  $R $C $L $W" >> /tmp/err
     fi
     if [ $C -lt 4 ]; then
         C=4
-        echo "PANEL FAIL:  $R $C $L $W" >> /tmp/err
     fi
     if [ $W -lt 4 ]; then
         W=4
-        echo "PANEL FAIL:  $R $C $L $W" >> /tmp/err
     fi
     if [ $L -lt 4 ]; then
         L=4
-        echo "PANEL FAIL:  $R $C $L $W" >> /tmp/err
-    fi
-    if [ $REND -ge $(TROWS) ]; then
-        return
-    fi
-    if [ $CEND -ge $(TCOLS) ]; then
-        return
     fi
         
     ((WH = W/2))
     ((HH = L/2))
 
-    util.pprint $R $C "$CORNER" 1;
-    util.pprint $R $((C+1)) "$TOP" $((W));
-    util.pprint $R $((C+W+1)) "$CORNER" 1
+    util.pprint $R $C     "$CORNER" 1;
+    util.pprint $R $CPLUS "$TOP" $((W));
+    util.pprint $R $CEND  "$CORNER" 1
 
     local ct=1;
     local ROW=$((R+i))
-    while [ $ct -lt $L ]; do
+    ((E=L+1))
+    while [ $ct -lt $E ]; do
       ROW=$((R+ct))
-      util.pprint $ROW $C "$SIDE" 1;
-      util.pprint $ROW $((C+1)) " " $((W));
-      util.pprint $ROW $((C+W+1)) "$SIDE" 1
+      util.pprint $ROW $C     "$SIDE" 1;
+      util.pprint $ROW $CPLUS " " $((W));
+      util.pprint $ROW $CEND  "$SIDE" 1
       ((ct=ct+1))
       #echo $ct
     done
 
+    util.pprint $REND $C "$CORNER" 1;util.pprint $REND $CPLUS "$BOTTOM" $((W));util.pprint $REND $CEND "$CORNER" 1
+    util.pprint $RPLUS $CPLUS "$L/$W" 1
 
-    util.pprint $((R+L)) $C "$CORNER" 1;util.pprint $((R+L)) $((C+1)) "$BOTTOM" $((W));util.pprint $((R+L)) $((C+W+1)) "$CORNER" 1
-    util.pprint $((R+HH)) $((C+WH)) "$W" 1
-    util.pprint $((R+)) $((C+1)) "One" 1
-    echo "PANEL OK  :  $R $C $L $W" >> /tmp/err
+
+
+
+#     util.pprint $((R+HH)) $((C+WH)) "$W" 1
+#     echo "PANEL OK  :  $R $C $L $W" >> /tmp/err
     ansi.gutteractual
 
 }
@@ -1634,10 +1641,66 @@ function core.print.alltest() {
        local q1=0; local q2=0; local q3=0; local q4=0;
 
 
-
        console.rulers
-       panel 10 10 10 10
+       ct=1;
+       n=5
+       m=5
+       while [ $ct -lt 420 ]; do
+           panel $m $n 5 10 
+           ((ct=ct+1))
+           ((n=n+2))
+           ((m=m+2))
+       done
        ansi.gutteractual
+           panel $(TROWS) 10 10 10
+           panel $(TROWS -1) 10 10 10
+           panel $(TROWS -2) 10 10 10
+           panel $(TROWS -3) 10 10 10
+           panel $(TROWS -4) 10 3 3
+           panel $(TROWS -5) 10 3 3
+           panel $(TROWS -6) 10 3 3
+           panel $(TROWS -7) 10 3 3
+           exit 0
+
+       ct=1;
+       n=5
+       m=5
+       while [ $ct -lt 420 ]; do
+           panel $m $n 5 10 
+           ((ct=ct+1))
+           ((n=n+2))
+           ((m=m+2))
+       done
+       ansi.gutteractual
+       ct=1;
+       n=25
+       m=5
+       while [ $ct -lt 420 ]; do
+           panel $m $n 5 10 
+           ((ct=ct+1))
+           ((n=n+2))
+           ((m=m+2))
+       done
+       ansi.gutteractual
+       ct=1;
+       n=45
+       m=5
+       while [ $ct -lt 88420 ]; do
+           rints  2 $(TROWS); 
+           rrints 4 $(TCOLS)
+           rrrints  2 24
+           rrrrints 2 24
+           panel $R1 $RR1 $RRR1 $RRR1
+           panel $m $n 5 10 
+           ((ct=ct+1))
+           ((n=n+2))
+           ((m=m+2))
+       done
+       ansi.gutteractual
+       exit 0
+       panel 10 10 4 4
+
+
 
        ct=1;
        while [ $ct -lt 60000 ]; do
@@ -1658,7 +1721,7 @@ function core.print.alltest() {
            ((RRR1=RRR1 + r))
            panel $R1 $RR1 $RRR1 $RRRR1
            ((ct=ct+1))
-           ((m=ct%240))
+           ((m=ct%40))
            if [ "$m" -eq 0 ]; then
                sleep 5
                ansi.clear

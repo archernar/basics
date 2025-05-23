@@ -135,8 +135,12 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/bash.
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/bash.scanner.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/bash.secretscanner
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/bash.secretscanner.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/binarysided.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/binarysided.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/btags
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/btags.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/calculate_sin.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/calculate_sin.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/check_command.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/check_command.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/collapse_hostname.bash
@@ -403,6 +407,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/pidof
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/pidof_name.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/prompter.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/prompter.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/random_integer.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/random_integer.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/read_prompt.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/read_prompt.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/remove_leading_whitespace.bash
@@ -471,6 +477,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim_
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim_leading_whitespace_file.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/truncate_file_lines.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/truncate_file_lines.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/twosided.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/twosided.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.put.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.put.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putc.bash

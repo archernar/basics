@@ -63,6 +63,8 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/bash.scanner.html
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/bash.secretscanner
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/bash.secretscanner.html
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/binarysided.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/calculate_sin.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/check_command.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/collapse_hostname.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/collapse_pwd.bash
@@ -181,6 +183,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/paramsf.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/pidof_name.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/prompter.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/random_integer.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/read_prompt.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/remove_leading_whitespace.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rename_dot_file.bash
@@ -213,6 +216,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim_leading_whitespace_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/truncate_file_lines.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/twosided.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.put.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putc.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putln.bash
