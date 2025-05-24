@@ -203,6 +203,13 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/scan_for_secrets.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/sort_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/split_file_n.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stack_display.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stack_init.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stack_isEmpty.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stack_peek.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stack_pop.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stack_push.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stack_size.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stacktracetest.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stacktracetest1.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stacktracetest2.bash

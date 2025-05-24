@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat May 24 09:42:38 EDT 2025
-# *********************************************************HASHOMATIC: 9b5c8ccceaef8d2f4edccb1a459432d3
+# *********************************************************DATEOMATIC: Sat May 24 09:55:12 EDT 2025
+# *********************************************************HASHOMATIC: b82ea19dc184a7ebf79ac6cb056b1ac5
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -1593,6 +1593,11 @@ function panel() {
         L=4
     fi
         
+stack_push $R
+stack_push $C
+stack_push $L
+stack_push $W
+
     ((WH = W/2))
     ((HH = L/2))
 
@@ -1640,6 +1645,8 @@ function core.print.alltest() {
        local w=0; local x=0; local y=0; local z=0;
        local q1=0; local q2=0; local q3=0; local q4=0;
 
+
+stack_init
 
        console.rulers
        ct=1;
@@ -2944,11 +2951,139 @@ sign_from_sine() {
     fi
 }
 
-# --- Example Usage ---
+# Here is a set of Bash functions that implement a basic stack data structure.
+# The stack uses a global array __bash_stack to store its elements.
+# Global array to hold stack elements
+declare -ga __bash_stack=()
 
-echo "--- Testing with different periods ---"
+# Function: stack_init
+# Description: Initializes or clears the stack.
+# Usage: stack_init
+function stack_init() {
+    __bash_stack=()
+    echo "Stack initialized."
+}
 
+# Function: stack_push
+# Description: Pushes an element onto the top of the stack.
+# Arguments:
+#   $1 - The element to push.
+# Usage: stack_push "my_element"
+function stack_push() {
+    if [ -z "$1" ]; then
+        echo "Error: stack_push requires an argument (element to push)." >&2
+        return 1
+    fi
+    __bash_stack+=("$1")
+    #echo "Pushed: '$1'"
+    return 0
+}
 
+# Function: stack_pop
+# Description: Pops the top element from the stack and prints it.
+#              Returns 0 on success, 1 if the stack is empty.
+# Usage: stack_pop
+function stack_pop() {
+    if stack_isEmpty; then
+        echo "Error: Stack is empty. Cannot pop." >&2
+        return 1
+    fi
+    local last_index=$(( ${#__bash_stack[@]} - 1 ))
+    local popped_element="${__bash_stack[$last_index]}"
+    unset '__bash_stack[last_index]'
+    # Re-index the array to avoid sparse array issues, important for future pushes
+    __bash_stack=("${__bash_stack[@]}")
+    echo "Popped: '$popped_element'"
+    return 0
+}
+
+# Function: stack_peek
+# Description: Returns the top element of the stack without removing it.
+#              Returns 0 on success, 1 if the stack is empty.
+# Usage: stack_peek
+function stack_peek() {
+    if stack_isEmpty; then
+        echo "Error: Stack is empty. Cannot peek." >&2
+        return 1
+    fi
+    local last_index=$(( ${#__bash_stack[@]} - 1 ))
+    local top_element="${__bash_stack[$last_index]}"
+    echo "Peek: '$top_element'"
+    return 0
+}
+
+# Function: stack_isEmpty
+# Description: Checks if the stack is empty.
+# Usage: if stack_isEmpty; then ... fi
+# Returns: 0 if empty, 1 if not empty.
+function stack_isEmpty() {
+    if [ ${#__bash_stack[@]} -eq 0 ]; then
+        return 0 # True, stack is empty
+    else
+        return 1 # False, stack is not empty
+    fi
+}
+
+# Function: stack_size
+# Description: Returns the number of elements in the stack.
+# Usage: stack_size
+function stack_size() {
+    echo "Size: ${#__bash_stack[@]}"
+    return 0
+}
+
+# Function: stack_display
+# Description: Displays all elements in the stack, from bottom to top.
+# Usage: stack_display
+function stack_display() {
+    if stack_isEmpty; then
+        echo "Stack is empty."
+        return 0
+    fi
+    echo "--- Stack Contents (Bottom to Top) ---"
+    local i
+    for (( i=0; i<${#__bash_stack[@]}; i++ )); do
+        echo "  [${i}]: '${__bash_stack[i]}'"
+    done
+    echo "------------------------------------"
+    return 0
+}
+
+# echo "--- Demonstrating Stack Functions ---"
+# 
+# stack_init
+# 
+# stack_push "Apple"
+# stack_push "Banana"
+# stack_push "Cherry"
+# 
+# stack_display
+# stack_size
+# 
+# stack_peek
+# 
+# stack_pop
+# stack_display
+# 
+# stack_push "Date"
+# stack_display
+# 
+# stack_pop
+# stack_pop
+# stack_pop # This should make the stack empty
+# 
+# stack_isEmpty # Should return 0 (true)
+# if stack_isEmpty; then
+#     echo "Confirmed: Stack is now empty."
+# fi
+# 
+# stack_pop # This should produce an error
+# stack_peek # This should produce an error
+# 
+# stack_size
+# 
+# echo "--- End of Demonstration ---"
+# 
 #  # Addition
 #  ((sum = a + b))
 #  echo "Sum: $sum"
