@@ -76,6 +76,7 @@ source ~/bash.library
 
 
 source ~/bashrc.shared
+source ~/bashrc.prompt
 
 
 export JAVA_HOME=/home/mestes/jdk-23.0.2
