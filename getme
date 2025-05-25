@@ -5,6 +5,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.l
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.scanner
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bash.tools
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashfunctionextractor
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.prompt
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashrc.shared
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/bashtop
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/0-bashtop
