@@ -1,3 +1,16 @@
+function XXXTROWSACTUAL() {
+         local void=1    # Bash-Function-Args
+  local rows=$(tput lines)
+  echo "$rows"
+}
+function XXXTROWS() {
+         local offset=$1    # Bash-Function-Args
+  local rows=$(odd_or_less $(tput lines)) # Use 'local' to keep variables within the function's scope.
+  (( rows= rows + offset ))
+  echo "$rows"
+}
+
+
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 function git_toplevel() {
          local void="11";                          # Bash-Function-Args
@@ -40,5 +53,14 @@ function collapse_hostname() {
     curr_hostname=$(hostname)
     echo $curr_hostname
 }
-
+function prompt_pos() {
+  local rows=$(tput lines)
+  local col=1
+  ((row=rows-2))
+  printf "\033[${row};${col}H"
+  util.print.color blue "-----------------------------------"
+  ((row=rows-1))
+  printf "\033[${row};${col}H"
+  printf "\033[K"
+}
 export PS1='$(collapse_hostname) $(collapse_pwd) ($(git_toplevel):$(git_branch):$(git_originsync))>> '
