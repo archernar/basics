@@ -1,0 +1,160 @@
+#!/bin/bash
+
+# Bash Key-Value Store Functions
+# This script provides a simple file-based key-value store.
+# It stores data in a file (default: ~/.bash_kv_store) in the format 'key="value"'.
+
+# --- Configuration ---
+# Define the path to the key-value store file.
+# You can change this path if you prefer a different location.
+KV_STORE_FILE="${HOME}/.bash_kv_store"
+
+# --- Initialization ---
+# Create the store file if it doesn't exist and set appropriate permissions.
+# This ensures the file is ready for use and restricts access to the owner.
+if [[ ! -f "$KV_STORE_FILE" ]]; then
+    touch "$KV_STORE_FILE" || { echo "Error: Could not create KV store file at $KV_STORE_FILE" >&2; return 1; }
+    chmod 600 "$KV_STORE_FILE" || { echo "Error: Could not set permissions for $KV_STORE_FILE" >&2; return 1; }
+fi
+
+# --- Core Functions ---
+
+# kv_set <key> <value>
+# Persists or updates a name-value pair in the store.
+# If the key already exists, its value will be updated.
+# Otherwise, a new entry will be added.
+kv_set() {
+    local key="$1"
+    local value="$2"
+
+    # Validate input: ensure a key is provided.
+    if [[ -z "$key" ]]; then
+        echo "Usage: kv_set <key> <value>" >&2
+        return 1
+    fi
+
+    # Escape double quotes within the value.
+    # This prevents issues when the value itself contains double quotes
+    # and ensures the 'key="value"' format remains valid.
+    local escaped_value=$(echo "$value" | sed 's/"/\\"/g')
+
+    # Check if the key already exists in the store file.
+    # '2>/dev/null' suppresses error messages if the file doesn't exist (though we initialize it above).
+    if grep -q "^${key}=\"" "$KV_STORE_FILE" 2>/dev/null; then
+        # Key exists: update the existing line.
+        # 'sed -i.bak' performs an in-place edit and creates a backup file.
+        # The regex 's|^${key}=\".*\"\$|${key}=\"${escaped_value}\"|'
+        # matches the entire line starting with 'key="' and replaces it.
+        sed -i.bak "s|^${key}=\".*\"\$|${key}=\"${escaped_value}\"|" "$KV_STORE_FILE"
+        rm -f "${KV_STORE_FILE}.bak" # Remove the backup file.
+        echo "Updated key: '$key'"
+    else
+        # Key does not exist: append a new entry to the file.
+        echo "${key}=\"${escaped_value}\"" >> "$KV_STORE_FILE"
+        echo "Added new key: '$key'"
+    fi
+}
+
+# kv_get <key>
+# Retrieves the value associated with a given key from the store.
+# Prints the value to standard output if found, otherwise prints an error message.
+kv_get() {
+    local key="$1"
+
+    # Validate input: ensure a key is provided.
+    if [[ -z "$key" ]]; then
+        echo "Usage: kv_get <key>" >&2
+        return 1
+    fi
+
+    # Find the line corresponding to the key.
+    # 'grep' searches for lines starting with 'key="' to ensure exact key match.
+    local line=$(grep "^${key}=\"" "$KV_STORE_FILE" 2>/dev/null)
+
+    if [[ -n "$line" ]]; then
+        # Extract the value from the matched line.
+        # We use Bash's regex matching for robustness.
+        # The regex captures the content inside the double quotes.
+        if [[ "$line" =~ ^[^=]+=\"(.*)\"$ ]]; then
+            local escaped_value="${BASH_REMATCH[1]}"
+            # Unescape double quotes that were escaped during storage.
+            echo "$escaped_value" | sed 's/\\"/"/g'
+        else
+            echo "Error: Malformed entry for key '$key' in store file." >&2
+            return 1
+        fi
+    else
+        echo "Key '$key' not found." >&2
+        return 1
+    fi
+}
+
+# kv_delete <key>
+# Deletes a name-value pair from the store based on the provided key.
+# If the key is not found, it prints an informational message.
+kv_delete() {
+    local key="$1"
+
+    # Validate input: ensure a key is provided.
+    if [[ -z "$key" ]]; then
+        echo "Usage: kv_delete <key>" >&2
+        return 1
+    fi
+
+    # Check if the key exists before attempting to delete.
+    if grep -q "^${key}=\"" "$KV_STORE_FILE" 2>/dev/null; then
+        # Key exists: delete the line.
+        # 'sed -i.bak' performs an in-place deletion and creates a backup file.
+        # The regex '/^${key}=\"/d' deletes lines starting with 'key="'.
+        sed -i.bak "/^${key}=\"/d" "$KV_STORE_FILE"
+        rm -f "${KV_STORE_FILE}.bak" # Remove the backup file.
+        echo "Deleted key: '$key'"
+    else
+        echo "Key '$key' not found." >&2
+        return 1
+    fi
+}
+
+# kv_list
+# Lists all stored name-value pairs in the store.
+# Prints each key and its corresponding unescaped value.
+kv_list() {
+    if [[ ! -f "$KV_STORE_FILE" || ! -s "$KV_STORE_FILE" ]]; then
+        echo "No key-value pairs stored yet."
+        return 0
+    fi
+
+    echo "Stored Key-Value Pairs:"
+    # Read the file line by line.
+    while IFS= read -r line; do
+        # Use Bash regex matching to parse each line in 'key="value"' format.
+        if [[ "$line" =~ ^([^=]+)=\"(.*)\"$ ]]; then
+            local key="${BASH_REMATCH[1]}"
+            local escaped_value="${BASH_REMATCH[2]}"
+            # Unescape double quotes for display.
+            local value=$(echo "$escaped_value" | sed 's/\\"/"/g')
+            echo "  $key = $value"
+        fi
+    done < "$KV_STORE_FILE"
+}
+
+# --- Help Function ---
+
+# kv_help
+# Displays usage information for all key-value store functions.
+kv_help() {
+    echo "Bash Key-Value Store Functions:"
+    echo "  kv_set <key> <value>    - Persist or update a name-value pair."
+    echo "  kv_get <key>            - Retrieve the value for a given name."
+    echo "  kv_delete <key>         - Delete a name-value pair."
+    echo "  kv_list                 - List all stored name-value pairs."
+    echo "  kv_help                 - Display this help message."
+    echo ""
+    echo "Storage file: $KV_STORE_FILE"
+    echo "Note: Keys should ideally be simple strings (alphanumeric, underscores)."
+    echo "      Keys cannot contain double quotes (\") or newlines."
+    echo "      Values can contain spaces and double quotes, which will be escaped/unescaped automatically."
+    echo "      This script is not designed for concurrent access from multiple processes."
+}
+
+
