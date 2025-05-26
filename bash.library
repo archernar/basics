@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun May 25 07:59:53 EDT 2025
-# *********************************************************HASHOMATIC: 5dd06b6fa70776bc59830511ce392428
+# *********************************************************DATEOMATIC: Sun May 25 23:31:05 EDT 2025
+# *********************************************************HASHOMATIC: abbadd29088e6d0a58214fe0f24822bf
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -1527,6 +1527,10 @@ function panel() {
          local R=$1;C=$2;L=$3;W=$4;M=$5      # Bash-Function-Args
          local RPLUS=$((R+1))
          local CPLUS=$((C+1))
+         local RPLUS2=$((R+2))
+         local CPLUS2=$((C+2))
+         local RPLUS3=$((R+3))
+         local CPLUS3=$((C+3))
          local REND=$((R+L+1))
          local CEND=$((C+W+1))
          local TR=$(TROWS)
@@ -1540,16 +1544,16 @@ function panel() {
         echo "PANEL FAIL:  $R $C $L $W" >> /tmp/err
         return
     fi
-    if [ $R -lt 4 ]; then
-        R=4
+    if [ $R -lt 2 ]; then
+        R=2
     fi
-    if [ $C -lt 4 ]; then
+    if [ $C -lt 3 ]; then
         C=4
     fi
-    if [ $W -lt 4 ]; then
+    if [ $W -lt 3 ]; then
         W=4
     fi
-    if [ $L -lt 4 ]; then
+    if [ $L -lt 3 ]; then
         L=4
     fi
         
@@ -1579,6 +1583,8 @@ stack_push $W
 
     util.pprint $REND $C "$CORNER" 1;util.pprint $REND $CPLUS "$BOTTOM" $((W));util.pprint $REND $CEND "$CORNER" 1
     util.pprint $RPLUS $CPLUS "$L/$W" 1
+    util.pprint $RPLUS2 $CPLUS "$(TROWS)" 1
+    util.pprint $RPLUS3 $CPLUS "$(TCOLS)" 1
 
 
 
@@ -1609,7 +1615,10 @@ function core.print.alltest() {
 stack_init
 
        console.rulers
-       ct=1;
+           #panel 5 5 $(TROWS -4) $(TCOLS -25)
+           panel 5 5 14 25
+           exit 0
+       c=1;
        n=5
        m=5
        while [ $ct -lt 420 ]; do
@@ -2836,15 +2845,23 @@ function console.rulers() {
          local void=0    # Bash-Function-Args
        local ct=1;
        local sz="";
-       ct=1;
+       local ct=1;
+       local n=1;
        sz="";
+       sz2="";
        while [ $ct -lt $(TCOLS) ]; do
+           sz2="$sz2         $n"
            sz="1234567890$sz"
            ((ct=ct+10))
+           ((n=n+1))
+           if [ $n -gt "9" ]; then
+               n=0
+           fi
        done
-       util.pprint 1 1 "$sz" 1
+       util.pprint 2 1 "$sz" 1
+       util.pprint 1 1 "$sz2" 1
        ansi.gutter
-       ct=2;
+       ct=3;
        while [ $ct -lt $(TROWS) ]; do
            util.pprint $ct 1 "$ct" 1
            ((ct=ct+1))
@@ -2921,7 +2938,6 @@ declare -ga __bash_stack=()
 # Usage: stack_init
 function stack_init() {
     __bash_stack=()
-    echo "Stack initialized."
 }
 
 # Function: stack_push
