@@ -1,0 +1,14 @@
+function add_element() {
+
+  if [[ -z "$element_to_add" ]]; then
+    echo "Usage: add_element <element>"
+    return 1
+  fi
+
+  my_array+=("$element_to_add")
+  if [[ ${#my_array[@]} -gt  16 ]]; then
+    my_array=("${my_array[@]:1}")
+  fi
+  #echo "Added '$element_to_add'."
+  #display_array
+}

@@ -57,16 +57,19 @@
 
     <div class="code-container">
         <pre>
-function core.print.advice() {
-         local lvl=$LL3
-    local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    if [ "$STACKTRACEDEPTH" -ge 2 ]; then
-        ff=$(printf "%-32s\n" "${FUNCNAME[2]} >> ${FUNCNAME[1]}")
-    fi
-    local sz="$(printf "%s %s: %s %s" "ADVC $lvl" "$SILENT" "$ff" "$msg")"
-    if [ $LOGLEVEL -gt $lvl ]; then
-        util.print.color blue "$sz"
-    fi
+function add_element() {
+
+  if [[ -z "$element_to_add" ]]; then
+    echo "Usage: add_element <element>"
+    return 1
+  fi
+
+  my_array+=("$element_to_add")
+  if [[ ${#my_array[@]} -gt  16 ]]; then
+    my_array=("${my_array[@]:1}")
+  fi
+  #echo "Added '$element_to_add'."
+  #display_array
 }
 
         </pre>

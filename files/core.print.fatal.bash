@@ -1,5 +1,5 @@
 function core.print.fatal() {
-         local lvl="$LL0A"
+         local lvl=$LL0
     local dex=0     
     if [[ -z "$ctrl" ]]; then
         dex=1
@@ -7,10 +7,9 @@ function core.print.fatal() {
         dex=ctrl
     fi
 
-
     local ff=$(printf "%-32s\n" "${FUNCNAME[dex]}")
-    local sz="$(printf "%s %s: %s %s" "Fatl$lvl" "$SILENT" "$ff" "$msg")"
-    if [ "$LOGLEVEL" -ge $lvl ]; then
+    local sz="$(printf "%s %s: %s %s" "FATL $lvl" "$SILENT" "$ff" "$msg")"
+    if [ $LOGLEVEL -ge $lvl ]; then
         util.print.color red "$sz"
 
         local sz=""

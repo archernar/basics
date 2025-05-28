@@ -57,16 +57,12 @@
 
     <div class="code-container">
         <pre>
-function core.print.advice() {
-         local lvl=$LL3
-    local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    if [ "$STACKTRACEDEPTH" -ge 2 ]; then
-        ff=$(printf "%-32s\n" "${FUNCNAME[2]} >> ${FUNCNAME[1]}")
-    fi
-    local sz="$(printf "%s %s: %s %s" "ADVC $lvl" "$SILENT" "$ff" "$msg")"
-    if [ $LOGLEVEL -gt $lvl ]; then
-        util.print.color blue "$sz"
-    fi
+function shift_column_up() {
+    # Remove the first element
+    local first_element="${arr[0]}"
+    arr=("${arr[@]:1}")
+    # Add a blank or specific value at the end
+    arr+=("") # Or whatever you want to appear at the bottom
 }
 
         </pre>

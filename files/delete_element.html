@@ -57,16 +57,29 @@
 
     <div class="code-container">
         <pre>
-function core.print.advice() {
-         local lvl=$LL3
-    local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    if [ "$STACKTRACEDEPTH" -ge 2 ]; then
-        ff=$(printf "%-32s\n" "${FUNCNAME[2]} >> ${FUNCNAME[1]}")
+function delete_element() {
+  if [[ -z "$element_to_delete" ]]; then
+    echo "Usage: delete_element <element>"
+    return 1
+  fi
+
+  local new_array=()
+  local found=0
+  for item in "${my_array[@]}"; do
+    if [[ "$item" != "$element_to_delete" ]]; then
+      new_array+=("$item")
+    else
+      found=1
     fi
-    local sz="$(printf "%s %s: %s %s" "ADVC $lvl" "$SILENT" "$ff" "$msg")"
-    if [ $LOGLEVEL -gt $lvl ]; then
-        util.print.color blue "$sz"
-    fi
+  done
+
+  if [[ "$found" -eq 1 ]]; then
+    my_array=("${new_array[@]}")
+    echo "Deleted '$element_to_delete'."
+  else
+    echo "Element '$element_to_delete' not found."
+  fi
+  display_array
 }
 
         </pre>
