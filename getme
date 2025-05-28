@@ -21,6 +21,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TROWS.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TROWSACTUAL.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/abspath.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/add_element.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/alpha_normal2.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/alpha_normal4.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.attributes.bash
@@ -141,9 +142,15 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_markdown_table4.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/create_simple_table4.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/current_timestamp.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dbprint.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/delete_element.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/delete_element_by_index.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dice.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/die.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dirname.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/display_array.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/display_column.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/dprint.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eecho.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ends_with.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/eprint.bash
@@ -163,6 +170,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/hashomatic.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/indent_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/info.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/initialize_empty_array.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/isSameHash.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_dir.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_file.bash
@@ -176,6 +184,8 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/lookup_dns_record.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mecho.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mkdir_p.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/modify_element.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/modify_element_by_index.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/mv_f.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/necho.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/odd_or_less.bash
@@ -190,6 +200,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/remove_leading_whitespace.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rename_dot_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/renamecopy_dot_file.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/render_array.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/repeat_char.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/replace.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/right_pad_limited.bash
@@ -203,6 +214,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_exit_code.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_output.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/scan_for_secrets.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/shift_column_up.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/sort_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/split_file_n.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/stack_display.bash
@@ -220,6 +232,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/string_after_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/string_before_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/substring.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/tailout.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/tensided.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/timestamp_ms.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/trim.bash
