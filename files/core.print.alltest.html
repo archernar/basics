@@ -79,8 +79,8 @@ D=`date`
       SZ="$(/usr/bin/bash --version | head -1)"
       BAR=$(repeat_char "_" ${#SZ})
       dprint "$SZ"
-      dprint $(core.string.substring "$SZ" "1" "15")
-
+      dprint $(echo "$SZ" | gawk '{print substr($0,1,8)}')
+      dprint "MOE"
 
       ansi.move "1" "1"
       corePrintAlways      $BAR
