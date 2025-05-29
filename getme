@@ -203,6 +203,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/render_array.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/repeat_char.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/replace.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/reset_terminal_color.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/right_pad_limited.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rints.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/rm_rf.bash
@@ -214,6 +215,8 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_exit_code.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/run_and_output.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/scan_for_secrets.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/set_cursor_color_black.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/set_cursor_color_white.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/shift_column_up.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/sort_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/split_file_n.bash
@@ -232,6 +235,14 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/string_after_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/string_before_file_lines.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/substring.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szblack.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szblue.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szcyan.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szgreen.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szmagenta.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szprintln.red.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szwhite.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szyellow.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/tailout.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/tensided.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/timestamp_ms.bash
