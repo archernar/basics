@@ -1,4 +1,5 @@
 function core.print.advice() {
+         LASTCONSOLEMESSAGE="$1"
          local lvl=$LL3
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     if [ "$STACKTRACEDEPTH" -ge 2 ]; then

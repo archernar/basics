@@ -1,21 +1,22 @@
-#!/bin/bash
-
+# SCANPASS
 # Bash Key-Value Store Functions
 # This script provides a simple file-based key-value store.
 # It stores data in a file (default: ~/.bash_kv_store) in the format 'key="value"'.
 
-# --- Configuration ---
-# Define the path to the key-value store file.
-# You can change this path if you prefer a different location.
-KV_STORE_FILE="${HOME}/.bash_kv_store"
+function kv_init() {
+    # --- Configuration ---
+    # Define the path to the key-value store file.
+    # You can change this path if you prefer a different location.
+    KV_STORE_FILE="${HOME}/.bash_kv_store"
 
-# --- Initialization ---
-# Create the store file if it doesn't exist and set appropriate permissions.
-# This ensures the file is ready for use and restricts access to the owner.
-if [[ ! -f "$KV_STORE_FILE" ]]; then
-    touch "$KV_STORE_FILE" || { echo "Error: Could not create KV store file at $KV_STORE_FILE" >&2; return 1; }
-    chmod 600 "$KV_STORE_FILE" || { echo "Error: Could not set permissions for $KV_STORE_FILE" >&2; return 1; }
-fi
+    # --- Initialization ---
+    # Create the store file if it doesn't exist and set appropriate permissions.
+    # This ensures the file is ready for use and restricts access to the owner.
+    if [[ ! -f "$KV_STORE_FILE" ]]; then
+        touch "$KV_STORE_FILE" || { echo "Error: Could not create KV store file at $KV_STORE_FILE" >&2; return 1; }
+        chmod 600 "$KV_STORE_FILE" || { echo "Error: Could not set permissions for $KV_STORE_FILE" >&2; return 1; }
+    fi
+}
 
 # --- Core Functions ---
 
@@ -23,9 +24,11 @@ fi
 # Persists or updates a name-value pair in the store.
 # If the key already exists, its value will be updated.
 # Otherwise, a new entry will be added.
-kv_set() {
+function kv_set() {
     local key="$1"
     local value="$2"
+
+    core.logdebug
 
     # Validate input: ensure a key is provided.
     if [[ -z "$key" ]]; then
@@ -47,18 +50,20 @@ kv_set() {
         # matches the entire line starting with 'key="' and replaces it.
         sed -i.bak "s|^${key}=\".*\"\$|${key}=\"${escaped_value}\"|" "$KV_STORE_FILE"
         rm -f "${KV_STORE_FILE}.bak" # Remove the backup file.
-        echo "Updated key: '$key'"
+        core.print.debug  "Updated key: '$key'"
     else
         # Key does not exist: append a new entry to the file.
         echo "${key}=\"${escaped_value}\"" >> "$KV_STORE_FILE"
-        echo "Added new key: '$key'"
+        core.print.debug  "Added new key: '$key'"
     fi
+
+    core.logreset
 }
 
 # kv_get <key>
 # Retrieves the value associated with a given key from the store.
 # Prints the value to standard output if found, otherwise prints an error message.
-kv_get() {
+function kv_get() {
     local key="$1"
 
     # Validate input: ensure a key is provided.
@@ -92,7 +97,7 @@ kv_get() {
 # kv_delete <key>
 # Deletes a name-value pair from the store based on the provided key.
 # If the key is not found, it prints an informational message.
-kv_delete() {
+function kv_delete() {
     local key="$1"
 
     # Validate input: ensure a key is provided.
@@ -118,7 +123,7 @@ kv_delete() {
 # kv_list
 # Lists all stored name-value pairs in the store.
 # Prints each key and its corresponding unescaped value.
-kv_list() {
+function kv_list() {
     if [[ ! -f "$KV_STORE_FILE" || ! -s "$KV_STORE_FILE" ]]; then
         echo "No key-value pairs stored yet."
         return 0
@@ -142,7 +147,7 @@ kv_list() {
 
 # kv_help
 # Displays usage information for all key-value store functions.
-kv_help() {
+function kv_help() {
     echo "Bash Key-Value Store Functions:"
     echo "  kv_set <key> <value>    - Persist or update a name-value pair."
     echo "  kv_get <key>            - Retrieve the value for a given name."

@@ -20,31 +20,44 @@ D=`date`
       SZ="$(/usr/bin/bash --version | head -1)"
       BAR=$(repeat_char "_" ${#SZ})
       dprint "$SZ"
-      dprint $(echo "$SZ" | gawk '{print substr($0,1,8)}')
       dprint "MOE"
 
       ansi.move "1" "1"
       corePrintAlways      $BAR
+      dprint               "$LASTCONSOLEMESSAGE"
       corePrintAlways      "update $D"
+      dprint               "$LASTCONSOLEMESSAGE"
       corePrintAlways      "$SZ"
+      dprint               "$LASTCONSOLEMESSAGE"
       corePrintAlways      "Log Level is $LOGLEVEL"
+      dprint               "$LASTCONSOLEMESSAGE"
       corePrintAlways      $BAR
+      dprint               "$LASTCONSOLEMESSAGE"
       core.print.debug     "debug"
+      dprint               "$LASTCONSOLEMESSAGE"
       core.print.info      "info"
+      dprint               "$LASTCONSOLEMESSAGE"
       core.print.advice    "advice"
+      dprint               "$LASTCONSOLEMESSAGE"
       core.print.alert     "alert"
+      dprint               "$LASTCONSOLEMESSAGE"
       core.print.error     "error"
+      dprint               "$LASTCONSOLEMESSAGE"
       core.print.critical  "critical"
+      dprint               "$LASTCONSOLEMESSAGE"
       corePrintAlways      $BAR
-#         ct=0;
-#         while [ $ct -lt 41 ]; do
-#              min=100; local max=500;
-#              range=$((max - min + 1))
-#              R=$((RANDOM % range + min))
-#             add_element "$R"
-#             render_array
-#             ((ct=ct+1))
-#         done
+         ct=0;
+      dprint               "$LASTCONSOLEMESSAGE"
+
+         #set_cursor_color_black
+         while [ $ct -lt 5 ]; do
+             min=100; local max=500;
+             range=$((max - min + 1))
+             R=$((RANDOM % range + min))
+             dprint "$R"
+             ((ct=ct+1))
+         done
+         #set_cursor_color_white
 
 ansi.gutter2
 exit 1

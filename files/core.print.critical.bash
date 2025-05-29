@@ -1,4 +1,5 @@
 function core.print.critical() {
+         LASTCONSOLEMESSAGE="$1"
          local lvl=$LL0
     local dex=0     
     if [[ -z "$ctrl" ]]; then

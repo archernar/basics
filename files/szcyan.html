@@ -57,14 +57,8 @@
 
     <div class="code-container">
         <pre>
-function core.print.debug() {
-         LASTCONSOLEMESSAGE="$1"
-         local lvl=$LL5
-    local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "DBUG $lvl" "$SILENT" "$ff" "$msg")"
-    if [ $LOGLEVEL -ge $lvl ]; then
-        util.println.white "$sz"
-    fi
+function szcyan() {
+    echo "$(printf "\033[1;%sm%s\033[0m\n" "36" "$msg")"
 }
 
         </pre>

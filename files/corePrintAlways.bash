@@ -1,4 +1,5 @@
 function corePrintAlways() {
+         LASTCONSOLEMESSAGE="$1"
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "ALWS X" "$SILENT" "$ff" "$msg")"
     util.println.white "$sz"

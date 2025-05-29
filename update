@@ -10,14 +10,17 @@ rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 #   >/dev/null 2>&1;
 
 source /home/mestes/scm/basics/bash.library
+source /home/mestes/scm/basics/bash.namevalue
 
 
 UPDATE="NO"
 REMOTE="YES"
-while getopts "txruls" arg
+while getopts "tqxruls" arg
 do
     case $arg in
         t) UPDATE="TEST"
+           ;;
+        q) UPDATE="TEST2"
            ;;
         x) UPDATE="EXTRACT"
            ;;
@@ -33,8 +36,27 @@ do
 done
 shift $(($OPTIND - 1))
 
-D=`date`
-core.print.critical "update $D"
+      D=`date`
+      ansi.clear
+      ansi.move "1" "1"
+
+      SZ="$(/usr/bin/bash --version | head -1)"
+      BAR=$(repeat_char "_" ${#SZ})
+      dprint "$SZ"
+      dprint "$D"
+      dprint "$(szgreen "Log Level is $LOGLEVEL")"
+
+      dprint      $BAR
+
+      corePrintAlways      $BAR
+      core.print.debug     "debug"
+      core.print.info      "info"
+      core.print.advice    "advice"
+      core.print.alert     "alert"
+      core.print.error     "error"
+      core.print.critical  "critical"
+      corePrintAlways      $BAR
+      exit 0
 
 
 if [ "$UPDATE" == "SCAN" ]; then                                                                                               
@@ -139,10 +161,16 @@ if [ "$UPDATE" == "EXTRACT" ]; then
 fi
 
 if [ "$UPDATE" == "TEST" ]; then                                                                                               
-      ansi.clear
       core.print.echo "Test Start ==============================================="
       core.print.alltest
       core.print.echo "Test End   ==============================================="
+      exit 0
+fi
+if [ "$UPDATE" == "TEST2" ]; then                                                                                               
+      core.print.alltest
+      exit 0
+      exit 0
+      exit 0
       exit 0
 fi
 

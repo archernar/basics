@@ -3,11 +3,56 @@
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
+function set_cursor_color_black() {
+  echo -e "\033[30m"
+}
+function set_cursor_color_white() {
+  echo -e "\033[37m"
+}
+# To reset the color (important!):
+function reset_terminal_color() {
+  echo -e "\033[0m"
+}
+function szblack() {
+         local msg="$1"    # Bash-Function-Args
+    echo "$(printf "\033[1;%sm%s\033[0m\n" "30" "$msg")"
+}
+function szprintln.red() {
+         local msg="$1"    # Bash-Function-Args
+    echo "$(printf "\033[1;%sm%s\033[0m\n" "31" "$msg")"
+}
+function szgreen() {
+         local msg="$1"    # Bash-Function-Args
+    echo "$(printf "\033[1;%sm%s\033[0m\n" "32" "$msg")"
+}
+function szyellow() {
+         local msg="$1"    # Bash-Function-Args
+    echo "$(printf "\033[1;%sm%s\033[0m\n" "33" "$msg")"
+}
+function szblue() {
+         local msg="$1"    # Bash-Function-Args
+    echo "$(printf "\033[1;%sm%s\033[0m\n" "34" "$msg")"
+}
+function szmagenta() {
+         local msg="$1"    # Bash-Function-Args
+    echo "$(printf "\033[1;%sm%s\033[0m\n" "35" "$msg")"
+}
+function szcyan() {
+         local msg="$1"    # Bash-Function-Args
+    echo "$(printf "\033[1;%sm%s\033[0m\n" "36" "$msg")"
+}
+function szwhite() {
+         local msg="$1"    # Bash-Function-Args
+    echo "$(printf "\033[1;%sm%s\033[0m\n" "37" "$msg")"
+}
 
 function dprint() {
          local msg="$1"    # Bash-Function-Args
+    printf "\x1b[s"   # Saves the current cursor position.
+
     add_element "$msg"
     render_array
+    printf "\x1b[u"   # Restores the cursor to the last saved position.
 }
 function check_command() {
          local thecommand="$1"             # Bash-Function-Args
@@ -1632,31 +1677,44 @@ D=`date`
       SZ="$(/usr/bin/bash --version | head -1)"
       BAR=$(repeat_char "_" ${#SZ})
       dprint "$SZ"
-      dprint $(core.string.substring "$SZ" "1" "15")
-
+      dprint "MOE"
 
       ansi.move "1" "1"
       corePrintAlways      $BAR
+      dprint               "$LASTCONSOLEMESSAGE"
       corePrintAlways      "update $D"
+      dprint               "$LASTCONSOLEMESSAGE"
       corePrintAlways      "$SZ"
+      dprint               "$LASTCONSOLEMESSAGE"
       corePrintAlways      "Log Level is $LOGLEVEL"
+      dprint               "$LASTCONSOLEMESSAGE"
       corePrintAlways      $BAR
+      dprint               "$LASTCONSOLEMESSAGE"
       core.print.debug     "debug"
+      dprint               "$LASTCONSOLEMESSAGE"
       core.print.info      "info"
+      dprint               "$LASTCONSOLEMESSAGE"
       core.print.advice    "advice"
+      dprint               "$LASTCONSOLEMESSAGE"
       core.print.alert     "alert"
+      dprint               "$LASTCONSOLEMESSAGE"
       core.print.error     "error"
+      dprint               "$LASTCONSOLEMESSAGE"
       core.print.critical  "critical"
+      dprint               "$LASTCONSOLEMESSAGE"
       corePrintAlways      $BAR
-#         ct=0;
-#         while [ $ct -lt 41 ]; do
-#              min=100; local max=500;
-#              range=$((max - min + 1))
-#              R=$((RANDOM % range + min))
-#             add_element "$R"
-#             render_array
-#             ((ct=ct+1))
-#         done
+         ct=0;
+      dprint               "$LASTCONSOLEMESSAGE"
+
+         #set_cursor_color_black
+         while [ $ct -lt 5 ]; do
+             min=100; local max=500;
+             range=$((max - min + 1))
+             R=$((RANDOM % range + min))
+             dprint "$R"
+             ((ct=ct+1))
+         done
+         #set_cursor_color_white
 
 ansi.gutter2
 exit 1
@@ -1832,6 +1890,7 @@ function util.set_background() {
 }
 function util.print.color() {
          local color=$1; local sz="$2"    # Bash-Function-Args
+         LASTCONSOLEMESSAGE="$2"
     if core._should_print_color 1; then
         case "$color" in
             black)   util.println.white   "$sz" ;;
@@ -1852,6 +1911,7 @@ function util.print.color() {
 
 function core.print.stackline() {
          local msg="$1"    # Bash-Function-Args
+         LASTCONSOLEMESSAGE="$1"
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "Stck" "$SILENT" "" "$msg")"
     if [ "$LOGLEVEL" -gt $LL3A ]; then
@@ -1862,6 +1922,7 @@ function core.print.stackline() {
 # @arg $1 string message
 function core.print.debug() {
          local msg="$1"    # Bash-Function-Args
+         LASTCONSOLEMESSAGE="$1"
          local lvl=$LL5
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "DBUG $lvl" "$SILENT" "$ff" "$msg")"
@@ -1871,6 +1932,7 @@ function core.print.debug() {
 }
 function core.print.advice() {
          local msg="$1"    # Bash-Function-Args
+         LASTCONSOLEMESSAGE="$1"
          local lvl=$LL3
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     if [ "$STACKTRACEDEPTH" -ge 2 ]; then
@@ -1883,6 +1945,7 @@ function core.print.advice() {
 }
 function core.print.info() {
          local msg="$1"    # Bash-Function-Args
+         LASTCONSOLEMESSAGE="$1"
          local lvl=$LL4
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "INFO $lvl" "$SILENT" "$ff"  "$msg")"
@@ -1892,6 +1955,7 @@ function core.print.info() {
 }
 function core.print.alert() {
          local msg="$1"    # Bash-Function-Args
+         LASTCONSOLEMESSAGE="$1"
          local lvl=$LL2
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "ALRT $lvl" "$SILENT" "$ff" "$msg")"
@@ -1906,6 +1970,7 @@ function core.print.alert() {
 
 function core.print.error() {
          local msg="$1"    # Bash-Function-Args
+         LASTCONSOLEMESSAGE="$1"
          local lvl=$LL1
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "ERRR $lvl" "$SILENT" "$ff" "$msg")"
@@ -1915,6 +1980,7 @@ function core.print.error() {
 }
 function core.print.critical() {
          local msg="$1"; local ctrl=$2    # Bash-Function-Args
+         LASTCONSOLEMESSAGE="$1"
          local lvl=$LL0
     local dex=0     
     if [[ -z "$ctrl" ]]; then
@@ -1930,6 +1996,7 @@ function core.print.critical() {
 }
 function core.print.fatal() {
          local msg="$1"; local ctrl=$2    # Bash-Function-Args
+         LASTCONSOLEMESSAGE="$1"
          local lvl=$LL0
     local dex=0     
     if [[ -z "$ctrl" ]]; then
@@ -1955,6 +2022,7 @@ function core.print.fatal() {
 }
 function corePrintAlways() {
          local msg="$1"    # Bash-Function-Args
+         LASTCONSOLEMESSAGE="$1"
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "ALWS X" "$SILENT" "$ff" "$msg")"
     util.println.white "$sz"
@@ -3197,7 +3265,7 @@ function shift_column_up() {
 }
 
 # Initialize the array
-my_array=("apple" "banana" "cherry" "date")
+my_array=()
 
 # Function to display the array
 function tailout() {
@@ -3212,7 +3280,10 @@ function display_array() {
 
 # ARRAY Function to add an element to the array
 function add_element() {
-  local element_to_add="$1"
+  local w=$(TCOLS)
+  ((w=w-DBPRINTCOL-5))
+  local element_to_add="$(echo "$1" | gawk -v w="$w" '{print substr($0,1,w)}')"
+  # local element_to_add="$1"
 
   if [[ -z "$element_to_add" ]]; then
     echo "Usage: add_element <element>"
@@ -3220,7 +3291,7 @@ function add_element() {
   fi
 
   my_array+=("$element_to_add")
-  if [[ ${#my_array[@]} -gt  16 ]]; then
+  if [[ ${#my_array[@]} -gt  $(TROWS -2) ]]; then
     my_array=("${my_array[@]:1}")
   fi
   #echo "Added '$element_to_add'."
