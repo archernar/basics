@@ -49,14 +49,14 @@ shift $(($OPTIND - 1))
       dprint      $BAR
 
       corePrintAlways      $BAR
-      core.print.debug     "debug"
-      core.print.info      "info"
-      core.print.advice    "advice"
+      core.print.debug     "debug t"
+      core.print.info      "info 123"
+      core.print.advice    "advice 456"
       core.print.alert     "alert"
       core.print.error     "error"
       core.print.critical  "critical"
       corePrintAlways      $BAR
-      exit 0
+      exit 1
 
 
 if [ "$UPDATE" == "SCAN" ]; then                                                                                               

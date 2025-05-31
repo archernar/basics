@@ -13,37 +13,51 @@ function set_cursor_color_white() {
 function reset_terminal_color() {
   echo -e "\033[0m"
 }
+# ----------------------------------------------------------------------------------------------------
+# CONOUT: 
+# ----------------------------------------------------------------------------------------------------
+function u.put() {
+         local sz="$1"    # Bash-Function-Args
+    printf "%s\n" "$msg"
+}
+function u.putln() {
+         local sz="$1"    # Bash-Function-Args
+    printf "%s\n" "$msg"
+}
+# ----------------------------------------------------------------------------------------------------
+# SZCOLOR: 
+# ----------------------------------------------------------------------------------------------------
 function szblack() {
          local msg="$1"    # Bash-Function-Args
-    echo "$(printf "\033[1;%sm%s\033[0m\n" "30" "$msg")"
+    echo "$(printf "\033[1;%sm%s\033[0m" "30" "$msg")"
 }
-function szprintln.red() {
+function szred() {
          local msg="$1"    # Bash-Function-Args
-    echo "$(printf "\033[1;%sm%s\033[0m\n" "31" "$msg")"
+    echo "$(printf "\033[1;%sm%s\033[0m" "31" "$msg")"
 }
 function szgreen() {
          local msg="$1"    # Bash-Function-Args
-    echo "$(printf "\033[1;%sm%s\033[0m\n" "32" "$msg")"
+    echo "$(printf "\033[1;%sm%s\033[0m" "32" "$msg")"
 }
 function szyellow() {
          local msg="$1"    # Bash-Function-Args
-    echo "$(printf "\033[1;%sm%s\033[0m\n" "33" "$msg")"
+    echo "$(printf "\033[1;%sm%s\033[0m" "33" "$msg")"
 }
 function szblue() {
          local msg="$1"    # Bash-Function-Args
-    echo "$(printf "\033[1;%sm%s\033[0m\n" "34" "$msg")"
+    echo "$(printf "\033[1;%sm%s\033[0m" "34" "$msg")"
 }
 function szmagenta() {
          local msg="$1"    # Bash-Function-Args
-    echo "$(printf "\033[1;%sm%s\033[0m\n" "35" "$msg")"
+    echo "$(printf "\033[1;%sm%s\033[0m" "35" "$msg")"
 }
 function szcyan() {
          local msg="$1"    # Bash-Function-Args
-    echo "$(printf "\033[1;%sm%s\033[0m\n" "36" "$msg")"
+    echo "$(printf "\033[1;%sm%s\033[0m" "36" "$msg")"
 }
 function szwhite() {
          local msg="$1"    # Bash-Function-Args
-    echo "$(printf "\033[1;%sm%s\033[0m\n" "37" "$msg")"
+    echo "$(printf "\033[1;%sm%s\033[0m" "37" "$msg")"
 }
 
 function dprint() {
@@ -1407,45 +1421,37 @@ function util.put() {
          local color="$1"; local sz="$2"    # Bash-Function-Args
     printf "\033[1;%sm%s\033[0m" "$color" "$msg"
 }
-function u.putln() {
-         local color="$1"; local sz="$2"    # Bash-Function-Args
-    printf "\033[1;%sm%s\033[0m\n" "$color" "$msg"
-}
 function u.putc() {
          local color="$1"; local sz="$2"    # Bash-Function-Args
     printf "\033[1;%sm%s\033[0m" "$color" "$msg"
 }
-function u.put() {
-         local sz="$1"    # Bash-Function-Args
-    printf "%s" "$msg"
-}
 function util.println.black() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "30" "$msg"
+    u.putln "$(szblack  "$msg")"
 }
 function util.println.red() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "31" "$msg"
+    u.putln "$(szred  "$msg")"
 }
 function util.println.green() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "32" "$msg"
+    u.putln "$(szgreen  "$msg")"
 }
 function util.println.yellow() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "33" "$msg"
+    u.putln "$(szyellow  "$msg")"
 }
 function util.println.blue() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "34" "$msg"
+    u.putln "$(szblue  "$msg")"
 }
 function util.println.magenta() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "35" "$msg"
+    u.putln "$(szmagenta  "$msg")"
 }
 function util.println.cyan() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "36" "$msg"
+    u.putln "$(szcyan  "$msg")"
 }
 function util.posprint() {
          local row="$1";local col="$2";local msg="$3";local n="$4"    # Bash-Function-Args
@@ -1481,16 +1487,16 @@ function util.posprint.white() {
 }
 function util.println.white() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "37" "$msg"
+    u.putln "$(szwhite "$msg")"
 }
 function util.posprint.black() {
          local row="$1";col="$2";msg="$3"    # Bash-Function-Args
     ansi.move "$row" "$col"; 
-    u.put "30" "$msg"
+    u.put "$(szblack "$msg")"
 }
 function util.print.black() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "30" "$msg"
+    u.putln "$(szblack "$msg")"
 }
 function util.posprint.red() {
          local row="$1";col="$2";msg="$3"    # Bash-Function-Args
@@ -1499,7 +1505,7 @@ function util.posprint.red() {
 }
 function util.print.red() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "31" "$msg"
+    u.putln "$(szred "$msg")"
 }
 function util.posprint.green() {
          local row="$1";local col="$2";local msg="$3";local n="$4"    # Bash-Function-Args
@@ -1513,27 +1519,27 @@ function util.posprint.green() {
 }
 function util.print.green() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "32" "$msg"
+    u.putln "$(szgreen "$msg")"
 }
 function util.print.yellow() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "33" "$msg"
+    u.putln "$(szyellow "$msg")"
 }
 function util.print.blue() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "34" "$msg"
+    u.putln "$(szblue "$msg")"
 }
 function util.print.magenta() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "35" "$msg"
+    u.putln "$(szmagenta "$msg")"
 }
 function util.print.cyan() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "36" "$msg"
+    u.putln "$(szcyan "$msg")"
 }
 function util.print.white() {
          local msg="$1"    # Bash-Function-Args
-    u.putln "37" "$msg"
+    u.putln "$(szwhite "$msg")"
 }
 # ----------------------------------------------------------------------------------------------------
 # FLOG: core.print
@@ -1947,7 +1953,11 @@ function core.print.advice() {
     fi
     local sz="$(printf "%s %s: %s %s" "ADVC $lvl" "$SILENT" "$ff" "$msg")"
     if [ $LOGLEVEL -gt $lvl ]; then
-        util.print.color blue "$sz"
+        echo "xxxx"
+        echo "xxxx"
+        echo "$(szblue "$sz")"
+        echo "yyyyy"
+        echo "yyyyy"
     fi
 }
 function core.print.info() {

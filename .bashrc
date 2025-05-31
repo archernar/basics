@@ -73,10 +73,7 @@ if ! shopt -oq posix; then
 fi
 
 source ~/bash.library
-
-
 source ~/bashrc.shared
-source ~/bashrc.prompt
 
 
 export JAVA_HOME=/home/mestes/jdk-23.0.2
@@ -86,3 +83,71 @@ backup_file   .bashrc        ~/BACKUPS
 backup_file   bashrc.shared  ~/BACKUPS
 backup_file   bash.library   ~/BACKUPS
 backup_file   .vimrc         ~/BACKUPS
+
+
+function XXXTROWSACTUAL() {
+         local void=1    # Bash-Function-Args
+  local rows=$(tput lines)
+  echo "$rows"
+}
+function XXXTROWS() {
+         local offset=$1    # Bash-Function-Args
+  local rows=$(odd_or_less $(tput lines)) # Use 'local' to keep variables within the function's scope.
+  (( rows= rows + offset ))
+  echo "$rows"
+}
+
+
+# show up to 3 parent dirs, except ~, resolve all other dir aliases
+function git_toplevel() {
+         local void="11";                          # Bash-Function-Args
+     if [ -d ".git" ]; then
+         git rev-parse --show-toplevel 2> /dev/null | sed -e "s,^$HOME,~,"
+     fi
+}
+function git_branch() {
+         local void="11";                          # Bash-Function-Args
+     #git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+     if [ -d ".git" ]; then
+         git branch --show-current 2> /dev/null | \
+         sed 's/master/m/' | \
+         sed 's/archival/a/'
+     fi
+}
+function git_origin() {
+         local void="11";                          # Bash-Function-Args
+     # git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+     if [ -d ".git" ]; then
+         git config --get remote.origin.url 2> /dev/null
+     fi
+}
+function git_originsync() {
+         local void="11";                          # Bash-Function-Args
+     if [ -d ".git" ]; then
+         git config color.ui false
+         git branch -vv 2> /dev/null |  gawk 'match($0, /\[([^\]]+)\]/, a) { print a[1] }' | sed 's/origin/o/' | sed 's/master/m/' | sed 's/ ahead /+/'
+     else
+         echo ""
+     fi
+}
+function collapse_pwd() {
+         local void="11";                          # Bash-Function-Args
+    curr_pwd=$(pwd | sed -e "s,^$HOME,~,")
+    echo $curr_pwd
+}
+function collapse_hostname() {
+         local void="11";                          # Bash-Function-Args
+    curr_hostname=$(hostname)
+    echo $curr_hostname
+}
+function prompt_pos() {
+  local rows=$(tput lines)
+  local col=1
+  ((row=rows-2))
+  printf "\033[${row};${col}H"
+  util.print.color blue "-----------------------------------"
+  ((row=rows-1))
+  printf "\033[${row};${col}H"
+  printf "\033[K"
+}
+export PS1='$(collapse_hostname) $(collapse_pwd) ($(git_toplevel):$(git_branch):$(git_originsync))>> '
