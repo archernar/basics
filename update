@@ -49,16 +49,16 @@ shift $(($OPTIND - 1))
       dprint      $BAR
 
       corePrintAlways      $BAR
-      core.print.debug     "debug t"
-      core.print.info      "info 123"
-      core.print.advice    "advice 456"
-      core.print.alert     "alert"
-      core.print.error     "error"
-      core.print.critical  "critical"
+      printDebug     "debug"
+      printInfo      "info"
+      printAdvice    "advice"
+      printWarning   "warning"
+      printAlert     "alert"
+      printError     "error"
+      printCritical  "critical"
       corePrintAlways      $BAR
-      exit 1
 
-
+exit 0
 if [ "$UPDATE" == "SCAN" ]; then                                                                                               
     if ! scan; then
         echo "Exiting main script."
@@ -74,7 +74,7 @@ if [ "$UPDATE" == "REMOTE" ]; then
     fi
 fi
 if [ "$UPDATE" == "REMOTE" ]; then                                                                                               
-    core.print.info "push origin master (basics)"
+    printInfo "push origin master (basics)"
     git push -u origin master
 
     D=`pwd`
@@ -86,19 +86,19 @@ if [ "$UPDATE" == "REMOTE" ]; then
     git add ./index.html                              >/dev/null 2>&1;
     git rm $(git ls-files --deleted ./files)          >/dev/null 2>&1;
     git commit -m "Updated ./files and index.html"    >/dev/null 2>&1;
-    core.print.info "push origin master (archernar.github.io)"
+    printInfo "push origin master (archernar.github.io)"
     git push origin master     >/dev/null 2>&1;
 
     cd "$D"
 
-    core.print.info "Remote complete"
+    printInfo "Remote complete"
     exit 0
 fi
 
 if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
-    core.print.advice   "Tagging"
+    printAdvice   "Tagging"
     btags bash.library > tags
-    core.print.advice "Extract"
+    printAdvice "Extract"
     rm -f modifiedfilenames  >/dev/null 2>&1;
     touch modifiedfilenames
     while IFS= read -r file_name; do
@@ -111,7 +111,7 @@ if [ "$UPDATE" == "EXTRACT" ]; then
 
         ./codeTemplate "./$file_name" "$file_name" > "./files/$file_name.html"
         cp "./$file_name" ./files
-        core.print.advice "./$file_name"
+        printAdvice "./$file_name"
     done < "bash.tools"
 
     ./bashfunctionextractor
@@ -119,30 +119,30 @@ if [ "$UPDATE" == "EXTRACT" ]; then
     core.check_for_duplicates "$test_file"
     return_code=$?
     if ((return_code == 0)); then
-      core.print.info "No duplicate lines found in '$test_file'."
+      printInfo "No duplicate lines found in '$test_file'."
     elif ((return_code == 1)); then
-      core.print.info "Duplicate lines found in '$test_file' (see stderr for details)."
+      printInfo "Duplicate lines found in '$test_file' (see stderr for details)."
     elif ((return_code == 2)); then
-      core.print.info "Error: File '$test_file' not found or not readable."
+      printInfo "Error: File '$test_file' not found or not readable."
     fi
 
 
-    core.print.advice "adding ./files"
+    printAdvice "adding ./files"
     git add ./files
-    core.print.advice "adding ./index.html"
+    printAdvice "adding ./index.html"
     git add ./index.html
     git commit -m "Updated ./files and index.html"         >/dev/null 2>&1;
     N=`git ls-files --deleted ./files | wc -l`
-    core.print.info "$N files were deleted from ./files"
+    printInfo "$N files were deleted from ./files"
     git diff --name-only ./files
     if [ "$N" -gt 0 ]; then
-      core.print.info "===================================================="
-      core.print.info "./files needs updating"
+      printInfo "===================================================="
+      printInfo "./files needs updating"
       git rm $(git ls-files --deleted ./files)
-      core.print.info "===================================================="
+      printInfo "===================================================="
     fi
 
-    core.print.advice "Extraction complete"
+    printAdvice "Extraction complete"
 
 
     D=`pwd`
@@ -155,15 +155,15 @@ if [ "$UPDATE" == "EXTRACT" ]; then
     
     backup_file   basics.tar     ~/BACKUPS   >/dev/null 2>&1;
     cd "$D"
-    core.print.advice "Backup complete"
+    printAdvice "Backup complete"
 
     exit 0
 fi
 
 if [ "$UPDATE" == "TEST" ]; then                                                                                               
-      core.print.echo "Test Start ==============================================="
+      echo "Test Start ==============================================="
       core.print.alltest
-      core.print.echo "Test End   ==============================================="
+      echo "Test End   ==============================================="
       exit 0
 fi
 if [ "$UPDATE" == "TEST2" ]; then                                                                                               
@@ -185,11 +185,11 @@ fi
 
 FILE="./.vimrc"
 if [ $(isSameHash "$FILE") == "0" ]; then
-    core.print.alert "HashoMatic $FILE"
+    printAlert "HashoMatic $FILE"
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-    core.print.echo "\" *********************************************************DATEOMATIC: $D"      > $Tmp1
-    core.print.echo "\" *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    echo "\" *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "\" *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
     cat $Tmp  >> $Tmp1
     cat $Tmp1  > "$FILE"
     git add "$FILE"
@@ -198,11 +198,11 @@ fi
 
 FILE="./.bashrc"
 if [ $(isSameHash "$FILE") == "0" ]; then
-    core.print.info "HashoMatic $FILE"
+    printInfo "HashoMatic $FILE"
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-    core.print.echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
-    core.print.echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
     cat $Tmp  >> $Tmp1
     cat $Tmp1  > "$FILE"
     git add "$FILE"
@@ -211,11 +211,11 @@ fi
 
 FILE="./bashrc.shared"
 if [ $(isSameHash "$FILE") == "0" ]; then
-    core.print.info "HashoMatic $FILE"
+    printInfo "HashoMatic $FILE"
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-    core.print.echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
-    core.print.echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
     cat $Tmp  >> $Tmp1
     cat $Tmp1  > "$FILE"
     git add "$FILE"
@@ -223,11 +223,11 @@ fi
 
 FILE="./bash.library"
 if [ $(isSameHash "$FILE") == "0" ]; then
-    core.print.info "HashoMatic $FILE"
+    printInfo "HashoMatic $FILE"
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-    core.print.echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
-    core.print.echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
     cat $Tmp  >> $Tmp1
     cat $Tmp1  > "$FILE"
     git add "$FILE"
@@ -235,11 +235,11 @@ fi
 
 FILE="./gawk.library"
 if [ $(isSameHash "$FILE") == "0" ]; then
-    core.print.info "HashoMatic $FILE"
+    printInfo "HashoMatic $FILE"
     grep -v DATEOMATIC "$FILE" | grep -v HASHOMATIC > $Tmp
     IHASH=$(md5sum "$Tmp" | awk '{print $1}')
-    core.print.echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
-    core.print.echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
+    echo "# *********************************************************DATEOMATIC: $D"      > $Tmp1
+    echo "# *********************************************************HASHOMATIC: $IHASH" >> $Tmp1
     cat $Tmp  >> $Tmp1
     cat $Tmp1  > "$FILE"
     git add "$FILE"
@@ -281,12 +281,12 @@ cat "simple_table" | sed 's/^/# /' > toc
 alpha_normal4 "$Tmp"
 create_markdown_table4 "$Tmp" "MAKELINKS"   >  README.md
 gitadd "README.md"
-core.print.info "Step 0 Complete"
+printInfo "Step 0 Complete"
 
 cp "$Tmp" ./files/index.html
 ./htmlTemplate "./files/index.txt" "index.txt" > "./files/index.html"
 ./htmlTemplate "./files/index.txt" "index.txt" > "./index.html"
-core.print.info "Step 1 Complete"
+printInfo "Step 1 Complete"
 
 
 
@@ -296,7 +296,7 @@ if [ "$UPDATE" == "LOCAL" ]; then
 fi
 
 
-core.print.info "Cleaning up"
+printInfo "Cleaning up"
 rm -f zeda zedb zed zzed zerd qed qqed fed ffed xx yy xxx yyy
 rm -f sfa*  >/dev/null 2>&1
 

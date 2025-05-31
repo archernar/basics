@@ -241,6 +241,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szgreen.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szmagenta.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szprintln.red.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szred.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szwhite.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szyellow.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/tailout.bash
@@ -259,6 +260,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.red.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.white.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.pprint.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.black.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.blue.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.color.bash
@@ -268,6 +270,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.red.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.white.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.yellow.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.black.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.blue.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.cyan.bash

@@ -526,6 +526,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szmag
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szmagenta.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szprintln.red.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szprintln.red.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szred.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szred.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szwhite.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szwhite.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szyellow.bash
@@ -562,6 +564,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.white.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.pprint.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.pprint.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.black.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.black.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.blue.bash
@@ -572,6 +575,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.cyan.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.green.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.green.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.magenta.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.magenta.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.red.bash
@@ -580,6 +584,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.white.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.yellow.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.print.yellow.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.black.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.black.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.blue.bash
@@ -588,6 +593,7 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.cyan.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.green.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.green.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.magenta.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.magenta.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.println.red.bash

@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Thu May 29 07:42:49 EDT 2025
-# *********************************************************HASHOMATIC: 4631a0c552a82fc5170c36a6d780d1c4
+# *********************************************************DATEOMATIC: Sat May 31 08:41:18 EDT 2025
+# *********************************************************HASHOMATIC: b78c3dcf09cb5cfef08b5a989abc4d45
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -87,15 +87,15 @@ function check_command() {
 function paramsf() {
          local filename="$1"             # Bash-Function-Args
   if [ $# -eq 0 ]; then
-    core.print.fatal "Error: Filename not provided." 2
+    printFatal "Error: Filename not provided." 2
     exit 1
   fi
   if [[ -z "$filename" ]]; then
-    core.print.fatal "Error: Filename not provided." 2
+    printFatal "Error: Filename not provided." 2
     exit 1
   fi
   if [[ ! -f "$filename" ]]; then
-    core.print.fatal "Error: File '$filename' not found." 2
+    printFatal "Error: File '$filename' not found." 2
     exit 1
   fi
   return 0
@@ -139,21 +139,21 @@ function alpha_normal4() {
 cat "$filename" | sort | uniq > "$tmp1"
 N=`wc -l "$tmp1" | gawk '{print $1}'`
 M=$((N % 4));
-core.print.info "The function list contains $N functions"
+printInfo "The function list contains $N functions"
 if [ "$M" == "0" ]; then                                                                                               
-    core.print.info "Nothing to Add"
+    printInfo "Nothing to Add"
 fi
 if [ "$M" == "3" ]; then                                                                                               
-    core.print.info "Adding 1 functions"
+    printInfo "Adding 1 functions"
     echo "zzzone()" >> "$tmp1"
 fi
 if [ "$M" == "2" ]; then                                                                                               
-    core.print.info "Adding 2 functions"
+    printInfo "Adding 2 functions"
     echo "zzzone()" >> "$tmp1"
     echo "zzztwo()" >> "$tmp1"
 fi
 if [ "$M" == "1" ]; then                                                                                               
-    core.print.info "Adding 3 functions"
+    printInfo "Adding 3 functions"
     echo "zzzone()" >> "$tmp1"
     echo "zzztwo()" >> "$tmp1"
     echo "zzzthree()" >> "$tmp1"
@@ -161,7 +161,7 @@ fi
 
 cat "$tmp1" | sort | uniq > "$tmp2"; cp "$tmp2" "$tmp1"
 N=`wc -l "$tmp1" | gawk '{print $1}'`
-core.print.info "The function list contains $N functions"
+printInfo "The function list contains $N functions"
 N=$((N / 4));
 rm -f sfa*  >/dev/null 2>&1
 sed -i 's/zzz.*$/\&nbsp;/g' "$tmp1"
@@ -192,22 +192,22 @@ function alpha_normal2() {
 cat "$filename" | sort | uniq > "$tmp1"
 N=`wc -l "$tmp1" | gawk '{print $1}'`
 M=$((N % 2));
-core.print.info "The function list contains $N functions"
+printInfo "The function list contains $N functions"
 if [ "$M" == "0" ]; then                                                                                               
-    core.print.info "Nothing to Add"
+    printInfo "Nothing to Add"
 fi
 if [ "$M" == "2" ]; then                                                                                               
-    core.print.info "Adding 1 function"
+    printInfo "Adding 1 function"
     echo "zzzone()" >> "$tmp1"
 fi
 if [ "$M" == "1" ]; then                                                                                               
-    core.print.info "Adding 1 functions"
+    printInfo "Adding 1 functions"
     echo "zzzone()" >> "$tmp1"
 fi
 
 cat "$tmp1" | sort | uniq > "$tmp2"; cp "$tmp2" "$tmp1"
 N=`wc -l "$tmp1" | gawk '{print $1}'`
-core.print.info "The function list contains $N functions"
+printInfo "The function list contains $N functions"
 N=$((N / 2));
 rm -f sfa*  >/dev/null 2>&1
 sed -i 's/zzz.*$/\&nbsp;/g' "$tmp1"
@@ -997,7 +997,7 @@ create_markdown_table() {
 
   # Check if the input file exists
   if [[ ! -f "$input_file" ]]; then
-    core.print.echo "Error: Input file '$input_file' not found."
+    echo "Error: Input file '$input_file' not found."
     return 1
   fi
 
@@ -1009,9 +1009,9 @@ create_markdown_table() {
   while IFS= read -r line; do
     if [[ $line_count -eq 0 ]]; then
       if [[ $first_row -eq 1 ]]; then
-          #core.print.echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
-          core.print.echo "|    A     |    B     |    C     |    D     |    E     |"
-          core.print.echo "|----------|----------|----------|----------|----------|"
+          #echo "| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |"
+          echo "|    A     |    B     |    C     |    D     |    E     |"
+          echo "|----------|----------|----------|----------|----------|"
           first_row=0
       fi
     fi
@@ -1021,7 +1021,7 @@ create_markdown_table() {
     line_count=$((line_count + 1))
 
     if [[ $line_count -eq 5 ]]; then
-      core.print.echo "$row|"
+      echo "$row|"
       row=""
       line_count=0
     fi
@@ -1032,7 +1032,7 @@ create_markdown_table() {
     for ((i = line_count; i < 5; i++)); do
         row+="|  "
     done
-    core.print.echo "$row|"
+    echo "$row|"
   fi
 }
 
@@ -1272,7 +1272,7 @@ function core.panic() {
 		printf '%s\n' "  ERR: $ERR" >&2
 	fi
 
-	core.print.stacktrace
+	printStackTrace
 	exit "$code"
 }
 function stacktracetest() {
@@ -1285,20 +1285,20 @@ function stacktracetest2() {
     stacktracetest3
 }
 function stacktracetest3() {
-    core.print.stacktrace
+    printStackTrace
 }
 # @description Prints stacktrace
 # @noargs
 # @example
 #  err_handler() {
 #    local exit_code=$1 # Note that this isn't `$?`
-#    core.print.stacktrace
+#    printStackTrace
 #    
 #    # Note that we're not doing `exit $exit_code` because
 #    # that is handled automatically
 #  }
 #  core.trap_add 'err_handler' ERR
-function core.print.stacktrace() {
+function printStackTrace() {
 	printf '%s\n' 'Stacktrace:'
 
 	local old_cd="$PWD" cd_failed='no'
@@ -1327,31 +1327,12 @@ function core.print.stacktrace() {
 
 	if [ "$cd_failed" = 'yes' ]; then
 		# Do NOT 'core.panic'
-		core.print.error "A 'cd' failed, so the stacktrace may include relative paths"
+		printError "A 'cd' failed, so the stacktrace may include relative paths"
 	fi
 } >&2
 
-# core.print.fatal "${FUNCNAME[1]}()${msg:+": "}$msg"
+# printFatal "${FUNCNAME[1]}()${msg:+": "}$msg"
 
-# @description Print a warning message to standard error
-# @arg $1 string message
-function core.print.warn() {
-         local msg="$1"    # Bash-Function-Args
-	if core._should_print_color 2; then
-		printf "\033[1;33m%s:\033[0m %s\n" 'Warn' "$msg" >&2
-	else
-		printf "%s: %s\n" 'Warn' "$msg" >&2
-	fi
-}
-
-function core.print.echo() {
-         local msg="$1"    # Bash-Function-Args
-     echo "$msg"
-}
-function core.echo() {
-         local msg="$1"    # Bash-Function-Args
-     echo "$msg"
-}
 
 
 # ----------------------------------------------------------------------------------------------------
@@ -1389,7 +1370,7 @@ function core.echo() {
 function gitadd() {
          local filename="$1"             # Bash-Function-Args
          paramsf "$filename"
-  core.print.advice "git add $filename"
+  printAdvice "git add $filename"
   git add "$filename"
   return 0
 }
@@ -1425,34 +1406,6 @@ function u.putc() {
          local color="$1"; local sz="$2"    # Bash-Function-Args
     printf "\033[1;%sm%s\033[0m" "$color" "$msg"
 }
-function util.println.black() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szblack  "$msg")"
-}
-function util.println.red() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szred  "$msg")"
-}
-function util.println.green() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szgreen  "$msg")"
-}
-function util.println.yellow() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szyellow  "$msg")"
-}
-function util.println.blue() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szblue  "$msg")"
-}
-function util.println.magenta() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szmagenta  "$msg")"
-}
-function util.println.cyan() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szcyan  "$msg")"
-}
 function util.posprint() {
          local row="$1";local col="$2";local msg="$3";local n="$4"    # Bash-Function-Args
          if [ "$n" == "" ]; then                                                                                               
@@ -1474,72 +1427,6 @@ function util.pprint() {
         sz="$sz$msg"
     done
     printf "%s" "$sz"
-}
-function util.posprint.white() {
-         local row="$1";local col="$2";local msg="$3";local n="$4"    # Bash-Function-Args
-         if [ "$n" == "" ]; then                                                                                               
-             n=1
-         fi
-    ansi.move "$row" "$col"; 
-    for ((i=0; i<$n; i++)); do
-        u.putc "37" "$msg"
-    done
-}
-function util.println.white() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szwhite "$msg")"
-}
-function util.posprint.black() {
-         local row="$1";col="$2";msg="$3"    # Bash-Function-Args
-    ansi.move "$row" "$col"; 
-    u.put "$(szblack "$msg")"
-}
-function util.print.black() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szblack "$msg")"
-}
-function util.posprint.red() {
-         local row="$1";col="$2";msg="$3"    # Bash-Function-Args
-    ansi.move "$row" "$col"; 
-    u.putc "31" "$msg"
-}
-function util.print.red() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szred "$msg")"
-}
-function util.posprint.green() {
-         local row="$1";local col="$2";local msg="$3";local n="$4"    # Bash-Function-Args
-         if [ "$n" == "" ]; then                                                                                               
-             n=1
-         fi
-    ansi.move "$row" "$col"; 
-    for ((i=0; i<$n; i++)); do
-        u.putc "32" "$msg"
-    done
-}
-function util.print.green() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szgreen "$msg")"
-}
-function util.print.yellow() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szyellow "$msg")"
-}
-function util.print.blue() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szblue "$msg")"
-}
-function util.print.magenta() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szmagenta "$msg")"
-}
-function util.print.cyan() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szcyan "$msg")"
-}
-function util.print.white() {
-         local msg="$1"    # Bash-Function-Args
-    u.putln "$(szwhite "$msg")"
 }
 # ----------------------------------------------------------------------------------------------------
 # FLOG: core.print
@@ -1566,13 +1453,13 @@ BGBB="\033[40m"  # black
 
 function core.loglevels() {
          local void=0    # Bash-Function-Args
-    core.print.advice "LL5A=5   # debug"
-    core.print.advice "LL4A=4   # info"
-    core.print.advice "LL3A=3   # advice"
-    core.print.advice "LL2A=2   # alert"
-    core.print.advice "LL1A=1   # error"
-    core.print.advice "LL0A=0   # critical"
-    core.print.advice "LL0A=0   # fatal"
+    printAdvice "LL5A=5   # debug"
+    printAdvice "LL4A=4   # info"
+    printAdvice "LL3A=3   # advice"
+    printAdvice "LL2A=2   # alert"
+    printAdvice "LL1A=1   # error"
+    printAdvice "LL0A=0   # critical"
+    printAdvice "LL0A=0   # fatal"
 }
 #          black) printf "\033[40m" ;;
 #          red) printf "\033[41m" ;;
@@ -1681,7 +1568,6 @@ function core.print.alltest() {
        local i=0;
        local w=0; local x=0; local y=0; local z=0;
        local q1=0; local q2=0; local q3=0; local q4=0;
-return
                ansi.clear
 initialize_empty_array
 
@@ -1703,17 +1589,17 @@ D=`date`
       dprint               "$LASTCONSOLEMESSAGE"
       corePrintAlways      $BAR
       dprint               "$LASTCONSOLEMESSAGE"
-      core.print.debug     "debug"
+      printDebug           "debug"
       dprint               "$LASTCONSOLEMESSAGE"
-      core.print.info      "info"
+      printInfo      "info"
       dprint               "$LASTCONSOLEMESSAGE"
-      core.print.advice    "advice"
+      printAdvice    "advice"
       dprint               "$LASTCONSOLEMESSAGE"
-      core.print.alert     "alert"
+      printAlert     "alert"
       dprint               "$LASTCONSOLEMESSAGE"
-      core.print.error     "error"
+      printError     "error"
       dprint               "$LASTCONSOLEMESSAGE"
-      core.print.critical  "critical"
+      printCritical  "critical"
       dprint               "$LASTCONSOLEMESSAGE"
       corePrintAlways      $BAR
          ct=0;
@@ -1730,7 +1616,6 @@ D=`date`
          #set_cursor_color_white
 
 ansi.gutter2
-exit 1
 dbprint "Current Array: [${my_array[*]}]"
 dbprint "---"
 
@@ -1738,10 +1623,7 @@ kv_init
 kv_set "name" "michael"
 stack_init
 echo "OK"
-exit 0
-exit 0
        console.rulers
-exit 0
            #panel 5 5 $(TROWS -4) $(TCOLS -25)
            panel 5 5 14 25
        c=1;
@@ -1841,14 +1723,14 @@ exit 0
       core.stacktracedepth 1
       #core.loglevels
       corePrintAlways      "Log Level is $LOGLEVEL"
-      core.print.debug     "debug"
-      core.print.info      "info"
-      core.print.advice    "advice"
-      core.print.alert     "alert"
-      core.print.error     "error"
-      core.print.critical  "critical"
+      printDebug           "debug"
+      printInfo      "info"
+      printAdvice    "advice"
+      printAlert     "alert"
+      printError     "error"
+      printCritical  "critical"
       corePrintAlways      "always"
-      core.print.fatal     "fatal"
+      printFatal     "fatal"
       stacktracetest
 
 }
@@ -1901,24 +1783,32 @@ function util.set_background() {
         *) echo "Invalid color: $color" >&2; return 1 ;;
     esac
 }
+function util.print() {
+         local msg="$1"    # Bash-Function-Args
+    echo -n "$msg"
+}
+function util.println() {
+         local msg="$1"    # Bash-Function-Args
+    echo "$msg"
+}
 function util.print.color() {
          local color=$1; local sz="$2"    # Bash-Function-Args
          LASTCONSOLEMESSAGE="$2"
     if core._should_print_color 1; then
         case "$color" in
-            black)   util.println.white   "$sz" ;;
-            red)     util.println.red     "$sz" ;;
-            green)   util.println.green   "$sz" ;;
-            yellow)  util.println.white   "$sz" ;;
-            blue)    util.println.blue    "$sz" ;;
-            magenta) util.println.magenta "$sz" ;;
-            cyan)    util.println.white   "$sz" ;;
-            white)   util.println.white   "$sz" ;;
-            default) util.println.white   "$sz" ;;
+            black)   echo "$(szblack   "$sz")"  ;;
+            red)     echo "$(szred     "$sz")"  ;;
+            green)   echo "$(szgreen   "$sz")"  ;;
+            yellow)  echo "$(szyellow  "$sz")"  ;;
+            blue)    echo "$(szblue    "$sz")"  ;;
+            magenta) echo "$(szmagenta "$sz")"  ;;
+            cyan)    echo "$(szcyan    "$sz")"  ;;
+            white)   echo "$(szwhite   "$sz")"  ;;
+            default) echo "$(szwhite   "$sz")"  ;;
             *) echo "Invalid color: $color" >&2; return 1 ;;
         esac
     else
-        util.println.white "$sz"
+        echo "$(szwhite   "$sz")"
     fi
 }
 
@@ -1928,90 +1818,55 @@ function core.print.stackline() {
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
     local sz="$(printf "%s %s: %s %s" "Stck" "$SILENT" "" "$msg")"
     if [ "$LOGLEVEL" -gt $LL3A ]; then
-        util.print.color blue "$sz"
-    fi
-}
-# @description Print a debug message to standard output if the environment variable "DEBUG" is present
-# @arg $1 string message
-function core.print.debug() {
-         local msg="$1"    # Bash-Function-Args
-         LASTCONSOLEMESSAGE="$1"
-         local lvl=$LL5
-    local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "DBUG $lvl" "$SILENT" "$ff" "$msg")"
-    if [ $LOGLEVEL -ge $lvl ]; then
-        util.println.white "$sz"
-    fi
-}
-function core.print.advice() {
-         local msg="$1"    # Bash-Function-Args
-         LASTCONSOLEMESSAGE="$1"
-         local lvl=$LL3
-    local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    if [ "$STACKTRACEDEPTH" -ge 2 ]; then
-        ff=$(printf "%-32s\n" "${FUNCNAME[2]} >> ${FUNCNAME[1]}")
-    fi
-    local sz="$(printf "%s %s: %s %s" "ADVC $lvl" "$SILENT" "$ff" "$msg")"
-    if [ $LOGLEVEL -gt $lvl ]; then
-        echo "xxxx"
-        echo "xxxx"
         echo "$(szblue "$sz")"
-        echo "yyyyy"
-        echo "yyyyy"
     fi
 }
-function core.print.info() {
-         local msg="$1"    # Bash-Function-Args
+function printAtLevel() {
+         local msg="$1";local lvl=$2;local label="$3"; local color=$4    # Bash-Function-Args
          LASTCONSOLEMESSAGE="$1"
-         local lvl=$LL4
-    local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "INFO $lvl" "$SILENT" "$ff"  "$msg")"
+    local ff=$(printf "%-32s\n" "${FUNCNAME[2]}")
+    local sz="$(printf "%s %s: %s %s" "$label $lvl" "$SILENT" "$ff" "$msg")"
     if [ $LOGLEVEL -ge $lvl ]; then
-        util.print.color black "$sz"
+        util.print.color $color "$sz"
     fi
+#         if core._should_print_color 1; then
+#             echo "$(szmagenta "$sz")"
+#         else
+#             echo "$(szwhite "$sz")"
+#         fi
 }
-function core.print.alert() {
+function printDebug() {
          local msg="$1"    # Bash-Function-Args
-         LASTCONSOLEMESSAGE="$1"
-         local lvl=$LL2
-    local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "ALRT $lvl" "$SILENT" "$ff" "$msg")"
-    if [ $LOGLEVEL -gt $lvl ]; then
-        if core._should_print_color 1; then
-            util.println.magenta "$sz"
-        else
-            util.println.white "$sz"
-        fi
-    fi
+         printAtLevel "$msg" $LL5 "DBUG" yellow
+}
+function printInfo() {
+         local msg="$1"    # Bash-Function-Args
+         printAtLevel "$msg" $LL4 "INFO" green
+}
+function printAdvice() {
+         local msg="$1"    # Bash-Function-Args
+         printAtLevel "$msg" $LL3 "ADVC" blue
+}
+function printWarning() {
+         local msg="$1"    # Bash-Function-Args
+         printAtLevel "$msg" $LL3 "WARN" blue
+}
+function printAlert() {
+         local msg="$1"    # Bash-Function-Args
+         printAtLevel "$msg" $LL2 "ALRT" magenta
+}
+function printError() {
+         local msg="$1"    # Bash-Function-Args
+         printAtLevel "$msg" $LL1 "ERRR" cyan
+}
+function printCritical() {
+         local msg="$1"; local ctrl=$2    # Bash-Function-Args
+         printAtLevel "$msg" $LL0 "CRIT" red
 }
 
-function core.print.error() {
-         local msg="$1"    # Bash-Function-Args
-         LASTCONSOLEMESSAGE="$1"
-         local lvl=$LL1
-    local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "ERRR $lvl" "$SILENT" "$ff" "$msg")"
-    if [ $LOGLEVEL -ge $lvl ]; then
-        util.print.color cyan "$sz"
-    fi
-}
-function core.print.critical() {
-         local msg="$1"; local ctrl=$2    # Bash-Function-Args
-         LASTCONSOLEMESSAGE="$1"
-         local lvl=$LL0
-    local dex=0     
-    if [[ -z "$ctrl" ]]; then
-        dex=1
-    else
-        dex=ctrl
-    fi
-    local ff=$(printf "%-32s\n" "${FUNCNAME[dex]}")
-    local sz="$(printf "%s %s: %s %s" "CRIT $lvl" "$SILENT" "$ff" "$msg")"
-    if [ $LOGLEVEL -ge $lvl ]; then
-        util.print.color red "$sz"
-    fi
-}
-function core.print.fatal() {
+
+
+function printFatal() {
          local msg="$1"; local ctrl=$2    # Bash-Function-Args
          LASTCONSOLEMESSAGE="$1"
          local lvl=$LL0
@@ -2041,8 +1896,8 @@ function corePrintAlways() {
          local msg="$1"    # Bash-Function-Args
          LASTCONSOLEMESSAGE="$1"
     local ff=$(printf "%-32s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "ALWS X" "$SILENT" "$ff" "$msg")"
-    util.println.white "$sz"
+    local sz="$(printf "%s %s: %s %s" "      " "$SILENT" "$ff" "$msg")"
+    echo "$(szwhite "$sz")"
 }
 function core.print.flag() {
          local void=0;    # Bash-Function-Args
@@ -2326,7 +2181,7 @@ function core.dumpfile.info() {
   if [ "$DEBUGLEVEL" -ge 5 ]; then
       # Read the file line by line.
       while IFS= read -r line; do
-          core.print.info "$line"
+          printInfo "$line"
       done < "$filename"
   fi
 }
@@ -2526,7 +2381,7 @@ function hashomatic() {
     fecho "Error: File '$filename' not found."
     return 1
   fi
-  core.print.critical "HashoMatic $filename"
+  printCritical "HashoMatic $filename"
   if [ $(isSameHash "$filename") == "0" ]; then
     IHASH=$(md5sum "$tmp1" | awk '{print $1}')
     cat $tmp1  > "$filename"
@@ -2591,7 +2446,7 @@ move_old_files() {
     if [ "$file_age_seconds" -gt $((days * seconds_in_a_day)) ]; then
       # Construct the destination path.  Preserve directory structure.
       local dest_file="$dest_dir$(echo "$file" | sed "s|^$source_dir||")"
-      core.print.advice "OK for $dest_file"
+      printAdvice "OK for $dest_file"
 
       # Create any necessary subdirectories in the destination.
       #local dest_dir_path=$(dirname "$dest_file")
@@ -2602,7 +2457,7 @@ move_old_files() {
       szOut="$szOut$file "
 
       if mv "$file" "$dest_file"; then
-        ecore.print.advic "Moved: '$file' to '$dest_file'"
+        printAdvice "Moved: '$file' to '$dest_file'"
         moved_files=$((moved_files + 1))
       else
         echo "Error: Failed to move '$file' to '$dest_file'" >&2
@@ -2613,11 +2468,11 @@ move_old_files() {
 
   # Check if any files were moved.
   if [ "$moved_files" -eq 0 ]; then
-    core.print.advice "No files older than $days days found in '$source_dir'."
+    printAdvice "No files older than $days days found in '$source_dir'."
     return 3 # Return specific code for no files moved.
   fi
 
-  core.print.advice "$szOut Files Moved"
+  printAdvice "$szOut Files Moved"
   return 0 # Return success.
 }
 
