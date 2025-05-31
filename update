@@ -58,7 +58,6 @@ shift $(($OPTIND - 1))
       printCritical  "critical"
       corePrintAlways      $BAR
 
-exit 0
 if [ "$UPDATE" == "SCAN" ]; then                                                                                               
     if ! scan; then
         echo "Exiting main script."
@@ -292,7 +291,6 @@ printInfo "Step 1 Complete"
 
 if [ "$UPDATE" == "LOCAL" ]; then                                                                                               
     git commit  -m "Update"
-    git status
 fi
 
 
