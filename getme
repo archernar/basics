@@ -18,6 +18,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/QTRTCOLS.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/QTRTROWS.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TCOLS.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TCOLSACTUAL.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TROWS.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/TROWSACTUAL.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/abspath.bash
@@ -194,6 +195,16 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/panel.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/paramsf.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/pidof_name.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/printAdvice.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/printAlert.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/printAlways.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/printAtLevel.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/printCritical.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/printDebug.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/printError.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/printFatal.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/printInfo.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/printWarning.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/prompter.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/random_integer.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/read_prompt.bash
@@ -237,6 +248,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/substring.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szblack.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szblue.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szcolor.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szcyan.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szgreen.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/szmagenta.bash
@@ -283,6 +295,8 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.putln.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.set_background.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.silencer.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/vCOLS.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/vROWS.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/warn.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/functionlist.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/newbashscript

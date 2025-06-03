@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Mon Jun  2 20:15:47 EDT 2025
-# *********************************************************HASHOMATIC: 5acebec36c8b1e15fb98f5a93c19e0e0
+# *********************************************************DATEOMATIC: Mon Jun  2 22:23:15 EDT 2025
+# *********************************************************HASHOMATIC: 319e6e244357a934daff3b70fbc9dfd4
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -38,6 +38,20 @@ function dprint() {
 # ----------------------------------------------------------------------------------------------------
 # SZCOLOR: 
 # ----------------------------------------------------------------------------------------------------
+function szcolor() {
+         local sz="$1"; local color="$2"    # Bash-Function-Args
+        case "$color" in
+            black)   echo "$(szblack   "$sz")"  ;;
+            red)     echo "$(szred     "$sz")"  ;;
+            green)   echo "$(szgreen   "$sz")"  ;;
+            yellow)  echo "$(szyellow  "$sz")"  ;;
+            blue)    echo "$(szblue    "$sz")"  ;;
+            magenta) echo "$(szmagenta "$sz")"  ;;
+            cyan)    echo "$(szcyan    "$sz")"  ;;
+            white)   echo "$(szwhite   "$sz")"  ;;
+            default) echo "$(szwhite   "$sz")"  ;;
+        esac
+}
 function szblack() {
          local msg="$1"    # Bash-Function-Args
     echo "$(printf "\033[1;%sm%s\033[0m" "30" "$msg")"
@@ -1676,13 +1690,18 @@ function printAtLevel() {
     local sz="$(printf "%s %s: %s %s" "$label $lvl" "$SILENT" "$ff" "$msg")"
     if [ $LOGLEVEL -ge $lvl ]; then
        #util.print.color $color "$sz"
-        dprint "$sz"
+        #dprint "$sz"
+        dprint "$(szcolor "$sz" $color)"
     fi
 #         if core._should_print_color 1; then
 #             echo "$(szmagenta "$sz")"
 #         else
 #             echo "$(szwhite "$sz")"
 #         fi
+}
+function printAlways() {
+         local msg="$1"    # Bash-Function-Args
+    printAtLevel "$msg" $LL0 "    " yellow
 }
 function printDebug() {
          local msg="$1"    # Bash-Function-Args
