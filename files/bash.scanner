@@ -121,7 +121,7 @@ function scan_for_secrets() {
 
   if [[ "$found" -eq 0 ]]; then
     NOTHING=0
-    echo "CLEAR: '$file'"
+    printInfo "CLEAR: '$file'"
   fi
 
   return 0
