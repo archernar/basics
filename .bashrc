@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat May 31 08:47:21 EDT 2025
-# *********************************************************HASHOMATIC: 89d4f025b6a4b06e7757ed0bec54e280
+# *********************************************************DATEOMATIC: Mon Jun  2 20:15:47 EDT 2025
+# *********************************************************HASHOMATIC: 1da6faffcadc960d94375e4ce4e27648
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -97,6 +97,28 @@ function XXXTROWS() {
   echo "$rows"
 }
 
+# Function to check if any tracked files have uncommitted changes
+function xxgit_has_uncommitted_changes() {
+    echo "true"
+}
+function git_has_uncommitted_changes() {
+  # Check if there are any changes in tracked files (modified, added, deleted)
+  # -s (or --porcelain) gives a stable, easy-to-parse format
+  # -uall (or --untracked-files=all) shows all untracked files
+  # --exclude-standard excludes files ignored by .gitignore
+  if [[ -n $(git status --porcelain --untracked-files=no) ]]; then
+    echo "true"
+  else
+    echo "false"
+  fi
+}
+function git_uncommitted() {
+    if [[ $(git_has_uncommitted_changes) == "true" ]]; then
+        echo "Changes"
+    else
+        echo "None"
+    fi
+}
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 function git_toplevel() {
@@ -150,4 +172,14 @@ function prompt_pos() {
   printf "\033[${row};${col}H"
   printf "\033[K"
 }
-export PS1='$(collapse_hostname) $(collapse_pwd) ($(git_toplevel):$(git_branch):$(git_originsync))>> '
+
+# Example usage:
+# if [[ $(git_has_uncommitted_changes) == "true" ]]; then
+#   echo "There are uncommitted changes in tracked files."
+# else
+#   echo "No uncommitted changes in tracked files."
+# fi
+# How it works:git status --porcelain: This command outputs the status of your working directory and staging area in a machine-readable format.--untracked-files=no: This option tells git status to not show untracked files. We are only interested in tracked files that have changed.--exclude-standard: This option ensures that files ignored by your .gitignore are not considered.-n $(...): This checks if the output of the git status command is non-empty. If there's any output, it means there are changes.The function returns "true" if changes are found, and "false" otherwise.
+
+
+export PS1='$(collapse_hostname) $(collapse_pwd) ($(git_toplevel):$(git_branch):$(git_originsync):$(git_uncommitted))>> '
