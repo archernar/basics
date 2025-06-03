@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Mon Jun  2 22:33:06 EDT 2025
-# *********************************************************HASHOMATIC: 01e7a9fe1457778becce4dd53d597740
+# *********************************************************DATEOMATIC: Tue Jun  3 08:36:00 EDT 2025
+# *********************************************************HASHOMATIC: b1fb978b32fa44fe9353b1ab9d6790e7
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -2924,10 +2924,15 @@ function stack_display() {
     echo "------------------------------------"
     return 0
 }
-DBPRINTCOL=90
-DBPRINTROW=-1
- 
- function dbprint() {
+
+INIT_DBPRINTCOL=70
+INIT_DBPRINTROW=3
+
+
+
+DBPRINTCOL=$INIT_DBPRINTCOL
+DBPRINTROW=$INIT_DBPRINTROW
+function dbprint() {
           local msg="$1";    # Bash-Function-Args
      ((DBPRINTROW=DBPRINTROW+1))
      ansi.move "$DBPRINTROW" "$DBPRINTCOL"; 
@@ -3099,8 +3104,10 @@ function render_array() {
   local len=${#my_array[@]}
   local i=0
 
-  DBPRINTCOL=90
-  DBPRINTROW=3
+  DBPRINTCOL=$INIT_DBPRINTCOL
+  DBPRINTROW=$INIT_DBPRINTROW
+  #DBPRINTCOL=90
+  #DBPRINTROW=3
   for ((i = 0; i < len; i++)); do
       item="${my_array[$i]}"
       #echo "$item" >> /tmp/err
