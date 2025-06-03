@@ -1,4 +1,6 @@
 #!/usr/bin/bash
+
+
 Tmp=/tmp/$$
 Tmp0=/tmp/$$_$$
 Tmp1=/tmp/$$_$$_$$
@@ -36,19 +38,13 @@ do
 done
 shift $(($OPTIND - 1))
 
-      D=`date`
       ansi.clear
       ansi.move "1" "1"
+      D=`date`
 
-      SZ="$(/usr/bin/bash --version | head -1)"
-      BAR=$(repeat_char "_" ${#SZ})
-      dprint "$SZ"
-      dprint "$D"
-      dprint "$(szgreen "Log Level is $LOGLEVEL")"
-
-      dprint      $BAR
-
-      corePrintAlways      $BAR
+      printAlways    "$(szgreen "Log Level $LOGLEVEL")"
+      printAlways    "$(date)"
+      printAlways    "$(/usr/bin/bash --version | head -1)"
       printDebug     "debug"
       printInfo      "info"
       printAdvice    "advice"
@@ -56,7 +52,7 @@ shift $(($OPTIND - 1))
       printAlert     "alert"
       printError     "error"
       printCritical  "critical"
-      corePrintAlways      $BAR
+      printAlways    $(repeat_char "_" ${#SZ})
 
 if [ "$UPDATE" == "SCAN" ]; then                                                                                               
     if ! scan; then
@@ -160,16 +156,10 @@ if [ "$UPDATE" == "EXTRACT" ]; then
 fi
 
 if [ "$UPDATE" == "TEST" ]; then                                                                                               
-      echo "Test Start ==============================================="
       core.print.alltest
-      echo "Test End   ==============================================="
       exit 0
 fi
 if [ "$UPDATE" == "TEST2" ]; then                                                                                               
-      core.print.alltest
-      exit 0
-      exit 0
-      exit 0
       exit 0
 fi
 
@@ -270,7 +260,6 @@ grep bash get.raw | gawk '{print "wget " $0}' > getme
 git add getme
 
 
-core.print.flag
 cp "$Tmp" "simple_table"
 alpha_normal4 "simple_table"
 create_simple_table4 "simple_table"

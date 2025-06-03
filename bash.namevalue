@@ -50,11 +50,11 @@ function kv_set() {
         # matches the entire line starting with 'key="' and replaces it.
         sed -i.bak "s|^${key}=\".*\"\$|${key}=\"${escaped_value}\"|" "$KV_STORE_FILE"
         rm -f "${KV_STORE_FILE}.bak" # Remove the backup file.
-        printDebug  "Updated key: '$key'"
+        #printDebug  "Updated key: '$key'"
     else
         # Key does not exist: append a new entry to the file.
         echo "${key}=\"${escaped_value}\"" >> "$KV_STORE_FILE"
-        printDebug  "Added new key: '$key'"
+        #printDebug  "Added new key: '$key'"
     fi
 
     core.logreset
