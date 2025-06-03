@@ -64,7 +64,7 @@ function printAtLevel() {
     if [ $LOGLEVEL -ge $lvl ]; then
        #util.print.color $color "$sz"
         #dprint "$sz"
-        dprint $(szcolor "$sz" $color)
+        dprint "$(szcolor "$sz" $color)"
     fi
 #         if core._should_print_color 1; then
 #             echo "$(szmagenta "$sz")"
