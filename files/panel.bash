@@ -3,6 +3,7 @@ function panel() {
          local TOP="-"
          local BOTTOM="-"
          local R=$1;C=$2;L=$3;W=$4;M=$5      # Bash-Function-Args
+         dprint "Called panel $R $C $L $W"
          local RPLUS=$((R+1))
          local CPLUS=$((C+1))
          local RPLUS2=$((R+2))
@@ -15,11 +16,11 @@ function panel() {
          local TRE=$((TR-1))
          local E=0
     if [ $REND -ge $TRE ]; then
-        echo "PANEL FAIL:  $R $C $L $W" >> /tmp/err
+        printCritical "PANEL FAIL:  $R $C $L $W (REND exceeds TRE)"
         return
     fi
     if [ $CEND -gt $(TCOLS) ]; then
-        echo "PANEL FAIL:  $R $C $L $W" >> /tmp/err
+        printCritical "PANEL FAIL:  $R $C $L $W (CEND exceeds TCOLS)"
         return
     fi
     if [ $R -lt 2 ]; then
