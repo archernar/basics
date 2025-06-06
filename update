@@ -281,6 +281,7 @@ cp "$Tmp" "simple_table"
 alpha_normal4 "simple_table"
 create_simple_table4 "simple_table"
 cat "simple_table" | sed 's/^/# /' > toc
+git add toc
 
 
 alpha_normal4 "$Tmp"
