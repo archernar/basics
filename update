@@ -13,6 +13,7 @@ rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
 source /home/mestes/scm/basics/bash.library
 source /home/mestes/scm/basics/bash.namevalue
+source /home/mestes/scm/basics/bash.scanner
 
 
 UPDATE="NO"
@@ -38,13 +39,15 @@ do
 done
 shift $(($OPTIND - 1))
 
+      initdbprint 88 3
       ansi.clear
+      ansi.gutteractual
       ansi.move "1" "1"
       D=`date`
-
-      printAlways    "$(szgreen "Log Level $LOGLEVEL")"
-      printAlways    "$(date)"
-      printAlways    "$(/usr/bin/bash --version | head -1)"
+      SZ="------------------------"
+      printInfo    "$(szgreen "Log Level $LOGLEVEL")"
+      printInfo    "$(date)"
+      printInfo    "$(/usr/bin/bash --version | head -1)"
       printDebug     "debug"
       printInfo      "info"
       printAdvice    "advice"
@@ -52,22 +55,36 @@ shift $(($OPTIND - 1))
       printAlert     "alert"
       printError     "error"
       printCritical  "critical"
-      printAlways    $(repeat_char "_" ${#SZ})
+      printInfo    $(repeat_char "_" ${#SZ})
+      printInfo    $(repeat_char "_" ${#SZ})
 
 if [ "$UPDATE" == "SCAN" ]; then                                                                                               
-    if ! scan; then
-        echo "Exiting main script."
-        exit 1
-    fi
+    for file in *; do
+      if [[ "$file" != "bash.scanner" ]]; then
+          if [[ -f "$file" ]]; then
+              if ! scan_for_secrets "$file"; then
+                  printCritical "Exiting main script."
+                  exit 1
+              fi
+          fi
+      fi
+    done
     exit 1
 fi
 
 if [ "$UPDATE" == "REMOTE" ]; then                                                                                               
-    if ! scan; then
-        echo "Exiting main script."
-        exit 1
-    fi
+    for file in *; do
+      if [[ "$file" != "bash.scanner" ]]; then
+          if [[ -f "$file" ]]; then
+              if ! scan_for_secrets "$file"; then
+                  printCritical "Exiting main script."
+                  exit 1
+              fi
+          fi
+      fi
+    done
 fi
+
 if [ "$UPDATE" == "REMOTE" ]; then                                                                                               
     printInfo "push origin master (basics)"
     git push -u origin master

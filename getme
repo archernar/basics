@@ -171,6 +171,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/hashomatic.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/indent_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/info.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/initdbprint.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/initialize_empty_array.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/isSameHash.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/is_dir.bash

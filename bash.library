@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Tue Jun  3 08:36:00 EDT 2025
-# *********************************************************HASHOMATIC: b1fb978b32fa44fe9353b1ab9d6790e7
+# *********************************************************DATEOMATIC: Fri Jun  6 08:25:34 EDT 2025
+# *********************************************************HASHOMATIC: 8694f480cf9e4a5a60c55dff0a278e62
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -1494,7 +1494,16 @@ function core.stacktracedepth(){
 }
 function panel() {
          local CORNER="+"
+         VAR_HLINE_SINGLE=$'\u2500' # '─'
+# Vertical line
+         VAR_VLINE_SINGLE=$'\u2502' # '│'
+# Corners
+         VAR_CORNER_TL_SINGLE=$'\u250C' # '┌' (Top-Left)
+         VAR_CORNER_TR_SINGLE=$'\u2510' # '┐' (Top-Right)
+         VAR_CORNER_BL_SINGLE=$'\u2514' # '└' (Bottom-Left)
+         VAR_CORNER_BR_SINGLE=$'\u2518' # '┘' (Bottom-Right)
          local SIDE="|"
+         SIDE=VAR_HLINE_SINGLE=$'\u2500' # '─'
          local TOP="-"
          local BOTTOM="-"
          local R=$1;C=$2;L=$3;W=$4;M=$5      # Bash-Function-Args
@@ -1507,14 +1516,20 @@ function panel() {
          local REND=$((R+L+1))
          local CEND=$((C+W+1))
          local TR=$(TROWS)
+         local FROW=$((R+1))
+         local LROW=$((R+L))
+         local FCOL=$((C+1))
+         local LCOL=$((C+1))
          local TRE=$((TR-1))
+         local TC=$(TCOLS)
          local E=0
+         printInfo "PANEL: $R $C $L $W FROW=$FROW LROW=$LROW FCOL=$FCOL LCOL=$LCOL TROWS=$TR TCOLS=$TC TRE=$TRE CEND=$CEND REND=$REND"
     if [ $REND -ge $TRE ]; then
-        echo "PANEL FAIL:  $R $C $L $W" >> /tmp/err
+        printCritical "PANEL FAIL:  $R $C $L $W (REND=$REND exceeds TRE=$TRE)"
         return
     fi
     if [ $CEND -gt $(TCOLS) ]; then
-        echo "PANEL FAIL:  $R $C $L $W" >> /tmp/err
+        printCritical "PANEL FAIL:  $R $C $L $W (CEND=$CEND exceeds TCOLS=$TC)"
         return
     fi
     if [ $R -lt 2 ]; then
@@ -1530,11 +1545,6 @@ function panel() {
         L=4
     fi
         
-stack_push $R
-stack_push $C
-stack_push $L
-stack_push $W
-
     ((WH = W/2))
     ((HH = L/2))
 
@@ -1555,9 +1565,9 @@ stack_push $W
     done
 
     util.pprint $REND $C "$CORNER" 1;util.pprint $REND $CPLUS "$BOTTOM" $((W));util.pprint $REND $CEND "$CORNER" 1
-    util.pprint $RPLUS $CPLUS "$L/$W" 1
-    util.pprint $RPLUS2 $CPLUS "$(TROWS)" 1
-    util.pprint $RPLUS3 $CPLUS "$(TCOLS)" 1
+#     util.pprint $RPLUS $CPLUS "$L/$W" 1
+#     util.pprint $RPLUS2 $CPLUS "$(TROWS)" 1
+#     util.pprint $RPLUS3 $CPLUS "$(TCOLS)" 1
 
 
 
@@ -2425,7 +2435,7 @@ function TROWS() {
 }
 function TCOLS() {
          local offset=$1    # Bash-Function-Args
-  local c=$(vCOLS 30)
+  local c=$(vCOLS)
   local cols=$(odd_or_less $c) # Use 'local' to keep variables within the function's scope.
   #local cols=$(odd_or_less $(tput cols)) # Use 'local' to keep variables within the function's scope.
   (( cols = cols + offset ))
@@ -2925,20 +2935,38 @@ function stack_display() {
     return 0
 }
 
-INIT_DBPRINTCOL=70
-INIT_DBPRINTROW=3
+# INIT_DBPRINTCOL=70
+# INIT_DBPRINTROW=3
+# DBPRINTCOL=$INIT_DBPRINTCOL
+# DBPRINTROW=$INIT_DBPRINTROW
 
+function initdbprint() {
+          local row="$1"; local col="$2"    # Bash-Function-Args
+          local r=0; local c=0; local l=0; local w=0;
+          ((r=row-1))
+          ((c=col-2))
+          w=24
+          l=24
+          local REND=$(TROWS)
+          local CEND=$(TCOLS)
+          ((CEND=CEND-1))
+          ((CEND=CEND-c))
+          ((REND=REND-row))
+          ((REND=REND-2))
+export     INIT_DBPRINTCOL=$row
+export     INIT_DBPRINTROW=$col
+export     DBPRINTCOL=$INIT_DBPRINTCOL
+export     DBPRINTROW=$INIT_DBPRINTROW
+#    panel $r $c $REND $CEND
+}
 
-
-DBPRINTCOL=$INIT_DBPRINTCOL
-DBPRINTROW=$INIT_DBPRINTROW
 function dbprint() {
           local msg="$1";    # Bash-Function-Args
      ((DBPRINTROW=DBPRINTROW+1))
      ansi.move "$DBPRINTROW" "$DBPRINTCOL"; 
      ansi.clearEOL
      ansi.move "$DBPRINTROW" "$DBPRINTCOL"; 
-     printf "||  %s" "$msg"
+     printf "%s" "$msg"
  }
 
 
@@ -3064,9 +3092,10 @@ function add_element() {
   fi
 
   my_array+=("$element_to_add")
-  if [[ ${#my_array[@]} -gt  $(TROWS -2) ]]; then
+  if [[ ${#my_array[@]} -gt  $(TROWS -8) ]]; then
     my_array=("${my_array[@]:1}")
   fi
+  #sleep 0.05
   #echo "Added '$element_to_add'."
   #display_array
 }
@@ -3106,8 +3135,6 @@ function render_array() {
 
   DBPRINTCOL=$INIT_DBPRINTCOL
   DBPRINTROW=$INIT_DBPRINTROW
-  #DBPRINTCOL=90
-  #DBPRINTROW=3
   for ((i = 0; i < len; i++)); do
       item="${my_array[$i]}"
       #echo "$item" >> /tmp/err
@@ -3278,6 +3305,38 @@ shift_column_up() {
     arr=("${arr[@]:1}")
     # Add a blank or specific value at the end
     arr+=("") # Or whatever you want to appear at the bottom
+}
+ordinal_to_char() {
+  local ordinal=$1
+
+  # Check if the input is a valid integer.
+  if ! [[ "$ordinal" =~ ^[0-9]+$ ]]; then
+    echo "Error: Input must be a positive integer." >&2
+    return 1
+  fi
+
+  # Check if the ordinal is within a typical ASCII range (0-127).
+  # While bash's printf can handle broader ranges, focusing on ASCII.
+  if (( ordinal < 0 || ordinal > 127 )); then
+    echo "Warning: Ordinal $ordinal is outside typical ASCII range (0-127). Attempting conversion." >&2
+  fi
+
+  # Use printf with the %b (backlash-escaped characters) and \x (hexadecimal) format
+  # to convert the decimal ordinal to its character.
+  # First, convert the decimal ordinal to its hexadecimal equivalent.
+  # Then, printf interprets \x followed by hex as the character.
+  printf \\x$(printf %x "$ordinal")
+}
+function asciiTable() {
+  echo "--- ASCII Table (Printable Characters) ---"
+  echo "DEC HEX CHAR"
+  echo "----------------------------------------"
+
+  for i in $(seq 32 200); do
+    printf "%3d %3x %s\n" "$i" "$i" "$(printf '\\x%x' "$i")"
+  done
+
+  echo "----------------------------------------"
 }
 
 # --- Main script ---
