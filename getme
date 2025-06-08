@@ -61,6 +61,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/ansi.textcolor.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/array_contains.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/array_join.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/asciiTable.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/backup_file.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/basename.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/bash.scanner
@@ -267,6 +268,7 @@ wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.put.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putc.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putln.bash
+wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/uppercase_stdin.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.black.bash
 wget https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.green.bash

@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Fri Jun  6 08:30:21 EDT 2025
-# *********************************************************HASHOMATIC: 8694f480cf9e4a5a60c55dff0a278e62
+# *********************************************************DATEOMATIC: Sun Jun  8 09:04:59 EDT 2025
+# *********************************************************HASHOMATIC: a967fa074891b7384e145bf166b17eb6
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -1709,37 +1709,95 @@ function printAtLevel() {
 #             echo "$(szwhite "$sz")"
 #         fi
 }
+#     if [[ "$#" -gt 0 ]]; then
+#     else
+#         while IFS= read -r msg; do
+#         done
+#     fi
 function printAlways() {
          local msg="$1"    # Bash-Function-Args
-    printAtLevel "$msg" $LL0 "    " yellow
+    if [[ "$#" -gt 0 ]]; then
+        printAtLevel "$msg" $LL0 "    " yellow
+    else
+        while IFS= read -r msg; do
+            printAtLevel "$msg" $LL0 "    " yellow
+        done
+    fi
 }
 function printDebug() {
          local msg="$1"    # Bash-Function-Args
+    if [[ "$#" -gt 0 ]]; then
          printAtLevel "$msg" $LL5 "DBUG" yellow
+    else
+        while IFS= read -r msg; do
+            printAtLevel "$msg" $LL5 "DBUG" yellow
+        done
+    fi
+}
+function uppercase_stdin() {
+  while IFS= read -r line; do
+    echo "$line" | tr '[:lower:]' '[:upper:]'
+  done
 }
 function printInfo() {
          local msg="$1"    # Bash-Function-Args
-         printAtLevel "$msg" $LL4 "INFO" green
+    if [[ "$#" -gt 0 ]]; then
+        printAtLevel "$msg" $LL4 "INFO" green
+    else
+        while IFS= read -r line; do
+            printAtLevel "$line" $LL4 "INFO" green
+        done
+    fi
 }
 function printAdvice() {
          local msg="$1"    # Bash-Function-Args
+    if [[ "$#" -gt 0 ]]; then
          printAtLevel "$msg" $LL3 "ADVC" blue
+    else
+        while IFS= read -r msg; do
+            printAtLevel "$msg" $LL3 "ADVC" blue
+        done
+    fi
 }
 function printWarning() {
          local msg="$1"    # Bash-Function-Args
+    if [[ "$#" -gt 0 ]]; then
          printAtLevel "$msg" $LL3 "WARN" blue
+    else
+        while IFS= read -r msg; do
+            printAtLevel "$msg" $LL3 "WARN" blue
+        done
+    fi
 }
 function printAlert() {
          local msg="$1"    # Bash-Function-Args
+    if [[ "$#" -gt 0 ]]; then
          printAtLevel "$msg" $LL2 "ALRT" magenta
+    else
+        while IFS= read -r msg; do
+            printAtLevel "$msg" $LL2 "ALRT" magenta
+        done
+    fi
 }
 function printError() {
          local msg="$1"    # Bash-Function-Args
-         printAtLevel "$msg" $LL1 "ERRR" cyan
+    if [[ "$#" -gt 0 ]]; then
+        printAtLevel "$msg" $LL1 "ERRR" cyan
+    else
+        while IFS= read -r msg; do
+            printAtLevel "$msg" $LL1 "ERRR" cyan
+        done
+    fi
 }
 function printCritical() {
          local msg="$1"; local ctrl=$2    # Bash-Function-Args
-         printAtLevel "$msg" $LL0 "CRIT" red
+    if [[ "$#" -gt 0 ]]; then
+        printAtLevel "$msg" $LL0 "CRIT" red
+    else
+        while IFS= read -r msg; do
+            printAtLevel "$msg" $LL0 "CRIT" red
+        done
+    fi
 }
 
 
@@ -1769,13 +1827,6 @@ function printFatal() {
             delim=", "
         done
     fi
-}
-function corePrintAlways() {
-         local msg="$1"    # Bash-Function-Args
-         LASTCONSOLEMESSAGE="$1"
-    local ff=$(printf "%-12s\n" "${FUNCNAME[1]}")
-    local sz="$(printf "%s %s: %s %s" "      " "$SILENT" "$ff" "$msg")"
-    echo "$(szwhite "$sz")"
 }
 function core.print.flag() {
          local void=0;    # Bash-Function-Args

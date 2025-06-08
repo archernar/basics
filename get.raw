@@ -134,6 +134,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/array
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/array_contains.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/array_join.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/array_join.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/asciiTable.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/asciiTable.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/backup_file.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/backup_file.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/basename.bash
@@ -578,6 +580,8 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.put
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putc.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putln.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/u.putln.html
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/uppercase_stdin.bash
+https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/uppercase_stdin.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.black.bash
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/files/util.posprint.black.html
@@ -658,7 +662,6 @@ https://raw.githubusercontent.com/archernar/basics/refs/heads/master/getme
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/htmlTemplate
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/includer
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/indentomatic
-https://raw.githubusercontent.com/archernar/basics/refs/heads/master/index.html
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/justomatic
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/listing
 https://raw.githubusercontent.com/archernar/basics/refs/heads/master/make
