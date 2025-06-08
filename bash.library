@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Jun  8 09:50:54 EDT 2025
-# *********************************************************HASHOMATIC: 4f6329ea71504c2bf611b0bbe9ab15fa
+# *********************************************************DATEOMATIC: Sun Jun  8 09:53:01 EDT 2025
+# *********************************************************HASHOMATIC: 268eb7573f21a6e82dc7a153430cc556
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -984,7 +984,7 @@ function create_markdown_table_slice() {
     if [[ $line_count -eq 0 ]]; then
       if [[ $first_row -eq 1 ]]; then
           echo "| $STRING | $STRING | $STRING | $STRING |"
-         # echo "|----------|----------|----------|----------|"
+          echo "|----------|----------|----------|----------|"
           first_row=0
       fi
     fi
