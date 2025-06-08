@@ -106,18 +106,24 @@ function git_has_uncommitted_changes() {
   # -s (or --porcelain) gives a stable, easy-to-parse format
   # -uall (or --untracked-files=all) shows all untracked files
   # --exclude-standard excludes files ignored by .gitignore
-  if [[ -n $(git status --porcelain --untracked-files=no) ]]; then
-    echo "true"
-  else
-    echo "false"
-  fi
+      if [[ -n $(git status --porcelain --untracked-files=no) ]]; then
+        echo "true"
+      else
+        echo "false"
+      fi
 }
 function git_uncommitted() {
+  local void="";           # Bash-Function-Args
+  local sz=""  
+  if [ -d ".git" ]; then
     if [[ $(git_has_uncommitted_changes) == "true" ]]; then
-        echo "Changes"
+        sz="c"
     else
-        echo "None"
+        sz="n"
     fi
+  fi
+
+  echo "$sz"
 }
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
