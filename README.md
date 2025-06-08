@@ -1,4 +1,4 @@
-### A
+### a
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
@@ -9,13 +9,13 @@
 | [ansi.attributes](https://archernar.github.io/files/ansi.attributes.html) | [ansi.gutter](https://archernar.github.io/files/ansi.gutter.html) | [ansi.moveright](https://archernar.github.io/files/ansi.moveright.html) | [ansi.textcolor](https://archernar.github.io/files/ansi.textcolor.html) |
 | [ansi.backgroundcolor](https://archernar.github.io/files/ansi.backgroundcolor.html) | [ansi.gutteractual](https://archernar.github.io/files/ansi.gutteractual.html) | [ansi.moveup](https://archernar.github.io/files/ansi.moveup.html) | [array_contains](https://archernar.github.io/files/array_contains.html) |
 | [ansi.clear](https://archernar.github.io/files/ansi.clear.html) | [ansi.home](https://archernar.github.io/files/ansi.home.html) | [ansi.pos](https://archernar.github.io/files/ansi.pos.html) | [array_join](https://archernar.github.io/files/array_join.html) |
-### A
+### b
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
 | [backup_file](https://archernar.github.io/files/backup_file.html) | [basename](https://archernar.github.io/files/basename.html) | [bash.scanner](https://archernar.github.io/files/bash.scanner.html) | [btags](https://archernar.github.io/files/btags.html) |
-### A
+### c
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
@@ -31,24 +31,24 @@
 | [core.logalert](https://archernar.github.io/files/core.logalert.html) | [core.print.stackline](https://archernar.github.io/files/core.print.stackline.html) | [core.string.split](https://archernar.github.io/files/core.string.split.html) | [&nbsp;](&nbsp;) |
 | [core.logcritical](https://archernar.github.io/files/core.logcritical.html) | [core.stacktracedepth](https://archernar.github.io/files/core.stacktracedepth.html) | [core.string.substring](https://archernar.github.io/files/core.string.substring.html) | [&nbsp;](&nbsp;) |
 | [core.logdebug](https://archernar.github.io/files/core.logdebug.html) | [core.string.contains](https://archernar.github.io/files/core.string.contains.html) | [core.string.tolower](https://archernar.github.io/files/core.string.tolower.html) | [&nbsp;](&nbsp;) |
-### A
+### d
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
 | [dbprint](https://archernar.github.io/files/dbprint.html) | [dot_macros.vim](https://archernar.github.io/files/dot_macros.vim.html) | [dprint](https://archernar.github.io/files/dprint.html) | [&nbsp;](&nbsp;) |
 | [dirname](https://archernar.github.io/files/dirname.html) | [dot_vimrc](https://archernar.github.io/files/dot_vimrc.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
-### A
+### e
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
 | [eecho](https://archernar.github.io/files/eecho.html) | [error](https://archernar.github.io/files/error.html) | [exists](https://archernar.github.io/files/exists.html) | [&nbsp;](&nbsp;) |
 | [ends_with](https://archernar.github.io/files/ends_with.html) | [examplesComparison](https://archernar.github.io/files/examplesComparison.html) | [extension](https://archernar.github.io/files/extension.html) | [&nbsp;](&nbsp;) |
-### A
+### f
  
  
-### A
+### g
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
@@ -56,13 +56,13 @@
 | [gDiff](https://archernar.github.io/files/gDiff.html) | [gStatus](https://archernar.github.io/files/gStatus.html) | [gUpdateFromOrigin](https://archernar.github.io/files/gUpdateFromOrigin.html) | [gitadd](https://archernar.github.io/files/gitadd.html) |
 | [gHardSync](https://archernar.github.io/files/gHardSync.html) | [gUntracked](https://archernar.github.io/files/gUntracked.html) | [get_name_servers](https://archernar.github.io/files/get_name_servers.html) | [&nbsp;](&nbsp;) |
 | [gLocal](https://archernar.github.io/files/gLocal.html) | [gUpdate](https://archernar.github.io/files/gUpdate.html) | [get_terminal_size](https://archernar.github.io/files/get_terminal_size.html) | [&nbsp;](&nbsp;) |
-### A
+### h
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
 | [hashomatic](https://archernar.github.io/files/hashomatic.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
-### A
+### i
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
@@ -70,43 +70,43 @@
 | [includer](https://archernar.github.io/files/includer.html) | [info](https://archernar.github.io/files/info.html) | [is_dir](https://archernar.github.io/files/is_dir.html) | [is_reachable](https://archernar.github.io/files/is_reachable.html) |
 | [indent_file](https://archernar.github.io/files/indent_file.html) | [initdbprint](https://archernar.github.io/files/initdbprint.html) | [is_file](https://archernar.github.io/files/is_file.html) | [&nbsp;](&nbsp;) |
 | [indentomatic](https://archernar.github.io/files/indentomatic.html) | [isSameHash](https://archernar.github.io/files/isSameHash.html) | [is_hidden_file](https://archernar.github.io/files/is_hidden_file.html) | [&nbsp;](&nbsp;) |
-### A
+### j
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
 | [justify_file](https://archernar.github.io/files/justify_file.html) | [justify_line](https://archernar.github.io/files/justify_line.html) | [justomatic](https://archernar.github.io/files/justomatic.html) | [&nbsp;](&nbsp;) |
-### A
+### k
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
 | [kill_name](https://archernar.github.io/files/kill_name.html) | [kill_pid](https://archernar.github.io/files/kill_pid.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
-### A
+### l
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
 | [lookup_dns_record](https://archernar.github.io/files/lookup_dns_record.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
-### A
+### m
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
 | [mecho](https://archernar.github.io/files/mecho.html) | [mkdir_p](https://archernar.github.io/files/mkdir_p.html) | [mv_f](https://archernar.github.io/files/mv_f.html) | [&nbsp;](&nbsp;) |
-### A
+### n
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
 | [necho](https://archernar.github.io/files/necho.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
-### A
+### o
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
 | [odd_or_less](https://archernar.github.io/files/odd_or_less.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
-### A
+### p
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
@@ -115,10 +115,10 @@
 | [padout_file_lines](https://archernar.github.io/files/padout_file_lines.html) | [printAdvice](https://archernar.github.io/files/printAdvice.html) | [printCritical](https://archernar.github.io/files/printCritical.html) | [printInfo](https://archernar.github.io/files/printInfo.html) |
 | [panel](https://archernar.github.io/files/panel.html) | [printAlert](https://archernar.github.io/files/printAlert.html) | [printDebug](https://archernar.github.io/files/printDebug.html) | [printWarning](https://archernar.github.io/files/printWarning.html) |
 | [paramsf](https://archernar.github.io/files/paramsf.html) | [printAlways](https://archernar.github.io/files/printAlways.html) | [printError](https://archernar.github.io/files/printError.html) | [prompter](https://archernar.github.io/files/prompter.html) |
-### A
+### q
  
  
-### A
+### r
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
@@ -127,7 +127,7 @@
 | [rename_dot_file](https://archernar.github.io/files/rename_dot_file.html) | [replaceomatic](https://archernar.github.io/files/replaceomatic.html) | [rm_rf_silent](https://archernar.github.io/files/rm_rf_silent.html) | [run_and_output](https://archernar.github.io/files/run_and_output.html) |
 | [renamecopy_dot_file](https://archernar.github.io/files/renamecopy_dot_file.html) | [right_pad_limited](https://archernar.github.io/files/right_pad_limited.html) | [rrints](https://archernar.github.io/files/rrints.html) | [&nbsp;](&nbsp;) |
 | [repeat_char](https://archernar.github.io/files/repeat_char.html) | [rints](https://archernar.github.io/files/rints.html) | [run_and_error](https://archernar.github.io/files/run_and_error.html) | [&nbsp;](&nbsp;) |
-### A
+### s
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
@@ -136,13 +136,13 @@
 | [sort_file](https://archernar.github.io/files/sort_file.html) | [string_before_file_lines](https://archernar.github.io/files/string_before_file_lines.html) | [szcolor](https://archernar.github.io/files/szcolor.html) | [szred](https://archernar.github.io/files/szred.html) |
 | [split_file_n](https://archernar.github.io/files/split_file_n.html) | [substring](https://archernar.github.io/files/substring.html) | [szcyan](https://archernar.github.io/files/szcyan.html) | [szwhite](https://archernar.github.io/files/szwhite.html) |
 | [starts_with](https://archernar.github.io/files/starts_with.html) | [szblack](https://archernar.github.io/files/szblack.html) | [szgreen](https://archernar.github.io/files/szgreen.html) | [szyellow](https://archernar.github.io/files/szyellow.html) |
-### A
+### t
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
 | [timestamp_ms](https://archernar.github.io/files/timestamp_ms.html) | [trim](https://archernar.github.io/files/trim.html) | [trim_leading_whitespace_file](https://archernar.github.io/files/trim_leading_whitespace_file.html) | [truncate_file_lines](https://archernar.github.io/files/truncate_file_lines.html) |
-### A
+### u
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
@@ -150,21 +150,21 @@
 | [u.put](https://archernar.github.io/files/u.put.html) | [util.posprint](https://archernar.github.io/files/util.posprint.html) | [util.print](https://archernar.github.io/files/util.print.html) | [util.putln](https://archernar.github.io/files/util.putln.html) |
 | [u.putc](https://archernar.github.io/files/u.putc.html) | [util.pprint](https://archernar.github.io/files/util.pprint.html) | [util.println](https://archernar.github.io/files/util.println.html) | [util.set_background](https://archernar.github.io/files/util.set_background.html) |
 | [u.putln](https://archernar.github.io/files/u.putln.html) | [util.print.color](https://archernar.github.io/files/util.print.color.html) | [util.put](https://archernar.github.io/files/util.put.html) | [&nbsp;](&nbsp;) |
-### A
+### v
  
  
-### A
+### w
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
 | [warn](https://archernar.github.io/files/warn.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
-### A
+### x
  
  
-### A
+### y
  
  
-### A
+### z
  
  

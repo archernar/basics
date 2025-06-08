@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Jun  8 09:53:01 EDT 2025
-# *********************************************************HASHOMATIC: 268eb7573f21a6e82dc7a153430cc556
+# *********************************************************DATEOMATIC: Sun Jun  8 09:55:35 EDT 2025
+# *********************************************************HASHOMATIC: f6eb940e8c1e0f14761f4372b8eb957c
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -949,7 +949,7 @@ function create_simple_table4() {
 }
 
 function create_markdown_table_slice() {
-         local input_file="$1";local str="$2"                   # Bash-Function-Args
+         local input_file="$1";local str="$2";local szslice="$3"      # Bash-Function-Args
   local tmp=$(mktemp)
   local LEN=""
   local STRING=""
@@ -977,7 +977,7 @@ function create_markdown_table_slice() {
   local line_count=0
   local row=""
   local first_row=1
-  echo "### A"
+  echo "### $szslice"
   echo " "
   echo " "
   while IFS= read -r line; do
