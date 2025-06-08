@@ -43,8 +43,8 @@
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
-| [eecho](https://archernar.github.io/files/eecho.html) | [error](https://archernar.github.io/files/error.html) | [exists](https://archernar.github.io/files/exists.html) | [&nbsp;](&nbsp;) |
-| [ends_with](https://archernar.github.io/files/ends_with.html) | [examplesComparison](https://archernar.github.io/files/examplesComparison.html) | [extension](https://archernar.github.io/files/extension.html) | [&nbsp;](&nbsp;) |
+| [EIGTHTCOLS](https://archernar.github.io/files/EIGTHTCOLS.html) | [eecho](https://archernar.github.io/files/eecho.html) | [error](https://archernar.github.io/files/error.html) | [exists](https://archernar.github.io/files/exists.html) |
+| [EIGTHTROWS](https://archernar.github.io/files/EIGTHTROWS.html) | [ends_with](https://archernar.github.io/files/ends_with.html) | [examplesComparison](https://archernar.github.io/files/examplesComparison.html) | [extension](https://archernar.github.io/files/extension.html) |
 ### f
  
  
@@ -61,7 +61,7 @@
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
-| [hashomatic](https://archernar.github.io/files/hashomatic.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
+| [HALFTCOLS](https://archernar.github.io/files/HALFTCOLS.html) | [HALFTROWS](https://archernar.github.io/files/HALFTROWS.html) | [hashomatic](https://archernar.github.io/files/hashomatic.html) | [&nbsp;](&nbsp;) |
 ### i
  
  
@@ -118,6 +118,9 @@
 ### q
  
  
+| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
+|----------|----------|----------|----------|
+| [QTRTCOLS](https://archernar.github.io/files/QTRTCOLS.html) | [QTRTROWS](https://archernar.github.io/files/QTRTROWS.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
 ### r
  
  
@@ -141,7 +144,8 @@
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
-| [timestamp_ms](https://archernar.github.io/files/timestamp_ms.html) | [trim](https://archernar.github.io/files/trim.html) | [trim_leading_whitespace_file](https://archernar.github.io/files/trim_leading_whitespace_file.html) | [truncate_file_lines](https://archernar.github.io/files/truncate_file_lines.html) |
+| [TCOLS](https://archernar.github.io/files/TCOLS.html) | [TROWS](https://archernar.github.io/files/TROWS.html) | [timestamp_ms](https://archernar.github.io/files/timestamp_ms.html) | [trim_leading_whitespace_file](https://archernar.github.io/files/trim_leading_whitespace_file.html) |
+| [TCOLSACTUAL](https://archernar.github.io/files/TCOLSACTUAL.html) | [TROWSACTUAL](https://archernar.github.io/files/TROWSACTUAL.html) | [trim](https://archernar.github.io/files/trim.html) | [truncate_file_lines](https://archernar.github.io/files/truncate_file_lines.html) |
 ### u
  
  
