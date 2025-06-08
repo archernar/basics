@@ -135,10 +135,11 @@
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
-| [silencio](https://archernar.github.io/files/silencio.html) | [string_after_file_lines](https://archernar.github.io/files/string_after_file_lines.html) | [szblue](https://archernar.github.io/files/szblue.html) | [szmagenta](https://archernar.github.io/files/szmagenta.html) |
-| [sort_file](https://archernar.github.io/files/sort_file.html) | [string_before_file_lines](https://archernar.github.io/files/string_before_file_lines.html) | [szcolor](https://archernar.github.io/files/szcolor.html) | [szred](https://archernar.github.io/files/szred.html) |
-| [split_file_n](https://archernar.github.io/files/split_file_n.html) | [substring](https://archernar.github.io/files/substring.html) | [szcyan](https://archernar.github.io/files/szcyan.html) | [szwhite](https://archernar.github.io/files/szwhite.html) |
-| [starts_with](https://archernar.github.io/files/starts_with.html) | [szblack](https://archernar.github.io/files/szblack.html) | [szgreen](https://archernar.github.io/files/szgreen.html) | [szyellow](https://archernar.github.io/files/szyellow.html) |
+| [silencio](https://archernar.github.io/files/silencio.html) | [string_before_file_lines](https://archernar.github.io/files/string_before_file_lines.html) | [szcyan](https://archernar.github.io/files/szcyan.html) | [szwhite](https://archernar.github.io/files/szwhite.html) |
+| [sort_file](https://archernar.github.io/files/sort_file.html) | [substring](https://archernar.github.io/files/substring.html) | [szflag](https://archernar.github.io/files/szflag.html) | [szyellow](https://archernar.github.io/files/szyellow.html) |
+| [split_file_n](https://archernar.github.io/files/split_file_n.html) | [szblack](https://archernar.github.io/files/szblack.html) | [szgreen](https://archernar.github.io/files/szgreen.html) | [&nbsp;](&nbsp;) |
+| [starts_with](https://archernar.github.io/files/starts_with.html) | [szblue](https://archernar.github.io/files/szblue.html) | [szmagenta](https://archernar.github.io/files/szmagenta.html) | [&nbsp;](&nbsp;) |
+| [string_after_file_lines](https://archernar.github.io/files/string_after_file_lines.html) | [szcolor](https://archernar.github.io/files/szcolor.html) | [szred](https://archernar.github.io/files/szred.html) | [&nbsp;](&nbsp;) |
 ### t
  
  

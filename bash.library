@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Jun  8 10:01:04 EDT 2025
-# *********************************************************HASHOMATIC: f6eb940e8c1e0f14761f4372b8eb957c
+# *********************************************************DATEOMATIC: Sun Jun  8 10:08:26 EDT 2025
+# *********************************************************HASHOMATIC: ec14ee3e0a5f5107d00d241aa46971c8
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -83,6 +83,14 @@ function szcyan() {
 function szwhite() {
          local msg="$1"    # Bash-Function-Args
     echo "$(printf "\033[1;%sm%s\033[0m" "37" "$msg")"
+}
+function szflag() {
+         local msg="$1"    # Bash-Function-Args
+    echo ""
+    echo "************************************************"
+    echo "** $msg"
+    echo "************************************************"
+    echo ""
 }
 
 
