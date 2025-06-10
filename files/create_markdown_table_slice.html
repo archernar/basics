@@ -69,7 +69,7 @@ function create_markdown_table_slice() {
   fi
 
   LEN=`longest_string_length < "$input_file"`
-  STRING=`repeat_char "-" "24"`
+  STRING=`repeat_char " " "24"`
 
   rm -f "$tmp" >/dev/null 2>&1
   rm -f "frost" >/dev/null 2>&1
@@ -85,14 +85,17 @@ function create_markdown_table_slice() {
   local line_count=0
   local row=""
   local first_row=1
-  echo "### $szslice"
-  echo " "
+  echo "# $szslice"
   echo " "
   while IFS= read -r line; do
     if [[ $line_count -eq 0 ]]; then
       if [[ $first_row -eq 1 ]]; then
-          echo "| $STRING | $STRING | $STRING | $STRING |"
-          echo "|----------|----------|----------|----------|"
+          # echo "| $STRING | $STRING | $STRING | $STRING |"
+          # echo "|----------|----------|----------|----------|"
+          # echo "| $STRING | $STRING | $STRING | $STRING | $STRING | $STRING | $STRING | $STRING |"
+          # echo "|----------|----------|----------|----------|----------|----------|----------|----------|"
+          echo "| $STRING | $STRING | $STRING | $STRING | $STRING |"
+          echo "|----------|----------|----------|----------|----------|"
           first_row=0
       fi
     fi
@@ -101,7 +104,7 @@ function create_markdown_table_slice() {
 
     line_count=$((line_count + 1))
 
-    if [[ $line_count -eq 4 ]]; then
+    if [[ $line_count -eq 5 ]]; then
       echo "$row|"
       row=""
       line_count=0
@@ -110,7 +113,7 @@ function create_markdown_table_slice() {
 
   # Handle remaining lines if the total line count is not a multiple of 5
   if [[ $line_count -gt 0 ]]; then
-    for ((i = line_count; i < 4; i++)); do
+    for ((i = line_count; i < 5; i++)); do
         row+="|  "
     done
     echo "$row|"

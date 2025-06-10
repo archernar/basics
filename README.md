@@ -1,169 +1,122 @@
 ### a
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [abspath](https://archernar.github.io/files/abspath.html) | [ansi.clearEOL](https://archernar.github.io/files/ansi.clearEOL.html) | [ansi.move](https://archernar.github.io/files/ansi.move.html) | [ansi.resetattributes](https://archernar.github.io/files/ansi.resetattributes.html) |
-| [alpha_normal2](https://archernar.github.io/files/alpha_normal2.html) | [ansi.clearline](https://archernar.github.io/files/ansi.clearline.html) | [ansi.movedown](https://archernar.github.io/files/ansi.movedown.html) | [ansi.restorepos](https://archernar.github.io/files/ansi.restorepos.html) |
-| [alpha_normal4](https://archernar.github.io/files/alpha_normal4.html) | [ansi.constants](https://archernar.github.io/files/ansi.constants.html) | [ansi.moveleft](https://archernar.github.io/files/ansi.moveleft.html) | [ansi.savepos](https://archernar.github.io/files/ansi.savepos.html) |
-| [ansi.attributes](https://archernar.github.io/files/ansi.attributes.html) | [ansi.gutter](https://archernar.github.io/files/ansi.gutter.html) | [ansi.moveright](https://archernar.github.io/files/ansi.moveright.html) | [ansi.textcolor](https://archernar.github.io/files/ansi.textcolor.html) |
-| [ansi.backgroundcolor](https://archernar.github.io/files/ansi.backgroundcolor.html) | [ansi.gutteractual](https://archernar.github.io/files/ansi.gutteractual.html) | [ansi.moveup](https://archernar.github.io/files/ansi.moveup.html) | [array_contains](https://archernar.github.io/files/array_contains.html) |
-| [ansi.clear](https://archernar.github.io/files/ansi.clear.html) | [ansi.home](https://archernar.github.io/files/ansi.home.html) | [ansi.pos](https://archernar.github.io/files/ansi.pos.html) | [array_join](https://archernar.github.io/files/array_join.html) |
 ### b
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [backup_file](https://archernar.github.io/files/backup_file.html) | [basename](https://archernar.github.io/files/basename.html) | [bash.scanner](https://archernar.github.io/files/bash.scanner.html) | [btags](https://archernar.github.io/files/btags.html) |
 ### c
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [check_command](https://archernar.github.io/files/check_command.html) | [core.logerror](https://archernar.github.io/files/core.logerror.html) | [core.string.indexof](https://archernar.github.io/files/core.string.indexof.html) | [core.string.toupper](https://archernar.github.io/files/core.string.toupper.html) |
-| [colomatic](https://archernar.github.io/files/colomatic.html) | [core.loginfo](https://archernar.github.io/files/core.loginfo.html) | [core.string.isempty](https://archernar.github.io/files/core.string.isempty.html) | [cp_r](https://archernar.github.io/files/cp_r.html) |
-| [command_exists](https://archernar.github.io/files/command_exists.html) | [core.loglevels](https://archernar.github.io/files/core.loglevels.html) | [core.string.length](https://archernar.github.io/files/core.string.length.html) | [create_markdown_table2](https://archernar.github.io/files/create_markdown_table2.html) |
-| [console.rulers](https://archernar.github.io/files/console.rulers.html) | [core.logreset](https://archernar.github.io/files/core.logreset.html) | [core.string.padcenter](https://archernar.github.io/files/core.string.padcenter.html) | [create_markdown_table3](https://archernar.github.io/files/create_markdown_table3.html) |
-| [contains](https://archernar.github.io/files/contains.html) | [core.logset](https://archernar.github.io/files/core.logset.html) | [core.string.padleft](https://archernar.github.io/files/core.string.padleft.html) | [create_markdown_table4](https://archernar.github.io/files/create_markdown_table4.html) |
-| [core.check_for_duplicates](https://archernar.github.io/files/core.check_for_duplicates.html) | [core.panic](https://archernar.github.io/files/core.panic.html) | [core.string.padright](https://archernar.github.io/files/core.string.padright.html) | [create_markdown_table_slice](https://archernar.github.io/files/create_markdown_table_slice.html) |
-| [core.dumpfile.info](https://archernar.github.io/files/core.dumpfile.info.html) | [core.print.alltest](https://archernar.github.io/files/core.print.alltest.html) | [core.string.replace.all](https://archernar.github.io/files/core.string.replace.all.html) | [create_simple_table4](https://archernar.github.io/files/create_simple_table4.html) |
-| [core.logadvice](https://archernar.github.io/files/core.logadvice.html) | [core.print.flag](https://archernar.github.io/files/core.print.flag.html) | [core.string.replacefirst](https://archernar.github.io/files/core.string.replacefirst.html) | [current_timestamp](https://archernar.github.io/files/current_timestamp.html) |
-| [core.logalert](https://archernar.github.io/files/core.logalert.html) | [core.print.stackline](https://archernar.github.io/files/core.print.stackline.html) | [core.string.split](https://archernar.github.io/files/core.string.split.html) | [&nbsp;](&nbsp;) |
-| [core.logcritical](https://archernar.github.io/files/core.logcritical.html) | [core.stacktracedepth](https://archernar.github.io/files/core.stacktracedepth.html) | [core.string.substring](https://archernar.github.io/files/core.string.substring.html) | [&nbsp;](&nbsp;) |
-| [core.logdebug](https://archernar.github.io/files/core.logdebug.html) | [core.string.contains](https://archernar.github.io/files/core.string.contains.html) | [core.string.tolower](https://archernar.github.io/files/core.string.tolower.html) | [&nbsp;](&nbsp;) |
 ### d
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [dbprint](https://archernar.github.io/files/dbprint.html) | [dot_macros.vim](https://archernar.github.io/files/dot_macros.vim.html) | [dprint](https://archernar.github.io/files/dprint.html) | [&nbsp;](&nbsp;) |
-| [dirname](https://archernar.github.io/files/dirname.html) | [dot_vimrc](https://archernar.github.io/files/dot_vimrc.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
 ### e
  
  
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 |----------|----------|----------|----------|
-| [EIGTHTCOLS](https://archernar.github.io/files/EIGTHTCOLS.html) | [eecho](https://archernar.github.io/files/eecho.html) | [error](https://archernar.github.io/files/error.html) | [exists](https://archernar.github.io/files/exists.html) |
-| [EIGTHTROWS](https://archernar.github.io/files/EIGTHTROWS.html) | [ends_with](https://archernar.github.io/files/ends_with.html) | [examplesComparison](https://archernar.github.io/files/examplesComparison.html) | [extension](https://archernar.github.io/files/extension.html) |
+| [.macros.vim](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/.macros.vim.html) | [core.dumpfile.info](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.dumpfile.info.html) | [gLocal](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/gLocal.html) | [renamecopy_dot_file](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/renamecopy_dot_file.html) |
+| [.vimrc](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/.vimrc.html) | [core.logadvice](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.logadvice.html) | [gStatus](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/gStatus.html) | [repeat_char](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/repeat_char.html) |
+| [0-bashtop](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/0-bashtop.html) | [core.logalert](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.logalert.html) | [gUntracked](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/gUntracked.html) | [replace](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/replace.html) |
+| [0-git](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/0-git.html) | [core.logcritical](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.logcritical.html) | [gUpdate](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/gUpdate.html) | [replaceomatic](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/replaceomatic.html) |
+| [EIGTHTCOLS](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/EIGTHTCOLS.html) | [core.logdebug](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.logdebug.html) | [gUpdateFromOrigin](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/gUpdateFromOrigin.html) | [right_pad_limited](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/right_pad_limited.html) |
+| [EIGTHTROWS](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/EIGTHTROWS.html) | [core.logerror](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.logerror.html) | [get_name_servers](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/get_name_servers.html) | [rints](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/rints.html) |
+| [HALFTCOLS](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/HALFTCOLS.html) | [core.loginfo](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.loginfo.html) | [get_terminal_size](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/get_terminal_size.html) | [rm_rf](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/rm_rf.html) |
+| [HALFTROWS](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/HALFTROWS.html) | [core.loglevels](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.loglevels.html) | [gitadd](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/gitadd.html) | [rm_rf_silent](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/rm_rf_silent.html) |
+| [QTRTCOLS](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/QTRTCOLS.html) | [core.logreset](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.logreset.html) | [hashomatic](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/hashomatic.html) | [rrints](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/rrints.html) |
+| [QTRTROWS](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/QTRTROWS.html) | [core.logset](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.logset.html) | [includer](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/includer.html) | [run_and_error](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/run_and_error.html) |
+| [TCOLS](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/TCOLS.html) | [core.panic](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.panic.html) | [indent_file](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/indent_file.html) | [run_and_exit_code](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/run_and_exit_code.html) |
+| [TCOLSACTUAL](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/TCOLSACTUAL.html) | [core.print.alltest](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.print.alltest.html) | [indentomatic](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/indentomatic.html) | [run_and_output](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/run_and_output.html) |
+| [TROWS](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/TROWS.html) | [core.print.flag](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.print.flag.html) | [info](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/info.html) | [silencio](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/silencio.html) |
+| [TROWSACTUAL](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/TROWSACTUAL.html) | [core.print.stackline](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.print.stackline.html) | [initdbprint](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/initdbprint.html) | [sort_file](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/sort_file.html) |
+| [abspath](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/abspath.html) | [core.stacktracedepth](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.stacktracedepth.html) | [isSameHash](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/isSameHash.html) | [split_file_n](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/split_file_n.html) |
+| [alpha_normal2](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/alpha_normal2.html) | [core.string.contains](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.string.contains.html) | [is_dir](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/is_dir.html) | [starts_with](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/starts_with.html) |
+| [alpha_normal4](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/alpha_normal4.html) | [core.string.indexof](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.string.indexof.html) | [is_file](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/is_file.html) | [string_after_file_lines](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/string_after_file_lines.html) |
+| [ansi.attributes](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.attributes.html) | [core.string.isempty](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.string.isempty.html) | [is_hidden_file](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/is_hidden_file.html) | [string_before_file_lines](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/string_before_file_lines.html) |
+| [ansi.backgroundcolor](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.backgroundcolor.html) | [core.string.length](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.string.length.html) | [is_reachable](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/is_reachable.html) | [substring](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/substring.html) |
+| [ansi.clear](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.clear.html) | [core.string.padcenter](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.string.padcenter.html) | [justify_file](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/justify_file.html) | [szblack](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/szblack.html) |
+| [ansi.clearEOL](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.clearEOL.html) | [core.string.padleft](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.string.padleft.html) | [justify_line](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/justify_line.html) | [szblue](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/szblue.html) |
+| [ansi.clearline](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.clearline.html) | [core.string.padright](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.string.padright.html) | [justomatic](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/justomatic.html) | [szcolor](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/szcolor.html) |
+| [ansi.constants](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.constants.html) | [core.string.replace.all](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.string.replace.all.html) | [kill_name](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/kill_name.html) | [szcyan](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/szcyan.html) |
+| [ansi.gutter](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.gutter.html) | [core.string.replacefirst](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.string.replacefirst.html) | [kill_pid](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/kill_pid.html) | [szflag](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/szflag.html) |
+| [ansi.gutteractual](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.gutteractual.html) | [core.string.split](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.string.split.html) | [lookup_dns_record](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/lookup_dns_record.html) | [szgreen](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/szgreen.html) |
+| [ansi.home](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.home.html) | [core.string.substring](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.string.substring.html) | [mecho](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/mecho.html) | [szmagenta](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/szmagenta.html) |
+| [ansi.move](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.move.html) | [core.string.tolower](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.string.tolower.html) | [mkdir_p](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/mkdir_p.html) | [szred](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/szred.html) |
+| [ansi.movedown](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.movedown.html) | [core.string.toupper](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.string.toupper.html) | [mv_f](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/mv_f.html) | [szwhite](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/szwhite.html) |
+| [ansi.moveleft](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.moveleft.html) | [cp_r](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/cp_r.html) | [necho](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/necho.html) | [szyellow](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/szyellow.html) |
+| [ansi.moveright](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.moveright.html) | [create_markdown_table2](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/create_markdown_table2.html) | [odd_or_less](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/odd_or_less.html) | [timestamp_ms](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/timestamp_ms.html) |
+| [ansi.moveup](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.moveup.html) | [create_markdown_table3](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/create_markdown_table3.html) | [padomatic](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/padomatic.html) | [trim](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/trim.html) |
+| [ansi.pos](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.pos.html) | [create_markdown_table4](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/create_markdown_table4.html) | [padout_file_lines](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/padout_file_lines.html) | [trim_leading_whitespace_file](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/trim_leading_whitespace_file.html) |
+| [ansi.resetattributes](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.resetattributes.html) | [create_markdown_table_slice](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/create_markdown_table_slice.html) | [panel](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/panel.html) | [truncate_file_lines](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/truncate_file_lines.html) |
+| [ansi.restorepos](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.restorepos.html) | [create_simple_table4](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/create_simple_table4.html) | [paramsf](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/paramsf.html) | [u.put](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/u.put.html) |
+| [ansi.savepos](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.savepos.html) | [current_timestamp](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/current_timestamp.html) | [pidof_name](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/pidof_name.html) | [u.putc](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/u.putc.html) |
+| [ansi.textcolor](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ansi.textcolor.html) | [dbprint](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/dbprint.html) | [printAdvice](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/printAdvice.html) | [u.putln](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/u.putln.html) |
+| [array_contains](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/array_contains.html) | [dirname](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/dirname.html) | [printAlert](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/printAlert.html) | [util.posprint](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/util.posprint.html) |
+| [array_join](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/array_join.html) | [dot_macros.vim](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/dot_macros.vim.html) | [printAlways](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/printAlways.html) | [util.pprint](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/util.pprint.html) |
+| [backup_file](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/backup_file.html) | [dot_vimrc](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/dot_vimrc.html) | [printAtLevel](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/printAtLevel.html) | [util.print.color](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/util.print.color.html) |
+| [basename](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/basename.html) | [dprint](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/dprint.html) | [printCritical](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/printCritical.html) | [util.print](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/util.print.html) |
+| [bash.scanner](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/bash.scanner.html) | [eecho](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/eecho.html) | [printDebug](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/printDebug.html) | [util.println](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/util.println.html) |
+| [btags](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/btags.html) | [ends_with](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/ends_with.html) | [printError](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/printError.html) | [util.put](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/util.put.html) |
+| [check_command](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/check_command.html) | [error](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/error.html) | [printFatal](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/printFatal.html) | [util.putln](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/util.putln.html) |
+| [colomatic](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/colomatic.html) | [examplesComparison](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/examplesComparison.html) | [printInfo](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/printInfo.html) | [util.set_background](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/util.set_background.html) |
+| [command_exists](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/command_exists.html) | [exists](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/exists.html) | [printWarning](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/printWarning.html) | [warn](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/warn.html) |
+| [console.rulers](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/console.rulers.html) | [extension](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/extension.html) | [prompter](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/prompter.html) | [&nbsp;](&nbsp;) |
+| [contains](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/contains.html) | [gDiff](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/gDiff.html) | [remove_leading_whitespace](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/remove_leading_whitespace.html) | [&nbsp;](&nbsp;) |
+| [core.check_for_duplicates](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/core.check_for_duplicates.html) | [gHardSync](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/gHardSync.html) | [rename_dot_file](file://wsl.localhost/Ubuntu/home/mestes/scm/basics/files/rename_dot_file.html) | [&nbsp;](&nbsp;) |
 ### f
  
  
 ### g
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [gDiff](https://archernar.github.io/files/gDiff.html) | [gStatus](https://archernar.github.io/files/gStatus.html) | [gUpdateFromOrigin](https://archernar.github.io/files/gUpdateFromOrigin.html) | [gitadd](https://archernar.github.io/files/gitadd.html) |
-| [gHardSync](https://archernar.github.io/files/gHardSync.html) | [gUntracked](https://archernar.github.io/files/gUntracked.html) | [get_name_servers](https://archernar.github.io/files/get_name_servers.html) | [&nbsp;](&nbsp;) |
-| [gLocal](https://archernar.github.io/files/gLocal.html) | [gUpdate](https://archernar.github.io/files/gUpdate.html) | [get_terminal_size](https://archernar.github.io/files/get_terminal_size.html) | [&nbsp;](&nbsp;) |
 ### h
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [HALFTCOLS](https://archernar.github.io/files/HALFTCOLS.html) | [HALFTROWS](https://archernar.github.io/files/HALFTROWS.html) | [hashomatic](https://archernar.github.io/files/hashomatic.html) | [&nbsp;](&nbsp;) |
 ### i
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [includer](https://archernar.github.io/files/includer.html) | [info](https://archernar.github.io/files/info.html) | [is_dir](https://archernar.github.io/files/is_dir.html) | [is_reachable](https://archernar.github.io/files/is_reachable.html) |
-| [indent_file](https://archernar.github.io/files/indent_file.html) | [initdbprint](https://archernar.github.io/files/initdbprint.html) | [is_file](https://archernar.github.io/files/is_file.html) | [&nbsp;](&nbsp;) |
-| [indentomatic](https://archernar.github.io/files/indentomatic.html) | [isSameHash](https://archernar.github.io/files/isSameHash.html) | [is_hidden_file](https://archernar.github.io/files/is_hidden_file.html) | [&nbsp;](&nbsp;) |
 ### j
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [justify_file](https://archernar.github.io/files/justify_file.html) | [justify_line](https://archernar.github.io/files/justify_line.html) | [justomatic](https://archernar.github.io/files/justomatic.html) | [&nbsp;](&nbsp;) |
 ### k
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [kill_name](https://archernar.github.io/files/kill_name.html) | [kill_pid](https://archernar.github.io/files/kill_pid.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
 ### l
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [lookup_dns_record](https://archernar.github.io/files/lookup_dns_record.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
 ### m
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [mecho](https://archernar.github.io/files/mecho.html) | [mkdir_p](https://archernar.github.io/files/mkdir_p.html) | [mv_f](https://archernar.github.io/files/mv_f.html) | [&nbsp;](&nbsp;) |
 ### n
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [necho](https://archernar.github.io/files/necho.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
 ### o
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [odd_or_less](https://archernar.github.io/files/odd_or_less.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
 ### p
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [padomatic](https://archernar.github.io/files/padomatic.html) | [pidof_name](https://archernar.github.io/files/pidof_name.html) | [printAtLevel](https://archernar.github.io/files/printAtLevel.html) | [printFatal](https://archernar.github.io/files/printFatal.html) |
-| [padout_file_lines](https://archernar.github.io/files/padout_file_lines.html) | [printAdvice](https://archernar.github.io/files/printAdvice.html) | [printCritical](https://archernar.github.io/files/printCritical.html) | [printInfo](https://archernar.github.io/files/printInfo.html) |
-| [panel](https://archernar.github.io/files/panel.html) | [printAlert](https://archernar.github.io/files/printAlert.html) | [printDebug](https://archernar.github.io/files/printDebug.html) | [printWarning](https://archernar.github.io/files/printWarning.html) |
-| [paramsf](https://archernar.github.io/files/paramsf.html) | [printAlways](https://archernar.github.io/files/printAlways.html) | [printError](https://archernar.github.io/files/printError.html) | [prompter](https://archernar.github.io/files/prompter.html) |
 ### q
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [QTRTCOLS](https://archernar.github.io/files/QTRTCOLS.html) | [QTRTROWS](https://archernar.github.io/files/QTRTROWS.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
 ### r
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [remove_leading_whitespace](https://archernar.github.io/files/remove_leading_whitespace.html) | [replace](https://archernar.github.io/files/replace.html) | [rm_rf](https://archernar.github.io/files/rm_rf.html) | [run_and_exit_code](https://archernar.github.io/files/run_and_exit_code.html) |
-| [rename_dot_file](https://archernar.github.io/files/rename_dot_file.html) | [replaceomatic](https://archernar.github.io/files/replaceomatic.html) | [rm_rf_silent](https://archernar.github.io/files/rm_rf_silent.html) | [run_and_output](https://archernar.github.io/files/run_and_output.html) |
-| [renamecopy_dot_file](https://archernar.github.io/files/renamecopy_dot_file.html) | [right_pad_limited](https://archernar.github.io/files/right_pad_limited.html) | [rrints](https://archernar.github.io/files/rrints.html) | [&nbsp;](&nbsp;) |
-| [repeat_char](https://archernar.github.io/files/repeat_char.html) | [rints](https://archernar.github.io/files/rints.html) | [run_and_error](https://archernar.github.io/files/run_and_error.html) | [&nbsp;](&nbsp;) |
 ### s
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [silencio](https://archernar.github.io/files/silencio.html) | [string_before_file_lines](https://archernar.github.io/files/string_before_file_lines.html) | [szcyan](https://archernar.github.io/files/szcyan.html) | [szwhite](https://archernar.github.io/files/szwhite.html) |
-| [sort_file](https://archernar.github.io/files/sort_file.html) | [substring](https://archernar.github.io/files/substring.html) | [szflag](https://archernar.github.io/files/szflag.html) | [szyellow](https://archernar.github.io/files/szyellow.html) |
-| [split_file_n](https://archernar.github.io/files/split_file_n.html) | [szblack](https://archernar.github.io/files/szblack.html) | [szgreen](https://archernar.github.io/files/szgreen.html) | [&nbsp;](&nbsp;) |
-| [starts_with](https://archernar.github.io/files/starts_with.html) | [szblue](https://archernar.github.io/files/szblue.html) | [szmagenta](https://archernar.github.io/files/szmagenta.html) | [&nbsp;](&nbsp;) |
-| [string_after_file_lines](https://archernar.github.io/files/string_after_file_lines.html) | [szcolor](https://archernar.github.io/files/szcolor.html) | [szred](https://archernar.github.io/files/szred.html) | [&nbsp;](&nbsp;) |
 ### t
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [TCOLS](https://archernar.github.io/files/TCOLS.html) | [TROWS](https://archernar.github.io/files/TROWS.html) | [timestamp_ms](https://archernar.github.io/files/timestamp_ms.html) | [trim_leading_whitespace_file](https://archernar.github.io/files/trim_leading_whitespace_file.html) |
-| [TCOLSACTUAL](https://archernar.github.io/files/TCOLSACTUAL.html) | [TROWSACTUAL](https://archernar.github.io/files/TROWSACTUAL.html) | [trim](https://archernar.github.io/files/trim.html) | [truncate_file_lines](https://archernar.github.io/files/truncate_file_lines.html) |
 ### u
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [u.put](https://archernar.github.io/files/u.put.html) | [util.posprint](https://archernar.github.io/files/util.posprint.html) | [util.print](https://archernar.github.io/files/util.print.html) | [util.putln](https://archernar.github.io/files/util.putln.html) |
-| [u.putc](https://archernar.github.io/files/u.putc.html) | [util.pprint](https://archernar.github.io/files/util.pprint.html) | [util.println](https://archernar.github.io/files/util.println.html) | [util.set_background](https://archernar.github.io/files/util.set_background.html) |
-| [u.putln](https://archernar.github.io/files/u.putln.html) | [util.print.color](https://archernar.github.io/files/util.print.color.html) | [util.put](https://archernar.github.io/files/util.put.html) | [&nbsp;](&nbsp;) |
 ### v
  
  
 ### w
  
  
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-|----------|----------|----------|----------|
-| [warn](https://archernar.github.io/files/warn.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
 ### x
  
  
