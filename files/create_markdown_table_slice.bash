@@ -35,6 +35,8 @@ function create_markdown_table_slice() {
           # echo "|----------|----------|----------|----------|"
           # echo "| $STRING | $STRING | $STRING | $STRING | $STRING | $STRING | $STRING | $STRING |"
           # echo "|----------|----------|----------|----------|----------|----------|----------|----------|"
+          # echo "| $STRING | $STRING | $STRING | $STRING |"
+          # echo "|----------|----------|----------|----------|"
           echo "| $STRING | $STRING | $STRING | $STRING | $STRING |"
           echo "|----------|----------|----------|----------|----------|"
           first_row=0

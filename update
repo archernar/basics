@@ -14,13 +14,62 @@ rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 source /home/mestes/scm/basics/bash.library
 source /home/mestes/scm/basics/bash.namevalue
 source /home/mestes/scm/basics/bash.scanner
+function specialFile() {
+         local fn="$1"    # Bash-Function-Args
+    printAdvice "Special File: $fn"
+    ./codeTemplate "./$fn" "$fn" > "./files/$fn.html"
+    cp "./$fn" ./files
+    printAdvice "./$fn"
+    printAdvice "Extraction complete"
+}
 
+
+function XXX() {
+    btags bash.library > tags
+    printAdvice "Extract"
+    rm -f modifiedfilenames  >/dev/null 2>&1;
+    touch modifiedfilenames
+    mkdir -p ./files
+    mkdir -p ./sfiles
+
+    while IFS= read -r file_name; do
+        if [[ "$file_name" == .* ]]; then
+            renamecopy_dot_file "$file_name"
+            file_name="$MODIFIEDFILENAME"
+            gitadd "$MODIFIEDFILENAME"
+            echo "$MODIFIEDFILENAME" >> "modifiedfilenames"
+        fi
+
+        # ./codeTemplate "./$file_name" "$file_name" > "./files/$file_name.html"
+        ./codeTemplate "./$file_name" "$file_name" > "./sfiles/$file_name.html"
+        cp "./$file_name" ./sfiles
+        printAdvice "Special:  ./$file_name"
+    done < "bash.tools"
+
+    ./bashfunctionextractor
+    test_file="./output"
+    core.check_for_duplicates "$test_file"
+    return_code=$?
+    if ((return_code == 0)); then
+      printInfo "No duplicate lines found in '$test_file'."
+    elif ((return_code == 1)); then
+      printInfo "Duplicate lines found in '$test_file' (see stderr for details)."
+    elif ((return_code == 2)); then
+      printInfo "Error: File '$test_file' not found or not readable."
+    fi
+
+    printAdvice "Extraction complete"
+}
 
 UPDATE="NO"
 REMOTE="YES"
-while getopts "tqxruls" arg
+while getopts "hctqxruls" arg
 do
     case $arg in
+        h) UPDATE="HOME"
+           ;;
+        c) UPDATE="HOME"
+           ;;
         t) UPDATE="TEST"
            ;;
         q) UPDATE="TEST2"
@@ -39,7 +88,7 @@ do
 done
 shift $(($OPTIND - 1))
 
-      initdbprint 88 3
+      initdbprint 50 3
       ansi.clear
       ansi.gutteractual
       ansi.move "1" "1"
@@ -106,6 +155,55 @@ if [ "$UPDATE" == "REMOTE" ]; then
     printInfo "Remote complete"
     exit 0
 fi
+
+if [ "$UPDATE" == "HOME" ]; then                                                                                               
+    XXX
+    ./functionlist.bash | gawk '{sz=$0;gsub(/[(].*[)]/, "", sz);print "files/" sz ".html";}' > $Tmp1
+    rm -f zedd
+    ls ./sfiles | egrep [.]html$ | gawk -v b="file://wsl.localhost/Ubuntu/home/mestes/scm/basics/sfiles/" '{print b $1}' | sort | uniq > zedd
+    cat modifiedfilenames >> $Tmp1
+    cat $Tmp1 | gawk '
+    BEGIN {
+        BASE="https://raw.githubusercontent.com/archernar/basics/refs/heads/master/"
+        BASE="https://archernar.github.io/"
+        BASE="file://wsl.localhost/Ubuntu/home/mestes/scm/basics/"
+    }
+    /files./ {
+        print BASE $1
+    }' | sort|uniq  > $Tmp
+
+    cp $Tmp momo
+    rm -f README.md
+              alpha_normal5 zedd
+              cp zedd zeddd
+              create_markdown_table_slice zedd "MAKELINKS" "0"   >>  README.md
+              cp README.md zeddd
+
+
+
+    for i in {a..z}; do
+      # szflag "$i" | printCritical 
+      cat $Tmp | egrep "^.{57}$i" > fedd
+      uc=$(echo "$i" | tr '[:lower:]' '[:upper:]')
+      cat $Tmp | egrep "^.{57}$uc" >> fedd
+
+      if [ -e fedd ]; then
+          LL=$(wc -l fedd | gawk '{print $1}')
+          if [ $LL -gt 0 ]; then
+              alpha_normal5 fedd
+              create_markdown_table_slice fedd "MAKELINKS" "$i"   >>  README.md
+          fi
+      fi
+      rm -f fedd
+    done
+
+    pandoc --standalone --template template2.html README.md > home.html
+    printInfo "Homepage Complete"
+
+    exit 1
+
+fi
+
 
 if [ "$UPDATE" == "EXTRACT" ]; then                                                                                               
     printAdvice   "Tagging"
@@ -265,6 +363,10 @@ BEGIN {
     print BASE $1
 }' | sort|uniq  > $Tmp
 
+
+
+cp $Tmp momo
+
 git ls-files | gawk '
 BEGIN {
     BASE="https://raw.githubusercontent.com/archernar/basics/refs/heads/master/"
@@ -278,15 +380,27 @@ git add getme
 
 
 cp "$Tmp" "simple_table"
-alpha_normal4 "simple_table"
+alpha_normal5 "simple_table"
 create_simple_table4 "simple_table"
 cat "simple_table" | sed 's/^/# /' > toc
 git add toc
 
 
-alpha_normal4 "$Tmp"
-create_markdown_table4 "$Tmp" "MAKELINKS"   >  README.md
+rm -f README.md
+for i in {a..z}; do
+  # szflag "$i" | printCritical 
+  cat $Tmp | egrep "^.{34}$i" > fedd
+  uc=$(echo "$i" | tr '[:lower:]' '[:upper:]')
+  cat $Tmp | egrep "^.{34}$uc" >> fedd
+  alpha_normal5 fedd
+  create_markdown_table_slice fedd "MAKELINKS" "$i"   >>  README.md
+  rm fedd
+done
+
+#alpha_normal4 "$Tmp"
+#create_markdown_table4 "$Tmp" "MAKELINKS"   >  README.md
 gitadd "README.md"
+pandoc --standalone --template template.html README.md > home.html
 printInfo "Step 0 Complete"
 
 cp "$Tmp" ./files/index.html
