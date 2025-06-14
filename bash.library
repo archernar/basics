@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Fri Jun 13 07:29:14 EDT 2025
-# *********************************************************HASHOMATIC: fca22b7a3f81777afea235ddd85bbe9f
+# *********************************************************DATEOMATIC: Sat Jun 14 08:49:31 EDT 2025
+# *********************************************************HASHOMATIC: 5b342c69658e5a455db446563ce72748
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -1851,13 +1851,22 @@ function core.print.stackline() {
     fi
 }
 function printAtLevel() {
-         local msg="$1";local lvl=$2;local label="$3"; local color=$4    # Bash-Function-Args
+         local msg="$1";local lvl=$2;local label="$3"; local color=$4; local flag=$5    # Bash-Function-Args
          LASTCONSOLEMESSAGE="$1"
     local ff=$(printf "%-12s\n" "${FUNCNAME[2]}")
     local sz="$(printf "%s %s: %s %s" "$label $lvl/$LOGLEVEL" "$SILENT" "$ff" "$msg")"
-    
     if [ $lvl -ge $LOGLEVEL ]; then
+
+        if [[ "$flag" == "flag" ]]; then
+          sz="== $sz"
+          dprint $(repeat_char "=" ${#sz})
+        fi 
+
         dprint "$(szcolor "$sz" $color)"
+
+        if [[ "$flag" == "flag" ]]; then
+          dprint $(repeat_char "=" ${#sz})
+        fi 
     fi
 #         if core._should_print_color 1; then
 #             echo "$(szmagenta "$sz")"
@@ -1896,12 +1905,12 @@ function uppercase_stdin() {
   done
 }
 function printInfo() {
-         local msg="$1"    # Bash-Function-Args
+         local msg="$1"; local flag="$2"    # Bash-Function-Args
     if [[ "$#" -gt 0 ]]; then
-        printAtLevel "$msg" $LL4 "INFO" green
+        printAtLevel "$msg" $LL4 "INFO" green $flag
     else
         while IFS= read -r line; do
-            printAtLevel "$line" $LL4 "INFO" green
+            printAtLevel "$line" $LL4 "INFO" green $flag
         done
     fi
 }

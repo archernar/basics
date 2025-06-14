@@ -87,6 +87,7 @@ function scan_for_secrets() {
   local found=0
   local overide=0
 
+  printDebug "SCAN: '$file'"
   for pattern in "${patterns[@]}"; do
     if grep -E "$pattern" "$file" > /dev/null; then
       found=1

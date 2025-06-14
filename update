@@ -98,7 +98,7 @@ shift $(($OPTIND - 1))
       ansi.move "1" "1"
       D=`date`
       SZ="------------------------"
-      printInfo    "$(szgreen "Log Level $LOGLEVEL")"
+      printInfo    "$(szgreen "Log Level $LOGLEVEL")" flag
       printInfo    "$(date)"
       printInfo    "$(/usr/bin/bash --version | head -1)"
       printDebug     "debug"
@@ -274,7 +274,6 @@ if [ "$UPDATE" == "EXTRACT" ]; then
 fi
 
 if [ "$UPDATE" == "TEST" ]; then                                                                                               
-      core.print.alltest
       exit 0
 fi
 if [ "$UPDATE" == "TEST2" ]; then                                                                                               
