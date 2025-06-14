@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat Jun 14 08:52:50 EDT 2025
-# *********************************************************HASHOMATIC: cc9b5998b79f5f6bc18fcf7e0a1ab4c5
+# *********************************************************DATEOMATIC: Sat Jun 14 08:53:48 EDT 2025
+# *********************************************************HASHOMATIC: 8da4d70a794d84c1ac57d0e4728b6ad0
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -168,7 +168,7 @@ cat "$filename" | sort | uniq > "$tmp1"
 N=`wc -l "$tmp1" | gawk '{print $1}'`
 M=$((N % 4));
 if [ "$M" == "0" ]; then                                                                                               
-    printInfo "Nothing to Add"
+    NOTHING=0
 fi
 if [ "$M" == "4" ]; then                                                                                               
     printAdvice "Adding 1 functions"
@@ -231,7 +231,7 @@ cat "$filename" | sort | uniq > "$tmp1"
 N=`wc -l "$tmp1" | gawk '{print $1}'`
 M=$((N % 4));
 if [ "$M" == "0" ]; then                                                                                               
-    printInfo "Nothing to Add"
+    NOTHING=0
 fi
 if [ "$M" == "3" ]; then                                                                                               
     printInfo "Adding 1 functions"
@@ -283,7 +283,7 @@ cat "$filename" | sort | uniq > "$tmp1"
 N=`wc -l "$tmp1" | gawk '{print $1}'`
 M=$((N % 2));
 if [ "$M" == "0" ]; then                                                                                               
-    printInfo "Nothing to Add"
+    NOTHING=0
 fi
 if [ "$M" == "2" ]; then                                                                                               
     printInfo "Adding 1 function"
