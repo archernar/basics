@@ -120,7 +120,8 @@ function scan_for_secrets() {
 
   if [[ "$found" -eq 0 ]]; then
     NOTHING=0
-    printDebug "CLEAR: '$file'"
+    #printDebug "CLEAR: '$file'"
+    append_last_element "$(szred "  OK")"
   fi
 
   return 0

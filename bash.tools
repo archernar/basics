@@ -3,6 +3,7 @@ gUntracked
 gStatus
 gUpdateFromOrigin
 gDiff
+gFD
 gHardSync
 gLocal
 gUpdate
