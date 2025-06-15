@@ -15,10 +15,12 @@ do
     case $arg in
         q) QUIET="YES"
            ;;
-        l) git ls-files -m
+        l) echo "Tracked files with changes"
+           git ls-files -m
            exit 0
            ;;
-        s) git diff --name-only --cached
+        s) echo "Staged  for commit"
+           git diff --name-only --cached
            exit 0
            ;;
     esac
