@@ -274,6 +274,10 @@ if [ "$UPDATE" == "EXTRACT" ]; then
 fi
 
 if [ "$UPDATE" == "TEST" ]; then                                                                                               
+      printInfo "MamaLucien"
+      update_last_element "$(get_last_element)  $(szred "ZYDICO")"
+      printInfo "OKOKOK"
+
       exit 0
 fi
 if [ "$UPDATE" == "TEST2" ]; then                                                                                               

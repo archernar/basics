@@ -120,8 +120,8 @@
  
 |                          |                          |                          |                          |                          |
 |----------|----------|----------|----------|----------|
-| [u.put](https://archernar.github.io/files/u.put.html) | [u.putln](https://archernar.github.io/files/u.putln.html) | [util.pprint](https://archernar.github.io/files/util.pprint.html) | [util.print](https://archernar.github.io/files/util.print.html) | [util.put](https://archernar.github.io/files/util.put.html) |
-| [u.putc](https://archernar.github.io/files/u.putc.html) | [util.posprint](https://archernar.github.io/files/util.posprint.html) | [util.print.color](https://archernar.github.io/files/util.print.color.html) | [util.println](https://archernar.github.io/files/util.println.html) | [util.putln](https://archernar.github.io/files/util.putln.html) |
+| [u.put](https://archernar.github.io/files/u.put.html) | [u.putln](https://archernar.github.io/files/u.putln.html) | [util.posprint](https://archernar.github.io/files/util.posprint.html) | [util.print.color](https://archernar.github.io/files/util.print.color.html) | [util.println](https://archernar.github.io/files/util.println.html) |
+| [u.putc](https://archernar.github.io/files/u.putc.html) | [update_last_element](https://archernar.github.io/files/update_last_element.html) | [util.pprint](https://archernar.github.io/files/util.pprint.html) | [util.print](https://archernar.github.io/files/util.print.html) | [util.put](https://archernar.github.io/files/util.put.html) |
 # v
  
 # w

@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat Jun 14 08:54:06 EDT 2025
-# *********************************************************HASHOMATIC: 8da4d70a794d84c1ac57d0e4728b6ad0
+# *********************************************************DATEOMATIC: Sun Jun 15 09:35:53 EDT 2025
+# *********************************************************HASHOMATIC: 7159581a048c5a4f5915fcec5c1e99fc
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -3335,6 +3335,24 @@ function delete_element() {
     echo "Element '$element_to_delete' not found."
   fi
   display_array
+}
+
+function update_last_element() {
+         local sz="$1"    # Bash-Function-Args
+  local len=${#my_array[@]}
+  ((len=len-1))
+  my_array[$len]="$sz"
+}
+
+function get_last_element() {
+  local len=${#my_array[@]}
+  ((len=len-1))
+  echo "${my_array[$len]}"
+}
+function get_last_index() {
+  local len=${#my_array[@]}
+  ((len=len-1))
+  echo $len
 }
 
 # Function to delete an element from the array by value
