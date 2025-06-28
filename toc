@@ -1,50 +1,195 @@
-# .macros.vim                   backup_file                   dot_macros.vim                logdebug                      
-# run_and_output                .vimrc                        basename                      dot_vimrc                     
-# logerror                      silencio                      0-bashtop                     bash.scanner                  
-# dprint                        loginfo                       sort_file                     0-git                         
-# bashCheats                    eecho                         logreset                      split_file_n                  
-# EIGTHTCOLS                    btags                         ends_with                     logset                        
-# starts_with                   EIGTHTROWS                    check_command                 error                         
-# lookup_dns_record             string_after_file_lines       HALFTCOLS                     colomatic                     
-# examplesComparison            mecho                         string_before_file_lines      HALFTROWS                     
-# command_exists                exists                        mkdir_p                       substring                     
-# QTRTCOLS                      console.rulers                extension                     mv_f                          
-# szblack                       QTRTROWS                      contains                      gDiff                         
-# necho                         szblue                        TCOLS                         core.check_for_duplicates     
-# gFD                           odd_or_less                   szcolor                       TCOLSACTUAL                   
-# core.dumpfile.info            gHardSync                     padomatic                     szcyan                        
-# TROWS                         core.loglevels                gLocal                        padout_file_lines             
-# szflag                        TROWSACTUAL                   core.panic                    gStatus                       
-# panel                         szgreen                       abspath                       core.print.alltest            
-# gUntracked                    paramsf                       szmagenta                     alpha_normal2                 
-# core.print.flag               gUpdate                       pidof_name                    szred                         
-# alpha_normal4                 core.print.stackline          gUpdateFromOrigin             printAdvice                   
-# szwhite                       alpha_normal5                 core.stacktracedepth          get_name_servers              
-# printAlert                    szyellow                      ansi.attributes               core.string.contains          
-# get_terminal_size             printAlways                   thedns                        ansi.backgroundcolor          
-# core.string.indexof           gitadd                        printAtLevel                  timestamp_ms                  
-# ansi.clear                    core.string.isempty           grep.vim                      printCritical                 
-# trim                          ansi.clearEOL                 core.string.length            hashomatic                    
-# printDebug                    trim_leading_whitespace_file  ansi.clearline                core.string.padcenter         
-# includer                      printError                    truncate_file_lines           ansi.constants                
-# core.string.padleft           indent_file                   printFatal                    u.put                         
-# ansi.gutter                   core.string.padright          indentomatic                  printInfo                     
-# u.putc                        ansi.gutteractual             core.string.replace.all       info                          
-# printWarning                  u.putln                       ansi.home                     core.string.replacefirst      
-# initdbprint                   prompter                      update_last_element           ansi.move                     
-# core.string.split             isSameHash                    remove_leading_whitespace     uppercaseallfiles             
-# ansi.movedown                 core.string.substring         is_dir                        rename_dot_file               
-# util.posprint                 ansi.moveleft                 core.string.tolower           is_file                       
-# renamecopy_dot_file           util.pprint                   ansi.moveright                core.string.toupper           
-# is_hidden_file                repeat_char                   util.print.color              ansi.moveup                   
-# cp_r                          is_reachable                  replace                       util.print                    
-# ansi.pos                      create_markdown_table2        justify_file                  replaceomatic                 
-# util.println                  ansi.resetattributes          create_markdown_table3        justify_line                  
-# right_pad_limited             util.put                      ansi.restorepos               create_markdown_table4        
-# justomatic                    rints                         util.putln                    ansi.savepos                  
-# create_markdown_table_slice   kill_name                     rm_rf                         util.set_background           
-# ansi.textcolor                create_simple_table4          kill_pid                      rm_rf_silent                  
-# warn                          append_last_element           current_timestamp             logadvice                     
-# rrints                        &nbsp;                        array_contains                dbprint                       
-# logalert                      run_and_error                 &nbsp;                        array_join                    
-# dirname                       logcritical                   run_and_exit_code             &nbsp;                        
+# https://archernar.github.io/files/0-bashtop.html
+# https://archernar.github.io/files/0-git.html
+# https://archernar.github.io/files/abspath.html
+# https://archernar.github.io/files/alpha_normal2.html
+# https://archernar.github.io/files/alpha_normal4.html
+# https://archernar.github.io/files/alpha_normal5.html
+# https://archernar.github.io/files/ansi.attributes.html
+# https://archernar.github.io/files/ansi.backgroundcolor.html
+# https://archernar.github.io/files/ansi.clearEOL.html
+# https://archernar.github.io/files/ansi.clear.html
+# https://archernar.github.io/files/ansi.clearline.html
+# https://archernar.github.io/files/ansi.constants.html
+# https://archernar.github.io/files/ansi.gutteractual.html
+# https://archernar.github.io/files/ansi.gutter.html
+# https://archernar.github.io/files/ansi.home.html
+# https://archernar.github.io/files/ansi.movedown.html
+# https://archernar.github.io/files/ansi.move.html
+# https://archernar.github.io/files/ansi.moveleft.html
+# https://archernar.github.io/files/ansi.moveright.html
+# https://archernar.github.io/files/ansi.moveup.html
+# https://archernar.github.io/files/ansi.pos.html
+# https://archernar.github.io/files/ansi.resetattributes.html
+# https://archernar.github.io/files/ansi.restorepos.html
+# https://archernar.github.io/files/ansi.savepos.html
+# https://archernar.github.io/files/ansi.textcolor.html
+# https://archernar.github.io/files/append_last_element.html
+# https://archernar.github.io/files/array_contains.html
+# https://archernar.github.io/files/array_join.html
+# https://archernar.github.io/files/backup_file.html
+# https://archernar.github.io/files/basename.html
+# https://archernar.github.io/files/bashCheats.html
+# https://archernar.github.io/files/bash.scanner.html
+# https://archernar.github.io/files/btags.html
+# https://archernar.github.io/files/check_command.html
+# https://archernar.github.io/files/colomatic.html
+# https://archernar.github.io/files/command_exists.html
+# https://archernar.github.io/files/console.rulers.html
+# https://archernar.github.io/files/contains.html
+# https://archernar.github.io/files/core.check_for_duplicates.html
+# https://archernar.github.io/files/core.dumpfile.info.html
+# https://archernar.github.io/files/core.loglevels.html
+# https://archernar.github.io/files/core.panic.html
+# https://archernar.github.io/files/core.print.alltest.html
+# https://archernar.github.io/files/core.print.flag.html
+# https://archernar.github.io/files/core.print.stackline.html
+# https://archernar.github.io/files/core.stacktracedepth.html
+# https://archernar.github.io/files/core.string.contains.html
+# https://archernar.github.io/files/core.string.indexof.html
+# https://archernar.github.io/files/core.string.isempty.html
+# https://archernar.github.io/files/core.string.length.html
+# https://archernar.github.io/files/core.string.padcenter.html
+# https://archernar.github.io/files/core.string.padleft.html
+# https://archernar.github.io/files/core.string.padright.html
+# https://archernar.github.io/files/core.string.replace.all.html
+# https://archernar.github.io/files/core.string.replacefirst.html
+# https://archernar.github.io/files/core.string.split.html
+# https://archernar.github.io/files/core.string.substring.html
+# https://archernar.github.io/files/core.string.tolower.html
+# https://archernar.github.io/files/core.string.toupper.html
+# https://archernar.github.io/files/cp_r.html
+# https://archernar.github.io/files/create_markdown_table2.html
+# https://archernar.github.io/files/create_markdown_table3.html
+# https://archernar.github.io/files/create_markdown_table4.html
+# https://archernar.github.io/files/create_markdown_table_slice.html
+# https://archernar.github.io/files/create_simple_table4.html
+# https://archernar.github.io/files/current_timestamp.html
+# https://archernar.github.io/files/dbprint.html
+# https://archernar.github.io/files/dirname.html
+# https://archernar.github.io/files/dprint.html
+# https://archernar.github.io/files/eecho.html
+# https://archernar.github.io/files/EIGTHTCOLS.html
+# https://archernar.github.io/files/EIGTHTROWS.html
+# https://archernar.github.io/files/ends_with.html
+# https://archernar.github.io/files/error.html
+# https://archernar.github.io/files/examplesComparison.html
+# https://archernar.github.io/files/exists.html
+# https://archernar.github.io/files/extension.html
+# https://archernar.github.io/files/gDiff.html
+# https://archernar.github.io/files/get_name_servers.html
+# https://archernar.github.io/files/get_terminal_size.html
+# https://archernar.github.io/files/gFD.html
+# https://archernar.github.io/files/gHardSync.html
+# https://archernar.github.io/files/gitadd.html
+# https://archernar.github.io/files/gLocal.html
+# https://archernar.github.io/files/grep.vim.html
+# https://archernar.github.io/files/gStatus.html
+# https://archernar.github.io/files/gUntracked.html
+# https://archernar.github.io/files/gUpdateFromOrigin.html
+# https://archernar.github.io/files/gUpdate.html
+# https://archernar.github.io/files/HALFTCOLS.html
+# https://archernar.github.io/files/HALFTROWS.html
+# https://archernar.github.io/files/hashomatic.html
+# https://archernar.github.io/files/includer.html
+# https://archernar.github.io/files/indent_file.html
+# https://archernar.github.io/files/indentomatic.html
+# https://archernar.github.io/files/info.html
+# https://archernar.github.io/files/initdbprint.html
+# https://archernar.github.io/files/is_dir.html
+# https://archernar.github.io/files/is_file.html
+# https://archernar.github.io/files/is_hidden_file.html
+# https://archernar.github.io/files/is_reachable.html
+# https://archernar.github.io/files/isSameHash.html
+# https://archernar.github.io/files/justify_file.html
+# https://archernar.github.io/files/justify_line.html
+# https://archernar.github.io/files/justomatic.html
+# https://archernar.github.io/files/kill_name.html
+# https://archernar.github.io/files/kill_pid.html
+# https://archernar.github.io/files/logadvice.html
+# https://archernar.github.io/files/logalert.html
+# https://archernar.github.io/files/logcritical.html
+# https://archernar.github.io/files/logdebug.html
+# https://archernar.github.io/files/logerror.html
+# https://archernar.github.io/files/loginfo.html
+# https://archernar.github.io/files/logreset.html
+# https://archernar.github.io/files/logset.html
+# https://archernar.github.io/files/lookup_dns_record.html
+# https://archernar.github.io/files/.macros.vim.html
+# https://archernar.github.io/files/mecho.html
+# https://archernar.github.io/files/mkdir_p.html
+# https://archernar.github.io/files/mv_f.html
+# https://archernar.github.io/files/necho.html
+# https://archernar.github.io/files/odd_or_less.html
+# https://archernar.github.io/files/padomatic.html
+# https://archernar.github.io/files/padout_file_lines.html
+# https://archernar.github.io/files/panel.html
+# https://archernar.github.io/files/paramsf.html
+# https://archernar.github.io/files/pidof_name.html
+# https://archernar.github.io/files/printAdvice.html
+# https://archernar.github.io/files/printAlert.html
+# https://archernar.github.io/files/printAlways.html
+# https://archernar.github.io/files/printAtLevel.html
+# https://archernar.github.io/files/printCritical.html
+# https://archernar.github.io/files/printDebug.html
+# https://archernar.github.io/files/printError.html
+# https://archernar.github.io/files/printFatal.html
+# https://archernar.github.io/files/printInfo.html
+# https://archernar.github.io/files/printWarning.html
+# https://archernar.github.io/files/prompter.html
+# https://archernar.github.io/files/QTRTCOLS.html
+# https://archernar.github.io/files/QTRTROWS.html
+# https://archernar.github.io/files/remove_leading_whitespace.html
+# https://archernar.github.io/files/renamecopy_dot_file.html
+# https://archernar.github.io/files/rename_dot_file.html
+# https://archernar.github.io/files/repeat_char.html
+# https://archernar.github.io/files/replace.html
+# https://archernar.github.io/files/replaceomatic.html
+# https://archernar.github.io/files/right_pad_limited.html
+# https://archernar.github.io/files/rints.html
+# https://archernar.github.io/files/rm_rf.html
+# https://archernar.github.io/files/rm_rf_silent.html
+# https://archernar.github.io/files/rrints.html
+# https://archernar.github.io/files/run_and_error.html
+# https://archernar.github.io/files/run_and_exit_code.html
+# https://archernar.github.io/files/run_and_output.html
+# https://archernar.github.io/files/silencio.html
+# https://archernar.github.io/files/sort_file.html
+# https://archernar.github.io/files/split_file_n.html
+# https://archernar.github.io/files/starts_with.html
+# https://archernar.github.io/files/string_after_file_lines.html
+# https://archernar.github.io/files/string_before_file_lines.html
+# https://archernar.github.io/files/substring.html
+# https://archernar.github.io/files/szblack.html
+# https://archernar.github.io/files/szblue.html
+# https://archernar.github.io/files/szcolor.html
+# https://archernar.github.io/files/szcyan.html
+# https://archernar.github.io/files/szflag.html
+# https://archernar.github.io/files/szgreen.html
+# https://archernar.github.io/files/szmagenta.html
+# https://archernar.github.io/files/szred.html
+# https://archernar.github.io/files/szwhite.html
+# https://archernar.github.io/files/szyellow.html
+# https://archernar.github.io/files/TCOLSACTUAL.html
+# https://archernar.github.io/files/TCOLS.html
+# https://archernar.github.io/files/thedns.html
+# https://archernar.github.io/files/timestamp_ms.html
+# https://archernar.github.io/files/trim.html
+# https://archernar.github.io/files/trim_leading_whitespace_file.html
+# https://archernar.github.io/files/TROWSACTUAL.html
+# https://archernar.github.io/files/TROWS.html
+# https://archernar.github.io/files/truncate_file_lines.html
+# https://archernar.github.io/files/update_last_element.html
+# https://archernar.github.io/files/uppercaseallfiles.html
+# https://archernar.github.io/files/u.putc.html
+# https://archernar.github.io/files/u.put.html
+# https://archernar.github.io/files/u.putln.html
+# https://archernar.github.io/files/util.posprint.html
+# https://archernar.github.io/files/util.pprint.html
+# https://archernar.github.io/files/util.print.color.html
+# https://archernar.github.io/files/util.print.html
+# https://archernar.github.io/files/util.println.html
+# https://archernar.github.io/files/util.put.html
+# https://archernar.github.io/files/util.putln.html
+# https://archernar.github.io/files/util.set_background.html
+# https://archernar.github.io/files/.vimrc.html
+# https://archernar.github.io/files/warn.html

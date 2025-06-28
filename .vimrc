@@ -128,16 +128,15 @@ if !exists("NOVUNDLE")
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
     " Plugin 'VundleVim/Vundle.vim'
+    Plugin 'archernar/vim-utils'
     Plugin 'archernar/vim-flashcard'
     Plugin 'archernar/vim-dir'
     Plugin 'archernar/vim-progsnips'
     Plugin 'archernar/vim-map'
-    Plugin 'archernar/vim-utils'
     Plugin 'archernar/vim-session'
     Plugin 'archernar/vim-program'
     Plugin 'archernar/vim-monochrome'
     Plugin 'archernar/vim-mru'
-    Plugin 'vim-scripts/grep.vim'      " https://github.com/vim-scripts/grep.vim
     Plugin 'gruvbox-community/gruvbox'
     Bundle 'Lokaltog/vim-monotone.git'
     Bundle 'owickstrom/vim-colors-paramount'
