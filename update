@@ -110,6 +110,8 @@ shift $(($OPTIND - 1))
       printInfo    "$(szgreen "Log Level $LOGLEVEL")" flag
       printInfo    "$(date)"
       printInfo    "$(/usr/bin/bash --version | head -1)"
+      printInfo    "TROWs     :  $(TROWS)"
+      printInfo    "TROWs - 3 :  $(TROWS -3)"
       printDebug     "debug"
       printInfo      "info"
       printAdvice    "advice"
