@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sun Jun 15 09:56:32 EDT 2025
-# *********************************************************HASHOMATIC: 8d95a2ae77a2f239472e2e2c7496e599
+# *********************************************************DATEOMATIC: Sat Jun 28 01:30:29 EDT 2025
+# *********************************************************HASHOMATIC: eb0678795e29fb78d6c3ceaca7cd3843
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -12,6 +12,10 @@ function set_cursor_color_white() {
 # To reset the color (important!):
 function reset_terminal_color() {
   echo -e "\033[0m"
+}
+function uppercaseallfiles() {
+         local void=0;                          # Bash-Function-Args
+    for file in *; do mv "$file" "$(echo ${file:0:1} | tr '[:lower:]' '[:upper:]')${file:1}"; done
 }
 # ----------------------------------------------------------------------------------------------------
 # CONOUT: 
@@ -1028,6 +1032,7 @@ function create_markdown_table_slice() {
   local tmp=$(mktemp)
   local LEN=""
   local STRING=""
+  local label=""
 
   # Check if the input file exists
   if [[ ! -f "$input_file" ]]; then
@@ -1039,13 +1044,24 @@ function create_markdown_table_slice() {
   STRING=`repeat_char " " "24"`
 
   rm -f "$tmp" >/dev/null 2>&1
-  rm -f "frost" >/dev/null 2>&1
   if [[ "$str" == "MAKELINKS" ]]; then
-      cat "$input_file" |gawk '{n=split($0,A,"/");sub(/[.]html$/, "", A[n]);print "[" A[n] "](" $0 ")";}' > $tmp
-      cat "$input_file" |gawk '{n=split($0,A,"/");sub(/[.]html$/, "", A[n]);print A[n];}' >> frost
+      cat "$input_file" |gawk '
+                         BEGIN {
+                                NOTHING=0;
+                         }
+                         {
+                             n=split($0,A,"/");
+                             nme=A[n];
+                             sub(/[.]html$/, "", nme);
+                             sub(/[.]pdf/,"",nme); 
+                             nme=substr(nme,1,42);
+                             gsub(/_/," ",nme);
+                             gsub(/Programming/,"Prog",nme);
+                             gsub(/Architecture/,"Arch",nme);
+                             print "[" nme "](" $0 ")";
+                         }' > $tmp
   else
       cat "$input_file"  > $tmp
-      cat "$input_file"  > frost
   fi
 
   # Read lines from the file and create table rows

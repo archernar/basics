@@ -36,14 +36,14 @@
 # ansi.movedown                 core.string.split             isSameHash                    prompter                      
 # u.putln                       ansi.moveleft                 core.string.substring         is_dir                        
 # remove_leading_whitespace     update_last_element           ansi.moveright                core.string.tolower           
-# is_file                       rename_dot_file               util.posprint                 ansi.moveup                   
-# core.string.toupper           is_hidden_file                renamecopy_dot_file           util.pprint                   
+# is_file                       rename_dot_file               uppercaseallfiles             ansi.moveup                   
+# core.string.toupper           is_hidden_file                renamecopy_dot_file           util.posprint                 
 # ansi.pos                      cp_r                          is_reachable                  repeat_char                   
-# util.print.color              ansi.resetattributes          create_markdown_table2        justify_file                  
-# replace                       util.print                    ansi.restorepos               create_markdown_table3        
-# justify_line                  replaceomatic                 util.println                  ansi.savepos                  
-# create_markdown_table4        justomatic                    right_pad_limited             util.put                      
+# util.pprint                   ansi.resetattributes          create_markdown_table2        justify_file                  
+# replace                       util.print.color              ansi.restorepos               create_markdown_table3        
+# justify_line                  replaceomatic                 util.print                    ansi.savepos                  
+# create_markdown_table4        justomatic                    right_pad_limited             util.println                  
 # ansi.textcolor                create_markdown_table_slice   kill_name                     rints                         
-# util.putln                    append_last_element           create_simple_table4          kill_pid                      
-# rm_rf                         util.set_background           array_contains                current_timestamp             
-# logadvice                     rm_rf_silent                  warn                          
+# util.put                      append_last_element           create_simple_table4          kill_pid                      
+# rm_rf                         util.putln                    array_contains                current_timestamp             
+# logadvice                     rm_rf_silent                  util.set_background           
