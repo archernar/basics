@@ -97,7 +97,7 @@ do
 done
 shift $(($OPTIND - 1))
 
-      initdbprint 50 3
+      initdbprint 90 1
       ansi.clear
       ansi.gutteractual
       ansi.move "1" "1"
