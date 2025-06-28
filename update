@@ -45,11 +45,16 @@ function XXX() {
         fi
 
         # ./codeTemplate "./$file_name" "$file_name" > "./files/$file_name.html"
-        ./codeTemplate "./$file_name" "$file_name" > "./sfiles/$file_name.html"
-        cp "./$file_name" ./sfiles
-        printAdvice "Special:  ./$file_name"
+        if [ -f "$file_name" ]; then 
+            ./codeTemplate "./$file_name" "$file_name" > "./sfiles/$file_name.html"
+            cp "./$file_name" ./sfiles
+            printInfo "Special:  ./$file_name"
+        fi
+
     done < "bash.tools"
 
+
+    ./gawkfunctionextractor
     ./bashfunctionextractor
     test_file="./output"
     core.check_for_duplicates "$test_file"
@@ -161,29 +166,55 @@ if [ "$UPDATE" == "REMOTE" ]; then
 fi
 
 if [ "$UPDATE" == "HOME" ]; then                                                                                               
-    XXX
-    ./functionlist.bash | gawk '{sz=$0;gsub(/[(].*[)]/, "", sz);print "files/" sz ".html";}' > $Tmp1
-    rm -f zedd
-    ls ./sfiles | egrep [.]html$ | gawk -v b="file://wsl.localhost/Ubuntu/home/mestes/scm/basics/sfiles/" '{print b $1}' | sort | uniq > zedd
-    cat modifiedfilenames >> $Tmp1
-    cat $Tmp1 | gawk '
-    BEGIN {
-        BASE="https://raw.githubusercontent.com/archernar/basics/refs/heads/master/"
-        BASE="https://archernar.github.io/"
-        BASE="file://wsl.localhost/Ubuntu/home/mestes/scm/basics/"
-    }
-    /files./ {
-        print BASE $1
-    }' | sort|uniq  > $Tmp
 
     rm -f README.md
+
+    rm -f zedd
+    XXX
+    ls ./sfiles | egrep [.]html$ | gawk -v b="sfiles/" '{print b $1}' | sort | uniq > zedd
               alpha_normal5 zedd
-              cp zedd zeddd
-              create_markdown_table_slice zedd "MAKELINKS" "0"   >>  README.md
-              cp README.md zeddd
+              create_markdown_table_slice zedd "MAKELINKS" "files and scripts"   >>  README.md
+
+    rm -f zedd
+    ls ./moe  | egrep [.]pdf$  | gawk -v b="moe/"  '{print b $1}' | sort | uniq > zedd
+              alpha_normal5 zedd
+              echo "<div class='markdown-body-prime'>" >> README.md
+              create_markdown_table_slice zedd "MAKELINKS" "moe"   >>  README.md
+              echo "</div>" >> README.md
+
+    rm -f zedd
+    ls ./books  | egrep [.]pdf$  | gawk -v b="books/"  '{print b $1}' | sort | uniq > zedd
+              alpha_normal5 zedd
+              echo "<div class='markdown-body-prime'>" >> README.md
+              create_markdown_table_slice zedd "MAKELINKS" "books"   >>  README.md
+              echo "</div>" >> README.md
+
+    rm -f zedd
+    ls ./Reading  | egrep [.]pdf$  | gawk -v b="Reading/"  '{print b $1}' | sort | uniq > zedd
+              alpha_normal5 zedd
+              echo "<div class='markdown-body-prime'>" >> README.md
+              create_markdown_table_slice zedd "MAKELINKS" "reading"   >>  README.md
+              echo "</div>" >> README.md
+    rm -f zedd
+
+    store="mamalucien"
+    ls ./$store | egrep gawk_.*[.]html$ | gawk -v b="$store/" '{print b $1}' | sort | uniq > zedd
+              alpha_normal5 zedd
+              echo "<div class='markdown-body-prime'>" >> README.md
+                  create_markdown_table_slice zedd "MAKELINKS" "$store"   >>  README.md
+              echo "</div>" >> README.md
+    rm -f zedd
 
 
+    # ls ./Reading  | egrep [.]pdf$  | gawk -v b="Reading/"  '{print b $1}' | sort | uniq > zedd
+    ./functionlist.bash | gawk '{sz=$0;gsub(/[(].*[)]/, "", sz);print "files/" sz ".html";}' > zedd
+              alpha_normal5 zedd
+              echo "<div class='markdown-body-prime'>" >> README.md
+              create_markdown_table_slice zedd "MAKELINKS" "bash functions"   >>  README.md
+              echo "</div>" >> README.md
+    rm -f zedd
 
+if [ -e fedhfhfhfd ]; then
     for i in {a..z}; do
       # szflag "$i" | printCritical 
       cat $Tmp | egrep "^.{57}$i" > fedd
@@ -199,8 +230,12 @@ if [ "$UPDATE" == "HOME" ]; then
       fi
       rm -f fedd
     done
+fi
+
 
     pandoc --standalone --template template2.html README.md > home.html
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
     printInfo "Homepage Complete"
 
     exit 1
