@@ -79,7 +79,9 @@ function DeployToTarget() {
          local TARGET="$HOME/Alamo/AlamoDeploy-$(date +%Y-%m-%d-%H%M%S).tar"
          tar -rvf "$TARGET" "$FILE"
          curl -s "$REPOBRANCH/$FILE" > "$HOME/Deploy/$FILE"
+         curl -s "$REPOBRANCH/$FILE" > "$HOME/$FILE"
          touch -r "$TARGET" "$HOME/Deploy/$FILE"
+         touch -r "$TARGET" "$HOME/$FILE"
          echo "    $HOME/Deploy/$FILE"
 }
 
