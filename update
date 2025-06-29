@@ -100,8 +100,10 @@ do
     esac
 done
 shift $(($OPTIND - 1))
-
       initdbprint 90 1
+      if [ $(TCOLS -100) -gt 89 ]; then
+          initdbprint $(TCOLS -100) 1
+      fi
       ansi.clear
       ansi.gutteractual
       ansi.move "1" "1"
