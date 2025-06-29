@@ -79,6 +79,7 @@ source ~/bashrc.local
 
 export JAVA_HOME=/home/mestes/jdk-23.0.2
 export PATH=$JAVA_HOME/bin:$PATH
+export PATH=./:$PATH
 mkdir -p                     ~/BACKUPS
 backup_file   .bashrc        ~/BACKUPS
 backup_file   bashrc.shared  ~/BACKUPS
