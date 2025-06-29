@@ -71,12 +71,32 @@ function XXX() {
 
     printAdvice "Extraction complete"
 }
+function DeployToTarget() {
+         local FILE="$1";     # Bash-Function-Args
+         mkdir -p "$HOME/Alamo"
+         mkdir -p "$HOME/Deploy"
+         local REPOBRANCH="https://raw.githubusercontent.com/archernar/basics/refs/heads/master"
+         local TARGET="$HOME/Alamo/AlamoDeploy-$(date +%Y-%m-%d-%H%M%S).tar"
+         tar -rvf "$TARGET" "$FILE"
+         curl -s "$REPOBRANCH/$FILE" > "$HOME/Deploy/$FILE"
+         touch -r "$TARGET" "$HOME/Deploy/$FILE"
+         echo "    $HOME/Deploy/$FILE"
+}
 
 UPDATE="NO"
 REMOTE="YES"
-while getopts "hctqxrufls" arg
+while getopts "dhctqxrufls" arg
 do
     case $arg in
+        d) UPDATE="DEPLOY"
+           echo "Deploy..."
+           DeployToTarget ".bashrc"
+           DeployToTarget "bashrc.shared"
+           DeployToTarget "bash.library"
+           DeployToTarget ".vimrc"
+           echo "Complete"
+           exit 0
+           ;;
         h) UPDATE="HOME"
            ;;
         c) UPDATE="HOME"
