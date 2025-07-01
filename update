@@ -18,6 +18,29 @@ source $BASHLIBHOME/bash.scanner
 
 
 loginfo
+initdbprint 80 1
+if [ $(TCOLS -100) -gt 79 ]; then
+    initdbprint $(TCOLS -100) 1
+fi
+ansi.clear
+ansi.gutteractual
+ansi.move "1" "1"
+D=`date`
+SZ="------------------------"
+printInfo    "$(szgreen "Log Level $LOGLEVEL")" flag
+printInfo    "$(date)"
+printInfo    "$(/usr/bin/bash --version | head -1)"
+printInfo    "TROWs     :  $(TROWS)"
+printInfo    "TROWs - 3 :  $(TROWS -3)"
+printDebug     "debug"
+printInfo      "info"
+printAdvice    "advice"
+printWarning   "warning"
+printAlert     "alert"
+printError     "error"
+printCritical  "critical"
+printInfo    $(repeat_char "_" ${#SZ})
+printInfo    $(repeat_char "_" ${#SZ})
 
 function specialFile() {
          local fn="$1"    # Bash-Function-Args
@@ -111,9 +134,14 @@ function Package() {
 
 UPDATE="NO"
 REMOTE="YES"
-while getopts "phctqxrufls" arg
+while getopts "nphctqxrufls" arg
 do
     case $arg in
+        n) UPDATE="NOTHING"
+           echo "Nothing and Done"
+           printInfo "Nothing and Done"
+           exit 0
+           ;;
         p) UPDATE="PACKAGE"
            echo "Package..."
            PrePackage 
@@ -150,29 +178,6 @@ do
     esac
 done
 shift $(($OPTIND - 1))
-      initdbprint 90 1
-      if [ $(TCOLS -100) -gt 89 ]; then
-          initdbprint $(TCOLS -100) 1
-      fi
-      ansi.clear
-      ansi.gutteractual
-      ansi.move "1" "1"
-      D=`date`
-      SZ="------------------------"
-      printInfo    "$(szgreen "Log Level $LOGLEVEL")" flag
-      printInfo    "$(date)"
-      printInfo    "$(/usr/bin/bash --version | head -1)"
-      printInfo    "TROWs     :  $(TROWS)"
-      printInfo    "TROWs - 3 :  $(TROWS -3)"
-      printDebug     "debug"
-      printInfo      "info"
-      printAdvice    "advice"
-      printWarning   "warning"
-      printAlert     "alert"
-      printError     "error"
-      printCritical  "critical"
-      printInfo    $(repeat_char "_" ${#SZ})
-      printInfo    $(repeat_char "_" ${#SZ})
 
 if [ "$UPDATE" == "FAST" ]; then
     printInfo    "$(date)"
