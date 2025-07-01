@@ -11,8 +11,7 @@ trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 #   >/dev/null 2>&1;
 
-BASHLIBHOME=/home/mestes/scm/basics
-BASHLIBHOME=/etc/scm/basics
+BASHLIBHOME=$HOME/scm/basics
 source $BASHLIBHOME/bash.library
 source $BASHLIBHOME/bash.namevalue
 source $BASHLIBHOME/bash.scanner
@@ -71,31 +70,57 @@ function XXX() {
 
     printAdvice "Extraction complete"
 }
-function DeployToTarget() {
+function PrePackage() {
+         local void="0";     # Bash-Function-Args
+         mkdir -p "$HOME/Alamo"
+         local REPOBRANCH="https://raw.githubusercontent.com/archernar/basics/refs/heads/master"
+         local REPOTAR="$HOME/Alamo/BasicsRepoTarDotGit-$(date +%Y-%m-%d-%H%M%S).tar"
+
+         echo "Creating tar file $REPOTARGET"
+         tar cvf "$REPOTAR" "$HOME/scm/basics/.git"      >/dev/null 2>&1;
+
+}
+function Package() {
          local FILE="$1";     # Bash-Function-Args
          mkdir -p "$HOME/Alamo"
          mkdir -p "$HOME/Deploy"
          local REPOBRANCH="https://raw.githubusercontent.com/archernar/basics/refs/heads/master"
          local TARGET="$HOME/Alamo/AlamoDeploy-$(date +%Y-%m-%d-%H%M%S).tar"
-         tar -rvf "$TARGET" "$FILE"
-         curl -s "$REPOBRANCH/$FILE" > "$HOME/Deploy/$FILE"
-         curl -s "$REPOBRANCH/$FILE" > "$HOME/$FILE"
-         touch -r "$TARGET" "$HOME/Deploy/$FILE"
-         touch -r "$TARGET" "$HOME/$FILE"
+
+         if [ "1" == "0" ]; then                                                                                               
+             echo "Updating tar file $TARGET with $FILE"
+             tar -rvf "$TARGET" "$FILE"
+         fi
+
+
+         if [ "1" == "0" ]; then                                                                                               
+             echo "Copying $REPOBRANCH/$FILE" to "$HOME/Deploy/$FILE"
+             curl -s "$REPOBRANCH/$FILE" > "$HOME/Deploy/$FILE"
+             echo "Synching date $TARGET and $HOME/Deploy/$FILE"
+             touch -r "$TARGET" "$HOME/Deploy/$FILE"
+         fi
+         if [ "1" == "0" ]; then                                                                                               
+             echo "Copying $REPOBRANCH/$FILE to $HOME/$FILE"
+             curl -s "$REPOBRANCH/$FILE" > "$HOME/$FILE"
+             echo "Syncing date $TARGET and $HOME/$FILE"
+             touch -r "$TARGET" "$HOME/$FILE"
+         fi
+
          echo "    $HOME/Deploy/$FILE"
 }
 
 UPDATE="NO"
 REMOTE="YES"
-while getopts "dhctqxrufls" arg
+while getopts "phctqxrufls" arg
 do
     case $arg in
-        d) UPDATE="DEPLOY"
-           echo "Deploy..."
-           DeployToTarget ".bashrc"
-           DeployToTarget "bashrc.shared"
-           DeployToTarget "bash.library"
-           DeployToTarget ".vimrc"
+        p) UPDATE="PACKAGE"
+           echo "Package..."
+           PrePackage 
+           Package ".bashrc"
+           Package "bashrc.shared"
+           Package "bash.library"
+           Package ".vimrc"
            echo "Complete"
            exit 0
            ;;
