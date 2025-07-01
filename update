@@ -126,7 +126,10 @@ do
            ;;
         h) UPDATE="HOME"
            ;;
-        c) UPDATE="HOME"
+        c) UPDATE="COMMIT"
+           echo "Simple Commit..."
+           git commit  -m "Update"
+           exit 0
            ;;
         t) UPDATE="TEST"
            ;;
