@@ -18,8 +18,8 @@ source $BASHLIBHOME/bash.scanner
 
 
 loginfo
-initdbprint 80 1
-if [ $(TCOLS -100) -gt 79 ]; then
+initdbprint 86 1
+if [ $(TCOLS -100) -gt 85 ]; then
     initdbprint $(TCOLS -100) 1
 fi
 ansi.clear
@@ -139,7 +139,12 @@ do
     case $arg in
         n) UPDATE="NOTHING"
            echo "Nothing and Done"
+           echo "Nothing and Done 2"
            printInfo "Nothing and Done"
+           sleep 3
+           append_last_element "$(szred "  OK")"
+           render_array
+           ansi.move "10" "1"
            exit 0
            ;;
         p) UPDATE="PACKAGE"
@@ -197,6 +202,8 @@ fi
 
 
 if [ "$UPDATE" == "SCAN" ]; then                                                                                               
+    printInfo  "Scanning all files in $(pwd)" 
+    printInfo    "-"
     for file in *; do
       if [[ "$file" != "bash.scanner" ]]; then
           if [[ -f "$file" ]]; then
@@ -256,12 +263,12 @@ if [ "$UPDATE" == "HOME" ]; then
               create_markdown_table_slice zedd "MAKELINKS" "files and scripts"   >>  README.md
 
     rm -f zedd
-    ls ./moe  | egrep [.]pdf$  | gawk -v b="moe/"  '{print b $1}' | sort | uniq > zedd
+    ls ../../Library/moe  | egrep [.]pdf$  | gawk -v b="../../Library/moe/"  '{print b $1}' | sort | uniq > zedd
               alpha_normal5 zedd
               echo "<div class='markdown-body-prime'>" >> README.md
               create_markdown_table_slice zedd "MAKELINKS" "moe"   >>  README.md
               echo "</div>" >> README.md
-
+cp zedd zeddd
     rm -f zedd
     ls ./books  | egrep [.]pdf$  | gawk -v b="books/"  '{print b $1}' | sort | uniq > zedd
               alpha_normal5 zedd
