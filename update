@@ -324,6 +324,7 @@ fi
     printInfo "Homepage Complete"
     printInfo "Homepage Complete"
     printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
 
     exit 1
 
