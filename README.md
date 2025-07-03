@@ -1,124 +1,138 @@
-# files and scripts
+# a
  
 |                          |                          |                          |                          |                          |
 |----------|----------|----------|----------|----------|
-| [0-bashtop](sfiles/0-bashtop.html) | [btags](sfiles/btags.html) | [gDiff](sfiles/gDiff.html) | [gStatus](sfiles/gStatus.html) | [grep.vim](sfiles/grep.vim.html) |
-| [0-git](sfiles/0-git.html) | [colomatic](sfiles/colomatic.html) | [gFD](sfiles/gFD.html) | [gUntracked](sfiles/gUntracked.html) | [includer](sfiles/includer.html) |
-| [bash.scanner](sfiles/bash.scanner.html) | [dot macros.vim](sfiles/dot_macros.vim.html) | [gHardSync](sfiles/gHardSync.html) | [gUpdate](sfiles/gUpdate.html) | [indentomatic](sfiles/indentomatic.html) |
-| [bashCheats](sfiles/bashCheats.html) | [dot vimrc](sfiles/dot_vimrc.html) | [gLocal](sfiles/gLocal.html) | [gUpdateFromOrigin](sfiles/gUpdateFromOrigin.html) | [justomatic](sfiles/justomatic.html) |
-<div class='markdown-body-prime'>
-# moe
+| [abspath](https://archernar.github.io/files/abspath.html) | [ansi.backgroundcolor](https://archernar.github.io/files/ansi.backgroundcolor.html) | [ansi.gutter](https://archernar.github.io/files/ansi.gutter.html) | [ansi.moveleft](https://archernar.github.io/files/ansi.moveleft.html) | [ansi.restorepos](https://archernar.github.io/files/ansi.restorepos.html) |
+| [alpha normal2](https://archernar.github.io/files/alpha_normal2.html) | [ansi.clear](https://archernar.github.io/files/ansi.clear.html) | [ansi.gutteractual](https://archernar.github.io/files/ansi.gutteractual.html) | [ansi.moveright](https://archernar.github.io/files/ansi.moveright.html) | [ansi.savepos](https://archernar.github.io/files/ansi.savepos.html) |
+| [alpha normal4](https://archernar.github.io/files/alpha_normal4.html) | [ansi.clearEOL](https://archernar.github.io/files/ansi.clearEOL.html) | [ansi.home](https://archernar.github.io/files/ansi.home.html) | [ansi.moveup](https://archernar.github.io/files/ansi.moveup.html) | [ansi.textcolor](https://archernar.github.io/files/ansi.textcolor.html) |
+| [alpha normal5](https://archernar.github.io/files/alpha_normal5.html) | [ansi.clearline](https://archernar.github.io/files/ansi.clearline.html) | [ansi.move](https://archernar.github.io/files/ansi.move.html) | [ansi.pos](https://archernar.github.io/files/ansi.pos.html) | [append last element](https://archernar.github.io/files/append_last_element.html) |
+| [ansi.attributes](https://archernar.github.io/files/ansi.attributes.html) | [ansi.constants](https://archernar.github.io/files/ansi.constants.html) | [ansi.movedown](https://archernar.github.io/files/ansi.movedown.html) | [ansi.resetattributes](https://archernar.github.io/files/ansi.resetattributes.html) | [array contains](https://archernar.github.io/files/array_contains.html) |
+# b
  
 |                          |                          |                          |                          |                          |
 |----------|----------|----------|----------|----------|
-| [AI](../../Library/moe/AI.pdf) | [Computer Networking A Top Down Approach](../../Library/moe/Computer_Networking_A_Top_Down_Approach.pdf) | [Graph](../../Library/moe/Graph.pdf) | [Linear Prog And Game Theory](../../Library/moe/Linear_Programming_And_Game_Theory.pdf) | [Project Management Book](../../Library/moe/Project_Management_Book.pdf) |
-| [AVR Microcontroller](../../Library/moe/AVR_Microcontroller.pdf) | [Computer Organization](../../Library/moe/Computer_Organization.pdf) | [Graph Theory](../../Library/moe/Graph_Theory.pdf) | [MLAPP Machine Learning A Probabilistic Per](../../Library/moe/MLAPP_Machine_Learning_A_Probabilistic_Perspective.pdf) | [Project Management For BusEngTech](../../Library/moe/Project_Management_For_BusEngTech.pdf) |
-| [Advanced Engineering Mathematics](../../Library/moe/Advanced_Engineering_Mathematics.pdf) | [Computer System Arch](../../Library/moe/Computer_System_Architecture.pdf) | [HBaseThe Definitive Guide](../../Library/moe/HBaseThe_Definitive_Guide.pdf) | [Machine Learning](../../Library/moe/Machine_Learning.pdf) | [Quantum Computer Science](../../Library/moe/Quantum_Computer_Science.pdf) |
-| [Aho Compiler Principles Techniques And Too](../../Library/moe/Aho_Compiler_Principles_Techniques_And_Tools.pdf) | [Computer Vision Algorithm And Applications](../../Library/moe/Computer_Vision_Algorithm_And_Applications.pdf) | [Hacking The Hacker](../../Library/moe/Hacking_The_Hacker.pdf) | [Mastering Cloud Computing](../../Library/moe/Mastering_Cloud_Computing.pdf) | [Quantum Computing](../../Library/moe/Quantum_Computing.pdf) |
-| [Aho Compiler Principles Techniques And Too](../../Library/moe/Aho_Compiler_Principles_Techniques_And_Tools_Compressed.pdf) | [Concrete Mathematics E](../../Library/moe/Concrete_Mathematics_E.pdf) | [Hadoop](../../Library/moe/Hadoop.pdf) | [Matrix Computations](../../Library/moe/Matrix_Computations.pdf) | [Quantum Computing Explained](../../Library/moe/Quantum_Computing_Explained.pdf) |
-| [Algorithm By Design](../../Library/moe/Algorithm_By_Design.pdf) | [CyberSecurity](../../Library/moe/CyberSecurity.pdf) | [Hadoop Operations](../../Library/moe/Hadoop_Operations.pdf) | [Modern Quantum Mechanics](../../Library/moe/Modern_Quantum_Mechanics.pdf) | [Quantum Physics](../../Library/moe/Quantum_Physics.pdf) |
-| [Algorithms For Interviews](../../Library/moe/Algorithms_For_Interviews.pdf) | [DCAP DATAWARE HOUSING AND DATAMINING](../../Library/moe/DCAP_DATAWARE_HOUSING_AND_DATAMINING.pdf) | [Hadoop The Definitive Guide](../../Library/moe/Hadoop_The_Definitive_Guide.pdf) | [Multimedia Fundamentals Media Coding And C](../../Library/moe/Multimedia_Fundamentals_Media_Coding_And_Content_Processing.pdf) | [RP PC](../../Library/moe/RP_PC.pdf) |
-| [Algorithms Fourth Edition](../../Library/moe/Algorithms_Fourth_Edition.pdf) | [Data Communications And Networking](../../Library/moe/Data_Communications_And_Networking.pdf) | [Information Security And Cyber Law](../../Library/moe/Information_Security_And_Cyber_Law.pdf) | [NoSQL Distilled](../../Library/moe/NoSQL_Distilled.pdf) | [Sequence Data Mining](../../Library/moe/Sequence_Data_Mining.pdf) |
-| [Algorithms In A Nutshell](../../Library/moe/Algorithms_In_A_Nutshell.pdf) | [Data Mining](../../Library/moe/Data_Mining.pdf) | [Innovation And Entrepreneurship Theory Pol](../../Library/moe/Innovation_And_Entrepreneurship_Theory_Policy_And_Practice.pdf) | [NumericalMethods](../../Library/moe/NumericalMethods.pdf) | [Tanenbaum Computer Networks](../../Library/moe/Tanenbaum_Computer_Networks.pdf) |
-| [An Introduction To Formal Languages And Au](../../Library/moe/An_Introduction_To_Formal_Languages_And_Automata.pdf) | [Data Mining Concepts And Techniques](../../Library/moe/Data_Mining_Concepts_And_Techniques.pdf) | [Internet Of Things](../../Library/moe/Internet_Of_Things.pdf) | [Numerical Analysis](../../Library/moe/Numerical_Analysis.pdf) | [Tanenbaum Operating Systems](../../Library/moe/Tanenbaum_Operating_Systems.pdf) |
-| [Aritificial Neural Networks](../../Library/moe/Aritificial_Neural_Networks.pdf) | [Data Warehousing Fundamentals](../../Library/moe/Data_Warehousing_Fundamentals.pdf) | [Internet Of Things A Hands On Approach](../../Library/moe/Internet_Of_Things_A_Hands_On_Approach.pdf) | [Numerical Analysis Th](../../Library/moe/Numerical_Analysis_Th.pdf) | [TheAlgorithmDesignManual](../../Library/moe/TheAlgorithmDesignManual.pdf) |
-| [AutomataTheoryBook](../../Library/moe/AutomataTheoryBook.pdf) | [Databases](../../Library/moe/Databases.pdf) | [Internetworking Technologies An Engineerin](../../Library/moe/Internetworking_Technologies_An_Engineering_Perspective_Rahul_Banerjee_PHI_Learning.pdf) | [Numerical Methods](../../Library/moe/Numerical_Methods.pdf) | [The Elements Of Statistical Learning](../../Library/moe/The_Elements_Of_Statistical_Learning.pdf) |
-| [Automata Languages And Computation](../../Library/moe/Automata_Languages_And_Computation.pdf) | [Deep Learning](../../Library/moe/Deep_Learning.pdf) | [Introduction To Algorithms](../../Library/moe/Introduction_To_Algorithms.pdf) | [Operating System Concepts](../../Library/moe/Operating_System_Concepts.pdf) | [The Elements Of Statistical Learning Other](../../Library/moe/The_Elements_Of_Statistical_Learning_Other.pdf) |
-| [Big Data Big Analytics](../../Library/moe/Big_Data_Big_Analytics.pdf) | [Digital Image Processing Using Matlab](../../Library/moe/Digital_Image_Processing_Using_Matlab.pdf) | [Introduction To Algorithms Fourth Edition](../../Library/moe/Introduction_To_Algorithms_Fourth_Edition.pdf) | [Operations Research An Introduction](../../Library/moe/Operations_Research_An_Introduction.pdf) | [The Internet Of Things Use Cases](../../Library/moe/The_Internet_Of_Things_Use_Cases.pdf) |
-| [Biology A Global Approach](../../Library/moe/Biology_A_Global_Approach.pdf) | [Discrete Mathematics And Its Applications](../../Library/moe/Discrete_Mathematics_And_Its_Applications.pdf) | [Introduction To Compilers And Language Des](../../Library/moe/Introduction_To_Compilers_And_Language_Design.pdf) | [Operations Research Theory And Application](../../Library/moe/Operations_Research_Theory_And_Applications.pdf) | [The Microcontroller And Embedded Systems U](../../Library/moe/The_Microcontroller_And_Embedded_Systems_Using_Assembly_And_C.pdf) |
-| [Bk NoSQL Ch En](../../Library/moe/Bk_NoSQL_Ch_En.pdf) | [Distributed Data At Web Scale](../../Library/moe/Distributed_Data_At_Web_Scale.pdf) | [Introduction To Data Mining](../../Library/moe/Introduction_To_Data_Mining.pdf) | [PIC Microcontroller](../../Library/moe/PIC_Microcontroller.pdf) | [Theory And Problems Of Computer Graphics](../../Library/moe/Theory_And_Problems_Of_Computer_Graphics.pdf) |
-| [Build Maintain A Successful Web Based Busi](../../Library/moe/Build_Maintain_A_Successful_Web_Based_Business.pdf) | [Elementary Number Theory And Its Applicati](../../Library/moe/Elementary_Number_Theory_And_Its_Applications.pdf) | [Introduction To E Business Management And ](../../Library/moe/Introduction_To_E_Business_Management_And_Strategy.pdf) | [Pattern Recognition And Machine Learning](../../Library/moe/Pattern_Recognition_And_Machine_Learning.pdf) | [Ulluman Database Systems](../../Library/moe/Ulluman_Database_Systems.pdf) |
-| [Building Applications In Cloud Concept Pat](../../Library/moe/Building_Applications_In_Cloud_Concept_Patterns_And_Projects.pdf) | [Engineering Mathematics](../../Library/moe/Engineering_Mathematics.pdf) | [Introduction To Environmental Engineering](../../Library/moe/Introduction_To_Environmental_Engineering.pdf) | [Peterson Computer Networks](../../Library/moe/Peterson_Computer_Networks.pdf) | [WEB TWCHNOLOGIES](../../Library/moe/WEB_TWCHNOLOGIES.pdf) |
-| [Cloud Computing Bible](../../Library/moe/Cloud_Computing_Bible.pdf) | [Enterprise Cybersecurity](../../Library/moe/Enterprise_Cybersecurity.pdf) | [Introduction To Graph Theory](../../Library/moe/Introduction_To_Graph_Theory.pdf) | [Pratt Digital Image Processing](../../Library/moe/Pratt_Digital_Image_Processing.pdf) | [Web Technologies A Computer Science Perspe](../../Library/moe/Web_Technologies_A_Computer_Science_Perspective.pdf) |
-| [Compiler](../../Library/moe/Compiler.pdf) | [Fundamentals Of Database Systems](../../Library/moe/Fundamentals_Of_Database_Systems.pdf) | [Introduction To Graph Theory Solution Manu](../../Library/moe/Introduction_To_Graph_Theory_Solution_Manual.pdf) | [Principles Of Biochemistry](../../Library/moe/Principles_Of_Biochemistry.pdf) | [Wilson Graph Theory](../../Library/moe/Wilson_Graph_Theory.pdf) |
-| [CompilerDesignInC](../../Library/moe/CompilerDesignInC.pdf) | [Fundamentals Of Digital Image Processing](../../Library/moe/Fundamentals_Of_Digital_Image_Processing.pdf) | [It Act Updated](../../Library/moe/It_Act_Updated.pdf) | [Prog Challenges](../../Library/moe/Programming_Challenges.pdf) | [Woods Digital Image Processing](../../Library/moe/Woods_Digital_Image_Processing.pdf) |
-| [Computer Graphics C](../../Library/moe/Computer_Graphics_C.pdf) | [Fxtbook](../../Library/moe/Fxtbook.pdf) | [KCA Internet Of Things IoT](../../Library/moe/KCA_Internet_Of_Things_IoT.pdf) | [Prog Hive](../../Library/moe/Programming_Hive.pdf) | [&nbsp;](&nbsp;) |
-</div>
-<div class='markdown-body-prime'>
-# books
+| [backup file](https://archernar.github.io/files/backup_file.html) | [basename](https://archernar.github.io/files/basename.html) | [bash.scanner](https://archernar.github.io/files/bash.scanner.html) | [bashCheats](https://archernar.github.io/files/bashCheats.html) | [btags](https://archernar.github.io/files/btags.html) |
+# c
  
 |                          |                          |                          |                          |                          |
 |----------|----------|----------|----------|----------|
-| [AI Engineering Building Applications with ](books/AI_Engineering_Building_Applications_with_Foundation_Models_Chip_Huyen.pdf) | [Data structures using c reema thareja](books/Data_structures_using_c_reema_thareja.pdf) | [Hands On Microservices With Kubernetes Bui](books/Hands_On_Microservices_With_Kubernetes_Build_deploy_and_manage_scalable_microservices_on_kubernetes.pdf) | [Operating system A concept based approach ](books/Operating_system_A_concept_based_approach_Dhamdhere.pdf) | [The Linux programming interface a Linux an](books/The_Linux_programming_interface_a_Linux_and_UNIX_system_programming_handbook_Michael_Kerrisk_z_lib.org.pdf) |
-| [Accelerate Building and Scaling High Perfo](books/Accelerate_Building_and_Scaling_High_Performing_Technology_Organisations_Nicole_Fergrson.pdf) | [Database Internals](books/Database_Internals.pdf) | [High Output Management](books/High_Output_Management.pdf) | [Principles of electronics V.K Mehta](books/Principles_of_electronics_V.K_Mehta.pdf) | [The Little Book of Deep Learning](books/The_Little_Book_of_Deep_Learning.pdf) |
-| [Algorithms Illustrated Programmers Curious](books/Algorithms_Illustrated_Programmers_Curious.pdf) | [Database Management Systems Ramakrishnan](books/Database_Management_Systems_Ramakrishnan.pdf) | [Introduction to Algorithms coremen](books/Introduction_to_Algorithms_coremen.pdf) | [Protocols and architectures for wireless s](books/Protocols_and_architectures_for_wireless_sensor_networks_karl_willing.pdf) | [The Pragmatic Programmer Your Journey to M](books/The_Pragmatic_Programmer_Your_Journey_to_Mastery_th_Anniversary_Edition_by_Andrew_Hunt_David_Hurst_Thomas.pdf) |
-| [Ansible for DevOps](books/Ansible_for_DevOps.pdf) | [Designing Data Intensive Applications The ](books/Designing_Data_Intensive_Applications_The_Big_Ideas_Behind_Reliable_Scalable_and_Maintainable_Systems.pdf) | [Introduction to automata theory hopcroft u](books/Introduction_to_automata_theory_hopcroft_ullman.pdf) | [Radical Candor](books/Radical_Candor.pdf) | [The Unicorn Project A Novel about Develope](books/The_Unicorn_Project_A_Novel_about_Developers_Digital_Disruption_and_Thriving_in_the_Age_of_Data_Gene_Kim.pdf) |
-| [Artificial intelligence A Guide for Thinki](books/Artificial_intelligence_A_Guide_for_Thinking_Humans.pdf) | [Designing For Performance Weighing Aesthet](books/Designing_For_Performance_Weighing_Aesthetics_and_Speed.pdf) | [Laws of UX Using Psychology to Design Bett](books/Laws_of_UX_Using_Psychology_to_Design_Better_Products_Services.pdf) | [Reinforcement Learning Second Edition An I](books/Reinforcement_Learning_Second_Edition_An_Introduction_Adaptive_Computation_and_Machine_Learning.pdf) | [Theory of automata formal languages and co](books/Theory_of_automata_formal_languages_and_computation_new_age_publishers.pdf) |
-| [Clean Code A Handbook of Agile Software Cr](books/Clean_Code_A_Handbook_of_Agile_Software_Craftsmanship.pdf) | [Digital design Morris Mano](books/Digital_design_Morris_Mano.pdf) | [Leading Snowflakes](books/Leading_Snowflakes.pdf) | [Site Reliability Engineering](books/Site_Reliability_Engineering.pdf) | [Theory of computer science klp mishara](books/Theory_of_computer_science_klp_mishara.pdf) |
-| [Computer networking a top down aproach kur](books/Computer_networking_a_top_down_aproach_kurose_ross.pdf) | [Digital electronics anil.k.maini](books/Digital_electronics_anil.k.maini.pdf) | [Linux IP Networking  A Guide to the Implem](books/Linux_IP_Networking__A_Guide_to_the_Implementation_and_Modification_of_the_Linux_Protocol_Stack.pdf) | [Software engineering IIT khargapur rajib m](books/Software_engineering_IIT_khargapur_rajib_mall.pdf) | [Think Like a Programmer An Introduction to](books/Think_Like_a_Programmer_An_Introduction_to_Creative_Problem_Solving.pdf) |
-| [Computer science distilled Wladston Ferrei](books/Computer_science_distilled_Wladston_Ferreira_Filho.pdf) | [Distributed computing singhal](books/Distributed_computing_singhal.pdf) | [Linux Kernel Crash Book](books/Linux_Kernel_Crash_Book.pdf) | [Software engineering sommerville](books/Software_engineering_sommerville.pdf) | [UNIX and shell programming oxford universi](books/UNIX_and_shell_programming_oxford_university_press.pdf) |
-| [Cryptography and network security stalling](books/Cryptography_and_network_security_stallings.pdf) | [Distributed systems principles and paradig](books/Distributed_systems_principles_and_paradigms_tanenbaum.pdf) | [Linux System Prog   Robert Love](books/Linux_System_Programming___Robert_Love.pdf) | [System Design Interview An insiders guide ](books/System_Design_Interview_An_insiders_guide_volume_.pdf) | [Understanding Linux Network Internals](books/Understanding_Linux_Network_Internals.pdf) |
-| [Data and computer communications stallings](books/Data_and_computer_communications_stallings.pdf) | [Domain Driven Design Tackling Complexity i](books/Domain_Driven_Design_Tackling_Complexity_in_the_Heart_of_Software.pdf) | [Linux commands Notes for Professionals](books/Linux_commands_Notes_for_Professionals.pdf) | [ThePhoenixProjectANovelAboutIT](books/ThePhoenixProjectANovelAboutIT.pdf) | [Wireless sensor network designs anna Hac](books/Wireless_sensor_network_designs_anna_Hac.pdf) |
-| [Data communication and networking forouzan](books/Data_communication_and_networking_forouzan.pdf) | [Frontend Arch for Design Systems A](books/Frontend_Architecture_for_Design_Systems_A_Modern_Blueprint_for_Scalable_and_Sustainable_Websites.pdf) | [Managing Projects with GNU Make](books/Managing_Projects_with_GNU_Make.pdf) | [The Alignment Problem Machines Learning an](books/The_Alignment_Problem_Machines_Learning_and_Human_Values.pdf) | [Wireless sensors network Kazem Sohraby Dan](books/Wireless_sensors_network_Kazem_Sohraby_Daniel_Minoli_Taieb_Znati.pdf) |
-| [Data mining concepts and techniques Jiawei](books/Data_mining_concepts_and_techniques_Jiawei_Han_Micheline_Kamber_Jian_Pei.pdf) | [Fundamentals of Database Systems Elmasri N](books/Fundamentals_of_Database_Systems_Elmasri_Navathe.pdf) | [Object oriented programming in c Robert La](books/Object_oriented_programming_in_c_Robert_Lafore.pdf) | [The Art of Computer Prog Donald E. ](books/The_Art_of_Computer_Programming_Donald_E._Knuth.pdf) | [ microprocessors through question answers ](books/_microprocessors_through_question_answers_S.K.Sen.pdf) |
-| [Data structures algorithm analysis in c ma](books/Data_structures_algorithm_analysis_in_c_mark_allen_weiss.pdf) | [Fundamentals of wireless sensor networks W](books/Fundamentals_of_wireless_sensor_networks_Waltenegus_Dargie.pdf) | [Object oriented software engineering mc gr](books/Object_oriented_software_engineering_mc_graw_hill.pdf) | [The DevOps Engineers Career Guide A Handbo](books/The_DevOps_Engineers_Career_Guide_A_Handbook_for_Entry_Level_Professionals_to_get_into_Continuous_Delivery_Roles_for_Agile._Stephen_Fleming.pdf) | [linux network administrators guide rd edit](books/linux_network_administrators_guide_rd_edition.pdf) |
-| [Data structures and program design in c kr](books/Data_structures_and_program_design_in_c_kruse_ryba_.pdf) | [Graph theory with applications C. Vasudev](books/Graph_theory_with_applications_C._Vasudev.pdf) | [Oop with c solution E balagurusamy](books/Oop_with_c_solution_E_balagurusamy.pdf) | [The DevOps Handbook How to Create World Cl](books/The_DevOps_Handbook_How_to_Create_World_Class_Agility_Reliability_and_Security_in_Technology_Organizations_Gene_Kim_Jez_Humble_Patrick_Debois_etc.pdf) | [opdenacker embedded linux size reduction t](books/opdenacker_embedded_linux_size_reduction_techniques.pdf) |
-</div>
-<div class='markdown-body-prime'>
-# reading
+| [check command](https://archernar.github.io/files/check_command.html) | [core.loglevels](https://archernar.github.io/files/core.loglevels.html) | [core.string.indexof](https://archernar.github.io/files/core.string.indexof.html) | [core.string.replacefirst](https://archernar.github.io/files/core.string.replacefirst.html) | [create markdown table3](https://archernar.github.io/files/create_markdown_table3.html) |
+| [colomatic](https://archernar.github.io/files/colomatic.html) | [core.panic](https://archernar.github.io/files/core.panic.html) | [core.string.isempty](https://archernar.github.io/files/core.string.isempty.html) | [core.string.split](https://archernar.github.io/files/core.string.split.html) | [create markdown table4](https://archernar.github.io/files/create_markdown_table4.html) |
+| [command exists](https://archernar.github.io/files/command_exists.html) | [core.print.alltest](https://archernar.github.io/files/core.print.alltest.html) | [core.string.length](https://archernar.github.io/files/core.string.length.html) | [core.string.substring](https://archernar.github.io/files/core.string.substring.html) | [create markdown table slice](https://archernar.github.io/files/create_markdown_table_slice.html) |
+| [console.rulers](https://archernar.github.io/files/console.rulers.html) | [core.print.flag](https://archernar.github.io/files/core.print.flag.html) | [core.string.padcenter](https://archernar.github.io/files/core.string.padcenter.html) | [core.string.tolower](https://archernar.github.io/files/core.string.tolower.html) | [create simple table4](https://archernar.github.io/files/create_simple_table4.html) |
+| [contains](https://archernar.github.io/files/contains.html) | [core.print.stackline](https://archernar.github.io/files/core.print.stackline.html) | [core.string.padleft](https://archernar.github.io/files/core.string.padleft.html) | [core.string.toupper](https://archernar.github.io/files/core.string.toupper.html) | [current timestamp](https://archernar.github.io/files/current_timestamp.html) |
+| [core.check for duplicates](https://archernar.github.io/files/core.check_for_duplicates.html) | [core.stacktracedepth](https://archernar.github.io/files/core.stacktracedepth.html) | [core.string.padright](https://archernar.github.io/files/core.string.padright.html) | [cp r](https://archernar.github.io/files/cp_r.html) | [&nbsp;](&nbsp;) |
+| [core.dumpfile.info](https://archernar.github.io/files/core.dumpfile.info.html) | [core.string.contains](https://archernar.github.io/files/core.string.contains.html) | [core.string.replace.all](https://archernar.github.io/files/core.string.replace.all.html) | [create markdown table2](https://archernar.github.io/files/create_markdown_table2.html) | [&nbsp;](&nbsp;) |
+# d
  
 |                          |                          |                          |                          |                          |
 |----------|----------|----------|----------|----------|
-| [Additional Practice Material I](Reading/Additional_Practice_Material_I.pdf) | [Additional Practice Material VIII For Loop](Reading/Additional_Practice_Material_VIII_For_Loop_Focus_No_Arrays.pdf) | [Casino Royale Ian Fleming](Reading/Casino_Royale_Ian_Fleming.pdf) | [For Your Eyes Only Ian Fleming](Reading/For_Your_Eyes_Only_Ian_Fleming.pdf) | [Octopussy and the Living Daylights Ian Fle](Reading/Octopussy_and_the_Living_Daylights_Ian_Fleming.pdf) |
-| [Additional Practice Material II](Reading/Additional_Practice_Material_II.pdf) | [Additional Practice Material VII Loops and](Reading/Additional_Practice_Material_VII_Loops_and_Flow_Control.pdf) | [CommonTasks ](Reading/CommonTasks_.pdf) | [From Russia With Love Ian Fleming](Reading/From_Russia_With_Love_Ian_Fleming.pdf) | [On Her Majestys Secret Service Ian Fleming](Reading/On_Her_Majestys_Secret_Service_Ian_Fleming.pdf) |
-| [Additional Practice Material III](Reading/Additional_Practice_Material_III.pdf) | [Additional Practice Material VI Conditiona](Reading/Additional_Practice_Material_VI_Conditional_Statements_and_Flow_Control.pdf) | [Diamonds Are Forever Ian Fleming](Reading/Diamonds_Are_Forever_Ian_Fleming.pdf) | [Goldfinger Ian Fleming](Reading/Goldfinger_Ian_Fleming.pdf) | [SurvivalManual ](Reading/SurvivalManual_.pdf) |
-| [Additional Practice Material IV](Reading/Additional_Practice_Material_IV.pdf) | [Additional Practice Material X Arrays Mult](Reading/Additional_Practice_Material_X_Arrays_Multi_Dimension.pdf) | [Dr. No Ian Fleming](Reading/Dr._No_Ian_Fleming.pdf) | [Live and Let Die Ian Fleming](Reading/Live_and_Let_Die_Ian_Fleming.pdf) | [The Man With the Golden Gun Ian Fleming](Reading/The_Man_With_the_Golden_Gun_Ian_Fleming.pdf) |
-| [Additional Practice Material V](Reading/Additional_Practice_Material_V.pdf) | [Additional Practice Materials IX Arrays Si](Reading/Additional_Practice_Materials_IX_Arrays_Single_Dimension.pdf) | [FirstAid](Reading/FirstAid.pdf) | [Moonraker Ian Fleming](Reading/Moonraker_Ian_Fleming.pdf) | [The Spy Who Loved Me Ian Fleming](Reading/The_Spy_Who_Loved_Me_Ian_Fleming.pdf) |
-</div>
-<div class='markdown-body-prime'>
-# mamalucien
+| [dbprint](https://archernar.github.io/files/dbprint.html) | [dirname](https://archernar.github.io/files/dirname.html) | [dot macros.vim](https://archernar.github.io/files/dot_macros.vim.html) | [dot vimrc](https://archernar.github.io/files/dot_vimrc.html) | [dprint](https://archernar.github.io/files/dprint.html) |
+# e
  
 |                          |                          |                          |                          |                          |
 |----------|----------|----------|----------|----------|
-| [gawk array average](mamalucien/gawk_array_average.html) | [gawk array sum](mamalucien/gawk_array_sum.html) | [gawk list concat](mamalucien/gawk_list_concat.html) | [gawk list prepend](mamalucien/gawk_list_prepend.html) | [gawk parse csv](mamalucien/gawk_parse_csv.html) |
-| [gawk array contains](mamalucien/gawk_array_contains.html) | [gawk contains](mamalucien/gawk_contains.html) | [gawk list get](mamalucien/gawk_list_get.html) | [gawk list remove at](mamalucien/gawk_list_remove_at.html) | [gawk replace all](mamalucien/gawk_replace_all.html) |
-| [gawk array filter](mamalucien/gawk_array_filter.html) | [gawk double](mamalucien/gawk_double.html) | [gawk list index of](mamalucien/gawk_list_index_of.html) | [gawk list remove value](mamalucien/gawk_list_remove_value.html) | [gawk split preserve empty](mamalucien/gawk_split_preserve_empty.html) |
-| [gawk array join](mamalucien/gawk_array_join.html) | [gawk ends with](mamalucien/gawk_ends_with.html) | [gawk list insert](mamalucien/gawk_list_insert.html) | [gawk list reverse](mamalucien/gawk_list_reverse.html) | [gawk starts with](mamalucien/gawk_starts_with.html) |
-| [gawk array map](mamalucien/gawk_array_map.html) | [gawk list append](mamalucien/gawk_list_append.html) | [gawk list last index of](mamalucien/gawk_list_last_index_of.html) | [gawk list slice](mamalucien/gawk_list_slice.html) | [gawk trim](mamalucien/gawk_trim.html) |
-</div>
-<div class='markdown-body-prime'>
-# bash functions
+| [EIGTHTCOLS](https://archernar.github.io/files/EIGTHTCOLS.html) | [EIGTHTROWS](https://archernar.github.io/files/EIGTHTROWS.html) | [eecho](https://archernar.github.io/files/eecho.html) | [ends with](https://archernar.github.io/files/ends_with.html) | [error](https://archernar.github.io/files/error.html) |
+# f
+ 
+# g
  
 |                          |                          |                          |                          |                          |
 |----------|----------|----------|----------|----------|
-| [.macros.vim](files/.macros.vim.html) | [backup file](files/backup_file.html) | [dot macros.vim](files/dot_macros.vim.html) | [logdebug](files/logdebug.html) | [run and output](files/run_and_output.html) |
-| [.vimrc](files/.vimrc.html) | [basename](files/basename.html) | [dot vimrc](files/dot_vimrc.html) | [logerror](files/logerror.html) | [silencio](files/silencio.html) |
-| [0-bashtop](files/0-bashtop.html) | [bash.scanner](files/bash.scanner.html) | [dprint](files/dprint.html) | [loginfo](files/loginfo.html) | [sort file](files/sort_file.html) |
-| [0-git](files/0-git.html) | [bashCheats](files/bashCheats.html) | [eecho](files/eecho.html) | [logreset](files/logreset.html) | [split file n](files/split_file_n.html) |
-| [EIGTHTCOLS](files/EIGTHTCOLS.html) | [btags](files/btags.html) | [ends with](files/ends_with.html) | [logset](files/logset.html) | [starts with](files/starts_with.html) |
-| [EIGTHTROWS](files/EIGTHTROWS.html) | [check command](files/check_command.html) | [error](files/error.html) | [lookup dns record](files/lookup_dns_record.html) | [string after file lines](files/string_after_file_lines.html) |
-| [HALFTCOLS](files/HALFTCOLS.html) | [colomatic](files/colomatic.html) | [examplesComparison](files/examplesComparison.html) | [mecho](files/mecho.html) | [string before file lines](files/string_before_file_lines.html) |
-| [HALFTROWS](files/HALFTROWS.html) | [command exists](files/command_exists.html) | [exists](files/exists.html) | [mkdir p](files/mkdir_p.html) | [substring](files/substring.html) |
-| [QTRTCOLS](files/QTRTCOLS.html) | [console.rulers](files/console.rulers.html) | [extension](files/extension.html) | [mv f](files/mv_f.html) | [szblack](files/szblack.html) |
-| [QTRTROWS](files/QTRTROWS.html) | [contains](files/contains.html) | [gDiff](files/gDiff.html) | [necho](files/necho.html) | [szblue](files/szblue.html) |
-| [TCOLS](files/TCOLS.html) | [core.check for duplicates](files/core.check_for_duplicates.html) | [gFD](files/gFD.html) | [odd or less](files/odd_or_less.html) | [szcolor](files/szcolor.html) |
-| [TCOLSACTUAL](files/TCOLSACTUAL.html) | [core.dumpfile.info](files/core.dumpfile.info.html) | [gHardSync](files/gHardSync.html) | [padomatic](files/padomatic.html) | [szcyan](files/szcyan.html) |
-| [TROWS](files/TROWS.html) | [core.loglevels](files/core.loglevels.html) | [gLocal](files/gLocal.html) | [padout file lines](files/padout_file_lines.html) | [szflag](files/szflag.html) |
-| [TROWSACTUAL](files/TROWSACTUAL.html) | [core.panic](files/core.panic.html) | [gStatus](files/gStatus.html) | [panel](files/panel.html) | [szgreen](files/szgreen.html) |
-| [abspath](files/abspath.html) | [core.print.alltest](files/core.print.alltest.html) | [gUntracked](files/gUntracked.html) | [paramsf](files/paramsf.html) | [szmagenta](files/szmagenta.html) |
-| [alpha normal2](files/alpha_normal2.html) | [core.print.flag](files/core.print.flag.html) | [gUpdate](files/gUpdate.html) | [pidof name](files/pidof_name.html) | [szred](files/szred.html) |
-| [alpha normal4](files/alpha_normal4.html) | [core.print.stackline](files/core.print.stackline.html) | [gUpdateFromOrigin](files/gUpdateFromOrigin.html) | [printAdvice](files/printAdvice.html) | [szwhite](files/szwhite.html) |
-| [alpha normal5](files/alpha_normal5.html) | [core.stacktracedepth](files/core.stacktracedepth.html) | [get name servers](files/get_name_servers.html) | [printAlert](files/printAlert.html) | [szyellow](files/szyellow.html) |
-| [ansi.attributes](files/ansi.attributes.html) | [core.string.contains](files/core.string.contains.html) | [get terminal size](files/get_terminal_size.html) | [printAlways](files/printAlways.html) | [thedns](files/thedns.html) |
-| [ansi.backgroundcolor](files/ansi.backgroundcolor.html) | [core.string.indexof](files/core.string.indexof.html) | [gitadd](files/gitadd.html) | [printAtLevel](files/printAtLevel.html) | [timestamp ms](files/timestamp_ms.html) |
-| [ansi.clear](files/ansi.clear.html) | [core.string.isempty](files/core.string.isempty.html) | [grep.vim](files/grep.vim.html) | [printCritical](files/printCritical.html) | [trim](files/trim.html) |
-| [ansi.clearEOL](files/ansi.clearEOL.html) | [core.string.length](files/core.string.length.html) | [hashomatic](files/hashomatic.html) | [printDebug](files/printDebug.html) | [trim leading whitespace file](files/trim_leading_whitespace_file.html) |
-| [ansi.clearline](files/ansi.clearline.html) | [core.string.padcenter](files/core.string.padcenter.html) | [includer](files/includer.html) | [printError](files/printError.html) | [truncate file lines](files/truncate_file_lines.html) |
-| [ansi.constants](files/ansi.constants.html) | [core.string.padleft](files/core.string.padleft.html) | [indent file](files/indent_file.html) | [printFatal](files/printFatal.html) | [u.put](files/u.put.html) |
-| [ansi.gutter](files/ansi.gutter.html) | [core.string.padright](files/core.string.padright.html) | [indentomatic](files/indentomatic.html) | [printInfo](files/printInfo.html) | [u.putc](files/u.putc.html) |
-| [ansi.gutteractual](files/ansi.gutteractual.html) | [core.string.replace.all](files/core.string.replace.all.html) | [info](files/info.html) | [printWarning](files/printWarning.html) | [u.putln](files/u.putln.html) |
-| [ansi.home](files/ansi.home.html) | [core.string.replacefirst](files/core.string.replacefirst.html) | [initdbprint](files/initdbprint.html) | [prompter](files/prompter.html) | [update last element](files/update_last_element.html) |
-| [ansi.move](files/ansi.move.html) | [core.string.split](files/core.string.split.html) | [isSameHash](files/isSameHash.html) | [remove leading whitespace](files/remove_leading_whitespace.html) | [uppercaseallfiles](files/uppercaseallfiles.html) |
-| [ansi.movedown](files/ansi.movedown.html) | [core.string.substring](files/core.string.substring.html) | [is dir](files/is_dir.html) | [rename dot file](files/rename_dot_file.html) | [util.posprint](files/util.posprint.html) |
-| [ansi.moveleft](files/ansi.moveleft.html) | [core.string.tolower](files/core.string.tolower.html) | [is file](files/is_file.html) | [renamecopy dot file](files/renamecopy_dot_file.html) | [util.pprint](files/util.pprint.html) |
-| [ansi.moveright](files/ansi.moveright.html) | [core.string.toupper](files/core.string.toupper.html) | [is hidden file](files/is_hidden_file.html) | [repeat char](files/repeat_char.html) | [util.print.color](files/util.print.color.html) |
-| [ansi.moveup](files/ansi.moveup.html) | [cp r](files/cp_r.html) | [is reachable](files/is_reachable.html) | [replace](files/replace.html) | [util.print](files/util.print.html) |
-| [ansi.pos](files/ansi.pos.html) | [create markdown table2](files/create_markdown_table2.html) | [justify file](files/justify_file.html) | [replaceomatic](files/replaceomatic.html) | [util.println](files/util.println.html) |
-| [ansi.resetattributes](files/ansi.resetattributes.html) | [create markdown table3](files/create_markdown_table3.html) | [justify line](files/justify_line.html) | [right pad limited](files/right_pad_limited.html) | [util.put](files/util.put.html) |
-| [ansi.restorepos](files/ansi.restorepos.html) | [create markdown table4](files/create_markdown_table4.html) | [justomatic](files/justomatic.html) | [rints](files/rints.html) | [util.putln](files/util.putln.html) |
-| [ansi.savepos](files/ansi.savepos.html) | [create markdown table slice](files/create_markdown_table_slice.html) | [kill name](files/kill_name.html) | [rm rf](files/rm_rf.html) | [util.set background](files/util.set_background.html) |
-| [ansi.textcolor](files/ansi.textcolor.html) | [create simple table4](files/create_simple_table4.html) | [kill pid](files/kill_pid.html) | [rm rf silent](files/rm_rf_silent.html) | [warn](files/warn.html) |
-| [append last element](files/append_last_element.html) | [current timestamp](files/current_timestamp.html) | [logadvice](files/logadvice.html) | [rrints](files/rrints.html) | [&nbsp;](&nbsp;) |
-| [array contains](files/array_contains.html) | [dbprint](files/dbprint.html) | [logalert](files/logalert.html) | [run and error](files/run_and_error.html) | [&nbsp;](&nbsp;) |
-| [array join](files/array_join.html) | [dirname](files/dirname.html) | [logcritical](files/logcritical.html) | [run and exit code](files/run_and_exit_code.html) | [&nbsp;](&nbsp;) |
-</div>
+| [gDiff](https://archernar.github.io/files/gDiff.html) | [gHardSync](https://archernar.github.io/files/gHardSync.html) | [gStatus](https://archernar.github.io/files/gStatus.html) | [gUpdate](https://archernar.github.io/files/gUpdate.html) | [get name servers](https://archernar.github.io/files/get_name_servers.html) |
+| [gFD](https://archernar.github.io/files/gFD.html) | [gLocal](https://archernar.github.io/files/gLocal.html) | [gUntracked](https://archernar.github.io/files/gUntracked.html) | [gUpdateFromOrigin](https://archernar.github.io/files/gUpdateFromOrigin.html) | [get terminal size](https://archernar.github.io/files/get_terminal_size.html) |
+# h
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [HALFTCOLS](https://archernar.github.io/files/HALFTCOLS.html) | [HALFTROWS](https://archernar.github.io/files/HALFTROWS.html) | [hashomatic](https://archernar.github.io/files/hashomatic.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
+# i
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [includer](https://archernar.github.io/files/includer.html) | [indentomatic](https://archernar.github.io/files/indentomatic.html) | [initdbprint](https://archernar.github.io/files/initdbprint.html) | [is dir](https://archernar.github.io/files/is_dir.html) | [is hidden file](https://archernar.github.io/files/is_hidden_file.html) |
+| [indent file](https://archernar.github.io/files/indent_file.html) | [info](https://archernar.github.io/files/info.html) | [isSameHash](https://archernar.github.io/files/isSameHash.html) | [is file](https://archernar.github.io/files/is_file.html) | [is reachable](https://archernar.github.io/files/is_reachable.html) |
+# j
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [justify file](https://archernar.github.io/files/justify_file.html) | [justify line](https://archernar.github.io/files/justify_line.html) | [justomatic](https://archernar.github.io/files/justomatic.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
+# k
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [kill name](https://archernar.github.io/files/kill_name.html) | [kill pid](https://archernar.github.io/files/kill_pid.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
+# l
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [logadvice](https://archernar.github.io/files/logadvice.html) | [logcritical](https://archernar.github.io/files/logcritical.html) | [logerror](https://archernar.github.io/files/logerror.html) | [logreset](https://archernar.github.io/files/logreset.html) | [lookup dns record](https://archernar.github.io/files/lookup_dns_record.html) |
+| [logalert](https://archernar.github.io/files/logalert.html) | [logdebug](https://archernar.github.io/files/logdebug.html) | [loginfo](https://archernar.github.io/files/loginfo.html) | [logset](https://archernar.github.io/files/logset.html) | [&nbsp;](&nbsp;) |
+# m
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [mecho](https://archernar.github.io/files/mecho.html) | [mkdir p](https://archernar.github.io/files/mkdir_p.html) | [mv f](https://archernar.github.io/files/mv_f.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
+# n
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [necho](https://archernar.github.io/files/necho.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
+# o
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [odd or less](https://archernar.github.io/files/odd_or_less.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
+# p
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [padomatic](https://archernar.github.io/files/padomatic.html) | [paramsf](https://archernar.github.io/files/paramsf.html) | [printAlert](https://archernar.github.io/files/printAlert.html) | [printCritical](https://archernar.github.io/files/printCritical.html) | [printFatal](https://archernar.github.io/files/printFatal.html) |
+| [padout file lines](https://archernar.github.io/files/padout_file_lines.html) | [pidof name](https://archernar.github.io/files/pidof_name.html) | [printAlways](https://archernar.github.io/files/printAlways.html) | [printDebug](https://archernar.github.io/files/printDebug.html) | [printInfo](https://archernar.github.io/files/printInfo.html) |
+| [panel](https://archernar.github.io/files/panel.html) | [printAdvice](https://archernar.github.io/files/printAdvice.html) | [printAtLevel](https://archernar.github.io/files/printAtLevel.html) | [printError](https://archernar.github.io/files/printError.html) | [printWarning](https://archernar.github.io/files/printWarning.html) |
+# q
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [QTRTCOLS](https://archernar.github.io/files/QTRTCOLS.html) | [QTRTROWS](https://archernar.github.io/files/QTRTROWS.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
+# r
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [remove leading whitespace](https://archernar.github.io/files/remove_leading_whitespace.html) | [repeat char](https://archernar.github.io/files/repeat_char.html) | [right pad limited](https://archernar.github.io/files/right_pad_limited.html) | [rm rf silent](https://archernar.github.io/files/rm_rf_silent.html) | [run and exit code](https://archernar.github.io/files/run_and_exit_code.html) |
+| [rename dot file](https://archernar.github.io/files/rename_dot_file.html) | [replace](https://archernar.github.io/files/replace.html) | [rints](https://archernar.github.io/files/rints.html) | [rrints](https://archernar.github.io/files/rrints.html) | [run and output](https://archernar.github.io/files/run_and_output.html) |
+| [renamecopy dot file](https://archernar.github.io/files/renamecopy_dot_file.html) | [replaceomatic](https://archernar.github.io/files/replaceomatic.html) | [rm rf](https://archernar.github.io/files/rm_rf.html) | [run and error](https://archernar.github.io/files/run_and_error.html) | [&nbsp;](&nbsp;) |
+# s
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [silencio](https://archernar.github.io/files/silencio.html) | [string after file lines](https://archernar.github.io/files/string_after_file_lines.html) | [szblue](https://archernar.github.io/files/szblue.html) | [szgreen](https://archernar.github.io/files/szgreen.html) | [szyellow](https://archernar.github.io/files/szyellow.html) |
+| [sort file](https://archernar.github.io/files/sort_file.html) | [string before file lines](https://archernar.github.io/files/string_before_file_lines.html) | [szcolor](https://archernar.github.io/files/szcolor.html) | [szmagenta](https://archernar.github.io/files/szmagenta.html) | [&nbsp;](&nbsp;) |
+| [split file n](https://archernar.github.io/files/split_file_n.html) | [substring](https://archernar.github.io/files/substring.html) | [szcyan](https://archernar.github.io/files/szcyan.html) | [szred](https://archernar.github.io/files/szred.html) | [&nbsp;](&nbsp;) |
+| [starts with](https://archernar.github.io/files/starts_with.html) | [szblack](https://archernar.github.io/files/szblack.html) | [szflag](https://archernar.github.io/files/szflag.html) | [szwhite](https://archernar.github.io/files/szwhite.html) | [&nbsp;](&nbsp;) |
+# t
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [TCOLS](https://archernar.github.io/files/TCOLS.html) | [TROWS](https://archernar.github.io/files/TROWS.html) | [thedns](https://archernar.github.io/files/thedns.html) | [trim](https://archernar.github.io/files/trim.html) | [truncate file lines](https://archernar.github.io/files/truncate_file_lines.html) |
+| [TCOLSACTUAL](https://archernar.github.io/files/TCOLSACTUAL.html) | [TROWSACTUAL](https://archernar.github.io/files/TROWSACTUAL.html) | [timestamp ms](https://archernar.github.io/files/timestamp_ms.html) | [trim leading whitespace file](https://archernar.github.io/files/trim_leading_whitespace_file.html) | [&nbsp;](&nbsp;) |
+# u
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [u.put](https://archernar.github.io/files/u.put.html) | [update last element](https://archernar.github.io/files/update_last_element.html) | [util.pprint](https://archernar.github.io/files/util.pprint.html) | [util.println](https://archernar.github.io/files/util.println.html) | [util.set background](https://archernar.github.io/files/util.set_background.html) |
+| [u.putc](https://archernar.github.io/files/u.putc.html) | [uppercaseallfiles](https://archernar.github.io/files/uppercaseallfiles.html) | [util.print.color](https://archernar.github.io/files/util.print.color.html) | [util.put](https://archernar.github.io/files/util.put.html) | [&nbsp;](&nbsp;) |
+| [u.putln](https://archernar.github.io/files/u.putln.html) | [util.posprint](https://archernar.github.io/files/util.posprint.html) | [util.print](https://archernar.github.io/files/util.print.html) | [util.putln](https://archernar.github.io/files/util.putln.html) | [&nbsp;](&nbsp;) |
+# v
+ 
+# w
+ 
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [warn](https://archernar.github.io/files/warn.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
+# x
+ 
+# y
+ 
+# z
+ 
