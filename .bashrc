@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat Jul 12 07:57:47 EDT 2025
-# *********************************************************HASHOMATIC: cf2d3db9e43f96c69d1dfe7d83cd0d8c
+# *********************************************************DATEOMATIC: Sat Jul 12 08:00:10 EDT 2025
+# *********************************************************HASHOMATIC: 896dc36b10411d9ab6d9ea1cc1164650
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -128,6 +128,17 @@ function git_uncommitted() {
   echo "$sz"
 }
 
+function git_changecount() {
+         local void="0";                          # Bash-Function-Args
+     local tmp1=$(mktemp)
+     if [ -d ".git" ]; then
+        git diff --name-only           > $tmp1
+        git diff --name-only --staged >> $tmp1
+        cat $tmp1 | sort | uniq | wc -l
+     fi
+     rm -f "$tmp1" >/dev/null 2>&1
+}
+
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 function git_toplevel() {
          local void="11";                          # Bash-Function-Args
@@ -190,4 +201,4 @@ function prompt_pos() {
 # How it works:git status --porcelain: This command outputs the status of your working directory and staging area in a machine-readable format.--untracked-files=no: This option tells git status to not show untracked files. We are only interested in tracked files that have changed.--exclude-standard: This option ensures that files ignored by your .gitignore are not considered.-n $(...): This checks if the output of the git status command is non-empty. If there's any output, it means there are changes.The function returns "true" if changes are found, and "false" otherwise.
 
 
-export PS1='$(collapse_hostname) $(collapse_pwd) ($(git_toplevel):$(git_branch):$(git_originsync):$(git_uncommitted))>> '
+export PS1='$(collapse_hostname) $(collapse_pwd) ($(git_toplevel):$(git_branch):$(git_originsync):$(git_uncommitted)$(git_changecount))>> '
