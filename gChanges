@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+Tmp=/tmp/$$
+
+git diff --name-only           > $Tmp
+git diff --name-only --staged >> $Tmp
+cat $Tmp | sort | uniq
+rm -f "$Tmp"  >/dev/null 2>&1;
+exit 0
+
