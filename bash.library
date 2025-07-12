@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Fri Jul 11 21:10:13 EDT 2025
-# *********************************************************HASHOMATIC: 38fa9c207b7bed7d0844e521eea34ed5
+# *********************************************************DATEOMATIC: Sat Jul 12 07:57:47 EDT 2025
+# *********************************************************HASHOMATIC: 016f34efa52f867ee1d3033345ec428f
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -20,15 +20,23 @@ function uppercaseallfiles() {
 function filepath_hygene() {
          local fn="$1"    # Bash-Function-Args
          local lfn=""
+         local ldn=""
   local tmp1=$(mktemp)
   local tmp2=$(mktemp)
   rm -f "$tmp1" >/dev/null 2>&1
   rm -f "$tmp2" >/dev/null 2>&1
-      cp "$fn" "$tmp1"
   while IFS= read -r line; do
-    lfn=$(echo "$line" | gawk '{n=split($0,A,"/");print A[n];}')
-    echo $lfn
-  done < "$tmp1"
+    echo "$line" | gawk '{
+        sz=$0
+        sub(/\/[^/]*$/, "", sz);
+        n=split($0,A,"/");
+        if (A[n] ~ /.+[.]pdf$/) {
+            print $0;
+        }
+    }'
+  done < "$fn" > "$tmp1"
+  cp "$tmp1" "$fn"
+
   rm -f "$tmp1" >/dev/null 2>&1
   rm -f "$tmp2" >/dev/null 2>&1
 }

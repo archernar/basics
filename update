@@ -270,7 +270,6 @@ if [ "$UPDATE" == "HOME" ]; then
     find ~/Flat -type f  | egrep [.]pdf$  | gawk -v b="/Ubuntu"  '{print b $0}' | sort | uniq > zedd
               filepath_hygene zedd
               alpha_normal5 zedd
-              cp zedd alphan
               echo "<div class='markdown-body-prime'>" >> README.md
               create_markdown_table_slice zedd "MAKELINKS" "The Flat Library"   >>  README.md
               echo "</div>" >> README.md
