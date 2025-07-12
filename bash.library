@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Wed Jul  2 23:01:09 EDT 2025
-# *********************************************************HASHOMATIC: b732a5592e792f89ce08bb9893d99865
+# *********************************************************DATEOMATIC: Fri Jul 11 21:10:13 EDT 2025
+# *********************************************************HASHOMATIC: 38fa9c207b7bed7d0844e521eea34ed5
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -17,6 +17,22 @@ function uppercaseallfiles() {
          local void=0;                          # Bash-Function-Args
     for file in *; do mv "$file" "$(echo ${file:0:1} | tr '[:lower:]' '[:upper:]')${file:1}"; done
 }
+function filepath_hygene() {
+         local fn="$1"    # Bash-Function-Args
+         local lfn=""
+  local tmp1=$(mktemp)
+  local tmp2=$(mktemp)
+  rm -f "$tmp1" >/dev/null 2>&1
+  rm -f "$tmp2" >/dev/null 2>&1
+      cp "$fn" "$tmp1"
+  while IFS= read -r line; do
+    lfn=$(echo "$line" | gawk '{n=split($0,A,"/");print A[n];}')
+    echo $lfn
+  done < "$tmp1"
+  rm -f "$tmp1" >/dev/null 2>&1
+  rm -f "$tmp2" >/dev/null 2>&1
+}
+
 # ----------------------------------------------------------------------------------------------------
 # CONOUT: 
 # ----------------------------------------------------------------------------------------------------

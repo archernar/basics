@@ -35,6 +35,9 @@
 | [EIGTHTCOLS](https://archernar.github.io/files/EIGTHTCOLS.html) | [EIGTHTROWS](https://archernar.github.io/files/EIGTHTROWS.html) | [eecho](https://archernar.github.io/files/eecho.html) | [ends with](https://archernar.github.io/files/ends_with.html) | [error](https://archernar.github.io/files/error.html) |
 # f
  
+|                          |                          |                          |                          |                          |
+|----------|----------|----------|----------|----------|
+| [filepath hygene](https://archernar.github.io/files/filepath_hygene.html) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) | [&nbsp;](&nbsp;) |
 # g
  
 |                          |                          |                          |                          |                          |

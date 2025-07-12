@@ -58,7 +58,7 @@ function XXX() {
     rm -f modifiedfilenames  >/dev/null 2>&1;
     touch modifiedfilenames
     mkdir -p ./files
-    mkdir -p ./sfiles
+    mkdir -p ../../Library/sfiles
 
     while IFS= read -r file_name; do
         if [[ "$file_name" == .* ]]; then
@@ -70,8 +70,8 @@ function XXX() {
 
         # ./codeTemplate "./$file_name" "$file_name" > "./files/$file_name.html"
         if [ -f "$file_name" ]; then 
-            ./codeTemplate "./$file_name" "$file_name" > "./sfiles/$file_name.html"
-            cp "./$file_name" ./sfiles
+            ./codeTemplate "./$file_name" "$file_name" > "../../Library/sfiles/$file_name.html"
+            cp "./$file_name" ../../Library/sfiles
             printInfo "Special:  ./$file_name"
         fi
 
@@ -92,6 +92,12 @@ function XXX() {
     fi
 
     printAdvice "Extraction complete"
+}
+function TarBackup() {
+    local REPOTAR="$HOME/Alamo/BasicsRepoTarDotGit-$(date +%Y-%m-%d-%H%M%S).tar"
+    printInfo "Backing Up"
+    printInfo "$REPOTAR"
+    tar cf $REPOTAR ../basics; ls -l $REPOTAR
 }
 function PrePackage() {
          local void="0";     # Bash-Function-Args
@@ -134,17 +140,14 @@ function Package() {
 
 UPDATE="NO"
 REMOTE="YES"
-while getopts "nphctqxrufls" arg
+OPTERR=0
+while getopts "nph:ctqxrufls" arg
 do
     case $arg in
         n) UPDATE="NOTHING"
+           TarBackup 
            echo "Nothing and Done"
-           echo "Nothing and Done 2"
            printInfo "Nothing and Done"
-           sleep 3
-           append_last_element "$(szred "  OK")"
-           render_array
-           ansi.move "10" "1"
            exit 0
            ;;
         p) UPDATE="PACKAGE"
@@ -158,6 +161,7 @@ do
            exit 0
            ;;
         h) UPDATE="HOME"
+           REGEX="$OPTARG"
            ;;
         c) UPDATE="COMMIT"
            echo "Simple Commit..."
@@ -258,9 +262,37 @@ if [ "$UPDATE" == "HOME" ]; then
 
     rm -f zedd
     XXX
-    ls ./sfiles | egrep [.]html$ | gawk -v b="sfiles/" '{print b $1}' | sort | uniq > zedd
+    ls ../../Library/sfiles | egrep [.]html$ | gawk -v b="../../Library/sfiles/" '{print b $1}' | sort | uniq > zedd
               alpha_normal5 zedd
               create_markdown_table_slice zedd "MAKELINKS" "files and scripts"   >>  README.md
+
+    rm -f zedd
+    find ~/Flat -type f  | egrep [.]pdf$  | gawk -v b="/Ubuntu"  '{print b $0}' | sort | uniq > zedd
+              filepath_hygene zedd
+              alpha_normal5 zedd
+              cp zedd alphan
+              echo "<div class='markdown-body-prime'>" >> README.md
+              create_markdown_table_slice zedd "MAKELINKS" "The Flat Library"   >>  README.md
+              echo "</div>" >> README.md
+
+    rm -f zedd
+              if [ "$REGEX" == "" ]; then                                                                                               
+                  find ~/Library -type f  | egrep [.]pdf$  | gawk -v b="/Ubuntu"  '{print b $0}' | sort | uniq > zedd
+              else
+                  find ~/Library -type f  | egrep [.]pdf$  | egrep "$REGEX" | gawk -v b="/Ubuntu"  '{print b $0}' | sort | uniq > zedd
+              fi
+              alpha_normal5 zedd
+              echo "<div class='markdown-body-prime'>" >> README.md
+              create_markdown_table_slice zedd "MAKELINKS" "The Selected Library"   >>  README.md
+              echo "</div>" >> README.md
+
+    rm -f zedd
+
+    find ~/Library -type f  | egrep [.]pdf$  |  gawk -v b="/Ubuntu"  '{print b $0}' | sort | uniq > zedd
+              alpha_normal5 zedd
+              echo "<div class='markdown-body-prime'>" >> README.md
+              create_markdown_table_slice zedd "MAKELINKS" "The Master Library"   >>  README.md
+              echo "</div>" >> README.md
 
     rm -f zedd
     ls ../../Library/moe  | egrep [.]pdf$  | gawk -v b="../../Library/moe/"  '{print b $1}' | sort | uniq > zedd
@@ -268,16 +300,23 @@ if [ "$UPDATE" == "HOME" ]; then
               echo "<div class='markdown-body-prime'>" >> README.md
               create_markdown_table_slice zedd "MAKELINKS" "moe"   >>  README.md
               echo "</div>" >> README.md
-cp zedd zeddd
+
     rm -f zedd
-    ls ./books  | egrep [.]pdf$  | gawk -v b="books/"  '{print b $1}' | sort | uniq > zedd
+    ls ../../Library/books  | egrep [.]pdf$  | gawk -v b="../../Library/books/"  '{print b $1}' | sort | uniq > zedd
               alpha_normal5 zedd
               echo "<div class='markdown-body-prime'>" >> README.md
               create_markdown_table_slice zedd "MAKELINKS" "books"   >>  README.md
               echo "</div>" >> README.md
 
     rm -f zedd
-    ls ./Reading  | egrep [.]pdf$  | gawk -v b="Reading/"  '{print b $1}' | sort | uniq > zedd
+    ls ../../Library/books2  | egrep [.]pdf$  | gawk -v b="../../Library/books2/"  '{print b $1}' | sort | uniq > zedd
+              alpha_normal5 zedd
+              echo "<div class='markdown-body-prime'>" >> README.md
+              create_markdown_table_slice zedd "MAKELINKS" "books2"   >>  README.md
+              echo "</div>" >> README.md
+
+    rm -f zedd
+    ls ../../Library/Reading  | egrep [.]pdf$  | gawk -v b="../../Library/Reading/"  '{print b $1}' | sort | uniq > zedd
               alpha_normal5 zedd
               echo "<div class='markdown-body-prime'>" >> README.md
               create_markdown_table_slice zedd "MAKELINKS" "reading"   >>  README.md
