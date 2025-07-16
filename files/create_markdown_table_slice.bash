@@ -24,7 +24,7 @@ function create_markdown_table_slice() {
                              nme=A[n];
                              sub(/[.]html$/, "", nme);
                              sub(/[.]pdf/,"",nme); 
-                             nme=substr(nme,1,42);
+                             nme=substr(nme,1,52);
                              gsub(/_/," ",nme);
                              gsub(/Programming/,"Prog",nme);
                              gsub(/Architecture/,"Arch",nme);

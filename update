@@ -141,7 +141,8 @@ function Package() {
 UPDATE="NO"
 REMOTE="YES"
 OPTERR=0
-while getopts "nph:ctqxrufls" arg
+REGEX=""
+while getopts "a:nphctqxrufls" arg
 do
     case $arg in
         n) UPDATE="NOTHING"
@@ -160,8 +161,9 @@ do
            echo "Complete"
            exit 0
            ;;
+        a) REGEX="$OPTARG"
+           ;;
         h) UPDATE="HOME"
-           REGEX="$OPTARG"
            ;;
         c) UPDATE="COMMIT"
            echo "Simple Commit..."
@@ -257,14 +259,25 @@ if [ "$UPDATE" == "REMOTE" ]; then
 fi
 
 if [ "$UPDATE" == "HOME" ]; then                                                                                               
+    printInfo "Building Homepage"
 
     rm -f README.md
 
-    rm -f zedd
-    XXX
-    ls ../../Library/sfiles | egrep [.]html$ | gawk -v b="../../Library/sfiles/" '{print b $1}' | sort | uniq > zedd
-              alpha_normal5 zedd
-              create_markdown_table_slice zedd "MAKELINKS" "files and scripts"   >>  README.md
+
+    if [ ! "$REGEX" == "" ]; then                                                                                               
+        rm -f zedd
+        find ~/Library -type f  | egrep [.]pdf$  | egrep -i "$REGEX" | gawk -v b="/Ubuntu"  '{print b $0}' | sort | uniq > zedd
+        # File Exists
+        if [ -e "zedd" ]; then
+            # File Exists and is not Empty
+            if [ -s "zedd" ]; then
+                alpha_normal5 zedd
+                echo "<div class='markdown-body-prime'>" >> README.md
+                create_markdown_table_slice_2level zedd "MAKELINKS" "The Selected Library"   >>  README.md
+                echo "</div>" >> README.md
+            fi
+        fi
+    fi
 
     rm -f zedd
     find ~/Flat -type f  | egrep [.]pdf$  | gawk -v b="/Ubuntu"  '{print b $0}' | sort | uniq > zedd
@@ -275,18 +288,14 @@ if [ "$UPDATE" == "HOME" ]; then
               echo "</div>" >> README.md
 
     rm -f zedd
-              if [ "$REGEX" == "" ]; then                                                                                               
-                  find ~/Library -type f  | egrep [.]pdf$  | gawk -v b="/Ubuntu"  '{print b $0}' | sort | uniq > zedd
-              else
-                  find ~/Library -type f  | egrep [.]pdf$  | egrep "$REGEX" | gawk -v b="/Ubuntu"  '{print b $0}' | sort | uniq > zedd
-              fi
-              alpha_normal5 zedd
-              echo "<div class='markdown-body-prime'>" >> README.md
-              create_markdown_table_slice zedd "MAKELINKS" "The Selected Library"   >>  README.md
-              echo "</div>" >> README.md
+     XXX
+     ls ../../Library/sfiles | egrep [.]html$ | gawk -v b="../../Library/sfiles/" '{print b $1}' | sort | uniq > zedd
+               alpha_normal5 zedd
+               create_markdown_table_slice zedd "MAKELINKS" "files and scripts"   >>  README.md
+
+
 
     rm -f zedd
-
     find ~/Library -type f  | egrep [.]pdf$  |  gawk -v b="/Ubuntu"  '{print b $0}' | sort | uniq > zedd
               alpha_normal5 zedd
               echo "<div class='markdown-body-prime'>" >> README.md
@@ -359,6 +368,22 @@ fi
 
 
     pandoc --standalone --template template2.html README.md > home.html
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
+    printInfo "Homepage Complete"
     printInfo "Homepage Complete"
     printInfo "Homepage Complete"
     printInfo "Homepage Complete"
@@ -566,6 +591,7 @@ done
 #alpha_normal4 "$Tmp"
 #create_markdown_table4 "$Tmp" "MAKELINKS"   >  README.md
 gitadd "README.md"
+rm -rf home.html
 pandoc --standalone --template template.html README.md > home.html
 printInfo "Step 0 Complete"
 

@@ -1,5 +1,5 @@
-# *********************************************************DATEOMATIC: Sat Jul 12 08:01:25 EDT 2025
-# *********************************************************HASHOMATIC: 016f34efa52f867ee1d3033345ec428f
+# *********************************************************DATEOMATIC: Wed Jul 16 08:01:02 EDT 2025
+# *********************************************************HASHOMATIC: 67817db0b105b003b3de4912be9a6cd7
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
@@ -1051,6 +1051,83 @@ function create_simple_table4() {
   
 }
 
+function create_markdown_table_slice_2level() {
+         local input_file="$1";local str="$2";local szslice="$3"      # Bash-Function-Args
+  local tmp=$(mktemp)
+  local LEN=""
+  local STRING=""
+  local label=""
+
+  # Check if the input file exists
+  if [[ ! -f "$input_file" ]]; then
+    fecho "Error: Input file '$input_file' not found."
+    return 1
+  fi
+
+  LEN=`longest_string_length < "$input_file"`
+  STRING=`repeat_char " " "24"`
+
+  rm -f "$tmp" >/dev/null 2>&1
+  if [[ "$str" == "MAKELINKS" ]]; then
+      cat "$input_file" |gawk '
+                         BEGIN {
+                                NOTHING=0;
+                         }
+                         {
+                             n=split($0,A,"/");
+                             nme=A[n-1] "-" A[n];
+                             sub(/[.]html$/, "", nme);
+                             sub(/[.]pdf/,"",nme); 
+                             nme=substr(nme,1,52);
+                             gsub(/_/," ",nme);
+                             gsub(/Programming/,"Prog",nme);
+                             gsub(/Architecture/,"Arch",nme);
+                             print "[" nme "](" $0 ")";
+                         }' > $tmp
+  else
+      cat "$input_file"  > $tmp
+  fi
+
+  # Read lines from the file and create table rows
+  local line_count=0
+  local row=""
+  local first_row=1
+  echo "# $szslice"
+  echo " "
+  while IFS= read -r line; do
+    if [[ $line_count -eq 0 ]]; then
+      if [[ $first_row -eq 1 ]]; then
+          # echo "| $STRING | $STRING | $STRING | $STRING |"
+          # echo "|----------|----------|----------|----------|"
+          # echo "| $STRING | $STRING | $STRING | $STRING | $STRING | $STRING | $STRING | $STRING |"
+          # echo "|----------|----------|----------|----------|----------|----------|----------|----------|"
+          # echo "| $STRING | $STRING | $STRING | $STRING |"
+          # echo "|----------|----------|----------|----------|"
+          echo "| $STRING | $STRING | $STRING | $STRING | $STRING |"
+          echo "|----------|----------|----------|----------|----------|"
+          first_row=0
+      fi
+    fi
+
+    row+="| $line "
+
+    line_count=$((line_count + 1))
+
+    if [[ $line_count -eq 5 ]]; then
+      echo "$row|"
+      row=""
+      line_count=0
+    fi
+  done < "$tmp"
+
+  # Handle remaining lines if the total line count is not a multiple of 5
+  if [[ $line_count -gt 0 ]]; then
+    for ((i = line_count; i < 5; i++)); do
+        row+="|  "
+    done
+    echo "$row|"
+  fi
+}
 function create_markdown_table_slice() {
          local input_file="$1";local str="$2";local szslice="$3"      # Bash-Function-Args
   local tmp=$(mktemp)
@@ -1078,7 +1155,7 @@ function create_markdown_table_slice() {
                              nme=A[n];
                              sub(/[.]html$/, "", nme);
                              sub(/[.]pdf/,"",nme); 
-                             nme=substr(nme,1,42);
+                             nme=substr(nme,1,52);
                              gsub(/_/," ",nme);
                              gsub(/Programming/,"Prog",nme);
                              gsub(/Architecture/,"Arch",nme);

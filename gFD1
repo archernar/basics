@@ -1,0 +1,107 @@
+#!/usr/bin/bash
+# *********************************************************DATEOMATIC: Wed Feb 26 00:01:17 EST 2025
+# *********************************************************HASHOMATIC: 77817de3816b3a115eaec6bb1cc34eea
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap 'exit 0' INT HUP QUIT TERM ALRM USR1
+trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
+rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
+QUIET="NO"
+while getopts "qls" arg
+do
+    case $arg in
+        q) QUIET="YES"
+           ;;
+        l) echo "Tracked files with changes"
+           git ls-files -m
+           exit 0
+           ;;
+        s) echo "Staged  for commit"
+           git diff --name-only --cached
+           exit 0
+           ;;
+    esac
+done
+shift $(($OPTIND - 1))
+function helpmessage() {
+    echo ""
+    echo "==============================================================================================="
+    echo "Lines starting with - are lines that have been removed or changed from the last commit."
+    echo "Lines starting with + are lines that have been added or changed in your workspace."
+    echo "Lines without a + or - are context lines that haven't changed."
+    echo ""
+    echo "Within each hunk, lines are prefixed with special characters to indicate their status:"
+    echo "(a space): These are context lines. They are identical in both the old and new files"
+    echo "By default, Git shows 3 lines of context above and below the actual changes."
+    echo ""
+    echo "- (minus sign): These lines are deleted from the old file or changed from the old file."
+    echo "They appear in the old version but are not present (or are different) in the new version."
+    echo ""
+    echo "+ (plus sign): These lines are added to the new file or are the new version of a changed line."
+    echo "They appear in the new version but were not present (or were different) in the old version."
+    echo "==============================================================================================="
+    echo ""
+}
+if [ ! "$QUIET" == "YES" ]; then                                                                                               
+    NOTHING=0
+fi
+
+# --- Configuration ---
+NUM_REVISIONS=3 # How many past revisions to diff against
+
+# --- Script Start ---
+
+# Check if a file name is provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <file_path>"
+  echo "       Dumps diffs of the specified file in the current working directory"
+  echo "       against its state in the last ${NUM_REVISIONS} revisions."
+  exit 1
+fi
+
+FILE_PATH="$1"
+
+# Check if the file exists in the current working directory
+if [ ! -f "$FILE_PATH" ]; then
+  echo "Error: File '$FILE_PATH' not found in the current working directory."
+  exit 1
+fi
+
+echo "Diffing '$FILE_PATH' (current working directory) against the last ${NUM_REVISIONS} revisions:"
+echo "-------------------------------------------------------------------------------------"
+
+# Get the last NUM_REVISIONS commit hashes where this file was modified.
+# We use -- to separate the revisions from the path, ensuring correct behavior
+# if the file path conflicts with a revision name.
+# --first-parent is used to stick to the main line of history, useful for "last N commits".
+# We pipe to 'head -n $NUM_REVISIONS' in case 'git log' returns more commits than needed
+# if the file wasn't changed in the last few 'mainline' commits.
+REVISIONS=($(git log -n "$NUM_REVISIONS" --pretty=format:%H -- "$FILE_PATH" --first-parent | head -n "$NUM_REVISIONS"))
+git log -n "$NUM_REVISIONS" --pretty=format:%H -- "$FILE_PATH" --first-parent | head -n "$NUM_REVISIONS"
+echo ""
+echo "------------------------------------------------------------------------------------------------"
+echo ""
+echo ""
+
+# Loop through the retrieved revisions and perform the diff
+for i in "${!REVISIONS[@]}"; do
+  COMMIT_HASH="${REVISIONS[$i]}"
+  REVISION_NUMBER=$((i + 1)) # For display purposes (1st, 2nd, 3rd oldest modification)
+
+  # Get the commit message and author/date for better context
+  COMMIT_DETAILS=$(git log -1 --pretty=format:"%s (%an, %ar)" "$COMMIT_HASH")
+
+  echo -e "\n--- Diff vs. Revision #$REVISION_NUMBER ($COMMIT_HASH - $COMMIT_DETAILS) ---"
+  echo "------------------------------------------------------------------------------------------------"
+  echo "------------------------------------------------------------------------------------------------"
+  echo ""
+  # Diff the current working directory version of the file against the commit's version
+  # 'git diff <commit> -- <file_path>' compares the working tree version
+  # with the version in the specified commit.
+  git diff "$COMMIT_HASH" -- "$FILE_PATH"
+done
+
+echo "Diffs complete."
