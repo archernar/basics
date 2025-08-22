@@ -1,0 +1,159 @@
+        body {
+            font-family: 'Inter', sans-serif;
+            xxbackground-color: #f9fafb;
+            background-color: #1a1a1a; /* Dark Gray */
+            color: #374151;
+            margin: 0;
+            display: flex;
+        }
+        .dark {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Dark Gray */
+            color: #FFFFFF;
+            margin: 0;
+            display: flex;
+        }
+        .sidebar {
+            width: 380px;
+            background-color: Black;
+            border-right: 1px solid #e5e7eb;
+            padding: 24px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .sidebar .navi1 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            text-transform: capitalize;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            margin: 24px 0 8px 0;
+            padding: 0 16px;
+        }
+        .sidebar h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin: 0 0 24px 0;
+        }
+        .sidebar h2 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 24px 0 8px 0;
+            padding: 0 16px;
+        }
+        #nav-menu a {
+            display: block;
+            padding: 10px 16px;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        #nav-menu a:hover {
+            background-color: #f3f4f6;
+        }
+        #nav-menu a.active {
+            background-color: #e0e7ff;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+        .main-content {
+            margin-left: 380px;
+            padding: 32px;
+            width: calc(100% - 380px);
+            box-sizing: border-box;
+        }
+        .content-section {
+            display: none; /* All sections hidden by default */
+        }
+        .content-header h2 {
+            font-size: 2.25rem;
+            margin: 0 0 8px 0;
+        }
+        .content-header p {
+            font-size: 1.125rem;
+            color: #FFFFFF;
+            max-width: 800px;
+        }
+        .content-grid {
+            margin-top: 2rem;
+            display: grid;
+            nothingness:380px;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 1.5rem;
+        }
+        .topic-card {
+            background-color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .topic-card-bold {
+            background-color: #fff;
+            color: #000000;
+            font-size: 1.2rem;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .topic-card-bold a {
+            color: Blue;
+            font-weight: Bold;
+            font-size: 1.7rem;
+            text-decoration: underline;
+        }
+        .topic-card h3 {
+            font-size: 1.4rem;
+            color: #000000;
+            margin: 0 0 8px 0;
+        }
+        .topic-card p {
+            margin: 0;
+            color: #000000;
+            font-size: 1.0rem;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            body { display: block; }
+            .sidebar {
+                background-color: #1a1a1a; /* Dark Gray */
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            .main-content {
+                background-color: #1a1a1a; /* Dark Gray */
+                margin-left: 0;
+                width: 100%;
+                padding: 16px;
+            }
+        }
+
+}
+
+a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+input[type="checkbox"] {
+    width:28px;
+    height:28px;
+}

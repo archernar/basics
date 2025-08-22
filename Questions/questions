@@ -1,0 +1,189 @@
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap 'exit 0' INT HUP QUIT TERM ALRM USR1
+trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
+rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
+
+
+cat questions.source | gawk -F, -f xx.awk > $Tmp3
+cat questions.source  > $Tmp3
+
+gawk -F , -f questions.awk $Tmp3 >> "fungus"
+# > $Tmp1
+
+gawk -F , '
+@include "library.gawk"
+@load "ordchr"
+BEGIN {
+    FPAT = "([^,]+)|(\"[^\"]+\")"
+    f="kdfjkdlfdkfldkf"
+}
+{
+    gsub(/^["]/, "", $1)
+    gsub(/["]$/, "", $1)
+    if ($1 != f) {
+        print $1 ", " ahash($1) >> "mungus"
+        print "<a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 "</a><br>"
+        f=$1
+    }
+}' $Tmp3  |  sed 's/"//g' > questions.topics
+
+cat << "HEREND1"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Exercises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="questions.css">                                                         
+
+</head>
+<body>
+<aside class="sidebar">
+<h1>Java Exercises</h1>
+<!-- nav id="nav-menu" -->
+<h2>Topics</h2>
+HEREND1
+cat questions.topics
+cat << "HEREND1A"
+<!-- /nav -->
+</aside>
+
+<main class="main-content">
+        <!-- Content for Intro -->
+<div id="intro" class="content-section">
+            <div class="content-header">
+                <h2>Java Programming Exercises</h2>
+                <p>Exercises focused on the absolute fundamentals: setting up your environment, understanding program structure, and mastering console output.</p>
+            </div>
+<div class="content-grid">
+HEREND1A
+
+cat questions.lst
+
+cat << "HEREND2"
+</div>
+</div>
+</main>
+
+    <script>
+        // --- COOKIE HELPER FUNCTIONS (Unchanged) ---
+
+        /**
+         * Sets a cookie with a given name, value, and expiration in days.
+         * @param {string} name - The name of the cookie.
+         * @param {string} value - The value to store in the cookie.
+         * @param {number} days - The number of days until the cookie expires.
+         */
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+        }
+
+        /**
+         * Retrieves the value of a cookie by its name.
+         * @param {string} name - The name of the cookie to retrieve.
+         * @returns {string|null} The cookie's value, or null if not found.
+         */
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') {
+                    c = c.substring(1, c.length);
+                }
+                if (c.indexOf(nameEQ) === 0) {
+                    return c.substring(nameEQ.length, c.length);
+                }
+            }
+            return null;
+        }
+
+        // --- REFACTORED MAIN LOGIC ---
+
+        // Wait for the DOM to be fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all checkboxes that should have their state saved
+            const savableCheckboxes = document.querySelectorAll('.savable-checkbox');
+
+            // Iterate over each of these checkboxes
+            savableCheckboxes.forEach(checkbox => {
+                // Use the checkbox's 'name' attribute as its unique cookie key
+                const cookieName = checkbox.name;
+
+                // 1. LOAD the saved state for this specific checkbox
+                const savedState = getCookie(cookieName);
+                if (savedState !== null) {
+                    // Set the checkbox state based on the cookie's string value
+                    checkbox.checked = (savedState === 'true');
+                }
+
+                // 2. SAVE the state whenever this specific checkbox is changed
+                checkbox.addEventListener('change', () => {
+                    const isChecked = checkbox.checked;
+                    // Save the current state to a cookie named after the checkbox
+                    setCookie(cookieName, isChecked, 7); // Cookie expires in 7 days
+                    console.log(`Saved state for '${cookieName}': ${isChecked}`);
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // This script uses plain JavaScript for maximum reliability.
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            function showSection(targetId) {
+                // Hide all content sections
+                contentSections.forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                // Remove 'active' class from all navigation links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Show the target section
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                }
+
+                // Add 'active' class to the corresponding link
+                const activeLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+
+            // Set up click events for all navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    showSection(targetId);
+                });
+            });
+
+            // Show the first section by default when the page loads.
+            showSection('intro');
+        });
+    </script>
+</body>
+</html>
+HEREND2

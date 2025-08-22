@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp1=/tmp/$$_$$
+trap 'exit 0' INT HUP QUIT TERM ALRM USR1
+trap 'rm -f "$Tmp" "$Tmp1"' EXIT
+rm -f "$Tmp"  >/dev/null 2>&1
+rm -f "$Tmp1"  >/dev/null 2>&1
+#================================================================
+B="eijkbflepfjgwgdkfghekfhegffadwekfglbnmcnfifhsdnmd"
+F="jfn"
+J="e3f"
+K="x9e"
+D="pof"
+
+        aws --profile default s3 rm s3://$B --recursive
+        aws --profile default s3 cp ./questions.html    s3://$B/$F/$J/$K/$D/questions.html       --acl public-read
+        echo ""
+        echo "https://$B.s3.us-east-1.amazonaws.com/$F/$J/$K/$D/questions.html"
+
+echo "Done"
