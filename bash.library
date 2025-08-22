@@ -221,7 +221,11 @@ if [ "$M" == "1" ]; then
     echo "zzzfour()" >> "$tmp1"
 fi
 
-cat "$tmp1" | sort | uniq > "$tmp2"; cp "$tmp2" "$tmp1"
+# cat "$tmp1" | sort | uniq > "$tmp2"; cp "$tmp2" "$tmp1"
+# Sort by filename within full path
+sed 's|.*/\(.*\)|\1\t&|' "$tmp1" | sort | cut -f2- > $tmp2; cp "$tmp2" "$tmp1"
+
+
 N=`wc -l "$tmp1" | gawk '{print $1}'`
 N=$((N / 5));
 rm -f sfa*  >/dev/null 2>&1
@@ -1087,6 +1091,8 @@ function create_markdown_table_slice_2level() {
   else
       cat "$input_file"  > $tmp
   fi
+
+  cat  $tmp >> tmp.csv
 
   # Read lines from the file and create table rows
   local line_count=0
