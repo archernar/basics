@@ -42,12 +42,21 @@ cat << "HEREND1"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java Exercises</title>
+    <script type="text/javascript" src="questions.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="questions.css">                                                         
 
 </head>
 <body>
 <aside class="sidebar">
+    <div class="text-center">
+        <h1 class="text-4xl font-bold mb-4">Java</h1>
+        <p class="text-gray-400 mb-8">Click the button below to launch the editor in a new window.</p>
+        <button id="open-editor-btn" class="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-bold rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-cyan-400">
+            Open Code Template
+        </button>
+    </div>
+
 <h1>Java Exercises</h1>
 <!-- nav id="nav-menu" -->
 <h2>Topics</h2>
