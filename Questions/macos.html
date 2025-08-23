@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive macOS Terminal Tutorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: macOS Dev -->
+    <!-- Application Structure Plan: This SPA transforms the linear text tutorial into an interactive learning dashboard. A fixed header allows smooth navigation between thematic sections. The core interactive element is a 'Command Sandbox' where users can 'run' commands in a simulated environment to see their effects on a visual file system. This hands-on approach is more effective for learning CLI concepts than static text. Other sections, like 'Core Concepts,' use a card-based interface to break down information. This structure prioritizes user engagement and practical understanding over simply replicating the report's chapter flow. -->
+    <!-- Visualization & Content Choices: The source report is text-based, so traditional data charts are not applicable. The primary 'visualization' is a simulated file system rendered with structured HTML and Unicode icons, which dynamically updates based on user interaction in the Command Sandbox. Report Info: Command descriptions (e.g., mkdir, cd, ls). Goal: Teach command syntax and effect. Viz/Presentation: Interactive cards with a simulated terminal. Interaction: User clicks a 'run' button to see the visual file system change. Justification: Provides a safe, immediate feedback loop crucial for learning. Library/Method: Vanilla JS manipulating a file system object and re-rendering HTML. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .nav-link {
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: #007aff;
+        }
+        .tool-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .command-card {
+            transition: all 0.2s ease-in-out;
+        }
+        .command-card:hover {
+            border-color: #007aff;
+            transform: scale(1.02);
+        }
+        .btn {
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background-color: #007aff;
+        }
+        .btn-primary:hover {
+            background-color: #005ecb;
+        }
+        .sim-console {
+            background-color: #1e293b;
+            color: #e2e8f0;
+        }
+        .sim-prompt {
+            color: #a5b4fc;
+        }
+        .sim-output {
+            color: #cbd5e1;
+        }
+        .file-tree-item {
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .file-tree-item::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: #94a3b8;
+        }
+        .file-tree-item:last-child::before {
+            height: 0.85rem;
+        }
+        .file-tree-item > div::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0.85rem;
+            width: 0.75rem;
+            height: 1px;
+            background-color: #94a3b8;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-slate-800">💻</span>
+                    <h1 class="text-xl font-bold text-slate-800 ml-2">macOS Terminal Guide</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#introduction" class="nav-link">Introduction</a>
+                    <a href="#concepts" class="nav-link">Core Concepts</a>
+                    <a href="#sandbox" class="nav-link">Command Sandbox</a>
+                    <a href="#cheatsheet" class="nav-link">Cheatsheet</a>
+                    <a href="#next-steps" class="nav-link">Next Steps</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <section id="introduction" class="mb-24 text-center">
+            <h2 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">Master the macOS Terminal.</h2>
+            <p class="mt-6 text-lg leading-8 text-slate-600 max-w-3xl mx-auto">Built on a powerful UNIX foundation, the command line is your direct gateway to the core of macOS. This interactive guide will walk you through the essentials of the Terminal, Zsh, and file management, turning you into a command-line pro.</p>
+        </section>
+
+        <section id="concepts" class="mb-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">Meet the Core Concepts</h2>
+                <p class="mt-4 text-md text-slate-600 max-w-2xl mx-auto">On macOS, the relationship is simple: Terminal is the application window, and Zsh is the powerful shell engine running inside it. Click each card to learn more.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div id="card-terminal" class="tool-card cursor-pointer p-6 bg-white rounded-xl border-2 border-blue-500 shadow-lg" onclick="selectTool('terminal')">
+                    <h3 class="text-xl font-bold text-slate-900">🖥️ Terminal App</h3>
+                    <p class="mt-2 text-slate-500">The modern, tabbed host application for all your command-line shells.</p>
+                </div>
+                <div id="card-zsh" class="tool-card cursor-pointer p-6 bg-white rounded-xl border border-slate-200" onclick="selectTool('zsh')">
+                    <h3 class="text-xl font-bold text-slate-900">⚡️ Z Shell (Zsh)</h3>
+                    <p class="mt-2 text-slate-500">The powerful, modern shell that interprets your commands.</p>
+                </div>
+            </div>
+            <div id="tool-details" class="p-8 bg-white rounded-xl shadow-md transition-all duration-300">
+            </div>
+        </section>
+
+        <section id="sandbox" class="mb-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">Interactive Command Sandbox</h2>
+                <p class="mt-4 text-md text-slate-600 max-w-2xl mx-auto">Learn by doing! Choose a command, see an example, and click 'Run' to see how it affects our simulated file system. It's a safe way to experiment and build muscle memory.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Available Commands</h3>
+                    <div id="command-list" class="grid sm:grid-cols-2 gap-4">
+                    </div>
+                </div>
+
+                <div class="sticky top-24">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Simulated Environment</h3>
+                    <div id="simulator-ui" class="bg-white rounded-xl shadow-lg p-6">
+                        <div class="sim-console rounded-lg p-4 font-mono text-sm overflow-x-auto">
+                            <div>
+                                <span class="sim-prompt"><span id="cwd-display">~</span> $</span>
+                                <span id="command-display" class="sim-output"></span>
+                            </div>
+                            <pre id="output-display" class="sim-output mt-2 whitespace-pre-wrap"></pre>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="font-bold text-slate-700 mb-2">📂 File System View</h4>
+                            <div id="file-tree" class="p-4 bg-slate-50 rounded-md text-sm font-mono text-slate-600 h-48 overflow-y-auto"></div>
+                        </div>
+                         <button id="reset-button" class="btn w-full mt-4 bg-slate-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-slate-700">Reset Simulation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="cheatsheet" class="mb-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">Essential Command Cheatsheet</h2>
+                <p class="mt-4 text-md text-slate-600 max-w-2xl mx-auto">A quick reference for the most common file and directory operations in Zsh.</p>
+            </div>
+            <div class="overflow-x-auto bg-white rounded-xl shadow-md">
+                <table class="w-full text-sm text-left text-slate-500">
+                    <thead class="text-xs text-slate-700 uppercase bg-slate-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">Task</th>
+                            <th scope="col" class="px-6 py-3">Command</th>
+                            <th scope="col" class="px-6 py-3">Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-slate-50">
+                            <td class="px-6 py-4 font-medium text-slate-900">List Contents</td>
+                            <td class="px-6 py-4 font-mono">ls</td>
+                            <td class="px-6 py-4 font-mono">ls -la</td>
+                        </tr>
+                        <tr class="bg-white border-b hover:bg-slate-50">
+                            <td class="px-6 py-4 font-medium text-slate-900">Change Directory</td>
+                            <td class="px-6 py-4 font-mono">cd</td>
+                            <td class="px-6 py-4 font-mono">cd Documents</td>
+                        </tr>
+                        <tr class="bg-white border-b hover:bg-slate-50">
+                            <td class="px-6 py-4 font-medium text-slate-900">Create Directory</td>
+                            <td class="px-6 py-4 font-mono">mkdir</td>
+                            <td class="px-6 py-4 font-mono">mkdir NewProject</td>
+                        </tr>
+                        <tr class="bg-white border-b hover:bg-slate-50">
+                            <td class="px-6 py-4 font-medium text-slate-900">Create Empty File</td>
+                            <td class="px-6 py-4 font-mono">touch</td>
+                            <td class="px-6 py-4 font-mono">touch notes.txt</td>
+                        </tr>
+                        <tr class="bg-white border-b hover:bg-slate-50">
+                            <td class="px-6 py-4 font-medium text-slate-900">Copy Item</td>
+                            <td class="px-6 py-4 font-mono">cp</td>
+                            <td class="px-6 py-4 font-mono">cp notes.txt notes_backup.txt</td>
+                        </tr>
+                         <tr class="bg-white border-b hover:bg-slate-50">
+                            <td class="px-6 py-4 font-medium text-slate-900">Move / Rename Item</td>
+                            <td class="px-6 py-4 font-mono">mv</td>
+                            <td class="px-6 py-4 font-mono">mv notes.txt old_notes.txt</td>
+                        </tr>
+                        <tr class="bg-white border-b hover:bg-slate-50">
+                            <td class="px-6 py-4 font-medium text-slate-900">Remove File</td>
+                            <td class="px-6 py-4 font-mono">rm</td>
+                            <td class="px-6 py-4 font-mono">rm old_notes.txt</td>
+                        </tr>
+                        <tr class="bg-white border-b hover:bg-slate-50">
+                            <td class="px-6 py-4 font-medium text-slate-900">Remove Directory</td>
+                            <td class="px-6 py-4 font-mono">rm -r</td>
+                            <td class="px-6 py-4 font-mono">rm -r OldProject</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-slate-50">
+                            <td class="px-6 py-4 font-medium text-slate-900">View File Content</td>
+                            <td class="px-6 py-4 font-mono">cat</td>
+                            <td class="px-6 py-4 font-mono">cat config.yml</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="next-steps" class="text-center">
+            <h2 class="text-3xl font-bold text-slate-900">Your Journey Begins</h2>
+            <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">You've mastered the basics. Now, continue your journey by exploring these powerful tools that build on your new command-line skills.</p>
+            <div class="mt-10 grid sm:grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold text-slate-900">🍺 Homebrew</h3>
+                    <p class="mt-2 text-slate-500">Use "the missing package manager for macOS" to easily install developer tools, programming languages, and applications directly from your terminal.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold text-slate-900">🎨 Oh My Zsh</h3>
+                    <p class="mt-2 text-slate-500">Explore this open-source framework for managing your Zsh configuration. It comes with thousands of helpful plugins, themes, and functions.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold text-slate-900">📜 Shell Scripting</h3>
+                    <p class="mt-2 text-slate-500">Combine commands into `.sh` script files to automate repetitive tasks, like setting up a new project or backing up your work. This is where the real power lies.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const toolData = {
+            terminal: {
+                title: '🖥️ Terminal App',
+                content: `
+                    <p class="text-slate-600">The Terminal app is your window to the command line. It's a *terminal emulator*—a program that provides a graphical interface to the underlying shell. It handles your keyboard input, displays text output, and provides features like tabs and themes.</p>
+                    <ul class="mt-4 list-disc list-inside text-slate-600 space-y-2">
+                        <li><strong>Multiple Tabs and Windows:</strong> Run several command-line sessions at once, keeping your workspace organized.</li>
+                        <li><strong>Customizable Profiles:</strong> Change the look and feel with different fonts, colors, and background settings for different tasks.</li>
+                        <li><strong>Built-in:</strong> Comes with every Mac, located in the Applications/Utilities folder.</li>
+                    </ul>
+                `
+            },
+            zsh: {
+                title: '⚡️ Z Shell (Zsh)',
+                content: `
+                    <p class="text-slate-600">Zsh is the powerful engine running inside your Terminal window. It's the default *shell* on modern macOS, responsible for interpreting your commands and interacting with the operating system.</p>
+                    <ul class="mt-4 list-disc list-inside text-slate-600 space-y-2">
+                        <li><strong>Smarter Autocomplete:</strong> Press Tab to complete commands, file paths, and options with intelligent suggestions.</li>
+                        <li><strong>Extensible:</strong> Can be enhanced with frameworks like "Oh My Zsh" to add plugins, themes, and new functionality.</li>
+                        <li><strong>UNIX-based:</strong> Follows standard UNIX conventions, making skills transferable to Linux servers and other environments.</li>
+                    </ul>
+                `
+            }
+        };
+
+        const toolDetailsContainer = document.getElementById('tool-details');
+        
+        function selectTool(tool) {
+            document.querySelectorAll('.tool-card').forEach(card => {
+                card.classList.remove('border-blue-500', 'shadow-lg');
+                card.classList.add('border-slate-200');
+            });
+            document.getElementById(`card-${tool}`).classList.add('border-blue-500', 'shadow-lg');
+            document.getElementById(`card-${tool}`).classList.remove('border-slate-200');
+
+            const data = toolData[tool];
+            toolDetailsContainer.innerHTML = `
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">${data.title}</h3>
+                ${data.content}
+            `;
+        }
+        
+        const commands = [
+            { id: 'ls', name: 'ls (List)', example: 'ls', description: 'Lists files and folders in the current directory.' },
+            { id: 'cd', name: 'cd (Change Dir)', example: 'cd Documents', description: 'Changes the current working directory. Use "cd .." to go up one level.' },
+            { id: 'mkdir', name: 'mkdir (Make Dir)', example: 'mkdir NewProject', description: 'Creates a new directory.' },
+            { id: 'touch', name: 'touch (Create File)', example: 'touch README.md', description: 'Creates a new empty file.' },
+            { id: 'rm', name: 'rm (Remove)', example: 'rm README.md', description: 'Deletes a file or folder. Use with caution!' },
+            { id: 'clear', name: 'clear', example: 'clear', description: 'Clears all text from the console screen.' },
+        ];
+        
+        let fileSystem;
+        let currentPath;
+        const initialFileSystem = {
+            '~': {
+                'Documents': { 'report.docx': null },
+                'Downloads': {},
+                'Pictures': { 'vacation.jpg': null },
+                '.zshrc': null
+            }
+        };
+        const initialPath = ['~'];
+
+        function resetSimulation() {
+            fileSystem = JSON.parse(JSON.stringify(initialFileSystem));
+            currentPath = [...initialPath];
+            renderFileTree();
+            updateCwdDisplay();
+            document.getElementById('command-display').textContent = 'Welcome! Select a command.';
+            document.getElementById('output-display').textContent = '';
+        }
+
+        const commandListEl = document.getElementById('command-list');
+        const commandDisplayEl = document.getElementById('command-display');
+        const outputDisplayEl = document.getElementById('output-display');
+        const cwdDisplayEl = document.getElementById('cwd-display');
+        const fileTreeEl = document.getElementById('file-tree');
+        const resetButton = document.getElementById('reset-button');
+
+        function getObjectByPath(path, fs) {
+            let current = fs;
+            for (const part of path) {
+                if (current && typeof current === 'object' && part in current) {
+                    current = current[part];
+                } else {
+                    return undefined;
+                }
+            }
+            return current;
+        }
+
+        function renderFileTree() {
+            function buildTree(obj) {
+                let html = '';
+                const entries = Object.entries(obj);
+                entries.forEach(([key, value], index) => {
+                    const isLast = index === entries.length - 1;
+                    const isDir = value !== null;
+                    const icon = isDir ? '📁' : '📄';
+                    html += `<div class="file-tree-item ${isLast ? 'is-last' : ''}">`;
+                    html += `<div>${icon} ${key}</div>`;
+                    if (isDir) {
+                        html += buildTree(value);
+                    }
+                    html += `</div>`;
+                });
+                return html;
+            }
+            fileTreeEl.innerHTML = buildTree(getObjectByPath(initialPath, fileSystem));
+        }
+        
+        function updateCwdDisplay() {
+            if (currentPath.length === 1 && currentPath[0] === '~') {
+                cwdDisplayEl.textContent = '~';
+            } else {
+                cwdDisplayEl.textContent = `~/${currentPath.slice(1).join('/')}`;
+            }
+        }
+
+        function runCommand(command) {
+            commandDisplayEl.textContent = command.example;
+            outputDisplayEl.textContent = '';
+            
+            const parts = command.example.split(' ');
+            const cmd = parts[0];
+            const arg = parts.slice(1).join(' ');
+
+            let currentDir = getObjectByPath(currentPath, fileSystem);
+            
+            switch(cmd) {
+                case 'ls':
+                    const items = Object.keys(currentDir);
+                    outputDisplayEl.textContent = items.length > 0 ? items.join('\n') : '(Directory is empty)';
+                    break;
+                case 'cd':
+                    if (arg === '..') {
+                        if (currentPath.length > 1) {
+                            currentPath.pop();
+                        }
+                    } else if (currentDir[arg] !== null && typeof currentDir[arg] === 'object') {
+                        currentPath.push(arg);
+                    } else {
+                        outputDisplayEl.textContent = `zsh: no such file or directory: ${arg}`;
+                    }
+                    break;
+                case 'mkdir':
+                     if (!currentDir[arg]) {
+                        currentDir[arg] = {};
+                    } else {
+                        outputDisplayEl.textContent = `mkdir: ${arg}: File exists`;
+                    }
+                    break;
+                case 'touch':
+                    if (!currentDir[arg]) {
+                        currentDir[arg] = null;
+                    }
+                    break;
+                case 'rm':
+                    if (arg in currentDir) {
+                        delete currentDir[arg];
+                    } else {
+                        outputDisplayEl.textContent = `rm: ${arg}: No such file or directory`;
+                    }
+                    break;
+                case 'clear':
+                    commandDisplayEl.textContent = '';
+                    outputDisplayEl.textContent = '';
+                    break;
+            }
+            
+            renderFileTree();
+            updateCwdDisplay();
+        }
+
+        function initSandbox() {
+            commandListEl.innerHTML = commands.map(cmd => `
+                <div class="command-card p-4 bg-white rounded-lg border-2 border-slate-200 cursor-pointer">
+                    <h4 class="font-bold text-slate-800">${cmd.name}</h4>
+                    <p class="text-xs text-slate-500 mt-1">${cmd.description}</p>
+                    <button class="btn btn-primary text-white py-1 px-3 rounded-md text-sm font-semibold mt-3 w-full" onclick='runCommand(${JSON.stringify(cmd)})'>Run Example</button>
+                </div>
+            `).join('');
+            resetSimulation();
+        }
+
+        resetButton.addEventListener('click', resetSimulation);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            selectTool('terminal');
+            initSandbox();
+        });
+    </script>
+
+</body>
+</html>
+
