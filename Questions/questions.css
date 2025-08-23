@@ -2,7 +2,7 @@
             font-family: 'Inter', sans-serif;
             xxbackground-color: #f9fafb;
             background-color: #1a1a1a; /* Dark Gray */
-            color: #374151;
+            color: #FFFFFF;
             margin: 0;
             display: flex;
         }
@@ -95,14 +95,114 @@
             grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
             gap: 1.5rem;
         }
-        .topic-card {
+
+.topic-card {
+    /* Card background and text color */
+    background-color: #fffaf0; /* A creamy, off-white color */
+    color: Green;
+
+    /* Spacing, with extra left padding for the red line */
+    padding: 12px 12px 12px 35px;
+
+    /* Subtle rounded corners and border */
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+
+    /* A soft shadow to lift it off the page */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+
+    /* --- The Magic: Creating the lines --- */
+    /* We layer two gradients to create the effect */
+    background-image:
+        /* 2. The single red vertical line */
+        linear-gradient(
+            to right,
+            transparent 24px, /* Space from the left edge */
+            Red 25px,      /* f8d7da The 1px red line */
+            transparent 26px
+        );
+
+    /* For an even more authentic feel, consider a monospace font */
+    font-family: 'Courier New', monospace;
+    /*
+        /* 1. The repeating blue horizontal lines */
+        repeating-linear-gradient(
+            to bottom,
+            transparent,
+            transparent 23px, /* Space between lines */
+            #696969 24px       /* d1e7fd The 1px blue line */
+        ),
+ 
+
+
+
+
+     */
+}
+
+
+
+
+
+
+
+
+
+
+
+        .xxxxtopic-card {
             background-color: #fff;
+            color: #000000;
             padding: 12px;
             border-radius: 8px;
             border: 1px solid #e5e7eb;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-        .topic-card-bold {
+.topic-card-bold {
+    /* Card background and text color */
+    background-color: #fffaf0; /* A creamy, off-white color */
+    color: Black;
+    font-size: 1.2rem;
+
+    /* Spacing, with extra left padding for the red line */
+    padding: 12px 12px 12px 35px;
+
+    /* Subtle rounded corners and border */
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+
+    /* A soft shadow to lift it off the page */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+
+    /* --- The Magic: Creating the lines --- */
+    /* We layer two gradients to create the effect */
+    background-image:
+        /* 2. The single red vertical line */
+        linear-gradient(
+            to right,
+            transparent 24px, /* Space from the left edge */
+            Red 25px,      /* f8d7da The 1px red line */
+            transparent 26px
+        );
+
+    /* For an even more authentic feel, consider a monospace font */
+    font-family: 'Courier New', monospace;
+    /*
+        /* 1. The repeating blue horizontal lines */
+        repeating-linear-gradient(
+            to bottom,
+            transparent,
+            transparent 23px, /* Space between lines */
+            #696969 24px       /* d1e7fd The 1px blue line */
+        ),
+ 
+
+
+
+
+     */
+}
+        .topic-card-boldxxx {
             background-color: #fff;
             color: #000000;
             font-size: 1.2rem;

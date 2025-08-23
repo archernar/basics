@@ -9,8 +9,13 @@ BEGIN {
     loca=""
     h="kfgkfjglfkgjrlkjglr"
     system("rm -f questions.lst")
+    system("rm -f questions.report")
+    system("rm -f report.html")
 }
 {
+    gsub(/["]["]/, "'", $0)
+    gsub(/["]["]/, "'", $0)
+    gsub(/["]["]/, "'", $0)
     gsub(/^["]/, "", $1)
     gsub(/["]$/, "", $1)
     gsub(/^["]/, "", $2)
@@ -38,7 +43,9 @@ BEGIN {
     loca=""
     
     
-    print " <div class='topic-card'>" "<table valign=top border=0 width=100%><tr><td align=left valign=middle>" cb "</td><td align=left valign=middle><b>" $2 "</b></td><td align=right valign=middle>" $1 "</td></tr></table>" "<h3>" lno ""  "</h3>" "<p>" $3 "</p>" "</div>" >> "questions.lst"
+    print " <div class='topic-card'>" "<table valign=top border=0 width=100%><tr><td align=left valign=middle>" cb "</td><td align=left valign=middle><b>" $2 "</b></td><td align=right valign=middle>" $1 "</td></tr></table>" "<h3>" lno ""  "</h3>" "" $3 "" "</div>" >> "questions.lst"
+    print " <p>" $1 " - " $2 "</p>" "<p>" $3 "</p>" "<hr>" >> "report.html"
+
     # print " <div class='topic-card'>" "<p valign=top align=right><font size=-1>" $1 "</font>" cb "</p>" "<h3>" lno $2  "</h3>" "<p>" $3 "</p>" "</div>" >> "questions.lst"
 
     close("questions.lst")

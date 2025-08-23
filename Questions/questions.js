@@ -365,3 +365,116 @@ public class School {
             popup.document.close();
         });
 });
+
+
+
+
+        // This script uses plain JavaScript for maximum reliability.
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            function showSection(targetId) {
+                // Hide all content sections
+                contentSections.forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                // Remove 'active' class from all navigation links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Show the target section
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                }
+
+                // Add 'active' class to the corresponding link
+                const activeLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+
+            // Set up click events for all navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    showSection(targetId);
+                });
+            });
+
+            // Show the first section by default when the page loads.
+            showSection('intro');
+        });
+
+
+        // --- COOKIE HELPER FUNCTIONS (Unchanged) ---
+
+        /**
+         * Sets a cookie with a given name, value, and expiration in days.
+         * @param {string} name - The name of the cookie.
+         * @param {string} value - The value to store in the cookie.
+         * @param {number} days - The number of days until the cookie expires.
+         */
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+        }
+
+        /**
+         * Retrieves the value of a cookie by its name.
+         * @param {string} name - The name of the cookie to retrieve.
+         * @returns {string|null} The cookie's value, or null if not found.
+         */
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') {
+                    c = c.substring(1, c.length);
+                }
+                if (c.indexOf(nameEQ) === 0) {
+                    return c.substring(nameEQ.length, c.length);
+                }
+            }
+            return null;
+        }
+
+        // --- REFACTORED MAIN LOGIC ---
+
+        // Wait for the DOM to be fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all checkboxes that should have their state saved
+            const savableCheckboxes = document.querySelectorAll('.savable-checkbox');
+
+            // Iterate over each of these checkboxes
+            savableCheckboxes.forEach(checkbox => {
+                // Use the checkbox's 'name' attribute as its unique cookie key
+                const cookieName = checkbox.name;
+
+                // 1. LOAD the saved state for this specific checkbox
+                const savedState = getCookie(cookieName);
+                if (savedState !== null) {
+                    // Set the checkbox state based on the cookie's string value
+                    checkbox.checked = (savedState === 'true');
+                }
+
+                // 2. SAVE the state whenever this specific checkbox is changed
+                checkbox.addEventListener('change', () => {
+                    const isChecked = checkbox.checked;
+                    // Save the current state to a cookie named after the checkbox
+                    setCookie(cookieName, isChecked, 7); // Cookie expires in 7 days
+                    console.log(`Saved state for '${cookieName}': ${isChecked}`);
+                });
+            });
+        });
