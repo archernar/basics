@@ -14,4 +14,8 @@ rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
 cp ./questions.html /var/www/html/questions.html
 cp ./questions.css /var/www/html/questions.css
-ls -l /var/www/html
+B=happyahab
+aws --profile default s3 cp ./questions.html   s3://$B/questions.html      --acl public-read
+aws --profile default s3 cp ./questions.css    s3://$B/questions.css       --acl public-read
+echo "https://$B.s3.us-east-1.amazonaws.com/questions.html"
+# ls -l /var/www/html
