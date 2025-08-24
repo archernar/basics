@@ -14,7 +14,7 @@
             display: flex;
         }
         .sidebar {
-            width: 380px;
+            width: 310px;
             background-color: Black;
             border-right: 1px solid #e5e7eb;
             padding: 24px;
@@ -71,9 +71,9 @@
             font-weight: 600;
         }
         .main-content {
-            margin-left: 380px;
+            margin-left: 310px;
             padding: 32px;
-            width: calc(100% - 380px);
+            width: calc(100% - 310px);
             box-sizing: border-box;
         }
         .content-section {
@@ -91,18 +91,19 @@
         .content-grid {
             margin-top: 2rem;
             display: grid;
-            nothingness:380px;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            nothingness:310px;
+            xxxgrid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 1.5rem;
         }
 
 .topic-card {
     /* Card background and text color */
     background-color: #fffaf0; /* A creamy, off-white color */
-    color: Green;
+    color: Black;
 
     /* Spacing, with extra left padding for the red line */
-    padding: 12px 12px 12px 35px;
+    padding: 12px 12px 12px 12px;
 
     /* Subtle rounded corners and border */
     border-radius: 4px;
@@ -117,9 +118,9 @@
         /* 2. The single red vertical line */
         linear-gradient(
             to right,
-            transparent 24px, /* Space from the left edge */
-            Red 25px,      /* f8d7da The 1px red line */
-            transparent 26px
+            transparent 7px, /* 24 25 26 Space from the left edge */
+            Red 7px,      /* f8d7da The 1px red line */
+            transparent 8px
         );
 
     /* For an even more authentic feel, consider a monospace font */
@@ -164,8 +165,11 @@
     color: Black;
     font-size: 1.2rem;
 
-    /* Spacing, with extra left padding for the red line */
-    padding: 12px 12px 12px 35px;
+    /* Spacing, with extra left padding for the red line 
+     * Shorthand Property: The padding shorthand propertyi
+     * allows setting padding on all four sides (top, right, bottom, left) with a single declaration.
+    */
+    padding: 12px 12px 12px 12px;
 
     /* Subtle rounded corners and border */
     border-radius: 4px;
@@ -248,12 +252,28 @@
 
 }
 
+topic-card tableclass {
+    /* 
+     * Shorthand Property: The padding shorthand propertyi
+     * allows setting padding on all four sides (top, right, bottom, left) with a single declaration.
+    */
+    padding: 900px;
+    border-collapse: collapse;
+                background-color: #1a1a1a; /* Dark Gray */
+}
+
+.signpostlink {
+  color: Blue;
+  font-weight: Bold;
+  font-size: 1.25rem;
+  text-decoration: underline;
+}
 a {
   color: #FFFFFF;
   text-decoration: none;
 }
 
 input[type="checkbox"] {
-    width:28px;
-    height:28px;
+    width:20px;
+    height:20px;
 }

@@ -9,12 +9,29 @@ trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
 echo "OK" >&2
+# questions.awk runs for side effect only - creates questions.lst
 cat questions.source | gawk -F, -f questions.awk > $Tmp3
 echo "OK" >&2
-cat questions.source  > $Tmp3
-echo "OK" >&2
 
+cat questions.source | gawk '
+BEGIN {
+    FPAT = "([^,]+)|(\"[^\"]+\")"
+}
+{
+    if ($1 ~ /^First Steps/) {
+        $1="First Steps"
+    }
+    if ($1 ~ /^Variables: /) {
+        gsub(/^Variables: /, "", $1)
+    }
+
+    print $1 "," $2 "," $3
+}' > $Tmp3
+
+echo "OK" >&2
 gawk -F , -f questions.awk $Tmp3 >> "fungus"
+cp $Tmp3 zed
+
 # > $Tmp1
 
 gawk -F , '
@@ -28,7 +45,6 @@ BEGIN {
     gsub(/^["]/, "", $1)
     gsub(/["]$/, "", $1)
     if ($1 != f) {
-        print $1 ", " ahash($1) >> "mungus"
         print "<a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 "</a><br>"
         f=$1
     }
@@ -41,6 +57,7 @@ cat << "HEREND1"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta http-equiv="refresh" content="5" -->
     <title>Java Exercises</title>
     <script type="text/javascript" src="questions.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">

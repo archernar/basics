@@ -33,17 +33,19 @@ BEGIN {
         #print "<div class='topic-card'><h1><a id=" sq(ahash($1)) ">" $1 "</a></h1></div>" >> "questions.lst"
         locxxx="<div class='topic-card'><h1><a id=" sq(ahash($1)) ">" $1 "</a></h1></div>"
         loca="<a id=" sq(ahash($1)) "></a><div class='topic-card'><h1>191919191" $1 "</h1></div>"
-        alink="<a id=" sq(ahash($1)) ">" $1 "</a>"
+        alink="<a class=signpostlink id=" sq(ahash($1)) ">" $1 "</a>"
         loca="<div class='topic-card-bold'>" $1 "</div>"
         loca="<div class='topic-card-bold'>" alink "</div>"
-        print loca >> "questions.lst"
+        #print loca >> "questions.lst"
         h=$1
+        francis=alink 
+    } else {
+      francis=$1 
     }
     cb="<input type='checkbox' id='setting" c "' name='emailNotifications" c "' class='savable-checkbox h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500'>"
     loca=""
     
-    
-    print " <div class='topic-card'>" "<table valign=top border=0 width=100%><tr><td align=left valign=middle>" cb "</td><td align=left valign=middle><b>" $2 "</b></td><td align=right valign=middle>" $1 "</td></tr></table>" "<h3>" lno ""  "</h3>" "" $3 "" "</div>" >> "questions.lst"
+    print " <div class='topic-card'>" "<table cellspacing=0 cellpadding=0  valign=top border=0 width=100%><tr><td align=left valign=middle>" cb "</td><td align=left valign=middle><b>" $2 "</b></td><td align=right valign=middle>" francis "</td></tr></table>" "<h3>" lno ""  "</h3>" "" $3 "" "</div>" >> "questions.lst"
     print " <p>" $1 " - " $2 "</p>" "<p>" $3 "</p>" "<hr>" >> "report.html"
 
     # print " <div class='topic-card'>" "<p valign=top align=right><font size=-1>" $1 "</font>" cb "</p>" "<h3>" lno $2  "</h3>" "<p>" $3 "</p>" "</div>" >> "questions.lst"
