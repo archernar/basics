@@ -47,9 +47,9 @@ function ahash(input_str,       alpha, len_alpha, M, i, j, char_val, state, seed
         seed = (seed + state[i]) % M
     }
 
-    # 4. Generate the 24-character hash string using the seed.
+    # 4. Generate the 8-character hash string using the seed.
     result = ""
-    for (i = 1; i <= 24; i++) {
+    for (i = 1; i <= 8; i++) {
         # Use a Linear Congruential Generator (LCG) to create a pseudo-random sequence.
         # The constants (multiplier and increment) are from common LCG implementations.
         seed = (seed * 1664525 + 1013904223) % M

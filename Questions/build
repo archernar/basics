@@ -8,6 +8,10 @@ trap 'exit 0' INT HUP QUIT TERM ALRM USR1
 trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
+pad32() {
+    local input_string="$1"
+    printf "%-32s" "$input_string"
+}
 pad24() {
     # The string to be padded is the first argument passed to the function.
     local input_string="$1"
@@ -87,7 +91,7 @@ copy_and_log() {
     # --- 5. Write Log Message ---
     # Construct and print the log message to standard output.
     # This could easily be redirected to a log file, e.g., >> /var/log/copy.log
-    padded_string1=$(pad24 "'$source_file'")
+    padded_string1=$(pad32 "'$source_file'")
     padded_string2=$(pad24 "'$dest_dir'")
     echo "[$timestamp] COPIED: $padded_string1 to $padded_string2 ($bytes_copied bytes)."
 }
@@ -160,25 +164,30 @@ echo $THISBUILDFOLDER
 
 mkdir -p ./BUILDS
 mkdir -p $THISBUILDFOLDER
+cp questions.html javaexercises.html
+FILES=("questions.html" "javaexercises.html" "questions.js" "questions.css" "jspdf.plugin.autotable.min.js" "jspdf.umd.min.js")
 
-copy_and_log "questions.html"   "$THISBUILDFOLDER"
-copy_and_log "questions.js"     "$THISBUILDFOLDER"
-copy_and_log "questions.css"    "$THISBUILDFOLDER"
-copy_and_log "questions.source" "$THISBUILDFOLDER"
-
-copy_and_log "questions.html" "/var/www/html"
-copy_and_log "questions.js"   "/var/www/html"
-copy_and_log "questions.css"  "/var/www/html"
+        for file in "${FILES[@]}"; do
+            if [ -f "$file" ]; then
+                copy_and_log "$file"           "$THISBUILDFOLDER"
+                copy_and_log "$file"           "/var/www/html"
+            fi
+        done
 
 
 B=happyahab
+B=itlearningresources.com
+EP=http://itlearningresources.com.s3-website.us-east-2.amazonaws.com
 if command -v "aws" &> /dev/null
 then
     # If the exit code is 0, the command exists.
     if [ "$UAT" == "YES" ]; then
-        aws --profile default s3 cp ./questions.html   s3://$B/UAT/questions.html  --acl public-read
-        aws --profile default s3 cp ./questions.js     s3://$B/UAT/questions.js    --acl public-read
-        aws --profile default s3 cp ./questions.css    s3://$B/UAT/questions.css   --acl public-read
+        aws --profile default s3 rm --recursive         s3://$B/UAT
+        for file in "${FILES[@]}"; do
+            if [ -f "$file" ]; then
+                aws --profile default s3 cp $file   s3://$B/UAT/$file  --acl public-read
+            fi
+        done
     fi
 
     if [ "$DEV" == "YES" ]; then
@@ -193,10 +202,7 @@ then
     fi
     echo ""
     echo ""
-    echo "    https://$B.s3.us-east-1.amazonaws.com/UAT/questions.html"
-    echo "    https://$B.s3.us-east-1.amazonaws.com/DEV/questions.html"
-    echo "    https://$B.s3.us-east-1.amazonaws.com/PROD/questions.html"
-    echo "    https://$B.s3.us-east-1.amazonaws.com/questions.html"
+    echo "    $EP/UAT/javaexercises.html"
     echo ""
     echo ""
 else

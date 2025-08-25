@@ -2,6 +2,7 @@
 @load "ordchr"
 BEGIN {
     FPAT = "([^,]+)|(\"[^\"]+\")"
+    ct=1
     c=1
     f=1
     thehash=""
@@ -11,7 +12,7 @@ BEGIN {
     system("rm -f questions.lst")
     system("rm -f questions.report")
     system("rm -f report.html")
-    print "<table cellspacing=2 cellpadding=2  valign=top border=1 width=100%>" >> "report.html"
+    print "<table id=myTable cellspacing=2 cellpadding=2  valign=top border=1 width=80%>" >> "report.html"
 }
 END {
     print "</table>" >> "report.html"
@@ -49,10 +50,10 @@ END {
     cb="<input type='checkbox' id='setting" c "' name='emailNotifications" c "' class='savable-checkbox h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500'>"
     loca=""
     
-    print " <div class='topic-card'>" "<table cellspacing=0 cellpadding=0  valign=top border=0 width=100%><tr><td align=left valign=middle>" cb "</td><td align=left valign=middle><b>" $2 "</b></td><td align=right valign=middle>" francis "</td></tr></table>" "<h3>" lno ""  "</h3>" "" $3 "" "</div>" >> "questions.lst"
+    print " <div class='topic-card'>" "<table cellspacing=0 cellpadding=0  valign=top border=0 width=99%><tr><td align=left valign=middle>" cb "</td><td align=left valign=middle>" $2 "</td><td align=right valign=middle><b>" francis "</b></td></tr></table>" "<h3>" lno ""  "</h3>" "" $3 "" "</div>" >> "questions.lst"
     # OLD print " <p>" $1 " - " $2 "</p>" "<p>" $3 "</p>" "<hr>" >> "report.html"
-    print "<tr>" "<td>" cb "</td>" "<td>" $1 "</td>" "<td>" $2 "</td>" "<td>" $3 "</td>" "</tr>" >> "report.html"
-
+    print "<tr>" "<td>" ct "</td>" "<td>" $1 "</td>" "<td>" $2 "</td>" "<td>" $3 "</td>" "</tr>" >> "report.html"
+    ct++
     # print " <div class='topic-card'>" "<p valign=top align=right><font size=-1>" $1 "</font>" cb "</p>" "<h3>" lno $2  "</h3>" "<p>" $3 "</p>" "</div>" >> "questions.lst"
 
     close("questions.lst")

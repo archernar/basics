@@ -113,6 +113,9 @@ BEGIN {
     if ($1 ~ /^Variables: /) {
         gsub(/^Variables: /, "", $1)
     }
+    if ($1 ~ /^Arrays: /) {
+        $1="Arrays"
+    }
 
     print $1 "," $2 "," $3
 }'  | sort | uniq > $Tmp3
@@ -164,6 +167,12 @@ cat << "HEREND1"
     <!-- meta http-equiv="refresh" content="5" -->
     <title>Java Exercises</title>
     <script type="text/javascript" src="questions.js"></script>
+    <!--
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    -->
+    <script src="jspdf.umd.min.js"></script>
+    <script src="jspdf.plugin.autotable.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="questions.css">                                                         
 
@@ -171,12 +180,18 @@ cat << "HEREND1"
 <body>
 <aside class="sidebar">
 <!-- nav id="nav-menu" -->
+<button onclick="exportTableToPDF()">Export to PDF</button>
 <h2>Coding Templates</h2>
 <a id="open-editor-btn" class='navi1'> Template 1</a>
 HEREND1
 cp questions.topics $Tmp
 echo "<h2>Begin Here</h2>"
 rx="First Steps"
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+
+echo "<h2>Classes</h2>"
+rx="The"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
@@ -213,6 +228,11 @@ cat questions.lst
 cat << "HEREND2"
 </div>
 </div>
+<br>
+<br>
+<a class=signpostlink id='thetable'>Table Format </a>
+<br>
+<br>
 HEREND2
 
 cat report.html

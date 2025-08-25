@@ -1,3 +1,29 @@
+
+function exportTableToPDF() {
+    //
+    // IMPORTANT: Make sure to import jsPDF and jspdf-autotable.
+    // In this example, they are imported via <script> tags in the HTML file.
+    //
+    
+    // Initialize jsPDF
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Use autoTable to generate the table.
+    // The 'html' option is used to specify the HTML table element.
+    doc.autoTable({ html: '#myTable' });
+
+    // Save the PDF
+    doc.save('table.pdf');
+}
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
         // Your code here will run after the DOM is ready.
         console.log('DOM fully loaded and parsed');
