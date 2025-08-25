@@ -8,6 +8,95 @@ trap 'exit 0' INT HUP QUIT TERM ALRM USR1
 trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
+# -----------------------------------------------------------------------------
+# Function: move_matches_to_top
+# Description:
+#   Reads a file, finds all lines matching a given regular expression, and
+#   moves them to the top. The resulting content is printed to standard
+#   output, leaving the original file unchanged.
+#
+# Arguments:
+#   $1 - The path to the input file.
+#   $2 - The regular expression to match against.
+#
+# Usage:
+#   move_matches_to_top /path/to/your/file "your_regex"
+#
+# Example:
+#   move_matches_to_top sample.txt "^error"
+# -----------------------------------------------------------------------------
+move_matches_to_top() {
+  # Assign arguments to descriptive local variables
+  local file_path="$1"
+  local regex="$2"
+  echo "Info: $file_path" >&2
+  echo "Info: $(ls -lh $file_path)" >&2
+  echo "Info: $regex" >&2
+
+
+  # --- Input Validation ---
+
+  # Check if a file path was provided
+  if [[ -z "$file_path" ]]; then
+    echo "Error: No file path provided." >&2
+    return 1
+  fi
+
+  # Check if a regular expression was provided
+  if [[ -z "$regex" ]]; then
+    echo "Error: No regular expression provided." >&2
+    return 1
+  fi
+
+  # Check if the file exists and is readable
+  if [[ ! -f "$file_path" || ! -r "$file_path" ]]; then
+    echo "Error: File '$file_path' not found or is not readable." >&2
+    return 1
+  fi
+
+  # --- Core Logic ---
+
+  # 1. Use grep to find and print all lines that match the regular expression.
+  #    The output is sent directly to standard out.
+  grep "$regex" "$file_path" > /tmp/moe
+
+  # 2. Use grep with the -v (invert-match) option to find and print all
+  #    lines that DO NOT match the regular expression. This output is
+  #    appended to standard out after the matching lines.
+  grep -v "$regex" "$file_path" >> /tmp/moe
+
+  cp /tmp/moe  "$file_path"
+}
+
+# --- Example Usage ---
+# To use this function, you can source this script in your terminal or add
+# the function to your ~/.bashrc or ~/.zshrc file.
+
+# Example:
+# 1. Create a sample file named 'logs.txt':
+#    cat << EOF > logs.txt
+#    info: process started
+#    debug: initializing system
+#    error: failed to connect to database
+#    info: user logged in
+#    warning: disk space is low
+#    error: null pointer exception
+#    info: process finished
+#    EOF
+
+# 2. Call the function to move all lines starting with "error" to the top:
+#    move_matches_to_top "logs.txt" "^error"
+
+# Expected output of the example:
+#    error: failed to connect to database
+#    error: null pointer exception
+#    info: process started
+#    debug: initializing system
+#    info: user logged in
+#    warning: disk space is low
+#    info: process finished
+
+
 echo "OK" >&2
 # questions.awk runs for side effect only - creates questions.lst
 cat questions.source | gawk -F, -f questions.awk > $Tmp3
@@ -26,11 +115,26 @@ BEGIN {
     }
 
     print $1 "," $2 "," $3
-}' > $Tmp3
-
+}'  | sort | uniq > $Tmp3
+ls -lh $Tmp3 >&2
 echo "OK" >&2
+move_matches_to_top "$Tmp3" "^Practice Program" 
+move_matches_to_top "$Tmp3" "^First" 
+cp $Tmp3 questions.sorted
+
+filename=questions.source
+backup_dir=./BACKUPS
+mkdir -p "$backup_dir"
+timestamp=$(date +%Y%m%d%H%M%S)
+backup_filename="${filename##*/}.backup.${timestamp}" # Extract filename only
+backup_path="${backup_dir}/${backup_filename}"
+cp "$filename" "$backup_path"
+
+cp questions.sorted questions.source
+
+# Remember this executes for side effect, creates questions.lst
 gawk -F , -f questions.awk $Tmp3 >> "fungus"
-cp $Tmp3 zed
+
 
 # > $Tmp1
 
@@ -66,19 +170,24 @@ cat << "HEREND1"
 </head>
 <body>
 <aside class="sidebar">
-    <div class="text-center">
-        <h1 class="text-4xl font-bold mb-4">Java</h1>
-        <p class="text-gray-400 mb-8">Click the button below to launch the editor in a new window.</p>
-        <button id="open-editor-btn" class="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-bold rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-cyan-400">
-            Open Code Template
-        </button>
-    </div>
-
-<h1>Java Exercises</h1>
 <!-- nav id="nav-menu" -->
-<h2>Topics</h2>
+<h2>Coding Templates</h2>
+<a id="open-editor-btn" class='navi1'> Template 1</a>
 HEREND1
-cat questions.topics
+cp questions.topics $Tmp
+echo "<h2>Begin Here</h2>"
+rx="First Steps"
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+
+echo "<h2>Practice Sets</h2>"
+rx="Practice"
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+
+echo "<h2>Exercise Topics</h2>"
+cat $Tmp 
+
 cat << "HEREND1A"
 <!-- /nav -->
 </aside>
@@ -88,10 +197,16 @@ cat << "HEREND1A"
 <div id="intro" class="content-section">
             <div class="content-header">
                 <h2>Java Programming Exercises</h2>
-                <p>Exercises focused on the absolute fundamentals: setting up your environment, understanding program structure, and mastering console output.</p>
+                <p>Version:
+HEREND1A
+
+cat ./version.txt
+echo "build date: " $(date)
+cat << "HEREND1B"
+                </p>
             </div>
 <div class="content-grid">
-HEREND1A
+HEREND1B
 
 cat questions.lst
 

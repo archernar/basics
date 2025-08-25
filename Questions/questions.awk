@@ -11,6 +11,10 @@ BEGIN {
     system("rm -f questions.lst")
     system("rm -f questions.report")
     system("rm -f report.html")
+    print "<table cellspacing=2 cellpadding=2  valign=top border=1 width=100%>" >> "report.html"
+}
+END {
+    print "</table>" >> "report.html"
 }
 {
     gsub(/["]["]/, "'", $0)
@@ -46,7 +50,8 @@ BEGIN {
     loca=""
     
     print " <div class='topic-card'>" "<table cellspacing=0 cellpadding=0  valign=top border=0 width=100%><tr><td align=left valign=middle>" cb "</td><td align=left valign=middle><b>" $2 "</b></td><td align=right valign=middle>" francis "</td></tr></table>" "<h3>" lno ""  "</h3>" "" $3 "" "</div>" >> "questions.lst"
-    print " <p>" $1 " - " $2 "</p>" "<p>" $3 "</p>" "<hr>" >> "report.html"
+    # OLD print " <p>" $1 " - " $2 "</p>" "<p>" $3 "</p>" "<hr>" >> "report.html"
+    print "<tr>" "<td>" cb "</td>" "<td>" $1 "</td>" "<td>" $2 "</td>" "<td>" $3 "</td>" "</tr>" >> "report.html"
 
     # print " <div class='topic-card'>" "<p valign=top align=right><font size=-1>" $1 "</font>" cb "</p>" "<h3>" lno $2  "</h3>" "<p>" $3 "</p>" "</div>" >> "questions.lst"
 

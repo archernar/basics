@@ -8,27 +8,201 @@ trap 'exit 0' INT HUP QUIT TERM ALRM USR1
 trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
+pad24() {
+    # The string to be padded is the first argument passed to the function.
+    local input_string="$1"
+    
+    # Use printf for robust string formatting.
+    # The format specifier "%-24s" works as follows:
+    #   % : Starts the format specifier.
+    #   - : Left-aligns the content within the given width. This is what causes
+    #       the padding to be added to the right.
+    #   24: Specifies the minimum width of the output. If the string is shorter,
+    #       it will be padded. If it's longer, printf will expand to fit it.
+    #   s : Indicates that the argument is a string.
+    printf "%-24s" "$input_string"
+}
+
+# ---
+# Function: copy_and_log
+# Description: Copies a file to a specified directory and logs the details of the operation,
+#              including a timestamp, source, destination, and the number of bytes copied.
+#
+# Arguments:
+#   $1: The path to the source file.
+#   $2: The path to the destination directory.
+#
+# Usage:
+#   copy_and_log "/path/to/source/file.txt" "/path/to/destination/directory/"
+# ---
+copy_and_log() {
+    # --- 1. Argument Validation ---
+    # Check if exactly two arguments are provided.
+    if [ "$#" -ne 2 ]; then
+        echo "Error: Invalid number of arguments." >&2
+        echo "Usage: copy_and_log <source_file> <destination_directory>" >&2
+        return 1
+    fi
+
+    local source_file="$1"
+    local dest_dir="$2"
+
+    # --- 2. Source and Destination Validation ---
+    # Check if the source file exists and is a regular file.
+    if [ ! -f "$source_file" ]; then
+        echo "Error: Source file '$source_file' not found or is not a regular file." >&2
+        return 1
+    fi
+
+    # Check if the destination directory exists.
+    if [ ! -d "$dest_dir" ]; then
+        echo "Error: Destination directory '$dest_dir' not found." >&2
+        return 1
+    fi
+
+    # --- 3. Copy Operation ---
+    # Use the 'cp' command to copy the file. The -v (verbose) flag is useful for confirmation.
+    # We redirect stderr to stdout to catch potential copy errors.
+    copy_output=$(cp "$source_file" "$dest_dir" 2>&1)
+    if [ $? -ne 0 ]; then
+        echo "Error during copy: $copy_output" >&2
+        return 1
+    fi
+
+    # --- 4. Gather Log Information ---
+    # Get the number of bytes of the source file.
+    # Using 'stat' is a reliable way to get file size.
+    # For macOS, use 'stat -f %z'. For Linux, use 'stat -c %s'.
+    local bytes_copied
+    if [[ "$(uname)" == "Darwin" ]]; then # macOS
+        bytes_copied=$(stat -f %z "$source_file")
+    else # Linux
+        bytes_copied=$(stat -c %s "$source_file")
+    fi
+
+    # Get the current date and time in a standard format.
+    local timestamp
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+
+    # --- 5. Write Log Message ---
+    # Construct and print the log message to standard output.
+    # This could easily be redirected to a log file, e.g., >> /var/log/copy.log
+    padded_string1=$(pad24 "'$source_file'")
+    padded_string2=$(pad24 "'$dest_dir'")
+    echo "[$timestamp] COPIED: $padded_string1 to $padded_string2 ($bytes_copied bytes)."
+}
 
 
-./questions     > ./questions.html
 
-cp ./questions.html /var/www/html/questions.html
-cp ./questions.js /var/www/html/questions.js
-cp ./questions.css /var/www/html/questions.css
+UAT="NO"
+DEV="NO"
+PROD="NO"
+BUILDLABEL=""
+while getopts "udp" arg
+do
+    case $arg in
+        u) UAT="YES"
+           BUILDLABEL="-UAT"
+           ;;
+        d) DEV="YES"
+           BUILDLABEL="-DEV"
+           ;;
+        p) PROD="YES"
+           BUILDLABEL="-PROD"
+           ;;
+    esac
+done
+shift $(($OPTIND - 1))
 
+# The file where the version number is stored
+VERSION_FILE="version.txt"
+
+# Check if the version file exists. If not, create it with a default version.
+if [ ! -f "$VERSION_FILE" ]; then
+  echo "1.0.0" > "$VERSION_FILE"
+fi
+
+# Read the current version from the file
+current_version=$(cat "$VERSION_FILE")
+
+# Use IFS to split the version string into an array (major, minor, patch)
+IFS='.' read -ra version_parts <<< "$current_version"
+
+# Assign parts to variables
+major=${version_parts[0]}
+minor=${version_parts[1]}
+# patch=${version_parts[2]} # Old patch number isn't needed
+
+# Increment the minor version
+new_minor=$((minor + 1))
+
+# Reset the patch version to 0
+new_patch=0
+
+# Assemble the new version string
+new_version="$major.$new_minor.$new_patch"
+BUILDVERSION="$major.$new_minor.$new_patch"
+
+# Write the new version back to the file
+echo "$new_version" > "$VERSION_FILE"
+
+# Print the new version to the console
+echo "Version updated to $new_version"
+
+
+
+./questions > questions.html
+
+
+THISBUILDFOLDER=./BUILDS/$BUILDVERSION$BUILDLABEL
+echo $BUILDVERSION
+echo $THISBUILDFOLDER
+
+mkdir -p ./BUILDS
+mkdir -p $THISBUILDFOLDER
+
+copy_and_log "questions.html"   "$THISBUILDFOLDER"
+copy_and_log "questions.js"     "$THISBUILDFOLDER"
+copy_and_log "questions.css"    "$THISBUILDFOLDER"
+copy_and_log "questions.source" "$THISBUILDFOLDER"
+
+copy_and_log "questions.html" "/var/www/html"
+copy_and_log "questions.js"   "/var/www/html"
+copy_and_log "questions.css"  "/var/www/html"
 
 
 B=happyahab
 if command -v "aws" &> /dev/null
 then
     # If the exit code is 0, the command exists.
-    aws --profile default s3 cp ./questions.html   s3://$B/questions.html      --acl public-read
-    aws --profile default s3 cp ./questions.js     s3://$B/questions.js        --acl public-read
-    aws --profile default s3 cp ./questions.css    s3://$B/questions.css       --acl public-read
-    echo "https://$B.s3.us-east-1.amazonaws.com/questions.html"
+    if [ "$UAT" == "YES" ]; then
+        aws --profile default s3 cp ./questions.html   s3://$B/UAT/questions.html  --acl public-read
+        aws --profile default s3 cp ./questions.js     s3://$B/UAT/questions.js    --acl public-read
+        aws --profile default s3 cp ./questions.css    s3://$B/UAT/questions.css   --acl public-read
+    fi
+
+    if [ "$DEV" == "YES" ]; then
+        aws --profile default s3 cp ./questions.html   s3://$B/DEV/questions.html      --acl public-read
+        aws --profile default s3 cp ./questions.js     s3://$B/DEV/questions.js        --acl public-read
+        aws --profile default s3 cp ./questions.css    s3://$B/DEV/questions.css       --acl public-read
+    fi
+    if [ "$PROD" == "YES" ]; then
+        aws --profile default s3 cp ./questions.html   s3://$B/PROD/questions.html      --acl public-read
+        aws --profile default s3 cp ./questions.js     s3://$B/PROD/questions.js        --acl public-read
+        aws --profile default s3 cp ./questions.css    s3://$B/PROD/questions.css       --acl public-read
+    fi
+    echo ""
+    echo ""
+    echo "    https://$B.s3.us-east-1.amazonaws.com/UAT/questions.html"
+    echo "    https://$B.s3.us-east-1.amazonaws.com/DEV/questions.html"
+    echo "    https://$B.s3.us-east-1.amazonaws.com/PROD/questions.html"
+    echo "    https://$B.s3.us-east-1.amazonaws.com/questions.html"
+    echo ""
+    echo ""
 else
     # If the exit code is non-zero, the command does not exist.
-    echo "Error: Command 'aws' not found. Cannot execute."
+    echo ""
+    echo "Error: Command 'aws' not found. Skipping AWS deploy."
 fi
 
 # ls -l /var/www/html
