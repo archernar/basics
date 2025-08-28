@@ -14,10 +14,10 @@
             display: flex;
         }
         .sidebar {
-            width: 310px;
+            width: 340px;
             background-color: Black;
             border-right: 1px solid #e5e7eb;
-            padding: 24px;
+            padding: 4px;
             height: 100vh;
             position: fixed;
             top: 0;
@@ -71,9 +71,9 @@
             font-weight: 600;
         }
         .main-content {
-            margin-left: 310px;
+            margin-left: 340px;
             padding: 32px;
-            width: calc(100% - 310px);
+            width: calc(100% - 340px);
             box-sizing: border-box;
         }
         .content-section {
@@ -91,8 +91,8 @@
         .content-grid {
             margin-top: 2rem;
             display: grid;
-            nothingness:310px;
-            xxxgrid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            nothingness:340px;
+            xxxgrid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             grid-template-columns: 1fr 1fr 1fr;
             gap: 1.5rem;
         }

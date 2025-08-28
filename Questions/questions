@@ -141,7 +141,7 @@ gawk -F , -f questions.awk $Tmp3 >> "fungus"
 
 # > $Tmp1
 
-gawk -F , '
+gawk -v sfile=$Tmp3 -F , '
 @include "library.gawk"
 @load "ordchr"
 BEGIN {
@@ -152,7 +152,12 @@ BEGIN {
     gsub(/^["]/, "", $1)
     gsub(/["]$/, "", $1)
     if ($1 != f) {
-        print "<a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 "</a><br>"
+        sz = "cat " sfile " | egrep -c  \"^" $1 "\" > questions.count"
+        system(sz)
+        getline count < "questions.count"
+        close("questions.count")
+        count = " (" count ")"
+        print "<a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 count"</a><br>"
         f=$1
     }
 }' $Tmp3  |  sed 's/"//g' > questions.topics
@@ -166,6 +171,7 @@ cat << "HEREND1"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- meta http-equiv="refresh" content="5" -->
     <title>Java Exercises</title>
+    <script type="text/javascript" src="editor.js"></script>
     <script type="text/javascript" src="questions.js"></script>
     <!--
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -181,8 +187,8 @@ cat << "HEREND1"
 <aside class="sidebar">
 <!-- nav id="nav-menu" -->
 <button onclick="exportTableToPDF()">Export to PDF</button>
-<h2>Coding Templates</h2>
-<a id="open-editor-btn" class='navi1'> Template 1</a>
+<h2>Templates</h2>
+<a id="open-editor-btn" class='navi1'>Starter</a>
 HEREND1
 cp questions.topics $Tmp
 echo "<h2>Begin Here</h2>"
