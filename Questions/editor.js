@@ -28,16 +28,33 @@ const ContentDocTop= `
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title></title>
             </head>
+            <style>
+                body {
+                    xxxxfont-family: 'Inter', sans-serif;
+                    font-family: 'Courier New', monospace;
+                    font-size: 1.3rem;
+                    xxbackground-color: #f9fafb;
+                    background-color: #1a1a1a; /* Dark Gray */
+                    color: #FFFFFF;
+                    margin: 0;
+                    display: flex;
+                }
+            </style>
             <body>
             <pre>
             <code>
 /**
  * A template class for a simple Java program.
  *
- * @author [Your Name]
- * @version 1.0
- * @since [Date]
+ * @author     [Your Name]
+ * email       [Your Email]
+ * class       [Your Class Code]
+ * section     [Your Section
+ * date        [Date]
  *
+ * @version    1.0
+ *
+ * Description
 `;
 const ContentEndComment= `
  */
@@ -55,14 +72,14 @@ const ContentDocBottom= `
 
 const ContentApplicationClass= `
 
-import java.util.Scanner; // Import the Scanner class to read user input
+import java.util.Scanner;   // Import the Scanner class to read user input
 
-public class LearningTemplate {
+public class MyClass {      // Public classes are stored in files of the same-name.java
     /**
-     * The main method is the entry point of the application.
-     * Execution starts here.
+     * The main method is the entry point of the application.  Execution starts here.
      */
     public static void main(String[] args) {
+        System.out.println("Hello World!");
     }
 }
 `;

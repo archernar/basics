@@ -63,11 +63,11 @@ END {
     gsub(/["]/, "`", sz)
     codetext=dq(" * " sz)
 
-    buta="<button onClick='javascript:openEditor(  "  codetext  "  )'>open</button>"
+    buta="<button onClick='javascript:openEditor(  "  codetext  "  )'>open template</button>"
     cb="<input type='checkbox' id='setting" c "' name='emailNotifications" c "' class='savable-checkbox h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500'>"
     loca=""
     
-    print " <div class='topic-card'>" "<table cellspacing=0 cellpadding=0  valign=top border=0 width=99%><tr><td align=left valign=middle>" cb "</td><td align=left valign=middle>" $2 "</td><td align=right valign=middle><b>" francis "</b></td></tr></table>" "<h3>" lno ""  "</h3>" "" $3 "<br>" buta "</div>" >> "questions.lst"
+    print " <div class='topic-card'>" "<table cellspacing=0 cellpadding=0  valign=top border=0 width=99%><tr><td align=left valign=middle>" cb "</td><td align=left valign=middle>" $2 "</td><td align=right valign=middle><b>" francis "</b></td></tr></table>" "<h3>" lno ""  "</h3>" "" $3 "<br><div align=right>" buta "</div></div>" >> "questions.lst"
     # OLD print " <p>" $1 " - " $2 "</p>" "<p>" $3 "</p>" "<hr>" >> "report.html"
     print "<tr>" "<td>" ct "</td>" "<td>" $1 "</td>" "<td>" $2 "</td>" "<td>" $3 "</td>" "</tr>" >> "report.html"
     ct++
