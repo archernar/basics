@@ -93,9 +93,66 @@ copy_and_log() {
     # This could easily be redirected to a log file, e.g., >> /var/log/copy.log
     padded_string1=$(pad32 "'$source_file'")
     padded_string2=$(pad24 "'$dest_dir'")
-    echo "[$timestamp] COPIED: $padded_string1 to $padded_string2 ($bytes_copied bytes)."
+    echo "[$timestamp] LNXCPY: $padded_string1 to $padded_string2 ($bytes_copied bytes)."
 }
 
+aws_copy_and_log() {
+    # --- 1. Argument Validation ---
+    # Check if exactly two arguments are provided.
+    if [ "$#" -ne 2 ]; then
+        echo "Error: Invalid number of arguments." >&2
+        echo "Usage: aws_copy_and_log <source_file> <destination_directory>" >&2
+        return 1
+    fi
+
+    local source_file="$1"
+    local dest_dir="$2"
+
+    # --- 2. Source and Destination Validation ---
+    # Check if the source file exists and is a regular file.
+    if [ ! -f "$source_file" ]; then
+        echo "Error: Source file '$source_file' not found or is not a regular file." >&2
+        return 1
+    fi
+
+    # Check if the destination directory exists.
+    # if [ ! -d "$dest_dir" ]; then
+    #     echo "Error: Destination directory '$dest_dir' not found." >&2
+    #     return 1
+    # fi
+
+    # --- 3. Copy Operation ---
+    # Use the 's3 cp' command to copy the file.
+    # We redirect stderr to stdout to catch potential copy errors.
+    copy_output=$(echo "aws --profile default s3 cp $source_file $dest_dir --acl public-read" 2>&1)
+    # copy_output=$(aws --profile default s3 cp "$source_file" "$dest_dir" --acl public-read  2>&1)
+    if [ $? -ne 0 ]; then
+        echo "Error during copy: $copy_output" >&2
+        return 1
+    fi
+
+    # --- 4. Gather Log Information ---
+    # Get the number of bytes of the source file.
+    # Using 'stat' is a reliable way to get file size.
+    # For macOS, use 'stat -f %z'. For Linux, use 'stat -c %s'.
+    local bytes_copied
+    if [[ "$(uname)" == "Darwin" ]]; then # macOS
+        bytes_copied=$(stat -f %z "$source_file")
+    else # Linux
+        bytes_copied=$(stat -c %s "$source_file")
+    fi
+
+    # Get the current date and time in a standard format.
+    local timestamp
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+
+    # --- 5. Write Log Message ---
+    # Construct and print the log message to standard output.
+    # This could easily be redirected to a log file, e.g., >> /var/log/copy.log
+    padded_string1=$(pad32 "'$source_file'")
+    padded_string2=$(pad24 "'$dest_dir'")
+    echo "[$timestamp] AWSCPY: $padded_string1 to $padded_string2 ($bytes_copied bytes)."
+}
 
 
 UAT="NO"
@@ -184,7 +241,15 @@ FILES=("index.html" "error.html" "questions.html" "javaexercises.html" "question
 B=happyahab
 B=javaexercises.itlearningresources.com
 #http://javaexercises.itlearningresources.com.s3-website.us-east-2.amazonaws.com
-EP=http://itlearningresources.com.s3-website.us-east-2.amazonaws.com
+EP=http://$B.s3-website.us-east-2.amazonaws.com
+
+
+
+aws_copy_and_log "$file"  "s3://$B/$file"
+
+
+
+
 if command -v "aws" &> /dev/null
 then
     # If the exit code is 0, the command exists.
@@ -195,6 +260,7 @@ then
                 aws --profile default s3 cp $file   s3://$B/$file  --acl public-read
             fi
         done
+        echo "    $EP/javaexercises.html"
     fi
     if [ "$UAT" == "YES" ]; then
         aws --profile default s3 rm --recursive         s3://$B/UAT
@@ -202,24 +268,28 @@ then
             if [ -f "$file" ]; then
                 aws --profile default s3 cp $file   s3://$B/UAT/$file  --acl public-read
             fi
+        echo "    $EP/UAT/javaexercises.html"
         done
     fi
-
     if [ "$DEV" == "YES" ]; then
-        aws --profile default s3 cp ./questions.html   s3://$B/DEV/questions.html      --acl public-read
-        aws --profile default s3 cp ./questions.js     s3://$B/DEV/questions.js        --acl public-read
-        aws --profile default s3 cp ./questions.css    s3://$B/DEV/questions.css       --acl public-read
+        aws --profile default s3 rm --recursive         s3://$B/DEV
+        for file in "${FILES[@]}"; do
+            if [ -f "$file" ]; then
+                aws --profile default s3 cp $file   s3://$B/DEV/$file  --acl public-read
+            fi
+        done
+        echo "    $EP/DEV/javaexercises.html"
     fi
     if [ "$PROD" == "YES" ]; then
-        aws --profile default s3 cp ./questions.html   s3://$B/PROD/questions.html      --acl public-read
-        aws --profile default s3 cp ./questions.js     s3://$B/PROD/questions.js        --acl public-read
-        aws --profile default s3 cp ./questions.css    s3://$B/PROD/questions.css       --acl public-read
+        aws --profile default s3 rm --recursive         s3://$PROD/
+        for file in "${FILES[@]}"; do
+            if [ -f "$file" ]; then
+                aws --profile default s3 cp $file   s3://$B/PROD/$file  --acl public-read
+            fi
+        done
+        echo "    $EP/PROD/javaexercises.html"
     fi
-    echo ""
-    echo ""
-    echo "    $EP/UAT/javaexercises.html"
-    echo ""
-    echo ""
+
 else
     # If the exit code is non-zero, the command does not exist.
     echo ""
