@@ -137,6 +137,7 @@ cp questions.sorted questions.source
 
 # Remember this executes for side effect, creates questions.lst
 gawk -F , -f questions.awk $Tmp3 >> "fungus"
+rm -f fungus
 
 
 # > $Tmp1
@@ -197,18 +198,24 @@ rx="First Steps"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
-echo "<h2>Classes</h2>"
 rx="The"
+SZ=`cat $Tmp | grep "$rx" | wc -l`
+echo "<h2>Java Classes ($SZ)</h2>"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
-echo "<h2>Practice Sets</h2>"
-rx="Practice"
+rx="Java Practice"
+SZ=`cat $Tmp | grep "$rx" | wc -l`
+echo "<h2>Practice Sets ($SZ)</h2>"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
-echo "<h2>Exercise Topics</h2>"
+SZ=`cat $Tmp  | wc -l`
+echo "<h2>Exercise Topics ($SZ)</h2>"
 cat $Tmp 
+
+ls pages  | gawk '@include "library.gawk"; {print "<div class=topic-card-narrow><a class=anchorlink href=" sq("pages\\" $0) ">" $0 "</a></div>"}'  > $Tmp2
+cp $Tmp2 fedd
 
 cat << "HEREND1A"
 <!-- /nav -->
@@ -216,11 +223,26 @@ cat << "HEREND1A"
 
 <main class="main-content">
         <!-- Content for Intro -->
+<div id="TutorialSpace" >
+    <div class="content-header">
+        <h2>Java Tutorials</h2>
+    </div>
+    <div class="content-grid">
+       <div class='topic-card-narrow'><a class='anchorlink' href='ScannerClass.pdf'>Scanner Class</a></div>
+HEREND1A
+
+cat fedd
+
+cat << "HEREND1AA"
+    </div>
+</div>
+<br>
+<br>
 <div id="intro" class="content-section">
             <div class="content-header">
                 <h2>Java Programming Exercises</h2>
                 <p>Version:
-HEREND1A
+HEREND1AA
 
 cat ./version.txt
 echo "build date: " $(date)

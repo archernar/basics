@@ -2,6 +2,7 @@
 @load "ordchr"
 BEGIN {
     FPAT = "([^,]+)|(\"[^\"]+\")"
+    first=1
     ct=1
     c=1
     f=1
@@ -14,6 +15,8 @@ BEGIN {
     system("rm -f questions.report")
     system("rm -f report.html")
     print "<table id=myTable cellspacing=2 cellpadding=2  valign=top border=1 width=80%>" >> "report.html"
+    system("rm -rf ./pages")
+    system("mkdir -p ./pages")
 }
 END {
     print "</table>" >> "report.html"
@@ -33,6 +36,10 @@ END {
 
     lno=c ". "
     lno=""
+    previoushashedfilename=hashedfilename
+    hashedfilename=$1
+    gsub(/[^[:alnum:]]/, "", hashedfilename)
+    hashedfilename=tolower("./pages/" "" hashedfilename ".html")
     if (h != $1) {
         thehash=ahash($1)
         print $1 ",,, " ahash($1)
@@ -46,9 +53,16 @@ END {
         #print loca >> "questions.lst"
         h=$1
         francis=alink 
+        if (first == 0)
+            closeHTMLFile(previoushashedfilename) 
+        openHTMLFile(hashedfilename) 
+        first=0
     } else {
       francis=$1 
     }
+        putHTMLFile($2, hashedfilename) 
+        putHTMLFile($3, hashedfilename) 
+        putHTMLFile("", hashedfilename) 
 
     sz=$3
     sdq="\""

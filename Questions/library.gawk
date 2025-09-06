@@ -1,3 +1,41 @@
+function openHTMLFile(fout) {
+    print "<!DOCTYPE html>" >> fout
+    print "<html lang='en;>" >> fout
+    print "<head>" >> fout
+    print "<meta charset="UTF-8">" >> fout
+    print "<meta name='viewport' content='width=device-width, initial-scale=1.0'>" >> fout
+    print "<title></title>" >> fout
+    print "</head>" >> fout
+    print "<style>" >> fout
+    print "body {" >> fout
+    print "xxxxfont-family: 'Inter', sans-serif;" >> fout
+    print "font-family: 'Courier New', monospace;" >> fout
+    print "font-size: 1.3rem;" >> fout
+    print "xxbackground-color: #f9fafb;" >> fout
+    print "background-color: #1a1a1a; /* Dark Gray */" >> fout
+    print "color: #FFFFFF;" >> fout
+    print "margin: 0;" >> fout
+    print "display: flex;" >> fout
+    print "}" >> fout
+    print "</style>" >> fout
+    print "<body>" >> fout
+    print "<pre>" >> fout
+    print "<code>" >> fout
+    close(fout)
+}
+function putHTMLFile(sz,fout) {
+    print sz >>  fout
+    close(fout)
+}
+function closeHTMLFile(fout) {
+    print "</code>" >>  fout
+    print "</pre>" >> fout
+    print "</body>" >> fout
+    print "</html>" >> fout
+    close(fout)
+}
+
+
 function sq(sz) {
     return "'" sz "'";
 }

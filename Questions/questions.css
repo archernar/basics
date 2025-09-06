@@ -142,8 +142,41 @@
 }
 
 
+.topic-card-narrow {
+    /* Card background and text color */
+    background-color: #fffaf0; /* A creamy, off-white color */
+    color: Black;
+
+    /* Spacing, with extra left padding for the red line */
+    padding: 2px 2px 2px 12px;
+
+    /* Subtle rounded corners and border */
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+
+    /* A soft shadow to lift it off the page */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+
+    /* --- The Magic: Creating the lines --- */
+    /* We layer two gradients to create the effect */
+    background-image:
+        /* 2. The single red vertical line */
+        linear-gradient(
+            to right,
+            transparent 7px, /* 24 25 26 Space from the left edge */
+            Red 7px,      /* f8d7da The 1px red line */
+            transparent 8px
+        );
+
+    /* For an even more authentic feel, consider a monospace font */
+    font-family: 'Courier New', monospace;
+}
 
 
+.anchorlink {
+    background-color: #fffaf0; /* A creamy, off-white color */
+    color: Black;
+}
 
 
 
