@@ -240,9 +240,9 @@ mkdir -p $THISBUILDFOLDER
 cp questions.html javaexercises.html
 cp questions.html index.html
 cp questions.html error.html
-FILES=("index.html" "error.html" "questions.html" "javaexercises.html" "questions.js" "editor.js" "questions.css" "jspdf.plugin.autotable.min.js" "jspdf.umd.min.js")
+FILES=("icon.png" "index.html" "error.html" "questions.html" "javaexercises.html" "questions.js" "editor.js" "questions.css" "jspdf.plugin.autotable.min.js" "jspdf.umd.min.js")
 XHTMLFILES=("ScannerClass.pdf" "index.html" "error.html" "questions.html" "javaexercises.html")
-HTMLFILES=("pages" "ScannerClass.pdf" "index.html" "questions.css")
+HTMLFILES=("pages" "icon.png" "ScannerClass.pdf" "index.html" "questions.css")
 
         for file in "${FILES[@]}"; do
             if [ -f "$file" ]; then

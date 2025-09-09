@@ -3,6 +3,7 @@
 BEGIN {
     FPAT = "([^,]+)|(\"[^\"]+\")"
     first=1
+    rtflag=0 
     ct=1
     c=1
     f=1
@@ -14,11 +15,14 @@ BEGIN {
     system("rm -f questions.lst")
     system("rm -f questions.report")
     system("rm -f report.html")
-    print "<table id=myTable cellspacing=2 cellpadding=2  valign=top border=1 width=80%>" >> "report.html"
+    print "<table id=myTable cellspacing=1 cellpadding=1  valign=top border=0 width=100%>" >> "report.html"
+    print "<tr><td width=100%>" >> "report.html"
     system("rm -rf ./pages")
     system("mkdir -p ./pages")
 }
 END {
+    print "</table>" >> "report.html"
+    print "</td></tr>" >> "report.html"
     print "</table>" >> "report.html"
 }
 {
@@ -36,10 +40,6 @@ END {
 
     lno=c ". "
     lno=""
-    previoushashedfilename=hashedfilename
-    hashedfilename=$1
-    gsub(/[^[:alnum:]]/, "", hashedfilename)
-    hashedfilename=tolower("./pages/" "" hashedfilename ".html")
     if (h != $1) {
         thehash=ahash($1)
         print $1 ",,, " ahash($1)
@@ -53,16 +53,27 @@ END {
         #print loca >> "questions.lst"
         h=$1
         francis=alink 
-        if (first == 0)
-            closeHTMLFile(previoushashedfilename) 
-        openHTMLFile(hashedfilename) 
+        # if (first == 0)
+        #    closeHTMLFile(ahash($1), previoushashedfilename) 
+        #previoushashedfilename=openHTMLFile(ahash($1)) 
+        #
+        #
+        if (rtflag == 1)
+            print "</table>" >> "report.html"
+        #print "<table id=myTable cellspacing=2 cellpadding=2  valign=top border=1 width=80%>" >> "report.html"
+        print "<table nom=" sq($1) " class=exset id=" sq("SPL" ahash($1)) " cellspacing=2 cellpadding=2  valign=top border=1 width=100%>" >> "report.html"
+        rtflag=1
+        
+        #print "<tr><td colspan=4 width=99% align=middle><button onclick=" dq("exportTableToPDF('#" "SPL" ahash($1) "')") ">Export to PDF</button></td></tr>" >> "report.html"
+        print "<tr><td colspan=4 width=99% align=middle><a class=signpostlink>" $1 "</a><br><a class=signpostlink onclick=" dq("exportTableToPDF('#" "SPL" ahash($1) "')") ">download pdf</a></td></tr>" >> "report.html"
+        print "</td></tr>" >> "report.html"
         first=0
     } else {
       francis=$1 
     }
-        putHTMLFile($2, hashedfilename) 
-        putHTMLFile($3, hashedfilename) 
-        putHTMLFile("", hashedfilename) 
+        #putHTMLFile(ahash($1), $2) 
+        #putHTMLFile(ahash($1), $3) 
+        #putHTMLFile(ahash($1), "") 
 
     sz=$3
     sdq="\""

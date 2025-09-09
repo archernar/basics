@@ -158,7 +158,8 @@ BEGIN {
         getline count < "questions.count"
         close("questions.count")
         count = " (" count ")"
-        print "<a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 count"</a><br>"
+        # print "<a valign=center class=" sq("navi1") " href=" sq("pages\\" tolower(ahash($1)) ".html") "><img valign=center src=icon.png></a><a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
+        print "<a href=" sq("#SPL" ahash($1)) "><img valign=center src=icon.png></a><a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
         f=$1
     }
 }' $Tmp3  |  sed 's/"//g' > questions.topics
@@ -187,8 +188,18 @@ cat << "HEREND1"
 </head>
 <body>
 <aside class="sidebar">
+<table width=99%>
+<tr>
+<td align=left><a href='index.html'>Home</a></td>
+<td align=right><button onclick="exportTableToPDF('#myTable')">Export to PDF</button></td>
+</tr>
+<tr>
+<td align=left><a href='index.html'>Home</a></td>
+<td align=right><button onclick="exportTableToPDF2()">Export to PDF2</button></td>
+</tr>
+</table>
+
 <!-- nav id="nav-menu" -->
-<button onclick="exportTableToPDF()">Export to PDF</button>
 <h2>Templates</h2>
 <a id="open-editor-btn" class='navi1'>Starter</a>
 HEREND1
@@ -214,8 +225,8 @@ SZ=`cat $Tmp  | wc -l`
 echo "<h2>Exercise Topics ($SZ)</h2>"
 cat $Tmp 
 
-ls pages  | gawk '@include "library.gawk"; {print "<div class=topic-card-narrow><a class=anchorlink href=" sq("pages\\" $0) ">" $0 "</a></div>"}'  > $Tmp2
-cp $Tmp2 fedd
+#ls pages  | gawk '@include "library.gawk"; {print "<div class=topic-card-narrow><a class=anchorlink href=" sq("pages\\" $0) ">" $0 "</a></div>"}'  > $Tmp2
+#cp $Tmp2 fedd
 
 cat << "HEREND1A"
 <!-- /nav -->
@@ -223,21 +234,23 @@ cat << "HEREND1A"
 
 <main class="main-content">
         <!-- Content for Intro -->
-<div id="TutorialSpace" >
-    <div class="content-header">
-        <h2>Java Tutorials</h2>
-    </div>
-    <div class="content-grid">
-       <div class='topic-card-narrow'><a class='anchorlink' href='ScannerClass.pdf'>Scanner Class</a></div>
 HEREND1A
-
-cat fedd
+#                 <!--        
+#                 <div id="TutorialSpace" >
+#                     <div class="content-header">
+#                         <h2>Java Tutorials</h2>
+#                     </div>
+#                     <div class="content-grid">
+#                        <div class='topic-card-narrow'><a class='anchorlink' href='ScannerClass.pdf'>Scanner Class</a></div>
+# 
+#                 cat fedd
+#                     </div>
+#                 </div>
+#                 <br>
+#                 <br>
+#                 -->
 
 cat << "HEREND1AA"
-    </div>
-</div>
-<br>
-<br>
 <div id="intro" class="content-section">
             <div class="content-header">
                 <h2>Java Programming Exercises</h2>

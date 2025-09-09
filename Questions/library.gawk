@@ -1,4 +1,7 @@
-function openHTMLFile(fout) {
+function openHTMLFile(fn,       fout) {
+    fout=fn
+    gsub(/[^[:alnum:]]/, "", fout)
+    fout=tolower("./pages/" "" fout ".html")
     print "<!DOCTYPE html>" >> fout
     print "<html lang='en;>" >> fout
     print "<head>" >> fout
@@ -22,17 +25,26 @@ function openHTMLFile(fout) {
     print "<pre>" >> fout
     print "<code>" >> fout
     close(fout)
+    return fout
 }
-function putHTMLFile(sz,fout) {
+function putHTMLFile(fn, sz,    fout) {
+    fout=fn
+    gsub(/[^[:alnum:]]/, "", fout)
+    fout=tolower("./pages/" "" fout ".html")
     print sz >>  fout
     close(fout)
+    return fout
 }
-function closeHTMLFile(fout) {
+function closeHTMLFile(fn,     fout) {
+    fout=fn
+    gsub(/[^[:alnum:]]/, "", fout)
+    fout=tolower("./pages/" "" fout ".html")
     print "</code>" >>  fout
     print "</pre>" >> fout
     print "</body>" >> fout
     print "</html>" >> fout
     close(fout)
+    return fout
 }
 
 

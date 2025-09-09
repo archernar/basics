@@ -16,7 +16,7 @@ function openEditor(content) {
             popup.document.write(ContentDocBottom);
             popup.document.close();
 }
-function exportTableToPDF() {
+function exportTableToPDF(sel) {
     //
     // IMPORTANT: Make sure to import jsPDF and jspdf-autotable.
     // In this example, they are imported via <script> tags in the HTML file.
@@ -28,13 +28,41 @@ function exportTableToPDF() {
 
     // Use autoTable to generate the table.
     // The 'html' option is used to specify the HTML table element.
-    doc.autoTable({ html: '#myTable' });
+    // doc.autoTable({ html: '#myTable' });
+    doc.autoTable({ html: sel });
 
     // Save the PDF
-    doc.save('table.pdf');
+    // doc.save('table.pdf');
+    doc.output('save','table.pdf');
+    // doc.output('dataurl');
 }
 
+function exportTableToPDF2() {
+    // Select all elements with the class 'info-box'
+    const infoBoxes = document.querySelectorAll('.exset');
 
+    // Initialize jsPDF
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({
+        orientation: "landscape"
+    });
+
+    // Loop over the NodeList using forEach
+    infoBoxes.forEach(function(box) {
+        //doc.text("This is a landscape PDF!", 10, 10);
+      doc.autoTable({ html: box ,
+         didDrawPage: function (data) {
+            // Add a report title as a header on every page
+            doc.setFontSize(20);
+            doc.text( box.getAttribute('nom'), 10,10);
+          }
+      });
+      doc.addPage();
+    });
+
+    // Save the PDF
+    doc.output('save','table.pdf');
+}
 
 document.addEventListener('DOMContentLoaded', function() {
         // Your code here will run after the DOM is ready.
