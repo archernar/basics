@@ -21,26 +21,54 @@ function exportTableToPDF(sel) {
     // IMPORTANT: Make sure to import jsPDF and jspdf-autotable.
     // In this example, they are imported via <script> tags in the HTML file.
     //
-    
+    var ct = 0;
+
     // Initialize jsPDF
     const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
+    // const doc = new jsPDF();
+    const doc = new jsPDF({
+        orientation: "landscape"
+    });
 
     // Use autoTable to generate the table.
     // The 'html' option is used to specify the HTML table element.
     // doc.autoTable({ html: '#myTable' });
-    doc.autoTable({ html: sel });
+    // doc.autoTable({ html: sel });
+    const box = document.querySelectorAll(sel);
+    doc.autoTable({ html: sel,
+         didDrawPage: function (data) {
+            ct = ct +1
+            // Add a report title as a header on every page
+            doc.setFontSize(20);
+            var pageWidth = doc.internal.pageSize.width;
+            doc.text(ct.toString(), pageWidth - 10, 10, { align: 'right' }); // 10 units from the right edge
+          }
+      });
 
     // Save the PDF
     // doc.save('table.pdf');
-    doc.output('save','table.pdf');
     // doc.output('dataurl');
+    //
+    // doc.output('save','table.pdf');
+    // window.open(doc.output('bloburl'));
+    //
+    // const pdfDataUri = doc.output('datauristring');
+    // const iframe = document.createElement('iframe');
+    // iframe.style.width = '100%';
+    // iframe.style.height = '600px';
+    // iframe.src = pdfDataUri;
+    // document.body.appendChild(iframe);
+    const windowName = 'myPopupWindow';
+    // Window features (size, position, scrollbars, etc.)
+    const windowFeatures = 'width=600,height=400,popup=yes,scrollbars=yes,resizable=yes';
+    window.open(doc.output('bloburl'), windowName, windowFeatures);
+
 }
 
 function exportTableToPDF2() {
     // Select all elements with the class 'info-box'
     const infoBoxes = document.querySelectorAll('.exset');
-
+    var ct = 0
     // Initialize jsPDF
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({
@@ -52,16 +80,20 @@ function exportTableToPDF2() {
         //doc.text("This is a landscape PDF!", 10, 10);
       doc.autoTable({ html: box ,
          didDrawPage: function (data) {
+             ct = ct +1
             // Add a report title as a header on every page
             doc.setFontSize(20);
             doc.text( box.getAttribute('nom'), 10,10);
+                 var pageWidth = doc.internal.pageSize.width;
+                 doc.text(ct.toString(), pageWidth - 10, 10, { align: 'right' }); // 10 units from the right edge
           }
       });
       doc.addPage();
     });
 
     // Save the PDF
-    doc.output('save','table.pdf');
+    //doc.output('save','table.pdf');
+    window.open(doc.output('bloburl'));
 }
 
 document.addEventListener('DOMContentLoaded', function() {

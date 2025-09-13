@@ -29,9 +29,6 @@ move_matches_to_top() {
   # Assign arguments to descriptive local variables
   local file_path="$1"
   local regex="$2"
-  echo "Info: $file_path" >&2
-  echo "Info: $(ls -lh $file_path)" >&2
-  echo "Info: $regex" >&2
 
 
   # --- Input Validation ---
@@ -97,10 +94,8 @@ move_matches_to_top() {
 #    info: process finished
 
 
-echo "OK" >&2
 # questions.awk runs for side effect only - creates questions.lst
 cat questions.source | gawk -F, -f questions.awk > $Tmp3
-echo "OK" >&2
 
 cat questions.source | gawk '
 BEGIN {
@@ -119,10 +114,11 @@ BEGIN {
 
     print $1 "," $2 "," $3
 }'  | sort | uniq > $Tmp3
-ls -lh $Tmp3 >&2
-echo "OK" >&2
 move_matches_to_top "$Tmp3" "^Practice Program" 
 move_matches_to_top "$Tmp3" "^First" 
+move_matches_to_top "$Tmp3" "^AAA2" 
+move_matches_to_top "$Tmp3" "^AAA1" 
+move_matches_to_top "$Tmp3" "^AAA0" 
 cp $Tmp3 questions.sorted
 
 filename=questions.source
@@ -187,15 +183,14 @@ cat << "HEREND1"
 
 </head>
 <body>
+
+
+
 <aside class="sidebar">
 <table width=99%>
 <tr>
 <td align=left><a href='index.html'>Home</a></td>
-<td align=right><button onclick="exportTableToPDF('#myTable')">Export to PDF</button></td>
-</tr>
-<tr>
-<td align=left><a href='index.html'>Home</a></td>
-<td align=right><button onclick="exportTableToPDF2()">Export to PDF2</button></td>
+<td align=right><button onclick="exportTableToPDF2()">Export to PDF</button></td>
 </tr>
 </table>
 
@@ -282,6 +277,12 @@ cat report.html
 cat << "HEREND3"
 </main>
 
+
+    <!-- Modeless Popup Structure -->
+    <div width=50% height=50% id="pdfPopup" class="hidden">
+        <div id="pdfViewer">
+        </div>
+    </div>
 
 </body>
 </html>

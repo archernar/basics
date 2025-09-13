@@ -73,7 +73,7 @@
         .main-content {
             margin-left: 340px;
             padding: 32px;
-            width: calc(100% - 340px);
+            width: calc(80% - 340px);
             box-sizing: border-box;
         }
         .content-section {
@@ -93,6 +93,7 @@
             display: grid;
             nothingness:340px;
             xxxgrid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            xgrid-template-columns: 1fr 1fr 1fr;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 1.5rem;
         }
@@ -310,3 +311,10 @@ input[type="checkbox"] {
     width:20px;
     height:20px;
 }
+
+
+
+        /* Utility Class */
+        .hidden {
+            display: none;
+        }
