@@ -297,6 +297,11 @@ topic-card tableclass {
                 background-color: #1a1a1a; /* Dark Gray */
 }
 
+.momo {
+  padding: 0px;
+  margin: 0px;
+}
+
 .signpostlink {
   color: Blue;
   font-weight: Bold;
