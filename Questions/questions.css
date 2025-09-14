@@ -73,7 +73,7 @@
         .main-content {
             margin-left: 340px;
             padding: 32px;
-            width: calc(80% - 340px);
+            width: calc(99% - 340px);
             box-sizing: border-box;
         }
         .content-section {
@@ -125,7 +125,8 @@
         );
 
     /* For an even more authentic feel, consider a monospace font */
-    font-family: 'Courier New', monospace;
+    xxxfont-family: 'Courier New', monospace;
+    font-size: 1.0rem;
     /*
         /* 1. The repeating blue horizontal lines */
         repeating-linear-gradient(
