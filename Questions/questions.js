@@ -37,6 +37,9 @@ function exportTableToPDF(sel) {
     // doc.autoTable({ html: sel });
     const box = document.querySelectorAll(sel);
     doc.autoTable({ html: sel,
+         styles: {
+             fontSize: 12 // Sets the font size for the entire table
+         },
          didDrawPage: function (data) {
             ct = ct +1
             // Add a report title as a header on every page
@@ -83,6 +86,9 @@ function exportTableToPDF2() {
     infoBoxes.forEach(function(box) {
         //doc.text("This is a landscape PDF!", 10, 10);
       doc.autoTable({ html: box ,
+         styles: {
+             fontSize: 12 // Sets the font size for the entire table
+         },
          didDrawPage: function (data) {
              ct = ct +1
             // Add a report title as a header on every page
