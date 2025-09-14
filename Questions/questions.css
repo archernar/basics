@@ -300,8 +300,9 @@ topic-card tableclass {
 .signpostlink {
   color: Blue;
   font-weight: Bold;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   text-decoration: underline;
+  padding-top: 11px;
 }
 a {
   color: #FFFFFF;

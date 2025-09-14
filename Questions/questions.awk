@@ -2,6 +2,7 @@
 @load "ordchr"
 BEGIN {
     FPAT = "([^,]+)|(\"[^\"]+\")"
+    ffirst=1
     first=1
     rtflag=0 
     ct=1
@@ -41,6 +42,8 @@ END {
     lno=c ". "
     lno=""
     if (h != $1) {
+
+
         thehash=ahash($1)
         print $1 ",,, " ahash($1)
         #print "<div class='topic-card'><h1>" $1 "</h1><a id=" sq(ahash($1)) "></a></div>" >> "questions.lst"
@@ -53,6 +56,20 @@ END {
         #print loca >> "questions.lst"
         h=$1
         francis=alink 
+        francis2=$1 
+        if (ffirst == 0) {
+            print "</div>"                     >> "questions.lst"
+            print "<br>"                       >> "questions.lst"
+            print francis                      >> "questions.lst"
+            print "<br>"                       >> "questions.lst"
+            print "<div class='content-grid'>" >> "questions.lst"
+        }
+        else {
+            print francis                      >> "questions.lst"
+            print "<br>"                       >> "questions.lst"
+            print "<div class='content-grid'>" >> "questions.lst"
+        }
+        ffirst=0
         # if (first == 0)
         #    closeHTMLFile(ahash($1), previoushashedfilename) 
         #previoushashedfilename=openHTMLFile(ahash($1)) 
@@ -92,7 +109,7 @@ END {
     cb="<input type='checkbox' id='setting" c "' name='emailNotifications" c "' class='savable-checkbox h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500'>"
     loca=""
     
-    print " <div class='topic-card'>" "<table cellspacing=0 cellpadding=0  valign=top border=0 width=99%><tr><td align=left valign=middle>" cb "</td><td align=left valign=middle>" $2 "</td><td align=right valign=middle><b>" francis "</b></td></tr></table>" "<h3>" lno ""  "</h3>" "" $3 "<br><div align=right>" buta "</div></div>" >> "questions.lst"
+    print " <div class='topic-card'>" "<table cellspacing=0 cellpadding=0  valign=top border=0 width=99%><tr><td align=left valign=middle>" cb "</td><td align=left valign=middle>" $2 "</td><td align=right valign=middle><b>" francis2 "</b></td></tr></table>" "<h3>" lno ""  "</h3>" "" $3 "<br><div align=right>" buta "</div></div>" >> "questions.lst"
     # OLD print " <p>" $1 " - " $2 "</p>" "<p>" $3 "</p>" "<hr>" >> "report.html"
     print "<tr>" "<td>" ct "</td>" "<td>" toupper(bhash($2 $3))  "</td>" "<td nowrap>" $1 "</td>" "<td nowrap>" $2 "</td>" "<td>" $3 "</td>" "</tr>" >> "report.html"
     ct++

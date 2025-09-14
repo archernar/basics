@@ -263,7 +263,7 @@ echo "build date: " $(date)
 cat << "HEREND1B"
                 </p>
             </div>
-<div class="content-grid">
+<!-- div class="content-grid" -->
 HEREND1B
 
 cat questions.lst
