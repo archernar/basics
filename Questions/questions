@@ -94,6 +94,8 @@ move_matches_to_top() {
 #    info: process finished
 
 
+cat questions.source | gawk -f caplines.gawk > $Tmp3; cp $Tmp3 questions.source
+
 # questions.awk runs for side effect only - creates questions.lst
 cat questions.source | gawk -F, -f questions.awk > $Tmp3
 
@@ -169,6 +171,10 @@ cat << "HEREND1"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- meta http-equiv="refresh" content="5" -->
     <title>Java Exercises</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <script type="text/javascript" src="editor.js"></script>
     <script type="text/javascript" src="questions.js"></script>
     <!--
@@ -190,7 +196,7 @@ cat << "HEREND1"
 <table width=99%>
 <tr>
 <td align=left><a href='index.html'>Home</a></td>
-<td align=right><button onclick="exportTableToPDF2()">Export to PDF</button></td>
+<td align=right><button onclick="exportTableToPDF2()">Export All to PDF</button></td>
 </tr>
 </table>
 

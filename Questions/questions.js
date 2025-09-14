@@ -1,3 +1,4 @@
+
 function openEditor(content) {
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
@@ -58,10 +59,13 @@ function exportTableToPDF(sel) {
     // iframe.style.height = '600px';
     // iframe.src = pdfDataUri;
     // document.body.appendChild(iframe);
-    const windowName = 'myPopupWindow';
-    // Window features (size, position, scrollbars, etc.)
-    const windowFeatures = 'width=600,height=400,popup=yes,scrollbars=yes,resizable=yes';
-    window.open(doc.output('bloburl'), windowName, windowFeatures);
+    const windowName = 'PDF';
+    const screenWidth = Math.trunc(screen.width * .65);
+    const screenHeight = Math.trunc(screen.height * .80);
+    const windowFeatures = 'width=' + screenWidth + ',height=' + screenHeight + ',popup=yes,scrollbars=yes,resizable=yes';
+    const popupWindow=window.open(doc.output('bloburl'), windowName, windowFeatures);
+    popupWindow.moveTo(50, 50);
+    popupWindow.focus();
 
 }
 
@@ -93,7 +97,14 @@ function exportTableToPDF2() {
 
     // Save the PDF
     //doc.output('save','table.pdf');
-    window.open(doc.output('bloburl'));
+    // window.open(doc.output('bloburl'));
+    const windowName = 'PDF';
+    const screenWidth = Math.trunc(screen.width * .65);
+    const screenHeight = Math.trunc(screen.height * .80);
+    const windowFeatures = 'width=' + screenWidth + ',height=' + screenHeight + ',popup=yes,scrollbars=yes,resizable=yes';
+    const popupWindow=window.open(doc.output('bloburl'), windowName, windowFeatures);
+    popupWindow.moveTo(50, 50);
+    popupWindow.focus();
 }
 
 document.addEventListener('DOMContentLoaded', function() {

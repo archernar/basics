@@ -171,8 +171,9 @@ UAT="NO"
 DEV="NO"
 PROD="NO"
 ROOT="NO"
+JSCODE="NO"
 BUILDLABEL=""
-while getopts "udpir" arg
+while getopts "udpirj" arg
 do
     case $arg in
         u) UAT="YES"
@@ -186,6 +187,9 @@ do
            ;;
         r) ROOT="YES"
            BUILDLABEL="-ROOT"
+           ;;
+        j) JSCODE="YES"
+           BUILDLABEL="-JS"
            ;;
     esac
 done
@@ -240,7 +244,7 @@ mkdir -p $THISBUILDFOLDER
 cp questions.html javaexercises.html
 cp questions.html index.html
 cp questions.html error.html
-FILES=("icon.png" "index.html" "error.html" "questions.html" "javaexercises.html" "questions.js" "editor.js" "questions.css" "jspdf.plugin.autotable.min.js" "jspdf.umd.min.js")
+FILES=("pages" "ScannerClass.pdf" "icon.png" "index.html" "error.html" "questions.html" "javaexercises.html" "questions.js" "editor.js" "questions.css" "jspdf.plugin.autotable.min.js" "jspdf.umd.min.js")
 XHTMLFILES=("ScannerClass.pdf" "index.html" "error.html" "questions.html" "javaexercises.html")
 HTMLFILES=("pages" "icon.png" "ScannerClass.pdf" "index.html" "questions.css")
 
@@ -297,12 +301,23 @@ then
     fi
     if [ "$PROD" == "YES" ]; then
         aws --profile default s3 rm --recursive         s3://$B/$PROD/
-        for file in "${HTMLFILES[@]}"; do
+        for file in "${FILES[@]}"; do
             if [ -e "$file" ]; then
                 aws_copy_and_log "$file"   "s3://$B/PROD/$file"
                 aws_copy_and_log "$file"   "s3://$B/$file"
             fi
         done
+
+        echo "    $EP/PROD/javaexercises.html"
+        echo "    $EP/javaexercises.html"
+    fi
+    if [ "$JSCODE" == "YES" ]; then
+        aws --profile default s3 rm s3://$B/$PROD/questions.js
+        aws --profile default s3 rm s3://$B/questions.js
+        if [ -e "questions.js" ]; then
+            aws_copy_and_log "questions.js" "s3://$B/PROD/questions.js"
+            aws_copy_and_log "questions.js" "s3://$B/questions.js"
+        fi
 
         echo "    $EP/PROD/javaexercises.html"
         echo "    $EP/javaexercises.html"
