@@ -1,4 +1,3 @@
-            
 /**
  * A template class for a simple Java program.
  *
