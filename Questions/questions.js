@@ -112,12 +112,26 @@ function exportTableToPDF2() {
     popupWindow.moveTo(50, 50);
     popupWindow.focus();
 }
+function fastEdit(url) {
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            const targetWidth = viewportWidth * 0.85;
+            const targetHeight = viewportHeight * 0.85;
+            const popupWidth = targetWidth;
+            const popupHeight = targetHeight;
+            const left = (screen.width / 2) - (popupWidth / 2);
+            const top = (screen.height / 2) - (popupHeight / 2);
+            const popup = window.open(url, 'JavaCodeEditor', `width=${popupWidth},height=${popupHeight},top=${top},left=${left}`);
+}
+
 
 document.addEventListener('DOMContentLoaded', function() {
         // Your code here will run after the DOM is ready.
         console.log('DOM fully loaded and parsed');
         // The entire content of the Java code editor page is stored in this template literal.
         // now in editor.js
+ 
+        document.getElementById('main-content').classList.remove('hidden');
 
         // Event listener for the launch button
         document.getElementById('open-editor-btn').addEventListener('click', () => {
