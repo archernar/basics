@@ -191,7 +191,6 @@ cat << "HEREND1"
 <body>
 
 
-
 <aside class="sidebar">
 <table width=99%>
 <tr>
@@ -260,12 +259,20 @@ HEREND1A
 cat << "HEREND1AA"
 <div id="intro" class="content-section">
             <div class="content-header">
-                <h2>Java Programming Exercises</h2>
-                <p>Version:
+            <a href=index.html>
+                <table border=0 width=100% align=right>
+                <tr>
+                    <td width=91% align=left valign=middle><h2>Java Programming Exercises</h2></td>
+                    <td valign=middle align=right><font size=44>IT</font></td>
+                    <td valign=middle align=right>LearningResource.com</td>
+                </tr>
+                </table>
+                </a>
+                <p>Version:&nbsp;
 HEREND1AA
 
 cat ./version.txt
-echo "build date: " $(date)
+echo " build date: " $(date)
 cat << "HEREND1B"
                 </p>
             </div>
