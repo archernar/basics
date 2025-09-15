@@ -127,6 +127,12 @@ public class Car {
     }
 
     // --- OVERRIDE toString ---
+    /**
+     * In Java, the @Override annotation indicates that a method in a subclass is intended to override
+     * a method in its superclass. Its main purpose is to help you avoid bugs by having the compiler check your work.
+     * If a method is marked with @Override, the compiler will verify that a method with the same signature
+     * (name and parameters) actually exists in the parent class or interface. If it doesn't, the compiler will generate an error.
+     */
     @Override
     public String toString() {
         String status = isEngineOn ? "Running" : "Off";

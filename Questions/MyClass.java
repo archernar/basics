@@ -23,13 +23,6 @@ public class MyClass {      // Public classes are stored in files of the same-na
      */
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        System.out.println("Hello World!");
-        System.out.println("Hello World!");
-        System.out.println("Hello World!");
-        System.out.println("Hello World!");
-        System.out.println("Hello World!");
-        System.out.println("Hello World!");
-        System.out.println("Hello World!");
     }
 }
 
