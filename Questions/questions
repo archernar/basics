@@ -94,12 +94,14 @@ move_matches_to_top() {
 #    info: process finished
 
 
-cat questions.source | gawk -f caplines.gawk > $Tmp3; cp $Tmp3 questions.source
+cat questions.source | gawk -f caplines.gawk > $Tmp3; cp $Tmp3 questions.source.prime
+sed -i 's/</\&lt/g' questions.source.prime
+sed -i 's/>/\&gt/g' questions.source.prime
 
 # questions.awk runs for side effect only - creates questions.lst
-cat questions.source | gawk -F, -f questions.awk > $Tmp3
+cat questions.source.prime | gawk -F, -f questions.awk > $Tmp3
 
-cat questions.source | gawk '
+cat questions.source.prime | gawk '
 BEGIN {
     FPAT = "([^,]+)|(\"[^\"]+\")"
 }
@@ -123,7 +125,7 @@ move_matches_to_top "$Tmp3" "^AAA1"
 move_matches_to_top "$Tmp3" "^AAA0" 
 cp $Tmp3 questions.sorted
 
-filename=questions.source
+filename=questions.source.prime
 backup_dir=./BACKUPS
 mkdir -p "$backup_dir"
 timestamp=$(date +%Y%m%d%H%M%S)
@@ -131,7 +133,7 @@ backup_filename="${filename##*/}.backup.${timestamp}" # Extract filename only
 backup_path="${backup_dir}/${backup_filename}"
 cp "$filename" "$backup_path"
 
-cp questions.sorted questions.source
+cp questions.sorted questions.source.prime
 
 # Remember this executes for side effect, creates questions.lst
 gawk -F , -f questions.awk $Tmp3 >> "fungus"
@@ -211,7 +213,11 @@ cat << "HEREND1"
 HEREND1
 cp questions.topics $Tmp
 echo "<h2>Begin Here</h2>"
+
 rx="First Steps"
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+rx="Fact Questions"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
