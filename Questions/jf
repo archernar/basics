@@ -1,0 +1,45 @@
+#!/usr/bin/bash
+Tmp=/tmp/$$
+Tmp0=/tmp/$$_$$
+Tmp1=/tmp/$$_$$_$$
+Tmp2=/tmp/$$_$$_$$_$$
+Tmp3=/tmp/$$_$$_$$_$$_$$
+trap 'exit 0' INT HUP QUIT TERM ALRM USR1
+trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
+rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
+
+function justify_line() {
+
+    local tmp1=$(mktemp)
+    echo "$1" | gawk -v num=$2 '
+        function justify(szIn,  l,n,i,sz,m,k,A, flag) {
+            sz = "";
+            n =  split(szIn,A," ");
+            r = 1
+            delim = ""
+            flag=0
+            for (i=1; i<=n; i++) {
+                sz = delim sz A[i] " ";
+                delim = ""
+                l = l + length(A[i] " ");
+                if (l > (num*r)) {
+                    r=r+1;
+                    sz = sz "\n"
+                    flag=1
+                    delim = ""
+                }
+            }
+            if (flag == 1) sz = sz "\n"
+            return sz;
+        }
+        {
+            print justify($0);
+        }' > "$tmp1"
+
+    cat "$tmp1" | gawk '{print " * " $0}'
+    rm -f "$tmp1" >/dev/null 2>&1
+}
+
+justify_line "$1" "$2"
+
+
