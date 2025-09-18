@@ -1,3 +1,4 @@
+
 function openHTMLFile(fn,       fout) {
     fout=fn
     gsub(/[^[:alnum:]]/, "", fout)

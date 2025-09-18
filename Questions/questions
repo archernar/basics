@@ -94,6 +94,7 @@ move_matches_to_top() {
 #    info: process finished
 
 
+
 cat questions.source | gawk -f caplines.gawk > $Tmp3; cp $Tmp3 questions.source.prime
 sed -i 's/</\&lt/g' questions.source.prime
 sed -i 's/>/\&gt/g' questions.source.prime
@@ -270,7 +271,7 @@ cat << "HEREND1AA"
                 <tr>
                     <td width=91% align=left valign=middle><h2>Java Programming Exercises</h2></td>
                     <td valign=middle align=right><font size=44>IT</font></td>
-                    <td valign=middle align=right>LearningResource.com</td>
+                    <td valign=middle align=right>LearningResources.com</td>
                 </tr>
                 </table>
                 </a>
