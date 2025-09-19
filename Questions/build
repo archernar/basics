@@ -234,6 +234,7 @@ echo "Version updated to $new_version"
 
 ./questions > questions.html
 
+cp questions.html  text.html
 
 THISBUILDFOLDER=./BUILDS/$BUILDVERSION$BUILDLABEL
 echo $BUILDVERSION
@@ -241,7 +242,8 @@ echo $THISBUILDFOLDER
 
 mkdir -p ./BUILDS
 mkdir -p $THISBUILDFOLDER
-gawk '{printf "%s", $0}' questions.html > $Tmp
+# gawk '{printf "%s", $0}' questions.html > $Tmp
+cp questions.html  $Tmp
 cat $Tmp           > questions.html
 cat questions.html > javaexercises.html
 cat questions.html > index.html

@@ -93,11 +93,13 @@ move_matches_to_top() {
 #    warning: disk space is low
 #    info: process finished
 
-
-
-cat questions.source | gawk -f caplines.gawk > $Tmp3; cp $Tmp3 questions.source.prime
+cat questions.source > $Tmp
+gawk -f mc.awk    questions.mc >> $Tmp
+gawk -f mcadv.awk questions.advmc >> $Tmp
+cat $Tmp | gawk -f caplines.gawk > $Tmp3; cp $Tmp3 questions.source.prime
 sed -i 's/</\&lt/g' questions.source.prime
 sed -i 's/>/\&gt/g' questions.source.prime
+sed -i 's/AREALBR/<br>/g' questions.source.prime
 
 # questions.awk runs for side effect only - creates questions.lst
 cat questions.source.prime | gawk -F, -f questions.awk > $Tmp3
@@ -219,6 +221,9 @@ rx="First Steps"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 rx="Fact Questions"
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+rx="Multiple"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
