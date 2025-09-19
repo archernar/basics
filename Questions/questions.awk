@@ -82,7 +82,8 @@ END {
         rtflag=1
         
         #print "<tr><td colspan=4 width=99% align=middle><button onclick=" dq("exportTableToPDF('#" "SPL" ahash($1) "')") ">Export to PDF</button></td></tr>" >> "report.html"
-        print "<tr><td colspan=5 width=99% align=middle><a class=signpostlink>" $1 "</a><br><a class=signpostlink onclick=" dq("exportTableToPDF('#" "SPL" ahash($1) "')") ">download pdf</a></td></tr>" >> "report.html"
+        ico="<img title=" sq("create pdf") " valign=center src=icon.png>"
+        print "<tr><td colspan=5 width=99% align=middle><a class=signpostlink onclick=" dq("exportTableToPDF('#" "SPL" ahash($1) "')") ">" ico "</a>&nbsp;<a class=signpost>" $1 "</a></td></tr>" >> "report.html"
         print "</td></tr>" >> "report.html"
         first=0
     } else {
