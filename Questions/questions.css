@@ -144,7 +144,6 @@
      */
 }
 
-
 .topic-card-narrow {
     /* Card background and text color */
     background-color: #fffaf0; /* A creamy, off-white color */
@@ -357,3 +356,22 @@ input[type="checkbox"] {
   visibility: visible;
 }
 
+
+.t0 {
+  /* Replaces cellspacing="0" */
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  width: 100%;
+  border: 2px solid Black;
+}
+.t0 td {
+  /* Replaces cellpadding="0" */
+  padding: 0;
+  text-align: left;
+}
+td.tdright {
+  /* Replaces cellpadding="0" */
+  padding: 0;
+  text-align: right;
+}

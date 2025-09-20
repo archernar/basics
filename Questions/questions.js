@@ -71,6 +71,9 @@ function exportTableToPDF(sel) {
     popupWindow.focus();
 
 }
+function ettp(sel) {
+    exportTableToPDF(sel);
+}
 
 function exportTableToPDF2() {
     // Select all elements with the class 'info-box'
@@ -111,6 +114,9 @@ function exportTableToPDF2() {
     const popupWindow=window.open(doc.output('bloburl'), windowName, windowFeatures);
     popupWindow.moveTo(50, 50);
     popupWindow.focus();
+}
+function ettp2() {
+    exportTableToPDF2();
 }
 function fastEdit(url) {
             const viewportWidth = window.innerWidth;

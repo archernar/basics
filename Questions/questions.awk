@@ -81,9 +81,9 @@ END {
         print "<table nom=" sq($1) " class=exset id=" sq("SPL" ahash($1)) " cellspacing=2 cellpadding=2  valign=top border=1 width=100%>" >> "report.html"
         rtflag=1
         
-        #print "<tr><td colspan=4 width=99% align=middle><button onclick=" dq("exportTableToPDF('#" "SPL" ahash($1) "')") ">Export to PDF</button></td></tr>" >> "report.html"
+        #print "<tr><td colspan=4 width=99% align=middle><button onclick=" dq("ettp('#" "SPL" ahash($1) "')") ">Export to PDF</button></td></tr>" >> "report.html"
         ico="<img title=" sq("create pdf") " valign=center src=icon.png>"
-        print "<tr><td colspan=5 width=99% align=middle><a class=signpostlink onclick=" dq("exportTableToPDF('#" "SPL" ahash($1) "')") ">" ico "</a>&nbsp;<a class=signpost>" $1 "</a></td></tr>" >> "report.html"
+        print "<tr><td colspan=5 width=99% align=middle><a class=signpostlink onclick=" dq("ettp('#" "SPL" ahash($1) "')") ">" ico "</a>&nbsp;<a class=signpost>" $1 "</a></td></tr>" >> "report.html"
         print "</td></tr>" >> "report.html"
         first=0
     } else {
@@ -108,10 +108,19 @@ END {
 
     buta="<button onClick='javascript:openEditor(  "  codetext  "  )'>open template</button>"
     cb="<input type='checkbox' id='setting" c "' name='emailNotifications" c "' class='savable-checkbox h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500'>"
+    cb="<input type='checkbox' id='emn" c "' name='emn" c "' class='savable-checkbox'>"
     loca=""
     
-    print " <div class='topic-card'>" "<table cellspacing=0 cellpadding=0  valign=top border=0 width=99%><tr><td align=left valign=middle>" "" "</td><td align=left valign=middle><u>" francis2 "</u></td><td align=right valign=middle><b>" cb "</b></td></tr></table>" >> "questions.lst"
-    print "<br><b>" $2 "</b><br>" >> "questions.lst"
+    # OLD print " <div class='topic-card'>" "<table cellspacing=0 cellpadding=0  valign=top border=0 width=99%><tr><td align=left valign=middle>" "" "</td><td align=left valign=middle><u>" francis2 "</u></td><td align=right valign=middle><b>" cb "</b></td></tr></table>" >> "questions.lst"
+    # OLD print " <div class='topic-card'>" "<table><tr><td align=left valign=middle>" "" "</td><td align=left valign=middle><u>" francis2 "</u></td><td align=right valign=middle><b>" cb "</b></td></tr></table>" >> "questions.lst"
+    print "<div class='topic-card'>"                                          >> "questions.lst"
+    print "<table width=100%><tr>"                                              >> "questions.lst"
+    #print "<td>" "" "</td>"                                                   >> "questions.lst"
+    print "<td><u>" francis2 "</u></td>"                                      >> "questions.lst"
+    print "<td align=right><b>" cb "</b></td>"                                >> "questions.lst"
+    print "</tr></table>"                                                     >> "questions.lst"
+
+    print "<br><b>" $2 "</b><br>"                                             >> "questions.lst"
     print "<h3>" lno ""  "</h3>" "" $3 "<br><div align=right>" buta "</div></div>" >> "questions.lst"
 
     # OLD print " <p>" $1 " - " $2 "</p>" "<p>" $3 "</p>" "<hr>" >> "report.html"
