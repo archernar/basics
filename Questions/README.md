@@ -1,19 +1,7 @@
-# My Awesome Project
+# Java Exercises
 
-This is a brief description of my awesome project. It does amazing things and solves important problems. 
+Here is a screenshot
 
-## Demo
+![Project Screenshot](https://github.com/archernar/basics/blob/master/Questions/questions.png?raw=true)
 
-Here is a screenshot of the application in action:
-
-![Project Screenshot](https://raw.githubusercontent.com/user/repo/main/images/screenshot.png)
-
-## Installation
-
-To get started, clone the repository and install the dependencies.
-
-```bash
-git clone [https://github.com/user/repo.git](https://github.com/user/repo.git)
-cd repo
-npm install
 
