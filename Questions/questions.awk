@@ -108,7 +108,7 @@ END {
 
     buta="<button onClick='javascript:openEditor(  "  codetext  "  )'>open template</button>"
     cb="<input type='checkbox' id='setting" c "' name='emailNotifications" c "' class='savable-checkbox h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500'>"
-    cb="<input type='checkbox' id='emn" c "' name='emn" c "' class='savable-checkbox'>"
+    cb="<input type='checkbox' id='emn" c "' name='emn" c "' class='scb'>"
     loca=""
     
     # OLD print " <div class='topic-card'>" "<table cellspacing=0 cellpadding=0  valign=top border=0 width=99%><tr><td align=left valign=middle>" "" "</td><td align=left valign=middle><u>" francis2 "</u></td><td align=right valign=middle><b>" cb "</b></td></tr></table>" >> "questions.lst"

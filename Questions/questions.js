@@ -137,8 +137,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // The entire content of the Java code editor page is stored in this template literal.
         // now in editor.js
  
+        // Define the title you want to set
+        // Select all elements
+        // Loop through each selected element and set its title attribute
+        const newTitle = "table view/create pdf";
+        const moeElements = document.querySelectorAll('.VCPDF');
+        moeElements.forEach(element => {
+          element.valign='center'
+          element.src='icon.png';
+          element.title = newTitle;
+        });
+
         document.getElementById('main-content').classList.remove('hidden');
 
+/*
         // Event listener for the launch button
         document.getElementById('open-editor-btn').addEventListener('click', () => {
             // Define properties for the popup window was 900 750
@@ -168,6 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
             popup.document.write(Content0);
             popup.document.close();
         });
+*/
 });
 
 
@@ -259,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Wait for the DOM to be fully loaded before running the script
         document.addEventListener('DOMContentLoaded', () => {
             // Select all checkboxes that should have their state saved
-            const savableCheckboxes = document.querySelectorAll('.savable-checkbox');
+            const savableCheckboxes = document.querySelectorAll('.scb');
 
             // Iterate over each of these checkboxes
             savableCheckboxes.forEach(checkbox => {

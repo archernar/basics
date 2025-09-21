@@ -161,7 +161,9 @@ BEGIN {
         getline count < "questions.count"
         close("questions.count")
         count = " (" count ")"
-        print "<a href=" sq("#SPL" ahash($1)) "><img title=" sq("table view/create pdf") " valign=center src=icon.png></a><a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
+        #print "<a href=" sq("#SPL" ahash($1)) "><img title=" sq("table view/create pdf") " valign=center src=icon.png></a><a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
+        #print "<a href=" sq("#SPL" ahash($1)) "><img class=VCPDF valign=center src=icon.png></a><a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
+        print "<a href=" sq("#SPL" ahash($1)) "><img class=VCPDF></a><a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
         f=$1
     }
 }' $Tmp3  |  sed 's/"//g' > questions.topics
