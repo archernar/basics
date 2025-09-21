@@ -148,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
           element.title = newTitle;
         });
 
+        document.getElementById('sidebar').classList.remove('hidden');
         document.getElementById('main-content').classList.remove('hidden');
 
 /*

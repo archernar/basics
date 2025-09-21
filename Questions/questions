@@ -189,7 +189,7 @@ cat << "HEREND1"
     -->
     <script src="jspdf.umd.min.js"></script>
     <script src="jspdf.plugin.autotable.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" -->
     <link rel="stylesheet" href="questions.css">                                                         
     <link rel="icon" href="data:,">
 
@@ -197,7 +197,7 @@ cat << "HEREND1"
 <body>
 
 
-<aside class="sidebar">
+<aside id=sidebar class="sidebar hidden">
 <table width=99%>
 <tr>
 <td align=left><a href='index.html'>Home</a></td>
