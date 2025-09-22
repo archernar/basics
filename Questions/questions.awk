@@ -50,7 +50,7 @@ END {
         #print "<div class='topic-card'><h1><a id=" sq(ahash($1)) ">" $1 "</a></h1></div>" >> "questions.lst"
         locxxx="<div class='topic-card'><h1><a id=" sq(ahash($1)) ">" $1 "</a></h1></div>"
         loca="<a id=" sq(ahash($1)) "></a><div class='topic-card'><h1>191919191" $1 "</h1></div>"
-        alink="<a class=signpostlink id=" sq(ahash($1)) ">" $1 "</a>"
+        alink="<a class=sl id=" sq(ahash($1)) ">" $1 "</a>"
         loca="<div class='topic-card-bold'>" $1 "</div>"
         loca="<div class='topic-card-bold'>" alink "</div>"
         #print loca >> "questions.lst"
@@ -78,12 +78,12 @@ END {
         if (rtflag == 1)
             print "</table>" >> "report.html"
         #print "<table id=myTable cellspacing=2 cellpadding=2  valign=top border=1 width=80%>" >> "report.html"
-        print "<table nom=" sq($1) " class=exset id=" sq("SPL" ahash($1)) " cellspacing=2 cellpadding=2  valign=top border=1 width=100%>" >> "report.html"
+        print "<table nom=" sq($1) " class=e id=" sq("SPL" ahash($1)) " cellspacing=2 cellpadding=2  valign=top border=1 width=100%>" >> "report.html"
         rtflag=1
         
         #print "<tr><td colspan=4 width=99% align=middle><button onclick=" dq("ettp('#" "SPL" ahash($1) "')") ">Export to PDF</button></td></tr>" >> "report.html"
         ico="<img title=" sq("create pdf") " valign=center src=icon.png>"
-        print "<tr><td colspan=5 width=99% align=middle><a class=signpostlink onclick=" dq("ettp('#" "SPL" ahash($1) "')") ">" ico "</a>&nbsp;<a class=signpost>" $1 "</a></td></tr>" >> "report.html"
+        print "<tr><td colspan=5 width=99% align=middle><a class=sl onclick=" dq("ettp('#" "SPL" ahash($1) "')") ">" ico "</a>&nbsp;<a class=s>" $1 "</a></td></tr>" >> "report.html"
         print "</td></tr>" >> "report.html"
         first=0
     } else {

@@ -25,7 +25,7 @@
             box-sizing: border-box;
             overflow-y: auto;
         }
-        .sidebar .navi1 {
+        .sidebar .n {
             font-size: 0.75rem;
             font-weight: 600;
             color: #ffffff;
@@ -302,14 +302,14 @@ topic-card tableclass {
   margin: 0px;
 }
 
-.signpost {
+.s {
   color: White;
   font-weight: Bold;
   font-size: 2.0rem;
   text-decoration: none;
   padding-top: 11px;
 }
-.signpostlink {
+.sl {
   color: Blue;
   font-weight: Bold;
   font-size: 1.4rem;

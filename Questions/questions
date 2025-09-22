@@ -161,9 +161,9 @@ BEGIN {
         getline count < "questions.count"
         close("questions.count")
         count = " (" count ")"
-        #print "<a href=" sq("#SPL" ahash($1)) "><img title=" sq("table view/create pdf") " valign=center src=icon.png></a><a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
-        #print "<a href=" sq("#SPL" ahash($1)) "><img class=VCPDF valign=center src=icon.png></a><a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
-        print "<a href=" sq("#SPL" ahash($1)) "><img class=VCPDF></a><a class=" sq("navi1") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
+        #print "<a href=" sq("#SPL" ahash($1)) "><img title=" sq("table view/create pdf") " valign=center src=icon.png></a><a class=" sq("n") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
+        #print "<a href=" sq("#SPL" ahash($1)) "><img class=VCPDF valign=center src=icon.png></a><a class=" sq("n") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
+        print "<a href=" sq("#SPL" ahash($1)) "><img class=VCPDF></a><a class=" sq("n") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
         f=$1
     }
 }' $Tmp3  |  sed 's/"//g' > questions.topics
@@ -207,13 +207,13 @@ cat << "HEREND1"
 
 <!-- nav id="nav-menu" -->
 <h2>Templates & Examples</h2>
-<!-- a id="open-editor-btn" class='navi1'>Starter</a><br -->
-<a class='navi1' onclick='fastEdit("Template.java");'>Template.java</a><br>
-<a class='navi1' onclick='fastEdit("Car.java");'>Car.java</a><br>
-<a class='navi1' onclick='fastEdit("Book.java");'>Book.java</a><br>
-<a class='navi1' onclick='fastEdit("BankAccount.java");'>BankAccount.java</a><br>
-<a class='navi1' onclick='fastEdit("CollegeStudent.java");'>CollegeStudent.java</a><br>
-<a class='navi1' onclick='fastEdit("University.java");'>University.java</a><br>
+<!-- a id="open-editor-btn" class='n'>Starter</a><br -->
+<a class='n' onclick='fastEdit("Template.java");'>Template.java</a><br>
+<a class='n' onclick='fastEdit("Car.java");'>Car.java</a><br>
+<a class='n' onclick='fastEdit("Book.java");'>Book.java</a><br>
+<a class='n' onclick='fastEdit("BankAccount.java");'>BankAccount.java</a><br>
+<a class='n' onclick='fastEdit("CollegeStudent.java");'>CollegeStudent.java</a><br>
+<a class='n' onclick='fastEdit("University.java");'>University.java</a><br>
 HEREND1
 cp questions.topics $Tmp
 echo "<h2>Begin Here</h2>"
@@ -299,7 +299,7 @@ cat << "HEREND2"
 </div>
 <br>
 <br>
-<a class=signpostlink id='thetable'>Table Format </a>
+<a class=sl id='thetable'>Table Format </a>
 <br>
 <br>
 HEREND2

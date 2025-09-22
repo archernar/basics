@@ -77,7 +77,7 @@ function ettp(sel) {
 
 function exportTableToPDF2() {
     // Select all elements with the class 'info-box'
-    const infoBoxes = document.querySelectorAll('.exset');
+    const infoBoxes = document.querySelectorAll('.e');
     var ct = 0
     // Initialize jsPDF
     const { jsPDF } = window.jspdf;
