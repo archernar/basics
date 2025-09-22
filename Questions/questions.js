@@ -140,12 +140,17 @@ document.addEventListener('DOMContentLoaded', function() {
         // Define the title you want to set
         // Select all elements
         // Loop through each selected element and set its title attribute
-        const newTitle = "table view/create pdf";
-        const moeElements = document.querySelectorAll('.VCPDF');
+        var newTitle = "table view/create pdf";
+        var moeElements = document.querySelectorAll('.p');
         moeElements.forEach(element => {
           element.valign='center'
           element.src='icon.png';
           element.title = newTitle;
+        });
+        document.querySelectorAll('.q').forEach(element => {
+          element.valign='center'
+          element.src='icon.png';
+          element.title = "create pdf";
         });
 
         document.getElementById('sidebar').classList.remove('hidden');

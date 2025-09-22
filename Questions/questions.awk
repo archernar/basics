@@ -83,6 +83,7 @@ END {
         
         #print "<tr><td colspan=4 width=99% align=middle><button onclick=" dq("ettp('#" "SPL" ahash($1) "')") ">Export to PDF</button></td></tr>" >> "report.html"
         ico="<img title=" sq("create pdf") " valign=center src=icon.png>"
+        ico="<img class=q>"
         print "<tr><td colspan=5 width=99% align=middle><a class=sl onclick=" dq("ettp('#" "SPL" ahash($1) "')") ">" ico "</a>&nbsp;<a class=s>" $1 "</a></td></tr>" >> "report.html"
         print "</td></tr>" >> "report.html"
         first=0
