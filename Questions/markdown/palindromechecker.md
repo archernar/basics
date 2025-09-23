@@ -1,0 +1,5 @@
+## Java Exercises 
+### Palindrome Checker 
+
+    Write a recursive function to check if a string is a palindrome. 
+    
