@@ -1,5 +1,0 @@
-## Java Exercises 
-### Rock 
-
-    Paper 
-    
