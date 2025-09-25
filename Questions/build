@@ -249,7 +249,9 @@ mkdir -p ./BUILDS
 mkdir -p $THISBUILDFOLDER
 # gawk '{printf "%s", $0}' questions.html > $Tmp
 cp questions.html  $Tmp
-sed -i 's/EXTRAEXTRA/ Questions/' $Tmp
+N=$(grep topic-card $Tmp | wc -l)
+echo "s/EXTRAEXTRA/: $N Questions/" > $Tmp1
+sed -i -f $Tmp1 $Tmp
 
 cat $Tmp           > questions.html
 cat questions.html > javaexercises.html
