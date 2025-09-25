@@ -100,6 +100,7 @@ copy_and_log() {
     # This could easily be redirected to a log file, e.g., >> /var/log/copy.log
     padded_string1=$(pad32 "'$source_file'")
     padded_string2=$(pad24 "'$dest_dir'")
+    #echo "[$timestamp] LNXCPY: $source_file $dest_dir"
     echo "[$timestamp] LNXCPY: $padded_string1 $padded_string2 $bytes_copied"
 }
 
@@ -165,17 +166,20 @@ aws_copy_and_log() {
     padded_string2=$(pad24 "'$dest_dir'")
     echo "[$timestamp] AWSCPY: $padded_string1 $padded_string2 $bytes_copied"
 }
+source ~/bash.library
 
-
+MARKDOWN="NO"
 UAT="NO"
 DEV="NO"
 PROD="NO"
 ROOT="NO"
 JSCODE="NO"
 BUILDLABEL=""
-while getopts "udpirj" arg
+while getopts "mudpirj" arg
 do
     case $arg in
+        m) MARKDOWN="YES"
+           ;;
         u) UAT="YES"
            BUILDLABEL="-UAT"
            ;;
@@ -229,25 +233,56 @@ echo "$new_version" > "$VERSION_FILE"
 
 # Print the new version to the console
 echo "Version updated to $new_version"
-
-
+info "Start..."
+mkdir -p ./tmp      >/dev/null 2>&1;
+rm ./tmp/*          >/dev/null 2>&1;
 
 ./questions > questions.html
 
 cp questions.html  text.html
 
 THISBUILDFOLDER=./BUILDS/$BUILDVERSION$BUILDLABEL
-echo $BUILDVERSION
-echo $THISBUILDFOLDER
+info "$BUILDVERSION"
+info "$THISBUILDFOLDER"
 
 mkdir -p ./BUILDS
 mkdir -p $THISBUILDFOLDER
 # gawk '{printf "%s", $0}' questions.html > $Tmp
 cp questions.html  $Tmp
+sed -i 's/EXTRAEXTRA/ Questions/' $Tmp
+
 cat $Tmp           > questions.html
 cat questions.html > javaexercises.html
 cat questions.html > index.html
 cat questions.html > error.html
+if [ "$MARKDOWN" == "YES" ]; then
+    #find ./markdown  -maxdepth 1 -type f -not -name "a*" -delete
+
+    rm -f "./markdown/azed.md"
+    rm -f "$Tmp2"
+    for file in ./tmp/*.md; do
+         infoc "processing $file"
+#        ../justomatic -n 80 -f "$file"
+
+         while IFS= read -r line; do
+           justify_line "$line" "80" >> $Tmp2
+         done < "$file"
+         cp "$Tmp2" "$file"
+
+         filename="${file##*/}"
+         basename="${filename%.*}"
+         first_char=${basename:0:1}
+         lower_first_char=${first_char,}
+         mkdir -p "./markdown/$lower_first_char"
+         sed -i '4,$s/^/    /g' "$file"
+
+         #cat "$file" >> "./markdown/azed.md"
+         mv "$file" "./markdown/$lower_first_char"
+         #git rm "./markdown/$basename.md"
+         #pandoc "$file" -o "./markdown/$basename.html"
+         rm -f "$Tmp2"
+    done
+fi
 
 #gawk '{printf "%s", $0}' questions.html > javaexercises.html
 #gawk '{printf "%s", $0}' questions.html > index.html
@@ -342,3 +377,4 @@ rm -f questions.topics
 rm -f questions.sorted
 rm -f fed zed fedd zedd qed qedd
 # ls -l /var/www/html
+info "Done..."

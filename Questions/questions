@@ -284,6 +284,7 @@ HEREND1AA
 
 cat ./version.txt
 echo " build date: " $(date)
+echo " EXTRAEXTRA" 
 cat << "HEREND1B"
                 </p>
             </div>

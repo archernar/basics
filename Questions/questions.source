@@ -2128,8 +2128,7 @@ System.out.println,Print with Tab Escape Character,"Use `println` with the `\t` 
 The ArrayList Class Methods,ArrayList from a Stream,"Use the Stream API (`Stream.of(...)`) and a collector (`Collectors.toList()`) to create an `ArrayList`."
 The ArrayList Class Methods,ArrayList of ArrayLists (2D),"Create a 2D `ArrayList` (an `ArrayList` of `ArrayList<Integer>`) to represent a matrix."
 The ArrayList Class Methods,ArrayList of Arrays,"Create an `ArrayList` where each element is an `int[]` array."
-The ArrayList Class Methods,ArrayList vs. LinkedList - `add(0, ...)` performance
-The ArrayList Class Methods,ArrayList vs. LinkedList - `get()` performance,"(Conceptual) Explain why `get(index)` is faster in an `ArrayList` than in a `LinkedList`."
+The ArrayList Class Methods,ArrayList vs. LinkedList - `get()` performance,"Explain why `get(index)` is faster in an `ArrayList` than in a `LinkedList`."
 The ArrayList Class Methods,Bulk add with `Collections.addAll`,"Use `Collections.addAll(list, "
 The ArrayList Class Methods,Capacity vs. Size,"Create a list with an initial capacity of 20, add 3 items, and then print both its capacity (requires reflection or debugging) and its size."
 The ArrayList Class Methods,Cloning an ArrayList,"Use the copy constructor `new ArrayList<>(originalList)` to create a shallow copy of a list."

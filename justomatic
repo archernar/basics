@@ -30,7 +30,7 @@ do
         n) W=$OPTARG
            ;;
         f) DELIM=""
-           justify_file "$OPTARG" "$W"
+           justify_file "$OPTARG" "$W" "###"
            exit 0
            ;;
         c) DELIM=","

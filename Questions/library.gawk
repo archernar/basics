@@ -28,6 +28,16 @@ function openHTMLFile(fn,       fout) {
     close(fout)
     return fout
 }
+function putMDFile(fn, sz,    fout) {
+    # fout=tolower("./markdown/" "" fout ".md")
+    fout=fn
+    gsub(/[^[:alnum:]]/, "", fout)
+    gsub(/[ ]/g, "", fout)
+    fout=tolower("./tmp/" "" fout ".md")
+    print "## Java Exercises\n\n### " fn "\n\n" sz "\n\n">  fout
+    close(fout)
+    return fout
+}
 function putHTMLFile(fn, sz,    fout) {
     fout=fn
     gsub(/[^[:alnum:]]/, "", fout)

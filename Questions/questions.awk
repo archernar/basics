@@ -90,6 +90,7 @@ END {
     } else {
       francis=$1 
     }
+    putMDFile($2, $3) 
         #putHTMLFile(ahash($1), $2) 
         #putHTMLFile(ahash($1), $3) 
         #putHTMLFile(ahash($1), "") 
