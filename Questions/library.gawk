@@ -28,6 +28,12 @@ function openHTMLFile(fn,       fout) {
     close(fout)
     return fout
 }
+function putTextFile(fn, sz,    fout) {
+    fout="./text.txt"
+    print fn "\n\n" sz "\n\n" >>  fout
+    close(fout)
+    return fout
+}
 function putMDFile(fn, sz,    fout) {
     # fout=tolower("./markdown/" "" fout ".md")
     fout=fn
@@ -187,7 +193,13 @@ function bhash(input_str,       alpha, len_alpha, M, i, j, char_val, state, seed
 #   words, i, num_words, current_line, result_str
 #
 # Returns: The formatted string with <br> tags.
-function wrap_text(input_str, line_limit, prefix,    words, i, num_words, current_line, result_str) {
+function wrap_text(input_str, line_limit, prefix, delim,    words, i, num_words, current_line, result_str) {
+    if (line_limit < 0) {
+        return input_str
+    }
+    if (delim == "") {
+        delim="<br>"
+    }
     if (line_limit == 0) {
         line_limit = 80
     }
@@ -209,7 +221,7 @@ function wrap_text(input_str, line_limit, prefix,    words, i, num_words, curren
         # Check if adding the next word (plus a space) would exceed the limit
         if (length(current_line) + 1 + length(words[i]) > line_limit) {
             # If it exceeds, append the completed line and a <br> tag to the result
-            result_str = result_str current_line "<br>" prefix
+            result_str = result_str current_line delim prefix
             # Start a new line with the current word
             current_line = words[i]
         } else {

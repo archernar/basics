@@ -93,7 +93,7 @@ move_matches_to_top() {
 #    warning: disk space is low
 #    info: process finished
 
-cat questions.source > $Tmp
+cat questions.source | sort | uniq > $Tmp
 gawk -f mc.awk    questions.mc >> $Tmp
 gawk -f mcadv.awk questions.advmc >> $Tmp
 cat $Tmp | gawk -f caplines.gawk > $Tmp3; cp $Tmp3 questions.source.prime
@@ -217,6 +217,9 @@ cp questions.topics $Tmp
 echo "<h2>Begin Here</h2>"
 
 rx="First Steps"
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+rx="Basic Class Design"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 rx="Fact Questions"

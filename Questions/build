@@ -236,6 +236,7 @@ echo "Version updated to $new_version"
 info "Start..."
 mkdir -p ./tmp      >/dev/null 2>&1;
 rm ./tmp/*          >/dev/null 2>&1;
+rm -f ./text.txt
 
 ./questions > questions.html
 

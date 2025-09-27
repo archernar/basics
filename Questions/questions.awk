@@ -91,6 +91,7 @@ END {
       francis=$1 
     }
     putMDFile($2, $3) 
+    putTextFile($1 " : " $2,wrap_text($3, 80, "", "\n"))
         #putHTMLFile(ahash($1), $2) 
         #putHTMLFile(ahash($1), $3) 
         #putHTMLFile(ahash($1), "") 
@@ -131,7 +132,8 @@ END {
     # OLD print " <p>" $1 " - " $2 "</p>" "<p>" $3 "</p>" "<hr>" >> "report.html"
 
 
-    print "<tr>" "<td>" ct "</td>" "<td>" toupper(bhash($2 $3))  "</td>" "<td nowrap>" $1 "</td>" "<td nowrap>" $2 "</td>" "<td>" wrap_text($3,90,"") "</td>" "</tr>" >> "report.html"
+    #toupper(bhash($2 $3))
+    print "<tr>" "<td>" ct "</td>" "<td>" ""  "</td>" "<td nowrap>" $1 "</td>" "<td nowrap>" $2 "</td>" "<td>" wrap_text($3,-1,"") "</td>" "</tr>" >> "report.html"
     ct++
     # print " <div class='topic-card'>" "<p valign=top align=right><font size=-1>" $1 "</font>" cb "</p>" "<h3>" lno $2  "</h3>" "<p>" $3 "</p>"  "</div>" >> "questions.lst"
 
