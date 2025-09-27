@@ -171,3 +171,55 @@ function bhash(input_str,       alpha, len_alpha, M, i, j, char_val, state, seed
 
     return result
 }
+
+# Gawk script to demonstrate a text wrapping function.
+#
+# Usage: gawk -f word_wrap.awk
+
+# Function: wrap_text
+# Description: Inserts "<br>" tags into a string to ensure no line exceeds
+#              a specified character limit, while respecting word boundaries.
+# Parameters:
+#   input_str - The string to be formatted.
+#   line_limit - (Optional) The maximum length of a line. Defaults to 80.
+#
+# Local Variables (passed as parameters for local scope):
+#   words, i, num_words, current_line, result_str
+#
+# Returns: The formatted string with <br> tags.
+function wrap_text(input_str, line_limit, prefix,    words, i, num_words, current_line, result_str) {
+    if (line_limit == 0) {
+        line_limit = 80
+    }
+
+    # Split the input string into an array of words
+    num_words = split(input_str, words, " ")
+
+    # If the string is empty or has no words, return an empty string
+    if (num_words == 0) {
+        return ""
+    }
+
+    # Initialize the first line with the first word
+    current_line = words[1]
+    result_str = ""
+
+    # Iterate from the second word to the end
+    for (i = 2; i <= num_words; i++) {
+        # Check if adding the next word (plus a space) would exceed the limit
+        if (length(current_line) + 1 + length(words[i]) > line_limit) {
+            # If it exceeds, append the completed line and a <br> tag to the result
+            result_str = result_str current_line "<br>" prefix
+            # Start a new line with the current word
+            current_line = words[i]
+        } else {
+            # If it fits, add the word to the current line
+            current_line = current_line " " words[i]
+        }
+    }
+
+    # After the loop, append the final line to the result
+    result_str = result_str current_line
+
+    return result_str
+}

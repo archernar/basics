@@ -106,9 +106,12 @@ END {
     gsub(/["]/, "`", sz)
     gsub(/["]/, "`", sz)
     gsub(/["]/, "`", sz)
+    sz = wrap_text(sz, 80, " * ")
     codetext=dq(" * " sz)
 
     buta="<button onClick='javascript:openEditor(  "  codetext  "  )'>open template</button>"
+    if ($1 ~ /^Multiple Choice/) buta=""
+
     cb="<input type='checkbox' id='setting" c "' name='emailNotifications" c "' class='savable-checkbox h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500'>"
     cb="<input type='checkbox' id='emn" c "' name='emn" c "' class='scb'>"
     loca=""
@@ -126,7 +129,9 @@ END {
     print "<h3>" lno ""  "</h3>" "" $3 "<br><div align=right>" buta "</div></div>" >> "questions.lst"
 
     # OLD print " <p>" $1 " - " $2 "</p>" "<p>" $3 "</p>" "<hr>" >> "report.html"
-    print "<tr>" "<td>" ct "</td>" "<td>" toupper(bhash($2 $3))  "</td>" "<td nowrap>" $1 "</td>" "<td nowrap>" $2 "</td>" "<td>" $3 "</td>" "</tr>" >> "report.html"
+
+
+    print "<tr>" "<td>" ct "</td>" "<td>" toupper(bhash($2 $3))  "</td>" "<td nowrap>" $1 "</td>" "<td nowrap>" $2 "</td>" "<td>" wrap_text($3,90,"") "</td>" "</tr>" >> "report.html"
     ct++
     # print " <div class='topic-card'>" "<p valign=top align=right><font size=-1>" $1 "</font>" cb "</p>" "<h3>" lno $2  "</h3>" "<p>" $3 "</p>"  "</div>" >> "questions.lst"
 
