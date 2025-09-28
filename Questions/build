@@ -380,4 +380,7 @@ rm -f questions.topics
 rm -f questions.sorted
 rm -f fed zed fedd zedd qed qedd
 # ls -l /var/www/html
+
+./hashme init .
+
 info "Done..."
