@@ -230,7 +230,14 @@ echo "<h2>Begin Here</h2>"
 rx="First Steps"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+echo "<h2>Practice Sets</h2>"
 rx="Basic Class Design"
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+rx="Practice Programs"
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+rx="Java Practice"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 rx="Fact Questions"
