@@ -294,47 +294,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
 
-        // --- COOKIE HELPER FUNCTIONS (Unchanged) ---
-
-        /**
-         * Sets a cookie with a given name, value, and expiration in days.
-         * @param {string} name - The name of the cookie.
-         * @param {string} value - The value to store in the cookie.
-         * @param {number} days - The number of days until the cookie expires.
-         */
-        function setCookie(name, value, days) {
-            let expires = "";
-            if (days) {
-                const date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
-        }
 
         function removeCookie(name) {
             document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         }
 
-        /**
-         * Retrieves the value of a cookie by its name.
-         * @param {string} name - The name of the cookie to retrieve.
-         * @returns {string|null} The cookie's value, or null if not found.
-         */
-        function getCookie(name) {
-            const nameEQ = name + "=";
-            const ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) === ' ') {
-                    c = c.substring(1, c.length);
+            /**
+             * Sets a cookie with a given name, value, and expiration in days.
+             * @param {string} name - The name of the cookie.
+             * @param {string} value - The value of the cookie.
+             * @param {number} days - The number of days until the cookie expires.
+             */
+            function setCookie(name, value, days) {
+                let expires = "";
+                if (days) {
+                    const date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
                 }
-                if (c.indexOf(nameEQ) === 0) {
-                    return c.substring(nameEQ.length, c.length);
-                }
+                // Use SameSite=Lax for modern browsers and include the secure flag if on HTTPS
+                const sameSite = "; SameSite=Lax";
+                const secure = window.location.protocol === 'https:' ? '; Secure' : '';
+                document.cookie = name + "=" + (value || "") + expires + "; path=/" + sameSite + secure;
             }
-            return null;
-        }
+
+            /**
+             * Gets the value of a specific cookie by its name.
+             * @param {string} name - The name of the cookie to retrieve.
+             * @returns {string|null} The cookie's value or null if not found.
+             */
+            function getCookie(name) {
+                const nameEQ = name + "=";
+                const ca = document.cookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
 
         // --- REFACTORED MAIN LOGIC ---
 
@@ -373,6 +371,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+/**
+         * Sets a cookie with a given name, value, and expiration in days.
+         * @param {string} name - The name of the cookie.
+         * @param {string} value - The value to store in the cookie.
+         * @param {number} days - The number of days until the cookie expires.
+        function setCookieOLDVER(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+        }
+
+         * Retrieves the value of a cookie by its name.
+         * @param {string} name - The name of the cookie to retrieve.
+         * @returns {string|null} The cookie's value, or null if not found.
+        function getCookieOLDVERSION(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') {
+                    c = c.substring(1, c.length);
+                }
+                if (c.indexOf(nameEQ) === 0) {
+                    return c.substring(nameEQ.length, c.length);
+                }
+            }
+            return null;
+        }
+
+*/
 
 
 
