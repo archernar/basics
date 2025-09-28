@@ -1,0 +1,212 @@
+#!/usr/bin/bash
+#
+# File Integrity Checker
+#
+# A script to generate, store, and verify SHA256 hashes for files in a directory.
+# This helps in detecting file modifications, additions, or deletions.
+#
+# Commands:
+#   init   <directory> - Creates an initial hash snapshot of the directory.
+#   check  <directory> - Checks the directory for any changes against the snapshot.
+#   status <file>      - Checks if a single file has changed.
+#
+
+# The name of the file where hashes will be stored within the target directory.
+readonly HASH_FILE=".filehashes"
+
+# --- FUNCTION: generate_hashes ---
+# Description: Creates a hash for each file in the specified directory
+#              and stores it in the HASH_FILE. This will overwrite any
+#              existing hash file in that directory.
+# Arguments:
+#   $1: The path to the directory.
+generate_hashes() {
+    local dir="$1"
+    if [[ ! -d "$dir" ]]; then
+        echo "Error: Directory '$dir' not found." >&2
+        return 1
+    fi
+
+    echo "Generating hashes for files in '$dir'..."
+    # A subshell is used to avoid permanently changing the script's directory.
+    (
+        cd "$dir" || exit 1
+        # Find files in the current directory (not subdirectories),
+        # calculate their sha256sum, and save to the hash file.
+        # The paths are stored relative to the directory, e.g., "./file.txt"
+        find . -maxdepth 1 -type f -exec sha256sum {} + > "$HASH_FILE"
+    )
+    echo "Success: Hashes stored in '$dir/$HASH_FILE'."
+}
+
+# --- FUNCTION: check_all_changes ---
+# Description: Checks for any changes, additions, or deletions in the directory
+#              based on the stored HASH_FILE.
+# Arguments:
+#   $1: The path to the directory.
+check_all_changes() {
+    local dir="$1"
+    local target_hash_file="$dir/$HASH_FILE"
+    local has_changes=0
+
+    if [[ ! -d "$dir" ]]; then
+        echo "Error: Directory '$dir' not found." >&2
+        return 1
+    fi
+    if [[ ! -f "$target_hash_file" ]]; then
+        echo "Error: Hash file not found in '$dir'." >&2
+        echo "Run the 'init' command first to create it." >&2
+        return 1
+    fi
+
+    echo "--- Checking for modified or deleted files in '$dir' ---"
+    (
+        cd "$dir" || exit 1
+        # Use sha256sum's check mode. It's efficient and reports mismatches/missing files.
+        # The '--status' flag suppresses output and just returns an exit code.
+        sha256sum --status -c "$HASH_FILE" 2>/dev/null
+        if [[ $? -ne 0 ]]; then
+            has_changes=1
+            echo "Found modified or deleted files:"
+            # Re-run without status to print the details of failed checks.
+            # Grep is used to show only the lines that are NOT "OK".
+            sha256sum -c "$HASH_FILE" 2>/dev/null | grep -v ": OK$"
+        else
+            echo "No modified or deleted files found."
+        fi
+    )
+
+    echo ""
+    echo "--- Checking for new files in '$dir' ---"
+    # Create an associative array of all files that have been hashed.
+    declare -A hashed_files
+    while IFS= read -r line; do
+        # Extract just the filename from the line (e.g., "file.txt" from "hash  ./file.txt")
+        # This handles filenames with spaces correctly.
+        local filename
+        filename=$(echo "$line" | sed -e 's/^[a-f0-9]\{64\}  \.\///')
+        if [[ -n "$filename" ]]; then
+            hashed_files["$filename"]=1
+        fi
+    done < "$target_hash_file"
+
+    # Iterate over files currently in the directory to find new ones.
+    local new_files_found=0
+    for file in "$dir"/*; do
+        if [[ -f "$file" ]]; then
+            local filename
+            filename=$(basename "$file")
+            # Check if the current file exists in our list of hashed files.
+            if [[ -z "${hashed_files[$filename]}" ]]; then
+                echo "New file detected: $filename"
+                new_files_found=1
+                has_changes=1
+            fi
+        fi
+    done
+
+    if [[ $new_files_found -eq 0 ]]; then
+        echo "No new files detected."
+    fi
+
+    echo ""
+    if [[ $has_changes -eq 0 ]]; then
+        echo "✅ Success: No changes detected in '$dir'."
+        return 0
+    else
+        echo "⚠️ Warning: Changes were detected in '$dir'."
+        return 1
+    fi
+}
+
+# --- FUNCTION: has_file_changed ---
+# Description: Checks if a single, specific file has been modified
+#              since its hash was stored.
+# Arguments:
+#   $1: The path to the file.
+# Returns:
+#   0 if the file is unchanged.
+#   1 if the file has changed or is new.
+#   2 for errors (e.g., file not found).
+has_file_changed() {
+    local file_path="$1"
+    if [[ ! -f "$file_path" ]]; then
+        echo "Error: File '$file_path' not found." >&2
+        return 2
+    fi
+
+    local dir
+    dir=$(dirname "$file_path")
+    local filename
+    filename=$(basename "$file_path")
+    local target_hash_file="$dir/$HASH_FILE"
+
+    if [[ ! -f "$target_hash_file" ]]; then
+        echo "Error: Hash file not found in '$dir'." >&2
+        echo "Cannot determine file status. Run 'init' on the directory first." >&2
+        return 2
+    fi
+
+    # The format in the hash file is "hash  ./filename"
+    # We grep for the line that ends with the exact filename.
+    local search_pattern=" ./$filename$"
+    local stored_line
+    stored_line=$(grep -- "$search_pattern" "$target_hash_file")
+
+    if [[ -z "$stored_line" ]]; then
+        echo "Status: File '$filename' is new or was not originally hashed."
+        return 1
+    fi
+
+    local stored_hash
+    stored_hash=$(echo "$stored_line" | awk '{print $1}')
+    local current_hash
+    current_hash=$(sha256sum "$file_path" | awk '{print $1}')
+
+    if [[ "$current_hash" == "$stored_hash" ]]; then
+        echo "Status: File '$filename' is UNCHANGED."
+        return 0
+    else
+        echo "Status: File '$filename' has been MODIFIED."
+        return 1
+    fi
+}
+
+# --- Main Script Logic ---
+# Provides a simple command-line interface for the functions.
+main() {
+    local command="$1"
+    local target="$2"
+
+    if [[ -z "$command" ]] || [[ -z "$target" ]]; then
+        cat <<EOF
+Usage: $0 <command> <path>
+
+Commands:
+  init   <directory>   Creates an initial hash snapshot of the directory's files.
+  check  <directory>   Checks the directory for any changes (modified, new, deleted).
+  status <file>        Checks if a single file has changed.
+EOF
+        exit 1
+    fi
+
+    case "$command" in
+        init)
+            generate_hashes "$target"
+            ;;
+        check)
+            check_all_changes "$target"
+            ;;
+        status)
+            has_file_changed "$target"
+            ;;
+        *)
+            echo "Error: Unknown command '$command'." >&2
+            exit 1
+            ;;
+    esac
+}
+
+# Pass all command-line arguments to the main function.
+main "$@"
+
