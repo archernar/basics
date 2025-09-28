@@ -156,6 +156,65 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('sidebar').classList.remove('hidden');
         document.getElementById('main-content').classList.remove('hidden');
 
+            // *****************************************************************************
+            // Cookie Compliance Start
+            const COOKIE_NAME = 'user_cookie_consent';
+            removeCookie(COOKIE_NAME);
+            const COOKIE_EXPIRATION_DAYS = 365;
+
+            const banner = document.getElementById('cookie-consent-banner');
+            const acceptBtn = document.getElementById('accept-cookies-btn');
+            const declineBtn = document.getElementById('decline-cookies-btn');
+
+            
+            /**
+             * Hides the cookie consent banner.
+             */
+            function hideBanner() {
+                banner.style.display = 'none';
+            }
+            
+            /**
+             * Shows the cookie consent banner.
+             */
+            function showBanner() {
+                banner.style.display = 'flex';
+            }
+
+            // --- Event Listeners ---
+            
+            acceptBtn.addEventListener('click', function() {
+                setCookie(COOKIE_NAME, 'accepted', COOKIE_EXPIRATION_DAYS);
+                hideBanner();
+                console.log('User accepted cookies. Other tracking scripts can now be initialized.');
+                // Example: initializeAnalytics();
+            });
+
+            declineBtn.addEventListener('click', function() {
+                setCookie(COOKIE_NAME, 'declined', COOKIE_EXPIRATION_DAYS);
+                hideBanner();
+                console.log('User declined cookies. Non-essential scripts should not run.');
+            });
+
+
+            // --- Main Logic ---
+            
+            // Check if the user has already given consent.
+            const userConsent = getCookie(COOKIE_NAME);
+            
+            if (!userConsent) {
+                // If no cookie is found, show the banner.
+                showBanner();
+            } else if (userConsent === 'accepted') {
+                // If they accepted, you could run your tracking scripts here.
+                console.log('Cookie consent previously accepted.');
+                // Example: initializeAnalytics();
+            } else {
+                // If they declined, do nothing.
+                console.log('Cookie consent previously declined.');
+            }
+            // Cookie Compliance End
+            // *****************************************************************************
 /*
         // Event listener for the launch button
         document.getElementById('open-editor-btn').addEventListener('click', () => {
@@ -253,6 +312,10 @@ document.addEventListener('DOMContentLoaded', function() {
             document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
         }
 
+        function removeCookie(name) {
+            document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        }
+
         /**
          * Retrieves the value of a cookie by its name.
          * @param {string} name - The name of the cookie to retrieve.
@@ -301,3 +364,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         });
+
+
+
+
+
+
+
+
+
+
+
+

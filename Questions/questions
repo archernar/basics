@@ -194,6 +194,17 @@ cat << "HEREND1"
 </head>
 <body>
 
+    <!-- Cookie Consent Banner HTML -->
+    <!-- We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies. <a href="#">Read our policy</a>. -->
+    <div id="cookie-consent-banner">
+        <div class="cookie-consent-text">
+            We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies.
+        </div>
+        <div class="cookie-consent-buttons">
+            <button id="decline-cookies-btn" class="cookie-consent-button">Decline</button>
+            <button id="accept-cookies-btn" class="cookie-consent-button">Accept</button>
+        </div>
+    </div>
 
 <aside id=sidebar class="sidebar hidden">
 <table width=99%>

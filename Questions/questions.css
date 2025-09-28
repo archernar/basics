@@ -375,3 +375,81 @@ td.tdright {
   padding: 0;
   text-align: right;
 }
+
+        /* Styles for the cookie consent banner */
+        #cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #1f2937; /* Dark background */
+            color: #f9fafb; /* Light text */
+            padding: 1.5rem 2rem;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .cookie-consent-text {
+            flex-grow: 1;
+            min-width: 300px;
+        }
+        
+        .cookie-consent-text a {
+            color: #60a5fa; /* A nice blue for links */
+            text-decoration: underline;
+        }
+        
+        .cookie-consent-text a:hover {
+            color: #93c5fd;
+        }
+
+        .cookie-consent-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .cookie-consent-button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+        
+        .cookie-consent-button:active {
+            transform: scale(0.98);
+        }
+
+        #accept-cookies-btn {
+            background-color: #2563eb; /* Blue */
+            color: white;
+        }
+
+        #accept-cookies-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        #decline-cookies-btn {
+            background-color: #4b5563; /* Gray */
+            color: white;
+        }
+        
+        #decline-cookies-btn:hover {
+            background-color: #374151;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #cookie-consent-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
