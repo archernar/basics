@@ -290,7 +290,7 @@ fi
 #gawk '{printf "%s", $0}' questions.html > javaexercises.html
 #gawk '{printf "%s", $0}' questions.html > index.html
 #gawk '{printf "%s", $0}' questions.html > error.html
-FILES=("pages" "ScannerClass.pdf" "icon.png" "index.html" "error.html" "questions.html" "javaexercises.html" "questions.js" "editor.js" "questions.css" "jspdf.plugin.autotable.min.js" "jspdf.umd.min.js" "MyClass.java" "Car.java" "University.java" "Book.java" "BankAccount.java" "CollegeStudent.java" "Template.java")
+FILES=("pages" "ScannerClass.pdf" "icon.png" "index.html" "error.html" "questions.html" "javaexercises.html" "countdown.js" "questions.js" "editor.js" "questions.css" "jspdf.plugin.autotable.min.js" "jspdf.umd.min.js" "MyClass.java" "Car.java" "University.java" "Book.java" "BankAccount.java" "CollegeStudent.java" "Template.java")
 XHTMLFILES=("ScannerClass.pdf" "index.html" "error.html" "questions.html" "javaexercises.html")
 HTMLFILES=("pages" "icon.png" "ScannerClass.pdf" "index.html" "questions.css")
 

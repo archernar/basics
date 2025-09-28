@@ -179,6 +179,8 @@ cat << "HEREND1"
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
 
+
+
     <script type="text/javascript" src="editor.js"></script>
     <script type="text/javascript" src="questions.js"></script>
     <!--
@@ -194,6 +196,16 @@ cat << "HEREND1"
 </head>
 <body>
 
+    <!-- The countdown banner that covers the screen -->
+    <div id="countdown-banner">
+        <div class="countdown-container" style="text-align: center;">
+            <p>Site is loading...</p>
+            <h1 id="countdown-timer">5</h1>
+            <p>Get ready!</p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="countdown.js"></script>
     <!-- Cookie Consent Banner HTML -->
     <!-- We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies. <a href="#">Read our policy</a>. -->
     <div id="cookie-consent-banner">
