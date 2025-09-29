@@ -475,6 +475,9 @@ td.tdright {
             opacity: 1;
             transition: opacity 1s ease-out;
             color: #fff;
+
+
+
         }
 
         /* Keyframes for the background animation */

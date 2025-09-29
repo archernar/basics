@@ -199,9 +199,11 @@ cat << "HEREND1"
     <!-- The countdown banner that covers the screen -->
     <div id="countdown-banner">
         <div class="countdown-container" style="text-align: center;">
+    <br>&nbsp;<br>
+    <br>&nbsp;<br>
             <p>Site is loading...</p>
+            <img height=40% src=./banner4.png>
             <h1 id="countdown-timer">5</h1>
-            <p>Get ready!</p>
         </div>
     </div>
 
