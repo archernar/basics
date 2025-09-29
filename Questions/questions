@@ -267,12 +267,6 @@ echo "<h2>Java Classes ($SZ)</h2>"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
-rx="Java Practice"
-SZ=`cat $Tmp | grep "$rx" | wc -l`
-echo "<h2>Practice Sets ($SZ)</h2>"
-cat $Tmp  | grep "$rx" 
-cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
-
 SZ=`cat $Tmp  | wc -l`
 echo "<h2>Exercise Topics ($SZ)</h2>"
 cat $Tmp 
