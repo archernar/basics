@@ -1,10 +1,19 @@
         body {
             font-family: 'Inter', sans-serif;
             xxbackground-color: #f9fafb;
-            background-color: #1a1a1a; /* Dark Gray */
+            xbackground-color: #1a1a1a; /* Dark Gray */
             color: #FFFFFF;
             margin: 0;
             display: flex;
+            background: #1a1a1a;
+            /* Cool animated gradient background */
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #141e30);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 1s ease-out;
+            color: #fff;
         }
         .dark {
             font-family: 'Inter', sans-serif;
@@ -14,8 +23,8 @@
             display: flex;
         }
         .sidebar {
-            width: 340px;
-            background-color: Black;
+            width: 400px;
+            xbackground-color: Black;
             border-right: 1px solid #e5e7eb;
             padding: 4px;
             height: 100vh;
@@ -24,6 +33,18 @@
             left: 0;
             box-sizing: border-box;
             overflow-y: auto;
+        }
+        .sidebar .np {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            text-transform: capitalize;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            margin: 24px 0 8px 0;
+            padding: 0 16px;
         }
         .sidebar .n {
             font-size: 0.75rem;
@@ -72,9 +93,9 @@
             font-weight: 600;
         }
         .main-content {
-            margin-left: 340px;
+            margin-left: 400px;
             padding: 32px;
-            width: calc(99% - 340px);
+            width: calc(99% - 400px);
             box-sizing: border-box;
         }
         .content-section {
@@ -92,8 +113,8 @@
         .content-grid {
             margin-top: 2rem;
             display: grid;
-            nothingness:340px;
-            xxxgrid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            nothingness:400px;
+            xxxgrid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             xgrid-template-columns: 1fr 1fr 1fr;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 1.5rem;
@@ -365,7 +386,7 @@ input[type="checkbox"] {
   border-spacing: 0;
 
   width: 100%;
-  border: 2px solid Black;
+  xborder: 2px solid Black;
 }
 .t0 td {
   /* Replaces cellpadding="0" */

@@ -32,7 +32,7 @@
                     // Hide the banner from the layout
                     countdownBannerElement.style.display = 'none';
                     // Show the main content
-                    mainContentElement.style.display = 'block';
+                   document.getElementById('main-content').style.display = 'block';
                 }, 1000); // This timeout should match the CSS transition duration
             }
         }, 1000); // 1000 milliseconds = 1 second

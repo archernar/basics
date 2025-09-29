@@ -1,4 +1,9 @@
-
+function dq(sz) {
+    return "\"" + sz + "\"";
+}
+function sq(sz) {
+    return "\'" + sz + "\'";
+}
 function openEditor(content) {
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
@@ -151,6 +156,16 @@ document.addEventListener('DOMContentLoaded', function() {
           element.valign='center'
           element.src='icon.png';
           element.title = "create pdf";
+        });
+
+
+        document.querySelectorAll('.np').forEach(element => {
+          const f = element.getAttribute('code');
+          element.text = f;
+          element.addEventListener('click', function(event) {
+            fastEdit(f);
+            event.preventDefault();
+          });
         });
 
         document.getElementById('sidebar').classList.remove('hidden');
