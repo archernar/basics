@@ -376,7 +376,7 @@ else
 fi
 rm -f questions.count
 rm -f questions.lst
-rm -f questions.topics
+# rm -f questions.topics
 rm -f questions.sorted
 rm -f fed zed fedd zedd qed qedd
 # ls -l /var/www/html

@@ -161,7 +161,7 @@ BEGIN {
         getline count < "questions.count"
         close("questions.count")
         count = " (" count ")"
-        print "<a href=" sq("#SPL" ahash($1)) "><img class=p></a><a class=" sq("n") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
+        print "<a href=" sq("#SPL" ahash($1)) ">&nbsp;&nbsp;&nbsp;<img class=p></a><a class=" sq("n") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
         f=$1
     }
 }' $Tmp3  |  sed 's/"//g' > questions.topics
@@ -220,6 +220,7 @@ cat << "HEREND1"
         </div>
     </div>
 
+
 <aside id=sidebar class="sidebar hidden">
 <table width=99%>
 <tr>
@@ -230,21 +231,19 @@ cat << "HEREND1"
 
 <!-- nav id="nav-menu" -->
 <h2>Templates & Examples</h2>
+<div>
+<a class='momo' code=Template.java></a>
+<a class='momo' code=Car.java></a>
+<a class='momo' code=Book.java></a>
+<a class='momo' code=BankAccount.java></a>
+<a class='momo' code=CollegeStudent.java></a>
+<a class='momo' code=University.java></a>
+</div>
+<br>
+<br>
+<br>
+
 <!-- a id="open-editor-btn" class='n'>Starter</a><br -->
-<table cellspacing=0 cellpadding=0>
-<tr>
-<td align=left><a class='np' code=Template.java></a></td>
-<td align=left><a class='np' code=Car.java></a></td>
-</tr>
-<tr>
-<td align=left><a class='np' code=Book.java></a></td>
-<td align=left><a class='np' code=BankAccount.java></a></td>
-</tr>
-<tr>
-<td align=left><a class='np' code=CollegeStudent.java></a></td>
-<td align=left><a class='np' code=University.java></a></td>
-</tr>
-</table>
 HEREND1
 cp questions.topics $Tmp
 echo "<h2>Begin Here</h2>"

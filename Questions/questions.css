@@ -539,3 +539,18 @@ td.tdright {
                 opacity: 0.9;
             }
         }
+
+.plaintable {
+  /* This is the equivalent of cellspacing="0" */
+  border-collapse: collapse;
+  padding: 0;
+}
+.plaintd {
+  /* This is the equivalent of cellpadding="0" */
+  padding: 0;
+  text-align: left;
+}
+.plainth {
+  /* This is the equivalent of cellpadding="0" */
+  padding: 0;
+}

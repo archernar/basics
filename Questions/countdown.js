@@ -1,7 +1,7 @@
         // --- JavaScript for Countdown Logic ---
 
         // Set the initial time for the countdown
-        let countdownTime = 3;
+        let countdownTime = 0;
 
         // Get the elements from the DOM
         const countdownTimerElement = document.getElementById('countdown-timer');

@@ -4,6 +4,46 @@ function dq(sz) {
 function sq(sz) {
     return "\'" + sz + "\'";
 }
+function renderTable(arr) {
+        var tab,tr,td,tx;
+        arr.forEach(
+           function (element, index) {  // (1)
+              if (index == 0) {
+                  if (element.parentNode.nodeName == "DIV") {
+                      tab=element.parentNode.appendChild( document.createElement('table'));
+                  } else {
+                      tab=element.parentNode;
+                  }
+              }
+              tab.classList.add('plaintable');
+              tab.setAttribute('border','0');
+              tab.setAttribute('align','left');
+              tab.setAttribute('width','100%');
+              var szCode = element.getAttribute('code');
+              if ((index % 2) == 0)
+                  tr=tab.appendChild( document.createElement('tr'));
+
+              td=tr.appendChild( document.createElement('td'));
+              td.classList.add('plaintd');
+
+              tx=td.appendChild( document.createElement('a'));
+              tx.classList.add('np');
+              tx.appendChild( document.createTextNode(szCode));
+              tx.addEventListener('click', function(event) {
+                  fastEdit( szCode );
+                  event.preventDefault();
+              });
+              element.remove();
+        });
+}
+function renderClassTable(cls) {
+        var arr=[];
+        document.querySelectorAll(cls).forEach(element => {
+            arr.push(element);
+        });
+        renderTable(arr);
+}
+
 function openEditor(content) {
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
@@ -158,15 +198,30 @@ document.addEventListener('DOMContentLoaded', function() {
           element.title = "create pdf";
         });
 
+        renderClassTable('.momo');
 
-        document.querySelectorAll('.np').forEach(element => {
-          const f = element.getAttribute('code');
-          element.text = f;
-          element.addEventListener('click', function(event) {
-            fastEdit(f);
-            event.preventDefault();
-          });
+
+        arr=[];
+        document.querySelectorAll('.xxxxnp').forEach(element => {
+            arr.push(element);
         });
+        arr.forEach(
+           function (element, index) {  // (1)
+              console.log(index);
+              element.text = element.getAttribute('code');
+              element.addEventListener('click', function(event) {
+                  fastEdit( element.getAttribute('code') );
+                  event.preventDefault();
+              });
+        });
+
+//        document.querySelectorAll('.np').forEach(element => {
+//          element.text = element.getAttribute('code');
+//          element.addEventListener('click', function(event) {
+//            fastEdit( element.getAttribute('code') );
+//            event.preventDefault();
+//          });
+//        });
 
         document.getElementById('sidebar').classList.remove('hidden');
         document.getElementById('main-content').classList.remove('hidden');
