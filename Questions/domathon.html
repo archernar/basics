@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Method Exerciser</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">JavaScript DOM Method Exerciser</h1>
+            <p class="mt-2 text-lg text-gray-600">Click the buttons below to see various DOM methods in action.</p>
+        </header>
+
+        <!-- Controls Section -->
+        <div class="bg-white p-6 rounded-xl shadow-md mb-8">
+            <h2 class="text-xl font-semibold mb-4">Run Demonstrations</h2>
+            <div id="controls" class="controls-grid">
+                <button data-func="runAll" class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 col-span-full">Run All Demos</button>
+                <button data-func="selectionMethods" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Selection</button>
+                <button data-func="traversalMethods" class="bg-green-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300">Traversal</button>
+                <button data-func="manipulationMethods" class="bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-yellow-600 transition duration-300">Manipulation</button>
+                <button data-func="attributeMethods" class="bg-red-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-600 transition duration-300">Attributes</button>
+                <button data-func="styleAndClassMethods" class="bg-purple-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-600 transition duration-300">Styles & Classes</button>
+                <button data-func="eventMethods" class="bg-pink-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-pink-600 transition duration-300">Events</button>
+                <button data-func="formMethods" class="bg-teal-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-600 transition duration-300">Forms</button>
+                <button data-func="advancedMethods" class="bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition duration-300">Advanced</button>
+                <button data-func="clearOutput" class="bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg hover:bg-gray-500 transition duration-300">Clear Output</button>
+            </div>
+        </div>
+
+        <!-- Live Demo & Output Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- Demo Area where elements are manipulated -->
+            <div id="demo-area" class="bg-white p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold border-b pb-2 mb-4">Demonstration Area</h3>
+                
+                <div id="main-container" class="border-2 border-dashed border-gray-300 p-4 rounded-lg">
+                    <p id="p1" class="text-blue-700 item">This is the first paragraph. It has an ID and a class.</p>
+                    <p class="text-green-700 item">This is the second paragraph. It only has a class.</p>
+                    <div id="parent-div">
+                        I am the parent div.
+                        <span id="child-span" class="font-bold">I am a child span.</span>
+                    </div>
+                    <ul id="list">
+                        <li class="list-item">List Item 1</li>
+                        <li class="list-item">List Item 2</li>
+                    </ul>
+                    <div id="attribute-box" data-id="12345" data-user-name="Gemini">Attribute Box</div>
+                </div>
+
+                <form id="main-form" class="mt-4 p-4 border border-gray-200 rounded-lg">
+                    <label for="text-input" class="block mb-2">Text Input:</label>
+                    <input type="text" id="text-input" name="text-input" value="Select me!" class="border rounded-md p-2 w-full mb-2">
+                    <button type="submit" id="submit-btn" class="bg-blue-500 text-white px-4 py-2 rounded-md">Submit</button>
+                    <button type="reset" class="bg-gray-500 text-white px-4 py-2 rounded-md">Reset</button>
+                </form>
+
+                <div id="shadow-host" class="mt-4 p-4 border border-gray-200 rounded-lg">Shadow DOM Host</div>
+
+                <template id="my-template">
+                    <p class="text-purple-600 font-semibold">I came from a template!</p>
+                </template>
+
+            </div>
+
+            <!-- Output Area for logging results -->
+            <div class="bg-gray-900 text-white font-mono text-sm p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold border-b border-gray-600 pb-2 mb-4">Output Log</h3>
+                <pre id="output" class="whitespace-pre-wrap overflow-x-auto h-96"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Core Setup & Helper Functions ---
+        const outputEl = document.getElementById('output');
+        
+        function log(message) {
+            console.log(message);
+            const currentText = outputEl.textContent;
+            outputEl.textContent = `${currentText}${message}\n`;
+            outputEl.scrollTop = outputEl.scrollHeight;
+        }
+
+        function clearOutput() {
+            outputEl.textContent = '';
+        }
+
+        function printHeader(title) {
+            log(`\n--- ${title.toUpperCase()} ---`);
+        }
+        
+        // Initial setup for buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('controls').addEventListener('click', (event) => {
+                if (event.target.tagName === 'BUTTON') {
+                    const funcName = event.target.dataset.func;
+                    if (window[funcName]) {
+                        window[funcName]();
+                    }
+                }
+            });
+
+            // Prevent form submission for demo purposes
+            document.getElementById('main-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                log("Form submission prevented for demo.");
+            });
+        });
+
+        // --- DEMONSTRATION FUNCTIONS ---
+
+        function selectionMethods() {
+            printHeader("Element Selection");
+            const p1 = document.getElementById('p1');
+            log(`getElementById('p1'): ${p1.textContent}`);
+
+            const items = document.getElementsByClassName('item');
+            log(`getElementsByClassName('item'): Found ${items.length} elements.`);
+
+            const paragraphs = document.getElementsByTagName('p');
+            log(`getElementsByTagName('p'): Found ${paragraphs.length} paragraphs.`);
+            
+            const firstItem = document.querySelector('.item');
+            log(`querySelector('.item'): ${firstItem.textContent}`);
+
+            const allItems = document.querySelectorAll('.item');
+            log(`querySelectorAll('.item'): Found ${allItems.length} elements.`);
+            allItems.forEach(item => log(`  - ${item.textContent}`));
+
+            const childSpan = document.getElementById('child-span');
+            const parentContainer = childSpan.closest('#main-container');
+            log(`childSpan.closest('#main-container'): Found element with tagName ${parentContainer.tagName}`);
+        }
+
+        function traversalMethods() {
+            printHeader("DOM Traversal");
+            const childSpan = document.getElementById('child-span');
+            log(`Child span text: "${childSpan.textContent}"`);
+            
+            const parentDiv = childSpan.parentNode;
+            log(`childSpan.parentNode: ${parentDiv.id}`);
+
+            const parentElement = childSpan.parentElement;
+            log(`childSpan.parentElement: ${parentElement.id}`);
+
+            const parentChildren = parentDiv.children;
+            log(`parentDiv.children: Found ${parentChildren.length} child element(s).`);
+
+            const list = document.getElementById('list');
+            log(`list.firstElementChild: ${list.firstElementChild.textContent}`);
+            log(`list.lastElementChild: ${list.lastElementChild.textContent}`);
+
+            const firstListItem = list.querySelector('li');
+            log(`firstListItem.nextElementSibling: ${firstListItem.nextElementSibling.textContent}`);
+
+            log(`parentDiv.hasChildNodes(): ${parentDiv.hasChildNodes()}`);
+            log(`parentDiv.childNodes.length: ${parentDiv.childNodes.length} (includes text nodes)`);
+        }
+
+        function manipulationMethods() {
+            printHeader("Element Creation & Manipulation");
+            const list = document.getElementById('list');
+            
+            // createElement & createTextNode
+            const newItem = document.createElement('li');
+            const newText = document.createTextNode('List Item 3 (new)');
+            newItem.appendChild(newText);
+            newItem.className = 'list-item text-red-500';
+            
+            // appendChild
+            list.appendChild(newItem);
+            log("appendChild: Added a new list item.");
+            
+            // insertBefore
+            const newerItem = document.createElement('li');
+            newerItem.textContent = "List Item 0 (inserted)";
+            newerItem.className = 'list-item text-purple-500';
+            list.insertBefore(newerItem, list.firstElementChild);
+            log("insertBefore: Added an item at the beginning.");
+
+            // replaceChild
+            const replacementItem = document.createElement('li');
+            replacementItem.textContent = 'Item 2 (REPLACED)';
+            replacementItem.className = 'list-item text-orange-500';
+            const oldItem = list.children[2]; // The original 'List Item 2'
+            list.replaceChild(replacementItem, oldItem);
+            log(`replaceChild: Replaced "${oldItem.textContent}" with new item.`);
+
+            // cloneNode
+            const clonedList = list.cloneNode(true); // true for deep clone
+            clonedList.id = 'cloned-list';
+            document.getElementById('main-container').appendChild(clonedList);
+            log("cloneNode(true): Cloned the entire list and appended it.");
+
+            // removeChild (demonstrated by removing the first item of the cloned list)
+            const firstOfCloned = clonedList.firstElementChild;
+            clonedList.removeChild(firstOfCloned);
+            log(`removeChild: Removed "${firstOfCloned.textContent}" from the cloned list.`);
+
+            // element.remove() (modern and simpler)
+            setTimeout(() => {
+                if (document.getElementById('cloned-list')) {
+                    document.getElementById('cloned-list').remove();
+                    log("element.remove(): The cloned list has been removed.");
+                }
+            }, 2000);
+        }
+
+        function attributeMethods() {
+            printHeader("Attributes & Properties");
+            const box = document.getElementById('attribute-box');
+
+            // getAttribute & setAttribute
+            log(`box.getAttribute('data-id'): ${box.getAttribute('data-id')}`);
+            box.setAttribute('data-status', 'active');
+            log(`setAttribute('data-status', 'active')`);
+
+            // hasAttribute & removeAttribute
+            log(`box.hasAttribute('data-user-name'): ${box.hasAttribute('data-user-name')}`);
+            box.removeAttribute('data-user-name');
+            log(`removeAttribute('data-user-name')`);
+            log(`box.hasAttribute('data-user-name') after removal: ${box.hasAttribute('data-user-name')}`);
+
+            // dataset property for data-* attributes
+            log(`box.dataset.id: ${box.dataset.id}`);
+            box.dataset.component = "info-box";
+            log(`Set box.dataset.component = "info-box"`);
+
+            // Common properties vs attributes
+            const p1 = document.getElementById('p1');
+            log(`p1.id (property): ${p1.id}`);
+            log(`p1.className (property): ${p1.className}`);
+
+            // innerHTML vs textContent
+            const parentDiv = document.getElementById('parent-div');
+            log(`parentDiv.innerHTML: ${parentDiv.innerHTML.trim()}`);
+            log(`parentDiv.textContent: ${parentDiv.textContent.trim()}`);
+            
+            // Changing content
+            const originalHTML = parentDiv.innerHTML;
+            parentDiv.textContent = "Text content was completely changed.";
+            log(`parentDiv.textContent changed.`);
+            setTimeout(() => {
+                parentDiv.innerHTML = originalHTML;
+                log(`parentDiv.innerHTML restored.`);
+            }, 1500);
+        }
+
+        function styleAndClassMethods() {
+            printHeader("Styles & Classes");
+            const p1 = document.getElementById('p1');
+            
+            // classList
+            log(`p1.classList.contains('item'): ${p1.classList.contains('item')}`);
+            p1.classList.add('highlight');
+            log(`p1.classList.add('highlight'): Added highlight class.`);
+            p1.style.cssText = "background-color: yellow; border: 1px solid red; border-radius: 5px; padding: 4px;";
+            
+            p1.classList.toggle('another-class');
+            log(`p1.classList.toggle('another-class'): Toggled class on.`);
+            
+            setTimeout(() => {
+                p1.classList.remove('highlight');
+                p1.style.cssText = ""; // Reset inline styles
+                log(`p1.classList.remove('highlight'): Removed highlight class.`);
+            }, 2000);
+
+            // Style property
+            const p2 = document.querySelector('.text-green-700');
+            p2.style.fontWeight = 'bold';
+            p2.style.setProperty('text-decoration', 'underline');
+            log("Set p2 style: fontWeight and text-decoration.");
+
+            // getComputedStyle
+            const p2Styles = window.getComputedStyle(p2);
+            log(`p2 computed color (from class): ${p2Styles.getPropertyValue('color')}`);
+            log(`p2 computed font-weight (from inline): ${p2Styles.fontWeight}`);
+        }
+
+        function eventMethods() {
+            printHeader("Event Handling");
+            const box = document.getElementById('attribute-box');
+            
+            const handleClick = (event) => {
+                log(`addEventListener: Box clicked! Event type: ${event.type}`);
+                log(`Target ID: ${event.target.id}, CurrentTarget ID: ${event.currentTarget.id}`);
+                
+                // removeEventListener
+                box.removeEventListener('click', handleClick);
+                log("removeEventListener: Click listener removed. The box won't log clicks anymore.");
+            };
+            
+            box.addEventListener('click', handleClick);
+            log("addEventListener: A 'click' listener was added to the attribute box. Click it.");
+
+            // dispatchEvent
+            setTimeout(() => {
+                log("dispatchEvent: Creating and dispatching a custom event.");
+                const customEv = new CustomEvent('myCustomEvent', {
+                    detail: { message: 'Hello from a custom event!' }
+                });
+
+                box.addEventListener('myCustomEvent', e => log(`Custom event listener caught: ${e.detail.message}`));
+                box.dispatchEvent(customEv);
+            }, 1000);
+        }
+
+        function formMethods() {
+            printHeader("Form Element Methods");
+            const form = document.getElementById('main-form');
+            const input = document.getElementById('text-input');
+            const submitBtn = document.getElementById('submit-btn');
+
+            // focus & blur
+            log("input.focus(): Focusing the text input.");
+            input.focus();
+            setTimeout(() => {
+                log("input.blur(): Removing focus from the input.");
+                input.blur();
+            }, 1500);
+
+            // select
+            setTimeout(() => {
+                log("input.select(): Highlighting the text inside the input.");
+                input.focus();
+                input.select();
+            }, 2000);
+            
+            // form.reset
+            setTimeout(() => {
+                input.value = "Something new";
+                log("Changed input value. Will call form.reset() in 1.5s.");
+                setTimeout(() => {
+                    form.reset();
+                    log("form.reset(): Form has been reset to initial values.");
+                }, 1500);
+            }, 3000);
+
+            // form.submit
+            log("Will call form.submit() via button click in 6s. Submission is prevented by another listener.");
+            setTimeout(() => submitBtn.click(), 6000);
+        }
+
+        function advancedMethods() {
+            printHeader("Advanced DOM APIs");
+            
+            // 1. Shadow DOM
+            log("Shadow DOM: Attaching a shadow root.");
+            const shadowHost = document.getElementById('shadow-host');
+            const shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+            const shadowP = document.createElement('p');
+            shadowP.textContent = "I'm inside the Shadow DOM!";
+            const shadowStyle = document.createElement('style');
+            shadowStyle.textContent = 'p { color: white; background-color: #333; padding: 10px; border-radius: 5px; }';
+            shadowRoot.appendChild(shadowStyle);
+            shadowRoot.appendChild(shadowP);
+            log(`shadowHost.shadowRoot: ${shadowHost.shadowRoot ? 'Exists' : 'null'}`);
+
+            // 2. Template content
+            log("Template: Cloning content from a <template> tag.");
+            const template = document.getElementById('my-template');
+            const templateContent = template.content.cloneNode(true);
+            document.getElementById('main-container').appendChild(templateContent);
+            
+            // 3. Intersection Observer
+            const observerTarget = document.getElementById('p1');
+            observerTarget.classList.add('p-4', 'bg-yellow-200');
+            log("IntersectionObserver: Observing paragraph 1. (It should be immediately visible).");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        log(`Observer: Element #${entry.target.id} is now visible!`);
+                    } else {
+                        log(`Observer: Element #${entry.target.id} is no longer visible.`);
+                    }
+                });
+            });
+            observer.observe(observerTarget);
+            log("Unobserving after 3 seconds.");
+            setTimeout(() => observer.unobserve(observerTarget), 3000);
+        }
+
+        function runAll() {
+            clearOutput();
+            log('Running all demonstrations...');
+            selectionMethods();
+            traversalMethods();
+            manipulationMethods();
+            attributeMethods();
+            styleAndClassMethods();
+            eventMethods();
+            formMethods();
+            advancedMethods();
+        }
+
+    </script>
+
+</body>
+</html>
+
