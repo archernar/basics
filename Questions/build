@@ -168,6 +168,7 @@ aws_copy_and_log() {
 }
 source ~/bash.library
 
+STATUS="NO"
 MARKDOWN="NO"
 UAT="NO"
 DEV="NO"
@@ -175,9 +176,11 @@ PROD="NO"
 ROOT="NO"
 JSCODE="NO"
 BUILDLABEL=""
-while getopts "mudpirj" arg
+while getopts "smudpirj" arg
 do
     case $arg in
+        s) STATUS="YES"
+           ;;
         m) MARKDOWN="YES"
            ;;
         u) UAT="YES"
@@ -290,7 +293,7 @@ fi
 #gawk '{printf "%s", $0}' questions.html > javaexercises.html
 #gawk '{printf "%s", $0}' questions.html > index.html
 #gawk '{printf "%s", $0}' questions.html > error.html
-FILES=("pages" "domathon.html" "ScannerClass.pdf" "icon.png" "index.html" "error.html" "questions.html" "javaexercises.html" "banner4.png" "countdown.js" "questions.js" "editor.js" "questions.css" "jspdf.plugin.autotable.min.js" "jspdf.umd.min.js" "MyClass.java" "Car.java" "University.java" "Book.java" "BankAccount.java" "CollegeStudent.java" "Template.java")
+FILES=("version.txt" "domathon.html" "ScannerClass.pdf" "icon.png" "index.html" "error.html" "questions.html" "javaexercises.html" "banner4.png" "countdown.js" "questions.js" "editor.js" "questions.css" "jspdf.plugin.autotable.min.js" "jspdf.umd.min.js" "MyClass.java" "Car.java" "University.java" "Book.java" "BankAccount.java" "CollegeStudent.java" "Template.java")
 XHTMLFILES=("ScannerClass.pdf" "index.html" "error.html" "questions.html" "javaexercises.html")
 HTMLFILES=("pages" "icon.png" "ScannerClass.pdf" "index.html" "questions.css")
 
@@ -347,16 +350,39 @@ then
     fi
     if [ "$PROD" == "YES" ]; then
         aws --profile default s3 rm --recursive         s3://$B/$PROD/
+        rm -f changes
         for file in "${FILES[@]}"; do
+            if [ -e "$file" ]; then
+                ./hashme status "$file" >>  changes
+            fi
+        done
+        CHANGES=(`cat changes`)
+        echo "$CHANGES"
+
+        for file in "${CHANGES[@]}"; do
+            echo "AWS COPY:  $file"
             if [ -e "$file" ]; then
                 aws_copy_and_log "$file"   "s3://$B/PROD/$file"
                 aws_copy_and_log "$file"   "s3://$B/$file"
+            else
+            echo "AWS COPY FILE NOT EXIST:  $file"
             fi
         done
-
         echo "    $EP/PROD/javaexercises.html"
         echo "    $EP/javaexercises.html"
     fi
+    if [ "$STATUS" == "YES" ]; then
+        rm -f changes
+        for file in "${FILES[@]}"; do
+            if [ -e "$file" ]; then
+                ./hashme status "$file" >>  changes
+                ./hashme status "$file" 
+            fi
+        done
+        echo "    $EP/PROD/javaexercises.html"
+        echo "    $EP/javaexercises.html"
+    fi
+
     if [ "$JSCODE" == "YES" ]; then
         aws --profile default s3 rm s3://$B/$PROD/questions.js
         aws --profile default s3 rm s3://$B/questions.js
