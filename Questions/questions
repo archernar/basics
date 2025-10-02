@@ -268,9 +268,37 @@ rx="Multiple"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
-rx="The"
+echo "<h2>Java Classes</h2>"
+rx="ArrayList Class"
 SZ=`cat $Tmp | grep "$rx" | wc -l`
-echo "<h2>Java Classes ($SZ)</h2>"
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+rx="HashMap Class"
+SZ=`cat $Tmp | grep "$rx" | wc -l`
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+rx="Math Class"
+SZ=`cat $Tmp | grep "$rx" | wc -l`
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+rx="Random Class"
+SZ=`cat $Tmp | grep "$rx" | wc -l`
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+rx="Scanner Class"
+SZ=`cat $Tmp | grep "$rx" | wc -l`
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+rx="String Class"
+SZ=`cat $Tmp | grep "$rx" | wc -l`
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+rx="System Class"
+SZ=`cat $Tmp | grep "$rx" | wc -l`
+cat $Tmp  | grep "$rx" 
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+rx="Wrapper Class"
+SZ=`cat $Tmp | grep "$rx" | wc -l`
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
