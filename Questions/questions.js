@@ -4,8 +4,58 @@ function dq(sz) {
 function sq(sz) {
     return "\'" + sz + "\'";
 }
+/**
+ * Selects and returns a random <tr> element from a given <table> element.
+ *
+ * @param {HTMLTableElement} tableElement The table element to select a row from.
+ * @returns {HTMLTableRowElement|null} A random table row element, or null if the table has no rows.
+ */
+function getRandomTableRow(tableElement) {
+  // 1. Get all the rows in the table.
+  // The .rows property returns a live HTMLCollection of all <tr> elements.
+  const rows = tableElement.rows;
+
+  // 2. Get the total number of rows.
+  const rowCount = rows.length;
+
+  // 3. Handle the edge case where the table is empty.
+  if (rowCount === 0) {
+    return null;
+  }
+
+  // 4. Generate a random index number.
+  // Math.random() returns a number between 0 (inclusive) and 1 (exclusive).
+  // Multiplying by rowCount gives a number from 0 to rowCount-1.
+  // Math.floor() rounds it down to the nearest whole number (our index).
+  const randomIndex = Math.floor(Math.random() * rowCount);
+
+  // 5. Return the row at the random index.
+  return rows[randomIndex];
+}
+
 function showRandomTopic() {
-    showPopup(selectRandomDiv('.topic-card'));
+//function getRandomTableRow(tableElement) {
+    var sz=""
+    sz = "<a onclick=" + dq("ettp('#randomtopictable')") + ">TO PDF</a><br><br>"
+    sz = sz + "<table id='randomtopictable'><tr><td><div class='content-grid'>"
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    sz = sz + "</td></tr></table></div>" 
+    // showPopup(selectRandomDiv('.topic-card'));
+    showPopupInnerHTML(sz);
 }
 function hidePopup() {
             document.getElementById('popupOverlay').classList.remove('popupVisible');
@@ -13,6 +63,16 @@ function hidePopup() {
             document.getElementById('main-content').classList.remove('blurry');
             document.getElementById('main-content').classList.add('notblurry');
 }
+function showPopupInnerHTML(innerhtml) {
+            // Copy the content from the source div to the popup body
+            document.getElementById('popupOverlay').innerHTML = innerhtml + "<br><button onclick='hidePopup();'>Close</button>"
+
+            // Make the overlay visible
+            document.getElementById('popupOverlay').classList.remove('popupHidden');
+            document.getElementById('popupOverlay').classList.add('popupVisible');
+            document.getElementById('main-content').classList.remove('notblurry');
+            document.getElementById('main-content').classList.add('blurry');
+        }
 function showPopup(sourceDiv) {
             // Ensure the source div exists and has the 'momo' class
             if (!sourceDiv) {
@@ -29,7 +89,7 @@ function showPopup(sourceDiv) {
             document.getElementById('main-content').classList.remove('notblurry');
             document.getElementById('main-content').classList.add('blurry');
         }
-function selectRandomDiv(sel) {
+function selectRandomDiv(sel,oldclass,newclass) {
             const divs = document.querySelectorAll(sel);
             if (divs.length === 0) {
                 console.warn("No elements with the class 'selectable' were found.");
@@ -37,7 +97,10 @@ function selectRandomDiv(sel) {
             }
             const randomIndex = Math.floor(Math.random() * divs.length);
             const randomDiv = divs[randomIndex];
-            return randomDiv
+            randomDiv.classList.remove(oldclass);
+            randomDiv.classList.add(newclass);
+            return randomDiv.cloneNode(true);
+            // return randomDiv
 
             //divs.forEach(div => {
             //    div.classList.remove('highlight');

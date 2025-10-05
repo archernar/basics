@@ -38,6 +38,6 @@ END {
     B="&nbsp;B.&nbsp;" $3 "AREALBR"
     C="&nbsp;C.&nbsp;" $4 "AREALBR"
     D="&nbsp;D.&nbsp;" $5 "AREALBR"
-    ALL="Multiple Choice" "," dq("--") "," dq(Q A B C D)
+    ALL="Multiple Choice" "," dq("Multiple Choice") "," dq(Q A B C D)
     print ALL
 }

@@ -126,8 +126,13 @@ END {
     print "<td align=right><b>" cb "</b></td>"                                >> "questions.lst"
     print "</tr></table>"                                                     >> "questions.lst"
 
+    print "<div class='topic-card-detail'>"                                   >> "questions.lst"
     print "<br><b>" $2 "</b><br>"                                             >> "questions.lst"
-    print "<h3>" lno ""  "</h3>" "" $3 "<br><div align=right>" buta "</div></div>" >> "questions.lst"
+    print "<h3>" lno ""  "</h3>" "" $3 "<br>"                                 >> "questions.lst"
+    print "</div>" >> "questions.lst"
+    print "<div align=right>" buta "</div>" >> "questions.lst"
+
+    print "</div>" >> "questions.lst"
 
     # OLD print " <p>" $1 " - " $2 "</p>" "<p>" $3 "</p>" "<hr>" >> "report.html"
 

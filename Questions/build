@@ -156,6 +156,36 @@ aws_reverse_copy_and_log() {
     padded_string2=$(pad24 "'$dest_dir'")
     echo "[$timestamp] AWSCPY: $padded_string1 $padded_string2 $bytes_copied"
 }
+aws_sync_and_log() {
+    # --- 1. Argument Validation ---
+    # Check if exactly two arguments are provided.
+    if [ "$#" -ne 2 ]; then
+        echo "Error: Invalid number of arguments." >&2
+        echo "Usage: aws_sync_and_log <source_file> <destination_directory>" >&2
+        return 1
+    fi
+
+    local source_file="$1"
+    local dest_dir="$2"
+
+        copy_output=$(aws --profile default s3 sync "$source_file" "$dest_dir" >/dev/null 2>&1)
+        if [ $? -ne 0 ]; then
+            echo "Error during copy: $copy_output" >&2
+            return 1
+        fi
+
+    # Get the current date and time in a standard format.
+    local timestamp
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+    timestamp=$(date +"%H:%M:%S")
+
+    # --- 5. Write Log Message ---
+    # Construct and print the log message to standard output.
+    # This could easily be redirected to a log file, e.g., >> /var/log/copy.log
+    padded_string1=$(pad32 "'$source_file'")
+    padded_string2=$(pad24 "'$dest_dir'")
+    echo "[$timestamp] AWSSYC: $padded_string1 $padded_string2"
+}
 aws_copy_and_log() {
     # --- 1. Argument Validation ---
     # Check if exactly two arguments are provided.
@@ -474,7 +504,8 @@ then
         for file in "${FILES[@]}"; do
             if [ -e "$file" ]; then
                 aws_copy_and_log "$file"   "s3://$B/PROD/$file"
-                aws_copy_and_log "$file"   "s3://$B/$file"
+                #aws_copy_and_log "$file"   "s3://$B/$file"
+                aws_sync_and_log "s3://$B/PROD/$file"  "s3://$B/$file"
             fi
         done
         echo "    $EP/PROD/javaexercises.html"

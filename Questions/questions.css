@@ -559,9 +559,9 @@ td.tdright {
 .popupVisible {
             position: fixed;
             padding: 30px;
-            top:  25%;
-            left: 25%;
-            width: 25%;
+            top:  12%;
+            left: 12%;
+            width: 81%;
             xheight: 50%;
             background-color: Black;
             display: visible;
