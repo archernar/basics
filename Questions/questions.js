@@ -67,14 +67,17 @@ function renderTable(arr) {
 
               td=tr.appendChild( document.createElement('td'));
               td.classList.add('plaintd');
-
-              tx=td.appendChild( document.createElement('a'));
-              tx.classList.add('np');
-              tx.appendChild( document.createTextNode(szCode));
-              tx.addEventListener('click', function(event) {
-                  fastEdit( szCode );
-                  event.preventDefault();
-              });
+              if (szCode=="skip") {
+                  td.appendChild( document.createTextNode('\u00A0')); // Unicode for non-breaking space
+              } else {
+                  tx=td.appendChild( document.createElement('a'));
+                  tx.classList.add('np');
+                  tx.appendChild( document.createTextNode(szCode));
+                  tx.addEventListener('click', function(event) {
+                      fastEdit( szCode );
+                      event.preventDefault();
+                  });
+              }
               element.remove();
         });
 }

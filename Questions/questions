@@ -235,8 +235,10 @@ cat << "HEREND1"
 <!-- nav id="nav-menu" -->
 <h2>Reference & Examples</h2>
 <div>
+<a class='momo' code=JavaFundamentals.java></a>
 <a class='momo' code=JavaReference.html></a>
-<a class='momo' code=Java.html></a>
+<a class='momo' code=skip></a>
+<a class='momo' code=skip></a>
 <a class='momo' code=Template.java></a>
 <a class='momo' code=Car.java></a>
 <a class='momo' code=Book.java></a>
