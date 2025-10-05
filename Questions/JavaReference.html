@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Java Cheat Sheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Calm Neutrals -->
+    <!-- Application Structure Plan: The application is designed as a single-page app with a fixed sidebar for navigation and a main, scrollable content area. This structure was chosen because a cheat sheet's primary purpose is quick reference. The persistent sidebar acts as a clickable table of contents, allowing users to instantly jump to any topic without losing context or needing to scroll extensively. Inside the main content, related concepts are grouped into interactive tabs or cards to break down information into digestible chunks, making it more user-friendly than long, static tables. The user flow is simple: click a topic in the sidebar, and the main view scrolls to that content, which may contain further interactive elements. -->
+    <!-- Visualization & Content Choices: The source material is text- and code-based, so traditional data charts are not needed. Instead, information is "visualized" through interactive UI components built with HTML and Tailwind CSS. For example, OOP principles are presented as clickable cards that reveal details, and the Collections Framework uses a tabbed interface to compare different data structures. Goal: Organize/Compare -> Method: Interactive Tabs/Cards -> Interaction: Click to show/hide content -> Justification: This approach encourages exploration and prevents cognitive overload by presenting complex information in a structured, user-controlled manner. All code snippets have a "copy" button for practical utility. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        .code-block {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            position: relative;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.875rem;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: #4a5568;
+            color: #e2e8f0;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .copy-btn:hover {
+            background-color: #718096;
+        }
+        .active-nav {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .tab-btn.active {
+            border-bottom: 2px solid #3b82f6;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .concept-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            transition: box-shadow 0.3s, border-color 0.3s;
+            cursor: pointer;
+        }
+        .concept-card:hover {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border-color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-full md:w-64 bg-white shadow-md md:fixed md:h-full top-0 left-0 p-4 border-r border-gray-200">
+            <h1 class="text-xl font-bold text-blue-600 mb-6">Java Cheat Sheet</h1>
+            <nav id="nav-menu" class="space-y-2">
+                <a href="#basics" class="block py-2 px-3 rounded-md hover:bg-blue-500 hover:text-white transition-colors duration-200">Basics</a>
+                <a href="#datatypes" class="block py-2 px-3 rounded-md hover:bg-blue-500 hover:text-white transition-colors duration-200">Data Types</a>
+                <a href="#operators" class="block py-2 px-3 rounded-md hover:bg-blue-500 hover:text-white transition-colors duration-200">Operators</a>
+                <a href="#controlflow" class="block py-2 px-3 rounded-md hover:bg-blue-500 hover:text-white transition-colors duration-200">Control Flow</a>
+                <a href="#oop" class="block py-2 px-3 rounded-md hover:bg-blue-500 hover:text-white transition-colors duration-200">OOP</a>
+                <a href="#strings-arrays" class="block py-2 px-3 rounded-md hover:bg-blue-500 hover:text-white transition-colors duration-200">Strings & Arrays</a>
+                <a href="#collections" class="block py-2 px-3 rounded-md hover:bg-blue-500 hover:text-white transition-colors duration-200">Collections</a>
+                <a href="#exceptions" class="block py-2 px-3 rounded-md hover:bg-blue-500 hover:text-white transition-colors duration-200">Exceptions</a>
+                <a href="#io" class="block py-2 px-3 rounded-md hover:bg-blue-500 hover:text-white transition-colors duration-200">I/O</a>
+                <a href="#modern" class="block py-2 px-3 rounded-md hover:bg-blue-500 hover:text-white transition-colors duration-200">Modern Java</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 md:ml-64 p-6 md:p-10">
+
+            <section id="basics" class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 border-b pb-2">Basic Structure & Syntax</h2>
+                <p class="mb-6 text-gray-600">This section covers the fundamental syntax and structure of a Java program. Every Java application has an entry point in the `main` method, and all code is organized within classes.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold mb-2">Main Method & Class</h3>
+                        <pre class="code-block"><code>public class MyClass {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code><button class="copy-btn">Copy</button></pre>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Variables & Constants</h3>
+                        <pre class="code-block"><code>// A variable whose value can change
+int userAge = 25;
+
+// A constant whose value cannot change
+final double PI = 3.14159;</code><button class="copy-btn">Copy</button></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="datatypes" class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 border-b pb-2">Primitive Data Types</h2>
+                <p class="mb-6 text-gray-600">Java has eight primitive data types which are the most basic kinds of values. Click on a card to see its details, such as size and default value. These are building blocks for all other data structures.</p>
+                <div id="data-types-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Data types will be injected here by JS -->
+                </div>
+            </section>
+            
+            <section id="operators" class="mb-12">
+                 <h2 class="text-3xl font-bold mb-4 border-b pb-2">Operators</h2>
+                 <p class="mb-6 text-gray-600">Operators perform operations on variables and values. This section covers the most common categories, from arithmetic to logical operators.</p>
+                 <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <h3 class="font-bold text-lg">Arithmetic: `+ - * / %`</h3>
+                        <p class="text-sm text-gray-600">Perform basic mathematical calculations.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <h3 class="font-bold text-lg">Relational: `== != > < >= <=`</h3>
+                        <p class="text-sm text-gray-600">Compare two values, resulting in a boolean.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <h3 class="font-bold text-lg">Logical: `&& || !`</h3>
+                        <p class="text-sm text-gray-600">Combine boolean expressions.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <h3 class="font-bold text-lg">Assignment: `= += -= *= /=`</h3>
+                        <p class="text-sm text-gray-600">Assign values to variables.</p>
+                    </div>
+                 </div>
+            </section>
+
+            <section id="controlflow" class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 border-b pb-2">Control Flow</h2>
+                <p class="mb-6 text-gray-600">Control flow statements direct the order in which code is executed. Use conditionals to make decisions and loops to repeat actions.</p>
+                <div class="flex border-b mb-4">
+                    <button class="tab-btn p-4 active" data-tab="conditionals">Conditionals</button>
+                    <button class="tab-btn p-4" data-tab="loops">Loops</button>
+                </div>
+                <div id="conditionals" class="tab-content active">
+                    <pre class="code-block"><code>// If-Else-If statement
+if (score >= 90) {
+    grade = 'A';
+} else if (score >= 80) {
+    grade = 'B';
+} else {
+    grade = 'C';
+}
+
+// Switch statement (Java 14+)
+String dayType = switch (dayOfWeek) {
+    case "Saturday", "Sunday" -> "Weekend";
+    case "Monday" -> "Start of week";
+    default -> "Midweek";
+};</code><button class="copy-btn">Copy</button></pre>
+                </div>
+                <div id="loops" class="tab-content">
+                    <pre class="code-block"><code>// For loop
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+// Enhanced for-each loop
+int[] numbers = {1, 2, 3};
+for (int num : numbers) {
+    System.out.println(num);
+}
+
+// While loop
+int count = 0;
+while (count < 3) {
+    System.out.println("Looping...");
+    count++;
+}</code><button class="copy-btn">Copy</button></pre>
+                </div>
+            </section>
+
+            <section id="oop" class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 border-b pb-2">Object-Oriented Programming (OOP)</h2>
+                <p class="mb-6 text-gray-600">OOP is a paradigm based on the concept of "objects". These are the four core principles of OOP in Java. Click on each card to learn more about the concept.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="concept-card bg-white">
+                        <h3 class="font-bold text-lg mb-2">Encapsulation</h3>
+                        <p class="text-gray-600">Bundling data (fields) and methods that operate on the data into a single unit, a class. Access to the data is restricted via `private` fields and controlled through `public` getters and setters.</p>
+                    </div>
+                     <div class="concept-card bg-white">
+                        <h3 class="font-bold text-lg mb-2">Inheritance</h3>
+                        <p class="text-gray-600">A mechanism where a new class (subclass) acquires the properties and behaviors of an existing class (superclass) using the `extends` keyword, promoting code reuse.</p>
+                    </div>
+                     <div class="concept-card bg-white">
+                        <h3 class="font-bold text-lg mb-2">Polymorphism</h3>
+                        <p class="text-gray-600">The ability of an object to take on many forms. A reference variable of a superclass type can point to an object of any of its subclasses, allowing methods to be used flexibly.</p>
+                    </div>
+                     <div class="concept-card bg-white">
+                        <h3 class="font-bold text-lg mb-2">Abstraction</h3>
+                        <p class="text-gray-600">Hiding complex implementation details and showing only the essential features of the object. Achieved using `abstract` classes and `interfaces`.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="strings-arrays" class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 border-b pb-2">Strings & Arrays</h2>
+                <p class="mb-6 text-gray-600">These are two of the most fundamental data structures for storing collections of data. Strings are immutable sequences of characters, while arrays are fixed-size containers for elements of the same type.</p>
+                 <div class="flex border-b mb-4">
+                    <button class="tab-btn p-4 active" data-tab="strings">Strings</button>
+                    <button class="tab-btn p-4" data-tab="arrays">Arrays</button>
+                </div>
+                <div id="strings" class="tab-content active">
+                     <pre class="code-block"><code>String greeting = "Hello World";
+int len = greeting.length(); // 11
+char firstChar = greeting.charAt(0); // 'H'
+String sub = greeting.substring(6); // "World"
+boolean hasHello = greeting.contains("Hello"); // true
+
+// Use StringBuilder for mutable strings
+StringBuilder sb = new StringBuilder("Java");
+sb.append(" is cool"); // "Java is cool"</code><button class="copy-btn">Copy</button></pre>
+                </div>
+                <div id="arrays" class="tab-content">
+                    <pre class="code-block"><code>// Declare and initialize an array
+int[] numbers = new int[5]; // size 5, default values 0
+String[] fruits = {"Apple", "Banana", "Cherry"};
+
+// Access an element
+String firstFruit = fruits[0]; // "Apple"
+numbers[0] = 100;
+
+// Get the length
+int size = fruits.length; // 3</code><button class="copy-btn">Copy</button></pre>
+                </div>
+            </section>
+
+            <section id="collections" class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 border-b pb-2">Collections Framework</h2>
+                <p class="mb-6 text-gray-600">A powerful framework for storing and manipulating groups of objects. These dynamic data structures offer more flexibility than arrays. Explore the primary interfaces below.</p>
+                 <div class="flex border-b mb-4">
+                    <button class="tab-btn p-4 active" data-tab="list">List</button>
+                    <button class="tab-btn p-4" data-tab="set">Set</button>
+                    <button class="tab-btn p-4" data-tab="map">Map</button>
+                </div>
+                <div id="list" class="tab-content active">
+                    <p class="mb-4">An ordered collection that allows duplicate elements. `ArrayList` is the most common implementation.</p>
+                    <pre class="code-block"><code>import java.util.ArrayList;
+import java.util.List;
+
+List&lt;String&gt; names = new ArrayList&lt;&gt;();
+names.add("Alice");
+names.add("Bob");
+names.add(0, "Zack"); // ["Zack", "Alice", "Bob"]
+String secondName = names.get(1); // "Alice"</code><button class="copy-btn">Copy</button></pre>
+                </div>
+                <div id="set" class="tab-content">
+                    <p class="mb-4">An unordered collection that does not allow duplicate elements. `HashSet` is fast and commonly used.</p>
+                    <pre class="code-block"><code>import java.util.HashSet;
+import java.util.Set;
+
+Set&lt;Integer&gt; uniqueNumbers = new HashSet&lt;&gt;();
+uniqueNumbers.add(5);
+uniqueNumbers.add(10);
+uniqueNumbers.add(5); // This is ignored
+boolean hasTen = uniqueNumbers.contains(10); // true</code><button class="copy-btn">Copy</button></pre>
+                </div>
+                <div id="map" class="tab-content">
+                     <p class="mb-4">An object that maps keys to values. Keys must be unique. `HashMap` is the standard implementation.</p>
+                     <pre class="code-block"><code>import java.util.HashMap;
+import java.util.Map;
+
+Map&lt;String, Integer&gt; studentScores = new HashMap&lt;&gt;();
+studentScores.put("David", 95);
+studentScores.put("Eve", 89);
+int davidsScore = studentScores.get("David"); // 95
+studentScores.remove("Eve");</code><button class="copy-btn">Copy</button></pre>
+                </div>
+            </section>
+
+            <section id="exceptions" class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 border-b pb-2">Exception Handling</h2>
+                <p class="mb-6 text-gray-600">Java's mechanism to handle runtime errors gracefully. The `try-catch-finally` block is used to manage exceptions and prevent program crashes.</p>
+                <pre class="code-block"><code>try {
+    // Code that might throw an exception
+    int[] myNumbers = {1, 2, 3};
+    System.out.println(myNumbers[10]); // This will fail
+} catch (ArrayIndexOutOfBoundsException e) {
+    // Handle the specific error
+    System.err.println("Error: Index is out of bounds.");
+} finally {
+    // This code always executes, for cleanup
+    System.out.println("The 'try catch' is finished.");
+}</code><button class="copy-btn">Copy</button></pre>
+            </section>
+
+             <section id="io" class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 border-b pb-2">Input/Output (I/O)</h2>
+                <p class="mb-6 text-gray-600">Mechanisms for reading from and writing to data sources like the console or files.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                         <h3 class="font-semibold mb-2">Reading Console Input</h3>
+                         <pre class="code-block"><code>import java.util.Scanner;
+Scanner scanner = new Scanner(System.in);
+System.out.print("Enter your name: ");
+String name = scanner.nextLine();
+scanner.close();</code><button class="copy-btn">Copy</button></pre>
+                    </div>
+                    <div>
+                         <h3 class="font-semibold mb-2">Writing to a File</h3>
+                        <pre class="code-block"><code>import java.io.FileWriter;
+import java.io.IOException;
+
+try (FileWriter writer = new FileWriter("output.txt")) {
+    writer.write("Hello from Java!");
+} catch (IOException e) {
+    e.printStackTrace();
+}</code><button class="copy-btn">Copy</button></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="modern" class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 border-b pb-2">Modern Java Features (Java 8+)</h2>
+                 <p class="mb-6 text-gray-600">Java has evolved significantly. These features, introduced from version 8 onwards, enable more concise, functional, and expressive code.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <h3 class="font-bold text-lg">Lambda Expressions</h3>
+                        <p class="text-sm text-gray-600 mb-2">Anonymous functions that implement a functional interface. `(params) -> expression`</p>
+                        <pre class="code-block"><code>list.forEach(item -> System.out.println(item));</code><button class="copy-btn">Copy</button></pre>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <h3 class="font-bold text-lg">Stream API</h3>
+                        <p class="text-sm text-gray-600 mb-2">A declarative API for processing collections in a functional style (filter, map, reduce).</p>
+                        <pre class="code-block"><code>long count = list.stream().filter(s -> s.startsWith("A")).count();</code><button class="copy-btn">Copy</button></pre>
+                    </div>
+                     <div class="bg-white p-4 rounded-lg shadow">
+                        <h3 class="font-bold text-lg">Optional</h3>
+                        <p class="text-sm text-gray-600 mb-2">A container object to represent a value that may be absent, helping to avoid `NullPointerException`.</p>
+                        <pre class="code-block"><code>Optional&lt;String&gt; name = Optional.ofNullable(null);
+name.ifPresent(System.out::println);</code><button class="copy-btn">Copy</button></pre>
+                    </div>
+                     <div class="bg-white p-4 rounded-lg shadow">
+                        <h3 class="font-bold text-lg">Records (Java 16+)</h3>
+                        <p class="text-sm text-gray-600 mb-2">A concise syntax for creating immutable data carrier classes.</p>
+                        <pre class="code-block"><code>public record User(String username, String role) {}</code><button class="copy-btn">Copy</button></pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Data for Data Types Grid ---
+            const dataTypes = [
+                { name: 'byte', size: '1 byte', range: '-128 to 127', def: '0' },
+                { name: 'short', size: '2 bytes', range: '-32,768 to 32,767', def: '0' },
+                { name: 'int', size: '4 bytes', range: '±2 billion', def: '0' },
+                { name: 'long', size: '8 bytes', range: 'Very large', def: '0L' },
+                { name: 'float', size: '4 bytes', range: '6-7 decimals', def: '0.0f' },
+                { name: 'double', size: '8 bytes', range: '15 decimals', def: '0.0d' },
+                { name: 'boolean', size: 'N/A', range: 'true / false', def: 'false' },
+                { name: 'char', size: '2 bytes', range: 'Unicode character', def: '\\u0000' }
+            ];
+
+            const grid = document.getElementById('data-types-grid');
+            dataTypes.forEach(dt => {
+                const card = document.createElement('div');
+                card.className = 'concept-card bg-white text-center p-4';
+                card.innerHTML = `
+                    <h3 class="font-bold text-lg">${dt.name}</h3>
+                    <p class="text-sm text-gray-500">${dt.size}</p>
+                    <p class="text-xs text-gray-500 mt-1">Default: ${dt.def}</p>
+                `;
+                card.setAttribute('title', `Range: ${dt.range}`);
+                grid.appendChild(card);
+            });
+            
+            // --- Copy Button Functionality ---
+            document.querySelectorAll('.copy-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const code = button.previousElementSibling.textContent;
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.textContent = 'Copied!';
+                        setTimeout(() => {
+                            button.textContent = 'Copy';
+                        }, 2000);
+                    });
+                });
+            });
+
+            // --- Tab Functionality ---
+            document.querySelectorAll('.tab-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabContainer = button.parentElement;
+                    const contentContainer = tabContainer.nextElementSibling.parentElement;
+                    
+                    tabContainer.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    contentContainer.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // --- Active Nav Link on Scroll ---
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('#nav-menu a');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-nav');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active-nav');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-30% 0px -70% 0px' });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // --- Initial Active Link ---
+            if (navLinks.length > 0) {
+                 navLinks[0].classList.add('active-nav');
+            }
+        });
+    </script>
+</body>
+</html>
+

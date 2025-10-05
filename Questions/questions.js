@@ -4,6 +4,46 @@ function dq(sz) {
 function sq(sz) {
     return "\'" + sz + "\'";
 }
+function showRandomTopic() {
+    showPopup(selectRandomDiv('.topic-card'));
+}
+function hidePopup() {
+            document.getElementById('popupOverlay').classList.remove('popupVisible');
+            document.getElementById('popupOverlay').classList.add('popupHidden');
+            document.getElementById('main-content').classList.remove('blurry');
+            document.getElementById('main-content').classList.add('notblurry');
+}
+function showPopup(sourceDiv) {
+            // Ensure the source div exists and has the 'momo' class
+            if (!sourceDiv) {
+                console.error("Invalid Source DIV");
+                return;
+            }
+
+            // Copy the content from the source div to the popup body
+            document.getElementById('popupOverlay').innerHTML = sourceDiv.innerHTML + "<br><button onclick='hidePopup();'>Close</button>"
+
+            // Make the overlay visible
+            document.getElementById('popupOverlay').classList.remove('popupHidden');
+            document.getElementById('popupOverlay').classList.add('popupVisible');
+            document.getElementById('main-content').classList.remove('notblurry');
+            document.getElementById('main-content').classList.add('blurry');
+        }
+function selectRandomDiv(sel) {
+            const divs = document.querySelectorAll(sel);
+            if (divs.length === 0) {
+                console.warn("No elements with the class 'selectable' were found.");
+                return;
+            }
+            const randomIndex = Math.floor(Math.random() * divs.length);
+            const randomDiv = divs[randomIndex];
+            return randomDiv
+
+            //divs.forEach(div => {
+            //    div.classList.remove('highlight');
+            //});
+}
+
 function renderTable(arr) {
         var tab,tr,td,tx;
         arr.forEach(
@@ -20,6 +60,8 @@ function renderTable(arr) {
               tab.setAttribute('align','left');
               tab.setAttribute('width','100%');
               var szCode = element.getAttribute('code');
+              console.log(szCode);
+
               if ((index % 2) == 0)
                   tr=tab.appendChild( document.createElement('tr'));
 
@@ -179,6 +221,8 @@ function fastEdit(url) {
 document.addEventListener('DOMContentLoaded', function() {
         // Your code here will run after the DOM is ready.
         console.log('DOM fully loaded and parsed');
+        hidePopup();
+
         // The entire content of the Java code editor page is stored in this template literal.
         // now in editor.js
  

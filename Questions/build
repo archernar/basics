@@ -104,6 +104,58 @@ copy_and_log() {
     echo "[$timestamp] LNXCPY: $padded_string1 $padded_string2 $bytes_copied"
 }
 
+aws_reverse_copy_and_log() {
+    # --- 1. Argument Validation ---
+    # Check if exactly two arguments are provided.
+    if [ "$#" -ne 2 ]; then
+        echo "Error: Invalid number of arguments." >&2
+        echo "Usage: aws_copy_and_log <source_file> <destination_directory>" >&2
+        return 1
+    fi
+
+    local source_file="$1"
+    local dest_dir="$2"
+
+    # --- 2. Source and Destination Validation ---
+    # Check if the source file exists.
+    # if [ ! -e "$source_file" ]; then
+    #    echo "Error: Source file '$source_file' not found." >&2
+    #    return 1
+    # fi
+
+    # Check if the destination directory exists.
+    # if [ ! -d "$dest_dir" ]; then
+    #     echo "Error: Destination directory '$dest_dir' not found." >&2
+    #     return 1
+    # fi
+
+    # --- 3. Copy Operation ---
+    # Use the 's3 cp' command to copy the file.
+    # We redirect stderr to stdout to catch potential copy errors.
+    # copy_output=$(echo "aws --profile default s3 cp $source_file $dest_dir --acl public-read" 2>&1)
+    if [ -f "$source_file" ]; then
+        copy_output=$(aws --profile default s3 cp "$source_file" "$dest_dir" >/dev/null 2>&1)
+        if [ $? -ne 0 ]; then
+            echo "Error during copy: $copy_output" >&2
+            return 1
+        fi
+        # --- 4. Gather Log Information ---
+        local bytes_copied
+        bytes_copied=$(stat -c %s "$dest_file")
+    fi
+
+    # Get the current date and time in a standard format.
+    local timestamp
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+    timestamp=$(date +"%H:%M:%S")
+
+    # --- 5. Write Log Message ---
+    # Construct and print the log message to standard output.
+    # This could easily be redirected to a log file, e.g., >> /var/log/copy.log
+    padded_string1=$(pad32 "'$source_file'")
+    padded_string2=$(pad24 "'$dest_dir'")
+    echo "[$timestamp] AWSCPY: $padded_string1 $padded_string2 $bytes_copied"
+}
 aws_copy_and_log() {
     # --- 1. Argument Validation ---
     # Check if exactly two arguments are provided.
@@ -170,15 +222,21 @@ source ~/bash.library
 
 STATUS="NO"
 MARKDOWN="NO"
+FULL="NO"
 UAT="NO"
 DEV="NO"
 PROD="NO"
+REVERSE="NO"
 ROOT="NO"
 JSCODE="NO"
 BUILDLABEL=""
-while getopts "smudpirj" arg
+while getopts "bfsmudpirj" arg
 do
     case $arg in
+        b) REVERSE="YES"
+           ;;
+        f) FULL="YES"
+           ;;
         s) STATUS="YES"
            ;;
         m) MARKDOWN="YES"
@@ -241,6 +299,38 @@ mkdir -p ./tmp      >/dev/null 2>&1;
 rm ./tmp/*          >/dev/null 2>&1;
 rm -f ./text.txt
 
+if [ "NO" == "YES" ]; then
+EXCLUDE_FILES=("jspdf.plugin.autotable.min.js" "jspdf.umd.min.js")
+
+for JS in *.min.js; do
+    if [[ " ${EXCLUDE_FILES[@]} " =~ " ${JS} " ]]; then
+        echo "Skipping: $JS (Found in exclusion list)."
+        continue
+    fi
+    if [ -f "$JS" ]; then
+        NOTHING=0
+        # rm "$JS"
+    fi
+done
+
+for JS in *.js; do
+    # Check if the file actually exists (prevents running on literal "*.js" if no files are present)
+    if [[ " ${EXCLUDE_FILES[@]} " =~ " ${JS} " ]]; then
+        echo "Skipping: $JS (Found in exclusion list)."
+        continue
+    fi
+    if [ -f "$JS" ]; then
+        filename="${JS##*/}"
+        basename="${filename%.*}"
+        echo "$basename"
+        #terser $basename.js -o $basename.min.js -c -m --source-map "url=$basename.min.js.map"
+    fi
+done
+
+fi
+
+
+
 ./questions > questions.html
 
 cp questions.html  text.html
@@ -293,7 +383,7 @@ fi
 #gawk '{printf "%s", $0}' questions.html > javaexercises.html
 #gawk '{printf "%s", $0}' questions.html > index.html
 #gawk '{printf "%s", $0}' questions.html > error.html
-FILES=("version.txt" "domathon.html" "ScannerClass.pdf" "icon.png" "index.html" "error.html" "questions.html" "javaexercises.html" "banner4.png" "countdown.js" "questions.js" "editor.js" "questions.css" "jspdf.plugin.autotable.min.js" "jspdf.umd.min.js" "MyClass.java" "Car.java" "University.java" "Book.java" "BankAccount.java" "CollegeStudent.java" "Template.java")
+FILES=("Pizza.java" "Movie.java" "JavaReference.html" "Java.html" "version.txt" "domathon.html" "ScannerClass.pdf" "icon.png" "index.html" "error.html" "questions.html" "javaexercises.html" "banner4.png" "countdown.js" "questions.js" "editor.js" "questions.css" "jspdf.plugin.autotable.min.js" "jspdf.umd.min.js" "MyClass.java" "JavaClassroomDemo.java" "OOPDemo.java" "Car.java" "University.java" "Book.java" "BankAccount.java" "CollegeStudent.java" "Template.java")
 XHTMLFILES=("ScannerClass.pdf" "index.html" "error.html" "questions.html" "javaexercises.html")
 HTMLFILES=("pages" "icon.png" "ScannerClass.pdf" "index.html" "questions.css")
 
@@ -371,6 +461,26 @@ then
         echo "    $EP/PROD/javaexercises.html"
         echo "    $EP/javaexercises.html"
     fi
+
+    if [ "$REVERSE" == "YES" ]; then
+        for file in "${FILES[@]}"; do
+            echo "AWS REVERSE COPY:  s3://$B/PROD/$file"
+            aws_reverse_copy_and_log "s3://$B/PROD/$file" "$file"
+        done
+    fi
+
+    if [ "$FULL" == "YES" ]; then
+        aws --profile default s3 rm --recursive         s3://$B/$PROD/
+        for file in "${FILES[@]}"; do
+            if [ -e "$file" ]; then
+                aws_copy_and_log "$file"   "s3://$B/PROD/$file"
+                aws_copy_and_log "$file"   "s3://$B/$file"
+            fi
+        done
+        echo "    $EP/PROD/javaexercises.html"
+        echo "    $EP/javaexercises.html"
+        ./hashme init .
+    fi
     if [ "$STATUS" == "YES" ]; then
         rm -f changes
         for file in "${FILES[@]}"; do
@@ -407,6 +517,5 @@ rm -f questions.sorted
 rm -f fed zed fedd zedd qed qedd
 # ls -l /var/www/html
 
-./hashme init .
 
 info "Done..."

@@ -11,7 +11,7 @@
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             z-index: 9999;
-            opacity: 1;
+            opacity: 1.0;
             transition: opacity 1s ease-out;
             color: #fff;
         }
@@ -23,7 +23,7 @@
             display: flex;
         }
         .sidebar {
-            width: 400px;
+            width: 440px;
             xbackground-color: Black;
             border-right: 1px solid #e5e7eb;
             padding: 4px;
@@ -40,7 +40,7 @@
             color: #ffffff;
             font-size: 0.9rem;
             line-height: 1.5;
-            text-transform: capitalize;
+            xxxtext-transform: capitalize;
             text-decoration: none;
             letter-spacing: 0.05em;
             margin: 24px 0 8px 0;
@@ -93,9 +93,9 @@
             font-weight: 600;
         }
         .main-content {
-            margin-left: 400px;
+            margin-left: 440px;
             padding: 32px;
-            width: calc(99% - 400px);
+            width: calc(99% - 440px);
             box-sizing: border-box;
         }
         .content-section {
@@ -113,8 +113,8 @@
         .content-grid {
             margin-top: 2rem;
             display: grid;
-            nothingness:400px;
-            xxxgrid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            nothingness:440px;
+            xxxgrid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
             xgrid-template-columns: 1fr 1fr 1fr;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 1.5rem;
@@ -544,6 +544,7 @@ td.tdright {
   /* This is the equivalent of cellspacing="0" */
   border-collapse: collapse;
   padding: 0;
+  margin-bottom: 24px;
 }
 .plaintd {
   /* This is the equivalent of cellpadding="0" */
@@ -553,4 +554,37 @@ td.tdright {
 .plainth {
   /* This is the equivalent of cellpadding="0" */
   padding: 0;
+}
+
+.popupVisible {
+            position: fixed;
+            padding: 30px;
+            top:  25%;
+            left: 25%;
+            width: 25%;
+            xheight: 50%;
+            background-color: Black;
+            display: visible;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Ensures it's on top of other content */
+            opacity: 1.0;
+}
+.popupHidden {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: Black;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 0; /* Ensures it's on top of other content */
+            opacity: 0.0;
+}
+
+.blurry {
+            filter: blur(4px);
+}
+.notblurry {
+            filter: blur(0px);
 }

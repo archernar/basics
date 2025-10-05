@@ -189,25 +189,24 @@ cat << "HEREND1"
     -->
     <script src="jspdf.umd.min.js"></script>
     <script src="jspdf.plugin.autotable.min.js"></script>
-    <!-- link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" -->
     <link rel="stylesheet" href="questions.css">                                                         
     <link rel="icon" href="data:,">
 
 </head>
 <body>
 
-    <!-- The countdown banner that covers the screen -->
+    <!-- The countdown banner that covers the screen
     <div id="countdown-banner">
         <div class="countdown-container" style="text-align: center;">
-    <br>&nbsp;<br>
-    <br>&nbsp;<br>
+            <br>&nbsp;<br>
             <p>Site is loading...</p>
             <img height=40% src=./banner4.png>
-            <h1 id="countdown-timer">5</h1>
+            <h1 id="countdown-timer">&nbsp;</h1>
         </div>
     </div>
-
     <script type="text/javascript" src="countdown.js"></script>
+    -->
+
     <!-- Cookie Consent Banner HTML -->
     <!-- We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies. <a href="#">Read our policy</a>. -->
     <div id="cookie-consent-banner">
@@ -221,29 +220,36 @@ cat << "HEREND1"
     </div>
 
 
+    <!-- The Popup Overlay and Container -->
+    <div id="popupOverlay" class="popup-hidden"></div>
+
 <aside id=sidebar class="sidebar hidden">
 <table width=99%>
 <tr>
 <td align=left><a href='index.html'>Home</a></td>
-<td align=right><button onclick="exportTableToPDF2()">Export All to PDF</button></td>
+<td align=right><button onclick="exportTableToPDF2()">Export All to PDF</button>
+                <button onclick="showRandomTopic();">Random Pick</button></td>
 </tr>
 </table>
 
 <!-- nav id="nav-menu" -->
-<h2>Templates & Examples</h2>
+<h2>Reference & Examples</h2>
 <div>
+<a class='momo' code=JavaReference.html></a>
+<a class='momo' code=Java.html></a>
 <a class='momo' code=Template.java></a>
 <a class='momo' code=Car.java></a>
 <a class='momo' code=Book.java></a>
 <a class='momo' code=BankAccount.java></a>
 <a class='momo' code=CollegeStudent.java></a>
 <a class='momo' code=University.java></a>
+<a class='momo' code=Pizza.java></a>
+<a class='momo' code=Movie.java></a>
+<a class='momo' code=JavaClassroomDemo.java></a>
+<a class='momo' code=OOPDemo.java></a>
 </div>
 <br>
 <br>
-<br>
-
-<!-- a id="open-editor-btn" class='n'>Starter</a><br -->
 HEREND1
 cp questions.topics $Tmp
 echo "<h2>Begin Here</h2>"
@@ -252,7 +258,7 @@ rx="First Steps"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 echo "<h2>Practice Sets</h2>"
-rx="Basic Class Design"
+rx="Class Design"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 rx="Practice Programs"
@@ -268,7 +274,7 @@ rx="Multiple"
 cat $Tmp  | grep "$rx" 
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
-echo "<h2>Java Classes</h2>"
+echo "<h2>Exercises: Java Classes</h2>"
 rx="ArrayList Class"
 SZ=`cat $Tmp | grep "$rx" | wc -l`
 cat $Tmp  | grep "$rx" 
@@ -303,7 +309,7 @@ cat $Tmp  | grep "$rx"
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
 SZ=`cat $Tmp  | wc -l`
-echo "<h2>Exercise Topics ($SZ)</h2>"
+echo "<h2>Exercises: Java Topics ($SZ)</h2>"
 cat $Tmp 
 
 #ls pages  | gawk '@include "library.gawk"; {print "<div class=topic-card-narrow><a class=anchorlink href=" sq("pages\\" $0) ">" $0 "</a></div>"}'  > $Tmp2
