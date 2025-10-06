@@ -555,6 +555,22 @@ td.tdright {
   /* This is the equivalent of cellpadding="0" */
   padding: 0;
 }
+.examtable {
+  padding: 12px;
+  margin-bottom: 24px;
+  border: 2px solid white;
+}
+.examtr {
+  /* This is the equivalent of cellpadding="0" */
+  padding: 12px;
+  border: 2px solid white;
+}
+.examtd {
+  /* This is the equivalent of cellpadding="0" */
+  padding: 12px;
+  text-align: left;
+  border: 2px solid white;
+}
 
 .popupVisible {
             position: fixed;

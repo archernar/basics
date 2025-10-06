@@ -1,9 +1,3 @@
-function dq(sz) {
-    return "\"" + sz + "\"";
-}
-function sq(sz) {
-    return "\'" + sz + "\'";
-}
 /**
  * Selects and returns a random <tr> element from a given <table> element.
  *
@@ -35,27 +29,53 @@ function getRandomTableRow(tableElement) {
 
 function showRandomTopic() {
 //function getRandomTableRow(tableElement) {
+    var tab=document.createElement('table');
+    tab.classList.add('examtable');
     var sz=""
     sz = "<a onclick=" + dq("ettp('#randomtopictable')") + ">TO PDF</a><br><br>"
     sz = sz + "<table id='randomtopictable'><tr><td><div class='content-grid'>"
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    // Loop from 0 to 4
+    for (let i = 0; i < 4; i++) {
+        console.log(`The current number is ${i}`);
+        var p=getRandomDiv('.topic-card-detail')
+        const uno = p.querySelector('div:nth-of-type(1)').innerHTML;
+        const dua = p.querySelector('div:nth-of-type(2)').innerHTML;
+        sz = sz + swapClass(p, 'topic-card-detail','topic-card').outerHTML;
+
+        tr=createElementWithClasss('tr', 'examtr');
+        tab.appendChild(tr);
+
+        td=createElementWithClasss('td', 'examtd');
+        tr.appendChild(td);
+        td.appendChild(document.createTextNode(uno));
+
+        td=createElementWithClasss('td', 'examtd');
+        tr.appendChild(td);
+        td.appendChild(document.createTextNode(dua));
+
+    }
+    if (1==2) {
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
+    }
     sz = sz + "</td></tr></table></div>" 
     // showPopup(selectRandomDiv('.topic-card'));
-    showPopupInnerHTML(sz);
+    //showPopupInnerHTML(sz);
+    document.getElementById('popupOverlay').prepend(tab);
+    showOverlay();
 }
 function hidePopup() {
             document.getElementById('popupOverlay').classList.remove('popupVisible');
@@ -65,7 +85,7 @@ function hidePopup() {
 }
 function showPopupInnerHTML(innerhtml) {
             // Copy the content from the source div to the popup body
-            document.getElementById('popupOverlay').innerHTML = innerhtml + "<br><button onclick='hidePopup();'>Close</button>"
+            document.getElementById('popupOverlay').innerHTML = "<button onclick='hidePopup();'>Close</button><br>" + innerhtml + "<br><button onclick='hidePopup();'>Close</button>"
 
             // Make the overlay visible
             document.getElementById('popupOverlay').classList.remove('popupHidden');
@@ -73,6 +93,10 @@ function showPopupInnerHTML(innerhtml) {
             document.getElementById('main-content').classList.remove('notblurry');
             document.getElementById('main-content').classList.add('blurry');
         }
+function showOverlay() {
+            document.getElementById('popupOverlay').classList.remove('popupHidden');
+            document.getElementById('popupOverlay').classList.add('popupVisible');
+}
 function showPopup(sourceDiv) {
             // Ensure the source div exists and has the 'momo' class
             if (!sourceDiv) {
@@ -88,7 +112,17 @@ function showPopup(sourceDiv) {
             document.getElementById('popupOverlay').classList.add('popupVisible');
             document.getElementById('main-content').classList.remove('notblurry');
             document.getElementById('main-content').classList.add('blurry');
-        }
+}
+function getRandomDiv(sel) {
+            const divs = document.querySelectorAll(sel);
+            if (divs.length === 0) {
+                console.warn("No elements with the class 'selectable' were found.");
+                return;
+            }
+            const randomIndex = Math.floor(Math.random() * divs.length);
+            const randomDiv = divs[randomIndex];
+            return randomDiv
+}
 function selectRandomDiv(sel,oldclass,newclass) {
             const divs = document.querySelectorAll(sel);
             if (divs.length === 0) {
@@ -97,8 +131,14 @@ function selectRandomDiv(sel,oldclass,newclass) {
             }
             const randomIndex = Math.floor(Math.random() * divs.length);
             const randomDiv = divs[randomIndex];
+            const uno = randomDiv.querySelector('div:nth-of-type(1)').innerHTML;
+            console.log(uno);
+            const dua = randomDiv.querySelector('div:nth-of-type(2)').innerHTML;
+            console.log(dua);
             randomDiv.classList.remove(oldclass);
             randomDiv.classList.add(newclass);
+
+
             return randomDiv.cloneNode(true);
             // return randomDiv
 
@@ -123,7 +163,6 @@ function renderTable(arr) {
               tab.setAttribute('align','left');
               tab.setAttribute('width','100%');
               var szCode = element.getAttribute('code');
-              console.log(szCode);
 
               if ((index % 2) == 0)
                   tr=tab.appendChild( document.createElement('tr'));

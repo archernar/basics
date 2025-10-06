@@ -127,8 +127,8 @@ END {
     print "</tr></table>"                                                     >> "questions.lst"
 
     print "<div class='topic-card-detail'>"                                   >> "questions.lst"
-    print "<br><b>" $2 "</b><br>"                                             >> "questions.lst"
-    print "<h3>" lno ""  "</h3>" "" $3 "<br>"                                 >> "questions.lst"
+    print "<br><div>" $2 "</div><br>"                                  >> "questions.lst"
+    print "<h3>" lno ""  "</h3>" "<div>" $3 "</div><br>"                      >> "questions.lst"
     print "</div>" >> "questions.lst"
     print "<div align=right>" buta "</div>" >> "questions.lst"
 
