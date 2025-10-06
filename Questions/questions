@@ -229,9 +229,11 @@ cat << "HEREND1"
 <aside id=sidebar class="sidebar hidden">
 <table width=99%>
 <tr>
-<td align=left><a href='index.html'>Home</a></td>
+<td align=left>
+<a href='index.html'>Home</a>
+</td>
 <td align=right><button onclick="exportTableToPDF2()">Export All to PDF</button>
-                <button onclick="showRandomTopic();">Random Pick</button></td>
+                <button onclick="showRandomTopic();">Create a 100 Question Test</button></td>
 </tr>
 </table>
 

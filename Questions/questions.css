@@ -558,19 +558,28 @@ td.tdright {
 .examtable {
   padding: 12px;
   margin-bottom: 24px;
-  border: 2px solid white;
+  xborder: 2px solid white;
 }
 .examtr {
   /* This is the equivalent of cellpadding="0" */
   padding: 12px;
-  border: 2px solid white;
+  xborder: 2px solid white;
 }
 .examtd {
   /* This is the equivalent of cellpadding="0" */
   padding: 12px;
   text-align: left;
-  border: 2px solid white;
+  xborder: 2px solid white;
 }
+
+.width12  { width:  12%; }
+.width25  { width:  25%; }
+.width33  { width:  33%; }
+.width40  { width:  40%; }
+.width50  { width:  50%; }
+.width75  { width:  75%; }
+.width91  { width:  91%; }
+.width100 { width: 100%; }
 
 .popupVisible {
             position: fixed;

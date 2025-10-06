@@ -21,3 +21,26 @@ function swapClass(ele,oldclass,newclass) {
     p.classList.add(newclass);
     return p;
 }
+function setWidthClass(p, c) {
+    p.classList.remove("width12");
+    p.classList.remove("width33");
+    p.classList.remove("width25");
+    p.classList.remove("width40");
+    p.classList.remove("width50");
+    p.classList.remove("width75");
+    p.classList.remove("width91");
+    p.classList.remove("width100");
+    p.classList.add(c);
+}
+
+
+function setClasses() {
+    for (let i = 1; i < arguments.length; i++) {
+        arguments[0].classList.add(arguments[i]);
+    }
+}
+function unsetClasses() {
+    for (let i = 1; i < arguments.length; i++) {
+        arguments[0].classList.remove(arguments[i]);
+    }
+}

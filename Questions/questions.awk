@@ -110,22 +110,18 @@ END {
     sz = wrap_text(sz, 80, " * ")
     codetext=dq(" * " sz)
 
-    buta="<button onClick='javascript:openEditor(  "  codetext  "  )'>open template</button>"
+    buta="<button onClick='openEditor("  codetext  ")'>open template</button>"
     if ($1 ~ /^Multiple Choice/) buta=""
 
-    cb="<input type='checkbox' id='setting" c "' name='emailNotifications" c "' class='savable-checkbox h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500'>"
     cb="<input type='checkbox' id='emn" c "' name='emn" c "' class='scb'>"
     loca=""
     
-    # OLD print " <div class='topic-card'>" "<table cellspacing=0 cellpadding=0  valign=top border=0 width=99%><tr><td align=left valign=middle>" "" "</td><td align=left valign=middle><u>" francis2 "</u></td><td align=right valign=middle><b>" cb "</b></td></tr></table>" >> "questions.lst"
-    # OLD print " <div class='topic-card'>" "<table><tr><td align=left valign=middle>" "" "</td><td align=left valign=middle><u>" francis2 "</u></td><td align=right valign=middle><b>" cb "</b></td></tr></table>" >> "questions.lst"
     print "<div class='topic-card'>"                                          >> "questions.lst"
     print "<table width=100%><tr>"                                              >> "questions.lst"
     #print "<td>" "" "</td>"                                                   >> "questions.lst"
     print "<td><u>" francis2 "</u></td>"                                      >> "questions.lst"
     print "<td align=right><b>" cb "</b></td>"                                >> "questions.lst"
     print "</tr></table>"                                                     >> "questions.lst"
-
     print "<div class='topic-card-detail'>"                                   >> "questions.lst"
     print "<br><div>" $2 "</div><br>"                                  >> "questions.lst"
     print "<h3>" lno ""  "</h3>" "<div>" $3 "</div><br>"                      >> "questions.lst"
@@ -134,7 +130,6 @@ END {
 
     print "</div>" >> "questions.lst"
 
-    # OLD print " <p>" $1 " - " $2 "</p>" "<p>" $3 "</p>" "<hr>" >> "report.html"
 
 
     #toupper(bhash($2 $3))

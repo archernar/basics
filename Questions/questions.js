@@ -31,11 +31,14 @@ function showRandomTopic() {
 //function getRandomTableRow(tableElement) {
     var tab=document.createElement('table');
     tab.classList.add('examtable');
+    setClasses(tab, 'width91');
+    tab.setAttribute('border','1');
+    tab.setAttribute('id','test');
     var sz=""
     sz = "<a onclick=" + dq("ettp('#randomtopictable')") + ">TO PDF</a><br><br>"
     sz = sz + "<table id='randomtopictable'><tr><td><div class='content-grid'>"
     // Loop from 0 to 4
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 100; i++) {
         console.log(`The current number is ${i}`);
         var p=getRandomDiv('.topic-card-detail')
         const uno = p.querySelector('div:nth-of-type(1)').innerHTML;
@@ -47,11 +50,17 @@ function showRandomTopic() {
 
         td=createElementWithClasss('td', 'examtd');
         tr.appendChild(td);
+        td.appendChild(document.createTextNode(i));
+
+        td=createElementWithClasss('td', 'examtd');
+        setWidthClass(td, 'width50');
+        tr.appendChild(td);
         td.appendChild(document.createTextNode(uno));
 
         td=createElementWithClasss('td', 'examtd');
         tr.appendChild(td);
-        td.appendChild(document.createTextNode(dua));
+        td.innerHTML=dua;
+        // td.appendChild(document.createTextNode(dua.replace(/<br>/g, "\n")));
 
     }
     if (1==2) {
@@ -74,8 +83,11 @@ function showRandomTopic() {
     sz = sz + "</td></tr></table></div>" 
     // showPopup(selectRandomDiv('.topic-card'));
     //showPopupInnerHTML(sz);
-    document.getElementById('popupOverlay').prepend(tab);
-    showOverlay();
+    document.getElementById('popupOverlay').innerHTML = "";
+    document.getElementById('popupOverlay').innerHTML = "<button onclick='hidePopup();'>Close</button>&nbsp;<button onclick='exportTest()'>Export Test to PDF</button><br><br>"
+    document.getElementById('popupOverlay').append(tab);
+    exportTest();
+    // showOverlay();
 }
 function hidePopup() {
             document.getElementById('popupOverlay').classList.remove('popupVisible');
@@ -208,6 +220,72 @@ function openEditor(content) {
             popup.document.write(ContentApplicationClass);
             popup.document.write(ContentDocBottom);
             popup.document.close();
+}
+function exportTest() {
+    //
+    // IMPORTANT: Make sure to import jsPDF and jspdf-autotable.
+    // In this example, they are imported via <script> tags in the HTML file.
+    //
+    var ct = 0;
+
+    // Initialize jsPDF
+    const { jsPDF } = window.jspdf;
+    // const doc = new jsPDF();
+
+
+    const doc = new jsPDF({
+        orientation: "landscape"
+    });
+
+    // Use autoTable to generate the table.
+    // The 'html' option is used to specify the HTML table element.
+    // doc.autoTable({ html: '#myTable' });
+    // doc.autoTable({ html: sel });
+
+    const w1=Math.trunc(doc.internal.pageSize.getWidth() * .20);
+    const w2=Math.trunc(doc.internal.pageSize.getWidth() * .30);
+    const w3=Math.trunc(doc.internal.pageSize.getWidth() * .50);
+    console.log(w1);
+    console.log(w2);
+    console.log(w3);
+    const sel = '#test'
+    const box = document.querySelectorAll(sel);
+    const columns = [
+    { header: "NUM", dataKey: "num" },
+    { header: "TITLE", dataKey: "title" },
+    { header: "QUESTION", dataKey: "question" }
+    ];
+    doc.autoTable({ 
+         columns: columns,
+         html: sel,
+         columnStyles: {
+             num:      { cellWidth: 20 },
+             title:    { cellWidth: 80 },
+             question: { cellWidth: 170 }
+         },
+         theme: "grid",
+         styles: {
+             fontSize: 12 // Sets the font size for the entire table
+         },
+         didDrawPage: function (data) {
+            ct = ct +1
+            // Add a report title as a header on every page
+            doc.setFontSize(20);
+            var pageWidth = doc.internal.pageSize.width;
+            var now = new Date();
+            doc.text("Java Test " + now.toLocaleString() + " -- Page " + ct.toString(), pageWidth - 15, 10, { align: 'right' }); // 10 units from the right edge
+          }
+      });
+    const fn = "testpdf_" + (new Date()).toLocaleString() + ".pdf";
+    const windowName = 'PDF';
+    const screenWidth = Math.trunc(screen.width * .65);
+    const screenHeight = Math.trunc(screen.height * .80);
+    const windowFeatures = 'width=' + screenWidth + ',height=' + screenHeight + ',popup=yes,scrollbars=yes,resizable=yes';
+    const popupWindow=window.open(doc.output('bloburl'), windowName, windowFeatures);
+    doc.save(fn);
+    popupWindow.moveTo(50, 50);
+    popupWindow.focus();
+
 }
 function exportTableToPDF(sel) {
     //
