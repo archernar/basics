@@ -286,6 +286,7 @@ function exportTest() {
     popupWindow.moveTo(50, 50);
     popupWindow.focus();
 
+
 }
 function exportTableToPDF(sel) {
     //
