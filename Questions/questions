@@ -93,7 +93,7 @@ move_matches_to_top() {
 #    warning: disk space is low
 #    info: process finished
 
-cat questions.source | sort | uniq > $Tmp
+cat questions.source | sort | uniq   > $Tmp
 gawk -f mc.awk    questions.mc >> $Tmp
 gawk -f mcadv.awk questions.advmc >> $Tmp
 cat $Tmp | gawk -f caplines.gawk > $Tmp3; cp $Tmp3 questions.source.prime
@@ -161,7 +161,11 @@ BEGIN {
         getline count < "questions.count"
         close("questions.count")
         count = " (" count ")"
-        print "<a href=" sq("#SPL" ahash($1)) ">&nbsp;&nbsp;&nbsp;<img class=p></a><a class=" sq("n") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
+        ta = "<a href=" sq("#SPL" ahash($1)) ">&nbsp;&nbsp;&nbsp;<img class=p></a>"
+        tb = "&nbsp;"
+        tc = "<a onclick=showRandomTopic("  sq("SPL" ahash($1)) ");>&nbsp;<img class=ttpp></a>"
+        td = "<a class=" sq("n") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
+        print ta tb tc td
         f=$1
     }
 }' $Tmp3  |  sed 's/"//g' > questions.topics
@@ -233,7 +237,7 @@ cat << "HEREND1"
 <a href='index.html'>Home</a>
 </td>
 <td align=right><button onclick="exportTableToPDF2()">Export All to PDF</button>
-                <button onclick="showRandomTopic();">Create a 100 Question Test</button></td>
+                <button onclick="showRandomTopic('SPLePugoahH');">Create a 100 Question Test</button></td>
 </tr>
 </table>
 

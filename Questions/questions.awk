@@ -110,7 +110,7 @@ END {
     sz = wrap_text(sz, 80, " * ")
     codetext=dq(" * " sz)
 
-    buta="<button onClick='openEditor("  codetext  ")'>open template</button>"
+    buta="<button onClick='opE("  codetext  ")'>open template</button>"
     if ($1 ~ /^Multiple Choice/) buta=""
 
     cb="<input type='checkbox' id='emn" c "' name='emn" c "' class='scb'>"
@@ -122,7 +122,7 @@ END {
     print "<td><u>" francis2 "</u></td>"                                      >> "questions.lst"
     print "<td align=right><b>" cb "</b></td>"                                >> "questions.lst"
     print "</tr></table>"                                                     >> "questions.lst"
-    print "<div class='topic-card-detail'>"                                   >> "questions.lst"
+    print "<div class='tcd'>"                                   >> "questions.lst"
     print "<br><div>" $2 "</div><br>"                                  >> "questions.lst"
     print "<h3>" lno ""  "</h3>" "<div>" $3 "</div><br>"                      >> "questions.lst"
     print "</div>" >> "questions.lst"

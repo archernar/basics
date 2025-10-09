@@ -27,7 +27,7 @@ function getRandomTableRow(tableElement) {
   return rows[randomIndex];
 }
 
-function showRandomTopic() {
+function showRandomTopic(arg) {
 //function getRandomTableRow(tableElement) {
     var tab=document.createElement('table');
     tab.classList.add('examtable');
@@ -38,12 +38,37 @@ function showRandomTopic() {
     sz = "<a onclick=" + dq("ettp('#randomtopictable')") + ">TO PDF</a><br><br>"
     sz = sz + "<table id='randomtopictable'><tr><td><div class='content-grid'>"
     // Loop from 0 to 4
-    for (let i = 0; i < 100; i++) {
-        console.log(`The current number is ${i}`);
-        var p=getRandomDiv('.topic-card-detail')
-        const uno = p.querySelector('div:nth-of-type(1)').innerHTML;
-        const dua = p.querySelector('div:nth-of-type(2)').innerHTML;
-        sz = sz + swapClass(p, 'topic-card-detail','topic-card').outerHTML;
+    var p;
+    var n;
+    var uno;
+    var due;
+    var tre;
+    var len = ((document.getElementById(arg)).querySelectorAll('tr')).length
+    var size = Math.max(Math.trunc(len/4),1);
+    const randomSet = generateUniqueRandomNumbers(size, len);
+    console.log(size + " , " + len);
+    console.log(`: [${randomSet.join(', ')}]`);
+    for (let i = 0; i < size; i++) {
+        n  = randomSet[i];
+        // console.log(`5 unique random numbers from 0-9: [${randomSet1.join(', ')}]`);
+        // console.log(`The current number is ${i}`);
+        if ( arg=="") {
+            p=getRandomDiv('.tcd')
+            uno = p.querySelector('div:nth-of-type(1)').innerHTML;
+            due = p.querySelector('div:nth-of-type(2)').innerHTML;
+            tre = p.querySelector('div:nth-of-type(3)').innerHTML;
+        } else {
+            p=getRandomTrById(arg) 
+            p=getTrByIndex(arg, n);
+
+            if ( p.querySelectorAll('td').length < 5 ) continue;
+
+            uno = p.cells[2].textContent;
+            due = p.cells[3].textContent;
+            tre = p.cells[4].textContent;
+        }
+
+        // sz = sz + swapClass(p, 'tcd','topic-card').outerHTML;
 
         tr=createElementWithClasss('tr', 'examtr');
         tab.appendChild(tr);
@@ -59,35 +84,21 @@ function showRandomTopic() {
 
         td=createElementWithClasss('td', 'examtd');
         tr.appendChild(td);
-        td.innerHTML=dua;
+        td.innerHTML=due;
+
+        td=createElementWithClasss('td', 'examtd');
+        tr.appendChild(td);
+        td.innerHTML=tre;
+
         // td.appendChild(document.createTextNode(dua.replace(/<br>/g, "\n")));
 
     }
-    if (1==2) {
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-        sz = sz + selectRandomDiv('.topic-card-detail', 'topic-card-detail','topic-card').outerHTML;
-    }
     sz = sz + "</td></tr></table></div>" 
-    // showPopup(selectRandomDiv('.topic-card'));
-    //showPopupInnerHTML(sz);
     document.getElementById('popupOverlay').innerHTML = "";
     document.getElementById('popupOverlay').innerHTML = "<button onclick='hidePopup();'>Close</button>&nbsp;<button onclick='exportTest()'>Export Test to PDF</button><br><br>"
     document.getElementById('popupOverlay').append(tab);
     exportTest();
-    // showOverlay();
+    //showOverlay();
 }
 function hidePopup() {
             document.getElementById('popupOverlay').classList.remove('popupVisible');
@@ -203,7 +214,7 @@ function renderClassTable(cls) {
         renderTable(arr);
 }
 
-function openEditor(content) {
+function opE(content) {
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
             const targetWidth = viewportWidth * 0.85;
@@ -251,7 +262,8 @@ function exportTest() {
     const sel = '#test'
     const box = document.querySelectorAll(sel);
     const columns = [
-    { header: "NUM", dataKey: "num" },
+    { header: "#", dataKey: "num" },
+    { header: "TOPIC", dataKey: "topic" },
     { header: "TITLE", dataKey: "title" },
     { header: "QUESTION", dataKey: "question" }
     ];
@@ -259,9 +271,10 @@ function exportTest() {
          columns: columns,
          html: sel,
          columnStyles: {
-             num:      { cellWidth: 20 },
-             title:    { cellWidth: 80 },
-             question: { cellWidth: 170 }
+             num:      { cellWidth: 10 },
+             topic:    { cellWidth: 48 },
+             title:    { cellWidth: 60 },
+             question: { cellWidth: 150 }
          },
          theme: "grid",
          styles: {
@@ -420,6 +433,14 @@ document.addEventListener('DOMContentLoaded', function() {
           element.src='icon.png';
           element.title = newTitle;
         });
+        newTitle = "create test (pdf)";
+        moeElements = document.querySelectorAll('.ttpp');
+        moeElements.forEach(element => {
+          element.valign='center'
+          element.src='icon.png';
+          element.title = newTitle;
+        });
+
         document.querySelectorAll('.q').forEach(element => {
           element.valign='center'
           element.src='icon.png';

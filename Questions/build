@@ -504,8 +504,8 @@ then
         for file in "${FILES[@]}"; do
             if [ -e "$file" ]; then
                 aws_copy_and_log "$file"   "s3://$B/PROD/$file"
-                #aws_copy_and_log "$file"   "s3://$B/$file"
-                aws_sync_and_log "s3://$B/PROD/$file"  "s3://$B/$file"
+                aws_copy_and_log "$file"   "s3://$B/$file"
+                #aws_sync_and_log "s3://$B/PROD/$file"  "s3://$B/$file"
             fi
         done
         echo "    $EP/PROD/javaexercises.html"
