@@ -606,6 +606,16 @@ td.tdright {
             z-index: 0; /* Ensures it's on top of other content */
             opacity: 0.0;
 }
+.divHidden {
+            display: none;
+            z-index: 0; /* Ensures it's on top of other content */
+            opacity: 0.0;
+}
+.divVisible {
+            display: visible;
+            z-index: 1000; /* Ensures it's on top of other content */
+            opacity: 1.0;
+}
 
 .blurry {
             filter: blur(4px);

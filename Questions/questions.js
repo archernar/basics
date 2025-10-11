@@ -446,6 +446,13 @@ document.addEventListener('DOMContentLoaded', function() {
           element.src='icon.png';
           element.title = "create pdf";
         });
+       document.querySelectorAll('.tog').forEach(element => {
+          element.addEventListener('click', function(event) {
+                 (element.nextElementSibling).classList.toggle('divHidden');
+                  event.preventDefault();
+          });
+        });
+
 
         renderClassTable('.momo');
 
