@@ -446,18 +446,19 @@ document.addEventListener('DOMContentLoaded', function() {
           element.src='icon.png';
           element.title = "create pdf";
         });
+
        document.querySelectorAll('.tog').forEach(element => {
           element.addEventListener('click', function(event) {
-                 (element.nextElementSibling).classList.toggle('divHidden');
-                  event.preventDefault();
-          });
-        });
-
-       document.querySelectorAll('.tog2').forEach(element => {
-          element.addEventListener('click', function(event) {
                  element.firstElementChild.classList.toggle('toggled');
-                 const p  = element.nextElementSibling;
-                 p.classList.toggle('divHidden');
+                 if (hasClass( (element.nextElementSibling), 'divHidden')) {
+                     (element.nextElementSibling).classList.remove('divHidden');
+                     (element.nextElementSibling).classList.add('divVisible');
+                 } else {
+                     (element.nextElementSibling).classList.remove('divVisible');
+                     (element.nextElementSibling).classList.add('divHidden');
+                 }
+                 // const p  = element.nextElementSibling;
+                 //p.classList.toggle('divHidden');
                  event.preventDefault();
           });
         });
@@ -742,5 +743,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 */
 
-
+/**
+ * Checks if a DOM element has a specific CSS class.
+ * @param {Element} element The DOM element to check.
+ * @param {string} className The class name to search for.
+ * @returns {boolean} Returns true if the class exists, false otherwise.
+ */
+function hasClass(element, className) {
+  // Ensure the element and its classList exist before checking
+  if (element && element.classList) {
+    return element.classList.contains(className);
+  }
+  return false;
+}
 
