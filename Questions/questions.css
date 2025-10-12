@@ -623,3 +623,79 @@ td.tdright {
 .notblurry {
             filter: blur(0px);
 }
+  /* Container for the icon and title */
+        .tog22222 {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 4px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            user-select: none; /* Prevents text selection on click */
+            transition: background-color 0.2s;
+        }
+        .tog2 {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 4px;
+            xbackground-color: Black;
+            color: White;
+            user-select: none; /* Prevents text selection on click */
+            transition: background-color 0.2s;
+        }
+
+        .tog2:hover {
+            xbackground-color: Black;
+        }
+
+        /* The icon element that will be styled into a plus/minus sign */
+        .icon {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            margin-right: 6px;
+        }
+
+        /* Create the horizontal and vertical bars of the icon using pseudo-elements */
+        .icon::before,
+        .icon::after {
+            content: '';
+            position: absolute;
+            background-color: White;
+            transition: transform 0.25s ease-out;
+            border-radius: 2px;
+        }
+
+        /* Horizontal bar of the plus */
+        .icon::before {
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            margin-top: -1px; /* Vertically center the 2px tall bar */
+        }
+
+        /* Vertical bar of the plus */
+        .icon::after {
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px; /* Horizontally center the 2px wide bar */
+        }
+
+        /* When the icon has the 'toggled' class, it becomes a minus sign. */
+        /* We achieve this by rotating the vertical bar to be horizontal. */
+        .icon.toggled::after {
+            transform: rotate(90deg);
+        }
+
+        /* The title next to the icon */
+        .title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: White;
+        }

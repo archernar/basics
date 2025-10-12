@@ -453,6 +453,16 @@ document.addEventListener('DOMContentLoaded', function() {
           });
         });
 
+       document.querySelectorAll('.tog2').forEach(element => {
+          element.addEventListener('click', function(event) {
+                 element.firstElementChild.classList.toggle('toggled');
+                 const p  = element.nextElementSibling;
+                 p.classList.toggle('divHidden');
+                 event.preventDefault();
+          });
+        });
+
+
 
         renderClassTable('.momo');
 

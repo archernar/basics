@@ -136,3 +136,6 @@ function cloneTableWithoutFirstRow(id) {
     }
     return clonedTable;
 }
+
+
+

@@ -263,15 +263,22 @@ cat << "HEREND1"
 <br>
 HEREND1
 cp questions.topics $Tmp
-echo "<h2 class=tog>Begin Here</h2>"
+echo "<div class=tog2>"
+echo "<div class='icon' id='toggleIcon'></div>"
+echo "<div class=title>Begin Here</div>"
+echo "</div>"
+
 echo "<div class=divHidden>"
 rx="First Steps"
 cat $Tmp  | grep "$rx" 
 echo "</div>"
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
+echo "<div class=tog2>"
+echo "<div class='icon' id='toggleIcon'></div>"
+echo "<div class=title>Practice Sets</div>"
+echo "</div>"
 
-echo "<h2 class='tog'>Practice Sets</h2>"
 echo "<div class=divHidden>"
 rx="Class Design"
 cat $Tmp  | grep "$rx" 
@@ -290,7 +297,12 @@ cat $Tmp  | grep "$rx"
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 echo "</div>"
 
-echo "<h2 class=tog>Exercises: Java Classes</h2>"
+echo "<div class=tog2>"
+echo "<div class='icon' id='toggleIcon'></div>"
+echo "<div class=title>Exercises: Java Classes</div>"
+echo "</div>"
+
+
 echo "<div class=divHidden>"
 rx="ArrayList Class"
 SZ=`cat $Tmp | grep "$rx" | wc -l`
@@ -328,7 +340,10 @@ echo "</div>"
 
 
 SZ=`cat $Tmp  | wc -l`
-echo "<h2 class=tog>Exercises: Java Topics ($SZ)</h2>"
+echo "<div class=tog2>"
+echo "<div class='icon' id='toggleIcon'></div>"
+echo "<div class=title>Exercises: Java Topics</div>"
+echo "</div>"
 echo "<div class=divHidden>"
 cat $Tmp 
 echo "</div>"
