@@ -244,9 +244,10 @@ cat << "HEREND1"
 <!-- nav id="nav-menu"
 <h2>Reference & Examples</h2>
 -->
+<br><br>
 <div class=tog2>
 <div class='icon' id='toggleIcon'></div>
-<div class=title>References & Examples</div>
+<div class=title>References & Examples: Java</div>
 </div>
 
 <div class=divHidden>
@@ -269,7 +270,7 @@ HEREND1
 cp questions.topics $Tmp
 echo "<div class=tog2>"
 echo "<div class='icon' id='toggleIcon'></div>"
-echo "<div class=title>Begin Here</div>"
+echo "<div class=title>Begin Here: Java</div>"
 echo "</div>"
 
 echo "<div class=divHidden>"
@@ -280,7 +281,7 @@ cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
 echo "<div class=tog2>"
 echo "<div class='icon' id='toggleIcon'></div>"
-echo "<div class=title>Practice Sets</div>"
+echo "<div class=title>Practice Sets: Java</div>"
 echo "</div>"
 
 echo "<div class=divHidden>"
