@@ -197,6 +197,7 @@ cat << "HEREND1"
     <script src="jspdf.umd.min.js"></script>
     <script src="jspdf.plugin.autotable.min.js"></script>
     <link rel="stylesheet" href="questions.css">                                                         
+    <link rel="stylesheet" href="tog.css">                                                         
     <link rel="icon" href="data:,">
 
 </head>
@@ -245,9 +246,9 @@ cat << "HEREND1"
 <h2>Reference & Examples</h2>
 -->
 <br><br>
-<div class=tog2>
+<div class=tog>
 <div class='icon' id='toggleIcon'></div>
-<div class=title>References & Examples: Java</div>
+<div class=togtitle>References & Examples: Java</div>
 </div>
 
 <div class=divHidden>
@@ -268,9 +269,9 @@ cat << "HEREND1"
 </div>
 HEREND1
 cp questions.topics $Tmp
-echo "<div class=tog2>"
+echo "<div class=tog>"
 echo "<div class='icon' id='toggleIcon'></div>"
-echo "<div class=title>Begin Here: Java</div>"
+echo "<div class=togtitle>Begin Here: Java</div>"
 echo "</div>"
 
 echo "<div class=divHidden>"
@@ -279,9 +280,9 @@ cat $Tmp  | grep "$rx"
 echo "</div>"
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 
-echo "<div class=tog2>"
+echo "<div class=tog>"
 echo "<div class='icon' id='toggleIcon'></div>"
-echo "<div class=title>Practice Sets: Java</div>"
+echo "<div class=togtitle>Practice Sets: Java</div>"
 echo "</div>"
 
 echo "<div class=divHidden>"
@@ -302,9 +303,9 @@ cat $Tmp  | grep "$rx"
 cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
 echo "</div>"
 
-echo "<div class=tog2>"
+echo "<div class=tog>"
 echo "<div class='icon' id='toggleIcon'></div>"
-echo "<div class=title>Exercises: Java Classes</div>"
+echo "<div class=togtitle>Exercises: Java Classes</div>"
 echo "</div>"
 
 
@@ -345,9 +346,9 @@ echo "</div>"
 
 
 SZ=`cat $Tmp  | wc -l`
-echo "<div class=tog2>"
+echo "<div class=tog>"
 echo "<div class='icon' id='toggleIcon'></div>"
-echo "<div class=title>Exercises: Java Topics</div>"
+echo "<div class=togtitle>Exercises: Java Topics</div>"
 echo "</div>"
 echo "<div class=divHidden>"
 cat $Tmp 
