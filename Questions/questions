@@ -241,9 +241,15 @@ cat << "HEREND1"
 </tr>
 </table>
 
-<!-- nav id="nav-menu" -->
+<!-- nav id="nav-menu"
 <h2>Reference & Examples</h2>
-<div>
+-->
+<div class=tog2>
+<div class='icon' id='toggleIcon'></div>
+<div class=title>References & Examples</div>
+</div>
+
+<div class=divHidden>
 <a class='momo' code=JavaFundamentals.java></a>
 <a class='momo' code=JavaReference.html></a>
 <a class='momo' code=skip></a>
@@ -259,8 +265,6 @@ cat << "HEREND1"
 <a class='momo' code=JavaClassroomDemo.java></a>
 <a class='momo' code=OOPDemo.java></a>
 </div>
-<br>
-<br>
 HEREND1
 cp questions.topics $Tmp
 echo "<div class=tog2>"
