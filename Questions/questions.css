@@ -47,10 +47,11 @@
             padding: 0 16px;
         }
         .sidebar .n {
-            font-size: 0.75rem;
-            font-weight: 600;
+            font-size: 1.0rem;
+            xxfont-size: 0.75rem;
+            xxfont-weight: 600;
             color: #ffffff;
-            font-size: 0.9rem;
+            xxfont-size: 0.9rem;
             line-height: 1.5;
             text-transform: capitalize;
             text-decoration: none;
