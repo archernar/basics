@@ -381,11 +381,21 @@ echo "</div>"
 
 
 
-
 #ls pages  | gawk '@include "library.gawk"; {print "<div class=topic-card-narrow><a class=anchorlink href=" sq("pages\\" $0) ">" $0 "</a></div>"}'  > $Tmp2
 #cp $Tmp2 fedd
 
 cat << "HEREND1A"
+
+<div class=tog>
+<div class='icon' id='toggleIcon'></div>
+<div class=togtitle>Reference</div>
+</div>
+
+<div class=divHidden>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='momox' href=domathon.html>domathon</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='momox' href=domref.html>domref</a>
+</div>
+
 <!-- /nav -->
 </aside>
 
