@@ -269,6 +269,15 @@ cat << "HEREND1"
 </div>
 HEREND1
 cp questions.topics $Tmp
+
+rx="JavaScript DOM"
+cat $Tmp  | grep "$rx" > questions.other
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+rx="Bash Scripting"
+cat $Tmp  | grep "$rx" >> questions.other
+cat $Tmp  | grep -v "$rx" > $Tmp1; cp $Tmp1 $Tmp
+
+
 echo "<div class=tog>"
 echo "<div class='icon' id='toggleIcon'></div>"
 echo "<div class=togtitle>Begin Here: Java</div>"
@@ -353,6 +362,25 @@ echo "</div>"
 echo "<div class=divHidden>"
 cat $Tmp 
 echo "</div>"
+
+SZ=`cat questions.other  | wc -l`
+echo "<div class=tog>"
+echo "<div class='icon' id='toggleIcon'></div>"
+echo "<div class=togtitle>Exercises: Other Languages</div>"
+echo "</div>"
+echo "<div class=divHidden>"
+cat questions.other
+echo "</div>"
+
+
+
+
+
+
+
+
+
+
 
 #ls pages  | gawk '@include "library.gawk"; {print "<div class=topic-card-narrow><a class=anchorlink href=" sq("pages\\" $0) ">" $0 "</a></div>"}'  > $Tmp2
 #cp $Tmp2 fedd
