@@ -467,6 +467,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         renderClassTable('.momo');
 
+        document.querySelectorAll('.specfile').forEach(element => {
+              var szCode = element.getAttribute('href');
+              element.appendChild(document.createTextNode(szCode));
+        });
+
 
         arr=[];
         document.querySelectorAll('.xxxxnp').forEach(element => {

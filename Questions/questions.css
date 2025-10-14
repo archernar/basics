@@ -60,6 +60,16 @@
             margin: 24px 0 8px 0;
             padding: 0 16px;
         }
+        .sidebar .specfile {
+            font-size: 1.0rem;
+            color: #ffffff;
+            line-height: 1.5;
+            text-transform: capitalize;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            margin: 24px 0 8px 0;
+            padding: 0 16px;
+        }
         .sidebar h1 {
             font-size: 1.9rem;
             font-weight: 700;

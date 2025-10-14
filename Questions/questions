@@ -392,8 +392,11 @@ cat << "HEREND1A"
 </div>
 
 <div class=divHidden>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='momox' href=domathon.html>domathon</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='momox' href=domref.html>domref</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='specfile' href=domathon.html></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='specfile' href=domref.html></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='specfile' href=jsdomref.html></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='specfile' href=cssref.html></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='specfile' href=vimref.html></a><br>
 </div>
 
 <!-- /nav -->
@@ -423,7 +426,7 @@ cat << "HEREND1AA"
             <a href=index.html>
                 <table border=0 width=100% align=right>
                 <tr>
-                    <td width=91% align=left valign=middle><h2>Java Programming Exercises</h2></td>
+                    <td width=91% align=left valign=middle><h2>Programming Exercises</h2></td>
                     <td valign=middle align=right><font size=44>IT</font></td>
                     <td valign=middle align=right>LearningResources.com</td>
                 </tr>
