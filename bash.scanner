@@ -86,6 +86,7 @@ function scan_for_secrets() {
 
   printDebug "SCAN: '$file'"
   for pattern in "${patterns[@]}"; do
+    # printDebug "PATTERN: '$pattern'"
     if grep -E "$pattern" "$file" > /dev/null; then
       found=1
       printCritical "Potential secret found in '$file' matching pattern: '$pattern'"
@@ -98,6 +99,8 @@ function scan_for_secrets() {
       else
           break
       fi
+    else
+      NOTHING=0
     fi
   done
 
@@ -115,10 +118,12 @@ function scan_for_secrets() {
     return 1 
   fi
 
+  #printCritical "COMPLETE COMPLETE"
   if [[ "$found" -eq 0 ]]; then
     NOTHING=0
     #printDebug "CLEAR: '$file'"
-    append_last_element "$(szgreen "  OK")"
+    #append_last_element "$(szgreen "  OK")"
+    #append_last_element " OK"
   fi
 
   return 0

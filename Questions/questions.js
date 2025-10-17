@@ -214,6 +214,17 @@ function renderClassTable(cls) {
         renderTable(arr);
 }
 
+function opW(url) {
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            const targetWidth = viewportWidth * 0.85;
+            const targetHeight = viewportHeight * 0.85;
+            const popupWidth = targetWidth;
+            const popupHeight = targetHeight;
+            const left = (screen.width / 2) - (popupWidth / 2);
+            const top = (screen.height / 2) - (popupHeight / 2);
+            const popup = window.open(url, 'JavaCodeEditor', `width=${popupWidth},height=${popupHeight},top=${top},left=${left}`);
+}
 function opE(content) {
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
@@ -418,6 +429,18 @@ function fastEdit(url) {
 document.addEventListener('DOMContentLoaded', function() {
         // Your code here will run after the DOM is ready.
         console.log('DOM fully loaded and parsed');
+
+        // Check the hostname to determine the environment
+        if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+          console.log("Running on the DEVELOPMENT server.");
+          // Development-specific code here...
+          // For example, connect to a test database or show debug messages.
+        } else {
+          console.log("Running on the PRODUCTION server.");
+          // Production-specific code here...
+          // For example, use production API keys.
+        }
+
         hidePopup();
 
         // The entire content of the Java code editor page is stored in this template literal.
@@ -471,6 +494,28 @@ document.addEventListener('DOMContentLoaded', function() {
               var szCode = element.getAttribute('href');
               element.appendChild(document.createTextNode(szCode));
         });
+
+        if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+            document.querySelectorAll('.localfile').forEach(element => {
+                  var szCode = element.getAttribute('href').replace("../PDF/", "");
+                  szCode = szCode.replace("../ALLFILES/", "");
+                  var szLabel = element.getAttribute('href').replace("../PDF/", "").replace(".pdf", "");
+                  szLabel = szLabel.replace("../ALLFILES/", "").replace(".pdf", "");
+                  console.log(szLabel);
+                  element.appendChild(document.createTextNode(szLabel));
+                  element.addEventListener('click', function(event) {
+                      opW(szCode);
+                      event.preventDefault();
+                  });
+            });
+        }
+        else {
+            document.querySelectorAll('.localfile').forEach(element => {
+                   if (element.nextElementSibling.tagName === 'BR')
+                       element.nextElementSibling.remove();
+                   element.remove();
+            });
+        }
 
 
         arr=[];

@@ -103,6 +103,69 @@ copy_and_log() {
     #echo "[$timestamp] LNXCPY: $source_file $dest_dir"
     echo "[$timestamp] LNXCPY: $padded_string1 $padded_string2 $bytes_copied"
 }
+copy_and_log_noclobber() {
+    # --- 1. Argument Validation ---
+    # Check if exactly two arguments are provided.
+    if [ "$#" -ne 2 ]; then
+        echo "Error: Invalid number of arguments." >&2
+        echo "Usage: copy_and_log <source_file> <destination_directory>" >&2
+        return 1
+    fi
+
+    local source_file="$1"
+    local dest_dir="$2"
+
+    # --- 2. Source and Destination Validation ---
+    # Check if the source file exists.
+    if [ ! -e "$source_file" ]; then
+        echo "Error: Source file '$source_file' not found." >&2
+        return 1
+    fi
+
+    # Check if the destination directory exists.
+    if [ ! -d "$dest_dir" ]; then
+        echo "Error: Destination directory '$dest_dir' not found." >&2
+        return 1
+    fi
+
+    # --- 3. Copy Operation ---
+    # Use the 'cp' command to copy the file. The -v (verbose) flag is useful for confirmation.
+    # We redirect stderr to stdout to catch potential copy errors.
+    if [ -f "$source_file" ]; then
+        copy_output=$(cp -n "$source_file" "$dest_dir" 2>&1)
+        if [ $? -ne 0 ]; then
+            echo "Error during copy: $copy_output" >&2
+            return 1
+        fi
+        # --- 4. Gather Log Information ---
+        local bytes_copied
+        bytes_copied=$(stat -c %s "$source_file")
+    fi
+    if [ -d "$source_file" ]; then
+        copy_output=$(cp -n -r "$source_file" "$dest_dir" 2>&1)
+        if [ $? -ne 0 ]; then
+            echo "Error during copy: $copy_output" >&2
+            return 1
+        fi
+        # --- 4. Gather Log Information ---
+        local bytes_copied
+        bytes_copied=$(du -sb "$source_file")
+    fi
+
+
+    # Get the current date and time in a standard format.
+    local timestamp
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+    timestamp=$(date +"%H:%M:%S")
+
+    # --- 5. Write Log Message ---
+    # Construct and print the log message to standard output.
+    # This could easily be redirected to a log file, e.g., >> /var/log/copy.log
+    padded_string1=$(pad32 "'$source_file'")
+    padded_string2=$(pad24 "'$dest_dir'")
+    #echo "[$timestamp] LNXCPY: $source_file $dest_dir"
+    echo "[$timestamp] LNXCPY: $padded_string1 $padded_string2 $bytes_copied"
+}
 
 aws_reverse_copy_and_log() {
     # --- 1. Argument Validation ---
@@ -290,6 +353,31 @@ do
 done
 shift $(($OPTIND - 1))
 
+BASHLIBHOME=..
+source $BASHLIBHOME/bash.library
+source $BASHLIBHOME/bash.namevalue
+source $BASHLIBHOME/bash.scanner
+
+if [ "XSCAN" == "SCAN" ]; then                                                                                               
+    echo  "Scanning all files in $(pwd)" 
+    echo  "-"
+    for file in *; do
+      if [[ "$file" != "bash.scanner" ]]; then
+          if [[ -f "$file" ]]; then
+              if ! scan_for_secrets "$file"; then
+                  echo "SECRETS EXCEPTION"
+                  #echo "Exiting main script."
+                  #exit 1
+              fi
+          fi
+      fi
+    done
+fi
+
+
+
+
+
 # The file where the version number is stored
 VERSION_FILE="version.txt"
 
@@ -385,7 +473,7 @@ if [ "$MARKDOWN" == "YES" ]; then
     #find ./markdown  -maxdepth 1 -type f -not -name "a*" -delete
 
     rm -f "./markdown/azed.md"
-    rm -f "$Tmp2"
+    rm -f "$Tmp2"   >/dev/null 2>&1;
     for file in ./tmp/*.md; do
          infoc "processing $file"
 #        ../justomatic -n 80 -f "$file"
@@ -416,14 +504,55 @@ fi
 FILES=( \
 "Java.html" "version.txt" "domathon.html" "ScannerClass.pdf" "icon.png" "index.html" "error.html" "questions.html" \
 "javaexercises.html" "banner4.png" "myQuery.js" "countdown.js" "questions.js" "editor.js" "questions.css"  \
-"jspdf.plugin.autotable.min.js" "jspdf.umd.min.js" "MyClass.java" "JavaClassroomDemo.java" "OOPDemo.java" "Car.java"  \
-"University.java" "Book.java" "BankAccount.java" "CollegeStudent.java" "Template.java"  \
-"jsdomref.html" "domref.html" "tog.css" "JavaFundamentals.java" "Pizza.java" "Movie.java" "JavaReference.html" "Java.html" \
+"jspdf.plugin.autotable.min.js" "jspdf.umd.min.js" "jsdomref.html" "domref.html" "tog.css"  "JavaReference.html" "Java.html" \
 )
 
-XHTMLFILES=("ScannerClass.pdf" "index.html" "error.html" "questions.html" "javaexercises.html"
+JAVAFILES=(`ls *.java | commatize`)
+
+PDFS=("../PDF/RangerHandbook.pdf" "../PDF/RangerHandbookNewer.pdf" "../PDF/VimFlashCards.pdf")
+
+XHTMLFILES=("ScannerClass.pdf" "index.html" "error.html" "questions.html" "javaexercises.html")
 HTMLFILES=("pages" "icon.png" "ScannerClass.pdf" "index.html" "questions.css")
 
+        #for file in "${PDFS[@]}"; do
+        # #################################################################################
+        rm -f "$Tmp2"   >/dev/null 2>&1;
+        for file in ../PDF/*.pdf; do
+            if [ -f "$file" ]; then
+                echo "$file"   >> "$Tmp2"
+            fi
+        done
+        cat "$Tmp2" | sort | uniq > "$Tmp3"
+        while IFS= read -r file; do
+            if [ -f "$file" ]; then
+                copy_and_log_noclobber "$file"           "/var/www/html"
+            fi
+        done < "$Tmp3"
+        rm -f "$Tmp2"   >/dev/null 2>&1;
+        rm -f "$Tmp3"   >/dev/null 2>&1;
+        # #################################################################################
+        for file in ../ALLFILES/*.pdf; do
+            if [ -f "$file" ]; then
+                echo "$file"   >> "$Tmp2"
+            fi
+        done
+        cat "$Tmp2" | sort | uniq > "$Tmp3"
+        while IFS= read -r file; do
+            if [ -f "$file" ]; then
+                copy_and_log_noclobber "$file"           "/var/www/html"
+            fi
+        done < "$Tmp3"
+        rm -f "$Tmp2"   >/dev/null 2>&1;
+        rm -f "$Tmp3"   >/dev/null 2>&1;
+        # #################################################################################
+
+
+        for file in "${JAVAFILES[@]}"; do
+            if [ -f "$file" ]; then
+                copy_and_log "$file"           "$THISBUILDFOLDER"
+                copy_and_log "$file"           "/var/www/html"
+            fi
+        done
         for file in "${FILES[@]}"; do
             if [ -f "$file" ]; then
                 copy_and_log "$file"           "$THISBUILDFOLDER"
@@ -510,7 +639,7 @@ then
         aws --profile default s3 rm --recursive         s3://$B/$PROD/
         for file in "${FILES[@]}"; do
             if [ -e "$file" ]; then
-                aws_copy_and_log "$file"   "s3://$B/PROD/$file"
+                #aws_copy_and_log "$file"   "s3://$B/PROD/$file"
                 aws_copy_and_log "$file"   "s3://$B/$file"
                 #aws_sync_and_log "s3://$B/PROD/$file"  "s3://$B/$file"
             fi
