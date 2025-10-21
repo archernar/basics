@@ -70,6 +70,9 @@
             margin: 24px 0 8px 0;
             padding: 0 16px;
         }
+        /*
+         * Four sides (top, right, bottom, left) with a single declaration.
+        */
         .sidebar .localfile {
             font-size: 1.0rem;
             color: #ffffff;
@@ -78,7 +81,10 @@
             text-decoration: none;
             letter-spacing: 0.05em;
             margin: 24px 0 8px 0;
-            padding: 0 16px;
+            padding: 0 16px 0 3rem;
+            white-space: nowrap;
+            overflow: hidden; /* Hides the overflowing text */
+            text-overflow: ellipsis; /* Adds "..." to show the text is truncated */
         }
         .sidebar h1 {
             font-size: 1.9rem;
@@ -629,6 +635,16 @@ td.tdright {
             opacity: 0.0;
 }
 .divHidden {
+            display: none;
+            z-index: 0; /* Ensures it's on top of other content */
+            opacity: 0.0;
+}
+.visible {
+            display: visible;
+            z-index: 1000; /* Ensures it's on top of other content */
+            opacity: 1.0;
+}
+.invisible {
             display: none;
             z-index: 0; /* Ensures it's on top of other content */
             opacity: 0.0;

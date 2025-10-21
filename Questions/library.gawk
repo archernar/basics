@@ -85,7 +85,7 @@ function trim(str) {
 # @param input_str The string to be hashed.
 # @return A 24-character string containing only [a-zA-Z].
 #
-function ahash(input_str,       alpha, len_alpha, M, i, j, char_val, state, seed, result, dex) {
+function ahash(input_str,       hashlen, alpha, len_alpha, M, i, j, char_val, state, seed, result, dex) {
 
     # Character set for the output hash (a-z, A-Z)
     alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -115,8 +115,9 @@ function ahash(input_str,       alpha, len_alpha, M, i, j, char_val, state, seed
     }
 
     # 4. Generate the 8-character hash string using the seed.
+    if ( hashlen == 0) hashlen=8;
     result = ""
-    for (i = 1; i <= 8; i++) {
+    for (i = 1; i <= hashlen; i++) {
         # Use a Linear Congruential Generator (LCG) to create a pseudo-random sequence.
         # The constants (multiplier and increment) are from common LCG implementations.
         seed = (seed * 1664525 + 1013904223) % M

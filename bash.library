@@ -3,6 +3,30 @@
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
+
+function stderr() {
+        echo "$1" >&2;
+}
+
+
+pad32() {
+    local input_string="$1"
+    printf "%-32s" "$input_string"
+}
+pad24() {
+    # The string to be padded is the first argument passed to the function.
+    local input_string="$1"
+    
+    # Use printf for robust string formatting.
+    # The format specifier "%-24s" works as follows:
+    #   % : Starts the format specifier.
+    #   - : Left-aligns the content within the given width. This is what causes
+    #       the padding to be added to the right.
+    #   24: Specifies the minimum width of the output. If the string is shorter,
+    #       it will be padded. If it's longer, printf will expand to fit it.
+    #   s : Indicates that the argument is a string.
+    printf "%-24s" "$input_string"
+}
 function set_cursor_color_black() {
   echo -e "\033[30m"
 }
@@ -3764,3 +3788,131 @@ function asciiTable() {
 # 
 # # Reset cursor position at the end
 # echo -e "\033[$((start_row + ${#column_data[@]} + 2));0H"dbprint "123456"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+# SYNOPSIS: rstring LENGTH
+#
+# DESCRIPTION:
+#   Generates a unique random alphanumeric string of a specified length.
+#
+# PARAMETERS:
+#   LENGTH - The desired length of the random string (must be a positive integer).
+#
+# USAGE EXAMPLE:
+#   random_string 16 # returns a 16-character random string
+#   
+#   my_pass=$(random_string 32)
+#   echo "My new password is: $my_pass"
+#
+#
+function rstring() {
+  # Check if a length argument is provided.
+  if [ -z "$1" ]; then
+    echo "Usage: random_string <length>"
+    echo "Error: Please specify the desired string length."
+    return 1
+  fi
+
+  # Check if the argument is a positive integer.
+  if ! [[ "$1" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Error: Length must be a positive integer."
+    return 1
+  fi
+
+  local length="$1"
+
+  # Generate random bytes, filter for alphanumeric characters, and take the first 'length' characters.
+  # /dev/urandom is a source of cryptographically secure random numbers.
+  # 'tr -dc ...' deletes all characters except the ones specified.
+  # 'head -c ...' takes the first N characters from the stream.
+  cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c "$length"
+}
+
+
+#!/bin/bash
+
+# A bash function that mimics the behavior of the `basename` command
+# using only shell built-ins for string manipulation.
+#
+# Usage:
+#   my_basename PATH [SUFFIX]
+#
+# Arguments:
+#   PATH    The file path from which to extract the base name.
+#   SUFFIX  An optional suffix to remove from the end of the base name.
+
+function my_basename() {
+    # 1. Handle missing operand error, similar to the real command.
+    if [[ $# -eq 0 ]]; then
+        echo "my_basename: missing operand" >&2
+        echo "Usage: my_basename PATH [SUFFIX]" >&2
+        return 1
+    fi
+
+    # 2. Handle the specific edge case where the input is an empty string.
+    # The POSIX standard for basename specifies it should return ".".
+    if [[ -z "$1" ]]; then
+        echo "."
+        return 0
+    fi
+
+    local path="$1"
+    local suffix="${2:-}" # Set to empty string if SUFFIX is not provided
+
+    # 3. Remove any trailing slashes from the path.
+    # This loop handles multiple trailing slashes (e.g., /path/to/dir///)
+    # but correctly stops if the path is just "/", preventing it from becoming empty.
+    while [[ "$path" != "/" && "${path: -1}" == "/" ]]; do
+        path="${path%/}"
+    done
+
+    # 4. Strip the longest prefix ending in "/" to get the base name.
+    # This is the core logic. Example: /path/to/file.txt -> file.txt
+    local base="${path##*/}"
+
+    # 5. If a suffix was provided, try to remove it.
+    if [[ -n "$suffix" ]]; then
+        # Perform the suffix removal in a temporary variable.
+        local stripped="${base%$suffix}"
+        # An important edge case: if removing the suffix results in an empty
+        # string (e.g., my_basename ".c" ".c"), the original base name
+        # should be kept. We only update the base name if the result is not empty.
+        if [[ -n "$stripped" ]]; then
+            base="$stripped"
+        fi
+    fi
+
+    # 6. Echo the final result.
+    # If the base name is empty at this point, it means the original path was "/"
+    # or "///". In that case, output "/". Otherwise, output the calculated base name.
+    echo "${base:-/}"
+}
+
+
+# --- USAGE EXAMPLES ---
+# To use this function, you can source this file:
+# source ./my_basename.sh
+#
+# Then call it like a regular command:
+# 
+# echo "--- Standard Examples ---"
+# my_basename /home/user/document.txt
+# my_basename /home/user/archive.tar.gz .gz
+# my_basename /usr/local/bin/
+# 
+# echo
+# echo "--- Edge Case Examples ---"
+# my_basename /
+# my_basename //usr/local//
+# my_basename document.txt
+# my_basename ".profile" ".profile"
+# my_basename ""
+

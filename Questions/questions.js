@@ -100,6 +100,10 @@ function showRandomTopic(arg) {
     exportTest();
     //showOverlay();
 }
+function swapClass(element,a,b) {
+            element.classList.remove(a);
+            element.classList.add(b);
+}
 function hidePopup() {
             document.getElementById('popupOverlay').classList.remove('popupVisible');
             document.getElementById('popupOverlay').classList.add('popupHidden');
@@ -495,6 +499,14 @@ document.addEventListener('DOMContentLoaded', function() {
               element.appendChild(document.createTextNode(szCode));
         });
 
+
+        (document.getElementById('localfiles')).querySelectorAll('a').forEach(element => {
+            element.classList.add('localfile');
+            swapClass(element,'visible','invisible');
+            swapClass(element.nextElementSibling,'visible','invisible');
+        });
+
+
         if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
             document.querySelectorAll('.localfile').forEach(element => {
                   var szCode = element.getAttribute('href').replace("../PDF/", "");
@@ -502,6 +514,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   var szLabel = element.getAttribute('href').replace("../PDF/", "").replace(".pdf", "");
                   szLabel = szLabel.replace("../ALLFILES/", "").replace(".pdf", "");
                   console.log(szLabel);
+                  element.target = "_blank"
                   element.appendChild(document.createTextNode(szLabel));
                   element.addEventListener('click', function(event) {
                       opW(szCode);
@@ -517,6 +530,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
+        document.querySelectorAll('.idxxxx').forEach(element => {
+            element.classList.remove('visible');
+            element.classList.add('invisible');
+            element.nextElementSibling.classList.remove('visible');
+            element.nextElementSibling.classList.add('invisible');
+        });
 
         arr=[];
         document.querySelectorAll('.xxxxnp').forEach(element => {

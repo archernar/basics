@@ -8,6 +8,8 @@ trap 'exit 0' INT HUP QUIT TERM ALRM USR1
 trap 'rm -f "$Tmp" "$Tmp0" "$Tmp1" "$Tmp2" "$Tmp3"' EXIT
 rm -f "$Tmp $Tmp0 $Tmp1 $Tmp2 $Tmp3"  >/dev/null 2>&1;
 
+BASHLIBHOME=..
+source $BASHLIBHOME/bash.library
 # -----------------------------------------------------------------------------
 # Function: move_matches_to_top
 # Description:
@@ -412,23 +414,40 @@ HEREND1A
                 echo "$file" >> "$Tmp2"
             fi
         done
-        cat "$Tmp2" | sort | uniq > "$Tmp3"
+        cat "$Tmp2" | sort | uniq  > "$Tmp3"
         fcs="@"
+        NOTFIRST="NO"
         rm -f xxxx
+        echo "------------------------------------" >&2;
+        echo "Prep Local Files" >&2;
+        echo "" >&2;
+
+        echo "<DIV id=localfiles>"
         while IFS= read -r file; do
-            file_name=$(basename "$file")
+            #ID=`ahash "$file" ""`
+            ID=`rstring 4`
+            file_name=$(my_basename "$file")
             fc=${file_name:0:1}
-            echo "$fc -- $fcs" >> xxxx
             if [ -f "$file" ]; then
                 if [[ "$fc" != "$fcs" ]]; then
+                    if [ "$NOTFIRST" == "YES" ]; then                                                                                               
+                        echo "</DIV>"
+                    fi
                     echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$fc<br>"
-                    echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target='_blank' class='localfile' href=$file></a><br>"
+                    echo "<div id='IDX-$fc'i class='idx'>"
+                    #echo "<a class='localfile'  id='$ID' href=$file></a><br>"
+                    echo "<a id='$ID' href=$file></a><br>"
                     fcs="$fc"
                 else
-                    echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target='_blank' class='localfile' href=$file></a><br>"
+                    #echo "<a class='localfile' id='$ID'  href=$file></a><br>"
+                    echo "<a id='$ID' href=$file></a><br>"
                 fi
             fi
+            NOTFIRST="YES"
         done < "$Tmp3"
+        echo "</DIV>"
+        echo "</DIV>"
+
         rm -f "$Tmp2"   >/dev/null 2>&1;
         rm -f "$Tmp3"   >/dev/null 2>&1;
 
