@@ -301,7 +301,7 @@ function exportTest() {
             doc.setFontSize(20);
             var pageWidth = doc.internal.pageSize.width;
             var now = new Date();
-            doc.text("Java Test " + now.toLocaleString() + " -- Page " + ct.toString(), pageWidth - 15, 10, { align: 'right' }); // 10 units from the right edge
+            doc.text("Java Exercises " + now.toLocaleString() + " -- Page " + ct.toString(), pageWidth - 15, 10, { align: 'right' }); // 10 units from the right edge
           }
       });
     const fn = "testpdf_" + (new Date()).toLocaleString() + ".pdf";
@@ -323,6 +323,23 @@ function exportTableToPDF(sel) {
     //
     var ct = 0;
 
+
+// 1. Get the original table
+const originalTable = document.querySelector(sel);
+const clonedTable = originalTable.cloneNode(true);
+const firstRow = clonedTable.rows[0];
+if (firstRow) {
+  firstRow.remove();
+}
+
+// 5. (Optional) Append the new clone to the page
+document.body.appendChild(clonedTable);
+clonedTable.id = 'clonedTable';
+sel="#clonedTable";
+
+
+
+
     // Initialize jsPDF
     const { jsPDF } = window.jspdf;
     // const doc = new jsPDF();
@@ -335,7 +352,34 @@ function exportTableToPDF(sel) {
     // doc.autoTable({ html: '#myTable' });
     // doc.autoTable({ html: sel });
     const box = document.querySelectorAll(sel);
-    doc.autoTable({ html: sel,
+    const columns = [
+    { header: "#", dataKey: "num" },
+    { header: "TOPIC", dataKey: "topic" },
+    { header: "TITLE", dataKey: "title" },
+    { header: "QUESTION", dataKey: "question" }
+    ];
+
+
+    const rowsPerPage = 6;
+
+
+
+
+    doc.autoTable({ 
+         drawRow: (row) => {
+           if (row.index > 0 && row.index % rowsPerPage === 0) {
+             doc.autoTableAddPage();
+           }
+         },
+         html: sel,
+         columns: columns,
+         columnStyles: {
+             num:      { cellWidth: 15 },
+             topic:    { cellWidth: 32 },
+             title:    { cellWidth: 50 },
+             question: { cellWidth: 170 }
+         },
+         theme: "grid",
          styles: {
              fontSize: 12 // Sets the font size for the entire table
          },
@@ -344,7 +388,9 @@ function exportTableToPDF(sel) {
             // Add a report title as a header on every page
             doc.setFontSize(20);
             var pageWidth = doc.internal.pageSize.width;
-            doc.text(ct.toString(), pageWidth - 10, 10, { align: 'right' }); // 10 units from the right edge
+            //doc.text(ct.toString(), pageWidth - 10, 10, { align: 'right' }); // 10 units from the right edge
+            var now = new Date();
+            doc.text("Java Exercises " + now.toLocaleString() + " -- Page " + ct.toString(), pageWidth - 15, 10, { align: 'right' }); // 10 units from the right edge
           }
       });
 
@@ -361,6 +407,9 @@ function exportTableToPDF(sel) {
     // iframe.style.height = '600px';
     // iframe.src = pdfDataUri;
     // document.body.appendChild(iframe);
+    //THIS ONE
+    const fn = "testpdf_" + (new Date()).toLocaleString() + ".pdf";
+    doc.save(fn);
     const windowName = 'PDF';
     const screenWidth = Math.trunc(screen.width * .65);
     const screenHeight = Math.trunc(screen.height * .80);
@@ -381,23 +430,27 @@ function exportTableToPDF2() {
     // Initialize jsPDF
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({
-        orientation: "landscape"
+        orientation: "portrait",
+        format: 'letter'
     });
 
     // Loop over the NodeList using forEach
     infoBoxes.forEach(function(box) {
         //doc.text("This is a landscape PDF!", 10, 10);
       doc.autoTable({ html: box ,
+         theme: "grid",
          styles: {
-             fontSize: 12 // Sets the font size for the entire table
+             fontSize: 10 // Sets the font size for the entire table
          },
          didDrawPage: function (data) {
              ct = ct +1
             // Add a report title as a header on every page
-            doc.setFontSize(20);
+            doc.setFontSize(10);
             doc.text( box.getAttribute('nom'), 10,10);
                  var pageWidth = doc.internal.pageSize.width;
-                 doc.text(ct.toString(), pageWidth - 10, 10, { align: 'right' }); // 10 units from the right edge
+                 //doc.text(ct.toString(), pageWidth - 10, 10, { align: 'right' }); // 10 units from the right edge
+                 var now = new Date();
+                 doc.text("Java Exercises " + now.toLocaleString() + " -- Page " + ct.toString(), pageWidth - 15, 10, { align: 'right' }); // 10 units from the right edge
           }
       });
       doc.addPage();
@@ -406,6 +459,9 @@ function exportTableToPDF2() {
     // Save the PDF
     //doc.output('save','table.pdf');
     // window.open(doc.output('bloburl'));
+    const fn = "testpdf_" + (new Date()).toLocaleString() + ".pdf";
+    doc.save(fn);
+
     const windowName = 'PDF';
     const screenWidth = Math.trunc(screen.width * .65);
     const screenHeight = Math.trunc(screen.height * .80);
@@ -513,7 +569,6 @@ document.addEventListener('DOMContentLoaded', function() {
                   szCode = szCode.replace("../ALLFILES/", "");
                   var szLabel = element.getAttribute('href').replace("../PDF/", "").replace(".pdf", "");
                   szLabel = szLabel.replace("../ALLFILES/", "").replace(".pdf", "");
-                  console.log(szLabel);
                   element.target = "_blank"
                   element.appendChild(document.createTextNode(szLabel));
                   element.addEventListener('click', function(event) {
@@ -543,7 +598,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         arr.forEach(
            function (element, index) {  // (1)
-              console.log(index);
               element.text = element.getAttribute('code');
               element.addEventListener('click', function(event) {
                   fastEdit( element.getAttribute('code') );

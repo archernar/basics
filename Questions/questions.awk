@@ -84,6 +84,8 @@ END {
         #print "<tr><td colspan=4 width=99% align=middle><button onclick=" dq("ettp('#" "SPL" ahash($1) "')") ">Export to PDF</button></td></tr>" >> "report.html"
         ico="<img title=" sq("create pdf") " valign=center src=icon.png>"
         ico="<img class=q>"
+# THIS ONE
+ct=1
         print "<tr><td colspan=5 width=99% align=middle><a class=sl onclick=" dq("ettp('#" "SPL" ahash($1) "')") ">" ico "</a>&nbsp;<a class=s>" $1 "</a></td></tr>" >> "report.html"
         print "</td></tr>" >> "report.html"
         first=0
@@ -133,7 +135,7 @@ END {
 
 
     #toupper(bhash($2 $3))
-    print "<tr>" "<td>" ct "</td>" "<td>" ""  "</td>" "<td nowrap>" $1 "</td>" "<td nowrap>" $2 "</td>" "<td>" wrap_text($3,-1,"") "</td>" "</tr>" >> "report.html"
+    print "<tr>" "<td>" ct "</td>" "<td nowrap>" $1 "</td>" "<td nowrap>" $2 "</td>" "<td>" wrap_text($3,-1,"") "</td>" "</tr>" >> "report.html"
     ct++
     # print " <div class='topic-card'>" "<p valign=top align=right><font size=-1>" $1 "</font>" cb "</p>" "<h3>" lno $2  "</h3>" "<p>" $3 "</p>"  "</div>" >> "questions.lst"
 
