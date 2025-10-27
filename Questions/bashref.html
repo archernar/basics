@@ -13,6 +13,11 @@
             margin: 0;
             padding: 0;
         }
+        .quickies {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
         .container {
             max-width: 900px;
             margin: 20px auto;
@@ -108,6 +113,167 @@
     </style>
 </head>
 <body>
+
+
+
+    <div class='quickies'>
+                <h3>String Comparisons (inside <code>[[ ... ]]</code>)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>"$str1" == "$str2"</code></td>
+                            <td>True if strings are equal. (Note: <code>=</code> is a valid synonym for <code>==</code> here).</td>
+                        </tr>
+                        <tr>
+                            <td><code>"$str1" != "$str2"</code></td>
+                            <td>True if strings are not equal.</td>
+                        </tr>
+                        <tr>
+                            <td><code>"$str1" &lt; "$str2"</code></td>
+                            <td>True if <code>str1</code> sorts before <code>str2</code> (lexicographically).</td>
+                        </tr>
+                        <tr>
+                            <td><code>"$str1" &gt; "$str2"</code></td>
+                            <td>True if <code>str1</code> sorts after <code>str2</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-z "$str"</code></td>
+                            <td>True if string is empty (zero length).</td>
+                        </tr>
+                        <tr>
+                            <td><code>-n "$str"</code></td>
+                            <td>True if string is not empty.</td>
+                        </tr>
+                        <tr>
+                            <td><code>"$str" =~ regex</code></td>
+                            <td>True if string matches the extended regular expression.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Integer Comparisons (inside <code>[[ ... ]]</code> or <code>(( ... ))</code>)</h3>
+                <p>Use these operators <strong>inside <code>[[ ... ]]</code></strong>:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>$int1 -eq $int2</code></td>
+                            <td>Equal</td>
+                        </tr>
+                        <tr>
+                            <td><code>$int1 -ne $int2</code></td>
+                            <td>Not Equal</td>
+                        </tr>
+                        <tr>
+                            <td><code>$int1 -gt $int2</code></td>
+                            <td>Greater Than</td>
+                        </tr>
+                        <tr>
+                            <td><code>$int1 -ge $int2</code></td>
+                            <td>Greater Than or Equal</td>
+                        </tr>
+                        <tr>
+                            <td><code>$int1 -lt $int2</code></td>
+                            <td>Less Than</td>
+                        </tr>
+                        <tr>
+                            <td><code>$int1 -le $int2</code></td>
+                            <td>Less Than or Equal</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Alternatively, use the more C-like <strong>arithmetic context <code>(( ... ))</code></strong>:</p>
+
+                <h3>File Tests (inside <code>[[ ... ]]</code>)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>-e "$file"</code></td>
+                            <td>True if file exists (any type).</td>
+                        </tr>
+                        <tr>
+                            <td><code>-f "$file"</code></td>
+                            <td>True if file is a regular file.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-d "$dir"</code></td>
+                            <td>True if <code>dir</code> is a directory.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-s "$file"</code></td>
+                            <td>True if file is not empty (size > 0).</td>
+                        </tr>
+                        <tr>
+                            <td><code>-r "$file"</code></td>
+                            <td>True if file is readable.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-w "$file"</code></td>
+                            <td>True if file is writable.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-x "$file"</code></td>
+                            <td>True if file is executable.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Logical Operators (inside <code>[[ ... ]]</code>)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>! expression</code></td>
+                            <td>Logical NOT</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr1 && expr2</code></td>
+                            <td>Logical AND</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr1 || expr2</code></td>
+                            <td>Logical OR</td>
+                        </tr>
+                    </tbody>
+                </table>
+    </div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
     <div class="container">
         <h1>Detailed Bash Scripting Reference</h1>
 
