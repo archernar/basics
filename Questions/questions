@@ -167,7 +167,7 @@ BEGIN {
         tb = "&nbsp;"
         tc = "<a onclick=showRandomTopic("  sq("SPL" ahash($1)) ");>&nbsp;<img class=ttpp></a>"
         td = "<a class=" sq("n") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
-        print ta tb tc td
+        print ta tb td
         f=$1
     }
 }' $Tmp3  |  sed 's/"//g' > questions.topics
@@ -250,7 +250,7 @@ cat << "HEREND1"
 <br><br>
 <div class=tog>
 <div class='icon' id='toggleIcon'></div>
-<div class=togtitle>References & Examples: Java</div>
+<div class=togtitle>References & Examples</div>
 </div>
 
 <div class=divHidden>
@@ -268,7 +268,14 @@ cat << "HEREND1"
 <a class='momo' code=Movie.java></a>
 <a class='momo' code=JavaClassroomDemo.java></a>
 <a class='momo' code=OOPDemo.java></a>
+<a target="_blank" class='momo' code=bashref.html></a>
+<a target="_blank" class='momo' code=domathon.html></a>
+<a target="_blank" class='momo' code=domref.html></a>
+<a target="_blank" class='momo' code=jsdomref.html></a>
+<a target="_blank" class='momo' code=cssref.html></a>
+<a target="_blank" class='momo' code=vimref.html></a>
 </div>
+
 HEREND1
 cp questions.topics $Tmp
 
@@ -394,11 +401,6 @@ cat << "HEREND1A"
 </div>
 
 <div class=divHidden>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='specfile' href=domathon.html></a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='specfile' href=domref.html></a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='specfile' href=jsdomref.html></a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='specfile' href=cssref.html></a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" class='specfile' href=vimref.html></a><br>
 
 HEREND1A
 

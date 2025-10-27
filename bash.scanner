@@ -32,19 +32,19 @@ function scan_for_secrets() {
     return 1
   fi
 
+  #"password"    # Password
+  #"passwd=[\"']?[^\"']{8,}[\"']?"    # another common password pattern
+  #"passwd"    # another common password pattern
+  #"token:[\"']?[^\"']{20,}[\"']?"       # Token
+  #"token:"       # Token
+  #"token"       # Token
   # Define patterns to search for (add/modify as needed)
-  #  "([a-zA-Z0-9]){3,12}:([a-zA-Z0-9]){3,12}" #look for username:password type strings.
   local patterns=(
-
+  "([a-zA-Z0-9]){3,12}:([a-zA-Z0-9]){3,12}" #look for username:password type strings.
+  "key[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?"      # Key pattern
   "AIza[0-9a-zA-Z_-]{35}"          # Google API Key
   "sk_live_[0-9a-zA-Z_]{24}"     # Stripe API Key
   "password=[\"']?[^\"']{8,}[\"']?"    # Password
-  "password"    # Password
-  "passwd=[\"']?[^\"']{8,}[\"']?"    # another common password pattern
-  "passwd"    # another common password pattern
-  "token:[\"']?[^\"']{20,}[\"']?"       # Token
-  "token:"       # Token
-  "token"       # Token
   "Authorization: Bearer [a-zA-Z0-9_-]+\\.[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_-]+" # JWT
   "AKIA[0-9A-Z]{16}"             # AWS Access Key ID
   "AKIA"                        # AWS Access Key ID
@@ -68,7 +68,6 @@ function scan_for_secrets() {
   "MONGO_URI=mongodb://[a-zA-Z0-9_-]+:[a-zA-Z0-9_-]+@" #mongodb uri, catches username and password
   "password[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?"  # Basic password pattern
   "secret[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?"   # Secret pattern
-  "key[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?"      # Key pattern
   "AWS_ACCESS_KEY_ID[[:space:]]*[:=][[:space:]]*[\"']?[A-Z0-9]*[\"']?" # AWS Access Key ID
   "AWS_SECRET_ACCESS_KEY[[:space:]]*[:=][[:space:]]*[\"']?[a-zA-Z0-9/+=]*[\"']?" # AWS Secret Access Key
   "api_key[[:space:]]*[:=][[:space:]]*[\"']?[^\"']*[\"']?" # API Key pattern
@@ -91,7 +90,7 @@ function scan_for_secrets() {
       found=1
       printCritical "Potential secret found in '$file' matching pattern: '$pattern'"
       printCritical ""
-      grep -E -n "$pattern" "$file"
+      grep --color=always -E -n "$pattern" "$file" | gawk '{print $0;print ""}'
       #./finder "$pattern" "$file"
       if grep -E "SCANPASS" "$file" > /dev/null; then
           overide=1

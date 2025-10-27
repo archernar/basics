@@ -56,12 +56,24 @@ source $BASHLIBHOME/bash.namevalue
 source $BASHLIBHOME/bash.scanner
 
 if [ "XSCAN" == "SCAN" ]; then                                                                                               
+    rm -f scan.exceptions
     echo  "Scanning all files in $(pwd)" 
     echo  "-"
     for file in *; do
       if [[ "$file" != "bash.scanner" ]]; then
           if [[ -f "$file" ]]; then
+
+              EXCLUDE_FILES=("xxjspdf.plugin.autotable.min.js" "jspdf.umd.min.js")
+              if [[ " ${EXCLUDE_FILES[@]} " =~ " ${file} " ]]; then
+                  echo "****************************************"
+                  echo "Skipping: $file"
+                  echo "          Found in exclusion list"
+                  echo "****************************************"
+                  continue
+              fi
+
               if ! scan_for_secrets "$file"; then
+                  echo -n "$(dq "$file") " >> scan.exceptions
                   echo "SECRETS EXCEPTION"
                   #echo "Exiting main script."
                   #exit 1
@@ -70,9 +82,6 @@ if [ "XSCAN" == "SCAN" ]; then
       fi
     done
 fi
-
-
-
 
 
 # The file where the version number is stored
@@ -199,7 +208,7 @@ fi
 #gawk '{printf "%s", $0}' questions.html > index.html
 #gawk '{printf "%s", $0}' questions.html > error.html
 FILES=( \
-"Java.html" "version.txt" "domathon.html" "ScannerClass.pdf" "icon.png" "index.html" "error.html" "questions.html" \
+"bashref.html" "Java.html" "version.txt" "domathon.html" "ScannerClass.pdf" "icon.png" "index.html" "error.html" "questions.html" \
 "javaexercises.html" "banner4.png" "myQuery.js" "countdown.js" "questions.js" "editor.js" "questions.css"  \
 "jspdf.plugin.autotable.min.js" "jspdf.umd.min.js" "jsdomref.html" "domref.html" "tog.css"  "JavaReference.html" "Java.html" \
 )

@@ -316,7 +316,7 @@ function exportTest() {
 
 
 }
-function exportTableToPDF(sel) {
+function exportTableToPDF(title, sel) {
     //
     // IMPORTANT: Make sure to import jsPDF and jspdf-autotable.
     // In this example, they are imported via <script> tags in the HTML file.
@@ -409,7 +409,8 @@ sel="#clonedTable";
     // document.body.appendChild(iframe);
     //THIS ONE
     const fn = "testpdf_" + (new Date()).toLocaleString() + ".pdf";
-    doc.save(fn);
+    //doc.save(fn);
+    doc.save(title + ".pdf");
     const windowName = 'PDF';
     const screenWidth = Math.trunc(screen.width * .65);
     const screenHeight = Math.trunc(screen.height * .80);
@@ -419,8 +420,8 @@ sel="#clonedTable";
     popupWindow.focus();
 
 }
-function ettp(sel) {
-    exportTableToPDF(sel);
+function ettp(title, sel) {
+    exportTableToPDF(title, sel);
 }
 
 function exportTableToPDF2() {
@@ -509,7 +510,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Define the title you want to set
         // Select all elements
         // Loop through each selected element and set its title attribute
-        var newTitle = "table view/create pdf";
+        var newTitle = "table view";
         var moeElements = document.querySelectorAll('.p');
         moeElements.forEach(element => {
           element.valign='center'

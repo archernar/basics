@@ -3,9 +3,11 @@
 # ##END
 DEBUG=1
 DEBUGLEVEL=1
-
+function dq() {
+    printf '"%s"\n' "$1"
+}
 function stderr() {
-        echo "$1" >&2;
+    printf "%s\n" "$1" >&2
 }
 
 
