@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Bash Scripting Reference</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #fdfdfd;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1, h2, h3 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            color: #2c3e50;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 1.5em;
+        }
+        h3 {
+            font-size: 1.5em;
+            margin-top: 1.2em;
+            border-bottom: 1px solid #eee;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1em;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.95em;
+        }
+        pre code {
+            white-space: pre;
+        }
+        /* Inline code */
+        :not(pre) > code {
+            background-color: #ecf0f1;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        #toc {
+            background: #ecf0f1;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        #toc h2 {
+            margin-top: 0;
+            border-bottom: none;
+        }
+        #toc ul {
+            list-style-type: none;
+            padding-left: 0;
+            column-count: 2;
+        }
+        #toc li {
+            margin-bottom: 10px;
+        }
+        #toc a {
+            text-decoration: none;
+            color: #2980b9;
+        }
+        #toc a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f9f9f9;
+        }
+        .note {
+            background: #fffbe6;
+            border: 1px solid #ffe58f;
+            border-radius: 4px;
+            padding: 1em;
+        }
+        .note strong {
+            color: #d46b08;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Detailed Bash Scripting Reference</h1>
+
+        <nav id="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">1. Introduction</a></li>
+                <li><a href="#best-practices">2. Best Practices (Script Header)</a></li>
+                <li><a href="#basics">3. Basics</a></li>
+                <li><a href="#variables">4. Variables</a></li>
+                <li><a href="#quoting">5. Quoting</a></li>
+                <li><a href="#shell-expansions">6. Shell Expansions</a></li>
+                <li><a href="#io-redirection">7. I/O & Redirection</a></li>
+                <li><a href="#operators-tests">8. Operators & Tests</a></li>
+                <li><a href="#control-flow">9. Control Flow</a></li>
+                <li><a href="#loops">10. Loops</a></li>
+                <li><a href="#functions">11. Functions</a></li>
+                <li><a href="#arrays">12. Arrays</a></li>
+                <li><a href="#arguments">13. Script Arguments</a></li>
+                <li><a href="#special-variables">14. Special Variables</a></li>
+                <li><a href="#debugging">15. Debugging & Traps</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="introduction">
+                <h2>1. Introduction</h2>
+                <p><strong>Bash</strong> (Bourne Again SHell) is a Unix shell and command language interpreter. A Bash script is a plain text file containing a series of commands.</p>
+                
+                <h3>Shebang</h3>
+                <p>The first line of a script, the "shebang," tells the system which interpreter to use.</p>
+                <pre><code>#!/bin/bash
+# or for portability
+#!/usr/bin/env bash</code></pre>
+                
+                <h3>Executing a Script</h3>
+                <p>1. Make the script executable:</p>
+                <pre><code>chmod +x your_script.sh</code></pre>
+                <p>2. Run it:</p>
+                <pre><code>./your_script.sh</code></pre>
+                <p>Alternatively, you can run it without making it executable:</p>
+                <pre><code>bash your_script.sh</code></pre>
+            </section>
+
+            <hr>
+            
+            <section id="best-practices">
+                <h2>2. Best Practices (Script Header)</h2>
+                <p>Start your scripts with these settings (the "unofficial strict mode") to catch common errors.</p>
+                <pre><code>#!/usr/bin/env bash
+
+# Exit immediately if a command exits with a non-zero status.
+set -e
+
+# Treat unset variables as an error when substituting.
+set -u
+
+# Exit status of the last command that threw a non-zero exit code is returned.
+set -o pipefail
+
+# Optional: Print each command to stderr before executing.
+# set -x </code></pre>
+                <div class="note">
+                    <strong>Note:</strong> <code>set -euo pipefail</code> is a powerful combination. <code>-e</code> (or <code>errexit</code>) can have surprising behavior in <code>if</code> statements or <code>while</code> loops, but it's generally safer to have it on.
+                </div>
+            </section>
+            
+            <hr>
+
+            <section id="basics">
+                <h2>3. Basics</h2>
+                
+                <h3>Comments</h3>
+                <p>Comments start with a <code>#</code>. They are ignored by the interpreter.</p>
+                <pre><code># This is a full-line comment
+
+echo "Hello"  # This is an inline comment</code></pre>
+                
+                <h3>Command Substitution</h3>
+                <p>Capture the output of a command into a variable. The modern <code>$()</code> syntax is preferred over backticks (<code>``</code>) because it nests easily.</p>
+                <pre><code># Preferred
+current_date=$(date +%Y-%m-%d)
+echo "Today is $current_date"
+
+# Old style (avoid)
+files=`ls -1`</code></pre>
+
+                <h3>Arithmetic</h3>
+                <p>Use the <code>$((...))</code> syntax for arithmetic expansion.</p>
+                <pre><code>x=5
+y=10
+sum=$((x + y))
+echo "Sum is: $sum"  # Output: Sum is: 15
+
+# It also supports increment/decrement
+((x++))
+echo "x is now: $x" # Output: x is now: 6</code></pre>
+            </section>
+            
+            <hr>
+
+            <section id="variables">
+                <h2>4. Variables</h2>
+                
+                <h3>Declaration & Assignment</h3>
+                <p>No spaces around the <code>=</code> sign.</p>
+                <pre><code># Correct
+name="Alice"
+
+# Incorrect (will try to run "name" with args "=" and "Alice")
+name = "Alice"</code></pre>
+                
+                <h3>Usage</h3>
+                <p>Reference a variable using the <code>$</code> prefix, e.g., <code>$name</code> or <code>${name}</code>. The curly braces are required when the variable name is adjacent to other characters.</p>
+                <pre><code>fruit="apple"
+echo "I have one $fruit"        # Works
+echo "I have two ${fruit}s"     # Correct: I have two apples
+echo "I have two $fruits"       # Incorrect: Tries to find variable $fruits</code></pre>
+                
+                <h3>Variable Scopes</h3>
+                <ul>
+                    <li><strong>Global:</strong> Default scope. Accessible throughout the script.</li>
+                    <li><strong>Local:</strong> Use the <code>local</code> keyword inside functions to create a variable visible only within that function and its children.</li>
+                </ul>
+                <pre><code>global_var="I'm global"
+
+my_func() {
+    local local_var="I'm local"
+    echo "$local_var"
+    echo "$global_var" # Can access global
+}
+
+my_func
+echo "$global_var"
+echo "$local_var" # This will be empty (or error if 'set -u' is on)</code></pre>
+            </section>
+
+            <hr>
+            
+            <section id="quoting">
+                <h2>5. Quoting</h2>
+                <p>Quoting is <strong>critical</strong> in Bash to prevent word splitting and glob expansion.</p>
+                <div class="note">
+                    <strong>Rule of thumb:</strong> Always double-quote your variables (e.g., <code>"$my_var"</code>).
+                </div>
+                
+                <h3>Double Quotes: <code>"..."</code></h3>
+                <p>Prevents word splitting and globbing, but <strong>allows</strong> variable (<code>$var</code>), command (<code>$()</code>), and arithmetic (<code>$(())</code>) substitution.</p>
+                <pre><code>username="Alice"
+echo "Hello, $username"  # Output: Hello, Alice
+
+greeting="Hello    World"
+echo "$greeting"       # Output: Hello    World
+echo $greeting         # Output: Hello World (word splitting!)</code></pre>
+                
+                <h3>Single Quotes: <code>'...'</code></h3>
+                <p>Prevents <strong>all</strong> substitutions. The string is treated literally.</p>
+                <pre><code>username="Alice"
+echo 'Hello, $username'  # Output: Hello, $username</code></pre>
+            </section>
+
+            <hr>
+            
+            <section id="shell-expansions">
+                <h2>6. Shell Expansions</h2>
+                
+                <h3>Brace Expansion <code>{...}</code></h3>
+                <p>Generates arbitrary strings. Not for variables.</p>
+                <pre><code># Creates file_a.txt, file_b.txt, file_c.txt
+touch file_{a,b,c}.txt
+
+# Creates 001, 002, ... 100
+echo {001..100}</code></pre>
+                
+                <h3>Tilde Expansion <code>~</code></h3>
+                <p>Expands to the home directory.</p>
+                <pre><code>echo ~        # /home/username
+echo ~/docs   # /home/username/docs</code></pre>
+                
+                <h3>Parameter Expansion</h3>
+                <p>Manipulate variables. Very powerful for setting defaults, substrings, etc.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Syntax</th>
+                            <th>Description</th>
+                            <th>Example (if <code>var="foo.txt"</code>)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>${var:-default}</code></td>
+                            <td>Use <code>default</code> if <code>var</code> is unset or null.</td>
+                            <td><code>file=${filename:-"default.txt"}</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>${var:=default}</code></td>
+                            <td>Use <code>default</code> if <code>var</code> is unset/null, <strong>and assign</strong> <code>default</code> to <code>var</code>.</td>
+                            <td><code>${count:=0}</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>${var:?message}</code></td>
+                            <td>If <code>var</code> is unset/null, print <code>message</code> to stderr and exit.</td>
+                            <td><code>: ${HOSTNAME:?"HOSTNAME not set"}</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>${#var}</code></td>
+                            <td>Length of the string.</td>
+                            <td><code>${#var}</code> &rarr; <code>7</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>${var#pattern}</code></td>
+                            <td>Remove shortest match of <code>pattern</code> from <strong>start</strong>.</td>
+                            <td><code>${var#*.}</code> &rarr; <code>txt</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>${var##pattern}</code></td>
+                            <td>Remove longest match of <code>pattern</code> from <strong>start</strong>.</td>
+                            <td><code>${var##*.}</code> &rarr; <code>txt</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>${var%pattern}</code></td>
+                            <td>Remove shortest match of <code>pattern</code> from <strong>end</strong>.</td>
+                            <td><code>${var%.*}</code> &rarr; <code>foo</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>${var%%pattern}</code></td>
+                            <td>Remove longest match of <code>pattern</code> from <strong>end</strong>.</td>
+                            <td><code>${var%%.*}</code> &rarr; <code>foo</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>${var/find/replace}</code></td>
+                            <td>Replace first match of <code>find</code> with <code>replace</code>.</td>
+                            <td><code>${var/txt/log}</code> &rarr; <code>foo.log</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>${var//find/replace}</code></td>
+                            <td>Replace <strong>all</strong> matches of <code>find</code> with <code>replace</code>.</td>
+                            <td><code>${var//o/a}</code> &rarr; <code>faa.txt</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <hr>
+            
+            <section id="io-redirection">
+                <h2>7. I/O & Redirection</h2>
+                <p>Commands have three standard streams: stdin (0), stdout (1), and stderr (2).</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Syntax</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&gt; file</code></td>
+                            <td>Redirect stdout to <code>file</code> (overwrite).</td>
+                        </tr>
+                        <tr>
+                            <td><code>&gt;&gt; file</code></td>
+                            <td>Redirect stdout to <code>file</code> (append).</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt; file</code></td>
+                            <td>Redirect <code>file</code> to stdin.</td>
+                        </tr>
+                        <tr>
+                            <td><code>2&gt; file</code></td>
+                            <td>Redirect stderr to <code>file</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><code>&amp;&gt; file</code></td>
+                            <td>Redirect <strong>both</strong> stdout and stderr to <code>file</code>. (Shorthand for <code>&gt; file 2&gt;&amp;1</code>).</td>
+                        </tr>
+                        <tr>
+                            <td><code>|</code></td>
+                            <td><strong>Pipe:</strong> Redirect stdout of one command to stdin of another.</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;&lt;&lt; "string"</code></td>
+                            <td><strong>Here String:</strong> Pass "string" as stdin.</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;&lt; EOF</code></td>
+                            <td><strong>Here Document:</strong> Read input until <code>EOF</code> is seen on its own line.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre><code># Pipe
+ls -l | grep ".txt"
+
+# Redirect stdout to file (overwrite)
+echo "Hello" &gt; output.log
+
+# Redirect stderr to file (append)
+grep "error" /var/log/syslog 2&gt;&gt; error.log
+
+# Redirect stdout to /dev/null (silence output)
+command_that_is_noisy &gt; /dev/null
+
+# Redirect both stdout and stderr to /dev/null
+command_with_errors &amp;&gt; /dev/null
+
+# Here Document
+cat &lt;&lt; EOF
+This is line 1.
+This is line 2.
+The variable $USER is expanded.
+EOF
+
+# Here Document (disabling expansion)
+cat &lt;&lt; 'EOF'
+The variable $USER is NOT expanded.
+EOF
+
+# Here String
+grep "a" &lt;&lt;&lt; "banana"</code></pre>
+            </section>
+
+            <hr>
+            
+            <section id="operators-tests">
+                <h2>8. Operators & Tests</h2>
+                <p>Conditional logic in Bash uses the <code>test</code> command, which has two forms: <code>[ ... ]</code> (classic) and <code>[[ ... ]]</code> (modern Bash-specific).</p>
+                <div class="note">
+                    <strong>Best Practice:</strong> Always use the <strong>double-bracket</strong> <code>[[ ... ]]</code> form. It's more robust, supports pattern matching, and doesn't perform word splitting on variables.
+                </div>
+                
+                <h3>String Comparisons (inside <code>[[ ... ]]</code>)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>"$str1" == "$str2"</code></td>
+                            <td>True if strings are equal. (Note: <code>=</code> is a valid synonym for <code>==</code> here).</td>
+                        </tr>
+                        <tr>
+                            <td><code>"$str1" != "$str2"</code></td>
+                            <td>True if strings are not equal.</td>
+                        </tr>
+                        <tr>
+                            <td><code>"$str1" &lt; "$str2"</code></td>
+                            <td>True if <code>str1</code> sorts before <code>str2</code> (lexicographically).</td>
+                        </tr>
+                        <tr>
+                            <td><code>"$str1" &gt; "$str2"</code></td>
+                            <td>True if <code>str1</code> sorts after <code>str2</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-z "$str"</code></td>
+                            <td>True if string is empty (zero length).</td>
+                        </tr>
+                        <tr>
+                            <td><code>-n "$str"</code></td>
+                            <td>True if string is not empty.</td>
+                        </tr>
+                        <tr>
+                            <td><code>"$str" =~ regex</code></td>
+                            <td>True if string matches the extended regular expression.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Integer Comparisons (inside <code>[[ ... ]]</code> or <code>(( ... ))</code>)</h3>
+                <p>Use these operators <strong>inside <code>[[ ... ]]</code></strong>:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>$int1 -eq $int2</code></td>
+                            <td>Equal</td>
+                        </tr>
+                        <tr>
+                            <td><code>$int1 -ne $int2</code></td>
+                            <td>Not Equal</td>
+                        </tr>
+                        <tr>
+                            <td><code>$int1 -gt $int2</code></td>
+                            <td>Greater Than</td>
+                        </tr>
+                        <tr>
+                            <td><code>$int1 -ge $int2</code></td>
+                            <td>Greater Than or Equal</td>
+                        </tr>
+                        <tr>
+                            <td><code>$int1 -lt $int2</code></td>
+                            <td>Less Than</td>
+                        </tr>
+                        <tr>
+                            <td><code>$int1 -le $int2</code></td>
+                            <td>Less Than or Equal</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Alternatively, use the more C-like <strong>arithmetic context <code>(( ... ))</code></strong>:</p>
+                <pre><code>x=5
+y=10
+
+if (( x < y )); then
+    echo "$x is less than $y"
+fi</code></pre>
+
+                <h3>File Tests (inside <code>[[ ... ]]</code>)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>-e "$file"</code></td>
+                            <td>True if file exists (any type).</td>
+                        </tr>
+                        <tr>
+                            <td><code>-f "$file"</code></td>
+                            <td>True if file is a regular file.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-d "$dir"</code></td>
+                            <td>True if <code>dir</code> is a directory.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-s "$file"</code></td>
+                            <td>True if file is not empty (size > 0).</td>
+                        </tr>
+                        <tr>
+                            <td><code>-r "$file"</code></td>
+                            <td>True if file is readable.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-w "$file"</code></td>
+                            <td>True if file is writable.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-x "$file"</code></td>
+                            <td>True if file is executable.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Logical Operators (inside <code>[[ ... ]]</code>)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>! expression</code></td>
+                            <td>Logical NOT</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr1 && expr2</code></td>
+                            <td>Logical AND</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr1 || expr2</code></td>
+                            <td>Logical OR</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <hr>
+
+            <section id="control-flow">
+                <h2>9. Control Flow</h2>
+                
+                <h3><code>if / then / elif / else / fi</code></h3>
+                <p>The <code>[ ... ]</code> or <code>[[ ... ]]</code> is actually a *command* (<code>test</code>). The <code>if</code> statement checks the exit code of that command (0 for
+                    success/true, non-zero for failure/false).</p>
+                <pre><code>read -p "Enter a number: " num
+
+if [[ "$num" -gt 100 ]]; then
+    echo "That's a big number!"
+elif [[ "$num" -eq 42 ]]; then
+    echo "That's the answer."
+else
+    echo "That's a small number."
+fi</code></pre>
+                <p>You can test any command, not just <code>[[ ... ]]</code>:</p>
+                <pre><code># Check if grep finds a match
+if grep -q "root" /etc/passwd; then
+    echo "User 'root' exists."
+fi</code></pre>
+
+                <h3><code>case / esac</code></h3>
+                <p>Useful for matching a variable against several patterns.</p>
+                <pre><code>read -p "Enter 'start', 'stop', or 'status': " command
+
+case "$command" in
+    start)
+        echo "Starting service..."
+        # ...
+        ;;
+    stop|end)  # Multiple patterns
+        echo "Stopping service..."
+        # ...
+        ;;
+    status)
+        echo "Checking status..."
+        # ...
+        ;;
+    *) # Default (wildcard)
+        echo "Unknown command: $command"
+        exit 1
+        ;;
+esac</code></pre>
+            </section>
+
+            <hr>
+            
+            <section id="loops">
+                <h2>10. Loops</h2>
+                
+                <h3><code>for</code> Loop</h3>
+                <pre><code># Looping over a list of items
+fruits="apple banana cherry"
+for fruit in $fruits; do
+    echo "I like $fruit"
+done
+
+# Looping over a range (Bash 3+)
+for i in {1..5}; do
+    echo "Number: $i"
+done
+
+# Looping over files
+for file in /var/log/*.log; do
+    echo "Processing $file"
+done
+
+# C-style for loop
+for (( i=0; i<5; i++ )); do
+    echo "C-style count: $i"
+done</code></pre>
+                
+                <h3><code>while</code> Loop</h3>
+                <p>Executes as long as the condition is true (exit code 0).</p>
+                <pre><code>count=0
+while [[ $count -lt 5 ]]; do
+    echo "Count is $count"
+    ((count++))
+done</code></pre>
+                <p>A common pattern: reading a file line by line.</p>
+                <pre><code>while IFS= read -r line; do
+    echo "Read line: $line"
+done &lt; "input.txt"</code></pre>
+                <div class="note">
+                    <strong>Note:</strong> <code>IFS=</code> prevents trimming leading/trailing whitespace. <code>-r</code> prevents backslashes from being interpreted. This is the safest way to read lines.
+                </div>
+
+                <h3><code>until</code> Loop</h3>
+                <p>Executes as long as the condition is false (non-zero exit code).</p>
+                <pre><code>count=0
+until [[ $count -eq 5 ]]; do
+    echo "Until count is $count"
+    ((count++))
+done</code></pre>
+                
+                <h3>Loop Control</h3>
+                <ul>
+                    <li><code>break</code>: Exits the current loop entirely.</li>
+                    <li><code>continue</code>: Skips the rest of the current iteration and starts the next one.</li>
+                </ul>
+                <pre><code>for i in {1..10}; do
+    if (( i == 3 )); then
+        continue  # Skip 3
+    fi
+    if (( i == 8 )); then
+        break     # Stop at 8
+    fi
+    echo $i
+done
+# Output: 1 2 4 5 6 7</code></pre>
+            </section>
+
+            <hr>
+            
+            <section id="functions">
+                <h2>11. Functions</h2>
+                
+                <h3>Declaration</h3>
+                <pre><code># Style 1 (preferred)
+my_func() {
+    echo "Hello from the function!"
+}
+
+# Style 2 (Bash only)
+function my_func_alt {
+    echo "Hello again!"
+}</code></pre>
+                
+                <h3>Calling</h3>
+                <p>Just use the function name like a command.</p>
+                <pre><code>my_func</code></pre>
+                
+                <h3>Parameters (Positional)</h3>
+                <p>Functions access arguments using the same special variables as scripts:</p>
+                <ul>
+                    <li><code>$1</code>: First argument</li>
+                    <li><code>$2</code>: Second argument, etc.</li>
+                    <li><code>$#</code>: Number of arguments</li>
+                    <li><code>$@</code>: All arguments as a list of separate, quoted strings (e.g., <code>"$@"</code>)</li>
+                    <li><code>$*</code>: All arguments as a single string (e.g., <code>"$*"</code>)</li>
+                </ul>
+                <div class="note">
+                    <strong>Best Practice:</strong> Use <code>"$@"</code> to forward all arguments to another command.
+                </div>
+                <pre><code>greet() {
+    local name="$1"
+    local greeting="$2"
+    echo "$greeting, $name!"
+}
+
+greet "Alice" "Good morning" # Output: Good morning, Alice!</code></pre>
+
+                <h3>Return Values</h3>
+                <p>Functions "return" in two ways:</p>
+                <p><strong>1. Exit Status:</strong> An integer (0-255) using the <code>return</code> keyword. 0 means success, non-zero means failure. This is checked via <code>$?</code>.</p>
+                <pre><code>is_file() {
+    if [[ -f "$1" ]]; then
+        return 0 # Success
+    else
+        return 1 # Failure
+    fi
+}
+
+if is_file "/etc/hosts"; then
+    echo "It's a file!"
+fi</code></pre>
+
+                <p><strong>2. Standard Output:</strong> To "return" data (like a string), <code>echo</code> it from the function and capture it with command substitution <code>$()</code>.</p>
+                <pre><code>get_date() {
+    date +%Y-%m-%d
+}
+
+today=$(get_date)
+echo "Today is $today"</code></pre>
+            </section>
+
+            <hr>
+            
+            <section id="arrays">
+                <h2>12. Arrays</h2>
+                
+                <h3>Indexed Arrays</h3>
+                <pre><code># Declare
+my_array=("apple" "banana" "cherry")
+
+# Access element (0-indexed)
+echo ${my_array[0]} # Output: apple
+
+# Access all elements
+echo ${my_array[@]} # Output: apple banana cherry
+
+# Get length
+echo ${#my_array[@]} # Output: 3
+
+# Add element
+my_array+=("orange")
+
+# Loop over array
+for item in "${my_array[@]}"; do
+    echo "Item: $item"
+done</code></pre>
+                
+                <h3>Associative Arrays (Bash 4+)</h3>
+                <p>Key-value maps. Must be declared with <code>declare -A</code>.</p>
+                <pre><code># Declare
+declare -A user
+user["name"]="Alice"
+user["id"]=101
+user["role"]="admin"
+
+# Access element
+echo ${user["name"]} # Output: Alice
+
+# Get all keys
+echo ${!user[@]} # Output: name id role (order not guaranteed)
+
+# Get all values
+echo ${user[@]} # Output: Alice 101 admin
+
+# Loop over keys
+for key in "${!user[@]}"; do
+    echo "Key: $key, Value: ${user[$key]}"
+done</code></pre>
+            </section>
+
+            <hr>
+            
+            <section id="arguments">
+                <h2>13. Script Arguments</h2>
+                <p>These are the same special variables used in functions.</p>
+                <pre><code># Script: ./my_script.sh foo bar baz
+
+echo "Script name: $0"   # ./my_script.sh
+echo "First arg: $1"     # foo
+echo "Second arg: $2"    # bar
+echo "Arg count: $#"     # 3
+echo "All args (list): $@" # foo bar baz
+echo "All args (string): $*" # foo bar baz</code></pre>
+
+                <h3><code>getopts</code></h3>
+                <p>The built-in way to parse simple POSIX-style options (e.g., <code>-f</code>, <code>-v</code>, <code>-o file</code>).</p>
+                <pre><code>#!/bin/bash
+# Usage: ./script.sh -v -f /path/to/file
+
+verbose=0
+output_file=""
+
+# 'vf:o:' defines the options:
+# v: A simple flag (no argument)
+# f: A simple flag (no argument)
+# o: An option that requires an argument (the colon ':')
+
+while getopts "vfo:" opt; do
+  case $opt in
+    v)
+      verbose=1
+      ;;
+    f)
+      echo "Flag -f was triggered."
+      ;;
+    o)
+      output_file="$OPTARG"
+      ;;
+    \?) # Handle invalid options
+      echo "Invalid option: -$OPTARG" >&amp;2
+      exit 1
+      ;;
+    :) # Handle missing option arguments
+      echo "Option -$OPTARG requires an argument." >&amp;2
+      exit 1
+      ;;
+  esac
+done
+
+# Shift arguments so $1 refers to non-option arguments
+shift $((OPTIND-1))
+
+echo "Verbose: $verbose"
+echo "Output file: $output_file"
+echo "Remaining arguments: $@"
+</code></pre>
+            </section>
+            
+            <hr>
+            
+            <section id="special-variables">
+                <h2>14. Special Variables</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>$?</code></td>
+                            <td>Exit status of the last executed command (0 for success, non-zero for failure).</td>
+                        </tr>
+                        <tr>
+                            <td><code>$$</code></td>
+                            <td>Process ID (PID) of the current script.</td>
+                        </tr>
+                        <tr>
+                            <td><code>$!</code></td>
+                            <td>PID of the last background command (run with <code>&amp;</code>).</td>
+                        </tr>
+                        <tr>
+                            <td><code>$0</code></td>
+                            <td>Name of the script.</td>
+                        </tr>
+                        <tr>
+                            <td><code>$#</code></td>
+                            <td>Number of positional parameters (arguments).</td>
+                        </tr>
+                        <tr>
+                            <td><code>$@</code></td>
+                            <td>All positional parameters as individual quoted strings. (Use <code>"$@"</code>).</td>
+                        </tr>
+                        <tr>
+                            <td><code>$*</code></td>
+                            <td>All positional parameters as a single string. (Use <code>"$*"</code>).</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre><code>ls /nonexistent-file &gt; /dev/null 2&gt;&amp;1
+echo "Exit status of ls: $?"  # Will be non-zero
+
+echo "This script's PID is $$"
+
+sleep 10 &amp;
+echo "PID of background sleep: $!"</code></pre>
+            </section>
+            
+            <hr>
+
+            <section id="debugging">
+                <h2>15. Debugging & Traps</h2>
+                
+                <h3>Using <code>set</code></h3>
+                <p>You can set these options at the top of your script (see Best Practices) or on the command line.</p>
+                <ul>
+                    <li><code>set -x</code> (or <code>xtrace</code>): Print each command to stderr before it is executed. Extremely useful for debugging.</li>
+                    <li><code>set -v</code> (or <code>verbose</code>): Print shell input lines as they are read.</li>
+                </ul>
+                <pre><code># Run your script in debug mode
+bash -x ./your_script.sh
+
+# Or, enable it mid-script
+echo "Debugging starts here"
+set -x
+my_var="test"
+echo "$my_var"
+set +x # Disable debug mode
+echo "Debugging ends here"
+</code></pre>
+                
+                <h3><code>trap</code></h3>
+                <p>The <code>trap</code> command allows you to execute a command when your script receives a signal.</p>
+                <pre><code># Define a function to run on exit
+cleanup() {
+    echo "Cleaning up temporary files..."
+    rm -f /tmp/my_script_*.tmp
+}
+
+# Set the trap: call 'cleanup' on EXIT (normal or abnormal)
+trap cleanup EXIT
+
+# Also trap interrupt (Ctrl+C) and terminate signals
+trap cleanup INT TERM
+
+echo "Creating temp file..."
+touch /tmp/my_script_123.tmp
+
+echo "Sleeping for 10 seconds... (press Ctrl+C to test)"
+sleep 10
+
+echo "Script finishing."
+# 'cleanup' will run here automatically
+</code></pre>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>
