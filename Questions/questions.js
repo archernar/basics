@@ -4,6 +4,12 @@
  * @param {HTMLTableElement} tableElement The table element to select a row from.
  * @returns {HTMLTableRowElement|null} A random table row element, or null if the table has no rows.
  */
+function rurl(){
+    history.pushState({ page: 'moe', id:123},'','index.html');
+    // document.location="index.html";
+}
+
+
 function getRandomTableRow(tableElement) {
   // 1. Get all the rows in the table.
   // The .rows property returns a live HTMLCollection of all <tr> elements.
@@ -26,80 +32,14 @@ function getRandomTableRow(tableElement) {
   // 5. Return the row at the random index.
   return rows[randomIndex];
 }
-
-function showRandomTopic(arg) {
-//function getRandomTableRow(tableElement) {
-    var tab=document.createElement('table');
-    tab.classList.add('examtable');
-    setClasses(tab, 'width91');
-    tab.setAttribute('border','1');
-    tab.setAttribute('id','test');
-    var sz=""
-    sz = "<a onclick=" + dq("ettp('#randomtopictable')") + ">TO PDF</a><br><br>"
-    sz = sz + "<table id='randomtopictable'><tr><td><div class='content-grid'>"
-    // Loop from 0 to 4
-    var p;
-    var n;
-    var uno;
-    var due;
-    var tre;
-    var len = ((document.getElementById(arg)).querySelectorAll('tr')).length
-    var size = Math.max(Math.trunc(len/4),1);
-    const randomSet = generateUniqueRandomNumbers(size, len);
-    console.log(size + " , " + len);
-    console.log(`: [${randomSet.join(', ')}]`);
-    for (let i = 0; i < size; i++) {
-        n  = randomSet[i];
-        // console.log(`5 unique random numbers from 0-9: [${randomSet1.join(', ')}]`);
-        // console.log(`The current number is ${i}`);
-        if ( arg=="") {
-            p=getRandomDiv('.tcd')
-            uno = p.querySelector('div:nth-of-type(1)').innerHTML;
-            due = p.querySelector('div:nth-of-type(2)').innerHTML;
-            tre = p.querySelector('div:nth-of-type(3)').innerHTML;
-        } else {
-            p=getRandomTrById(arg) 
-            p=getTrByIndex(arg, n);
-
-            if ( p.querySelectorAll('td').length < 5 ) continue;
-
-            uno = p.cells[2].textContent;
-            due = p.cells[3].textContent;
-            tre = p.cells[4].textContent;
-        }
-
-        // sz = sz + swapClass(p, 'tcd','topic-card').outerHTML;
-
-        tr=createElementWithClasss('tr', 'examtr');
-        tab.appendChild(tr);
-
-        td=createElementWithClasss('td', 'examtd');
-        tr.appendChild(td);
-        td.appendChild(document.createTextNode(i));
-
-        td=createElementWithClasss('td', 'examtd');
-        setWidthClass(td, 'width50');
-        tr.appendChild(td);
-        td.appendChild(document.createTextNode(uno));
-
-        td=createElementWithClasss('td', 'examtd');
-        tr.appendChild(td);
-        td.innerHTML=due;
-
-        td=createElementWithClasss('td', 'examtd');
-        tr.appendChild(td);
-        td.innerHTML=tre;
-
-        // td.appendChild(document.createTextNode(dua.replace(/<br>/g, "\n")));
-
-    }
-    sz = sz + "</td></tr></table></div>" 
-    document.getElementById('popupOverlay').innerHTML = "";
-    document.getElementById('popupOverlay').innerHTML = "<button onclick='hidePopup();'>Close</button>&nbsp;<button onclick='exportTest()'>Export Test to PDF</button><br><br>"
-    document.getElementById('popupOverlay').append(tab);
-    exportTest();
-    //showOverlay();
+function getTextWidth(text, font = '10 Arial'){
+    const canvas   = document.createElement('canvas');
+    const context  = canvas.getContext('2d');
+    context.font   = font;
+    const metrics  = context.measureText(text);
+    return metrics.width;
 }
+
 function swapClass(element,a,b) {
             element.classList.remove(a);
             element.classList.add(b);
@@ -190,6 +130,9 @@ function renderTable(arr) {
               tab.setAttribute('align','left');
               tab.setAttribute('width','100%');
               var szCode = element.getAttribute('code');
+              var szTitle = element.getAttribute('title');
+              if (szTitle==null) szTitle=szCode;
+
 
               if ((index % 2) == 0)
                   tr=tab.appendChild( document.createElement('tr'));
@@ -201,7 +144,7 @@ function renderTable(arr) {
               } else {
                   tx=td.appendChild( document.createElement('a'));
                   tx.classList.add('np');
-                  tx.appendChild( document.createTextNode(szCode));
+                  tx.appendChild( document.createTextNode(szTitle));
                   tx.addEventListener('click', function(event) {
                       fastEdit( szCode );
                       event.preventDefault();
@@ -247,233 +190,11 @@ function opE(content) {
             popup.document.write(ContentDocBottom);
             popup.document.close();
 }
-function exportTest() {
-    //
-    // IMPORTANT: Make sure to import jsPDF and jspdf-autotable.
-    // In this example, they are imported via <script> tags in the HTML file.
-    //
-    var ct = 0;
-
-    // Initialize jsPDF
-    const { jsPDF } = window.jspdf;
-    // const doc = new jsPDF();
-
-
-    const doc = new jsPDF({
-        orientation: "landscape"
-    });
-
-    // Use autoTable to generate the table.
-    // The 'html' option is used to specify the HTML table element.
-    // doc.autoTable({ html: '#myTable' });
-    // doc.autoTable({ html: sel });
-
-    const w1=Math.trunc(doc.internal.pageSize.getWidth() * .20);
-    const w2=Math.trunc(doc.internal.pageSize.getWidth() * .30);
-    const w3=Math.trunc(doc.internal.pageSize.getWidth() * .50);
-    console.log(w1);
-    console.log(w2);
-    console.log(w3);
-    const sel = '#test'
-    const box = document.querySelectorAll(sel);
-    const columns = [
-    { header: "#", dataKey: "num" },
-    { header: "TOPIC", dataKey: "topic" },
-    { header: "TITLE", dataKey: "title" },
-    { header: "QUESTION", dataKey: "question" }
-    ];
-    doc.autoTable({ 
-         columns: columns,
-         html: sel,
-         columnStyles: {
-             num:      { cellWidth: 10 },
-             topic:    { cellWidth: 48 },
-             title:    { cellWidth: 60 },
-             question: { cellWidth: 150 }
-         },
-         theme: "grid",
-         styles: {
-             fontSize: 12 // Sets the font size for the entire table
-         },
-         didDrawPage: function (data) {
-            ct = ct +1
-            // Add a report title as a header on every page
-            doc.setFontSize(20);
-            var pageWidth = doc.internal.pageSize.width;
-            var now = new Date();
-            doc.text("Java Exercises " + now.toLocaleString() + " -- Page " + ct.toString(), pageWidth - 15, 10, { align: 'right' }); // 10 units from the right edge
-          }
-      });
-    const fn = "testpdf_" + (new Date()).toLocaleString() + ".pdf";
-    const windowName = 'PDF';
-    const screenWidth = Math.trunc(screen.width * .65);
-    const screenHeight = Math.trunc(screen.height * .80);
-    const windowFeatures = 'width=' + screenWidth + ',height=' + screenHeight + ',popup=yes,scrollbars=yes,resizable=yes';
-    const popupWindow=window.open(doc.output('bloburl'), windowName, windowFeatures);
-    doc.save(fn);
-    popupWindow.moveTo(50, 50);
-    popupWindow.focus();
-
-
-}
-function exportTableToPDF(title, sel) {
-    //
-    // IMPORTANT: Make sure to import jsPDF and jspdf-autotable.
-    // In this example, they are imported via <script> tags in the HTML file.
-    //
-    var ct = 0;
-
-
-// 1. Get the original table
-const originalTable = document.querySelector(sel);
-const clonedTable = originalTable.cloneNode(true);
-const firstRow = clonedTable.rows[0];
-if (firstRow) {
-  firstRow.remove();
-}
-
-// 5. (Optional) Append the new clone to the page
-document.body.appendChild(clonedTable);
-clonedTable.id = 'clonedTable';
-sel="#clonedTable";
-
-
-
-
-    // Initialize jsPDF
-    const { jsPDF } = window.jspdf;
-    // const doc = new jsPDF();
-    const doc = new jsPDF({
-        orientation: "landscape"
-    });
-
-    // Use autoTable to generate the table.
-    // The 'html' option is used to specify the HTML table element.
-    // doc.autoTable({ html: '#myTable' });
-    // doc.autoTable({ html: sel });
-    const box = document.querySelectorAll(sel);
-    const columns = [
-    { header: "#", dataKey: "num" },
-    { header: "TOPIC", dataKey: "topic" },
-    { header: "TITLE", dataKey: "title" },
-    { header: "QUESTION", dataKey: "question" }
-    ];
-
-
-    const rowsPerPage = 6;
-
-
-
-
-    doc.autoTable({ 
-         drawRow: (row) => {
-           if (row.index > 0 && row.index % rowsPerPage === 0) {
-             doc.autoTableAddPage();
-           }
-         },
-         html: sel,
-         columns: columns,
-         columnStyles: {
-             num:      { cellWidth: 15 },
-             topic:    { cellWidth: 32 },
-             title:    { cellWidth: 50 },
-             question: { cellWidth: 170 }
-         },
-         theme: "grid",
-         styles: {
-             fontSize: 12 // Sets the font size for the entire table
-         },
-         didDrawPage: function (data) {
-            ct = ct +1
-            // Add a report title as a header on every page
-            doc.setFontSize(20);
-            var pageWidth = doc.internal.pageSize.width;
-            //doc.text(ct.toString(), pageWidth - 10, 10, { align: 'right' }); // 10 units from the right edge
-            var now = new Date();
-            doc.text("Java Exercises " + now.toLocaleString() + " -- Page " + ct.toString(), pageWidth - 15, 10, { align: 'right' }); // 10 units from the right edge
-          }
-      });
-
-    // Save the PDF
-    // doc.save('table.pdf');
-    // doc.output('dataurl');
-    //
-    // doc.output('save','table.pdf');
-    // window.open(doc.output('bloburl'));
-    //
-    // const pdfDataUri = doc.output('datauristring');
-    // const iframe = document.createElement('iframe');
-    // iframe.style.width = '100%';
-    // iframe.style.height = '600px';
-    // iframe.src = pdfDataUri;
-    // document.body.appendChild(iframe);
-    //THIS ONE
-    const fn = "testpdf_" + (new Date()).toLocaleString() + ".pdf";
-    //doc.save(fn);
-    doc.save(title + ".pdf");
-    const windowName = 'PDF';
-    const screenWidth = Math.trunc(screen.width * .65);
-    const screenHeight = Math.trunc(screen.height * .80);
-    const windowFeatures = 'width=' + screenWidth + ',height=' + screenHeight + ',popup=yes,scrollbars=yes,resizable=yes';
-    const popupWindow=window.open(doc.output('bloburl'), windowName, windowFeatures);
-    popupWindow.moveTo(50, 50);
-    popupWindow.focus();
-
-}
 function ettp(title, sel) {
-    exportTableToPDF(title, sel);
+    rurl();
+    myToPDF(title, sel, 0);
 }
 
-function exportTableToPDF2() {
-    // Select all elements with the class 'info-box'
-    const infoBoxes = document.querySelectorAll('.e');
-    var ct = 0
-    // Initialize jsPDF
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF({
-        orientation: "portrait",
-        format: 'letter'
-    });
-
-    // Loop over the NodeList using forEach
-    infoBoxes.forEach(function(box) {
-        //doc.text("This is a landscape PDF!", 10, 10);
-      doc.autoTable({ html: box ,
-         theme: "grid",
-         styles: {
-             fontSize: 10 // Sets the font size for the entire table
-         },
-         didDrawPage: function (data) {
-             ct = ct +1
-            // Add a report title as a header on every page
-            doc.setFontSize(10);
-            doc.text( box.getAttribute('nom'), 10,10);
-                 var pageWidth = doc.internal.pageSize.width;
-                 //doc.text(ct.toString(), pageWidth - 10, 10, { align: 'right' }); // 10 units from the right edge
-                 var now = new Date();
-                 doc.text("Java Exercises " + now.toLocaleString() + " -- Page " + ct.toString(), pageWidth - 15, 10, { align: 'right' }); // 10 units from the right edge
-          }
-      });
-      doc.addPage();
-    });
-
-    // Save the PDF
-    //doc.output('save','table.pdf');
-    // window.open(doc.output('bloburl'));
-    const fn = "testpdf_" + (new Date()).toLocaleString() + ".pdf";
-    doc.save(fn);
-
-    const windowName = 'PDF';
-    const screenWidth = Math.trunc(screen.width * .65);
-    const screenHeight = Math.trunc(screen.height * .80);
-    const windowFeatures = 'width=' + screenWidth + ',height=' + screenHeight + ',popup=yes,scrollbars=yes,resizable=yes';
-    const popupWindow=window.open(doc.output('bloburl'), windowName, windowFeatures);
-    popupWindow.moveTo(50, 50);
-    popupWindow.focus();
-}
-function ettp2() {
-    exportTableToPDF2();
-}
 function fastEdit(url) {
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
@@ -547,6 +268,13 @@ document.addEventListener('DOMContentLoaded', function() {
           });
         });
 
+       document.querySelectorAll('.n').forEach(element => {
+          element.addEventListener('click', function(event) {
+                 document.location =element.getAttribute('code');
+                 rurl();
+                 event.preventDefault();
+          });
+        });
 
 
         renderClassTable('.momo');
@@ -707,6 +435,7 @@ document.addEventListener('DOMContentLoaded', function() {
             popup.document.close();
         });
 */
+        console.log('DOM fully loaded and parsed: Ready Code Complete');
 });
 
 

@@ -163,10 +163,11 @@ BEGIN {
         getline count < "questions.count"
         close("questions.count")
         count = " (" count ")"
-        ta = "<a href=" sq("#SPL" ahash($1)) ">&nbsp;&nbsp;&nbsp;<img class=p></a>"
+        ta = "<a class=" sq("n") "  code=" sq("#SPL" ahash($1)) ">&nbsp;&nbsp;&nbsp;<img class=p></a>"
         tb = "&nbsp;"
         tc = "<a onclick=showRandomTopic("  sq("SPL" ahash($1)) ");>&nbsp;<img class=ttpp></a>"
         td = "<a class=" sq("n") " href=" sq("#" ahash($1)) ">" $1 count "</a><br>"
+        td = "<a class=" sq("n") " code=" sq("#" ahash($1)) ">" $1 count "</a><br>"
         print ta tb td
         f=$1
     }
@@ -185,7 +186,8 @@ cat << "HEREND1"
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
 
-
+    <!-- This "type='module'" is the key! -->
+    <script src="logger.js" type="module"></script>
 
     <script type="text/javascript" src="myQuery.js"></script>
 
@@ -198,12 +200,17 @@ cat << "HEREND1"
     -->
     <script src="jspdf.umd.min.js"></script>
     <script src="jspdf.plugin.autotable.min.js"></script>
+    <script src="myPDF.js"></script>
+
+
     <link rel="stylesheet" href="questions.css">                                                         
     <link rel="stylesheet" href="tog.css">                                                         
     <link rel="icon" href="data:,">
 
 </head>
 <body>
+
+    <script src="myModule.js" type="module"></script>
 
     <!-- The countdown banner that covers the screen
     <div id="countdown-banner">
@@ -230,18 +237,20 @@ cat << "HEREND1"
     </div>
 
 
+    <!-- <button onclick="showRandomTopic('SPLePugoahH');">Create a 100 Question Test</button></td> -->
     <!-- The Popup Overlay and Container -->
     <div id="popupOverlay" class="popup-hidden"></div>
 
 <aside id=sidebar class="sidebar hidden">
 <table width=99%>
-<tr>
-<td align=left>
-<a href='index.html'>Home</a>
-</td>
-<td align=right><button onclick="exportTableToPDF2()">Export All to PDF</button>
-                <button onclick="showRandomTopic('SPLePugoahH');">Create a 100 Question Test</button></td>
-</tr>
+    <tr>
+        <td align=left>
+            <a href='index.html'>Home</a>
+        </td>
+        <td align=right>
+            <button onclick="myToPDFSaveAll()">Export All to PDF</button>
+        </td>
+    </tr>
 </table>
 
 <!-- nav id="nav-menu"
@@ -255,7 +264,6 @@ cat << "HEREND1"
 
 <div class=divHidden>
 <a class='momo' code=JavaFundamentals.java></a>
-<a class='momo' code=JavaReference.html></a>
 <a class='momo' code=skip></a>
 <a class='momo' code=skip></a>
 <a class='momo' code=Template.java></a>
@@ -268,15 +276,21 @@ cat << "HEREND1"
 <a class='momo' code=Movie.java></a>
 <a class='momo' code=JavaClassroomDemo.java></a>
 <a class='momo' code=OOPDemo.java></a>
-<a target="_blank" class='momo' code=bashref.html></a>
-<a target="_blank" class='momo' code=domathon.html></a>
-<a target="_blank" class='momo' code=domref.html></a>
-<a target="_blank" class='momo' code=jsdomref.html></a>
-<a target="_blank" class='momo' code=cssref.html></a>
-<a target="_blank" class='momo' code=vimref.html></a>
+<a class='momo' code=skip></a>
+<a class='momo' code=skip></a>
+<a target="_blank" class='momo' code=domathon.html          title="The Domathon"></a>
+<a target="_blank" class='momo' code=jsdomref.html          title="JS DOM Reference"></a>
+<a target="_blank" class='momo' code=bashref.html           title="Bash Reference"></a>
+<a target="_blank" class='momo' code=cssref.html            title="CSS Reference"></a>
+<a target="_blank" class='momo' code=domref.html            title="DOM Reference"></a>
+<a target="_blank" class='momo' code=JavaReference.html     title="Java Reference"></a>
+<a target="_blank" class='momo' code=vimref.html            title="Vim Reference"></a>
+<a target="_blank" class='momo' code=vimrefsim.html         title="Vim Sim Reference"></a>
+<a target="_blank" class='momo' code=vimrefadv.html         title="Vim Adv Reference"></a>
 </div>
 
 HEREND1
+cp questions.topics topics
 cp questions.topics $Tmp
 
 rx="JavaScript DOM"

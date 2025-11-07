@@ -207,8 +207,10 @@ fi
 #gawk '{printf "%s", $0}' questions.html > javaexercises.html
 #gawk '{printf "%s", $0}' questions.html > index.html
 #gawk '{printf "%s", $0}' questions.html > error.html
+#THEFILES
 FILES=( \
-"bashref.html" "Java.html" "version.txt" "domathon.html" "ScannerClass.pdf" "icon.png" "index.html" "error.html" "questions.html" \
+"myPDF.js" "bashref.html" "Java.html" "version.txt" "domathon.html" "ScannerClass.pdf" "icon.png" "index.html" "error.html" "questions.html" \
+"cssref.html" "myModule.js" "logger.js" "vimref.html" "vimrefadv.html" "vimrefsim.html"\
 "javaexercises.html" "banner4.png" "myQuery.js" "countdown.js" "questions.js" "editor.js" "questions.css"  \
 "jspdf.plugin.autotable.min.js" "jspdf.umd.min.js" "jsdomref.html" "domref.html" "tog.css"  "JavaReference.html" "Java.html" \
 )
