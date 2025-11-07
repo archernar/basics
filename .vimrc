@@ -1,4 +1,4 @@
-" *********************************************************DATEOMATIC: Wed Jul 16 08:01:02 EDT 2025
+" *********************************************************DATEOMATIC: Sun Jun 29 10:07:30 AM EDT 2025
 " *********************************************************HASHOMATIC: c110cf899e129b42a5862d73b1d553c3
 " *****************************************************************************************************
                 " W e l c o m e   t o   m y  V I M R C
@@ -165,6 +165,7 @@ filetype plugin indent on         " required, to ignore plugin indent changes, i
 " *****************************************************************************************************
                 " Functions
                 " *************************************************************************************
+
 function g:LogMessage(...)
     let l:ret = 0
 
@@ -187,6 +188,9 @@ endfunction
 func! MenuCBDoNothing(id, result)
     let l:NOTHING=0
 endfunction
+func! g:MasterCommandSpace()
+    call add(s:helpdisplaynames, "" )
+endfunction
 func! g:MasterCommand(szCommand, szHelp)
     call add(s:helpdisplaynames, a:szHelp )
     execute a:szCommand
@@ -205,8 +209,10 @@ inoremap         <F6> <esc>:call ProgramRun()<cr>
 nnoremap         <F6>      :call ProgramRun()<cr>
 nnoremap <Leader>p         :PluginUpdate<cr>
 
+"call g:MasterCommand("nnoremap <leader><F1> :call VimBufferPopUp()<CR>", "+F2 - Vim Buffer PopUp" )
+"
 call g:MasterCommand("nnoremap         <F1> :cclose<cr>:bnext<cr>",      " F1 - Next Buffer" )
-call g:MasterCommand("nnoremap <leader><F1> :call VimBufferPopUp()<CR>", "+F2 - Vim Buffer PopUp" )
+call g:MasterCommand("nnoremap <leader><F1> <C-w>w",                     "+F1 - Next split")
 call g:MasterCommand("nnoremap         <F2> :call VimBufferPopUp()<CR>", " F2 - Vim Buffer PopUp" )
 call g:MasterCommand("nnoremap         <F3> :call HelpPopUp()<CR>",      " F3 - Help Popup" )
 
@@ -648,13 +654,101 @@ endfunction
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " Vim Buffer Popup
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function g:HSplit(...)
+    let l:i = 0
+    let l:bc = a:1 - 1
+    while l:i < l:bc 
+        execute "split"
+        execute "bnext"
+        let l:i = l:i + 1
+    endwhile
+    execute "wincmd t"
+    normal! 0
+endfunction
+function g:VSplit(...)
+    let l:i = 0
+    let l:bc = a:1 - 1
+    while l:i < l:bc 
+        execute "vsplit"
+        execute "bnext"
+        let l:i = l:i + 1
+    endwhile
+    execute "wincmd t"
+    normal! 0
+endfunction
+function g:NoSplits()
+    execute "only"
+    normal! 0
+endfunction
+
+let g:buffernames=[]
+let g:bufferdisplaynames=[]
+
+function! g:SplitBuffers()
+    let l:last_bufno = bufnr("$")
+    let l:i = 1
+    let l:filenames = ""
+    let l:filename  = ""
+
+    let g:VimBufferPopUp_Init=1
+    while l:i < l:last_bufno
+        if bufexists(i) && buflisted(i)
+            let fullpath = fnamemodify(bufname(i), ':p')
+            if filereadable(fullpath)
+                if v:version >= 702
+                    let l:filename = fnameescape(fullpath)
+                    let l:filenames = l:filenames . " " . fnameescape(fullpath)
+                else
+                    let l:filename  = fullpath
+                    let l:filenames = l:filenames . " " . fullpath
+                endif
+            endif
+            execute "split"
+            execute "bnext "
+        endif
+        let l:i = l:i + 1
+    endwhile
+    execute "wincmd t"
+    normal! 0
+endfunction
+function! g:VimBufferPopUpLoader()
+    let l:last_bufno = bufnr("$")
+    let l:i = 1
+    let l:filenames = ""
+    let l:filename  = ""
+
+    let g:buffernames=[]
+    let g:bufferdisplaynames=[]
+
+    let g:VimBufferPopUp_Init=1
+    while l:i <= l:last_bufno
+        if bufexists(i) && buflisted(i)
+            let fullpath = fnamemodify(bufname(i), ':p')
+            if filereadable(fullpath)
+                if v:version >= 702
+                    let l:filename = fnameescape(fullpath)
+                    let l:filenames = l:filenames . " " . fnameescape(fullpath)
+                else
+                    let l:filename  = fullpath
+                    let l:filenames = l:filenames . " " . fullpath
+                endif
+            endif
+            call add(g:bufferdisplaynames, fnamemodify(l:filename, ":t") )
+            call add(g:buffernames, l:filename )
+        endif
+        let l:i = l:i + 1
+    endwhile
+endfunction
+
+
 function! g:VimBufferPopUp()
     let l:last_bufno = bufnr("$")
     let l:i = 1
     let l:filenames = ""
     let l:filename  = ""
-    let s:buffernames=[]
-    let s:bufferdisplaynames=[]
+
+if !exists('g:VimBufferPopUp_Init')
+let g:VimBufferPopUp_Init=1
 
     while l:i <= l:last_bufno
         if bufexists(i) && buflisted(i)
@@ -668,12 +762,15 @@ function! g:VimBufferPopUp()
                     let l:filenames = l:filenames . " " . fullpath
                 endif
             endif
-            call add(s:bufferdisplaynames, fnamemodify(l:filename, ":t") )
-            call add(s:buffernames, l:filename )
+            call add(g:bufferdisplaynames, fnamemodify(l:filename, ":t") )
+            call add(g:buffernames, l:filename )
         endif
         let l:i = l:i + 1
     endwhile
-    call popup_menu(s:bufferdisplaynames, 
+
+endif 
+
+    call popup_menu(g:bufferdisplaynames, 
     \ #{ title: "Vim Buffers", callback: 'MenuCBBuffer', line: 25, col: 40, 
     \ highlight: 'Question', border: [], close: 'click',  padding: [1,1,0,1]} )
 endfunction
@@ -706,10 +803,29 @@ function! ThisHere(szIn)
 endfunction
 
 
+" 1. Define a function to run *when* the list changes.
+"function! s:HandleBufferListChange()
+"    Put your logic here. For demonstration, we'll just echo.
+"   call  g:VimBufferPopUpLoader()
+"   let l:NOTHING=0
+"endfunction
+
+" 2. Create an autocommand group to hold our listeners.
+"augroup DetectBufferSetChange
+"    autocmd! " Clear any existing autocommands in this group
+"    3. Attach the function to the events.
+"    Run when a new buffer is added to the list.
+"    autocmd BufAdd * call s:HandleBufferListChange()
+"    Run when a buffer is permanently wiped out.
+"    autocmd BufWipeout * call s:HandleBufferListChange()
+"augroup END
+
 
 func! MenuCBBuffer(id, result)
     if ( a:result > -1 ) 
-        execute "e " . s:buffernames[a:result-1]
+        execute "e " . g:buffernames[a:result-1]
+        call MoveToFront(g:buffernames, a:result-1)
+        call MoveToFront(g:bufferdisplaynames, a:result-1)
         "echom "POPEYE" . "  " . a:result
     endif
 endfunction
@@ -725,3 +841,146 @@ command! LOCAL     :call LocalSetups()
 call LocalSetups() 
 
 source ~/.macros.vim
+
+
+" Function to reorder a list, moving the element at a:index to the front (index 0).
+"
+" Args:
+"   a:list (List): The list to be modified. This list is modified IN-PLACE.
+"   a:index (Number): The 0-based index of the element to move to the front.
+"
+" Returns:
+"   (List): The modified list.
+function! MoveToFront(list, index)
+    " Get the length of the list
+    let l:list_len = len(a:list)
+
+    " --- Input Validation ---
+    " Check if the list is empty
+    if l:list_len == 0
+        echoerr "MoveToFront: Cannot operate on an empty list."
+        return a:list
+    endif
+
+    " Check if the index is within the valid bounds
+    if a:index < 0 || a:index >= l:list_len
+        echoerr "MoveToFront: Index " . a:index . " is out of bounds for list of length " . l:list_len
+        return a:list " Return the list unmodified
+    endif
+
+    " If the item is already at the front, there's nothing to do.
+    if a:index == 0
+        return a:list
+    endif
+
+    " --- Reordering Logic ---
+    " 1. Remove the element at the specified index.
+    "    remove() returns the removed item.
+    let l:item_to_move = remove(a:list, a:index)
+
+    " 2. Insert the removed item at the beginning (index 0) of the list.
+    "    We use 'call' because we are modifying the list in-place and
+    "    don't need the return value of insert().
+    call insert(a:list, l:item_to_move, 0)
+
+    " 3. Return the modified list (though it was also modified in-place).
+    return a:list
+endfunction
+
+" --- Example Usage ---
+" To run these examples:
+" 1. Source this file:
+"    :source %
+" 2. Use :echo to see the results
+
+" Example 1: Basic case
+"echo "--- Example 1 ---"
+"let s:my_list = ['apple', 'banana', 'cherry', 'date']
+"echo "Original list:" . string(s:my_list)
+"call MoveToFront(s:my_list, 2)
+"echo "After moving index 2 ('cherry') to front:" . string(s:my_list)
+" Expected: ['cherry', 'apple', 'banana', 'date']
+"echo ""
+
+" Example 2: Move item from the end
+"echo "--- Example 2 ---"
+"let s:my_list = ['one', 'two', 'three', 'four']
+"echo "Original list:" . string(s:my_list)
+"call MoveToFront(s:my_list, 3)
+"echo "After moving index 3 ('four') to front:" . string(s:my_list)
+"Expected: ['four', 'one', 'two', 'three']
+"echo ""
+
+" Example 3: Move item already at the front
+"echo "--- Example 3 ---"
+"let s:my_list = ['alpha', 'beta', 'gamma']
+"echo "Original list:" . string(s:my_list)
+"call MoveToFront(s:my_list, 0)
+"echo "After moving index 0 ('alpha') to front:" . string(s:my_list)
+" Expected: ['alpha', 'beta', 'gamma']
+"echo ""
+
+" Example 4: Out-of-bounds index (will print an error)
+"echo "--- Example 4 ---"
+"let s:my_list = ['foo', 'bar']
+"echo "Original list:" . string(s:my_list)
+"call MoveToFront(s:my_list, 99)
+"echo "After attempting to move index 99:" . string(s:my_list)
+" Expected: Error message, list remains ['foo', 'bar']
+"echo ""
+
+
+" Live substitution preview. This is a game-changer.
+" Requires Vim 8+ or Neovim.
+"set inccommand=split
+"
+
+" ----------------------------------------------------------------------------
+"  Section 6: File Management & Backups
+" ----------------------------------------------------------------------------
+
+" --- Persistent Undo ---
+" Keep undo history even after closing a file
+set undofile
+set undodir=~/.vim/undo
+" Create the directory if it doesn't exist
+silent !mkdir -p ~/.vim/undo
+
+" ----------------------------------------------------------------------------
+"  Section 7: Key Mappings (Quality of Life)
+" ----------------------------------------------------------------------------
+" Note: `nnoremap` means "non-recursive normal mode map".
+" It's the safest way to map keys.
+
+" --- Fast Escape ---
+" Use `jj` to exit Insert mode. Much faster than reaching for Esc.
+" call g:MasterCommand("
+call g:MasterCommandSpace()
+call g:MasterCommand("inoremap jj <Esc>"," jj - <ESC>")
+
+" --- Buffer & Tab Navigation ---
+call g:MasterCommandSpace()
+call g:MasterCommandSpace()
+call g:MasterCommand("nnoremap <leader>j :bnext<CR>",    "+j - Next buffer")
+call g:MasterCommand("nnoremap <leader>k :bprev<CR>",    "+k - Previous buffer")
+call g:MasterCommand("nnoremap <leader>d :bdelete<CR>",  "+d - Close buffer")
+call g:MasterCommand("nnoremap <leader>t :tabnew<CR>",   "+t - New tab")
+
+" --- Window (Split) Management ---
+call g:MasterCommandSpace()
+call g:MasterCommand("nnoremap <leader>vs   :call g:HSplit(2)<CR>",  "+vs - Vertical split")
+call g:MasterCommand("nnoremap <leader>hs   :call g:VSplit(2)<CR>",  "+hs - Horizontal split")
+call g:MasterCommand("nnoremap <leader>ss   :call g:VSplit(2)<CR>",  "+ss - Horizontal split")
+call g:MasterCommand("nnoremap <leader>ns   :call g:NoSplits()<CR>", "+ns - Close all splits")
+call g:MasterCommand("nnoremap <leader>as   :call g:SplitBuffers()<CR>", "+ss - All splits")
+call g:MasterCommandSpace()
+call add(s:helpdisplaynames, ":vsp <fn> - edit file in split" )
+call add(s:helpdisplaynames, ":sp  <fn> - edit file in split" )
+" Navigate splits using Ctrl + (h,j,k,l)
+call g:MasterCommandSpace()
+call g:MasterCommand("nnoremap <C-h> <C-w>h","^h  - Move Split-Left")
+call g:MasterCommand("nnoremap <C-j> <C-w>j","^j  - Move Split-Down")
+call g:MasterCommand("nnoremap <C-k> <C-w>k","^k  - Move Split-Up")
+call g:MasterCommand("nnoremap <C-l> <C-w>l","^l  - Move Split-Right")
+
+call g:MasterCommandSpace()
